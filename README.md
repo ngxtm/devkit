@@ -2,7 +2,7 @@
 
 > Unified multi-agent system with auto-synced skills from multiple sources
 
-[![npm version](https://img.shields.io/npm/v/@devkit/agent-assistant.svg)](https://www.npmjs.com/package/@devkit/agent-assistant)
+[![npm version](https://img.shields.io/npm/v/@ngxtm/devkit.svg)](https://www.npmjs.com/package/@ngxtm/devkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -28,15 +28,15 @@
 ## Installation
 
 ```bash
-npm install -g @devkit/agent-assistant
-devkit-agent install
+npm install -g @ngxtm/devkit
+devkit install
 ```
 
 ### Install to specific tool only
 
 ```bash
-devkit-agent install claude    # Claude Code only
-devkit-agent install cursor    # Cursor only
+devkit install claude    # Claude Code only
+devkit install cursor    # Cursor only
 ```
 
 ## What Gets Installed
@@ -144,8 +144,8 @@ sync:
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/devkit-agent-assistant.git
-cd devkit-agent-assistant
+git clone https://github.com/YOUR_USERNAME/devkit-assistant.git
+cd devkit-assistant
 
 # Install dependencies
 npm install

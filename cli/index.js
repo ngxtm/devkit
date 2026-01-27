@@ -22,10 +22,10 @@ const commands = {
 
 function showHelp() {
   console.log(`
-Devkit Agent Assistant v${VERSION}
+Devkit v${VERSION}
 
 USAGE:
-  devkit-agent <command>
+  devkit <command>
 
 COMMANDS:
   install     Install skills and rules to AI tools (Claude, Cursor, Copilot)
@@ -35,10 +35,11 @@ COMMANDS:
   help        Show this help
 
 EXAMPLES:
-  devkit-agent install       # Install to all supported tools
-  devkit-agent list          # Show available skills
+  devkit install       # Install to all supported tools
+  devkit install claude # Install to Claude Code only
+  devkit list          # Show available skills
 
-For more info: https://github.com/YOUR_USERNAME/devkit-agent-assistant
+For more info: https://github.com/ngxtm/devkit
   `);
 }
 

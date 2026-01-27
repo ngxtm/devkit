@@ -1,12 +1,52 @@
+# Dependencies
 node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# Logs
 *.log
-.DS_Store
-Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated files
+sync_report.json
+package-lock.json
+
+# Environment
 .env
 .env.local
-sync_report.json
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temp
 /tmp/
-*.pyc
-__pycache__/
-.venv/
-dist/
+*.tmp
+*.temp
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Optional: uncomment if you don't want to track these
+# hooks/
+# output-styles/

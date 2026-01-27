@@ -223,7 +223,7 @@ function installToTool(toolId, tool, options = {}) {
  */
 function install(targetTool = null) {
   console.log('\n' + '='.repeat(60));
-  console.log('  DEVKIT AGENT ASSISTANT - INSTALLER');
+  console.log('  DEVKIT - INSTALLER');
   console.log('  Merged: antigravity + agent-assistant + claudekit + skill-rule');
   console.log('='.repeat(60));
 
@@ -260,7 +260,7 @@ function install(targetTool = null) {
  */
 function update() {
   console.log('Checking for updates...\n');
-  console.log('Run: npm update -g @devkit/agent-assistant');
+  console.log('Run: npm update -g @ngxtm/devkit');
   console.log('Then: devkit-agent install');
 }
 
