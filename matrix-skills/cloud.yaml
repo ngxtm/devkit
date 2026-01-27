@@ -1,0 +1,112 @@
+# ============================================================================
+# CLOUD DOMAIN SKILLS
+# ============================================================================
+# AWS, Azure, GCP, serverless, cloud infrastructure
+# Primary agents: devops-engineer
+# ============================================================================
+
+domain: cloud
+name: "Cloud & Infrastructure"
+description: "AWS, Azure, GCP, serverless"
+skill_count: 11
+
+skills:
+  # --------------------------------------------------------------------------
+  # EXPERT SKILLS (Priority 8)
+  # --------------------------------------------------------------------------
+  - skill_id: cloud-architect
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer, tech-lead]
+      profiles: ["devops:execution", "architecture:*"]
+    description: "Cloud architecture design patterns"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS - AWS (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: aws-agentic-ai
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "AWS Agentic AI services"
+
+  - skill_id: aws-cdk-development
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "AWS CDK infrastructure as code"
+
+  - skill_id: aws-serverless-eda
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "AWS serverless event-driven architecture"
+
+  - skill_id: aws-cost-operations
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "AWS cost optimization"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS - AZURE (Priority 5-7)
+  # --------------------------------------------------------------------------
+  - skill_id: azd-deployment
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Azure Developer CLI deployment"
+
+  - skill_id: azure-ai-agents-python
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:execution"]
+    description: "Azure AI Agents with Python"
+
+  - skill_id: azure-ai-search-python
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:execution"]
+    description: "Azure AI Search with Python"
+
+  - skill_id: azure-ai-voicelive-skill
+    category: specialized
+    priority_score: 5
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Azure AI Voice Live capabilities"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS - CLOUDFLARE (Priority 7)
+  # --------------------------------------------------------------------------
+  - skill_id: building-ai-agent-on-cloudflare
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Building AI agents on Cloudflare"
+
+  - skill_id: building-mcp-server-on-cloudflare
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Building MCP servers on Cloudflare"

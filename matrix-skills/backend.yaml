@@ -1,0 +1,280 @@
+# ============================================================================
+# BACKEND DOMAIN SKILLS
+# ============================================================================
+# Server-side logic, APIs, frameworks, data access patterns
+# Primary agents: backend-engineer, tech-lead
+# ============================================================================
+
+domain: backend
+name: "Backend Development"
+description: "Server-side logic, APIs, data access"
+skill_count: 32
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: api-patterns
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:*"]
+    description: "REST/GraphQL design, versioning, pagination, response formats"
+
+  - skill_id: api-designer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution"]
+    description: "API design patterns, OpenAPI specifications"
+
+  - skill_id: backend-development
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, performance-engineer]
+      profiles: ["backend:*"]
+    description: "Server-side logic, NestJS, FastAPI, security best practices"
+
+  - skill_id: nodejs-best-practices
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Node.js async patterns, error handling, performance"
+
+  - skill_id: better-auth
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, security-engineer]
+      profiles: ["backend:execution", "security:*"]
+    description: "Authentication, OAuth 2.0, sessions, JWT, MFA"
+
+  - skill_id: microservices-architect
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution", "architecture:*"]
+    description: "Microservices patterns, service mesh, API gateway"
+
+  - skill_id: graphql-architect
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:execution"]
+    description: "GraphQL schema design, resolvers, subscriptions"
+
+  - skill_id: senior-backend
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Senior backend patterns, scalable systems, API design"
+
+  # --------------------------------------------------------------------------
+  # FRAMEWORK SPECIALISTS (Priority 7)
+  # --------------------------------------------------------------------------
+  - skill_id: nestjs-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "NestJS module architecture, DI, guards, interceptors"
+
+  - skill_id: fastapi-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "FastAPI async patterns, Pydantic, dependency injection"
+
+  - skill_id: django-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Django ORM, views, middleware, admin customization"
+
+  - skill_id: rails-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Ruby on Rails conventions, ActiveRecord, testing"
+
+  - skill_id: spring-boot-engineer
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Spring Boot, Java enterprise patterns, microservices"
+
+  - skill_id: laravel-specialist
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Laravel Eloquent, middleware, authentication"
+
+  - skill_id: dotnet-core-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: ".NET Core, C# patterns, Entity Framework"
+
+  - skill_id: websocket-engineer
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "WebSocket connections, real-time communication"
+
+  - skill_id: senior-fullstack
+    category: expert
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:execution", "frontend:execution"]
+    description: "Full-stack development patterns and best practices"
+
+  - skill_id: fullstack-guardian
+    category: expert
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer, tech-lead]
+      profiles: ["backend:*", "frontend:*"]
+    description: "Full-stack quality gates and validation"
+
+  # --------------------------------------------------------------------------
+  # UTILITY SKILLS (Priority 6)
+  # --------------------------------------------------------------------------
+  - skill_id: fastapi-router
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "FastAPI routing patterns and best practices"
+
+  - skill_id: server-management
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, devops-engineer]
+      profiles: ["backend:execution", "devops:*"]
+    description: "Server administration, process management, scaling"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: backend-dev-guidelines
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:*"]
+    description: "Opinionated backend standards for Node.js + Express + TypeScript microservices"
+
+  - skill_id: bun-development
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Bun runtime, package management, bundling, testing, built-in APIs"
+
+  - skill_id: nosql-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, database-architect]
+      profiles: ["backend:execution", "data:*"]
+    description: "Distributed NoSQL (Cassandra, DynamoDB), query-first modeling, partition keys"
+
+  - skill_id: inngest
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Serverless background jobs, event-driven workflows, durable execution"
+
+  - skill_id: trigger-dev
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "TypeScript-first background jobs, AI workflows, reliable async execution"
+
+  - skill_id: upstash-qstash
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Serverless message queues, scheduled jobs, HTTP-based task delivery"
+
+  - skill_id: bullmq-specialist
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Redis-backed job queues, background processing, delayed/repeatable jobs"
+
+  - skill_id: stripe-integration
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Payments, subscriptions, billing portal, webhooks, metered billing"
+
+  - skill_id: plaid-fintech
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Plaid API, Link token flows, transactions sync, identity verification"
+
+  - skill_id: twilio-communications
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "SMS, voice calls, WhatsApp Business API, user verification (2FA)"
+
+  - skill_id: neon-postgres
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, database-architect]
+      profiles: ["backend:execution", "data:*"]
+    description: "Neon serverless Postgres, Prisma/Drizzle integration, connection pooling"
+
+  - skill_id: software-architecture
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution", "architecture:*"]
+    description: "Clean Architecture, DDD principles, library-first approach, separation of concerns"

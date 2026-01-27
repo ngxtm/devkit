@@ -1,0 +1,85 @@
+# ============================================================================
+# MOBILE DOMAIN SKILLS
+# ============================================================================
+# iOS, Android, cross-platform mobile development
+# Primary agents: mobile-engineer
+# ============================================================================
+
+domain: mobile
+name: "Mobile Development"
+description: "iOS, Android, cross-platform apps"
+skill_count: 8
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: mobile-development
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:*"]
+    description: "React Native, Flutter, iOS, Android, offline-first"
+
+  - skill_id: react-native-expert
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "React Native advanced patterns and optimization"
+
+  - skill_id: flutter-expert
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "Flutter/Dart development expertise"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS (Priority 7)
+  # --------------------------------------------------------------------------
+  - skill_id: swift-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "Swift/SwiftUI iOS development"
+
+  - skill_id: kotlin-specialist
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "Kotlin/Jetpack Compose Android development"
+
+  - skill_id: expo-app-design
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "Expo app design and development"
+
+  - skill_id: expo-deployment
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "Expo deployment and OTA updates"
+
+  # --------------------------------------------------------------------------
+  # UTILITY SKILLS (Priority 6)
+  # --------------------------------------------------------------------------
+  - skill_id: upgrading-expo
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [mobile-engineer]
+      profiles: ["mobile:execution"]
+    description: "Expo SDK upgrade strategies"

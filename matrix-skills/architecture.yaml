@@ -1,0 +1,93 @@
+# ============================================================================
+# ARCHITECTURE DOMAIN SKILLS
+# ============================================================================
+# System design, patterns, ADRs, clean code principles
+# Primary agents: tech-lead, backend-engineer
+# ============================================================================
+
+domain: architecture
+name: "System Architecture"
+description: "Design patterns, system design, ADRs"
+skill_count: 9
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 9-10)
+  # --------------------------------------------------------------------------
+  - skill_id: architecture
+    category: core
+    priority_score: 10
+    relevance_mapping:
+      agents: [tech-lead, backend-engineer, frontend-engineer, database-architect, security-engineer, planner, scouter, reviewer]
+      profiles: ["*:orchestration", "architecture:*"]
+    description: "ADR documentation, trade-off analysis, system design"
+
+  - skill_id: clean-code
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer, debugger, database-architect, scouter, reviewer, docs-manager]
+      profiles: ["backend:*", "quality:*"]
+    description: "SOLID principles, pragmatic coding standards, refactoring"
+
+  - skill_id: senior-architect
+    category: expert
+    priority_score: 9
+    relevance_mapping:
+      agents: [tech-lead]
+      profiles: ["architecture:orchestration"]
+    description: "Scalable systems, tech stack decisions, dependency analysis"
+
+  # --------------------------------------------------------------------------
+  # EXPERT SKILLS (Priority 7-8)
+  # --------------------------------------------------------------------------
+  - skill_id: architecture-designer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [tech-lead]
+      profiles: ["architecture:orchestration"]
+    description: "System architecture design and documentation"
+
+  - skill_id: code-refactoring
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer, tech-lead]
+      profiles: ["backend:*", "frontend:*"]
+    description: "Code refactoring patterns and techniques"
+
+  - skill_id: best-practices
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [tech-lead, backend-engineer, frontend-engineer]
+      profiles: ["*"]
+    description: "General software development best practices"
+
+  - skill_id: legacy-modernizer
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tech-lead, backend-engineer]
+      profiles: ["architecture:orchestration", "backend:execution"]
+    description: "Legacy code modernization strategies"
+
+  - skill_id: app-builder
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [tech-lead, backend-engineer, frontend-engineer]
+      profiles: ["architecture:*", "backend:*", "frontend:*"]
+    description: "Full-stack application building orchestrator"
+
+  # --------------------------------------------------------------------------
+  # UTILITY SKILLS (Priority 6)
+  # --------------------------------------------------------------------------
+  - skill_id: feature-forge
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [tech-lead, planner]
+      profiles: ["architecture:*", "planning:*"]
+    description: "Feature development patterns"

@@ -1,0 +1,353 @@
+# ============================================================================
+# AI/ML DOMAIN SKILLS
+# ============================================================================
+# Machine learning, LLMs, data science, MLOps
+# Primary agents: backend-engineer (with ML focus)
+# ============================================================================
+
+domain: ai_ml
+name: "AI/ML Engineering"
+description: "Machine learning, LLMs, data science"
+skill_count: 40
+
+skills:
+  # --------------------------------------------------------------------------
+  # EXPERT SKILLS (Priority 8)
+  # --------------------------------------------------------------------------
+  - skill_id: senior-ml-engineer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "ML engineering, model deployment, MLOps"
+
+  - skill_id: senior-data-scientist
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Data science, statistical modeling, experimentation"
+
+  - skill_id: senior-data-engineer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, database-architect]
+      profiles: ["backend:execution", "data:*"]
+    description: "Data engineering, ETL, pipelines"
+
+  - skill_id: senior-prompt-engineer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Advanced prompt engineering and optimization"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: senior-computer-vision
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Computer vision, image processing, object detection"
+
+  - skill_id: fine-tuning-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "LLM fine-tuning and customization"
+
+  - skill_id: llm-application-dev
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "LLM application development"
+
+  - skill_id: rag-architect
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "RAG architecture and implementation"
+
+  - skill_id: prompt-engineer
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Prompt engineering patterns"
+
+  - skill_id: ml-pipeline
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "ML pipeline development and orchestration"
+
+  # --------------------------------------------------------------------------
+  # UTILITY SKILLS (Priority 6)
+  # --------------------------------------------------------------------------
+  - skill_id: pandas-pro
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Pandas data manipulation expertise"
+
+  - skill_id: pydantic-models
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Pydantic model patterns"
+
+  - skill_id: spark-engineer
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Apache Spark data processing"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - AGENT DEVELOPMENT (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: agent-evaluation
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution"]
+    description: "Testing and benchmarking LLM agents, behavioral testing, reliability metrics"
+
+  - skill_id: agent-memory-mcp
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Hybrid memory system for AI agents via MCP server"
+
+  - skill_id: agent-memory-systems
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution"]
+    description: "Agent memory architecture: short-term, long-term, cognitive architectures"
+
+  - skill_id: agent-tool-builder
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Tool design from schema to error handling, JSON Schema, MCP standard"
+
+  - skill_id: ai-agents-architect
+    category: expert
+    priority_score: 9
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution", "architecture:*"]
+    description: "Designing autonomous AI agents, tool use, memory systems, multi-agent orchestration"
+
+  - skill_id: autonomous-agent-patterns
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution"]
+    description: "Design patterns for autonomous coding agents, tool integration, human-in-the-loop"
+
+  - skill_id: autonomous-agents
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Autonomous agents: ReAct, Plan-Execute, goal decomposition, reflection patterns"
+
+  - skill_id: computer-use-agents
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "AI agents that interact with computers, Anthropic Computer Use, OpenAI Operator"
+
+  - skill_id: crewai
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "CrewAI role-based multi-agent framework, agent design, task definition"
+
+  - skill_id: langgraph
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "LangGraph stateful multi-actor AI applications, graph construction, state management"
+
+  - skill_id: subagent-driven-development
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tech-lead]
+      profiles: ["architecture:orchestration"]
+    description: "Execute plan by dispatching fresh subagent per task with two-stage review"
+
+  - skill_id: multi-agent-brainstorming
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [brainstormer, tech-lead]
+      profiles: ["planning:discovery", "architecture:*"]
+    description: "Sequential multi-agent design review with strict non-overlapping roles"
+
+  - skill_id: dispatching-parallel-agents
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tech-lead]
+      profiles: ["architecture:orchestration"]
+    description: "Dispatch parallel agents for 2+ independent tasks without shared state"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - LLM & PROMPT ENGINEERING (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: llm-app-patterns
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Production-ready LLM patterns, RAG pipelines, agent architectures, LLMOps"
+
+  - skill_id: prompt-engineering
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Advanced prompt engineering patterns, best practices, optimization techniques"
+
+  - skill_id: prompt-library
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Curated prompts collection, role-based prompts, task-specific templates"
+
+  - skill_id: prompt-caching
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Caching strategies for LLM prompts, Anthropic prompt caching, CAG"
+
+  - skill_id: context-window-management
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Managing LLM context windows, summarization, trimming, routing"
+
+  - skill_id: conversation-memory
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Persistent memory for LLM conversations, short-term, long-term, entity-based"
+
+  - skill_id: langfuse
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Langfuse LLM observability, tracing, prompt management, evaluation"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - RAG & VOICE AI (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: rag-engineer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Building RAG systems, embedding models, vector databases, chunking strategies"
+
+  - skill_id: rag-implementation
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "RAG patterns: chunking, embeddings, vector stores, retrieval optimization"
+
+  - skill_id: voice-agents
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Voice agents, speech-to-speech, pipeline architectures (STT→LLM→TTS)"
+
+  - skill_id: voice-ai-development
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Voice AI apps, OpenAI Realtime API, Vapi, Deepgram, ElevenLabs, LiveKit"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - AI PRODUCT (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: ai-product
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, tech-lead]
+      profiles: ["backend:execution", "architecture:*"]
+    description: "AI-powered products, LLM integration patterns, RAG architecture, AI UX"
+
+  - skill_id: ai-wrapper-product
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Building products that wrap AI APIs, prompt engineering for products, cost management"
+
+  - skill_id: tavily-web
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Web search, content extraction, crawling using Tavily API"

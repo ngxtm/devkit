@@ -1,0 +1,75 @@
+{
+  "name": "@devkit/agent-assistant",
+  "version": "1.0.0",
+  "description": "Unified multi-agent system with auto-synced skills from multiple sources",
+  "main": "cli/install.js",
+  "bin": {
+    "devkit-agent": "cli/index.js"
+  },
+  "scripts": {
+    "install-global": "node cli/install.js",
+    "sync": "python scripts/sync_all.py",
+    "validate": "python scripts/validate_skills.py",
+    "update-matrix": "python scripts/update_matrix.py"
+  },
+  "files": [
+    "cli/",
+    "agents/",
+    "agents-claudekit/",
+    "commands/",
+    "commands-claudekit/",
+    "skills/",
+    "matrix-skills/",
+    "rules/",
+    "hooks/",
+    "output-styles/",
+    "workflows/",
+    "settings.json",
+    "statusline.cjs",
+    "statusline.ps1",
+    "statusline.sh"
+  ],
+  "keywords": [
+    "ai",
+    "claude",
+    "cursor",
+    "copilot",
+    "agent",
+    "skills",
+    "coding-assistant"
+  ],
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR_USERNAME/devkit-agent-assistant.git"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "semantic-release": "^22.0.12"
+  },
+  "release": {
+    "branches": ["main"],
+    "plugins": [
+      ["@semantic-release/commit-analyzer", {
+        "preset": "conventionalcommits"
+      }],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      ["@semantic-release/git", {
+        "assets": ["package.json", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]"
+      }]
+    ]
+  }
+}

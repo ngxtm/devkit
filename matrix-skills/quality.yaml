@@ -1,0 +1,195 @@
+# ============================================================================
+# QUALITY DOMAIN SKILLS
+# ============================================================================
+# Testing, debugging, code review, validation
+# Primary agents: tester, debugger, reviewer
+# ============================================================================
+
+domain: quality
+name: "Quality Assurance"
+description: "Testing, code review, validation"
+skill_count: 21
+
+skills:
+  # --------------------------------------------------------------------------
+  # TESTING SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: testing-patterns
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [tester, mobile-engineer]
+      profiles: ["quality:validation"]
+    description: "Unit, integration, mocking strategies, test organization"
+
+  - skill_id: tdd-workflow
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "Test-Driven Development RED-GREEN-REFACTOR cycle"
+
+  - skill_id: webapp-testing
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "E2E testing, Playwright, browser automation, deep audit"
+
+  - skill_id: senior-qa
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "Test strategy, automation frameworks, quality metrics"
+
+  - skill_id: playwright-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "Playwright test automation expertise"
+
+  - skill_id: playwright-skill
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "Playwright testing patterns and utilities"
+
+  - skill_id: qa-regression
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "Regression testing strategies"
+
+  - skill_id: test-master
+    category: expert
+    priority_score: 7
+    relevance_mapping:
+      agents: [tester]
+      profiles: ["quality:validation"]
+    description: "Advanced testing mastery"
+
+  # --------------------------------------------------------------------------
+  # DEBUGGING SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: systematic-debugging
+    category: expert
+    priority_score: 9
+    relevance_mapping:
+      agents: [debugger]
+      profiles: ["quality:debugging"]
+    description: "4-phase debugging methodology, root cause analysis"
+
+  - skill_id: debugging
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [debugger, tester, scouter]
+      profiles: ["quality:debugging"]
+    description: "General debugging techniques, log analysis, tracing"
+
+  - skill_id: debugging-wizard
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [debugger]
+      profiles: ["quality:debugging"]
+    description: "Advanced debugging wizardry"
+
+  # --------------------------------------------------------------------------
+  # CODE REVIEW SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: code-review
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [reviewer, tech-lead]
+      profiles: ["quality:review"]
+    description: "Review methodology, plan compliance, feedback format"
+
+  - skill_id: code-review-checklist
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [reviewer]
+      profiles: ["quality:review"]
+    description: "Systematic review checklist, security, best practices"
+
+  - skill_id: code-reviewer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [reviewer]
+      profiles: ["quality:review"]
+    description: "Comprehensive code review skills"
+
+  # --------------------------------------------------------------------------
+  # UTILITY SKILLS (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: lint-and-validate
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer, reviewer]
+      profiles: ["quality:*", "backend:*", "frontend:*"]
+    description: "Linting and validation tools"
+
+  - skill_id: receiving-code-review
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:*", "frontend:*"]
+    description: "How to receive and respond to code review feedback"
+
+  - skill_id: requesting-code-review
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:*", "frontend:*"]
+    description: "How to request code reviews effectively"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - TESTING & CODE QUALITY (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: test-driven-development
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [tester, backend-engineer, frontend-engineer]
+      profiles: ["quality:validation", "backend:*", "frontend:*"]
+    description: "Rigorous TDD: NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST"
+
+  - skill_id: test-fixing
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [tester, debugger]
+      profiles: ["quality:validation", "quality:debugging"]
+    description: "Systematic test fixing, smart error grouping, prioritizing fixes"
+
+  - skill_id: production-code-audit
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [reviewer, tech-lead]
+      profiles: ["quality:review", "architecture:*"]
+    description: "Autonomous codebase audit, deep-scan, production-grade quality transformation"
+
+  - skill_id: verification-before-completion
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [tester, reviewer, backend-engineer, frontend-engineer]
+      profiles: ["quality:*", "backend:*", "frontend:*"]
+    description: "NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE"

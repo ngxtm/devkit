@@ -1,0 +1,68 @@
+name: Sync Rules from skill-rule
+
+on:
+  schedule:
+    # Run weekly on Sunday at midnight UTC
+    - cron: '0 0 * * 0'
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone skill-rule repository
+        run: |
+          git clone --depth 1 https://github.com/ngxtm/skill-rule.git /tmp/skill-rule
+
+      - name: Sync rules
+        run: |
+          # Create rules directory if not exists
+          mkdir -p ./rules
+
+          # Copy rules from skill-rule
+          cp -r /tmp/skill-rule/rules/* ./rules/
+
+          echo "Rules synced successfully"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat(rules): sync from skill-rule"
+          title: "[Auto-Sync] Update rules from skill-rule"
+          body: |
+            ## Automated Rules Sync
+
+            Synced coding standard rules from `ngxtm/skill-rule`.
+
+            ### Included rules:
+            - TypeScript
+            - React
+            - NestJS
+            - And more...
+          branch: auto-sync/rules
+          labels: |
+            automated
+            rules-sync
+          delete-branch: true

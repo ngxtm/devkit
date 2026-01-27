@@ -1,0 +1,352 @@
+# ============================================================================
+# TOOLS & UTILITIES DOMAIN SKILLS
+# ============================================================================
+# Productivity tools, document processing, automation
+# Primary agents: various (based on tool type)
+# ============================================================================
+
+domain: tools
+name: "Tools & Utilities"
+description: "Productivity tools, document processing"
+skill_count: 41
+
+skills:
+  # --------------------------------------------------------------------------
+  # BROWSER & DEBUGGING (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: chrome-devtools
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer, debugger]
+      profiles: ["frontend:*", "quality:debugging"]
+    description: "Browser automation, debugging, performance analysis"
+
+  # --------------------------------------------------------------------------
+  # DOCUMENT PROCESSING (Priority 5-6)
+  # --------------------------------------------------------------------------
+  - skill_id: document-skills
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Document processing skills"
+
+  - skill_id: changelog-generator
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [docs-manager, devops-engineer]
+      profiles: ["research:documentation", "devops:*"]
+    description: "Automated changelog generation"
+
+  - skill_id: doc-coauthoring
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Collaborative document authoring"
+
+  - skill_id: media-processing
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "FFmpeg, ImageMagick media processing"
+
+  - skill_id: docx
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Word document manipulation"
+
+  - skill_id: pdf
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "PDF document manipulation"
+
+  - skill_id: pptx
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "PowerPoint manipulation"
+
+  - skill_id: xlsx
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Excel spreadsheet manipulation"
+
+  - skill_id: podcast-generation
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Podcast content generation"
+
+  # --------------------------------------------------------------------------
+  # PROJECT MANAGEMENT TOOLS (Priority 5-6)
+  # --------------------------------------------------------------------------
+  - skill_id: issue-creator
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [project-manager]
+      profiles: ["management:*"]
+    description: "GitHub issue creation"
+
+  - skill_id: jira-issues
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [project-manager]
+      profiles: ["management:*"]
+    description: "Jira issue management"
+
+  - skill_id: atlassian-mcp
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [project-manager]
+      profiles: ["management:*"]
+    description: "Atlassian MCP integration"
+
+  - skill_id: internal-comms
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [project-manager]
+      profiles: ["management:*"]
+    description: "Internal communications"
+
+  - skill_id: meeting-insights-analyzer
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [project-manager]
+      profiles: ["management:*"]
+    description: "Meeting insights and analysis"
+
+  # --------------------------------------------------------------------------
+  # RESEARCH TOOLS (Priority 5)
+  # --------------------------------------------------------------------------
+  - skill_id: youtube-transcript
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:*"]
+    description: "YouTube transcript extraction"
+
+  - skill_id: notebooklm-skill
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:*"]
+    description: "NotebookLM integration"
+
+  - skill_id: competitive-ads-extractor
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:analysis"]
+    description: "Competitive ad analysis"
+
+  # --------------------------------------------------------------------------
+  # DESIGN TOOLS (Priority 5)
+  # --------------------------------------------------------------------------
+  - skill_id: image-enhancer
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [designer]
+      profiles: ["design:*"]
+    description: "Image enhancement utilities"
+
+  # --------------------------------------------------------------------------
+  # CLI & DEVELOPMENT TOOLS (Priority 5-6)
+  # --------------------------------------------------------------------------
+  - skill_id: cli-developer
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "CLI application development"
+
+  - skill_id: artifacts-builder
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Build artifacts generation"
+
+  - skill_id: domain-name-brainstormer
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [brainstormer]
+      profiles: ["planning:discovery"]
+    description: "Domain name brainstorming"
+
+  - skill_id: skill-creator
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Skill creation guidance"
+
+  - skill_id: file-organizer
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "File organization utilities"
+
+  # --------------------------------------------------------------------------
+  # GENERAL UTILITIES (Priority 3-4)
+  # --------------------------------------------------------------------------
+  - skill_id: video-downloader
+    category: utility
+    priority_score: 4
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Video downloading utilities"
+
+  - skill_id: slack-gif-creator
+    category: utility
+    priority_score: 4
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Slack GIF creation"
+
+  - skill_id: invoice-organizer
+    category: utility
+    priority_score: 4
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Invoice organization"
+
+  - skill_id: job-application
+    category: utility
+    priority_score: 4
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Job application assistance"
+
+  - skill_id: skill-share
+    category: utility
+    priority_score: 4
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Skill sharing mechanisms"
+
+  - skill_id: raffle-winner-picker
+    category: utility
+    priority_score: 3
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Raffle winner selection"
+
+  - skill_id: template-skill
+    category: utility
+    priority_score: 3
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Template skill structure"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - COMMUNICATION & AUTOMATION (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: slack-bot-builder
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Slack apps using Bolt framework, Block Kit, slash commands, OAuth"
+
+  - skill_id: discord-bot-architect
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Discord bots with Discord.js/Pycord, Gateway intents, slash commands"
+
+  - skill_id: telegram-bot-builder
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Telegram bots, Bot API, architecture, monetization, scaling"
+
+  - skill_id: email-sequence
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Email sequences, drip campaigns, lifecycle emails"
+
+  - skill_id: email-systems
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Email systems engineering, transactional email, deliverability, SPF/DKIM/DMARC"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - CONTENT CREATION (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: content-creator
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "SEO-optimized marketing content, brand voice analyzer, content frameworks"
+
+  - skill_id: copywriting
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Marketing copywriting, homepage, landing pages, pricing pages, conversion-focused"
+
+  - skill_id: copy-editing
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Systematic copy editing through 7 focused passes (Clarity, Voice, So What, etc.)"
+
+  - skill_id: social-content
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      profiles: ["*"]
+    description: "Social media content creation, LinkedIn, Twitter/X, Instagram, TikTok"
+
+  - skill_id: api-documentation-generator
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [docs-manager, backend-engineer]
+      profiles: ["research:documentation", "backend:execution"]
+    description: "Generate API documentation from code, endpoints, parameters, OpenAPI/Swagger"

@@ -1,0 +1,54 @@
+{
+  "global": {
+    "author": "Minh",
+    "repository": "https://github.com/ngxtm/ags"
+  },
+  "categories": {
+    "flutter": {
+      "version": "1.1.0",
+      "last_updated": "2026-01-19",
+      "tag_prefix": "flutter-v"
+    },
+    "dart": {
+      "version": "1.0.1",
+      "last_updated": "2026-01-17",
+      "tag_prefix": "dart-v"
+    },
+    "typescript": {
+      "version": "1.0.0",
+      "last_updated": "2026-01-17",
+      "tag_prefix": "typescript-v"
+    },
+    "javascript": {
+      "version": "1.0.0",
+      "last_updated": "2026-01-17",
+      "tag_prefix": "javascript-v"
+    },
+    "react": {
+      "version": "1.0.0",
+      "last_updated": "2026-01-17",
+      "tag_prefix": "react-v"
+    },
+    "nestjs": {
+      "version": "1.0.0",
+      "last_updated": "2026-01-17",
+      "tag_prefix": "nestjs-v"
+    },
+    "rust": {
+      "version": "1.1.0",
+      "last_updated": "2026-01-20",
+      "tag_prefix": "rust-v"
+    },
+    "golang": {
+      "version": "1.1.0",
+      "last_updated": "2026-01-20",
+      "tag_prefix": "golang-v"
+    },
+    "nextjs": {
+      "version": "1.0.0",
+      "last_updated": "2026-01-18",
+      "tag_prefix": "nextjs-v"
+    },
+    "angular": {}
+  }
+}

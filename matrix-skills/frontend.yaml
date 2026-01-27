@@ -1,0 +1,200 @@
+# ============================================================================
+# FRONTEND DOMAIN SKILLS
+# ============================================================================
+# UI/UX, web applications, client-side frameworks
+# Primary agents: frontend-engineer, designer
+# ============================================================================
+
+domain: frontend
+name: "Frontend Development"
+description: "UI/UX, web applications, client-side"
+skill_count: 22
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: react-patterns
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer, mobile-engineer]
+      profiles: ["frontend:execution"]
+    description: "React hooks, composition, state management, TypeScript"
+
+  - skill_id: react-best-practices
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "React/Next.js performance optimization from Vercel Engineering"
+
+  - skill_id: frontend-design
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [designer, frontend-engineer]
+      profiles: ["design:*", "frontend:execution"]
+    description: "Web UI patterns, responsive design, typography"
+
+  - skill_id: react-expert
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Advanced React patterns, concurrent features, optimization"
+
+  - skill_id: nextjs-best-practices
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "App Router, RSC, SSR/SSG, data fetching patterns"
+
+  - skill_id: nextjs-developer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Next.js full-stack development patterns"
+
+  - skill_id: tailwind-patterns
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer, designer]
+      profiles: ["frontend:execution", "design:*"]
+    description: "Tailwind CSS v4, utility-first, responsive design tokens"
+
+  - skill_id: frontend-development
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer, game-engineer, performance-engineer]
+      profiles: ["frontend:*"]
+    description: "React/TypeScript apps, MUI, TanStack Router, performance"
+
+  - skill_id: senior-frontend
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Senior frontend patterns, performance, component architecture"
+
+  # --------------------------------------------------------------------------
+  # FRAMEWORK SPECIALISTS (Priority 7)
+  # --------------------------------------------------------------------------
+  - skill_id: vue-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Vue 3 Composition API, Pinia, Nuxt.js"
+
+  - skill_id: angular-architect
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Angular architecture, RxJS, NgRx state management"
+
+  - skill_id: web-frameworks
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:*"]
+    description: "Next.js, Turborepo, RemixIcon, modern frameworks"
+
+  - skill_id: web-design-guidelines
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer, designer]
+      profiles: ["frontend:*", "design:*"]
+    description: "Web Interface Guidelines compliance, accessibility"
+
+  # --------------------------------------------------------------------------
+  # UTILITY SKILLS (Priority 6)
+  # --------------------------------------------------------------------------
+  - skill_id: react-flow-node
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "React Flow node-based UI development"
+
+  - skill_id: vue-expert-js
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Vue.js JavaScript patterns"
+
+  - skill_id: web-artifacts-builder
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Building web artifacts and bundles"
+
+  - skill_id: zustand-store
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Zustand state management patterns"
+
+  - skill_id: i18n-localization
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer]
+      profiles: ["frontend:*"]
+    description: "Internationalization, translations, RTL support"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: frontend-dev-guidelines
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer, tech-lead]
+      profiles: ["frontend:*"]
+    description: "Opinionated frontend standards for React + TypeScript, Suspense-first data fetching"
+
+  - skill_id: react-ui-patterns
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [frontend-engineer, designer]
+      profiles: ["frontend:execution", "design:*"]
+    description: "React UI patterns: loading states, error handling, button states, empty states"
+
+  - skill_id: javascript-mastery
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer, backend-engineer]
+      profiles: ["frontend:*", "backend:*"]
+    description: "JavaScript reference: 33+ concepts (primitives, closures, event loop, async patterns)"
+
+  - skill_id: nextjs-supabase-auth
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [frontend-engineer, backend-engineer]
+      profiles: ["frontend:execution"]
+    description: "Supabase Auth + Next.js App Router, auth middleware, Server Actions"

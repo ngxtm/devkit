@@ -1,0 +1,160 @@
+# ============================================================================
+# PROGRAMMING LANGUAGES DOMAIN SKILLS
+# ============================================================================
+# Language-specific patterns, idioms, and expertise
+# Primary agents: backend-engineer, frontend-engineer
+# ============================================================================
+
+domain: languages
+name: "Programming Languages"
+description: "Language-specific patterns and expertise"
+skill_count: 17
+
+skills:
+  # --------------------------------------------------------------------------
+  # TYPESCRIPT/JAVASCRIPT (Priority 7-8)
+  # --------------------------------------------------------------------------
+  - skill_id: typescript-expert
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:execution", "frontend:execution"]
+    description: "TypeScript advanced patterns, type-level programming"
+
+  - skill_id: typescript-pro
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:*", "frontend:*"]
+    description: "Professional TypeScript patterns"
+
+  - skill_id: javascript-pro
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:*", "frontend:*"]
+    description: "Professional JavaScript patterns"
+
+  - skill_id: javascript-typescript
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer]
+      profiles: ["backend:*", "frontend:*"]
+    description: "JavaScript/TypeScript fundamentals"
+
+  # --------------------------------------------------------------------------
+  # PYTHON (Priority 7)
+  # --------------------------------------------------------------------------
+  - skill_id: python-patterns
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Python development patterns"
+
+  - skill_id: python-pro
+    category: expert
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Professional Python patterns"
+
+  - skill_id: python-development
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Python development fundamentals"
+
+  # --------------------------------------------------------------------------
+  # SYSTEMS LANGUAGES (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: golang-pro
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Go language patterns and idioms"
+
+  - skill_id: rust-engineer
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Rust systems programming"
+
+  - skill_id: java-architect
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Java enterprise architecture"
+
+  - skill_id: csharp-developer
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "C# development patterns"
+
+  - skill_id: cpp-pro
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, game-engineer]
+      profiles: ["backend:execution", "gaming:*"]
+    description: "C++ professional patterns"
+
+  # --------------------------------------------------------------------------
+  # WEB/CMS PLATFORMS (Priority 5-6)
+  # --------------------------------------------------------------------------
+  - skill_id: php-pro
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "PHP professional development"
+
+  - skill_id: wordpress-pro
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "WordPress development expertise"
+
+  - skill_id: shopify-expert
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [frontend-engineer, backend-engineer]
+      profiles: ["frontend:*", "backend:*"]
+    description: "Shopify development expertise"
+
+  - skill_id: salesforce-developer
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Salesforce development"
+
+  - skill_id: embedded-systems
+    category: specialized
+    priority_score: 5
+    relevance_mapping:
+      agents: [backend-engineer]
+      profiles: ["backend:execution"]
+    description: "Embedded systems development"

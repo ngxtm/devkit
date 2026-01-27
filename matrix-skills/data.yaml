@@ -1,0 +1,74 @@
+# ============================================================================
+# DATA/DATABASE DOMAIN SKILLS
+# ============================================================================
+# Schema design, queries, migrations, ORM
+# Primary agents: database-architect, backend-engineer
+# ============================================================================
+
+domain: data
+name: "Data & Database"
+description: "Schema design, queries, migrations"
+skill_count: 7
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: database-design
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [database-architect, backend-engineer]
+      profiles: ["data:*", "backend:execution"]
+    description: "Schema design, normalization, indexing, migrations"
+
+  - skill_id: databases
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [database-architect, performance-engineer]
+      profiles: ["data:*", "performance:*"]
+    description: "MongoDB, PostgreSQL, queries, aggregations, administration"
+
+  - skill_id: database-optimizer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [database-architect, performance-engineer]
+      profiles: ["data:execution", "performance:*"]
+    description: "Query optimization, performance tuning"
+
+  - skill_id: sql-pro
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [database-architect, backend-engineer]
+      profiles: ["data:*"]
+    description: "Advanced SQL queries and optimization"
+
+  - skill_id: prisma-expert
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [database-architect, backend-engineer]
+      profiles: ["data:execution"]
+    description: "Prisma schema, migrations, query optimization, relations"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: postgres-pro
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [database-architect]
+      profiles: ["data:execution"]
+    description: "PostgreSQL advanced features and optimization"
+
+  - skill_id: cosmos-db-python-skill
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [database-architect]
+      profiles: ["data:execution"]
+    description: "Azure Cosmos DB with Python"

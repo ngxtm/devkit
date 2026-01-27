@@ -1,0 +1,293 @@
+# ============================================================================
+# SECURITY DOMAIN SKILLS
+# ============================================================================
+# Threat modeling, secure coding, vulnerability assessment, compliance
+# Primary agents: security-engineer, reviewer
+# ============================================================================
+
+domain: security
+name: "Security Engineering"
+description: "Threat modeling, secure coding, compliance"
+skill_count: 35
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 9-10)
+  # --------------------------------------------------------------------------
+  - skill_id: vulnerability-scanner
+    category: core
+    priority_score: 10
+    relevance_mapping:
+      agents: [security-engineer, reviewer]
+      profiles: ["security:*"]
+    description: "OWASP 2025, supply chain security, attack surface mapping"
+
+  - skill_id: senior-security
+    category: expert
+    priority_score: 9
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:*"]
+    description: "Security architecture, threat modeling, crypto implementation"
+
+  # --------------------------------------------------------------------------
+  # EXPERT SKILLS (Priority 8)
+  # --------------------------------------------------------------------------
+  - skill_id: red-team-tactics
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "MITRE ATT&CK, attack simulation, detection evasion"
+
+  - skill_id: senior-secops
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Incident response, vulnerability management, compliance"
+
+  - skill_id: secure-code-guardian
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer, reviewer]
+      profiles: ["security:*"]
+    description: "Secure coding practices and enforcement"
+
+  - skill_id: security-reviewer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer, reviewer]
+      profiles: ["security:*", "quality:review"]
+    description: "Security-focused code review"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - PENETRATION TESTING (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: active-directory-attacks
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "AD attacks, reconnaissance, credential harvesting, Kerberos attacks, lateral movement"
+
+  - skill_id: api-fuzzing-bug-bounty
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "API fuzzing for bug bounty, REST/SOAP/GraphQL testing, vulnerability discovery"
+
+  - skill_id: api-security-best-practices
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer, backend-engineer]
+      profiles: ["security:*", "backend:execution"]
+    description: "Secure API design patterns, authentication, authorization, input validation"
+
+  - skill_id: aws-penetration-testing
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "AWS pentest, IAM enumeration, privilege escalation, S3 exploitation, Lambda extraction"
+
+  - skill_id: broken-authentication
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Authentication vulnerabilities, session management, MFA bypass, credential management"
+
+  - skill_id: burp-suite-testing
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Burp Suite for web security testing, HTTP interception, automated scanning"
+
+  - skill_id: cloud-penetration-testing
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Multi-cloud pentest (Azure, AWS, GCP), reconnaissance, privilege escalation"
+
+  - skill_id: ethical-hacking-methodology
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:*"]
+    description: "Complete penetration testing lifecycle, reconnaissance through reporting"
+
+  - skill_id: file-path-traversal
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "File path traversal vulnerabilities, bypass techniques, LFI to RCE"
+
+  - skill_id: html-injection-testing
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "HTML injection vulnerabilities, phishing pages, credential stealing"
+
+  - skill_id: idor-testing
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "IDOR vulnerability testing, parameter manipulation, automated enumeration"
+
+  - skill_id: linux-privilege-escalation
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Linux privesc, sudo misconfigurations, SUID binaries, cron jobs, capabilities"
+
+  - skill_id: metasploit-framework
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Metasploit for penetration testing, exploitation, payload generation"
+
+  - skill_id: pentest-checklist
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:*"]
+    description: "Comprehensive penetration testing checklist, planning, execution, follow-up"
+
+  - skill_id: pentest-commands
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Pentest command reference, Nmap, Metasploit, Hydra, John the Ripper, SQLMap"
+
+  - skill_id: privilege-escalation-methods
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Cross-platform privilege escalation, Linux and Windows, Sudo, Token Impersonation"
+
+  - skill_id: red-team-tools
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Red team tool workflows, subdomain enumeration, live host discovery, XSS hunting"
+
+  - skill_id: scanning-tools
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:*"]
+    description: "Security scanning tools, Nmap, Nessus, OpenVAS, Burp Suite, ZAP, Nikto"
+
+  - skill_id: shodan-reconnaissance
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Shodan reconnaissance, exposed services, vulnerable systems, IoT devices"
+
+  - skill_id: smtp-penetration-testing
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "SMTP security assessment, open relays, user enumeration, weak authentication"
+
+  - skill_id: sql-injection-testing
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "SQL injection assessment, in-band, blind, out-of-band attack vectors"
+
+  - skill_id: sqlmap-database-pentesting
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "SQLMap automated SQL injection, database enumeration, data extraction"
+
+  - skill_id: ssh-penetration-testing
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "SSH security assessment, enumeration, credential attacks, tunneling"
+
+  - skill_id: top-web-vulnerabilities
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [security-engineer, reviewer]
+      profiles: ["security:*"]
+    description: "100 critical web vulnerabilities reference, OWASP categories, zero-day threats"
+
+  - skill_id: wireshark-analysis
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Wireshark network traffic analysis, packet capture, filtering, security investigations"
+
+  - skill_id: windows-privilege-escalation
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "Windows privesc, credential harvesting, service exploitation, token impersonation"
+
+  - skill_id: wordpress-penetration-testing
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "WordPress security assessment, WPScan, plugin vulnerabilities, credential attacks"
+
+  - skill_id: xss-html-injection
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [security-engineer]
+      profiles: ["security:validation"]
+    description: "XSS/HTML injection testing, stored, reflected, DOM-based, filter bypasses"

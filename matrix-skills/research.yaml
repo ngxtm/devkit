@@ -1,0 +1,106 @@
+# ============================================================================
+# RESEARCH DOMAIN SKILLS
+# ============================================================================
+# Technical research, documentation, content writing
+# Primary agents: researcher, docs-manager, scouter
+# ============================================================================
+
+domain: research
+name: "Research & Documentation"
+description: "Technical research, documentation"
+skill_count: 11
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8)
+  # --------------------------------------------------------------------------
+  - skill_id: research
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:analysis"]
+    description: "Technical research, analysis, scalable solutions"
+
+  - skill_id: documentation-templates
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "README, API docs, code comments, AI-friendly docs"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: docs-seeker
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:*"]
+    description: "Documentation discovery, llms.txt, GitHub analysis"
+
+  - skill_id: repomix
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [researcher, scouter, docs-manager]
+      profiles: ["research:*"]
+    description: "Package repos for AI analysis, codebase snapshots"
+
+  - skill_id: code-documentation
+    category: core
+    priority_score: 7
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Code documentation practices"
+
+  - skill_id: code-documenter
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Automated code documentation generation"
+
+  - skill_id: geo-fundamentals
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:analysis"]
+    description: "Generative Engine Optimization for AI search"
+
+  - skill_id: seo-fundamentals
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [researcher, frontend-engineer]
+      profiles: ["research:*", "frontend:*"]
+    description: "SEO fundamentals and best practices"
+
+  - skill_id: lead-research-assistant
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [researcher]
+      profiles: ["research:analysis"]
+    description: "Research assistant capabilities"
+
+  - skill_id: content-research-writer
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [researcher, docs-manager]
+      profiles: ["research:*"]
+    description: "Content research and writing"
+
+  - skill_id: writing-skills
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [docs-manager]
+      profiles: ["research:documentation"]
+    description: "Technical writing skills"

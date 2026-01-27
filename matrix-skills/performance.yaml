@@ -1,0 +1,23 @@
+# ============================================================================
+# PERFORMANCE DOMAIN SKILLS
+# ============================================================================
+# Profiling, optimization, benchmarking
+# Primary agents: performance-engineer, debugger
+# ============================================================================
+
+domain: performance
+name: "Performance Engineering"
+description: "Profiling, optimization, benchmarking"
+skill_count: 1
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 9)
+  # --------------------------------------------------------------------------
+  - skill_id: performance-profiling
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [performance-engineer, debugger, database-architect, game-engineer]
+      profiles: ["performance:*", "quality:debugging"]
+    description: "Measurement, analysis, optimization techniques"

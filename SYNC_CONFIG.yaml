@@ -1,0 +1,97 @@
+# ============================================================
+# DEVKIT AGENT ASSISTANT - SOURCE CONFIGURATION
+# ============================================================
+# This file defines all sources that will be synced automatically.
+# Add new sources here to expand the skill/rule collection.
+# ============================================================
+
+version: "1.0"
+
+# Skill Sources
+# Skills are merged with priority order (first = highest priority)
+skill_sources:
+  # Primary source - updates frequently
+  - name: antigravity-awesome-skills
+    repo: sickn33/antigravity-awesome-skills
+    branch: main
+    path: skills
+    enabled: true
+    priority: 1
+    description: "256+ universal agentic skills, actively maintained"
+
+  # Secondary source - additional skills
+  - name: agent-assistant
+    repo: hainamchung/agent-assistant
+    branch: main
+    path: skills
+    enabled: true
+    priority: 2
+    description: "310+ skills with matrix system"
+
+# Rule Sources
+rule_sources:
+  - name: skill-rule
+    repo: ngxtm/skill-rule
+    branch: main
+    path: rules
+    enabled: true
+    description: "Coding standards for TypeScript, React, NestJS, etc."
+
+# Matrix/Agent Sources (copy once, then maintain manually)
+matrix_sources:
+  - name: agent-assistant
+    repo: hainamchung/agent-assistant
+    branch: main
+    paths:
+      - matrix-skills
+      - agents
+      - commands
+    enabled: true
+    sync_mode: initial  # initial | continuous
+    description: "Matrix skill discovery system"
+
+# ClaudeKit Sources (hooks, output-styles, workflows)
+claudekit_sources:
+  - name: claudekit-engineer
+    # Note: claudekit is manually synced from local folder
+    # Path: C:\Users\Minh\Downloads\Compressed\claudekit_engineer\.claude
+    local_path: null  # Set to local path for manual sync
+    enabled: true
+    sync_mode: manual
+    components:
+      - hooks
+      - output-styles
+      - workflows
+      - agents
+      - commands
+      - skills
+    description: "ClaudeKit hooks, output styles, and advanced features"
+
+# Sync Configuration
+sync:
+  schedule: "0 0 * * *"  # Cron: Daily at midnight UTC
+
+  # Merge strategy for skills with same name
+  # Options: prefer-primary, prefer-newer, manual-review
+  merge_strategy: prefer-primary
+
+  # Create PR for review or auto-merge
+  auto_merge: false
+
+  # Notify on conflicts
+  notify_conflicts: true
+  conflict_label: "sync-conflict"
+
+  # Skip these skills during sync (if any issues)
+  skip_skills: []
+
+# Validation
+validation:
+  require_skill_md: true
+  check_yaml_frontmatter: true
+  validate_links: false
+
+# Logging
+logging:
+  level: INFO
+  file: sync.log

@@ -1,0 +1,39 @@
+# ============================================================================
+# GAMING DOMAIN SKILLS
+# ============================================================================
+# Game engines, graphics, game loop, physics
+# Primary agents: game-engineer
+# ============================================================================
+
+domain: gaming
+name: "Game Development"
+description: "Game engines, graphics, game loop"
+skill_count: 3
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8-9)
+  # --------------------------------------------------------------------------
+  - skill_id: game-development
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [game-engineer]
+      profiles: ["gaming:*"]
+    description: "Game loop, ECS, physics, 2D/3D, multiplayer"
+
+  - skill_id: game-developer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [game-engineer]
+      profiles: ["gaming:execution"]
+    description: "Game development expertise"
+
+  - skill_id: threejs
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [game-engineer]
+      profiles: ["gaming:execution"]
+    description: "WebGL/WebGPU, 3D graphics, shaders, animations"

@@ -1,0 +1,275 @@
+# ============================================================================
+# MATRIX SKILLS INDEX v1.0
+# ============================================================================
+# Central registry for the distributed Matrix Skill Discovery System.
+#
+# ARCHITECTURE:
+#   Each domain has its own file: {domain}.yaml
+#   Agents reference specific domain files based on their profile.
+#
+# TOTAL: 310 skills across 19 domains
+#
+# USAGE:
+#   1. Agent declares profile in frontmatter (e.g., "backend:execution")
+#   2. System loads relevant domain files based on agent's inherit_from
+#   3. Skills are injected based on relevance_mapping and priority
+# ============================================================================
+
+version: "1.0"
+last_updated: "2026-01-26"
+total_skills: 310
+
+# ============================================================================
+# DOMAIN REGISTRY
+# ============================================================================
+domains:
+  backend:
+    file: "backend.yaml"
+    name: "Backend Development"
+    description: "Server-side logic, APIs, data access"
+    skill_count: 32
+
+  frontend:
+    file: "frontend.yaml"
+    name: "Frontend Development"
+    description: "UI/UX, web applications, client-side"
+    skill_count: 22
+
+  architecture:
+    file: "architecture.yaml"
+    name: "System Architecture"
+    description: "Design patterns, system design, ADRs"
+    skill_count: 9
+
+  quality:
+    file: "quality.yaml"
+    name: "Quality Assurance"
+    description: "Testing, code review, validation"
+    skill_count: 21
+
+  security:
+    file: "security.yaml"
+    name: "Security Engineering"
+    description: "Threat modeling, secure coding, compliance"
+    skill_count: 35
+
+  design:
+    file: "design.yaml"
+    name: "UI/UX Design"
+    description: "Visual design, user experience, accessibility"
+    skill_count: 10
+
+  planning:
+    file: "planning.yaml"
+    name: "Planning & Analysis"
+    description: "Requirements, task breakdown, roadmaps"
+    skill_count: 12
+
+  devops:
+    file: "devops.yaml"
+    name: "DevOps & Deployment"
+    description: "CI/CD, infrastructure, containerization"
+    skill_count: 22
+
+  data:
+    file: "data.yaml"
+    name: "Data & Database"
+    description: "Schema design, queries, migrations"
+    skill_count: 7
+
+  performance:
+    file: "performance.yaml"
+    name: "Performance Engineering"
+    description: "Profiling, optimization, benchmarking"
+    skill_count: 1
+
+  research:
+    file: "research.yaml"
+    name: "Research & Documentation"
+    description: "Technical research, documentation"
+    skill_count: 11
+
+  mobile:
+    file: "mobile.yaml"
+    name: "Mobile Development"
+    description: "iOS, Android, cross-platform apps"
+    skill_count: 8
+
+  gaming:
+    file: "gaming.yaml"
+    name: "Game Development"
+    description: "Game engines, graphics, game loop"
+    skill_count: 3
+
+  management:
+    file: "management.yaml"
+    name: "Project Management"
+    description: "Delivery, risk management, agile"
+    skill_count: 4
+
+  ai_ml:
+    file: "ai-ml.yaml"
+    name: "AI/ML Engineering"
+    description: "Machine learning, LLMs, data science"
+    skill_count: 40
+
+  cloud:
+    file: "cloud.yaml"
+    name: "Cloud & Infrastructure"
+    description: "AWS, Azure, GCP, serverless"
+    skill_count: 11
+
+  languages:
+    file: "languages.yaml"
+    name: "Programming Languages"
+    description: "Language-specific patterns and expertise"
+    skill_count: 17
+
+  tools:
+    file: "tools.yaml"
+    name: "Tools & Utilities"
+    description: "Productivity tools, document processing"
+    skill_count: 41
+
+  mcp:
+    file: "mcp.yaml"
+    name: "MCP & Agents"
+    description: "Model Context Protocol, agent frameworks"
+    skill_count: 8
+
+# ============================================================================
+# AGENT PROFILES
+# Maps agent ID to profile and inherited domains
+# ============================================================================
+agent_profiles:
+  backend-engineer:
+    profile: "backend:execution"
+    inherit_from: ["backend", "architecture", "quality", "data", "languages"]
+    primary_domain: "backend"
+
+  frontend-engineer:
+    profile: "frontend:execution"
+    inherit_from: ["frontend", "design", "architecture"]
+    primary_domain: "frontend"
+
+  tech-lead:
+    profile: "architecture:orchestration"
+    inherit_from: ["architecture", "quality", "planning"]
+    primary_domain: "architecture"
+
+  researcher:
+    profile: "research:analysis"
+    inherit_from: ["research", "planning"]
+    primary_domain: "research"
+
+  debugger:
+    profile: "quality:debugging"
+    inherit_from: ["quality", "performance"]
+    primary_domain: "quality"
+
+  tester:
+    profile: "quality:validation"
+    inherit_from: ["quality"]
+    primary_domain: "quality"
+
+  security-engineer:
+    profile: "security:validation"
+    inherit_from: ["security", "architecture"]
+    primary_domain: "security"
+
+  designer:
+    profile: "design:creative"
+    inherit_from: ["design", "frontend"]
+    primary_domain: "design"
+
+  planner:
+    profile: "planning:analysis"
+    inherit_from: ["planning", "architecture"]
+    primary_domain: "planning"
+
+  devops-engineer:
+    profile: "devops:execution"
+    inherit_from: ["devops", "security", "cloud"]
+    primary_domain: "devops"
+
+  database-architect:
+    profile: "data:execution"
+    inherit_from: ["data", "performance", "architecture"]
+    primary_domain: "data"
+
+  performance-engineer:
+    profile: "performance:validation"
+    inherit_from: ["performance", "backend", "frontend"]
+    primary_domain: "performance"
+
+  scouter:
+    profile: "research:exploration"
+    inherit_from: ["research", "architecture"]
+    primary_domain: "research"
+
+  reviewer:
+    profile: "quality:review"
+    inherit_from: ["quality", "security", "architecture"]
+    primary_domain: "quality"
+
+  mobile-engineer:
+    profile: "mobile:execution"
+    inherit_from: ["mobile", "design", "frontend"]
+    primary_domain: "mobile"
+
+  game-engineer:
+    profile: "gaming:execution"
+    inherit_from: ["gaming", "performance", "frontend"]
+    primary_domain: "gaming"
+
+  brainstormer:
+    profile: "planning:discovery"
+    inherit_from: ["planning", "research"]
+    primary_domain: "planning"
+
+  business-analyst:
+    profile: "planning:business"
+    inherit_from: ["planning", "management"]
+    primary_domain: "planning"
+
+  docs-manager:
+    profile: "research:documentation"
+    inherit_from: ["research"]
+    primary_domain: "research"
+
+  project-manager:
+    profile: "management:orchestration"
+    inherit_from: ["management", "planning"]
+    primary_domain: "management"
+
+# ============================================================================
+# RESOLUTION RULES
+# ============================================================================
+resolution:
+  precedence:
+    - direct_agent_match
+    - profile_match
+    - domain_inheritance
+
+  wildcards:
+    "*:orchestration": "Any domain with orchestration category"
+    "backend:*": "All backend categories"
+    "*": "Universal (all agents)"
+
+  thresholds:
+    minimum_priority: 5
+    core_priority: 7
+    critical_priority: 9
+
+# ============================================================================
+# SKILL SCHEMA (for reference)
+# ============================================================================
+# Each skill entry in domain files follows this schema:
+#
+# - skill_id: unique-identifier
+#   category: core|expert|specialized|utility
+#   priority_score: 1-10
+#   relevance_mapping:
+#     agents: [agent-id, ...]
+#     profiles: [domain:category, ...]
+#   description: "Concise purpose for AI recognition"

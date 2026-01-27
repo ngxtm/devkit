@@ -1,0 +1,200 @@
+# ============================================================================
+# DEVOPS DOMAIN SKILLS
+# ============================================================================
+# CI/CD, infrastructure, containerization, deployment
+# Primary agents: devops-engineer
+# ============================================================================
+
+domain: devops
+name: "DevOps & Deployment"
+description: "CI/CD, infrastructure, containerization"
+skill_count: 22
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 9)
+  # --------------------------------------------------------------------------
+  - skill_id: devops
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:*"]
+    description: "CI/CD, cloud platforms, Cloudflare, Docker, GCP"
+
+  - skill_id: deployment-procedures
+    category: core
+    priority_score: 9
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:*"]
+    description: "Safe deployments, rollback strategies, verification"
+
+  # --------------------------------------------------------------------------
+  # EXPERT SKILLS (Priority 8)
+  # --------------------------------------------------------------------------
+  - skill_id: devops-engineer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "DevOps engineering practices"
+
+  - skill_id: docker-expert
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Multi-stage builds, image optimization, container security"
+
+  - skill_id: cloudflare-expert
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Workers, Pages, D1, R2, edge computing, Agents SDK"
+
+  - skill_id: senior-devops
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "CI/CD, infrastructure automation, containerization"
+
+  - skill_id: kubernetes-specialist
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Kubernetes orchestration, Helm, operators"
+
+  - skill_id: terraform-engineer
+    category: specialized
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Terraform IaC, modules, state management"
+
+  - skill_id: sre-engineer
+    category: expert
+    priority_score: 8
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Site Reliability Engineering practices"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS (Priority 6-7)
+  # --------------------------------------------------------------------------
+  - skill_id: monitoring-expert
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Observability, monitoring, alerting systems"
+
+  - skill_id: vercel-deploy
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, frontend-engineer]
+      profiles: ["devops:*", "frontend:*"]
+    description: "Vercel deployment patterns"
+
+  - skill_id: bash-linux
+    category: utility
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:*"]
+    description: "Shell scripting, piping, error handling"
+
+  - skill_id: powershell-windows
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:*"]
+    description: "PowerShell scripting for Windows"
+
+  - skill_id: chaos-engineer
+    category: specialized
+    priority_score: 6
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:execution"]
+    description: "Chaos engineering and resilience testing"
+
+  - skill_id: using-git-worktrees
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer, frontend-engineer]
+      profiles: ["*"]
+    description: "Git worktrees for parallel development"
+
+  # --------------------------------------------------------------------------
+  # NEW SKILLS - CLOUD & GIT WORKFLOW (Added from skills-more)
+  # --------------------------------------------------------------------------
+  - skill_id: azure-functions
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:execution", "backend:execution"]
+    description: "Azure Functions, isolated worker model, Durable Functions, cold start optimization"
+
+  - skill_id: gcp-cloud-run
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:execution", "backend:execution"]
+    description: "GCP Cloud Run, containerized services, event-driven functions, Pub/Sub"
+
+  - skill_id: github-workflow-automation
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:*"]
+    description: "GitHub workflow automation, PR reviews, issue triage, CI/CD integration"
+
+  - skill_id: finishing-a-development-branch
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer, devops-engineer]
+      profiles: ["*"]
+    description: "Completing development work, structured options for merging, PRs, cleanup"
+
+  - skill_id: git-pushing
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [backend-engineer, frontend-engineer, devops-engineer]
+      profiles: ["*"]
+    description: "Git workflow, staging, committing with conventional messages, pushing"
+
+  - skill_id: workflow-automation
+    category: specialized
+    priority_score: 7
+    relevance_mapping:
+      agents: [devops-engineer, backend-engineer]
+      profiles: ["devops:*", "backend:execution"]
+    description: "Workflow automation platforms (n8n, Temporal, Inngest), durable execution"
+
+  - skill_id: zapier-make-patterns
+    category: utility
+    priority_score: 6
+    relevance_mapping:
+      agents: [devops-engineer]
+      profiles: ["devops:*"]
+    description: "No-code automation with Zapier and Make, patterns and pitfalls"

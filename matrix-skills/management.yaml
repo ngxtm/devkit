@@ -1,0 +1,50 @@
+# ============================================================================
+# MANAGEMENT DOMAIN SKILLS
+# ============================================================================
+# Delivery, risk management, agile, product management
+# Primary agents: project-manager, business-analyst
+# ============================================================================
+
+domain: management
+name: "Project Management"
+description: "Delivery, risk management, agile"
+skill_count: 4
+
+skills:
+  # --------------------------------------------------------------------------
+  # CORE SKILLS (Priority 8)
+  # --------------------------------------------------------------------------
+  - skill_id: agile-product-owner
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [project-manager, business-analyst]
+      profiles: ["management:*", "planning:business"]
+    description: "INVEST stories, sprint planning, backlog management"
+
+  - skill_id: product-manager-toolkit
+    category: core
+    priority_score: 8
+    relevance_mapping:
+      agents: [business-analyst, project-manager]
+      profiles: ["planning:business", "management:*"]
+    description: "RICE prioritization, PRD templates, discovery frameworks"
+
+  # --------------------------------------------------------------------------
+  # SPECIALIZED SKILLS (Priority 5-7)
+  # --------------------------------------------------------------------------
+  - skill_id: product-strategist
+    category: expert
+    priority_score: 7
+    relevance_mapping:
+      agents: [project-manager]
+      profiles: ["management:orchestration"]
+    description: "Product strategy and roadmapping"
+
+  - skill_id: developer-growth-analysis
+    category: utility
+    priority_score: 5
+    relevance_mapping:
+      agents: [project-manager, tech-lead]
+      profiles: ["management:*"]
+    description: "Developer growth and performance analysis"
