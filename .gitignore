@@ -19,7 +19,6 @@ yarn-error.log*
 
 # Generated files
 sync_report.json
-package-lock.json
 
 # Environment
 .env
