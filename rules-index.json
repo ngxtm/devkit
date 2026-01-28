@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-01-28T15:40:42.094Z",
+  "templates": {
+    "dart": {
+      "path": "templates/dart/rules",
+      "rules": [
+        "dart"
+      ],
+      "sizeKB": 4
+    },
+    "flutter": {
+      "path": "templates/flutter/rules",
+      "rules": [
+        "flutter"
+      ],
+      "sizeKB": 89
+    },
+    "golang": {
+      "path": "templates/golang/rules",
+      "rules": [
+        "golang"
+      ],
+      "sizeKB": 141
+    },
+    "java": {
+      "path": "templates/java/rules",
+      "rules": [
+        "java"
+      ],
+      "sizeKB": 150
+    },
+    "javascript": {
+      "path": "templates/javascript/rules",
+      "rules": [
+        "javascript"
+      ],
+      "sizeKB": 12
+    },
+    "nestjs": {
+      "path": "templates/nestjs/rules",
+      "rules": [
+        "nestjs"
+      ],
+      "sizeKB": 105
+    },
+    "nextjs": {
+      "path": "templates/nextjs/rules",
+      "rules": [
+        "nextjs"
+      ],
+      "sizeKB": 74
+    },
+    "react": {
+      "path": "templates/react/rules",
+      "rules": [
+        "react"
+      ],
+      "sizeKB": 34
+    },
+    "rust": {
+      "path": "templates/rust/rules",
+      "rules": [
+        "rust"
+      ],
+      "sizeKB": 134
+    },
+    "typescript": {
+      "path": "templates/typescript/rules",
+      "rules": [
+        "typescript"
+      ],
+      "sizeKB": 17
+    }
+  }
+}

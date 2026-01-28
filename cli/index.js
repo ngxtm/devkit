@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Devkit Agent Assistant CLI
+ * Devkit CLI v3
  *
+ * Per-project installation with smart tech detection.
  * Main entry point for the CLI tool.
  */
 
@@ -10,15 +11,21 @@ const path = require('path');
 const fs = require('fs');
 
 const VERSION = require('../package.json').version;
-const {
-  install,
-  uninstall,
-  update,
-  interactiveInstall,
-  listSkills,
-  listCategories,
-  initProject
-} = require('./install');
+
+// New modular imports
+const { initProject, uninstallProject } = require('./init');
+const { updateProject, showStatus } = require('./update');
+const { detectProjectType, getRulesForTypes, printDetectionResults } = require('./detect');
+const { validatePath } = require('./utils');
+
+// Legacy imports for backwards compatibility (will be deprecated)
+let legacyInstall = null;
+try {
+  const legacy = require('./install');
+  legacyInstall = legacy;
+} catch (e) {
+  // Legacy install not available, that's fine
+}
 
 /**
  * Parse command line arguments
@@ -26,40 +33,53 @@ const {
 function parseArgs(args) {
   const options = {
     command: null,
+    path: null,
+    force: false,
+    update: false,
+    clean: false,
+    help: false,
+    // Legacy options (deprecated)
     tool: null,
     minimal: false,
-    lite: false,      // New: commands only, no skills/rules/hooks
+    lite: false,
     categories: [],
     interactive: false,
     fullSkills: false,
-    indexOnly: true,  // Default: index-only mode
-    help: false
+    indexOnly: true
   };
 
   for (const arg of args) {
     if (arg === '--help' || arg === '-h') {
       options.help = true;
-    } else if (arg === '--minimal' || arg === '-m') {
-      options.minimal = true;
-      options.indexOnly = false;
-    } else if (arg === '--lite' || arg === '-l') {
-      options.lite = true;
-      options.indexOnly = false;
-    } else if (arg === '--interactive' || arg === '-i') {
-      options.interactive = true;
-    } else if (arg === '--full' || arg === '-f') {
-      options.fullSkills = true;
-      options.indexOnly = false;
-    } else if (arg.startsWith('--category=') || arg.startsWith('-c=')) {
-      const cats = arg.split('=')[1].split(',').map(c => c.trim());
-      options.categories.push(...cats);
-      options.indexOnly = false;
+    } else if (arg === '--force' || arg === '-f') {
+      options.force = true;
+    } else if (arg === '--update' || arg === '-u') {
+      options.update = true;
+    } else if (arg === '--clean' || arg === '-c') {
+      options.clean = true;
+    } else if (arg === '--status' || arg === '-s') {
+      options.command = 'status';
+    } else if (arg.startsWith('--path=')) {
+      options.path = arg.split('=')[1];
     } else if (arg.startsWith('--')) {
-      // Unknown flag, ignore
+      // Handle legacy options for backwards compatibility
+      if (arg === '--minimal' || arg === '-m') options.minimal = true;
+      if (arg === '--lite' || arg === '-l') options.lite = true;
+      if (arg === '--interactive' || arg === '-i') options.interactive = true;
+      if (arg === '--full') options.fullSkills = true;
+      if (arg.startsWith('--category=')) {
+        const cats = arg.split('=')[1].split(',').map(c => c.trim());
+        options.categories.push(...cats);
+      }
     } else if (!options.command) {
       options.command = arg;
-    } else if (!options.tool) {
-      options.tool = arg;
+    } else if (!options.path && !options.tool) {
+      // Could be a path or a tool name (legacy)
+      if (['claude', 'cursor', 'copilot', 'gemini'].includes(arg)) {
+        options.tool = arg;
+      } else {
+        options.path = arg;
+      }
     }
   }
 
@@ -68,95 +88,187 @@ function parseArgs(args) {
 
 function showHelp() {
   console.log(`
-Devkit v${VERSION}
+Devkit v${VERSION} - Per-Project AI Skills
 
 USAGE:
-  devkit <command> [tool] [options]
+  devkit <command> [options]
 
 COMMANDS:
-  install     Install skills and rules to AI tools (global ~/.claude/)
-  init        Initialize devkit in current project (.claude/ folder)
-  uninstall   Remove all installed skills and rules
-  update      Check for updates and reinstall
-  list        List all available skills
-  categories  List available skill categories
-  version     Show version
-  help        Show this help
+  init          Initialize devkit in current project (.claude/ folder)
+                Auto-detects tech stack and installs relevant rules only.
+                This is the PRIMARY command - use this for new projects.
 
-TOOLS:
-  claude      Claude Code (~/.claude/)
-  cursor      Cursor (~/.cursor/)
-  copilot     GitHub Copilot (~/.copilot/)
-  gemini      Gemini / Antigravity (~/.gemini/)
+  update        Update existing installation
+                Re-detects project type and updates rules accordingly.
+
+  detect        Show detected technologies for current project
+                Useful to see what devkit will install.
+
+  status        Show installation status
+
+  uninstall     Remove devkit from current project
+
+  list          List all available skills
+
+  help          Show this help
+
+  version       Show version
 
 OPTIONS:
-  --lite, -l              LITE mode - commands only, no skills/rules/hooks
-                          Best for avoiding context limit issues
-                          Installs: /brainstorm, /plan, /fix, /code, etc.
-
-  (default)               Index-only mode - installs skills index file only
-                          Commands and agents are always fully installed
-                          May still cause context issues with some models
-
-  --minimal, -m           Install ~20 core skills (instead of index)
-
-  --category=CATS, -c=    Install specific categories
-                          Example: --category=react,typescript,testing
-
-  --full, -f              Install ALL 413+ skills (may cause context limit)
-                          Only use if you need full skill content locally
-
-  --interactive, -i       Interactive mode - choose categories
-
-  --help, -h              Show this help
+  --force, -f   Force overwrite existing installation
+  --clean, -c   Remove rules for technologies no longer detected (with update)
+  --path=DIR    Specify project directory (default: current directory)
+  --help, -h    Show this help
 
 EXAMPLES:
-  devkit install --lite             # Commands only (recommended for context limit)
-  devkit install                    # Index-only (default)
-  devkit install claude             # Index-only to Claude Code
-  devkit install --minimal          # Install ~20 core skills
-  devkit install --category=react   # Install React-related skills
-  devkit install --full             # Install all skills (large)
-  devkit install --interactive      # Choose interactively
-  devkit uninstall                  # Remove from all tools
+  devkit init                 # Initialize in current project
+  devkit init --force         # Overwrite existing installation
+  devkit update               # Update and re-detect technologies
+  devkit update --clean       # Update and remove old rules
+  devkit detect               # Show what would be detected
+  devkit status               # Show current installation
+  devkit uninstall            # Remove from current project
 
 HOW IT WORKS:
-  By default, devkit installs:
-  - SKILLS_INDEX.md (29KB summary of 411 skills)
-  - All commands (/plan, /cook, /brainstorm, etc.)
-  - All agents (planner, debugger, reviewer, etc.)
-  - Hooks, rules, output-styles
+  1. devkit init analyzes your project files:
+     - package.json → React, Next.js, NestJS, etc.
+     - pubspec.yaml → Flutter
+     - go.mod → Golang
+     - pyproject.toml → Python
 
-  When you need a specific skill, Claude reads it on-demand from
-  the skills-index.json or loads the full skill file.
+  2. Installs ONLY relevant content:
+     - Merged commands (~100 commands, ~150KB)
+     - Tech-specific rules (based on detection)
+     - Skills index (for on-demand loading)
+     - Essential hooks
 
-  This reduces context usage from ~59MB to ~30KB for skills.
+  3. Total size: ~300-500KB (vs 59MB for global install)
+
+  This ensures best practices for your tech stack without
+  overwhelming Claude with irrelevant rules.
 
 For more info: https://github.com/ngxtm/devkit
   `);
 }
 
+function showDeprecationWarning(cmd) {
+  console.log(`
+⚠️  DEPRECATION WARNING
+========================
+The 'devkit ${cmd}' command is deprecated in v3.
+
+Global installation caused context limit issues (~59MB).
+Use per-project installation instead:
+
+  devkit init    # Initialize in current project (~300-500KB)
+
+This auto-detects your tech stack and installs only relevant rules.
+  `);
+}
+
 // Command handlers
 const commands = {
-  install: (options) => {
-    if (options.interactive) {
-      return interactiveInstall(options.tool);
-    }
-    install(options.tool, {
-      minimal: options.minimal,
-      lite: options.lite,
-      categories: options.categories,
-      fullSkills: options.fullSkills,
-      indexOnly: options.indexOnly
+  // Primary command - per-project init
+  init: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    return initProject({
+      path: projectPath,
+      force: options.force,
+      update: options.update
     });
   },
-  init: (options) => initProject(options),
-  uninstall: (options) => uninstall(options.tool),
-  update: () => update(),
-  list: () => listSkills(),
-  categories: () => listCategories(),
+
+  // Update existing installation
+  update: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    return updateProject({
+      path: projectPath,
+      force: options.force,
+      clean: options.clean
+    });
+  },
+
+  // Detect project type
+  detect: (options) => {
+    const projectDir = validatePath(options.path) || process.cwd();
+    printDetectionResults(projectDir);
+    return { success: true };
+  },
+
+  // Show status
+  status: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    return showStatus({
+      path: projectPath
+    });
+  },
+
+  // Uninstall
+  uninstall: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    return uninstallProject({
+      path: projectPath
+    });
+  },
+
+  // List skills (from skills-index.json)
+  list: () => {
+    const indexPath = path.join(__dirname, '..', 'skills-index.json');
+    if (!fs.existsSync(indexPath)) {
+      console.log('Skills index not found.');
+      return;
+    }
+
+    const index = JSON.parse(fs.readFileSync(indexPath, 'utf-8'));
+    console.log(`\nAvailable Skills (${index.skills?.length || 0} total):\n`);
+
+    // Group by category
+    const categories = {};
+    for (const skill of (index.skills || [])) {
+      const cat = skill.category || 'other';
+      categories[cat] = categories[cat] || [];
+      categories[cat].push(skill.name);
+    }
+
+    for (const [cat, skills] of Object.entries(categories).sort()) {
+      console.log(`  ${cat} (${skills.length}):`);
+      skills.slice(0, 5).forEach(s => console.log(`    - ${s}`));
+      if (skills.length > 5) {
+        console.log(`    ... and ${skills.length - 5} more`);
+      }
+      console.log('');
+    }
+  },
+
+  // Help
   help: () => showHelp(),
+
+  // Version
   version: () => console.log(`v${VERSION}`),
+
+  // Legacy commands (deprecated) - redirect with warning
+  install: (options) => {
+    showDeprecationWarning('install');
+
+    // Still try to run if legacy module available
+    if (legacyInstall && legacyInstall.install) {
+      console.log('Running legacy install anyway...\n');
+      return legacyInstall.install(options.tool, {
+        minimal: options.minimal,
+        lite: options.lite,
+        categories: options.categories,
+        fullSkills: options.fullSkills,
+        indexOnly: options.indexOnly
+      });
+    }
+  },
+
+  categories: () => {
+    if (legacyInstall && legacyInstall.listCategories) {
+      return legacyInstall.listCategories();
+    }
+    console.log('Use: devkit list');
+  }
 };
 
 // Main execution

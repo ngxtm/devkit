@@ -1,36 +1,32 @@
 {
   "name": "@ngxtm/devkit",
-  "version": "2.0.2",
-  "description": "Unified multi-agent system with auto-synced skills from multiple sources",
-  "main": "cli/install.js",
+  "version": "3.0.0",
+  "description": "Per-project AI skills with smart tech detection - lightweight and context-optimized",
+  "main": "cli/index.js",
   "bin": {
     "devkit": "cli/index.js"
   },
   "scripts": {
-    "install-global": "node cli/install.js",
+    "build": "npm run merge-commands && npm run organize-rules && npm run generate-index",
+    "merge-commands": "node scripts/merge-commands.js",
+    "organize-rules": "node scripts/organize-rules.js",
     "generate-index": "node scripts/generate-index.js",
+    "test": "node cli/index.js detect",
     "sync": "python scripts/sync_all.py",
-    "validate": "python scripts/validate_skills.py",
-    "update-matrix": "python scripts/update_matrix.py"
+    "validate": "python scripts/validate_skills.py"
   },
   "files": [
     "cli/",
-    "agents/",
-    "agents-claudekit/",
-    "commands/",
-    "commands-claudekit/",
+    "merged-commands/",
+    "templates/",
     "skills/",
-    "matrix-skills/",
-    "rules/",
+    "scripts/merge-commands.js",
+    "scripts/organize-rules.js",
+    "scripts/generate-index.js",
     "hooks/",
-    "output-styles/",
-    "workflows/",
-    "settings.json",
-    "statusline.cjs",
-    "statusline.ps1",
-    "statusline.sh",
-    "SKILLS_INDEX.md",
-    "skills-index.json"
+    "skills-index.json",
+    "rules-index.json",
+    "SKILLS_INDEX.md"
   ],
   "keywords": [
     "ai",
