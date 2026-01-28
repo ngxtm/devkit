@@ -8,6 +8,7 @@
   },
   "scripts": {
     "install-global": "node cli/install.js",
+    "generate-index": "node scripts/generate-index.js",
     "sync": "python scripts/sync_all.py",
     "validate": "python scripts/validate_skills.py",
     "update-matrix": "python scripts/update_matrix.py"
@@ -27,7 +28,9 @@
     "settings.json",
     "statusline.cjs",
     "statusline.ps1",
-    "statusline.sh"
+    "statusline.sh",
+    "SKILLS_INDEX.md",
+    "skills-index.json"
   ],
   "keywords": [
     "ai",

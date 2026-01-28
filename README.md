@@ -32,11 +32,67 @@ npm install -g @ngxtm/devkit
 devkit install
 ```
 
-### Install to specific tool only
+### Install Modes
+
+| Mode | Command | Skills Size | Description |
+|------|---------|-------------|-------------|
+| **Index-only** (default) | `devkit install` | ~30KB | Only installs skills index, Claude loads skills on-demand |
+| Minimal | `devkit install --minimal` | ~2MB | Installs ~20 core skills |
+| Category | `devkit install -c=react` | varies | Installs specific categories |
+| Full | `devkit install --full` | ~59MB | Installs all 413+ skills (may cause context limit) |
 
 ```bash
-devkit install claude    # Claude Code only
-devkit install cursor    # Cursor only
+# Recommended: Index-only (default)
+devkit install                      # Best for avoiding context limits
+devkit install claude               # Claude Code only
+
+# Alternative modes
+devkit install --minimal            # ~20 core skills
+devkit install --category=react,ts  # Specific categories
+devkit install --full               # All skills (large)
+devkit install --interactive        # Choose interactively
+```
+
+### How Index-Only Mode Works
+
+Instead of installing 3,500+ files (59MB), devkit installs:
+- `SKILLS_INDEX.md` - 30KB summary of all 411 skills
+- All commands (`/plan`, `/cook`, `/brainstorm`, etc.)
+- All agents (planner, debugger, reviewer, etc.)
+- Hooks, rules, output-styles
+
+When Claude needs a specific skill, it reads the index to find it, then loads the full skill on-demand. This reduces context usage by **99.95%**.
+
+### Available Categories
+
+```bash
+devkit categories    # Show all categories
+```
+
+| Category | Skills | Description |
+|----------|--------|-------------|
+| react | 9 | React, Next.js, Remix |
+| typescript | 4 | TypeScript patterns |
+| node | 6 | Node.js, NestJS, Express |
+| database | 5 | PostgreSQL, MongoDB, Redis |
+| devops | 7 | Docker, K8s, CI/CD, AWS |
+| testing | 6 | Jest, Playwright, Vitest |
+| security | 5 | OWASP, Auth, API security |
+| ai | 6 | AI agents, MCP, prompts |
+| mobile | 5 | React Native, Flutter |
+| frontend | 6 | CSS, Tailwind, a11y |
+| backend | 6 | APIs, microservices |
+| tools | 6 | Git, debugging, docs |
+
+## Uninstallation
+
+```bash
+# Remove from all tools
+devkit uninstall
+
+# Remove from specific tool
+devkit uninstall claude
+devkit uninstall cursor
 ```
 
 ## What Gets Installed

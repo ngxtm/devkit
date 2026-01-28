@@ -1,0 +1,2057 @@
+[
+  {
+    "name": "3d-web-experience",
+    "path": "skills/3d-web-experience",
+    "description": ""
+  },
+  {
+    "name": "ab-test-setup",
+    "path": "skills/ab-test-setup",
+    "description": ""
+  },
+  {
+    "name": "active-directory-attacks",
+    "path": "skills/active-directory-attacks",
+    "description": ""
+  },
+  {
+    "name": "address-github-comments",
+    "path": "skills/address-github-comments",
+    "description": ""
+  },
+  {
+    "name": "aesthetic",
+    "path": "skills/aesthetic",
+    "description": ""
+  },
+  {
+    "name": "agent-evaluation",
+    "path": "skills/agent-evaluation",
+    "description": ""
+  },
+  {
+    "name": "agent-framework-azure-hosted-agents",
+    "path": "skills/agent-framework-azure-hosted-agents",
+    "description": ""
+  },
+  {
+    "name": "agent-manager-skill",
+    "path": "skills/agent-manager-skill",
+    "description": ""
+  },
+  {
+    "name": "agent-memory-mcp",
+    "path": "skills/agent-memory-mcp",
+    "description": ""
+  },
+  {
+    "name": "agent-memory-systems",
+    "path": "skills/agent-memory-systems",
+    "description": ""
+  },
+  {
+    "name": "agent-tool-builder",
+    "path": "skills/agent-tool-builder",
+    "description": ""
+  },
+  {
+    "name": "agile-product-owner",
+    "path": "skills/agile-product-owner",
+    "description": ""
+  },
+  {
+    "name": "ai-agents-architect",
+    "path": "skills/ai-agents-architect",
+    "description": ""
+  },
+  {
+    "name": "ai-artist",
+    "path": "skills/ai-artist",
+    "description": "Craft prompts for AI models (text, image, video). Use for Midjourney, DALL-E, Stable Diffusion, Flux, Veo, prompt engineering, style keywords, negative prompts, iterative refinement."
+  },
+  {
+    "name": "ai-multimodal",
+    "path": "skills/ai-multimodal",
+    "description": "Analyze images/audio/video with Gemini API (better vision than Claude). Generate images (Imagen 4), videos (Veo 3). Use for vision analysis, transcription, OCR, design extraction, multimodal AI."
+  },
+  {
+    "name": "ai-product",
+    "path": "skills/ai-product",
+    "description": ""
+  },
+  {
+    "name": "ai-wrapper-product",
+    "path": "skills/ai-wrapper-product",
+    "description": ""
+  },
+  {
+    "name": "algolia-search",
+    "path": "skills/algolia-search",
+    "description": ""
+  },
+  {
+    "name": "algorithmic-art",
+    "path": "skills/algorithmic-art",
+    "description": "Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorith"
+  },
+  {
+    "name": "analytics-tracking",
+    "path": "skills/analytics-tracking",
+    "description": ""
+  },
+  {
+    "name": "angular-architect",
+    "path": "skills/angular-architect",
+    "description": ""
+  },
+  {
+    "name": "api-designer",
+    "path": "skills/api-designer",
+    "description": ""
+  },
+  {
+    "name": "api-documentation-generator",
+    "path": "skills/api-documentation-generator",
+    "description": ""
+  },
+  {
+    "name": "api-fuzzing-bug-bounty",
+    "path": "skills/api-fuzzing-bug-bounty",
+    "description": ""
+  },
+  {
+    "name": "api-patterns",
+    "path": "skills/api-patterns",
+    "description": ""
+  },
+  {
+    "name": "api-security-best-practices",
+    "path": "skills/api-security-best-practices",
+    "description": ""
+  },
+  {
+    "name": "app-builder",
+    "path": "skills/app-builder",
+    "description": ""
+  },
+  {
+    "name": "app-store-optimization",
+    "path": "skills/app-store-optimization",
+    "description": ""
+  },
+  {
+    "name": "architecture",
+    "path": "skills/architecture",
+    "description": ""
+  },
+  {
+    "name": "architecture-designer",
+    "path": "skills/architecture-designer",
+    "description": ""
+  },
+  {
+    "name": "artifacts-builder",
+    "path": "skills/artifacts-builder",
+    "description": ""
+  },
+  {
+    "name": "ask-questions-if-underspecified",
+    "path": "skills/ask-questions-if-underspecified",
+    "description": ""
+  },
+  {
+    "name": "atlassian-mcp",
+    "path": "skills/atlassian-mcp",
+    "description": ""
+  },
+  {
+    "name": "autonomous-agent-patterns",
+    "path": "skills/autonomous-agent-patterns",
+    "description": ""
+  },
+  {
+    "name": "autonomous-agents",
+    "path": "skills/autonomous-agents",
+    "description": ""
+  },
+  {
+    "name": "avalonia-layout-zafiro",
+    "path": "skills/avalonia-layout-zafiro",
+    "description": ""
+  },
+  {
+    "name": "avalonia-viewmodels-zafiro",
+    "path": "skills/avalonia-viewmodels-zafiro",
+    "description": ""
+  },
+  {
+    "name": "avalonia-zafiro-development",
+    "path": "skills/avalonia-zafiro-development",
+    "description": ""
+  },
+  {
+    "name": "aws-agentic-ai",
+    "path": "skills/aws-agentic-ai",
+    "description": ""
+  },
+  {
+    "name": "aws-cdk-development",
+    "path": "skills/aws-cdk-development",
+    "description": ""
+  },
+  {
+    "name": "aws-cost-operations",
+    "path": "skills/aws-cost-operations",
+    "description": ""
+  },
+  {
+    "name": "aws-penetration-testing",
+    "path": "skills/aws-penetration-testing",
+    "description": ""
+  },
+  {
+    "name": "aws-serverless",
+    "path": "skills/aws-serverless",
+    "description": ""
+  },
+  {
+    "name": "aws-serverless-eda",
+    "path": "skills/aws-serverless-eda",
+    "description": ""
+  },
+  {
+    "name": "azd-deployment",
+    "path": "skills/azd-deployment",
+    "description": ""
+  },
+  {
+    "name": "azure-ai-agents-python",
+    "path": "skills/azure-ai-agents-python",
+    "description": ""
+  },
+  {
+    "name": "azure-ai-search-python",
+    "path": "skills/azure-ai-search-python",
+    "description": ""
+  },
+  {
+    "name": "azure-ai-voicelive-skill",
+    "path": "skills/azure-ai-voicelive-skill",
+    "description": ""
+  },
+  {
+    "name": "azure-functions",
+    "path": "skills/azure-functions",
+    "description": ""
+  },
+  {
+    "name": "backend-dev-guidelines",
+    "path": "skills/backend-dev-guidelines",
+    "description": ""
+  },
+  {
+    "name": "backend-development",
+    "path": "skills/backend-development",
+    "description": ""
+  },
+  {
+    "name": "bash-linux",
+    "path": "skills/bash-linux",
+    "description": ""
+  },
+  {
+    "name": "behavioral-modes",
+    "path": "skills/behavioral-modes",
+    "description": ""
+  },
+  {
+    "name": "best-practices",
+    "path": "skills/best-practices",
+    "description": ""
+  },
+  {
+    "name": "better-auth",
+    "path": "skills/better-auth",
+    "description": ""
+  },
+  {
+    "name": "blockrun",
+    "path": "skills/blockrun",
+    "description": ""
+  },
+  {
+    "name": "brainstorming",
+    "path": "skills/brainstorming",
+    "description": ""
+  },
+  {
+    "name": "brand-guidelines",
+    "path": "skills/brand-guidelines",
+    "description": ""
+  },
+  {
+    "name": "brand-guidelines-anthropic",
+    "path": "skills/brand-guidelines-anthropic",
+    "description": ""
+  },
+  {
+    "name": "brand-guidelines-community",
+    "path": "skills/brand-guidelines-community",
+    "description": ""
+  },
+  {
+    "name": "broken-authentication",
+    "path": "skills/broken-authentication",
+    "description": ""
+  },
+  {
+    "name": "browser-automation",
+    "path": "skills/browser-automation",
+    "description": ""
+  },
+  {
+    "name": "browser-extension-builder",
+    "path": "skills/browser-extension-builder",
+    "description": ""
+  },
+  {
+    "name": "building-ai-agent-on-cloudflare",
+    "path": "skills/building-ai-agent-on-cloudflare",
+    "description": ""
+  },
+  {
+    "name": "building-mcp-server-on-cloudflare",
+    "path": "skills/building-mcp-server-on-cloudflare",
+    "description": ""
+  },
+  {
+    "name": "bullmq-specialist",
+    "path": "skills/bullmq-specialist",
+    "description": ""
+  },
+  {
+    "name": "bun-development",
+    "path": "skills/bun-development",
+    "description": ""
+  },
+  {
+    "name": "burp-suite-testing",
+    "path": "skills/burp-suite-testing",
+    "description": ""
+  },
+  {
+    "name": "busybox-on-windows",
+    "path": "skills/busybox-on-windows",
+    "description": "BusyBox is a single binary that implements many common Unix tools.\r\n\r\nUse this skill only on Windows. If you are on UNIX, then stop here.\r\n\r\nRun the following steps only if you cannot find a `busybox."
+  },
+  {
+    "name": "canvas-design",
+    "path": "skills/canvas-design",
+    "description": "These are instructions for creating design philosophies - aesthetic movements that are then EXPRESSED VISUALLY. Output only .md files, .pdf files, and .png files.\r\n\r\nComplete this in two steps:\r\n1. De"
+  },
+  {
+    "name": "cc-skill-backend-patterns",
+    "path": "skills/cc-skill-backend-patterns",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-clickhouse-io",
+    "path": "skills/cc-skill-clickhouse-io",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-coding-standards",
+    "path": "skills/cc-skill-coding-standards",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-continuous-learning",
+    "path": "skills/cc-skill-continuous-learning",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-frontend-patterns",
+    "path": "skills/cc-skill-frontend-patterns",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-project-guidelines-example",
+    "path": "skills/cc-skill-project-guidelines-example",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-security-review",
+    "path": "skills/cc-skill-security-review",
+    "description": ""
+  },
+  {
+    "name": "cc-skill-strategic-compact",
+    "path": "skills/cc-skill-strategic-compact",
+    "description": ""
+  },
+  {
+    "name": "changelog-generator",
+    "path": "skills/changelog-generator",
+    "description": ""
+  },
+  {
+    "name": "chaos-engineer",
+    "path": "skills/chaos-engineer",
+    "description": ""
+  },
+  {
+    "name": "chrome-devtools",
+    "path": "skills/chrome-devtools",
+    "description": ""
+  },
+  {
+    "name": "claude-code-guide",
+    "path": "skills/claude-code-guide",
+    "description": ""
+  },
+  {
+    "name": "claude-d3js-skill",
+    "path": "skills/claude-d3js-skill",
+    "description": ""
+  },
+  {
+    "name": "clean-code",
+    "path": "skills/clean-code",
+    "description": ""
+  },
+  {
+    "name": "clerk-auth",
+    "path": "skills/clerk-auth",
+    "description": ""
+  },
+  {
+    "name": "cli-developer",
+    "path": "skills/cli-developer",
+    "description": ""
+  },
+  {
+    "name": "cloud-architect",
+    "path": "skills/cloud-architect",
+    "description": ""
+  },
+  {
+    "name": "cloud-penetration-testing",
+    "path": "skills/cloud-penetration-testing",
+    "description": ""
+  },
+  {
+    "name": "cloudflare-expert",
+    "path": "skills/cloudflare-expert",
+    "description": ""
+  },
+  {
+    "name": "code-documentation",
+    "path": "skills/code-documentation",
+    "description": ""
+  },
+  {
+    "name": "code-documenter",
+    "path": "skills/code-documenter",
+    "description": ""
+  },
+  {
+    "name": "code-refactoring",
+    "path": "skills/code-refactoring",
+    "description": ""
+  },
+  {
+    "name": "code-review",
+    "path": "skills/code-review",
+    "description": ""
+  },
+  {
+    "name": "code-review-checklist",
+    "path": "skills/code-review-checklist",
+    "description": ""
+  },
+  {
+    "name": "code-reviewer",
+    "path": "skills/code-reviewer",
+    "description": ""
+  },
+  {
+    "name": "codex-review",
+    "path": "skills/codex-review",
+    "description": ""
+  },
+  {
+    "name": "competitive-ads-extractor",
+    "path": "skills/competitive-ads-extractor",
+    "description": ""
+  },
+  {
+    "name": "competitor-alternatives",
+    "path": "skills/competitor-alternatives",
+    "description": ""
+  },
+  {
+    "name": "computer-use-agents",
+    "path": "skills/computer-use-agents",
+    "description": ""
+  },
+  {
+    "name": "concise-planning",
+    "path": "skills/concise-planning",
+    "description": ""
+  },
+  {
+    "name": "content-creator",
+    "path": "skills/content-creator",
+    "description": ""
+  },
+  {
+    "name": "content-research-writer",
+    "path": "skills/content-research-writer",
+    "description": ""
+  },
+  {
+    "name": "context-engineering",
+    "path": "skills/context-engineering",
+    "description": ">-"
+  },
+  {
+    "name": "context-window-management",
+    "path": "skills/context-window-management",
+    "description": ""
+  },
+  {
+    "name": "context7-auto-research",
+    "path": "skills/context7-auto-research",
+    "description": ""
+  },
+  {
+    "name": "conversation-memory",
+    "path": "skills/conversation-memory",
+    "description": ""
+  },
+  {
+    "name": "copy-editing",
+    "path": "skills/copy-editing",
+    "description": ""
+  },
+  {
+    "name": "copywriting",
+    "path": "skills/copywriting",
+    "description": ""
+  },
+  {
+    "name": "core-components",
+    "path": "skills/core-components",
+    "description": ""
+  },
+  {
+    "name": "cosmos-db-python-skill",
+    "path": "skills/cosmos-db-python-skill",
+    "description": ""
+  },
+  {
+    "name": "cpp-pro",
+    "path": "skills/cpp-pro",
+    "description": ""
+  },
+  {
+    "name": "crewai",
+    "path": "skills/crewai",
+    "description": ""
+  },
+  {
+    "name": "csharp-developer",
+    "path": "skills/csharp-developer",
+    "description": ""
+  },
+  {
+    "name": "daily-news-report",
+    "path": "skills/daily-news-report",
+    "description": ""
+  },
+  {
+    "name": "database-design",
+    "path": "skills/database-design",
+    "description": ""
+  },
+  {
+    "name": "database-optimizer",
+    "path": "skills/database-optimizer",
+    "description": ""
+  },
+  {
+    "name": "databases",
+    "path": "skills/databases",
+    "description": ""
+  },
+  {
+    "name": "debugging",
+    "path": "skills/debugging",
+    "description": ""
+  },
+  {
+    "name": "debugging-wizard",
+    "path": "skills/debugging-wizard",
+    "description": ""
+  },
+  {
+    "name": "deployment-procedures",
+    "path": "skills/deployment-procedures",
+    "description": ""
+  },
+  {
+    "name": "design-orchestration",
+    "path": "skills/design-orchestration",
+    "description": ""
+  },
+  {
+    "name": "developer-growth-analysis",
+    "path": "skills/developer-growth-analysis",
+    "description": ""
+  },
+  {
+    "name": "devops",
+    "path": "skills/devops",
+    "description": ""
+  },
+  {
+    "name": "devops-engineer",
+    "path": "skills/devops-engineer",
+    "description": ""
+  },
+  {
+    "name": "discord-bot-architect",
+    "path": "skills/discord-bot-architect",
+    "description": ""
+  },
+  {
+    "name": "dispatching-parallel-agents",
+    "path": "skills/dispatching-parallel-agents",
+    "description": ""
+  },
+  {
+    "name": "django-expert",
+    "path": "skills/django-expert",
+    "description": ""
+  },
+  {
+    "name": "doc-coauthoring",
+    "path": "skills/doc-coauthoring",
+    "description": ""
+  },
+  {
+    "name": "docker-expert",
+    "path": "skills/docker-expert",
+    "description": ""
+  },
+  {
+    "name": "docs-seeker",
+    "path": "skills/docs-seeker",
+    "description": ""
+  },
+  {
+    "name": "documentation-templates",
+    "path": "skills/documentation-templates",
+    "description": ""
+  },
+  {
+    "name": "docx",
+    "path": "skills/docx",
+    "description": ""
+  },
+  {
+    "name": "docx-official",
+    "path": "skills/docx-official",
+    "description": ""
+  },
+  {
+    "name": "domain-name-brainstormer",
+    "path": "skills/domain-name-brainstormer",
+    "description": ""
+  },
+  {
+    "name": "dotnet-core-expert",
+    "path": "skills/dotnet-core-expert",
+    "description": ""
+  },
+  {
+    "name": "email-sequence",
+    "path": "skills/email-sequence",
+    "description": ""
+  },
+  {
+    "name": "email-systems",
+    "path": "skills/email-systems",
+    "description": ""
+  },
+  {
+    "name": "embedded-systems",
+    "path": "skills/embedded-systems",
+    "description": ""
+  },
+  {
+    "name": "environment-setup-guide",
+    "path": "skills/environment-setup-guide",
+    "description": ""
+  },
+  {
+    "name": "ethical-hacking-methodology",
+    "path": "skills/ethical-hacking-methodology",
+    "description": ""
+  },
+  {
+    "name": "exa-search",
+    "path": "skills/exa-search",
+    "description": ""
+  },
+  {
+    "name": "executing-plans",
+    "path": "skills/executing-plans",
+    "description": ""
+  },
+  {
+    "name": "expo-app-design",
+    "path": "skills/expo-app-design",
+    "description": ""
+  },
+  {
+    "name": "expo-deployment",
+    "path": "skills/expo-deployment",
+    "description": ""
+  },
+  {
+    "name": "fastapi-expert",
+    "path": "skills/fastapi-expert",
+    "description": ""
+  },
+  {
+    "name": "fastapi-router",
+    "path": "skills/fastapi-router",
+    "description": ""
+  },
+  {
+    "name": "feature-forge",
+    "path": "skills/feature-forge",
+    "description": ""
+  },
+  {
+    "name": "file-organizer",
+    "path": "skills/file-organizer",
+    "description": ""
+  },
+  {
+    "name": "file-path-traversal",
+    "path": "skills/file-path-traversal",
+    "description": ""
+  },
+  {
+    "name": "file-uploads",
+    "path": "skills/file-uploads",
+    "description": ""
+  },
+  {
+    "name": "fine-tuning-expert",
+    "path": "skills/fine-tuning-expert",
+    "description": ""
+  },
+  {
+    "name": "finishing-a-development-branch",
+    "path": "skills/finishing-a-development-branch",
+    "description": ""
+  },
+  {
+    "name": "firebase",
+    "path": "skills/firebase",
+    "description": ""
+  },
+  {
+    "name": "firecrawl-scraper",
+    "path": "skills/firecrawl-scraper",
+    "description": ""
+  },
+  {
+    "name": "fixing",
+    "path": "skills/fixing",
+    "description": "Fix bugs, errors, test failures, CI/CD issues with intelligent routing. Use when reporting bugs, type errors, log errors, UI issues, code problems. Auto-classifies complexity and activates relevant sk"
+  },
+  {
+    "name": "flutter-expert",
+    "path": "skills/flutter-expert",
+    "description": ""
+  },
+  {
+    "name": "form-cro",
+    "path": "skills/form-cro",
+    "description": ""
+  },
+  {
+    "name": "foundry-iq-python",
+    "path": "skills/foundry-iq-python",
+    "description": ""
+  },
+  {
+    "name": "foundry-nextgen-frontend",
+    "path": "skills/foundry-nextgen-frontend",
+    "description": ""
+  },
+  {
+    "name": "foundry-sdk-python",
+    "path": "skills/foundry-sdk-python",
+    "description": ""
+  },
+  {
+    "name": "free-tool-strategy",
+    "path": "skills/free-tool-strategy",
+    "description": ""
+  },
+  {
+    "name": "frontend-design",
+    "path": "skills/frontend-design",
+    "description": ""
+  },
+  {
+    "name": "frontend-dev-guidelines",
+    "path": "skills/frontend-dev-guidelines",
+    "description": ""
+  },
+  {
+    "name": "frontend-development",
+    "path": "skills/frontend-development",
+    "description": ""
+  },
+  {
+    "name": "fullstack-guardian",
+    "path": "skills/fullstack-guardian",
+    "description": ""
+  },
+  {
+    "name": "game-developer",
+    "path": "skills/game-developer",
+    "description": ""
+  },
+  {
+    "name": "game-development",
+    "path": "skills/game-development",
+    "description": ""
+  },
+  {
+    "name": "gcp-cloud-run",
+    "path": "skills/gcp-cloud-run",
+    "description": ""
+  },
+  {
+    "name": "geo-fundamentals",
+    "path": "skills/geo-fundamentals",
+    "description": ""
+  },
+  {
+    "name": "git-pushing",
+    "path": "skills/git-pushing",
+    "description": ""
+  },
+  {
+    "name": "github-workflow-automation",
+    "path": "skills/github-workflow-automation",
+    "description": ""
+  },
+  {
+    "name": "golang-pro",
+    "path": "skills/golang-pro",
+    "description": ""
+  },
+  {
+    "name": "google-adk-python",
+    "path": "skills/google-adk-python",
+    "description": "Build AI agents with Google ADK Python (Agent Development Kit). Use for multi-agent systems, workflow agents (sequential/parallel/loop), Vertex AI deployment, tool integration, human-in-the-loop."
+  },
+  {
+    "name": "graphql",
+    "path": "skills/graphql",
+    "description": ""
+  },
+  {
+    "name": "graphql-architect",
+    "path": "skills/graphql-architect",
+    "description": ""
+  },
+  {
+    "name": "html-injection-testing",
+    "path": "skills/html-injection-testing",
+    "description": ""
+  },
+  {
+    "name": "hubspot-integration",
+    "path": "skills/hubspot-integration",
+    "description": ""
+  },
+  {
+    "name": "i18n-localization",
+    "path": "skills/i18n-localization",
+    "description": ""
+  },
+  {
+    "name": "idor-testing",
+    "path": "skills/idor-testing",
+    "description": ""
+  },
+  {
+    "name": "image-enhancer",
+    "path": "skills/image-enhancer",
+    "description": ""
+  },
+  {
+    "name": "inngest",
+    "path": "skills/inngest",
+    "description": ""
+  },
+  {
+    "name": "interactive-portfolio",
+    "path": "skills/interactive-portfolio",
+    "description": ""
+  },
+  {
+    "name": "internal-comms",
+    "path": "skills/internal-comms",
+    "description": ""
+  },
+  {
+    "name": "internal-comms-anthropic",
+    "path": "skills/internal-comms-anthropic",
+    "description": ""
+  },
+  {
+    "name": "internal-comms-community",
+    "path": "skills/internal-comms-community",
+    "description": ""
+  },
+  {
+    "name": "invoice-organizer",
+    "path": "skills/invoice-organizer",
+    "description": ""
+  },
+  {
+    "name": "issue-creator",
+    "path": "skills/issue-creator",
+    "description": ""
+  },
+  {
+    "name": "java-architect",
+    "path": "skills/java-architect",
+    "description": ""
+  },
+  {
+    "name": "javascript-mastery",
+    "path": "skills/javascript-mastery",
+    "description": ""
+  },
+  {
+    "name": "javascript-pro",
+    "path": "skills/javascript-pro",
+    "description": ""
+  },
+  {
+    "name": "javascript-typescript",
+    "path": "skills/javascript-typescript",
+    "description": ""
+  },
+  {
+    "name": "jira-issues",
+    "path": "skills/jira-issues",
+    "description": ""
+  },
+  {
+    "name": "job-application",
+    "path": "skills/job-application",
+    "description": ""
+  },
+  {
+    "name": "kaizen",
+    "path": "skills/kaizen",
+    "description": ""
+  },
+  {
+    "name": "kotlin-specialist",
+    "path": "skills/kotlin-specialist",
+    "description": ""
+  },
+  {
+    "name": "kubernetes-specialist",
+    "path": "skills/kubernetes-specialist",
+    "description": ""
+  },
+  {
+    "name": "langfuse",
+    "path": "skills/langfuse",
+    "description": ""
+  },
+  {
+    "name": "langgraph",
+    "path": "skills/langgraph",
+    "description": ""
+  },
+  {
+    "name": "laravel-specialist",
+    "path": "skills/laravel-specialist",
+    "description": ""
+  },
+  {
+    "name": "last30days",
+    "path": "skills/last30days",
+    "description": ""
+  },
+  {
+    "name": "launch-strategy",
+    "path": "skills/launch-strategy",
+    "description": ""
+  },
+  {
+    "name": "lead-research-assistant",
+    "path": "skills/lead-research-assistant",
+    "description": ""
+  },
+  {
+    "name": "legacy-modernizer",
+    "path": "skills/legacy-modernizer",
+    "description": ""
+  },
+  {
+    "name": "lint-and-validate",
+    "path": "skills/lint-and-validate",
+    "description": ""
+  },
+  {
+    "name": "linux-privilege-escalation",
+    "path": "skills/linux-privilege-escalation",
+    "description": ""
+  },
+  {
+    "name": "linux-shell-scripting",
+    "path": "skills/linux-shell-scripting",
+    "description": ""
+  },
+  {
+    "name": "llm-app-patterns",
+    "path": "skills/llm-app-patterns",
+    "description": ""
+  },
+  {
+    "name": "llm-application-dev",
+    "path": "skills/llm-application-dev",
+    "description": ""
+  },
+  {
+    "name": "loki-mode",
+    "path": "skills/loki-mode",
+    "description": ""
+  },
+  {
+    "name": "markdown-novel-viewer",
+    "path": "skills/markdown-novel-viewer",
+    "description": "View markdown files with calm, book-like reading experience via HTTP server. Use for long-form content, documentation preview, novel reading, report viewing, distraction-free reading."
+  },
+  {
+    "name": "marketing-ideas",
+    "path": "skills/marketing-ideas",
+    "description": ""
+  },
+  {
+    "name": "marketing-psychology",
+    "path": "skills/marketing-psychology",
+    "description": ""
+  },
+  {
+    "name": "mcp-builder",
+    "path": "skills/mcp-builder",
+    "description": ""
+  },
+  {
+    "name": "mcp-developer",
+    "path": "skills/mcp-developer",
+    "description": ""
+  },
+  {
+    "name": "mcp-management",
+    "path": "skills/mcp-management",
+    "description": "Manage MCP servers - discover, analyze, execute tools/prompts/resources. Use for MCP integrations, intelligent tool selection, multi-server management, context-efficient capability discovery."
+  },
+  {
+    "name": "media-processing",
+    "path": "skills/media-processing",
+    "description": ""
+  },
+  {
+    "name": "meeting-insights-analyzer",
+    "path": "skills/meeting-insights-analyzer",
+    "description": ""
+  },
+  {
+    "name": "mermaidjs-v11",
+    "path": "skills/mermaidjs-v11",
+    "description": "Create diagrams with Mermaid.js v11 syntax. Use for flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, state diagrams, architecture diagrams, timelines, user journeys."
+  },
+  {
+    "name": "metasploit-framework",
+    "path": "skills/metasploit-framework",
+    "description": ""
+  },
+  {
+    "name": "micro-saas-launcher",
+    "path": "skills/micro-saas-launcher",
+    "description": ""
+  },
+  {
+    "name": "microservices-architect",
+    "path": "skills/microservices-architect",
+    "description": ""
+  },
+  {
+    "name": "ml-pipeline",
+    "path": "skills/ml-pipeline",
+    "description": ""
+  },
+  {
+    "name": "mobile-design",
+    "path": "skills/mobile-design",
+    "description": ""
+  },
+  {
+    "name": "mobile-development",
+    "path": "skills/mobile-development",
+    "description": ""
+  },
+  {
+    "name": "monitoring-expert",
+    "path": "skills/monitoring-expert",
+    "description": ""
+  },
+  {
+    "name": "moodle-external-api-development",
+    "path": "skills/moodle-external-api-development",
+    "description": ""
+  },
+  {
+    "name": "multi-agent-brainstorming",
+    "path": "skills/multi-agent-brainstorming",
+    "description": ""
+  },
+  {
+    "name": "neon-postgres",
+    "path": "skills/neon-postgres",
+    "description": ""
+  },
+  {
+    "name": "nestjs-expert",
+    "path": "skills/nestjs-expert",
+    "description": ""
+  },
+  {
+    "name": "network-101",
+    "path": "skills/network-101",
+    "description": ""
+  },
+  {
+    "name": "nextjs-best-practices",
+    "path": "skills/nextjs-best-practices",
+    "description": ""
+  },
+  {
+    "name": "nextjs-developer",
+    "path": "skills/nextjs-developer",
+    "description": ""
+  },
+  {
+    "name": "nextjs-supabase-auth",
+    "path": "skills/nextjs-supabase-auth",
+    "description": ""
+  },
+  {
+    "name": "nodejs-best-practices",
+    "path": "skills/nodejs-best-practices",
+    "description": ""
+  },
+  {
+    "name": "nosql-expert",
+    "path": "skills/nosql-expert",
+    "description": ""
+  },
+  {
+    "name": "notebooklm",
+    "path": "skills/notebooklm",
+    "description": ""
+  },
+  {
+    "name": "notebooklm-skill",
+    "path": "skills/notebooklm-skill",
+    "description": ""
+  },
+  {
+    "name": "notion-template-business",
+    "path": "skills/notion-template-business",
+    "description": ""
+  },
+  {
+    "name": "obsidian-clipper-template-creator",
+    "path": "skills/obsidian-clipper-template-creator",
+    "description": ""
+  },
+  {
+    "name": "onboarding-cro",
+    "path": "skills/onboarding-cro",
+    "description": ""
+  },
+  {
+    "name": "page-cro",
+    "path": "skills/page-cro",
+    "description": ""
+  },
+  {
+    "name": "paid-ads",
+    "path": "skills/paid-ads",
+    "description": ""
+  },
+  {
+    "name": "pandas-pro",
+    "path": "skills/pandas-pro",
+    "description": ""
+  },
+  {
+    "name": "parallel-agents",
+    "path": "skills/parallel-agents",
+    "description": ""
+  },
+  {
+    "name": "payment-integration",
+    "path": "skills/payment-integration",
+    "description": "Integrate payments with SePay (VietQR, Vietnamese bank transfers) and Polar (global SaaS subscriptions, billing). Use for checkout flows, webhooks, QR codes, subscription management."
+  },
+  {
+    "name": "paywall-upgrade-cro",
+    "path": "skills/paywall-upgrade-cro",
+    "description": ""
+  },
+  {
+    "name": "pdf",
+    "path": "skills/pdf",
+    "description": ""
+  },
+  {
+    "name": "pdf-official",
+    "path": "skills/pdf-official",
+    "description": ""
+  },
+  {
+    "name": "pentest-checklist",
+    "path": "skills/pentest-checklist",
+    "description": ""
+  },
+  {
+    "name": "pentest-commands",
+    "path": "skills/pentest-commands",
+    "description": ""
+  },
+  {
+    "name": "performance-profiling",
+    "path": "skills/performance-profiling",
+    "description": ""
+  },
+  {
+    "name": "personal-tool-builder",
+    "path": "skills/personal-tool-builder",
+    "description": ""
+  },
+  {
+    "name": "php-pro",
+    "path": "skills/php-pro",
+    "description": ""
+  },
+  {
+    "name": "plaid-fintech",
+    "path": "skills/plaid-fintech",
+    "description": ""
+  },
+  {
+    "name": "plan-writing",
+    "path": "skills/plan-writing",
+    "description": ""
+  },
+  {
+    "name": "planning",
+    "path": "skills/planning",
+    "description": ""
+  },
+  {
+    "name": "planning-with-files",
+    "path": "skills/planning-with-files",
+    "description": ""
+  },
+  {
+    "name": "plans-kanban",
+    "path": "skills/plans-kanban",
+    "description": "View plans dashboard with progress tracking and timeline visualization. Use for kanban boards, plan status overview, phase progress, milestone tracking, project visibility."
+  },
+  {
+    "name": "playwright-expert",
+    "path": "skills/playwright-expert",
+    "description": ""
+  },
+  {
+    "name": "playwright-skill",
+    "path": "skills/playwright-skill",
+    "description": "**IMPORTANT - Path Resolution:**\r\nThis skill can be installed in different locations (plugin system, manual installation, global, or project-specific). Before executing any commands, determine the ski"
+  },
+  {
+    "name": "podcast-generation",
+    "path": "skills/podcast-generation",
+    "description": ""
+  },
+  {
+    "name": "popup-cro",
+    "path": "skills/popup-cro",
+    "description": ""
+  },
+  {
+    "name": "postgres-best-practices",
+    "path": "skills/postgres-best-practices",
+    "description": ""
+  },
+  {
+    "name": "postgres-pro",
+    "path": "skills/postgres-pro",
+    "description": ""
+  },
+  {
+    "name": "powershell-windows",
+    "path": "skills/powershell-windows",
+    "description": ""
+  },
+  {
+    "name": "pptx",
+    "path": "skills/pptx",
+    "description": ""
+  },
+  {
+    "name": "pptx-official",
+    "path": "skills/pptx-official",
+    "description": ""
+  },
+  {
+    "name": "pricing-strategy",
+    "path": "skills/pricing-strategy",
+    "description": ""
+  },
+  {
+    "name": "prisma-expert",
+    "path": "skills/prisma-expert",
+    "description": ""
+  },
+  {
+    "name": "privilege-escalation-methods",
+    "path": "skills/privilege-escalation-methods",
+    "description": ""
+  },
+  {
+    "name": "problem-solving",
+    "path": "skills/problem-solving",
+    "description": ""
+  },
+  {
+    "name": "product-manager-toolkit",
+    "path": "skills/product-manager-toolkit",
+    "description": ""
+  },
+  {
+    "name": "product-strategist",
+    "path": "skills/product-strategist",
+    "description": ""
+  },
+  {
+    "name": "production-code-audit",
+    "path": "skills/production-code-audit",
+    "description": ""
+  },
+  {
+    "name": "programmatic-seo",
+    "path": "skills/programmatic-seo",
+    "description": "---\r\n\r\n# Programmatic SEO\r\n\r\nYou are an expert in **programmatic SEO strategy**—designing systems that generate\r\n**useful, indexable, search-driven pages at scale** using templates and structured data"
+  },
+  {
+    "name": "prompt-caching",
+    "path": "skills/prompt-caching",
+    "description": ""
+  },
+  {
+    "name": "prompt-engineer",
+    "path": "skills/prompt-engineer",
+    "description": ""
+  },
+  {
+    "name": "prompt-engineering",
+    "path": "skills/prompt-engineering",
+    "description": ""
+  },
+  {
+    "name": "prompt-library",
+    "path": "skills/prompt-library",
+    "description": ""
+  },
+  {
+    "name": "pydantic-models",
+    "path": "skills/pydantic-models",
+    "description": ""
+  },
+  {
+    "name": "python-development",
+    "path": "skills/python-development",
+    "description": ""
+  },
+  {
+    "name": "python-patterns",
+    "path": "skills/python-patterns",
+    "description": ""
+  },
+  {
+    "name": "python-pro",
+    "path": "skills/python-pro",
+    "description": ""
+  },
+  {
+    "name": "qa-regression",
+    "path": "skills/qa-regression",
+    "description": ""
+  },
+  {
+    "name": "raffle-winner-picker",
+    "path": "skills/raffle-winner-picker",
+    "description": ""
+  },
+  {
+    "name": "rag-architect",
+    "path": "skills/rag-architect",
+    "description": ""
+  },
+  {
+    "name": "rag-engineer",
+    "path": "skills/rag-engineer",
+    "description": ""
+  },
+  {
+    "name": "rag-implementation",
+    "path": "skills/rag-implementation",
+    "description": ""
+  },
+  {
+    "name": "rails-expert",
+    "path": "skills/rails-expert",
+    "description": ""
+  },
+  {
+    "name": "react-best-practices",
+    "path": "skills/react-best-practices",
+    "description": ""
+  },
+  {
+    "name": "react-expert",
+    "path": "skills/react-expert",
+    "description": ""
+  },
+  {
+    "name": "react-flow-node",
+    "path": "skills/react-flow-node",
+    "description": ""
+  },
+  {
+    "name": "react-native-expert",
+    "path": "skills/react-native-expert",
+    "description": ""
+  },
+  {
+    "name": "react-patterns",
+    "path": "skills/react-patterns",
+    "description": ""
+  },
+  {
+    "name": "react-ui-patterns",
+    "path": "skills/react-ui-patterns",
+    "description": ""
+  },
+  {
+    "name": "receiving-code-review",
+    "path": "skills/receiving-code-review",
+    "description": ""
+  },
+  {
+    "name": "red-team-tactics",
+    "path": "skills/red-team-tactics",
+    "description": ""
+  },
+  {
+    "name": "red-team-tools",
+    "path": "skills/red-team-tools",
+    "description": ""
+  },
+  {
+    "name": "referral-program",
+    "path": "skills/referral-program",
+    "description": ""
+  },
+  {
+    "name": "remotion-best-practices",
+    "path": "skills/remotion-best-practices",
+    "description": ""
+  },
+  {
+    "name": "repomix",
+    "path": "skills/repomix",
+    "description": ""
+  },
+  {
+    "name": "requesting-code-review",
+    "path": "skills/requesting-code-review",
+    "description": ""
+  },
+  {
+    "name": "research",
+    "path": "skills/research",
+    "description": ""
+  },
+  {
+    "name": "research-engineer",
+    "path": "skills/research-engineer",
+    "description": ""
+  },
+  {
+    "name": "rust-engineer",
+    "path": "skills/rust-engineer",
+    "description": ""
+  },
+  {
+    "name": "salesforce-developer",
+    "path": "skills/salesforce-developer",
+    "description": ""
+  },
+  {
+    "name": "salesforce-development",
+    "path": "skills/salesforce-development",
+    "description": ""
+  },
+  {
+    "name": "scanning-tools",
+    "path": "skills/scanning-tools",
+    "description": ""
+  },
+  {
+    "name": "schema-markup",
+    "path": "skills/schema-markup",
+    "description": "---\r\n\r\n# Schema Markup & Structured Data\r\n\r\nYou are an expert in **structured data and schema markup** with a focus on\r\n**Google rich result eligibility, accuracy, and impact**.\r\n\r\nYour responsibility"
+  },
+  {
+    "name": "scroll-experience",
+    "path": "skills/scroll-experience",
+    "description": ""
+  },
+  {
+    "name": "secure-code-guardian",
+    "path": "skills/secure-code-guardian",
+    "description": ""
+  },
+  {
+    "name": "security-reviewer",
+    "path": "skills/security-reviewer",
+    "description": ""
+  },
+  {
+    "name": "segment-cdp",
+    "path": "skills/segment-cdp",
+    "description": ""
+  },
+  {
+    "name": "senior-architect",
+    "path": "skills/senior-architect",
+    "description": ""
+  },
+  {
+    "name": "senior-backend",
+    "path": "skills/senior-backend",
+    "description": ""
+  },
+  {
+    "name": "senior-computer-vision",
+    "path": "skills/senior-computer-vision",
+    "description": ""
+  },
+  {
+    "name": "senior-data-engineer",
+    "path": "skills/senior-data-engineer",
+    "description": ""
+  },
+  {
+    "name": "senior-data-scientist",
+    "path": "skills/senior-data-scientist",
+    "description": ""
+  },
+  {
+    "name": "senior-devops",
+    "path": "skills/senior-devops",
+    "description": ""
+  },
+  {
+    "name": "senior-frontend",
+    "path": "skills/senior-frontend",
+    "description": ""
+  },
+  {
+    "name": "senior-fullstack",
+    "path": "skills/senior-fullstack",
+    "description": ""
+  },
+  {
+    "name": "senior-ml-engineer",
+    "path": "skills/senior-ml-engineer",
+    "description": ""
+  },
+  {
+    "name": "senior-prompt-engineer",
+    "path": "skills/senior-prompt-engineer",
+    "description": ""
+  },
+  {
+    "name": "senior-qa",
+    "path": "skills/senior-qa",
+    "description": ""
+  },
+  {
+    "name": "senior-secops",
+    "path": "skills/senior-secops",
+    "description": ""
+  },
+  {
+    "name": "senior-security",
+    "path": "skills/senior-security",
+    "description": ""
+  },
+  {
+    "name": "seo-audit",
+    "path": "skills/seo-audit",
+    "description": ""
+  },
+  {
+    "name": "seo-fundamentals",
+    "path": "skills/seo-fundamentals",
+    "description": "---\r\n\r\n# SEO Fundamentals\r\n\r\n> **Foundational principles for sustainable search visibility.**\r\n> This skill explains _how search engines evaluate quality_, not tactical shortcuts.\r\n\r\n---\r\n\r\n## 1. E-E-"
+  },
+  {
+    "name": "sequential-thinking",
+    "path": "skills/sequential-thinking",
+    "description": ""
+  },
+  {
+    "name": "server-management",
+    "path": "skills/server-management",
+    "description": ""
+  },
+  {
+    "name": "shodan-reconnaissance",
+    "path": "skills/shodan-reconnaissance",
+    "description": ""
+  },
+  {
+    "name": "shopify-apps",
+    "path": "skills/shopify-apps",
+    "description": ""
+  },
+  {
+    "name": "shopify-development",
+    "path": "skills/shopify-development",
+    "description": ""
+  },
+  {
+    "name": "shopify-expert",
+    "path": "skills/shopify-expert",
+    "description": ""
+  },
+  {
+    "name": "signup-flow-cro",
+    "path": "skills/signup-flow-cro",
+    "description": ""
+  },
+  {
+    "name": "skill-creator",
+    "path": "skills/skill-creator",
+    "description": ""
+  },
+  {
+    "name": "skill-developer",
+    "path": "skills/skill-developer",
+    "description": ""
+  },
+  {
+    "name": "skill-share",
+    "path": "skills/skill-share",
+    "description": ""
+  },
+  {
+    "name": "slack-bot-builder",
+    "path": "skills/slack-bot-builder",
+    "description": ""
+  },
+  {
+    "name": "slack-gif-creator",
+    "path": "skills/slack-gif-creator",
+    "description": ""
+  },
+  {
+    "name": "smtp-penetration-testing",
+    "path": "skills/smtp-penetration-testing",
+    "description": ""
+  },
+  {
+    "name": "social-content",
+    "path": "skills/social-content",
+    "description": ""
+  },
+  {
+    "name": "software-architecture",
+    "path": "skills/software-architecture",
+    "description": ""
+  },
+  {
+    "name": "spark-engineer",
+    "path": "skills/spark-engineer",
+    "description": ""
+  },
+  {
+    "name": "spec-miner",
+    "path": "skills/spec-miner",
+    "description": ""
+  },
+  {
+    "name": "spring-boot-engineer",
+    "path": "skills/spring-boot-engineer",
+    "description": ""
+  },
+  {
+    "name": "sql-injection-testing",
+    "path": "skills/sql-injection-testing",
+    "description": ""
+  },
+  {
+    "name": "sql-pro",
+    "path": "skills/sql-pro",
+    "description": ""
+  },
+  {
+    "name": "sqlmap-database-pentesting",
+    "path": "skills/sqlmap-database-pentesting",
+    "description": ""
+  },
+  {
+    "name": "sre-engineer",
+    "path": "skills/sre-engineer",
+    "description": ""
+  },
+  {
+    "name": "ssh-penetration-testing",
+    "path": "skills/ssh-penetration-testing",
+    "description": ""
+  },
+  {
+    "name": "stripe-integration",
+    "path": "skills/stripe-integration",
+    "description": ""
+  },
+  {
+    "name": "subagent-driven-development",
+    "path": "skills/subagent-driven-development",
+    "description": ""
+  },
+  {
+    "name": "swift-expert",
+    "path": "skills/swift-expert",
+    "description": ""
+  },
+  {
+    "name": "systematic-debugging",
+    "path": "skills/systematic-debugging",
+    "description": ""
+  },
+  {
+    "name": "tailwind-patterns",
+    "path": "skills/tailwind-patterns",
+    "description": ""
+  },
+  {
+    "name": "tavily-web",
+    "path": "skills/tavily-web",
+    "description": ""
+  },
+  {
+    "name": "tdd-workflow",
+    "path": "skills/tdd-workflow",
+    "description": ""
+  },
+  {
+    "name": "telegram-bot-builder",
+    "path": "skills/telegram-bot-builder",
+    "description": ""
+  },
+  {
+    "name": "telegram-mini-app",
+    "path": "skills/telegram-mini-app",
+    "description": ""
+  },
+  {
+    "name": "template-skill",
+    "path": "skills/template-skill",
+    "description": ""
+  },
+  {
+    "name": "terraform-engineer",
+    "path": "skills/terraform-engineer",
+    "description": ""
+  },
+  {
+    "name": "test-driven-development",
+    "path": "skills/test-driven-development",
+    "description": ""
+  },
+  {
+    "name": "test-fixing",
+    "path": "skills/test-fixing",
+    "description": ""
+  },
+  {
+    "name": "test-master",
+    "path": "skills/test-master",
+    "description": ""
+  },
+  {
+    "name": "testing-patterns",
+    "path": "skills/testing-patterns",
+    "description": ""
+  },
+  {
+    "name": "theme-factory",
+    "path": "skills/theme-factory",
+    "description": ""
+  },
+  {
+    "name": "threejs",
+    "path": "skills/threejs",
+    "description": ""
+  },
+  {
+    "name": "top-web-vulnerabilities",
+    "path": "skills/top-web-vulnerabilities",
+    "description": ""
+  },
+  {
+    "name": "trigger-dev",
+    "path": "skills/trigger-dev",
+    "description": ""
+  },
+  {
+    "name": "twilio-communications",
+    "path": "skills/twilio-communications",
+    "description": ""
+  },
+  {
+    "name": "typescript-expert",
+    "path": "skills/typescript-expert",
+    "description": ""
+  },
+  {
+    "name": "typescript-pro",
+    "path": "skills/typescript-pro",
+    "description": ""
+  },
+  {
+    "name": "ui-design-system",
+    "path": "skills/ui-design-system",
+    "description": ""
+  },
+  {
+    "name": "ui-styling",
+    "path": "skills/ui-styling",
+    "description": ""
+  },
+  {
+    "name": "ui-ux-pro-max",
+    "path": "skills/ui-ux-pro-max",
+    "description": ""
+  },
+  {
+    "name": "upgrading-expo",
+    "path": "skills/upgrading-expo",
+    "description": ""
+  },
+  {
+    "name": "upstash-qstash",
+    "path": "skills/upstash-qstash",
+    "description": ""
+  },
+  {
+    "name": "using-git-worktrees",
+    "path": "skills/using-git-worktrees",
+    "description": ""
+  },
+  {
+    "name": "using-superpowers",
+    "path": "skills/using-superpowers",
+    "description": "<EXTREMELY-IMPORTANT>\r\nIf you think there is even a 1% chance a skill might apply to what you are doing, you ABSOLUTELY MUST invoke the skill.\r\n\r\nIF A SKILL APPLIES TO YOUR TASK, YOU DO NOT HAVE A CHO"
+  },
+  {
+    "name": "ux-researcher-designer",
+    "path": "skills/ux-researcher-designer",
+    "description": ""
+  },
+  {
+    "name": "vercel-deploy",
+    "path": "skills/vercel-deploy",
+    "description": ""
+  },
+  {
+    "name": "vercel-deployment",
+    "path": "skills/vercel-deployment",
+    "description": ""
+  },
+  {
+    "name": "verification-before-completion",
+    "path": "skills/verification-before-completion",
+    "description": ""
+  },
+  {
+    "name": "video-downloader",
+    "path": "skills/video-downloader",
+    "description": ""
+  },
+  {
+    "name": "viral-generator-builder",
+    "path": "skills/viral-generator-builder",
+    "description": ""
+  },
+  {
+    "name": "voice-agents",
+    "path": "skills/voice-agents",
+    "description": ""
+  },
+  {
+    "name": "voice-ai-development",
+    "path": "skills/voice-ai-development",
+    "description": ""
+  },
+  {
+    "name": "voice-ai-engine-development",
+    "path": "skills/voice-ai-engine-development",
+    "description": ""
+  },
+  {
+    "name": "vue-expert",
+    "path": "skills/vue-expert",
+    "description": ""
+  },
+  {
+    "name": "vue-expert-js",
+    "path": "skills/vue-expert-js",
+    "description": ""
+  },
+  {
+    "name": "vulnerability-scanner",
+    "path": "skills/vulnerability-scanner",
+    "description": ""
+  },
+  {
+    "name": "web-artifacts-builder",
+    "path": "skills/web-artifacts-builder",
+    "description": ""
+  },
+  {
+    "name": "web-design-guidelines",
+    "path": "skills/web-design-guidelines",
+    "description": ""
+  },
+  {
+    "name": "web-frameworks",
+    "path": "skills/web-frameworks",
+    "description": ""
+  },
+  {
+    "name": "web-performance-optimization",
+    "path": "skills/web-performance-optimization",
+    "description": ""
+  },
+  {
+    "name": "webapp-testing",
+    "path": "skills/webapp-testing",
+    "description": ""
+  },
+  {
+    "name": "websocket-engineer",
+    "path": "skills/websocket-engineer",
+    "description": ""
+  },
+  {
+    "name": "windows-privilege-escalation",
+    "path": "skills/windows-privilege-escalation",
+    "description": ""
+  },
+  {
+    "name": "wireshark-analysis",
+    "path": "skills/wireshark-analysis",
+    "description": ""
+  },
+  {
+    "name": "wordpress-penetration-testing",
+    "path": "skills/wordpress-penetration-testing",
+    "description": ""
+  },
+  {
+    "name": "wordpress-pro",
+    "path": "skills/wordpress-pro",
+    "description": ""
+  },
+  {
+    "name": "workflow-automation",
+    "path": "skills/workflow-automation",
+    "description": ""
+  },
+  {
+    "name": "writing-plans",
+    "path": "skills/writing-plans",
+    "description": ""
+  },
+  {
+    "name": "writing-skills",
+    "path": "skills/writing-skills",
+    "description": ""
+  },
+  {
+    "name": "xlsx",
+    "path": "skills/xlsx",
+    "description": ""
+  },
+  {
+    "name": "xlsx-official",
+    "path": "skills/xlsx-official",
+    "description": ""
+  },
+  {
+    "name": "xss-html-injection",
+    "path": "skills/xss-html-injection",
+    "description": ""
+  },
+  {
+    "name": "youtube-transcript",
+    "path": "skills/youtube-transcript",
+    "description": ""
+  },
+  {
+    "name": "zapier-make-patterns",
+    "path": "skills/zapier-make-patterns",
+    "description": ""
+  },
+  {
+    "name": "zustand-store",
+    "path": "skills/zustand-store",
+    "description": ""
+  }
+]
