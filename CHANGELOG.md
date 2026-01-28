@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/ngxtm/devkit/compare/v1.0.0...v2.0.0) (2026-01-28)
+
+
+### Features
+
+* add index-only install mode and uninstall command ([286549b](https://github.com/ngxtm/devkit/commit/286549b05b75534539cf6a197cef141ae1491fdb))
+
+
+### BREAKING CHANGES
+
+* Default install now uses index-only mode.
+   Use --full flag for previous behavior.
+
 # 1.0.0 (2026-01-28)
 
 
