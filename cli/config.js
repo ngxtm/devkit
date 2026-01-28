@@ -8,130 +8,188 @@
  */
 
 // Core skills that are always installed with --minimal
-// These are reference/best-practice skills, not commands
+// Using exact directory names for accurate matching
 const MINIMAL_SKILLS = [
   // Best practices
   'react-best-practices',
-  'typescript-best-practices',
+  'typescript-expert',
+  'typescript-pro',
   'postgres-best-practices',
   'api-security-best-practices',
+  'nodejs-best-practices',
   // Core workflows
-  'git-commit',
   'code-review',
   'debugging',
-  'testing',
-  'refactoring',
+  'testing-patterns',
+  'code-refactoring',
   // Architecture
   'api-patterns',
   'architecture',
   'clean-code',
+  'software-architecture',
   // Operations
-  'documentation',
-  'error-handling',
-  'logging',
-  'performance-optimization',
-  'security-best-practices',
+  'code-documentation',
+  'performance-profiling',
   // AI/MCP
   'mcp-management',
-  'sequential-thinking'
+  'sequential-thinking',
+  // Git
+  'git-pushing'
 ];
 
 // Skill categories for --category option
+// Using patterns that match actual directory names
 const SKILL_CATEGORIES = {
   'react': [
     'react-best-practices',
-    'react-native',
-    'nextjs',
-    'remix',
-    'vite-react',
-    'react-query',
-    'react-hooks',
-    'react-testing',
-    'react-performance'
+    'react-expert',
+    'react-patterns',
+    'react-ui-patterns',
+    'react-native-expert',
+    'react-flow-node',
+    'nextjs-best-practices',
+    'nextjs-developer',
+    'nextjs-supabase-auth',
+    'expo-app-design',
+    'expo-deployment'
   ],
   'typescript': [
-    'typescript-best-practices',
-    'typescript-advanced',
-    'typescript-patterns',
-    'zod-validation'
+    'typescript-expert',
+    'typescript-pro',
+    'javascript-typescript',
+    'javascript-mastery',
+    'javascript-pro'
   ],
   'node': [
-    'nodejs',
-    'nestjs',
-    'express',
-    'fastify',
-    'prisma',
-    'drizzle'
+    'nodejs-best-practices',
+    'nestjs-expert',
+    'fastapi-expert',
+    'fastapi-router',
+    'prisma-expert',
+    'bullmq-specialist',
+    'bun-development'
+  ],
+  'python': [
+    'python-development',
+    'python-patterns',
+    'python-pro',
+    'django-expert',
+    'fastapi-expert',
+    'pydantic-models',
+    'pandas-pro'
   ],
   'database': [
     'postgres-best-practices',
-    'mongodb',
-    'redis',
-    'sql-optimization',
-    'database-design'
+    'postgres-pro',
+    'neon-postgres',
+    'database-design',
+    'database-optimizer',
+    'databases',
+    'nosql-expert',
+    'sql-pro'
   ],
   'devops': [
-    'docker',
-    'kubernetes',
-    'ci-cd',
-    'github-actions',
-    'terraform',
-    'aws',
-    'cloudflare-expert'
+    'docker-expert',
+    'kubernetes-specialist',
+    'terraform-engineer',
+    'github-workflow-automation',
+    'aws-serverless',
+    'aws-cdk-development',
+    'aws-cost-operations',
+    'gcp-cloud-run',
+    'cloudflare-expert',
+    'vercel-deploy',
+    'vercel-deployment',
+    'devops',
+    'devops-engineer'
   ],
   'testing': [
-    'testing',
-    'jest',
-    'playwright',
-    'cypress',
-    'vitest',
-    'test-driven-development'
+    'testing-patterns',
+    'test-driven-development',
+    'tdd-workflow',
+    'playwright-expert',
+    'playwright-skill',
+    'test-master',
+    'test-fixing',
+    'qa-regression'
   ],
   'security': [
-    'security-best-practices',
     'api-security-best-practices',
-    'owasp',
-    'authentication',
-    'authorization'
+    'secure-code-guardian',
+    'security-reviewer',
+    'ethical-hacking-methodology',
+    'pentest-checklist',
+    'pentest-commands',
+    'aws-penetration-testing',
+    'cloud-penetration-testing',
+    'top-web-vulnerabilities'
   ],
   'ai': [
     'ai-agents-architect',
     'ai-product',
+    'ai-multimodal',
     'mcp-management',
+    'mcp-developer',
+    'mcp-builder',
     'prompt-engineering',
-    'langchain',
-    'openai-integration'
+    'prompt-engineer',
+    'langgraph',
+    'langfuse',
+    'crewai',
+    'rag-architect',
+    'rag-engineer',
+    'rag-implementation',
+    'llm-application-dev',
+    'llm-app-patterns',
+    'sequential-thinking',
+    'agent-memory-mcp',
+    'agent-memory-systems',
+    'autonomous-agent-patterns'
   ],
   'mobile': [
-    'react-native',
-    'flutter',
-    'ios-development',
-    'android-development',
-    'mobile-optimization'
+    'react-native-expert',
+    'flutter-expert',
+    'expo-app-design',
+    'expo-deployment',
+    'mobile-design',
+    'mobile-development',
+    'swift-expert',
+    'kotlin-specialist'
   ],
   'frontend': [
-    'css-architecture',
-    'tailwindcss',
-    'animation',
-    'accessibility',
-    'responsive-design',
-    'web-performance'
+    'frontend-development',
+    'frontend-design',
+    'frontend-dev-guidelines',
+    'tailwind-patterns',
+    'ui-design-system',
+    'ui-styling',
+    'ui-ux-pro-max',
+    'web-design-guidelines',
+    'web-performance-optimization',
+    'threejs',
+    'vue-expert',
+    'angular-architect'
   ],
   'backend': [
+    'backend-development',
+    'backend-dev-guidelines',
     'api-patterns',
-    'microservices',
-    'event-driven',
-    'caching',
-    'queue-systems',
-    'rate-limiting'
+    'api-designer',
+    'microservices-architect',
+    'graphql',
+    'graphql-architect',
+    'websocket-engineer'
   ],
   'tools': [
-    'git-commit',
+    'git-pushing',
     'code-review',
     'debugging',
-    'refactoring',
-    'documentation',
-    'repomix'
+    'debugging-wizard',
+    'code-refactoring',
+    'code-documentation',
+    'repomix',
+    'browser-automation',
+    'cli-developer'
   ]
 };
 
@@ -157,30 +215,37 @@ function getSkillsForCategories(categories) {
 // Check if a skill matches the filter
 function shouldIncludeSkill(skillName, options = {}) {
   const { minimal, categories, selectedSkills } = options;
+  const lowerSkillName = skillName.toLowerCase();
 
   // If specific skills are selected, check against that list
   if (selectedSkills && selectedSkills.length > 0) {
-    return selectedSkills.some(s =>
-      skillName.toLowerCase().includes(s.toLowerCase()) ||
-      s.toLowerCase().includes(skillName.toLowerCase())
-    );
+    return selectedSkills.some(s => {
+      const lowerS = s.toLowerCase();
+      return lowerSkillName === lowerS ||
+             lowerSkillName.includes(lowerS) ||
+             lowerS.includes(lowerSkillName);
+    });
   }
 
   // If minimal mode, only include minimal skills
   if (minimal) {
-    return MINIMAL_SKILLS.some(s =>
-      skillName.toLowerCase().includes(s.toLowerCase()) ||
-      s.toLowerCase().includes(skillName.toLowerCase())
-    );
+    return MINIMAL_SKILLS.some(s => {
+      const lowerS = s.toLowerCase();
+      return lowerSkillName === lowerS ||
+             lowerSkillName.includes(lowerS) ||
+             lowerS.includes(lowerSkillName);
+    });
   }
 
   // If categories specified, check against category skills
   if (categories && categories.length > 0) {
     const categorySkills = getSkillsForCategories(categories);
-    return categorySkills.some(s =>
-      skillName.toLowerCase().includes(s.toLowerCase()) ||
-      s.toLowerCase().includes(skillName.toLowerCase())
-    );
+    return categorySkills.some(s => {
+      const lowerS = s.toLowerCase();
+      return lowerSkillName === lowerS ||
+             lowerSkillName.includes(lowerS) ||
+             lowerS.includes(lowerSkillName);
+    });
   }
 
   // Default: include all
