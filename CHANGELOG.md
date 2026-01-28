@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/ngxtm/devkit/compare/v2.0.0...v2.0.1) (2026-01-28)
+
+
+### Bug Fixes
+
+* update skill config with correct directory names ([68d305d](https://github.com/ngxtm/devkit/commit/68d305df56fd5bf4e12e4e9a97e4a6dc3a30c226))
+
 # [2.0.0](https://github.com/ngxtm/devkit/compare/v1.0.0...v2.0.0) (2026-01-28)
 
 

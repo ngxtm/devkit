@@ -1,6 +1,6 @@
 {
   "name": "@ngxtm/devkit",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Unified multi-agent system with auto-synced skills from multiple sources",
   "main": "cli/install.js",
   "bin": {
