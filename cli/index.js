@@ -16,7 +16,8 @@ const {
   update,
   interactiveInstall,
   listSkills,
-  listCategories
+  listCategories,
+  initProject
 } = require('./install');
 
 /**
@@ -73,7 +74,8 @@ USAGE:
   devkit <command> [tool] [options]
 
 COMMANDS:
-  install     Install skills and rules to AI tools
+  install     Install skills and rules to AI tools (global ~/.claude/)
+  init        Initialize devkit in current project (.claude/ folder)
   uninstall   Remove all installed skills and rules
   update      Check for updates and reinstall
   list        List all available skills
@@ -148,6 +150,7 @@ const commands = {
       indexOnly: options.indexOnly
     });
   },
+  init: (options) => initProject(options),
   uninstall: (options) => uninstall(options.tool),
   update: () => update(),
   list: () => listSkills(),

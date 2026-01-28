@@ -546,12 +546,157 @@ function listCategories() {
   console.log('  devkit install --interactive\n');
 }
 
+/**
+ * Initialize devkit in current project directory
+ * Creates .claude/ folder with commands, hooks, and lightweight rules
+ */
+function initProject(options = {}) {
+  const projectDir = process.cwd();
+  const claudeDir = path.join(projectDir, '.claude');
+
+  console.log('\n' + '='.repeat(60));
+  console.log('  DEVKIT - PROJECT INIT');
+  console.log('='.repeat(60));
+  console.log(`\nInitializing devkit in: ${projectDir}`);
+
+  // Check if .claude already exists
+  if (fs.existsSync(claudeDir)) {
+    console.log(`\n⚠️  .claude/ folder already exists.`);
+    if (!options.force) {
+      console.log('Use --force to overwrite existing files.');
+      return;
+    }
+    console.log('--force specified, overwriting...');
+  }
+
+  fs.mkdirSync(claudeDir, { recursive: true });
+
+  let totalFiles = 0;
+
+  // 1. Copy commands (claudekit only - lightweight)
+  const srcCommands = path.join(PACKAGE_ROOT, 'commands-claudekit');
+  if (fs.existsSync(srcCommands)) {
+    const destCommands = path.join(claudeDir, 'commands');
+    const count = copyDir(srcCommands, destCommands, {}, {});
+    console.log(`  ✅ Commands: ${count} files`);
+    totalFiles += count;
+  }
+
+  // 2. Copy hooks
+  const srcHooks = path.join(PACKAGE_ROOT, 'hooks');
+  if (fs.existsSync(srcHooks)) {
+    const destHooks = path.join(claudeDir, 'hooks');
+    const count = copyDir(srcHooks, destHooks, {}, {});
+    console.log(`  ✅ Hooks: ${count} files`);
+    totalFiles += count;
+  }
+
+  // 3. Copy agents (claudekit only)
+  const srcAgents = path.join(PACKAGE_ROOT, 'agents-claudekit');
+  if (fs.existsSync(srcAgents)) {
+    const destAgents = path.join(claudeDir, 'agents');
+    const count = copyDir(srcAgents, destAgents, {}, {});
+    console.log(`  ✅ Agents: ${count} files`);
+    totalFiles += count;
+  }
+
+  // 4. Copy output-styles
+  const srcStyles = path.join(PACKAGE_ROOT, 'output-styles');
+  if (fs.existsSync(srcStyles)) {
+    const destStyles = path.join(claudeDir, 'output-styles');
+    const count = copyDir(srcStyles, destStyles, {}, {});
+    console.log(`  ✅ Output Styles: ${count} files`);
+    totalFiles += count;
+  }
+
+  // 5. Copy lightweight rules (create minimal rules, not the full 327 files)
+  const rulesDir = path.join(claudeDir, 'rules');
+  fs.mkdirSync(rulesDir, { recursive: true });
+
+  // Create minimal rule files similar to claudekit_engineer
+  const minimalRules = {
+    'development-rules.md': `# Development Rules
+
+## Code Quality
+- Write clean, readable code with meaningful names
+- Follow project conventions and patterns
+- Keep functions small and focused
+- Add comments only where logic isn't self-evident
+
+## Testing
+- Write tests for new features
+- Ensure tests pass before committing
+- Use descriptive test names
+
+## Git
+- Write clear commit messages
+- Keep commits focused and atomic
+- Review changes before pushing
+`,
+    'orchestration-protocol.md': `# Orchestration Protocol
+
+## Workflow
+1. Understand the task completely before starting
+2. Break complex tasks into smaller steps
+3. Validate assumptions with the user
+4. Test changes incrementally
+
+## Communication
+- Be concise and clear
+- Ask clarifying questions when needed
+- Report progress on long tasks
+`
+  };
+
+  for (const [filename, content] of Object.entries(minimalRules)) {
+    fs.writeFileSync(path.join(rulesDir, filename), content);
+    totalFiles++;
+  }
+  console.log(`  ✅ Rules: ${Object.keys(minimalRules).length} files (lightweight)`);
+
+  // 6. Copy statusline scripts
+  const statuslineFiles = ['statusline.cjs', 'statusline.ps1', 'statusline.sh'];
+  for (const file of statuslineFiles) {
+    const srcFile = path.join(PACKAGE_ROOT, file);
+    if (fs.existsSync(srcFile)) {
+      fs.copyFileSync(srcFile, path.join(claudeDir, file));
+      totalFiles++;
+    }
+  }
+
+  // 7. Create settings.json
+  const settings = {
+    includeCoAuthoredBy: false
+  };
+  fs.writeFileSync(
+    path.join(claudeDir, 'settings.json'),
+    JSON.stringify(settings, null, 2)
+  );
+  totalFiles++;
+  console.log(`  ✅ Settings: created`);
+
+  console.log(`\n  📊 Total: ${totalFiles} files`);
+
+  console.log('\n' + '='.repeat(60));
+  console.log('  ✅ PROJECT INITIALIZED');
+  console.log('='.repeat(60));
+  console.log(`\nDevkit initialized in ${claudeDir}`);
+  console.log('\nAvailable commands:');
+  console.log('  /plan        - Plan implementation');
+  console.log('  /brainstorm  - Brainstorm ideas');
+  console.log('  /fix         - Fix issues');
+  console.log('  /code        - Start coding');
+  console.log('  /cook        - Build a feature');
+  console.log('');
+}
+
 // Export for CLI
 module.exports = {
   install,
   uninstall,
   update,
   interactiveInstall,
+  initProject,
   listSkills,
   listCategories,
   TOOLS
