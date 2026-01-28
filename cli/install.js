@@ -172,9 +172,28 @@ function installToTool(toolId, tool, options = {}) {
     }
   }
 
-  // 2. Install core framework under agent-assistant subfolder
+  // 2. Install commands to the official commands directory (for slash commands)
+  if (tool.commandsPath) {
+    // Install commands from commands/ folder
+    const srcCommands = path.join(PACKAGE_ROOT, 'commands');
+    if (fs.existsSync(srcCommands)) {
+      const count = copyDir(srcCommands, tool.commandsPath, replacements, options);
+      console.log(`  ✅ Commands: ${count} files`);
+      totalFiles += count;
+    }
+
+    // Install commands from commands-claudekit/ folder (merged into same directory)
+    const srcCommandsClaudekit = path.join(PACKAGE_ROOT, 'commands-claudekit');
+    if (fs.existsSync(srcCommandsClaudekit)) {
+      const count = copyDir(srcCommandsClaudekit, tool.commandsPath, replacements, options);
+      console.log(`  ✅ Commands (claudekit): ${count} files`);
+      totalFiles += count;
+    }
+  }
+
+  // 3. Install core framework under agent-assistant subfolder (agents, matrix-skills only)
   const coreDir = path.join(tool.skillsPath, 'agent-assistant');
-  const coreComponents = ['agents', 'commands', 'matrix-skills'];
+  const coreComponents = ['agents', 'matrix-skills'];
 
   for (const name of coreComponents) {
     const srcPath = path.join(PACKAGE_ROOT, name);
@@ -186,20 +205,16 @@ function installToTool(toolId, tool, options = {}) {
     }
   }
 
-  // 3. Install claudekit components (agents, commands) if available
-  const claudekitComponents = ['agents-claudekit', 'commands-claudekit'];
-  for (const name of claudekitComponents) {
-    const srcPath = path.join(PACKAGE_ROOT, name);
-    if (fs.existsSync(srcPath)) {
-      const destName = name.replace('-claudekit', '');
-      const destPath = path.join(coreDir, 'claudekit', destName);
-      const count = copyDir(srcPath, destPath, replacements, options);
-      console.log(`  ✅ claudekit/${destName}: ${count} files`);
-      totalFiles += count;
-    }
+  // 4. Install claudekit agents if available
+  const srcAgentsClaudekit = path.join(PACKAGE_ROOT, 'agents-claudekit');
+  if (fs.existsSync(srcAgentsClaudekit)) {
+    const destPath = path.join(coreDir, 'claudekit', 'agents');
+    const count = copyDir(srcAgentsClaudekit, destPath, replacements, options);
+    console.log(`  ✅ claudekit/agents: ${count} files`);
+    totalFiles += count;
   }
 
-  // 4. Install rules
+  // 5. Install rules
   const srcRules = path.join(PACKAGE_ROOT, 'rules');
   if (fs.existsSync(srcRules) && tool.rulesPath) {
     const count = copyDir(srcRules, tool.rulesPath, replacements, options);
@@ -207,7 +222,7 @@ function installToTool(toolId, tool, options = {}) {
     totalFiles += count;
   }
 
-  // 5. Install hooks (Claude Code only)
+  // 6. Install hooks (Claude Code only)
   if (tool.supportsHooks && tool.hooksPath) {
     const srcHooks = path.join(PACKAGE_ROOT, 'hooks');
     if (fs.existsSync(srcHooks)) {
@@ -217,7 +232,7 @@ function installToTool(toolId, tool, options = {}) {
     }
   }
 
-  // 6. Install output-styles (Claude Code only)
+  // 7. Install output-styles (Claude Code only)
   if (toolId === 'claude') {
     const srcStyles = path.join(PACKAGE_ROOT, 'output-styles');
     if (fs.existsSync(srcStyles)) {
@@ -227,7 +242,7 @@ function installToTool(toolId, tool, options = {}) {
       totalFiles += count;
     }
 
-    // 7. Install workflows
+    // 8. Install workflows
     const srcWorkflows = path.join(PACKAGE_ROOT, 'workflows');
     if (fs.existsSync(srcWorkflows)) {
       const destWorkflows = path.join(tool.basePath, 'workflows');
@@ -236,7 +251,7 @@ function installToTool(toolId, tool, options = {}) {
       totalFiles += count;
     }
 
-    // 8. Copy statusline scripts
+    // 9. Copy statusline scripts
     const statuslineFiles = ['statusline.cjs', 'statusline.ps1', 'statusline.sh'];
     for (const file of statuslineFiles) {
       const srcFile = path.join(PACKAGE_ROOT, file);
@@ -247,7 +262,7 @@ function installToTool(toolId, tool, options = {}) {
       }
     }
 
-    // 9. Copy settings.json if not exists
+    // 10. Copy settings.json if not exists
     const srcSettings = path.join(PACKAGE_ROOT, 'settings.json');
     const destSettings = path.join(tool.basePath, 'settings.json');
     if (fs.existsSync(srcSettings) && !fs.existsSync(destSettings)) {
