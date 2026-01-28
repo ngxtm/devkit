@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/ngxtm/devkit/compare/v2.0.1...v2.0.2) (2026-01-28)
+
+
+### Bug Fixes
+
+* install commands to correct directory for Claude Code ([b1f0f59](https://github.com/ngxtm/devkit/commit/b1f0f59d99144170e415962cf79988bc5d11b2bb))
+
 ## [2.0.1](https://github.com/ngxtm/devkit/compare/v2.0.0...v2.0.1) (2026-01-28)
 
 
