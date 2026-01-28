@@ -1,3 +1,19 @@
+# 1.0.0 (2026-01-28)
+
+
+### Bug Fixes
+
+* add .npmrc creation and token verification step ([41a2a7c](https://github.com/ngxtm/devkit/commit/41a2a7c1fd7a34df55f69adef3a63cba274dd796))
+* add conventional-changelog-conventionalcommits dependency ([8c846fe](https://github.com/ngxtm/devkit/commit/8c846fe0d99224022f203c8c8bcfa3fcdf88a07a))
+* add package-lock.json for CI ([0dc57fa](https://github.com/ngxtm/devkit/commit/0dc57fa307d8a886da33a22bf8b68266a35c3eab))
+* update repository URL to ngxtm/devkit ([90365d8](https://github.com/ngxtm/devkit/commit/90365d8067d8cc433487a2659cf6e9d5ffccf59f))
+
+
+### Features
+
+* initial release v1.0.0 ([7cc1e60](https://github.com/ngxtm/devkit/commit/7cc1e603d0a00fd6f3ad0bdefadcebfe151649f6))
+* initial unified agent assistant with 414 skills, hooks, and claudekit integration ([0c7c1dd](https://github.com/ngxtm/devkit/commit/0c7c1ddc2274c179518da439b511f378c5c88b23))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
