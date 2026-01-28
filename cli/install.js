@@ -122,9 +122,12 @@ function installToTool(toolId, tool, options = {}) {
   // Determine install mode
   const indexOnly = options.indexOnly !== false && !options.fullSkills;
   const isMinimal = options.minimal;
+  const isLite = options.lite;  // New lite mode - commands only
   const hasCategories = options.categories && options.categories.length > 0;
 
-  if (indexOnly && !isMinimal && !hasCategories) {
+  if (isLite) {
+    console.log(`   Mode: LITE (commands only - minimal context usage)`);
+  } else if (indexOnly && !isMinimal && !hasCategories) {
     console.log(`   Mode: INDEX-ONLY (recommended - minimal context usage)`);
   } else if (isMinimal) {
     console.log(`   Mode: MINIMAL (${MINIMAL_SKILLS.length} core skills)`);
@@ -142,10 +145,13 @@ function installToTool(toolId, tool, options = {}) {
 
   let totalFiles = 0;
 
-  // 1. Install skills - depends on mode
-  const srcSkills = path.join(PACKAGE_ROOT, 'skills');
-  if (fs.existsSync(srcSkills)) {
-    if (indexOnly && !isMinimal && !hasCategories) {
+  // 1. Install skills - depends on mode (skip in lite mode)
+  if (isLite) {
+    console.log(`  ⏭️  Skipping skills (lite mode)`);
+  } else {
+    const srcSkills = path.join(PACKAGE_ROOT, 'skills');
+    if (fs.existsSync(srcSkills)) {
+      if (indexOnly && !isMinimal && !hasCategories) {
       // Index-only mode: just copy the index files
       const indexFile = path.join(PACKAGE_ROOT, 'SKILLS_INDEX.md');
       const jsonFile = path.join(PACKAGE_ROOT, 'skills-index.json');
@@ -171,69 +177,96 @@ function installToTool(toolId, tool, options = {}) {
       totalFiles += count;
     }
   }
+  }
 
-  // 2. Install commands to the official commands directory (for slash commands)
-  if (tool.commandsPath) {
-    // Install commands from commands/ folder
-    const srcCommands = path.join(PACKAGE_ROOT, 'commands');
-    if (fs.existsSync(srcCommands)) {
-      const count = copyDir(srcCommands, tool.commandsPath, replacements, options);
-      console.log(`  ✅ Commands: ${count} files`);
-      totalFiles += count;
+  // 2. Install commands - in lite mode, install only core commands
+  if (isLite) {
+    // Lite mode: install only essential claudekit commands
+    if (tool.commandsPath) {
+      const srcCommandsClaudekit = path.join(PACKAGE_ROOT, 'commands-claudekit');
+      if (fs.existsSync(srcCommandsClaudekit)) {
+        const count = copyDir(srcCommandsClaudekit, tool.commandsPath, replacements, options);
+        console.log(`  ✅ Commands (claudekit): ${count} files`);
+        totalFiles += count;
+      }
+    }
+  } else if (!indexOnly || isMinimal || hasCategories) {
+    if (tool.commandsPath) {
+      // Install commands from commands/ folder
+      const srcCommands = path.join(PACKAGE_ROOT, 'commands');
+      if (fs.existsSync(srcCommands)) {
+        const count = copyDir(srcCommands, tool.commandsPath, replacements, options);
+        console.log(`  ✅ Commands: ${count} files`);
+        totalFiles += count;
+      }
+
+      // Install commands from commands-claudekit/ folder (merged into same directory)
+      const srcCommandsClaudekit = path.join(PACKAGE_ROOT, 'commands-claudekit');
+      if (fs.existsSync(srcCommandsClaudekit)) {
+        const count = copyDir(srcCommandsClaudekit, tool.commandsPath, replacements, options);
+        console.log(`  ✅ Commands (claudekit): ${count} files`);
+        totalFiles += count;
+      }
+    }
+  } else {
+    console.log(`  ⏭️  Skipping commands (index-only mode - use --full to include)`);
+  }
+
+  // 3. Install core framework (agents, matrix-skills) - SKIP in index-only/lite mode
+  if (!isLite && (!indexOnly || isMinimal || hasCategories)) {
+    const coreDir = path.join(tool.skillsPath, 'agent-assistant');
+    const coreComponents = ['agents', 'matrix-skills'];
+
+    for (const name of coreComponents) {
+      const srcPath = path.join(PACKAGE_ROOT, name);
+      if (fs.existsSync(srcPath)) {
+        const destPath = path.join(coreDir, name);
+        const count = copyDir(srcPath, destPath, replacements, options);
+        console.log(`  ✅ ${name}: ${count} files`);
+        totalFiles += count;
+      }
     }
 
-    // Install commands from commands-claudekit/ folder (merged into same directory)
-    const srcCommandsClaudekit = path.join(PACKAGE_ROOT, 'commands-claudekit');
-    if (fs.existsSync(srcCommandsClaudekit)) {
-      const count = copyDir(srcCommandsClaudekit, tool.commandsPath, replacements, options);
-      console.log(`  ✅ Commands (claudekit): ${count} files`);
+    // 4. Install claudekit agents if available
+    const srcAgentsClaudekit = path.join(PACKAGE_ROOT, 'agents-claudekit');
+    if (fs.existsSync(srcAgentsClaudekit)) {
+      const destPath = path.join(coreDir, 'claudekit', 'agents');
+      const count = copyDir(srcAgentsClaudekit, destPath, replacements, options);
+      console.log(`  ✅ claudekit/agents: ${count} files`);
       totalFiles += count;
     }
+  } else if (!isLite) {
+    console.log(`  ⏭️  Skipping agents/matrix-skills (index-only mode)`);
   }
 
-  // 3. Install core framework under agent-assistant subfolder (agents, matrix-skills only)
-  const coreDir = path.join(tool.skillsPath, 'agent-assistant');
-  const coreComponents = ['agents', 'matrix-skills'];
-
-  for (const name of coreComponents) {
-    const srcPath = path.join(PACKAGE_ROOT, name);
-    if (fs.existsSync(srcPath)) {
-      const destPath = path.join(coreDir, name);
-      const count = copyDir(srcPath, destPath, replacements, options);
-      console.log(`  ✅ ${name}: ${count} files`);
+  // 5. Install rules - SKIP in index-only/lite mode (327 files = ~1.5MB, causes context limit)
+  if (!isLite && (!indexOnly || isMinimal || hasCategories)) {
+    const srcRules = path.join(PACKAGE_ROOT, 'rules');
+    if (fs.existsSync(srcRules) && tool.rulesPath) {
+      const count = copyDir(srcRules, tool.rulesPath, replacements, options);
+      console.log(`  ✅ Rules: ${count} files`);
       totalFiles += count;
     }
+  } else if (!isLite) {
+    console.log(`  ⏭️  Skipping rules (index-only mode - use --full to include)`);
   }
 
-  // 4. Install claudekit agents if available
-  const srcAgentsClaudekit = path.join(PACKAGE_ROOT, 'agents-claudekit');
-  if (fs.existsSync(srcAgentsClaudekit)) {
-    const destPath = path.join(coreDir, 'claudekit', 'agents');
-    const count = copyDir(srcAgentsClaudekit, destPath, replacements, options);
-    console.log(`  ✅ claudekit/agents: ${count} files`);
-    totalFiles += count;
-  }
-
-  // 5. Install rules
-  const srcRules = path.join(PACKAGE_ROOT, 'rules');
-  if (fs.existsSync(srcRules) && tool.rulesPath) {
-    const count = copyDir(srcRules, tool.rulesPath, replacements, options);
-    console.log(`  ✅ Rules: ${count} files`);
-    totalFiles += count;
-  }
-
-  // 6. Install hooks (Claude Code only)
-  if (tool.supportsHooks && tool.hooksPath) {
-    const srcHooks = path.join(PACKAGE_ROOT, 'hooks');
-    if (fs.existsSync(srcHooks)) {
-      const count = copyDir(srcHooks, tool.hooksPath, replacements, options);
-      console.log(`  ✅ Hooks: ${count} files`);
-      totalFiles += count;
+  // 6. Install hooks (Claude Code only) - SKIP in index-only/lite mode
+  if (!isLite && (!indexOnly || isMinimal || hasCategories)) {
+    if (tool.supportsHooks && tool.hooksPath) {
+      const srcHooks = path.join(PACKAGE_ROOT, 'hooks');
+      if (fs.existsSync(srcHooks)) {
+        const count = copyDir(srcHooks, tool.hooksPath, replacements, options);
+        console.log(`  ✅ Hooks: ${count} files`);
+        totalFiles += count;
+      }
     }
+  } else if (!isLite) {
+    console.log(`  ⏭️  Skipping hooks (index-only mode)`);
   }
 
-  // 7. Install output-styles (Claude Code only)
-  if (toolId === 'claude') {
+  // 7. Install output-styles (Claude Code only) - SKIP in index-only/lite mode
+  if (!isLite && toolId === 'claude' && (!indexOnly || isMinimal || hasCategories)) {
     const srcStyles = path.join(PACKAGE_ROOT, 'output-styles');
     if (fs.existsSync(srcStyles)) {
       const destStyles = path.join(tool.basePath, 'output-styles');
@@ -246,7 +279,7 @@ function installToTool(toolId, tool, options = {}) {
     const srcWorkflows = path.join(PACKAGE_ROOT, 'workflows');
     if (fs.existsSync(srcWorkflows)) {
       const destWorkflows = path.join(tool.basePath, 'workflows');
-      const count = copyDir(destWorkflows, destWorkflows, replacements, options);
+      const count = copyDir(srcWorkflows, destWorkflows, replacements, options);
       console.log(`  ✅ Workflows: ${count} files`);
       totalFiles += count;
     }

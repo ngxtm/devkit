@@ -27,6 +27,7 @@ function parseArgs(args) {
     command: null,
     tool: null,
     minimal: false,
+    lite: false,      // New: commands only, no skills/rules/hooks
     categories: [],
     interactive: false,
     fullSkills: false,
@@ -39,6 +40,9 @@ function parseArgs(args) {
       options.help = true;
     } else if (arg === '--minimal' || arg === '-m') {
       options.minimal = true;
+      options.indexOnly = false;
+    } else if (arg === '--lite' || arg === '-l') {
+      options.lite = true;
       options.indexOnly = false;
     } else if (arg === '--interactive' || arg === '-i') {
       options.interactive = true;
@@ -84,9 +88,13 @@ TOOLS:
   gemini      Gemini / Antigravity (~/.gemini/)
 
 OPTIONS:
+  --lite, -l              LITE mode - commands only, no skills/rules/hooks
+                          Best for avoiding context limit issues
+                          Installs: /brainstorm, /plan, /fix, /code, etc.
+
   (default)               Index-only mode - installs skills index file only
                           Commands and agents are always fully installed
-                          Best for avoiding context limit issues
+                          May still cause context issues with some models
 
   --minimal, -m           Install ~20 core skills (instead of index)
 
@@ -101,7 +109,8 @@ OPTIONS:
   --help, -h              Show this help
 
 EXAMPLES:
-  devkit install                    # Index-only (recommended)
+  devkit install --lite             # Commands only (recommended for context limit)
+  devkit install                    # Index-only (default)
   devkit install claude             # Index-only to Claude Code
   devkit install --minimal          # Install ~20 core skills
   devkit install --category=react   # Install React-related skills
@@ -133,6 +142,7 @@ const commands = {
     }
     install(options.tool, {
       minimal: options.minimal,
+      lite: options.lite,
       categories: options.categories,
       fullSkills: options.fullSkills,
       indexOnly: options.indexOnly
