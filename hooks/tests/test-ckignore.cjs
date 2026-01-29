@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const scriptPath = path.join(__dirname, '..', 'scout-block', 'scout-block.sh');
+const scriptPath = path.join(__dirname, '..', 'scout-block.cjs');
 const ckignorePath = path.join(__dirname, '..', '..', '.ckignore');
 const ckignoreBackupPath = ckignorePath + '.backup';
 
@@ -23,7 +23,7 @@ if (fs.existsSync(ckignorePath)) {
 function runTest(name, input, expected) {
   try {
     const inputJson = JSON.stringify(input);
-    execSync(`bash "${scriptPath}"`, {
+    execSync(`node "${scriptPath}"`, {
       input: inputJson,
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe']
@@ -47,6 +47,11 @@ function restoreCkignore() {
     fs.writeFileSync(ckignorePath, originalCkignore);
     if (fs.existsSync(ckignoreBackupPath)) {
       fs.unlinkSync(ckignoreBackupPath);
+    }
+  } else {
+    // If there was no original .ckignore, remove the test-created one
+    if (fs.existsSync(ckignorePath)) {
+      fs.unlinkSync(ckignorePath);
     }
   }
 }

@@ -1,0 +1,26 @@
+# Default blocked patterns for scout-block
+# Only includes directories with heavy file counts (1000+ files typical)
+
+# JavaScript/TypeScript - package dependencies & build outputs
+node_modules
+dist
+build
+.next
+.nuxt
+
+# Python - virtualenvs & cache
+__pycache__
+.venv
+venv
+
+# Go/PHP - vendor dependencies
+vendor
+
+# Rust/Java - compiled outputs
+target
+
+# Version control
+.git
+
+# Test coverage (can be large with reports)
+coverage

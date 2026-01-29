@@ -104,10 +104,15 @@ def scan_skills(skills_dir: str) -> dict:
         metadata = get_skill_metadata(skill_dir)
         category = categorize_skill(skill_name, metadata)
 
+        try:
+            priority = int(metadata.get('priority', 5))
+        except (ValueError, TypeError):
+            priority = 5
+
         skill_entry = {
             'skill_id': skill_name,
             'category': 'core',
-            'priority_score': metadata.get('priority', 5),
+            'priority_score': priority,
             'relevance_mapping': {
                 'agents': [],
                 'profiles': [f"{category}:*"]

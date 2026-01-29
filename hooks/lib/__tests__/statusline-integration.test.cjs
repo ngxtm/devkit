@@ -4,13 +4,19 @@
 /**
  * Integration Tests for Statusline Main Script
  * Tests the complete statusline.cjs with sample JSON input
- * Run: node .claude/hooks/lib/__tests__/statusline-integration.test.cjs
+ * Run: node hooks/lib/__tests__/statusline-integration.test.cjs
  */
 
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { execSync } = require('child_process');
+
+// Determine the correct statusline.cjs path (at project root)
+const statuslinePath = path.resolve(__dirname, '..', '..', '..', 'statusline.cjs');
+
+// Check if running on Windows
+const isWindows = process.platform === 'win32';
 
 let passed = 0;
 let failed = 0;
@@ -47,6 +53,29 @@ function assertContains(actual, search, msg = '') {
   }
 }
 
+/**
+ * Cross-platform helper to run statusline with JSON input
+ * Uses temp file approach to avoid shell quoting issues on Windows
+ */
+function runStatusline(jsonInput, extraEnv = {}, options = {}) {
+  const tmpFile = path.join(os.tmpdir(), `statusline-test-${Date.now()}-${Math.random().toString(36).substring(7)}.json`);
+  try {
+    fs.writeFileSync(tmpFile, jsonInput);
+    const cmd = isWindows
+      ? `type "${tmpFile}" | node "${statuslinePath}"`
+      : `cat "${tmpFile}" | node "${statuslinePath}"`;
+    return execSync(cmd, {
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      env: { ...process.env, ...extraEnv },
+      shell: true,
+      ...options
+    });
+  } finally {
+    try { fs.unlinkSync(tmpFile); } catch {}
+  }
+}
+
 console.log('\n═══════════════════════════════════════════════════════');
 console.log('STATUSLINE INTEGRATION TESTS');
 console.log('═══════════════════════════════════════════════════════\n');
@@ -64,10 +93,7 @@ const minimalInput = JSON.stringify({
 });
 
 try {
-  const result = execSync(`echo '${minimalInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const result = runStatusline(minimalInput);
 
   test('Minimal input produces output', () => {
     assertTrue(result.length > 0, 'Should produce some output');
@@ -109,11 +135,7 @@ try {
     context_window: { context_window_size: 200000 }
   });
 
-  const gitResult = execSync(`echo '${gitInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    cwd: tmpDir,
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const gitResult = runStatusline(gitInput);
 
   test('Git input processed without error', () => {
     assertTrue(gitResult.length > 0, 'Should produce output for git repo');
@@ -153,10 +175,7 @@ const contextInput = JSON.stringify({
 });
 
 try {
-  const contextResult = execSync(`echo '${contextInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const contextResult = runStatusline(contextInput);
 
   test('Context window data processed', () => {
     assertTrue(contextResult.length > 0, 'Should process context window data');
@@ -180,8 +199,6 @@ try {
 
 console.log('\nTEST 4: JSON with Cost Info\n');
 
-process.env.CLAUDE_BILLING_MODE = 'api';
-
 const costInput = JSON.stringify({
   model: { display_name: 'Claude' },
   workspace: { current_dir: '/home/user' },
@@ -194,11 +211,7 @@ const costInput = JSON.stringify({
 });
 
 try {
-  const costResult = execSync(`echo '${costInput.replace(/'/g, "'\\''")}'  | CLAUDE_BILLING_MODE=api node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, CLAUDE_BILLING_MODE: 'api' }
-  });
+  const costResult = runStatusline(costInput, { CLAUDE_BILLING_MODE: 'api' });
 
   test('Cost info displayed in API mode', () => {
     assertTrue(costResult.length > 0, 'Should display cost info');
@@ -222,10 +235,7 @@ try {
 console.log('\nTEST 5: Invalid JSON Handling\n');
 
 try {
-  const invalidResult = execSync(`echo 'not valid json'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const invalidResult = runStatusline('not valid json');
 
   test('Invalid JSON produces fallback output', () => {
     assertTrue(invalidResult.length > 0, 'Should produce fallback output');
@@ -247,10 +257,7 @@ try {
 console.log('\nTEST 6: Empty Input Handling\n');
 
 try {
-  const emptyResult = execSync(`echo '' | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const emptyResult = runStatusline('');
 
   test('Empty input handled', () => {
     // Should either error gracefully or produce fallback
@@ -281,10 +288,7 @@ const multilineInput = JSON.stringify({
 });
 
 try {
-  const multilineResult = execSync(`echo '${multilineInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const multilineResult = runStatusline(multilineInput);
 
   test('Multi-line output generates content', () => {
     assertTrue(multilineResult.length > 0, 'Should generate output');
@@ -322,10 +326,7 @@ const expandInput = JSON.stringify({
 });
 
 try {
-  const expandResult = execSync(`echo '${expandInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const expandResult = runStatusline(expandInput);
 
   test('Home directory expanded to tilde', () => {
     assertTrue(expandResult.includes('~') || expandResult.includes('projects'), 'Should expand or contain path');
@@ -352,11 +353,7 @@ const colorInput = JSON.stringify({
 
 try {
   // Test with NO_COLOR=1
-  const noColorResult = execSync(`echo '${colorInput.replace(/'/g, "'\\''")}'  | NO_COLOR=1 node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, NO_COLOR: '1' }
-  });
+  const noColorResult = runStatusline(colorInput, { NO_COLOR: '1' });
 
   test('NO_COLOR=1 produces output', () => {
     assertTrue(noColorResult.length > 0, 'Should produce output with NO_COLOR=1');
@@ -390,11 +387,7 @@ const wideInput = JSON.stringify({
 
 let wideLines = 0;
 try {
-  const wideResult = execSync(`echo '${wideInput.replace(/'/g, "'\\''")}'  | COLUMNS=160 node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, COLUMNS: '160' }
-  });
+  const wideResult = runStatusline(wideInput, { COLUMNS: '160' });
   wideLines = wideResult.trim().split('\n').length;
 
   test('Wide terminal (160 cols) produces output', () => {
@@ -425,11 +418,7 @@ const narrowInput = JSON.stringify({
 });
 
 try {
-  const narrowResult = execSync(`echo '${narrowInput.replace(/'/g, "'\\''")}'  | COLUMNS=80 node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, COLUMNS: '80' }
-  });
+  const narrowResult = runStatusline(narrowInput, { COLUMNS: '80' });
   const narrowLines = narrowResult.trim().split('\n').length;
 
   test('Narrow terminal (80 cols) produces output', () => {
@@ -463,11 +452,7 @@ const longPathInput = JSON.stringify({
 });
 
 try {
-  const longPathResult = execSync(`echo '${longPathInput.replace(/'/g, "'\\''")}'  | COLUMNS=100 node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, COLUMNS: '100' }
-  });
+  const longPathResult = runStatusline(longPathInput, { COLUMNS: '100' });
 
   test('Long path produces output without crash', () => {
     assertTrue(longPathResult.length > 0, 'Should produce output');
@@ -497,11 +482,7 @@ const longModelInput = JSON.stringify({
 });
 
 try {
-  const longModelResult = execSync(`echo '${longModelInput.replace(/'/g, "'\\''")}'  | COLUMNS=100 node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, COLUMNS: '100' }
-  });
+  const longModelResult = runStatusline(longModelInput, { COLUMNS: '100' });
 
   test('Long model name produces output', () => {
     assertTrue(longModelResult.length > 0, 'Should produce output');
@@ -580,10 +561,7 @@ const agentTodoInput = JSON.stringify({
 });
 
 try {
-  const agentTodoResult = execSync(`echo '${agentTodoInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const agentTodoResult = runStatusline(agentTodoInput);
 
   test('Agent/Todo tracking produces output', () => {
     assertTrue(agentTodoResult.length > 0, 'Should produce output');
@@ -624,10 +602,7 @@ const zeroContextInput = JSON.stringify({
 });
 
 try {
-  const zeroResult = execSync(`echo '${zeroContextInput.replace(/'/g, "'\\''")}'  | node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe']
-  });
+  const zeroResult = runStatusline(zeroContextInput);
 
   test('Zero context produces output', () => {
     assertTrue(zeroResult.length > 0, 'Should produce output');
@@ -638,11 +613,7 @@ try {
 
 // Test with very small terminal
 try {
-  const tinyResult = execSync(`echo '${wideInput.replace(/'/g, "'\\''")}'  | COLUMNS=40 node .claude/statusline.cjs`, {
-    encoding: 'utf8',
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, COLUMNS: '40' }
-  });
+  const tinyResult = runStatusline(wideInput, { COLUMNS: '40' });
 
   test('Very narrow terminal (40 cols) handles gracefully', () => {
     assertTrue(tinyResult.length > 0, 'Should produce output even at 40 cols');

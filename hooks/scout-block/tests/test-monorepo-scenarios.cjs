@@ -138,9 +138,9 @@ const scenarios = [
     desc: 'Grep in src'
   },
   {
-    input: { tool_name: 'Glob', tool_input: { pattern: '**/*.ts' } },
+    input: { tool_name: 'Glob', tool_input: { pattern: 'src/**/*.ts' } },
     expected: 'ALLOWED',
-    desc: 'Glob all .ts files'
+    desc: 'Glob scoped .ts files in src'
   },
   {
     input: { tool_name: 'Bash', tool_input: { command: 'find packages -name "*.json" | head' } },

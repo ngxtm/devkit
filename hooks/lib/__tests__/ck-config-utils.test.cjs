@@ -505,6 +505,11 @@ test('getGitRoot from nested subdir returns correct root', () => {
 console.log('\n=== Symlinked directory tests ===\n');
 
 test('getGitRoot resolves through symlink to git repo', () => {
+  // Skip on Windows - symlinks require elevated privileges
+  if (process.platform === 'win32') {
+    console.log('  → Skipped: Symlinks require elevated privileges on Windows');
+    return;
+  }
   const realDir = path.join(os.tmpdir(), 'ck-test-real-' + Date.now());
   const linkDir = path.join(os.tmpdir(), 'ck-test-link-' + Date.now());
   fs.mkdirSync(realDir, { recursive: true });
@@ -529,6 +534,11 @@ test('getGitRoot resolves through symlink to git repo', () => {
 });
 
 test('getGitRoot with symlinked subdirectory', () => {
+  // Skip on Windows - symlinks require elevated privileges
+  if (process.platform === 'win32') {
+    console.log('  → Skipped: Symlinks require elevated privileges on Windows');
+    return;
+  }
   const realDir = path.join(os.tmpdir(), 'ck-test-real-sub-' + Date.now());
   const subDir = path.join(realDir, 'subdir');
   const linkToSub = path.join(os.tmpdir(), 'ck-test-link-sub-' + Date.now());
