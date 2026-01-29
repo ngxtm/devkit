@@ -1,3 +1,11 @@
+# [2.1.0](https://github.com/ngxtm/devkit/compare/v2.0.2...v2.1.0) (2026-01-28)
+
+
+### Features
+
+* add devkit init command for per-project installation ([c222e59](https://github.com/ngxtm/devkit/commit/c222e59a966d4f06466fc8190bda544c6a19abfb))
+* update lite mode ([9a9f6f6](https://github.com/ngxtm/devkit/commit/9a9f6f6c48eb8351280c3a384ddb30fe87892b48))
+
 ## [2.0.2](https://github.com/ngxtm/devkit/compare/v2.0.1...v2.0.2) (2026-01-28)
 
 
