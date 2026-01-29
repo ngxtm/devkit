@@ -1,3 +1,31 @@
+# [3.0.0](https://github.com/ngxtm/devkit/compare/v2.1.0...v3.0.0) (2026-01-29)
+
+
+### Features
+
+* **v3:** refactor to per-project installation with smart tech detection ([3bc8c00](https://github.com/ngxtm/devkit/commit/3bc8c002671adbb8e536bef92cb2f89c5080e3c4))
+
+
+### BREAKING CHANGES
+
+* **v3:** Remove global `devkit install` command
+
+   - Add `devkit init` as primary command for per-project installation
+   - Add smart project detection (Flutter, React, Next.js, NestJS, Golang, Python, etc.)
+   - Install only tech-specific rules based on detection (~500KB vs 59MB)
+   - Merge commands from agent-assistant and claudekit sources
+   - Add `devkit update` for re-detection and rule updates
+   - Add `devkit detect` to show detected technologies
+   - Create shared utils module for DRY code
+   - Add path validation and JSON parsing error handling
+   - Generate merged-commands/ with 100 unified commands
+   - Generate templates/ with organized rules per tech stack
+   - Generate rules-index.json for rule metadata
+
+   This reduces context usage from ~59MB to ~300-500KB per project,
+   avoiding context limit crashes while ensuring best practices
+   are enforced for the detected tech stack.
+
 # [2.1.0](https://github.com/ngxtm/devkit/compare/v2.0.2...v2.1.0) (2026-01-28)
 
 
