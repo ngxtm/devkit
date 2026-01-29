@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/ngxtm/devkit/compare/v3.0.0...v3.0.1) (2026-01-29)
+
+
+### Bug Fixes
+
+* **tests:** resolve test failures across multiple suites ([4303a8d](https://github.com/ngxtm/devkit/commit/4303a8d00d12b6ab2237aafb92ec7ac841f42af1))
+
 # [3.0.0](https://github.com/ngxtm/devkit/compare/v2.1.0...v3.0.0) (2026-01-29)
 
 
