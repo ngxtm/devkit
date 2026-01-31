@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/ngxtm/devkit/compare/v3.0.1...v3.0.2) (2026-01-31)
+
+
+### Bug Fixes
+
+* **ci:** update create-pull-request action from v5 to v7 ([143b607](https://github.com/ngxtm/devkit/commit/143b60731bba83834cf70f2bf0519a78a2f788d8))
+
 ## [3.0.1](https://github.com/ngxtm/devkit/compare/v3.0.0...v3.0.1) (2026-01-29)
 
 
