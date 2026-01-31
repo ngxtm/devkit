@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(powershell -Command:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(node:*)",
+      "Bash(git log:*)",
+      "Bash(bash:*)"
     ]
   }
 }
