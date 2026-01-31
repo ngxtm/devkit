@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/ngxtm/devkit/compare/v3.0.2...v3.0.3) (2026-01-31)
+
+
+### Bug Fixes
+
+* **ci:** enable CodeRabbit reviews and add CI for sync PRs ([a916ae3](https://github.com/ngxtm/devkit/commit/a916ae32f6edf9aa0cf83b81cc3c24b17f899e00))
+
 ## [3.0.2](https://github.com/ngxtm/devkit/compare/v3.0.1...v3.0.2) (2026-01-31)
 
 
