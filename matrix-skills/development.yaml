@@ -1,0 +1,23 @@
+domain: development
+description: Skills related to development
+skill_count: 2
+updated: '2026-01-31T09:25:46.933000'
+skills:
+- skill_id: vercel-deploy
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - development:*
+  description: Deploy applications to Vercel with edge functions, serverless, and
+    ISR.
+- skill_id: expo-app-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - development:*
+  description: Build beautiful cross-platform mobile apps with Expo Router, NativeWind,
+    and React Native.

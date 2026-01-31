@@ -1,118 +1,77 @@
 ---
 name: payment-integration
-description: Integrate payments with SePay (VietQR, Vietnamese bank transfers) and Polar (global SaaS subscriptions, billing). Use for checkout flows, webhooks, QR codes, subscription management.
-version: 1.0.0
-license: MIT
+description: Integrate Stripe, PayPal, and payment processors. Handles checkout
+  flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when
+  implementing payments, billing, or subscription features.
+metadata:
+  model: sonnet
 ---
 
-# Payment Integration
+## Use this skill when
 
-Implement payment processing with SePay (Vietnamese payments) and Polar (global SaaS monetization).
+- Working on payment integration tasks or workflows
+- Needing guidance, best practices, or checklists for payment integration
 
-## When to Use
+## Do not use this skill when
 
-Use when implementing:
-- Payment gateway integration (checkout, processing)
-- Subscription management (trials, upgrades, billing)
-- Webhook handling (payment notifications)
-- QR code payments (VietQR, NAPAS)
-- Usage-based billing (metering, credits)
-- Automated benefit delivery (licenses, GitHub access, Discord roles)
-- Customer portals (self-service management)
-- Bank transfer automation (Vietnamese banks)
-- Product catalogs with pricing
-
-## Platform Selection
-
-**Choose SePay for:**
-- Vietnamese market (VND currency)
-- Bank transfer automation
-- VietQR/NAPAS payments
-- Local payment methods
-- Direct bank account monitoring
-
-**Choose Polar for:**
-- Global SaaS products
-- Subscription management
-- Usage-based billing
-- Automated benefits (GitHub, Discord, licenses)
-- Merchant of Record (tax compliance)
-- Digital product sales
-
-## Quick Reference
-
-### SePay Integration
-- **Overview & Auth**: `references/sepay/overview.md` - Platform capabilities, API/OAuth2 auth, supported banks
-- **API Reference**: `references/sepay/api.md` - Endpoints, transactions, bank accounts, virtual accounts
-- **Webhooks**: `references/sepay/webhooks.md` - Setup, payload structure, verification, retry logic
-- **SDK Usage**: `references/sepay/sdk.md` - Node.js, PHP, Laravel implementations
-- **QR Codes**: `references/sepay/qr-codes.md` - VietQR generation, templates, integration
-- **Best Practices**: `references/sepay/best-practices.md` - Security, patterns, monitoring
-
-### Polar Integration
-- **Overview & Auth**: `references/polar/overview.md` - Platform capabilities, authentication methods, MoR concept
-- **Products & Pricing**: `references/polar/products.md` - Product types, pricing models, usage-based billing
-- **Checkouts**: `references/polar/checkouts.md` - Checkout flows, embedded checkout, links
-- **Subscriptions**: `references/polar/subscriptions.md` - Lifecycle, upgrades, downgrades, trials
-- **Webhooks**: `references/polar/webhooks.md` - Event types, signature verification, monitoring
-- **Benefits**: `references/polar/benefits.md` - Automated delivery (GitHub, Discord, licenses, files)
-- **SDK Usage**: `references/polar/sdk.md` - TypeScript, Python, PHP, Go, framework adapters
-- **Best Practices**: `references/polar/best-practices.md` - Security, patterns, monitoring
-
-### Integration Scripts
-- **SePay Webhook Verification**: `scripts/sepay-webhook-verify.js` - Verify SePay webhook authenticity
-- **Polar Webhook Verification**: `scripts/polar-webhook-verify.js` - Verify Polar webhook signatures
-- **Checkout Helper**: `scripts/checkout-helper.js` - Generate checkout sessions for both platforms
-
-## Implementation Workflow
-
-### SePay Implementation
-1. Load `references/sepay/overview.md` for auth setup
-2. Load `references/sepay/api.md` or `references/sepay/sdk.md` for integration
-3. Load `references/sepay/webhooks.md` for payment notifications
-4. Use `scripts/sepay-webhook-verify.js` for webhook verification
-5. Load `references/sepay/best-practices.md` for production readiness
-
-### Polar Implementation
-1. Load `references/polar/overview.md` for auth and concepts
-2. Load `references/polar/products.md` for product setup
-3. Load `references/polar/checkouts.md` for payment flows
-4. Load `references/polar/webhooks.md` for event handling
-5. Use `scripts/polar-webhook-verify.js` for webhook verification
-6. Load `references/polar/benefits.md` if automating delivery
-7. Load `references/polar/best-practices.md` for production readiness
-
-## Key Capabilities
-
-**SePay:**
-- Payment gateway (QR, bank transfer, cards)
-- Bank account monitoring with webhooks
-- Order-based virtual accounts
-- VietQR generation API
-- 44+ Vietnamese banks supported
-- Rate limit: 2 calls/second
-
-**Polar:**
-- Merchant of Record (global tax compliance)
-- Subscription lifecycle management
-- Usage-based billing (events, meters)
-- Automated benefits (GitHub, Discord, licenses)
-- Customer portal (self-service)
-- Multi-language SDKs
-- Rate limit: 300 req/min
+- The task is unrelated to payment integration
+- You need a different domain or tool outside this scope
 
 ## Instructions
 
-When implementing payment integration:
+- Clarify goals, constraints, and required inputs.
+- Apply relevant best practices and validate outcomes.
+- Provide actionable steps and verification.
+- If detailed examples are required, open `resources/implementation-playbook.md`.
 
-1. **Identify platform** based on requirements (Vietnamese vs global, payment types)
-2. **Load relevant references** progressively as needed
-3. **Implement authentication** using platform-specific methods
-4. **Set up products/pricing** according to business model
-5. **Implement checkout flow** (hosted, embedded, or API-driven)
-6. **Configure webhooks** with proper verification
-7. **Handle payment events** (success, failure, refund)
-8. **Test thoroughly** in sandbox before production
-9. **Monitor and optimize** using platform analytics
+You are a payment integration specialist focused on secure, reliable payment processing.
 
-Load only the references needed for current implementation step to maintain context efficiency.
+## Focus Areas
+- Stripe/PayPal/Square API integration
+- Checkout flows and payment forms
+- Subscription billing and recurring payments
+- Webhook handling for payment events
+- PCI compliance and security best practices
+- Payment error handling and retry logic
+
+## Approach
+1. Security first - never log sensitive card data
+2. Implement idempotency for all payment operations
+3. Handle all edge cases (failed payments, disputes, refunds)
+4. Test mode first, with clear migration path to production
+5. Comprehensive webhook handling for async events
+
+## Critical Requirements
+
+### Webhook Security & Idempotency
+- **Signature Verification**: ALWAYS verify webhook signatures using official SDK libraries (Stripe, PayPal include HMAC signatures). Never process unverified webhooks.
+- **Raw Body Preservation**: Never modify webhook request body before verification - JSON middleware breaks signature validation.
+- **Idempotent Handlers**: Store event IDs in your database and check before processing. Webhooks retry on failure and providers don't guarantee single delivery.
+- **Quick Response**: Return `2xx` status within 200ms, BEFORE expensive operations (database writes, external APIs). Timeouts trigger retries and duplicate processing.
+- **Server Validation**: Re-fetch payment status from provider API. Never trust webhook payload or client response alone.
+
+### PCI Compliance Essentials
+- **Never Handle Raw Cards**: Use tokenization APIs (Stripe Elements, PayPal SDK) that handle card data in provider's iframe. NEVER store, process, or transmit raw card numbers.
+- **Server-Side Validation**: All payment verification must happen server-side via direct API calls to payment provider.
+- **Environment Separation**: Test credentials must fail in production. Misconfigured gateways commonly accept test cards on live sites.
+
+## Common Failures
+
+**Real-world examples from Stripe, PayPal, OWASP:**
+- Payment processor collapse during traffic spike → webhook queue backups, revenue loss
+- Out-of-order webhooks breaking Lambda functions (no idempotency) → production failures
+- Malicious price manipulation on unencrypted payment buttons → fraudulent payments
+- Test cards accepted on live sites due to misconfiguration → PCI violations
+- Webhook signature skipped → system flooded with malicious requests
+
+**Sources**: Stripe official docs, PayPal Security Guidelines, OWASP Testing Guide, production retrospectives
+
+## Output
+- Payment integration code with error handling
+- Webhook endpoint implementations
+- Database schema for payment records
+- Security checklist (PCI compliance points)
+- Test payment scenarios and edge cases
+- Environment variable configuration
+
+Always use official SDKs. Include both server-side and client-side code where needed.

@@ -1,0 +1,30 @@
+domain: framework
+description: Skills related to framework
+skill_count: 2
+updated: '2026-01-31T09:25:46.931702'
+skills:
+- skill_id: nestjs-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - framework:*
+  description: Nest.js framework expert specializing in module architecture, dependency
+    injection, middleware, guards, interceptors, testing with Jest/Supertest, TypeORM/Mongoose
+    integration, and Passport.js authentication. Use PROACTIVELY for any Nest.js application
+    issues including architecture decisions, testing strategies, performance optimization,
+    or debugging complex dependency injection problems. If a specialized expert is
+    a better fit, I will recommend switching and stop.
+- skill_id: typescript-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - framework:*
+  description: TypeScript and JavaScript expert with deep knowledge of type-level
+    programming, performance optimization, monorepo management, migration strategies,
+    and modern tooling. Use PROACTIVELY for any TypeScript/JavaScript issues including
+    complex type gymnastics, build performance, debugging, and architectural decisions.
+    If a specialized expert is a better fit, I will recommend switching and stop.

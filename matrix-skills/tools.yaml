@@ -1,352 +1,800 @@
-# ============================================================================
-# TOOLS & UTILITIES DOMAIN SKILLS
-# ============================================================================
-# Productivity tools, document processing, automation
-# Primary agents: various (based on tool type)
-# ============================================================================
-
 domain: tools
-name: "Tools & Utilities"
-description: "Productivity tools, document processing"
-skill_count: 41
-
+description: Skills related to tools
+skill_count: 84
+updated: '2026-01-31T09:25:46.849512'
 skills:
-  # --------------------------------------------------------------------------
-  # BROWSER & DEBUGGING (Priority 6-7)
-  # --------------------------------------------------------------------------
-  - skill_id: chrome-devtools
-    category: utility
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer, debugger]
-      profiles: ["frontend:*", "quality:debugging"]
-    description: "Browser automation, debugging, performance analysis"
-
-  # --------------------------------------------------------------------------
-  # DOCUMENT PROCESSING (Priority 5-6)
-  # --------------------------------------------------------------------------
-  - skill_id: document-skills
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "Document processing skills"
-
-  - skill_id: changelog-generator
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [docs-manager, devops-engineer]
-      profiles: ["research:documentation", "devops:*"]
-    description: "Automated changelog generation"
-
-  - skill_id: doc-coauthoring
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "Collaborative document authoring"
-
-  - skill_id: media-processing
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "FFmpeg, ImageMagick media processing"
-
-  - skill_id: docx
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "Word document manipulation"
-
-  - skill_id: pdf
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "PDF document manipulation"
-
-  - skill_id: pptx
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "PowerPoint manipulation"
-
-  - skill_id: xlsx
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "Excel spreadsheet manipulation"
-
-  - skill_id: podcast-generation
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [docs-manager]
-      profiles: ["research:documentation"]
-    description: "Podcast content generation"
-
-  # --------------------------------------------------------------------------
-  # PROJECT MANAGEMENT TOOLS (Priority 5-6)
-  # --------------------------------------------------------------------------
-  - skill_id: issue-creator
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [project-manager]
-      profiles: ["management:*"]
-    description: "GitHub issue creation"
-
-  - skill_id: jira-issues
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [project-manager]
-      profiles: ["management:*"]
-    description: "Jira issue management"
-
-  - skill_id: atlassian-mcp
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [project-manager]
-      profiles: ["management:*"]
-    description: "Atlassian MCP integration"
-
-  - skill_id: internal-comms
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [project-manager]
-      profiles: ["management:*"]
-    description: "Internal communications"
-
-  - skill_id: meeting-insights-analyzer
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [project-manager]
-      profiles: ["management:*"]
-    description: "Meeting insights and analysis"
-
-  # --------------------------------------------------------------------------
-  # RESEARCH TOOLS (Priority 5)
-  # --------------------------------------------------------------------------
-  - skill_id: youtube-transcript
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [researcher]
-      profiles: ["research:*"]
-    description: "YouTube transcript extraction"
-
-  - skill_id: notebooklm-skill
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [researcher]
-      profiles: ["research:*"]
-    description: "NotebookLM integration"
-
-  - skill_id: competitive-ads-extractor
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [researcher]
-      profiles: ["research:analysis"]
-    description: "Competitive ad analysis"
-
-  # --------------------------------------------------------------------------
-  # DESIGN TOOLS (Priority 5)
-  # --------------------------------------------------------------------------
-  - skill_id: image-enhancer
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [designer]
-      profiles: ["design:*"]
-    description: "Image enhancement utilities"
-
-  # --------------------------------------------------------------------------
-  # CLI & DEVELOPMENT TOOLS (Priority 5-6)
-  # --------------------------------------------------------------------------
-  - skill_id: cli-developer
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "CLI application development"
-
-  - skill_id: artifacts-builder
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Build artifacts generation"
-
-  - skill_id: domain-name-brainstormer
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      agents: [brainstormer]
-      profiles: ["planning:discovery"]
-    description: "Domain name brainstorming"
-
-  - skill_id: skill-creator
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Skill creation guidance"
-
-  - skill_id: file-organizer
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "File organization utilities"
-
-  # --------------------------------------------------------------------------
-  # GENERAL UTILITIES (Priority 3-4)
-  # --------------------------------------------------------------------------
-  - skill_id: video-downloader
-    category: utility
-    priority_score: 4
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Video downloading utilities"
-
-  - skill_id: slack-gif-creator
-    category: utility
-    priority_score: 4
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Slack GIF creation"
-
-  - skill_id: invoice-organizer
-    category: utility
-    priority_score: 4
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Invoice organization"
-
-  - skill_id: job-application
-    category: utility
-    priority_score: 4
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Job application assistance"
-
-  - skill_id: skill-share
-    category: utility
-    priority_score: 4
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Skill sharing mechanisms"
-
-  - skill_id: raffle-winner-picker
-    category: utility
-    priority_score: 3
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Raffle winner selection"
-
-  - skill_id: template-skill
-    category: utility
-    priority_score: 3
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Template skill structure"
-
-  # --------------------------------------------------------------------------
-  # NEW SKILLS - COMMUNICATION & AUTOMATION (Added from skills-more)
-  # --------------------------------------------------------------------------
-  - skill_id: slack-bot-builder
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Slack apps using Bolt framework, Block Kit, slash commands, OAuth"
-
-  - skill_id: discord-bot-architect
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Discord bots with Discord.js/Pycord, Gateway intents, slash commands"
-
-  - skill_id: telegram-bot-builder
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Telegram bots, Bot API, architecture, monetization, scaling"
-
-  - skill_id: email-sequence
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Email sequences, drip campaigns, lifecycle emails"
-
-  - skill_id: email-systems
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Email systems engineering, transactional email, deliverability, SPF/DKIM/DMARC"
-
-  # --------------------------------------------------------------------------
-  # NEW SKILLS - CONTENT CREATION (Added from skills-more)
-  # --------------------------------------------------------------------------
-  - skill_id: content-creator
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "SEO-optimized marketing content, brand voice analyzer, content frameworks"
-
-  - skill_id: copywriting
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Marketing copywriting, homepage, landing pages, pricing pages, conversion-focused"
-
-  - skill_id: copy-editing
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Systematic copy editing through 7 focused passes (Clarity, Voice, So What, etc.)"
-
-  - skill_id: social-content
-    category: utility
-    priority_score: 5
-    relevance_mapping:
-      profiles: ["*"]
-    description: "Social media content creation, LinkedIn, Twitter/X, Instagram, TikTok"
-
-  - skill_id: api-documentation-generator
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [docs-manager, backend-engineer]
-      profiles: ["research:documentation", "backend:execution"]
-    description: "Generate API documentation from code, endpoints, parameters, OpenAPI/Swagger"
+- skill_id: algorithmic-art
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Creating algorithmic art using p5.js with seeded randomness and interactive
+    parameter exploration. Use this when users request creating art using code, generative
+    art, algorithmic art, flow fields, or particle systems. Create original algorithmic
+    art rather than copying existing artists' work to avoid copyright violations.
+- skill_id: vexor
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Vector-powered CLI for semantic file search with a Claude/Codex skill
+- skill_id: seo-content-planner
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Creates comprehensive content outlines and topic clusters for SEO.
+    Plans content calendars and identifies topic gaps. Use PROACTIVELY for content
+    strategy and planning.
+- skill_id: startup-business-analyst-market-opportunity
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Generate comprehensive market opportunity analysis with TAM/SAM/SOM
+    calculations
+- skill_id: git-pr-workflows-pr-enhance
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: You are a PR optimization expert specializing in creating high-quality
+    pull requests that facilitate efficient code reviews. Generate comprehensive PR
+    descriptions, automate review processes, and ensu
+- skill_id: claude-speed-reader
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: -Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style
+    ORP highlighting
+- skill_id: git-pr-workflows-onboard
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: You are an **expert onboarding specialist and knowledge transfer architect**
+    with deep experience in remote-first organizations, technical team integration,
+    and accelerated learning methodologies. You
+- skill_id: red-team-tactics
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Red team tactics principles based on MITRE ATT&CK. Attack phases, detection
+    evasion, reporting.
+- skill_id: code-refactoring-tech-debt
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: You are a technical debt expert specializing in identifying, quantifying,
+    and prioritizing technical debt in software projects. Analyze the codebase to
+    uncover debt, assess its impact, and create acti
+- skill_id: linear-claude-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Manage Linear issues, projects, and teams
+- skill_id: concise-planning
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when a user asks for a plan for a coding task, to generate a clear,
+    actionable, and atomic checklist.
+- skill_id: saga-orchestration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Implement saga patterns for distributed transactions and cross-aggregate
+    workflows. Use when coordinating multi-step business processes, handling compensating
+    transactions, or managing long-running workflows.
+- skill_id: seo-cannibalization-detector
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Analyzes multiple provided pages to identify keyword overlap and potential
+    cannibalization issues. Suggests differentiation strategies. Use PROACTIVELY when
+    reviewing similar content.
+- skill_id: shellcheck-configuration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Master ShellCheck static analysis configuration and usage for shell
+    script quality. Use when setting up linting infrastructure, fixing code issues,
+    or ensuring script portability.
+- skill_id: meeting-insights-analyzer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Analyzes meeting transcripts and recordings to uncover behavioral patterns,
+    communication insights, and actionable feedback. Identifies when you avoid conflict,
+    use filler words, dominate conversations, or miss opportunities to listen. Perfect
+    for professionals seeking to improve their communication and leadership skills.
+- skill_id: uv-package-manager
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Master the uv package manager for fast Python dependency management,
+    virtual environments, and modern Python project workflows. Use when setting up
+    Python projects, managing dependencies, or optimizing Python development workflows
+    with uv.
+- skill_id: postmortem-writing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Write effective blameless postmortems with root cause analysis, timelines,
+    and action items. Use when conducting incident reviews, writing postmortem documents,
+    or improving incident response processes.
+- skill_id: git-pushing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Stage, commit, and push git changes with conventional commit messages.
+    Use when user wants to commit and push changes, mentions pushing to remote, or
+    asks to save and push their work. Also activates when user says "push changes",
+    "commit and push", "push this", "push to github", or similar git workflow requests.
+- skill_id: image-enhancer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Improves the quality of images, especially screenshots, by enhancing
+    resolution, sharpness, and clarity. Perfect for preparing images for presentations,
+    documentation, or social media posts.
+- skill_id: document-skills
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: 'Skill: document-skills'
+- skill_id: dx-optimizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Developer Experience specialist. Improves tooling, setup, and workflows.
+    Use PROACTIVELY when setting up new projects, after team feedback, or when development
+    friction is noticed.
+- skill_id: imagen
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: ''
+- skill_id: youtube-transcript
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Download YouTube video transcripts when user provides a YouTube URL
+    or asks to download/get/fetch a transcript from YouTube. Also use when user wants
+    to transcribe or get captions/subtitles from a YouTube video.
+- skill_id: jira-issues
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Create, update, and manage Jira issues from natural language. Use when
+    the user wants to log bugs, create tickets, update issue status, or manage their
+    Jira backlog.
+- skill_id: atlassian-mcp
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when querying Jira issues, searching Confluence pages, creating
+    tickets, updating documentation, or integrating Atlassian tools via MCP protocol.
+- skill_id: seo-structure-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Analyzes and optimizes content structure including header hierarchy,
+    suggests schema markup, and internal linking opportunities. Creates search-friendly
+    content organization. Use PROACTIVELY for content structuring.
+- skill_id: context-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Apply compaction, masking, and caching strategies
+- skill_id: team-collaboration-issue
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: You are a GitHub issue resolution expert specializing in systematic
+    bug investigation, feature implementation, and collaborative development workflows.
+    Your expertise spans issue triage, root cause an
+- skill_id: seo-keyword-strategist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Analyzes keyword usage in provided content, calculates density, suggests
+    semantic variations and LSI keywords based on the topic. Prevents over-optimization.
+    Use PROACTIVELY for content optimization.
+- skill_id: incident-response-incident-response
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when working with incident response incident response
+- skill_id: fix-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Verify fix commits address audit findings without new bugs
+- skill_id: pptx
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: 'Presentation creation, editing, and analysis. When Claude needs to
+    work with presentations (.pptx files) for: (1) Creating new presentations, (2)
+    Modifying or editing content, (3) Working with layouts, (4) Adding comments or
+    speaker notes, or any other presentation tasks'
+- skill_id: startup-analyst
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Expert startup business analyst specializing in market sizing, financial
+    modeling, competitive analysis, and strategic planning for early-stage companies.
+    Use PROACTIVELY when the user asks about market opportunity, TAM/SAM/SOM, financial
+    projections, unit economics, competitive landscape, team planning, startup metrics,
+    or business strategy for pre-seed through Series A startups.
+- skill_id: risk-manager
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Monitor portfolio risk, R-multiples, and position limits. Creates hedging
+    strategies, calculates expectancy, and implements stop-losses. Use PROACTIVELY
+    for risk assessment, trade tracking, or portfolio protection.
+- skill_id: lead-research-assistant
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Identifies high-quality leads for your product or service by analyzing
+    your business, searching for target companies, and providing actionable contact
+    strategies. Perfect for sales, business development, and marketing professionals.
+- skill_id: context-driven-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use this skill when working with Conductor's context-driven development
+    methodology, managing project context artifacts, or understanding the relationship
+    between product.md, tech-stack.md, and workflow.md files.
+- skill_id: agile-product-owner
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Agile product ownership toolkit for Senior Product Owner including
+    INVEST-compliant user story generation, sprint planning, backlog management, and
+    velocity tracking. Use for story writing, sprint planning, stakeholder communication,
+    and agile ceremonies.
+- skill_id: comprehensive-review-pr-enhance
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: You are a PR optimization expert specializing in creating high-quality
+    pull requests that facilitate efficient code reviews. Generate comprehensive PR
+    descriptions, automate review processes, and ensure PRs follow best practices
+    for clarity, size, and reviewability.
+- skill_id: spec-miner
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when understanding legacy or undocumented systems, creating documentation
+    for existing code, or extracting specifications from implementations. Invoke for
+    legacy analysis, code archaeology, undocumented features.
+- skill_id: context-management-context-save
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when working with context management context save
+- skill_id: plan-writing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Structured task planning with clear breakdowns, dependencies, and verification
+    criteria. Use when implementing features, refactoring, or any multi-step work.
+- skill_id: marketing-ideas
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Provide proven marketing strategies and growth ideas for SaaS and software
+    products, prioritized using a marketing feasibility scoring system.
+- skill_id: embedded-systems
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when developing firmware for microcontrollers, implementing RTOS
+    applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS,
+    bare-metal, power optimization, real-time systems.
+- skill_id: competitive-landscape
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: This skill should be used when the user asks to "analyze competitors",
+    "assess competitive landscape", "identify differentiation", "evaluate market positioning",
+    "apply Porter's Five Forces", or requests competitive strategy analysis.
+- skill_id: full-stack-orchestration-full-stack-feature
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when working with full stack orchestration full stack feature
+- skill_id: c4-code
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Expert C4 Code-level documentation specialist. Analyzes code directories
+    to create comprehensive C4 code-level documentation including function signatures,
+    arguments, dependencies, and code structure. Use when documenting code at the
+    lowest C4 level for individual directories and code modules.
+- skill_id: seo-content-writer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Writes SEO-optimized content based on provided keywords and topic briefs.
+    Creates engaging, comprehensive content following best practices. Use PROACTIVELY
+    for content creation tasks.
+- skill_id: conductor-status
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Display project status, active tracks, and next actions
+- skill_id: pptx-official
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: 'Presentation creation, editing, and analysis. When Claude needs to
+    work with presentations (.pptx files) for: (1) Creating new presentations, (2)
+    Modifying or editing content, (3) Working with layouts, (4) Adding comments or
+    speaker notes, or any other presentation tasks'
+- skill_id: powershell-windows
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: PowerShell Windows patterns. Critical pitfalls, operator syntax, error
+    handling.
+- skill_id: template-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Replace with description of the skill and when Claude should use it.
+- skill_id: claude-scientific-skills
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Scientific research and analysis skills
+- skill_id: using-git-worktrees
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when starting feature work that needs isolation from current workspace
+    or before executing implementation plans - creates isolated git worktrees with
+    smart directory selection and safety verification
+- skill_id: conductor-revert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Git-aware undo by logical work unit (track, phase, or task)
+- skill_id: on-call-handoff-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Master on-call shift handoffs with context transfer, escalation procedures,
+    and documentation. Use when transitioning on-call responsibilities, documenting
+    shift summaries, or improving on-call processes.
+- skill_id: superpowers-lab
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Lab environment for Claude superpowers
+- skill_id: codebase-cleanup-tech-debt
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: You are a technical debt expert specializing in identifying, quantifying,
+    and prioritizing technical debt in software projects. Analyze the codebase to
+    uncover debt, assess its impact, and create acti
+- skill_id: employment-contract-templates
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Create employment contracts, offer letters, and HR policy documents
+    following legal best practices. Use when drafting employment agreements, creating
+    HR policies, or standardizing employment documentation.
+- skill_id: payment-integration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Integrate Stripe, PayPal, and payment processors. Handles checkout
+    flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when implementing
+    payments, billing, or subscription features.
+- skill_id: claude-win11-speckit-update-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Windows 11 system management
+- skill_id: podcast-generation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: 'Skill: podcast-generation'
+- skill_id: developer-growth-analysis
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Analyzes your recent Claude Code chat history to identify coding patterns,
+    development gaps, and areas for improvement, curates relevant learning resources
+    from HackerNews, and automatically sends a personalized growth report to your
+    Slack DMs.
+- skill_id: market-sizing-analysis
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: This skill should be used when the user asks to "calculate TAM", "determine
+    SAM", "estimate SOM", "size the market", "calculate market opportunity", "what's
+    the total addressable market", or requests market sizing analysis for a startup
+    or business opportunity.
+- skill_id: startup-business-analyst-business-case
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Generate comprehensive investor-ready business case document with market,
+    solution, financials, and strategy
+- skill_id: threejs-skills
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Three.js skills for creating 3D elements and interactive experiences
+- skill_id: conductor-validator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Validates Conductor project artifacts for completeness, consistency,
+    and correctness. Use after setup, when diagnosing issues, or before implementation
+    to verify project context.
+- skill_id: conductor-new-track
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Create a new track with specification and phased implementation plan
+- skill_id: x-article-publisher-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Publish articles to X/Twitter
+- skill_id: legacy-modernizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Refactor legacy codebases, migrate outdated frameworks, and implement
+    gradual modernization. Handles technical debt, dependency updates, and backward
+    compatibility. Use PROACTIVELY for legacy system updates, framework migrations,
+    or technical debt reduction.
+- skill_id: readme
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: 'Skill: readme'
+- skill_id: address-github-comments
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when you need to address review or issue comments on an open GitHub
+    Pull Request using the gh CLI.
+- skill_id: plans-kanban
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: View plans dashboard with progress tracking and timeline visualization.
+    Use for kanban boards, plan status overview, phase progress, milestone tracking,
+    project visibility.
+- skill_id: executing-plans
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when you have a written implementation plan to execute in a separate
+    session with review checkpoints
+- skill_id: ffuf-claude-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Web fuzzing with ffuf
+- skill_id: track-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use this skill when creating, managing, or working with Conductor tracks
+    - the logical work units for features, bugs, and refactors. Applies to spec.md,
+    plan.md, and track lifecycle operations.
+- skill_id: content-creator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Create SEO-optimized marketing content with consistent brand voice.
+    Includes brand voice analyzer, SEO optimizer, content frameworks, and social media
+    templates. Use when writing blog posts, creating social media content, analyzing
+    brand voice, optimizing SEO, planning content calendars, or when user mentions
+    content creation, brand voice, SEO optimization, social media marketing, or content
+    strategy.
+- skill_id: posix-shell-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Expert in strict POSIX sh scripting for maximum portability across
+    Unix-like systems. Specializes in shell scripts that run on any POSIX-compliant
+    shell (dash, ash, sh, bash --posix).
+- skill_id: culture-index
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Index and search culture documentation
+- skill_id: i18n-localization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Internationalization and localization patterns. Detecting hardcoded
+    strings, managing translations, locale files, RTL support.
+- skill_id: cc-skill-continuous-learning
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Development skill from everything-claude-code
+- skill_id: cc-skill-strategic-compact
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Development skill from everything-claude-code
+- skill_id: comprehensive-review-full-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when working with comprehensive review full review
+- skill_id: copy-editing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: When the user wants to edit, review, or improve existing marketing
+    copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy
+    feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This
+    skill provides a systematic approach to editing marketing copy through multiple
+    focused passes.
+- skill_id: error-diagnostics-smart-debug
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Use when working with error diagnostics smart debug

@@ -1,98 +1,123 @@
-# ============================================================================
-# DESIGN DOMAIN SKILLS
-# ============================================================================
-# UI/UX design, visual design, user experience, accessibility
-# Primary agents: designer, frontend-engineer
-# ============================================================================
-
 domain: design
-name: "UI/UX Design"
-description: "Visual design, user experience, accessibility"
-skill_count: 10
-
+description: Skills related to design
+skill_count: 12
+updated: '2026-01-31T09:25:46.915699'
 skills:
-  # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: aesthetic
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [designer, frontend-engineer]
-      profiles: ["design:*", "frontend:execution"]
-    description: "Visual hierarchy, color theory, micro-interactions"
-
-  - skill_id: ui-ux-pro-max
-    category: expert
-    priority_score: 9
-    relevance_mapping:
-      agents: [designer, frontend-engineer]
-      profiles: ["design:creative", "frontend:execution"]
-    description: "50+ design styles, color palettes, font pairings"
-
-  - skill_id: ui-styling
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [designer]
-      profiles: ["design:*"]
-    description: "shadcn/ui, Tailwind CSS, accessible components"
-
-  - skill_id: mobile-design
-    category: specialized
-    priority_score: 8
-    relevance_mapping:
-      agents: [designer, mobile-engineer]
-      profiles: ["design:creative", "mobile:execution"]
-    description: "Touch interactions, platform conventions, mobile-first"
-
-  - skill_id: ui-design-system
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [designer]
-      profiles: ["design:creative"]
-    description: "Design tokens, component documentation, style guides"
-
-  # --------------------------------------------------------------------------
-  # SPECIALIZED SKILLS (Priority 6-7)
-  # --------------------------------------------------------------------------
-  - skill_id: ux-researcher-designer
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [designer]
-      profiles: ["design:creative"]
-    description: "User research, personas, journey mapping, usability testing"
-
-  - skill_id: brand-guidelines
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [designer]
-      profiles: ["design:creative"]
-    description: "Brand identity and guidelines management"
-
-  - skill_id: canvas-design
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [designer, frontend-engineer]
-      profiles: ["design:*"]
-    description: "Canvas-based visual designs and graphics"
-
-  - skill_id: theme-factory
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [designer, frontend-engineer]
-      profiles: ["design:*", "frontend:*"]
-    description: "Theme generation and customization"
-
-  - skill_id: algorithmic-art
-    category: specialized
-    priority_score: 5
-    relevance_mapping:
-      agents: [designer, game-engineer]
-      profiles: ["design:creative", "gaming:*"]
-    description: "Generative and algorithmic art creation"
+- skill_id: design-md
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Analyze Stitch projects and synthesize a semantic design system into
+    DESIGN.md files
+- skill_id: pricing-strategy
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Design pricing, packaging, and monetization strategies based on value,
+    customer willingness to pay, and growth objectives.
+- skill_id: microservices-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Use when designing distributed systems, decomposing monoliths, or implementing
+    microservices patterns. Invoke for service boundaries, DDD, saga patterns, event
+    sourcing, service mesh, distributed tracing.
+- skill_id: referral-program
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: When the user wants to create, optimize, or analyze a referral program,
+    affiliate program, or word-of-mouth strategy. Also use when the user mentions
+    'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a
+    friend,' or 'partner program.' This skill covers program design, incentive structure,
+    and growth optimization.
+- skill_id: elixir-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Write idiomatic Elixir code with OTP patterns, supervision trees, and
+    Phoenix LiveView. Masters concurrency, fault tolerance, and distributed systems.
+    Use PROACTIVELY for Elixir refactoring, OTP design, or complex BEAM optimizations.
+- skill_id: linux-shell-scripting
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: This skill should be used when the user asks to "create bash scripts",
+    "automate Linux tasks", "monitor system resources", "backup files", "manage users",
+    or "write production shell scripts". It provides ready-to-use shell script templates
+    for system administration.
+- skill_id: bash-linux
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Bash/Linux terminal patterns. Critical commands, piping, error handling,
+    scripting. Use when working on macOS or Linux systems.
+- skill_id: architecture-designer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Use when designing new system architecture, reviewing existing designs,
+    or making architectural decisions. Invoke for system design, architecture review,
+    design patterns, ADRs, scalability planning.
+- skill_id: product-strategist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Strategic product leadership toolkit for Head of Product including
+    OKR cascade generation, market analysis, vision setting, and team scaling. Use
+    for strategic planning, goal alignment, competitive analysis, and organizational
+    design.
+- skill_id: context-compression
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Design and evaluate compression strategies for long-running sessions
+- skill_id: memory-systems
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Design short-term, long-term, and graph-based memory architectures
+- skill_id: canvas-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - design:*
+  description: Create beautiful visual art in .png and .pdf documents using design
+    philosophy. You should use this skill when the user asks to create a poster, piece
+    of art, design, or other static piece. Create original visual designs, never copying
+    existing artists' work to avoid copyright violations.

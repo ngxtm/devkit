@@ -1,74 +1,70 @@
-# ============================================================================
-# DATA/DATABASE DOMAIN SKILLS
-# ============================================================================
-# Schema design, queries, migrations, ORM
-# Primary agents: database-architect, backend-engineer
-# ============================================================================
-
 domain: data
-name: "Data & Database"
-description: "Schema design, queries, migrations"
-skill_count: 7
-
+description: Skills related to data
+skill_count: 6
+updated: '2026-01-31T09:25:46.876693'
 skills:
-  # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: database-design
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [database-architect, backend-engineer]
-      profiles: ["data:*", "backend:execution"]
-    description: "Schema design, normalization, indexing, migrations"
-
-  - skill_id: databases
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [database-architect, performance-engineer]
-      profiles: ["data:*", "performance:*"]
-    description: "MongoDB, PostgreSQL, queries, aggregations, administration"
-
-  - skill_id: database-optimizer
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [database-architect, performance-engineer]
-      profiles: ["data:execution", "performance:*"]
-    description: "Query optimization, performance tuning"
-
-  - skill_id: sql-pro
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [database-architect, backend-engineer]
-      profiles: ["data:*"]
-    description: "Advanced SQL queries and optimization"
-
-  - skill_id: prisma-expert
-    category: specialized
-    priority_score: 8
-    relevance_mapping:
-      agents: [database-architect, backend-engineer]
-      profiles: ["data:execution"]
-    description: "Prisma schema, migrations, query optimization, relations"
-
-  # --------------------------------------------------------------------------
-  # SPECIALIZED SKILLS (Priority 6-7)
-  # --------------------------------------------------------------------------
-  - skill_id: postgres-pro
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [database-architect]
-      profiles: ["data:execution"]
-    description: "PostgreSQL advanced features and optimization"
-
-  - skill_id: cosmos-db-python-skill
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [database-architect]
-      profiles: ["data:execution"]
-    description: "Azure Cosmos DB with Python"
+- skill_id: blockrun
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - data:*
+  description: Use when user needs capabilities Claude lacks (image generation, real-time
+    X/Twitter data) or explicitly requests external models ("blockrun", "use grok",
+    "use gpt", "dall-e", "deepseek")
+- skill_id: seo-meta-optimizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - data:*
+  description: Creates optimized meta titles, descriptions, and URL suggestions based
+    on character limits and best practices. Generates compelling, keyword-rich metadata.
+    Use PROACTIVELY for new content.
+- skill_id: programmatic-seo
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - data:*
+  description: Design and evaluate programmatic SEO strategies for creating SEO-driven
+    pages at scale using templates and structured data. Use when the user mentions
+    programmatic SEO, pages at scale, template pages, directory pages, location pages,
+    comparison pages, integration pages, or keyword-pattern page generation. This
+    skill focuses on feasibility, strategy, and page system design—not execution unless
+    explicitly requested.
+- skill_id: data-engineering-data-pipeline
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - data:*
+  description: You are a data pipeline architecture expert specializing in scalable,
+    reliable, and cost-effective data pipelines for batch and streaming data processing.
+- skill_id: analytics-tracking
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - data:*
+  description: Design, audit, and improve analytics tracking systems that produce
+    reliable, decision-ready data. Use when the user wants to set up, fix, or evaluate
+    analytics tracking (GA4, GTM, product analytics, events, conversions, UTMs). This
+    skill focuses on measurement strategy, signal quality, and validation— not just
+    firing events.
+- skill_id: ux-researcher-designer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - data:*
+  description: UX research and design toolkit for Senior UX Designer/Researcher including
+    data-driven persona generation, journey mapping, usability testing frameworks,
+    and research synthesis. Use for user research, persona creation, journey mapping,
+    and design validation.

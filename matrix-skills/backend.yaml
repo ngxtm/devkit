@@ -1,280 +1,3457 @@
-# ============================================================================
-# BACKEND DOMAIN SKILLS
-# ============================================================================
-# Server-side logic, APIs, frameworks, data access patterns
-# Primary agents: backend-engineer, tech-lead
-# ============================================================================
-
 domain: backend
-name: "Backend Development"
-description: "Server-side logic, APIs, data access"
-skill_count: 32
-
+description: Skills related to backend
+skill_count: 317
+updated: '2026-01-31T09:25:46.663487'
 skills:
-  # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: api-patterns
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [backend-engineer, tech-lead]
-      profiles: ["backend:*"]
-    description: "REST/GraphQL design, versioning, pagination, response formats"
+- skill_id: senior-data-scientist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: World-class data science skill for statistical modeling, experimentation,
+    causal inference, and advanced analytics. Expertise in Python (NumPy, Pandas,
+    Scikit-learn), R, SQL, statistical methods, A/B testing, time series, and business
+    intelligence. Includes experiment design, feature engineering, model evaluation,
+    and stakeholder communication. Use when designing experiments, building predictive
+    models, performing causal analysis, or driving data-driven decisions.
+- skill_id: segment-cdp
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Segment Customer Data Platform including Analytics.js,
+    server-side tracking, tracking plans with Protocols, identity resolution, destinations
+    configuration, and data governance best practices. Use when: segment, analytics.js,
+    customer data platform, cdp, tracking plan.'
+- skill_id: react-native-architecture
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build production React Native apps with Expo, navigation, native modules,
+    offline sync, and cross-platform patterns. Use when developing mobile apps, implementing
+    native integrations, or architecting React Native projects.
+- skill_id: code-documentation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Writing effective code documentation - API docs, README files, inline
+    comments, and technical guides. Use for documenting codebases, APIs, or writing
+    developer guides.
+- skill_id: xss-html-injection
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "test for XSS vulnerabilities",
+    "perform cross-site scripting attacks", "identify HTML injection flaws", "exploit
+    client-side injection vulnerabilities", "steal cookies via XSS", or "bypass content
+    security policies". It provides comprehensive techniques for detecting, exploiting,
+    and understanding XSS and HTML injection attack vectors in web applications.
+- skill_id: domain-name-brainstormer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Generates creative domain name ideas for your project and checks availability
+    across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming
+    and manual checking.
+- skill_id: web-performance-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize website and web application performance including loading
+    speed, Core Web Vitals, bundle size, caching strategies, and runtime performance
+- skill_id: fastapi-router
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Create FastAPI routers with CRUD operations, authentication dependencies,
+    and proper response models. Use when building REST API endpoints, creating new
+    routes, implementing CRUD operations, or adding authenticated endpoints in FastAPI
+    applications.
+- skill_id: receiving-code-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when receiving code review feedback, before implementing suggestions,
+    especially if feedback seems unclear or technically questionable - requires technical
+    rigor and verification, not performative agreement or blind implementation
+- skill_id: c4-container
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert C4 Container-level documentation specialist. Synthesizes Component-level
+    documentation into Container-level architecture, mapping components to deployment
+    units, documenting container interfaces as APIs, and creating container diagrams.
+    Use when synthesizing components into deployment containers and documenting system
+    deployment architecture.
+- skill_id: senior-frontend
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive frontend development skill for building modern, performant
+    web applications using ReactJS, NextJS, TypeScript, Tailwind CSS. Includes component
+    scaffolding, performance optimization, bundle analysis, and UI best practices.
+    Use when developing frontend features, optimizing performance, implementing UI/UX
+    designs, managing state, or reviewing frontend code.
+- skill_id: rag-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in building Retrieval-Augmented Generation systems. Masters
+    embedding models, vector databases, chunking strategies, and retrieval optimization
+    for LLM applications. Use when: building RAG, vector search, embeddings, semantic
+    search, document retrieval.'
+- skill_id: database-migration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Execute database migrations across ORMs and platforms with zero-downtime
+    strategies, data transformation, and rollback procedures. Use when migrating databases,
+    changing schemas, performing data transformations, or implementing zero-downtime
+    deployment strategies.
+- skill_id: projection-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build read models and projections from event streams. Use when implementing
+    CQRS read sides, building materialized views, or optimizing query performance
+    in event-sourced systems.
+- skill_id: social-content
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: When the user wants help creating, scheduling, or optimizing social
+    media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms.
+    Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,'
+    'content calendar,' 'social scheduling,' 'engagement,' or 'viral content.' This
+    skill covers content creation, repurposing, and platform-specific strategies.
+- skill_id: server-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Server management principles and decision-making. Process management,
+    monitoring strategy, and scaling decisions. Teaches thinking, not commands.
+- skill_id: backend-dev-guidelines
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Opinionated backend development standards for Node.js + Express + TypeScript
+    microservices. Covers layered architecture, BaseController pattern, dependency
+    injection, Prisma repositories, Zod validation, unifiedConfig, Sentry error tracking,
+    async safety, and testing discipline.
+- skill_id: network-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert network engineer specializing in modern cloud networking, security
+    architectures, and performance optimization. Masters multi-cloud connectivity,
+    service mesh, zero-trust networking, SSL/TLS, global load balancing, and advanced
+    troubleshooting. Handles CDN optimization, network automation, and compliance.
+    Use PROACTIVELY for network design, connectivity issues, or performance optimization.
+- skill_id: seo-snippet-hunter
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Formats content to be eligible for featured snippets and SERP features.
+    Creates snippet-optimized content blocks based on best practices. Use PROACTIVELY
+    for question-based content.
+- skill_id: postgresql
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Design a PostgreSQL-specific schema. Covers best-practices, data types,
+    indexing, constraints, performance patterns, and advanced features
+- skill_id: code-reviewer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Elite code review expert specializing in modern AI-powered code analysis,
+    security vulnerabilities, performance optimization, and production reliability.
+    Masters static analysis tools, security scanning, and configuration review with
+    2024/2025 best practices. Use PROACTIVELY for code quality assurance.
+- skill_id: algolia-search
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Algolia search implementation, indexing strategies,
+    React InstantSearch, and relevance tuning Use when: adding search to, algolia,
+    instantsearch, search api, search functionality.'
+- skill_id: spark-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Apache Spark applications, distributed data processing
+    pipelines, or optimizing big data workloads. Invoke for DataFrame API, Spark SQL,
+    RDD operations, performance tuning, streaming analytics.
+- skill_id: kubernetes-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert Kubernetes architect specializing in cloud-native infrastructure,
+    advanced GitOps workflows (ArgoCD/Flux), and enterprise container orchestration.
+    Masters EKS/AKS/GKE, service mesh (Istio/Linkerd), progressive delivery, multi-tenancy,
+    and platform engineering. Handles security, observability, cost optimization,
+    and developer experience. Use PROACTIVELY for K8s architecture, GitOps implementation,
+    or cloud-native platform design.
+- skill_id: windows-privilege-escalation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "escalate privileges
+    on Windows," "find Windows privesc vectors," "enumerate Windows for privilege
+    escalation," "exploit Windows misconfigurations," or "perform post-exploitation
+    privilege escalation." It provides comprehensive guidance for discovering and
+    exploiting privilege escalation vulnerabilities in Windows environments.
+- skill_id: workflow-automation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Workflow automation is the infrastructure that makes AI agents reliable.
+    Without durable execution, a network hiccup during a 10-step payment flow means
+    lost money and angry customers. With it, workflows resume exactly where they left
+    off.  This skill covers the platforms (n8n, Temporal, Inngest) and patterns (sequential,
+    parallel, orchestrator-worker) that turn brittle scripts into production-grade
+    automation.  Key insight: The platforms make different tradeoffs. n8n optimizes
+    for accessibility'
+- skill_id: api-design-principles
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master REST and GraphQL API design principles to build intuitive, scalable,
+    and maintainable APIs that delight developers. Use when designing new APIs, reviewing
+    API specifications, or establishing API design standards.
+- skill_id: hybrid-cloud-networking
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Configure secure, high-performance connectivity between on-premises
+    infrastructure and cloud platforms using VPN and dedicated connections. Use when
+    building hybrid cloud architectures, connecting data centers to cloud, or implementing
+    secure cross-premises networking.
+- skill_id: nosql-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert guidance for distributed NoSQL databases (Cassandra, DynamoDB).
+    Focuses on mental models, query-first modeling, single-table design, and avoiding
+    hot partitions in high-scale systems.
+- skill_id: distributed-tracing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement distributed tracing with Jaeger and Tempo to track requests
+    across microservices and identify performance bottlenecks. Use when debugging
+    microservices, analyzing request flows, or implementing observability for distributed
+    systems.
+- skill_id: performance-profiling
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Performance profiling principles. Measurement, analysis, and optimization
+    techniques.
+- skill_id: postgres-best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Postgres performance optimization and best practices from Supabase.
+    Use this skill when writing, reviewing, or optimizing Postgres queries, schema
+    designs, or database configurations.
+- skill_id: csharp-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building C# applications with .NET 8+, ASP.NET Core APIs,
+    or Blazor web apps. Invoke for Entity Framework Core, minimal APIs, async patterns,
+    CQRS with MediatR.
+- skill_id: gitlab-ci-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build GitLab CI/CD pipelines with multi-stage workflows, caching, and
+    distributed runners for scalable automation. Use when implementing GitLab CI/CD,
+    optimizing pipeline performance, or setting up automated testing and deployment.
+- skill_id: nodejs-backend-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build production-ready Node.js backend services with Express/Fastify,
+    implementing middleware patterns, error handling, authentication, database integration,
+    and API design best practices. Use when creating Node.js servers, REST APIs, GraphQL
+    backends, or microservices architectures.
+- skill_id: paid-ads
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: When the user wants help with paid advertising campaigns on Google
+    Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also
+    use when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,'
+    'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers
+    campaign strategy, ad creation, audience targeting, and optimization.
+- skill_id: frontend-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build React components, implement responsive layouts, and handle client-side
+    state management. Masters React 19, Next.js 15, and modern frontend architecture.
+    Optimizes performance and ensures accessibility. Use PROACTIVELY when creating
+    UI components or fixing frontend issues.
+- skill_id: frontend-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Frontend development guidelines for React/TypeScript applications.
+    Modern patterns including Suspense, lazy loading, useSuspenseQuery, file organization
+    with features directory, MUI v7 styling, TanStack Router, performance optimization,
+    and TypeScript best practices. Use when creating components, pages, features,
+    fetching data, styling, routing, or working with frontend code.
+- skill_id: pandas-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when working with pandas DataFrames, data cleaning, aggregation,
+    merging, or time series analysis. Invoke for data manipulation, missing value
+    handling, groupby operations, or performance optimization.
+- skill_id: senior-prompt-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: World-class prompt engineering skill for LLM optimization, prompt patterns,
+    structured outputs, and AI product development. Expertise in Claude, GPT-4, prompt
+    design patterns, few-shot learning, chain-of-thought, and AI evaluation. Includes
+    RAG optimization, agent design, and LLM system architecture. Use when building
+    AI products, optimizing LLM performance, designing agentic systems, or implementing
+    advanced prompting techniques.
+- skill_id: frontend-dev-guidelines
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Opinionated frontend development standards for modern React + TypeScript
+    applications. Covers Suspense-first data fetching, lazy loading, feature-based
+    architecture, MUI v7 styling, TanStack Router, performance optimization, and strict
+    TypeScript practices.
+- skill_id: scala-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master enterprise-grade Scala development with functional programming,
+    distributed systems, and big data processing. Expert in Apache Pekko, Akka, Spark,
+    ZIO/Cats Effect, and reactive architectures. Use PROACTIVELY for Scala system
+    design, performance optimization, or enterprise integration.
+- skill_id: content-marketer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Elite content marketing strategist specializing in AI-powered content
+    creation, omnichannel distribution, SEO optimization, and data-driven performance
+    marketing. Masters modern content tools, social media automation, and conversion
+    optimization with 2024/2025 best practices. Use PROACTIVELY for comprehensive
+    content marketing.
+- skill_id: api-documenter
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master API documentation with OpenAPI 3.1, AI-powered tools, and modern
+    developer experience practices. Create interactive docs, generate SDKs, and build
+    comprehensive developer portals. Use PROACTIVELY for API documentation or developer
+    portal creation.
+- skill_id: broken-authentication
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "test for broken authentication
+    vulnerabilities", "assess session management security", "perform credential stuffing
+    tests", "evaluate password policies", "test for session fixation", or "identify
+    authentication bypass flaws". It provides comprehensive techniques for identifying
+    authentication and session management weaknesses in web applications.
+- skill_id: form-cro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize any form that is NOT signup or account registration — including
+    lead capture, contact, demo request, application, survey, quote, and checkout
+    forms. Use when the goal is to increase form completion rate, reduce friction,
+    or improve lead quality without breaking compliance or downstream workflows.
+- skill_id: docx-official
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Comprehensive document creation, editing, and analysis with support
+    for tracked changes, comments, formatting preservation, and text extraction. When
+    Claude needs to work with professional documents (.docx files) for: (1) Creating
+    new documents, (2) Modifying or editing content, (3) Working with tracked changes,
+    (4) Adding comments, or any other document tasks'
+- skill_id: graphql
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'GraphQL gives clients exactly the data they need - no more, no less.
+    One endpoint, typed schema, introspection. But the flexibility that makes it powerful
+    also makes it dangerous. Without proper controls, clients can craft queries that
+    bring down your server.  This skill covers schema design, resolvers, DataLoader
+    for N+1 prevention, federation for microservices, and client integration with
+    Apollo/urql. Key insight: GraphQL is a contract. The schema is the API documentation.
+    Design it carefully.'
+- skill_id: auth-implementation-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master authentication and authorization patterns including JWT, OAuth2,
+    session management, and RBAC to build secure, scalable access control systems.
+    Use when implementing auth systems, securing APIs, or debugging security issues.
+- skill_id: architecture-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement proven backend architecture patterns including Clean Architecture,
+    Hexagonal Architecture, and Domain-Driven Design. Use when architecting complex
+    backend systems or refactoring existing applications for better maintainability.
+- skill_id: rag-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building RAG systems, vector databases, or knowledge-grounded
+    AI applications requiring semantic search, document retrieval, or context augmentation.
+- skill_id: metasploit-framework
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "use Metasploit for
+    penetration testing", "exploit vulnerabilities with msfconsole", "create payloads
+    with msfvenom", "perform post-exploitation", "use auxiliary modules for scanning",
+    or "develop custom exploits". It provides comprehensive guidance for leveraging
+    the Metasploit Framework in security assessments.
+- skill_id: database-migrations-sql-migrations
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: SQL database migrations with zero-downtime strategies for PostgreSQL,
+    MySQL, SQL Server
+- skill_id: unity-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build Unity games with optimized C# scripts, efficient rendering, and
+    proper asset management. Masters Unity 6 LTS, URP/HDRP pipelines, and cross-platform
+    deployment. Handles gameplay systems, UI implementation, and platform optimization.
+    Use PROACTIVELY for Unity performance issues, game mechanics, or cross-platform
+    builds.
+- skill_id: chrome-devtools
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Browser automation, debugging, and performance analysis using Puppeteer
+    CLI scripts. Use for automating browsers, taking screenshots, analyzing performance,
+    monitoring network traffic, web scraping, form automation, and JavaScript debugging.
+- skill_id: error-handling-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master error handling patterns across languages including exceptions,
+    Result types, error propagation, and graceful degradation to build resilient applications.
+    Use when implementing error handling, designing APIs, or improving application
+    reliability.
+- skill_id: automate-whatsapp
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Build WhatsApp automations with Kapso workflows: configure WhatsApp
+    triggers, edit workflow graphs, manage executions, deploy functions, and use databases/integrations
+    for state. Use when automating WhatsApp conversations and event handling.'
+- skill_id: react-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Modern React patterns and principles. Hooks, composition, performance,
+    TypeScript best practices.
+- skill_id: react-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building React 18+ applications requiring component architecture,
+    hooks patterns, or state management. Invoke for Server Components, performance
+    optimization, Suspense boundaries, React 19 features.
+- skill_id: neon-postgres
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Neon serverless Postgres, branching, connection
+    pooling, and Prisma/Drizzle integration Use when: neon database, serverless postgres,
+    database branching, neon postgres, postgres serverless.'
+- skill_id: fastapi-templates
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Create production-ready FastAPI projects with async patterns, dependency
+    injection, and comprehensive error handling. Use when building new FastAPI applications
+    or setting up backend API projects.
+- skill_id: mcp-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Manage MCP servers - discover, analyze, execute tools/prompts/resources.
+    Use for MCP integrations, intelligent tool selection, multi-server management,
+    context-efficient capability discovery.
+- skill_id: hubspot-integration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for HubSpot CRM integration including OAuth authentication,
+    CRM objects, associations, batch operations, webhooks, and custom objects. Covers
+    Node.js and Python SDKs. Use when: hubspot, hubspot api, hubspot crm, hubspot
+    integration, contacts api.'
+- skill_id: cloudflare-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive Cloudflare platform skill covering Workers, Pages, storage
+    (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), networking (Tunnel, Spectrum),
+    security (WAF, DDoS), and infrastructure-as-code (Terraform, Pulumi). Use PROACTIVELY
+    for any Cloudflare development task.
+- skill_id: rag-implementation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build Retrieval-Augmented Generation (RAG) systems for LLM applications
+    with vector databases and semantic search. Use when implementing knowledge-grounded
+    AI, building document Q&A systems, or integrating LLMs with external knowledge
+    bases.
+- skill_id: context7-auto-research
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Automatically fetch latest library/framework documentation for Claude
+    Code via Context7 API
+- skill_id: pdf-official
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive PDF manipulation toolkit for extracting text and tables,
+    creating new PDFs, merging/splitting documents, and handling forms. When Claude
+    needs to fill in a PDF form or programmatically process, generate, or analyze
+    PDF documents at scale.
+- skill_id: brainstorming
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use this skill before any creative or constructive work (features,
+    components, architecture, behavior changes, or functionality). This skill transforms
+    vague ideas into validated designs through disciplined, incremental reasoning
+    and collaboration.
+- skill_id: javascript-typescript
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: JavaScript and TypeScript development with ES6+, Node.js, React, and
+    modern web frameworks. Use for frontend, backend, or full-stack JavaScript/TypeScript
+    projects.
+- skill_id: cc-skill-clickhouse-io
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: ClickHouse database patterns, query optimization, analytics, and data
+    engineering best practices for high-performance analytical workloads.
+- skill_id: ethical-hacking-methodology
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "learn ethical hacking",
+    "understand penetration testing lifecycle", "perform reconnaissance", "conduct
+    security scanning", "exploit vulnerabilities", or "write penetration test reports".
+    It provides comprehensive ethical hacking methodology and techniques.
+- skill_id: julia-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Julia 1.10+ with modern features, performance optimization,
+    multiple dispatch, and production-ready practices. Expert in the Julia ecosystem
+    including package management, scientific computing, and high-performance numerical
+    code. Use PROACTIVELY for Julia development, optimization, or advanced Julia patterns.
+- skill_id: html-injection-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "test for HTML injection",
+    "inject HTML into web pages", "perform HTML injection attacks", "deface web applications",
+    or "test content injection vulnerabilities". It provides comprehensive HTML injection
+    attack techniques and testing methodologies.
+- skill_id: vector-index-tuning
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize vector index performance for latency, recall, and memory.
+    Use when tuning HNSW parameters, selecting quantization strategies, or scaling
+    vector search infrastructure.
+- skill_id: senior-backend
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive backend development skill for building scalable backend
+    systems using NodeJS, Express, Go, Python, Postgres, GraphQL, REST APIs. Includes
+    API scaffolding, database optimization, security implementation, and performance
+    tuning. Use when designing APIs, optimizing database queries, implementing business
+    logic, handling authentication/authorization, or reviewing backend code.
+- skill_id: kubernetes-specialist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when deploying or managing Kubernetes workloads requiring cluster
+    configuration, security hardening, or troubleshooting. Invoke for Helm charts,
+    RBAC policies, NetworkPolicies, storage configuration, performance optimization.
+- skill_id: database-cloud-optimization-cost-optimize
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a cloud cost optimization expert specializing in reducing infrastructure
+    expenses while maintaining performance and reliability. Analyze cloud spending,
+    identify savings opportunities, and implement cost-effective architectures across
+    AWS, Azure, and GCP.
+- skill_id: fastapi-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and
+    Pydantic V2. Master microservices, WebSockets, and modern Python async patterns.
+    Use PROACTIVELY for FastAPI development, async optimization, or API architecture.
+- skill_id: devops
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Deploy and manage cloud infrastructure on Cloudflare (Workers, R2,
+    D1, KV, Pages, Durable Objects, Browser Rendering), Docker containers, and Google
+    Cloud Platform (Compute Engine, GKE, Cloud Run, App Engine, Cloud Storage). Use
+    when deploying serverless functions to the edge, configuring edge computing solutions,
+    managing Docker containers and images, setting up CI/CD pipelines, optimizing
+    cloud infrastructure costs, implementing global caching strategies, working with
+    cloud databases, or building cloud-native applications.
+- skill_id: dbt-transformation-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master dbt (data build tool) for analytics engineering with model organization,
+    testing, documentation, and incremental strategies. Use when building data transformations,
+    creating data models, or implementing analytics engineering best practices.
+- skill_id: pdf
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive PDF manipulation toolkit for extracting text and tables,
+    creating new PDFs, merging/splitting documents, and handling forms. When Claude
+    needs to fill in a PDF form or programmatically process, generate, or analyze
+    PDF documents at scale.
+- skill_id: async-python-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Python asyncio, concurrent programming, and async/await patterns
+    for high-performance applications. Use when building async APIs, concurrent systems,
+    or I/O-bound applications requiring non-blocking operations.
+- skill_id: django-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Django 5.x with async views, DRF, Celery, and Django Channels.
+    Build scalable web applications with proper architecture, testing, and deployment.
+    Use PROACTIVELY for Django development, ORM optimization, or complex Django patterns.
+- skill_id: rust-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Rust 1.75+ with modern async patterns, advanced type system
+    features, and production-ready systems programming. Expert in the latest Rust
+    ecosystem including Tokio, axum, and cutting-edge crates. Use PROACTIVELY for
+    Rust development, performance optimization, or systems programming.
+- skill_id: application-performance-performance-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize end-to-end application performance with profiling, observability,
+    and backend/frontend tuning. Use when coordinating performance optimization across
+    the stack.
+- skill_id: database-migrations-migration-observability
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Migration monitoring, CDC, and observability infrastructure
+- skill_id: browser-automation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Browser automation powers web testing, scraping, and AI agent interactions.
+    The difference between a flaky script and a reliable system comes down to understanding
+    selectors, waiting strategies, and anti-detection patterns.  This skill covers
+    Playwright (recommended) and Puppeteer, with patterns for testing, scraping, and
+    agentic browser control. Key insight: Playwright won the framework war. Unless
+    you need Puppeteer''s stealth ecosystem or are Chrome-only, Playwright is the
+    better choice in 202'
+- skill_id: pydantic-models
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Create Pydantic models following the multi-model pattern with Base,
+    Create, Update, Response, and InDB variants. Use when defining API request/response
+    schemas, database models, or data validation in Python applications using Pydantic
+    v2.
+- skill_id: mobile-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build modern mobile applications with React Native, Flutter, Swift/SwiftUI,
+    and Kotlin/Jetpack Compose. Covers mobile-first design principles, performance
+    optimization (battery, memory, network), offline-first architecture, platform-specific
+    guidelines (iOS HIG, Material Design), testing strategies, security best practices,
+    accessibility, app store deployment, and mobile development mindset. Use when
+    building mobile apps, implementing mobile UX patterns, optimizing for mobile constraints,
+    or making native vs cross-platform decisions.
+- skill_id: api-documentation-generator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Generate comprehensive, developer-friendly API documentation from code,
+    including endpoints, parameters, examples, and best practices
+- skill_id: feature-forge
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when defining new features, gathering requirements, or writing
+    specifications. Invoke for feature definition, requirements gathering, user stories,
+    EARS format specs.
+- skill_id: mcp-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Guide for creating high-quality MCP (Model Context Protocol) servers
+    that enable LLMs to interact with external services through well-designed tools.
+    Use when building MCP servers to integrate external APIs or services, whether
+    in Python (FastMCP) or Node/TypeScript (MCP SDK).
+- skill_id: prompt-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert prompt engineer specializing in advanced prompting techniques,
+    LLM optimization, and AI system design. Masters chain-of-thought, constitutional
+    AI, and production prompt strategies. Use when building AI features, improving
+    agent performance, or crafting system prompts.
+- skill_id: red-team-tools
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "follow red team methodology",
+    "perform bug bounty hunting", "automate reconnaissance", "hunt for XSS vulnerabilities",
+    "enumerate subdomains", or needs security researcher techniques and tool configurations
+    from top bug bounty hunters.
+- skill_id: deep-research
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Execute autonomous multi-step research using Google Gemini Deep Research
+    Agent. Use for: market analysis, competitive landscaping, literature reviews,
+    technical research, due diligence. Takes 2-10 minutes but produces detailed, cited
+    reports. Costs $2-5 per task.'
+- skill_id: aws-serverless
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Specialized skill for building production-ready serverless applications
+    on AWS. Covers Lambda functions, API Gateway, DynamoDB, SQS/SNS event-driven patterns,
+    SAM/CDK deployment, and cold start optimization.
+- skill_id: azure-ai-agents-python
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build AI agents using the Azure AI Agents Python SDK (azure-ai-agents).
+    Use when creating agents hosted on Azure AI Foundry with tools (File Search, Code
+    Interpreter, Bing Grounding, Azure AI Search, Function Calling, OpenAPI, MCP),
+    managing threads and messages, implementing streaming responses, or working with
+    vector stores. This is the low-level SDK - for higher-level abstractions, use
+    the agent-framework skill instead.
+- skill_id: brand-guidelines-anthropic
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Applies Anthropic's official brand colors and typography to any sort
+    of artifact that may benefit from having Anthropic's look-and-feel. Use it when
+    brand colors or style guidelines, visual formatting, or company design standards
+    apply.
+- skill_id: ssh-penetration-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "pentest SSH services",
+    "enumerate SSH configurations", "brute force SSH credentials", "exploit SSH vulnerabilities",
+    "perform SSH tunneling", or "audit SSH security". It provides comprehensive SSH
+    penetration testing methodologies and techniques.
+- skill_id: terraform-specialist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert Terraform/OpenTofu specialist mastering advanced IaC automation,
+    state management, and enterprise infrastructure patterns. Handles complex module
+    design, multi-cloud deployments, GitOps workflows, policy as code, and CI/CD integration.
+    Covers migration strategies, security best practices, and modern IaC ecosystems.
+    Use PROACTIVELY for advanced IaC, state management, or infrastructure automation.
+- skill_id: code-review-checklist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive checklist for conducting thorough code reviews covering
+    functionality, security, performance, and maintainability
+- skill_id: cc-skill-security-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use this skill when adding authentication, handling user input, working
+    with secrets, creating API endpoints, or implementing payment/sensitive features.
+    Provides comprehensive security checklist and patterns.
+- skill_id: behavioral-modes
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: AI operational modes (brainstorm, implement, debug, review, teach,
+    ship, orchestrate). Use to adapt behavior based on task type.
+- skill_id: sql-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master modern SQL with cloud-native databases, OLTP/OLAP optimization,
+    and advanced query techniques. Expert in performance tuning, data modeling, and
+    hybrid analytical systems. Use PROACTIVELY for database optimization or complex
+    analysis.
+- skill_id: azure-functions
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Azure Functions development including isolated
+    worker model, Durable Functions orchestration, cold start optimization, and production
+    patterns. Covers .NET, Python, and Node.js programming models. Use when: azure
+    function, azure functions, durable functions, azure serverless, function app.'
+- skill_id: vue-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Provides Vue 3 expertise including Composition API, reactivity system,
+    component patterns, performance optimization, state management with Pinia, and
+    Nuxt.js integration. Use this skill for Vue component issues, reactivity problems,
+    re-rendering issues, or state management challenges.
+- skill_id: salesforce-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Salesforce platform development including Lightning
+    Web Components (LWC), Apex triggers and classes, REST/Bulk APIs, Connected Apps,
+    and Salesforce DX with scratch orgs and 2nd generation packages (2GP). Use when:
+    salesforce, sfdc, apex, lwc, lightning web components.'
+- skill_id: shopify-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Shopify themes, apps, custom storefronts, or e-commerce
+    solutions. Invoke for Liquid templating, Storefront API, app development, checkout
+    customization, Shopify Plus features.
+- skill_id: observe-whatsapp
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Observe and troubleshoot WhatsApp in Kapso: debug message delivery,
+    inspect webhook deliveries/retries, triage API errors, and run health checks.
+    Use when investigating production issues, message failures, or webhook delivery
+    problems.'
+- skill_id: app-store-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Complete App Store Optimization (ASO) toolkit for researching, optimizing,
+    and tracking mobile app performance on Apple App Store and Google Play Store
+- skill_id: senior-security
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive security engineering skill for application security,
+    penetration testing, security architecture, and compliance auditing. Includes
+    security assessment tools, threat modeling, crypto implementation, and security
+    automation. Use when designing security architecture, conducting penetration tests,
+    implementing cryptography, or performing security audits.
+- skill_id: markdown-novel-viewer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: View markdown files with calm, book-like reading experience via HTTP
+    server. Use for long-form content, documentation preview, novel reading, report
+    viewing, distraction-free reading.
+- skill_id: aws-cdk-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: AWS Cloud Development Kit (CDK) expert for building cloud infrastructure
+    with TypeScript/Python. Use when creating CDK stacks, defining CDK constructs,
+    implementing infrastructure as code, or when the user mentions CDK, CloudFormation,
+    IaC, cdk synth, cdk deploy, or wants to define AWS infrastructure programmatically.
+    Covers CDK app structure, construct patterns, stack composition, and deployment
+    workflows.
+- skill_id: design-orchestration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Orchestrates design workflows by routing work through brainstorming,
+    multi-agent review, and execution readiness in the correct order. Prevents premature
+    implementation, skipped validation, and unreviewed high-risk designs.
+- skill_id: react-best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: React and Next.js performance optimization guidelines from Vercel Engineering.
+    This skill should be used when writing, reviewing, or refactoring React/Next.js
+    code to ensure optimal performance patterns. Triggers on tasks involving React
+    components, Next.js pages, data fetching, bundle optimization, or performance
+    improvements.
+- skill_id: sharp-edges
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Identify error-prone APIs and dangerous configurations
+- skill_id: senior-fullstack
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive fullstack development skill for building complete web
+    applications with React, Next.js, Node.js, GraphQL, and PostgreSQL. Includes project
+    scaffolding, code quality analysis, architecture patterns, and complete tech stack
+    guidance. Use when building new projects, analyzing code quality, implementing
+    design patterns, or setting up development workflows.
+- skill_id: xlsx
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Comprehensive spreadsheet creation, editing, and analysis with support
+    for formulas, formatting, data analysis, and visualization. When Claude needs
+    to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new
+    spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3)
+    Modify existing spreadsheets while preserving formulas, (4) Data analysis and
+    visualization in spreadsheets, or (5) Recalculating formulas'
+- skill_id: security-compliance-compliance-check
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a compliance expert specializing in regulatory requirements
+    for software systems including GDPR, HIPAA, SOC2, PCI-DSS, and other industry
+    standards. Perform compliance audits and provide implementation guidance.
+- skill_id: repomix
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Package entire code repositories into single AI-friendly files using
+    Repomix. Capabilities include pack codebases with customizable include/exclude
+    patterns, generate multiple output formats (XML, Markdown, plain text), preserve
+    file structure and context, optimize for AI consumption with token counting, filter
+    by file types and directories, add custom headers and summaries. Use when packaging
+    codebases for AI analysis, creating repository snapshots for LLM context, analyzing
+    third-party libraries, preparing for security audits, generating documentation
+    context, or evaluating unfamiliar codebases.
+- skill_id: best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Transforms vague prompts into optimized Claude Code prompts. Adds verification,
+    specific context, constraints, and proper phasing. Invoke with /best-practices.
+- skill_id: aws-cost-operations
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill provides AWS cost optimization, monitoring, and operational
+    best practices with integrated MCP servers for billing analysis, cost estimation,
+    observability, and security assessment.
+- skill_id: nextjs-best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Next.js App Router principles. Server Components, data fetching, routing
+    patterns.
+- skill_id: prompt-engineering-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master advanced prompt engineering techniques to maximize LLM performance,
+    reliability, and controllability in production. Use when optimizing prompts, improving
+    LLM outputs, or designing production prompt templates.
+- skill_id: angular-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Angular 17+ applications with standalone components
+    or signals. Invoke for enterprise apps, RxJS patterns, NgRx state management,
+    performance optimization, advanced routing.
+- skill_id: top-web-vulnerabilities
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "identify web application
+    vulnerabilities", "explain common security flaws", "understand vulnerability categories",
+    "learn about injection attacks", "review access control weaknesses", "analyze
+    API security issues", "assess security misconfigurations", "understand client-side
+    vulnerabilities", "examine mobile and IoT security flaws", or "reference the OWASP-aligned
+    vulnerability taxonomy". Use this skill to provide comprehensive vulnerability
+    definitions, root causes, impacts, and mitigation strategies across all major
+    web security categories.
+- skill_id: shopify-apps
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Shopify app development including Remix/React
+    Router apps, embedded apps with App Bridge, webhook handling, GraphQL Admin API,
+    Polaris components, billing, and app extensions. Use when: shopify app, shopify,
+    embedded app, polaris, app bridge.'
+- skill_id: voice-agents
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Voice agents represent the frontier of AI interaction - humans speaking
+    naturally with AI systems. The challenge isn''t just speech recognition and synthesis,
+    it''s achieving natural conversation flow with sub-800ms latency while handling
+    interruptions, background noise, and emotional nuance.  This skill covers two
+    architectures: speech-to-speech (OpenAI Realtime API, lowest latency, most natural)
+    and pipeline (STT→LLM→TTS, more control, easier to debug). Key insight: latency
+    is the constraint. Hu'
+- skill_id: azure-ai-voicelive-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build real-time voice AI applications using Azure AI Voice Live SDK
+    (azure-ai-voicelive). Use this skill when creating Python applications that need
+    real-time bidirectional audio communication with Azure AI, including voice assistants,
+    voice-enabled chatbots, real-time speech-to-speech translation, voice-driven avatars,
+    or any WebSocket-based audio streaming with AI models. Supports Server VAD (Voice
+    Activity Detection), turn-based conversation, function calling, MCP tools, avatar
+    integration, and transcription.
+- skill_id: content-research-writer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Assists in writing high-quality content by conducting research, adding
+    citations, improving hooks, iterating on outlines, and providing real-time feedback
+    on each section. Transforms your writing process from solo effort to collaborative
+    partnership.
+- skill_id: unity-ecs-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Unity ECS (Entity Component System) with DOTS, Jobs, and Burst
+    for high-performance game development. Use when building data-oriented games,
+    optimizing performance, or working with large entity counts.
+- skill_id: openapi-spec-generation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Generate and maintain OpenAPI 3.1 specifications from code, design-first
+    specs, and validation patterns. Use when creating API documentation, generating
+    SDKs, or ensuring API contract compliance.
+- skill_id: internal-comms-anthropic
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: A set of resources to help me write all kinds of internal communications,
+    using the formats that my company likes to use. Claude should use this skill whenever
+    asked to write some sort of internal communications (status reports, leadership
+    updates, 3P updates, company newsletters, FAQs, incident reports, project updates,
+    etc.).
+- skill_id: ui-styling
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Create beautiful, accessible user interfaces with shadcn/ui components
+    (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based
+    visual designs. Use when building user interfaces, implementing design systems,
+    creating responsive layouts, adding accessible components (dialogs, dropdowns,
+    forms, tables), customizing themes and colors, implementing dark mode, generating
+    visual designs and posters, or establishing consistent styling patterns across
+    applications.
+- skill_id: voice-ai-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in building voice AI applications - from real-time voice agents
+    to voice-enabled apps. Covers OpenAI Realtime API, Vapi for voice agents, Deepgram
+    for transcription, ElevenLabs for synthesis, LiveKit for real-time infrastructure,
+    and WebRTC fundamentals. Knows how to build low-latency, production-ready voice
+    experiences. Use when: voice ai, voice agent, speech to text, text to speech,
+    realtime voice.'
+- skill_id: game-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Game development orchestrator. Routes to platform-specific skills based
+    on project needs.
+- skill_id: observability-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build production-ready monitoring, logging, and tracing systems. Implements
+    comprehensive observability strategies, SLI/SLO management, and incident response
+    workflows. Use PROACTIVELY for monitoring infrastructure, performance optimization,
+    or production reliability.
+- skill_id: commit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Create commit messages following Sentry conventions. Use when committing
+    code changes, writing commit messages, or formatting git history. Follows conventional
+    commits with Sentry-specific issue references.
+- skill_id: llm-evaluation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement comprehensive evaluation strategies for LLM applications
+    using automated metrics, human feedback, and benchmarking. Use when testing LLM
+    performance, measuring AI application quality, or establishing evaluation frameworks.
+- skill_id: startup-metrics-framework
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks about "key startup metrics",
+    "SaaS metrics", "CAC and LTV", "unit economics", "burn multiple", "rule of 40",
+    "marketplace metrics", or requests guidance on tracking and optimizing business
+    performance metrics.
+- skill_id: nextjs-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Next.js 14+ applications with App Router, server
+    components, or server actions. Invoke for full-stack features, performance optimization,
+    SEO implementation, production deployment.
+- skill_id: video-downloader
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Downloads videos from YouTube and other platforms for offline viewing,
+    editing, or archival. Handles various formats and quality options.
+- skill_id: docx
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Comprehensive document creation, editing, and analysis with support
+    for tracked changes, comments, formatting preservation, and text extraction. When
+    Claude needs to work with professional documents (.docx files) for: (1) Creating
+    new documents, (2) Modifying or editing content, (3) Working with tracked changes,
+    (4) Adding comments, or any other document tasks'
+- skill_id: better-auth
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement authentication and authorization with Better Auth - a framework-agnostic
+    TypeScript authentication framework. Features include email/password authentication
+    with verification, OAuth providers (Google, GitHub, Discord, etc.), two-factor
+    authentication (TOTP, SMS), passkeys/WebAuthn support, session management, role-based
+    access control (RBAC), rate limiting, and database adapters. Use when adding authentication
+    to applications, implementing OAuth flows, setting up 2FA/MFA, managing user sessions,
+    configuring authorization rules, or building secure authentication systems for
+    web applications.
+- skill_id: search-specialist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert web researcher using advanced search techniques and synthesis.
+    Masters search operators, result filtering, and multi-source verification. Handles
+    competitive analysis and fact-checking. Use PROACTIVELY for deep research, information
+    gathering, or trend analysis.
+- skill_id: performance-testing-review-multi-agent-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when working with performance testing review multi agent review
+- skill_id: sql-optimization-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master SQL query optimization, indexing strategies, and EXPLAIN analysis
+    to dramatically improve database performance and eliminate slow queries. Use when
+    debugging slow queries, designing database schemas, or optimizing application
+    performance.
+- skill_id: context-manager
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Elite AI context engineering specialist mastering dynamic context management,
+    vector databases, knowledge graphs, and intelligent memory systems. Orchestrates
+    context across multi-agent workflows, enterprise AI systems, and long-running
+    projects with 2024/2025 best practices. Use PROACTIVELY for complex AI orchestration.
+- skill_id: using-neon
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Guides and best practices for working with Neon Serverless Postgres.
+    Covers getting started, local development with Neon, choosing a connection method,
+    Neon features, authentication (@neondatabase/auth), PostgREST-style data API (@neondatabase/neon-js),
+    Neon CLI, and Neon's Platform API/SDKs. Use for any Neon-related questions.
+- skill_id: code-documentation-code-explain
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a code education expert specializing in explaining complex
+    code through clear narratives, visual diagrams, and step-by-step breakdowns. Transform
+    difficult concepts into understandable explanations.
+- skill_id: signup-flow-cro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: When the user wants to optimize signup, registration, account creation,
+    or trial activation flows. Also use when the user mentions "signup conversions,"
+    "registration friction," "signup form optimization," "free trial signup," "reduce
+    signup dropoff," or "account creation flow." For post-signup onboarding, see onboarding-cro.
+    For lead capture forms (not account creation), see form-cro.
+- skill_id: data-storytelling
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Transform data into compelling narratives using visualization, context,
+    and persuasive structure. Use when presenting analytics to stakeholders, creating
+    data reports, or building executive presentations.
+- skill_id: conductor-manage
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Manage track lifecycle: archive, restore, delete, rename, and cleanup'
+- skill_id: firecrawl-scraper
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Deep web scraping, screenshots, PDF parsing, and website crawling using
+    Firecrawl API
+- skill_id: dotnet-backend-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master C#/.NET backend development patterns for building robust APIs,
+    MCP servers, and enterprise applications. Covers async/await, dependency injection,
+    Entity Framework Core, Dapper, configuration, caching, and testing with xUnit.
+    Use when developing .NET backends, reviewing C# code, or designing API architectures.
+- skill_id: page-cro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Analyze and optimize individual pages for conversion performance. Use
+    when the user wants to improve conversion rates, diagnose why a page is underperforming,
+    or increase the effectiveness of marketing pages (homepage, landing pages, pricing,
+    feature pages, or blog posts). This skill focuses on diagnosis, prioritization,
+    and testable recommendations— not blind optimization.
+- skill_id: context-management-context-restore
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when working with context management context restore
+- skill_id: mlops-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build comprehensive ML pipelines, experiment tracking, and model registries
+    with MLflow, Kubeflow, and modern MLOps tools. Implements automated training,
+    deployment, and monitoring across cloud platforms. Use PROACTIVELY for ML infrastructure,
+    experiment management, or pipeline automation.
+- skill_id: invoice-organizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Automatically organizes invoices and receipts for tax preparation by
+    reading messy files, extracting key information, renaming them consistently, and
+    sorting them into logical folders. Turns hours of manual bookkeeping into minutes
+    of automated organization.
+- skill_id: langfuse
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in Langfuse - the open-source LLM observability platform. Covers
+    tracing, prompt management, evaluation, datasets, and integration with LangChain,
+    LlamaIndex, and OpenAI. Essential for debugging, monitoring, and improving LLM
+    applications in production. Use when: langfuse, llm observability, llm tracing,
+    prompt management, llm evaluation.'
+- skill_id: backend-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert backend architect specializing in scalable API design, microservices
+    architecture, and distributed systems. Masters REST/GraphQL/gRPC APIs, event-driven
+    architectures, service mesh patterns, and modern backend frameworks. Handles service
+    boundary definition, inter-service communication, resilience patterns, and observability.
+    Use PROACTIVELY when creating new backend services or APIs.
+- skill_id: cqrs-implementation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement Command Query Responsibility Segregation for scalable architectures.
+    Use when separating read and write models, optimizing query performance, or building
+    event-sourced systems.
+- skill_id: debugging
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Systematic debugging framework ensuring root cause investigation before
+    fixes. Includes four-phase debugging process, backward call stack tracing, multi-layer
+    validation, and verification protocols. Use when encountering bugs, test failures,
+    unexpected behavior, performance issues, or before claiming work complete. Prevents
+    random fixes, masks over symptoms, and false completion claims.
+- skill_id: laravel-specialist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Laravel 10+ applications requiring Eloquent ORM,
+    API resources, or queue systems. Invoke for Laravel models, Livewire components,
+    Sanctum authentication, Horizon queues.
+- skill_id: docs-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Creates comprehensive technical documentation from existing codebases.
+    Analyzes architecture, design patterns, and implementation details to produce
+    long-form technical manuals and ebooks. Use PROACTIVELY for system documentation,
+    architecture guides, or technical deep-dives.
+- skill_id: swift-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building iOS/macOS applications with Swift 5.9+, SwiftUI,
+    or async/await concurrency. Invoke for protocol-oriented programming, SwiftUI
+    state management, actors, server-side Swift.
+- skill_id: performance-testing-review-ai-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are an expert AI-powered code review specialist combining automated
+    static analysis, intelligent pattern recognition, and modern DevOps practices.
+    Leverage AI tools (GitHub Copilot, Qodo, GPT-5, C
+- skill_id: senior-devops
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization,
+    and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure
+    as code, deployment automation, and monitoring. Use when setting up pipelines,
+    deploying applications, managing infrastructure, implementing monitoring, or optimizing
+    deployment processes.
+- skill_id: internal-comms-community
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: A set of resources to help me write all kinds of internal communications,
+    using the formats that my company likes to use. Claude should use this skill whenever
+    asked to write some sort of internal communications (status reports, leadership
+    updates, 3P updates, company newsletters, FAQs, incident reports, project updates,
+    etc.).
+- skill_id: database-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Database design principles and decision-making. Schema design, indexing
+    strategy, ORM selection, serverless databases.
+- skill_id: customer-support
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Elite AI-powered customer support specialist mastering conversational
+    AI, automated ticketing, sentiment analysis, and omnichannel support experiences.
+    Integrates modern support tools, chatbot platforms, and CX optimization with 2024/2025
+    best practices. Use PROACTIVELY for comprehensive customer experience management.
+- skill_id: python-development-python-scaffold
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a Python project architecture expert specializing in scaffolding
+    production-ready Python applications. Generate complete project structures with
+    modern tooling (uv, FastAPI, Django), type hint
+- skill_id: cpp-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Write idiomatic C++ code with modern features, RAII, smart pointers,
+    and STL algorithms. Handles templates, move semantics, and performance optimization.
+    Use PROACTIVELY for C++ refactoring, memory safety, or complex C++ patterns.
+- skill_id: blockchain-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build production-ready Web3 applications, smart contracts, and decentralized
+    systems. Implements DeFi protocols, NFT platforms, DAOs, and enterprise blockchain
+    integrations. Use PROACTIVELY for smart contracts, Web3 apps, DeFi protocols,
+    or blockchain infrastructure.
+- skill_id: sqlmap-database-pentesting
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "automate SQL injection
+    testing," "enumerate database structure," "extract database credentials using
+    sqlmap," "dump tables and columns from a vulnerable database," or "perform automated
+    database penetration testing." It provides comprehensive guidance for using SQLMap
+    to detect and exploit SQL injection vulnerabilities.
+- skill_id: unreal-engine-cpp-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert guide for Unreal Engine 5.x C++ development, covering UObject
+    hygiene, performance patterns, and best practices.
+- skill_id: senior-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive software architecture skill for designing scalable, maintainable
+    systems using ReactJS, NextJS, NodeJS, Express, React Native, Swift, Kotlin, Flutter,
+    Postgres, GraphQL, Go, Python. Includes architecture diagram generation, system
+    design patterns, tech stack decision frameworks, and dependency analysis. Use
+    when designing system architecture, making technical decisions, creating architecture
+    diagrams, evaluating trade-offs, or defining integration patterns.
+- skill_id: claude-ally-health
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: A health assistant skill for medical information analysis, symptom
+    tracking, and wellness guidance.
+- skill_id: flutter-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Flutter development with Dart 3, advanced widgets, and multi-platform
+    deployment. Handles state management, animations, testing, and performance optimization
+    for mobile, web, desktop, and embedded platforms. Use PROACTIVELY for Flutter
+    architecture, UI implementation, or cross-platform features.
+- skill_id: mobile-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Mobile-first design and engineering doctrine for iOS and Android apps.
+    Covers touch interaction, performance, platform conventions, offline behavior,
+    and mobile-specific decision-making. Teaches principles and constraints, not fixed
+    layouts. Use for React Native, Flutter, or native mobile apps.
+- skill_id: codebase-cleanup-refactor-clean
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a code refactoring expert specializing in clean code principles,
+    SOLID design patterns, and modern software engineering best practices. Analyze
+    and refactor the provided code to improve its quality, maintainability, and performance.
+- skill_id: media-processing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Process multimedia files with FFmpeg (video/audio encoding, conversion,
+    streaming, filtering, hardware acceleration) and ImageMagick (image manipulation,
+    format conversion, batch processing, effects, composition). Use when converting
+    media formats, encoding videos with specific codecs (H.264, H.265, VP9), resizing/cropping
+    images, extracting audio from video, applying filters and effects, optimizing
+    file sizes, creating streaming manifests (HLS/DASH), generating thumbnails, batch
+    processing images, creating composite images, or implementing media processing
+    pipelines. Supports 100+ formats, hardware acceleration (NVENC, QSV), and complex
+    filtergraphs.
+- skill_id: postgres-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when optimizing PostgreSQL queries, configuring replication, or
+    implementing advanced database features. Invoke for EXPLAIN analysis, JSONB operations,
+    extension usage, VACUUM tuning, performance monitoring.
+- skill_id: devops-troubleshooter
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert DevOps troubleshooter specializing in rapid incident response,
+    advanced debugging, and modern observability. Masters log analysis, distributed
+    tracing, Kubernetes debugging, performance optimization, and root cause analysis.
+    Handles production outages, system reliability, and preventive monitoring. Use
+    PROACTIVELY for debugging, incident response, or system troubleshooting.
+- skill_id: competitor-alternatives
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'When the user wants to create competitor comparison or alternative
+    pages for SEO and sales enablement. Also use when the user mentions ''alternative
+    page,'' ''vs page,'' ''competitor comparison,'' ''comparison page,'' ''[Product]
+    vs [Product],'' ''[Product] alternative,'' or ''competitive landing pages.'' Covers
+    four formats: singular alternative, plural alternatives, you vs competitor, and
+    competitor vs competitor. Emphasizes deep research, modular content architecture,
+    and varied section types beyond feature tables.'
+- skill_id: inngest
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Inngest expert for serverless-first background jobs, event-driven
+    workflows, and durable execution without managing queues or workers. Use when:
+    inngest, serverless background job, event-driven workflow, step function, durable
+    execution.'
+- skill_id: building-mcp-server-on-cloudflare
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Builds remote MCP (Model Context Protocol) servers on Cloudflare Workers
 
-  - skill_id: api-designer
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, tech-lead]
-      profiles: ["backend:execution"]
-    description: "API design patterns, OpenAPI specifications"
+    with tools, OAuth authentication, and production deployment. Generates
 
-  - skill_id: backend-development
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, performance-engineer]
-      profiles: ["backend:*"]
-    description: "Server-side logic, NestJS, FastAPI, security best practices"
+    server code, configures auth providers, and deploys to Workers.
 
-  - skill_id: nodejs-best-practices
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Node.js async patterns, error handling, performance"
 
-  - skill_id: better-auth
-    category: specialized
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, security-engineer]
-      profiles: ["backend:execution", "security:*"]
-    description: "Authentication, OAuth 2.0, sessions, JWT, MFA"
+    Use when: user wants to "build MCP server", "create MCP tools", "remote
 
-  - skill_id: microservices-architect
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, tech-lead]
-      profiles: ["backend:execution", "architecture:*"]
-    description: "Microservices patterns, service mesh, API gateway"
+    MCP", "deploy MCP", add "OAuth to MCP", or mentions Model Context Protocol
 
-  - skill_id: graphql-architect
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, frontend-engineer]
-      profiles: ["backend:execution"]
-    description: "GraphQL schema design, resolvers, subscriptions"
+    on Cloudflare. Also triggers on "MCP authentication" or "MCP deployment".'
+- skill_id: senior-ml-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: World-class ML engineering skill for productionizing ML models, MLOps,
+    and building scalable ML systems. Expertise in PyTorch, TensorFlow, model deployment,
+    feature stores, model monitoring, and ML infrastructure. Includes LLM integration,
+    fine-tuning, RAG systems, and agentic AI. Use when deploying ML models, building
+    ML platforms, implementing MLOps, or integrating LLMs into production systems.
+- skill_id: tavily-web
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Web search, content extraction, crawling, and research capabilities
+    using Tavily API
+- skill_id: mobile-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Develop React Native, Flutter, or native mobile apps with modern architecture
+    patterns. Masters cross-platform development, native integrations, offline sync,
+    and app store optimization. Use PROACTIVELY for mobile features, cross-platform
+    code, or app optimization.
+- skill_id: test-master
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when writing tests, creating test strategies, or building automation
+    frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis,
+    performance testing, security testing.
+- skill_id: senior-data-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: World-class data engineering skill for building scalable data pipelines,
+    ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow,
+    dbt, Kafka, and modern data stack. Includes data modeling, pipeline orchestration,
+    data quality, and DataOps. Use when designing data architectures, building data
+    pipelines, optimizing data workflows, or implementing data governance.
+- skill_id: shopify-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Build Shopify apps, extensions, themes using GraphQL Admin API, Shopify
+    CLI, Polaris UI, and Liquid.
 
-  - skill_id: senior-backend
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Senior backend patterns, scalable systems, API design"
+    TRIGGER: "shopify", "shopify app", "checkout extension", "admin extension", "POS
+    extension",
 
-  # --------------------------------------------------------------------------
-  # FRAMEWORK SPECIALISTS (Priority 7)
-  # --------------------------------------------------------------------------
-  - skill_id: nestjs-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "NestJS module architecture, DI, guards, interceptors"
+    "shopify theme", "liquid template", "polaris", "shopify graphql", "shopify webhook",
 
-  - skill_id: fastapi-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "FastAPI async patterns, Pydantic, dependency injection"
-
-  - skill_id: django-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Django ORM, views, middleware, admin customization"
-
-  - skill_id: rails-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Ruby on Rails conventions, ActiveRecord, testing"
-
-  - skill_id: spring-boot-engineer
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Spring Boot, Java enterprise patterns, microservices"
-
-  - skill_id: laravel-specialist
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Laravel Eloquent, middleware, authentication"
-
-  - skill_id: dotnet-core-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: ".NET Core, C# patterns, Entity Framework"
-
-  - skill_id: websocket-engineer
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "WebSocket connections, real-time communication"
-
-  - skill_id: senior-fullstack
-    category: expert
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer, frontend-engineer]
-      profiles: ["backend:execution", "frontend:execution"]
-    description: "Full-stack development patterns and best practices"
-
-  - skill_id: fullstack-guardian
-    category: expert
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer, frontend-engineer, tech-lead]
-      profiles: ["backend:*", "frontend:*"]
-    description: "Full-stack quality gates and validation"
-
-  # --------------------------------------------------------------------------
-  # UTILITY SKILLS (Priority 6)
-  # --------------------------------------------------------------------------
-  - skill_id: fastapi-router
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "FastAPI routing patterns and best practices"
-
-  - skill_id: server-management
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer, devops-engineer]
-      profiles: ["backend:execution", "devops:*"]
-    description: "Server administration, process management, scaling"
-
-  # --------------------------------------------------------------------------
-  # NEW SKILLS (Added from skills-more)
-  # --------------------------------------------------------------------------
-  - skill_id: backend-dev-guidelines
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, tech-lead]
-      profiles: ["backend:*"]
-    description: "Opinionated backend standards for Node.js + Express + TypeScript microservices"
-
-  - skill_id: bun-development
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Bun runtime, package management, bundling, testing, built-in APIs"
-
-  - skill_id: nosql-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer, database-architect]
-      profiles: ["backend:execution", "data:*"]
-    description: "Distributed NoSQL (Cassandra, DynamoDB), query-first modeling, partition keys"
-
-  - skill_id: inngest
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Serverless background jobs, event-driven workflows, durable execution"
-
-  - skill_id: trigger-dev
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "TypeScript-first background jobs, AI workflows, reliable async execution"
-
-  - skill_id: upstash-qstash
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Serverless message queues, scheduled jobs, HTTP-based task delivery"
-
-  - skill_id: bullmq-specialist
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Redis-backed job queues, background processing, delayed/repeatable jobs"
-
-  - skill_id: stripe-integration
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Payments, subscriptions, billing portal, webhooks, metered billing"
-
-  - skill_id: plaid-fintech
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "Plaid API, Link token flows, transactions sync, identity verification"
-
-  - skill_id: twilio-communications
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer]
-      profiles: ["backend:execution"]
-    description: "SMS, voice calls, WhatsApp Business API, user verification (2FA)"
-
-  - skill_id: neon-postgres
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer, database-architect]
-      profiles: ["backend:execution", "data:*"]
-    description: "Neon serverless Postgres, Prisma/Drizzle integration, connection pooling"
-
-  - skill_id: software-architecture
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [backend-engineer, tech-lead]
-      profiles: ["backend:execution", "architecture:*"]
-    description: "Clean Architecture, DDD principles, library-first approach, separation of concerns"
+    "shopify billing", "app subscription", "metafields", "shopify functions"'
+- skill_id: python-performance-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Profile and optimize Python code using cProfile, memory profilers,
+    and performance best practices. Use when debugging slow Python code, optimizing
+    bottlenecks, or improving application performance.
+- skill_id: brand-guidelines-community
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Applies Anthropic's official brand colors and typography to any sort
+    of artifact that may benefit from having Anthropic's look-and-feel. Use it when
+    brand colors or style guidelines, visual formatting, or company design standards
+    apply.
+- skill_id: n8n-mcp-tools-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert guide for using n8n-mcp MCP tools effectively. Use when searching
+    for nodes, validating configurations, accessing templates, managing workflows,
+    or using any n8n-mcp tool. Provides tool selection guidance, parameter formats,
+    and common patterns.
+- skill_id: code-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Automated code review for pull requests using specialized review patterns.
+    Analyzes code for quality, security, performance, and best practices. Use when
+    reviewing code changes, PRs, or doing code audits.
+- skill_id: research-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: An uncompromising Academic Research Engineer. Operates with absolute
+    scientific rigor, objective criticism, and zero flair. Focuses on theoretical
+    correctness, formal verification, and optimal implementation across any required
+    technology.
+- skill_id: reference-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Creates exhaustive technical references and API documentation. Generates
+    comprehensive parameter listings, configuration guides, and searchable reference
+    materials. Use PROACTIVELY for API docs, configuration references, or complete
+    technical specifications.
+- skill_id: javascript-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master modern JavaScript with ES6+, async patterns, and Node.js APIs.
+    Handles promises, event loops, and browser/Node compatibility. Use PROACTIVELY
+    for JavaScript optimization, async debugging, or complex JS patterns.
+- skill_id: golang-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Go 1.21+ with modern patterns, advanced concurrency, performance
+    optimization, and production-ready microservices. Expert in the latest Go ecosystem
+    including generics, workspaces, and cutting-edge frameworks. Use PROACTIVELY for
+    Go development, architecture design, or performance optimization.
+- skill_id: deployment-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert deployment engineer specializing in modern CI/CD pipelines,
+    GitOps workflows, and advanced deployment automation. Masters GitHub Actions,
+    ArgoCD/Flux, progressive delivery, container security, and platform engineering.
+    Handles zero-downtime deployments, security scanning, and developer experience
+    optimization. Use PROACTIVELY for CI/CD design, GitOps implementation, or deployment
+    automation.
+- skill_id: ruby-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Write idiomatic Ruby code with metaprogramming, Rails patterns, and
+    performance optimization. Specializes in Ruby on Rails, gem development, and testing
+    frameworks. Use PROACTIVELY for Ruby refactoring, optimization, or complex Ruby
+    features.
+- skill_id: cc-skill-backend-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Backend architecture patterns, API design, database optimization, and
+    server-side best practices for Node.js, Express, and Next.js API routes.
+- skill_id: react-state-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master modern React state management with Redux Toolkit, Zustand, Jotai,
+    and React Query. Use when setting up global state, managing server state, or choosing
+    between state management solutions.
+- skill_id: api-security-best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement secure API design patterns including authentication, authorization,
+    input validation, rate limiting, and protection against common API vulnerabilities
+- skill_id: incident-responder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert SRE incident responder specializing in rapid problem resolution,
+    modern observability, and comprehensive incident management. Masters incident
+    command, blameless post-mortems, error budget management, and system reliability
+    patterns. Handles critical outages, communication strategies, and continuous improvement.
+    Use IMMEDIATELY for production incidents or SRE practices.
+- skill_id: fal-platform
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Platform APIs for model management, pricing, and usage tracking
+- skill_id: autonomous-agent-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Design patterns for building autonomous coding agents. Covers tool
+    integration, permission systems, browser automation, and human-in-the-loop workflows.
+    Use when building AI agents, designing tool APIs, implementing permission systems,
+    or creating autonomous coding assistants.
+- skill_id: performance-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert performance engineer specializing in modern observability, application
+    optimization, and scalable system performance. Masters OpenTelemetry, distributed
+    tracing, load testing, multi-tier caching, Core Web Vitals, and performance monitoring.
+    Handles end-to-end optimization, real user monitoring, and scalability patterns.
+    Use PROACTIVELY for performance optimization, observability, or scalability challenges.
+- skill_id: playwright-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Complete browser automation with Playwright. Auto-detects dev servers,
+    writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check
+    responsive design, validate UX, test login flows, check links, automate any browser
+    task. Use when user wants to test websites, automate browser interactions, validate
+    web functionality, or perform any browser-based testing.
+- skill_id: cosmos-db-python-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build Azure Cosmos DB NoSQL services with Python/FastAPI following
+    production-grade patterns. Use when implementing database client setup with dual
+    auth (DefaultAzureCredential + emulator), service layer classes with CRUD operations,
+    partition key strategies, parameterized queries, or TDD patterns for Cosmos. Triggers
+    on phrases like "Cosmos DB", "NoSQL database", "document store", "add persistence",
+    "database service layer", or "Python Cosmos SDK".
+- skill_id: code-refactoring-refactor-clean
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a code refactoring expert specializing in clean code principles,
+    SOLID design patterns, and modern software engineering best practices. Analyze
+    and refactor the provided code to improve its quality, maintainability, and performance.
+- skill_id: debugging-strategies
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master systematic debugging techniques, profiling tools, and root cause
+    analysis to efficiently track down bugs across any codebase or technology stack.
+    Use when investigating bugs, performance issues, or unexpected behavior.
+- skill_id: memory-forensics
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master memory forensics techniques including memory acquisition, process
+    analysis, and artifact extraction using Volatility and related tools. Use when
+    analyzing memory dumps, investigating incidents, or performing malware analysis
+    from RAM captures.
+- skill_id: cloud-penetration-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "perform cloud penetration
+    testing", "assess Azure or AWS or GCP security", "enumerate cloud resources",
+    "exploit cloud misconfigurations", "test O365 security", "extract secrets from
+    cloud environments", or "audit cloud infrastructure". It provides comprehensive
+    techniques for security assessment across major cloud platforms.
+- skill_id: salesforce-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when developing Salesforce applications, Apex code, Lightning Web
+    Components, SOQL queries, triggers, integrations, or CRM customizations. Invoke
+    for governor limits, bulk processing, platform events, Salesforce DX.
+- skill_id: seo-audit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Diagnose and audit SEO issues affecting crawlability, indexation, rankings,
+    and organic performance. Use when the user asks for an SEO audit, technical SEO
+    review, ranking diagnosis, on-page SEO review, meta tag audit, or SEO health check.
+    This skill identifies issues and prioritizes actions but does not execute changes.
+    For large-scale page creation, use programmatic-seo. For structured data, use
+    schema-markup.
+- skill_id: binary-analysis-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master binary analysis patterns including disassembly, decompilation,
+    control flow analysis, and code pattern recognition. Use when analyzing executables,
+    understanding compiled code, or performing static analysis on binaries.
+- skill_id: changelog-automation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Automate changelog generation from commits, PRs, and releases following
+    Keep a Changelog format. Use when setting up release workflows, generating release
+    notes, or standardizing commit conventions.
+- skill_id: backend-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Backend API design, database architecture, microservices patterns,
+    and test-driven development. Use for designing APIs, database schemas, or backend
+    system architecture.
+- skill_id: web-frameworks
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build modern full-stack web applications with Next.js (App Router,
+    Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task
+    pipelines, remote caching, parallel execution), and RemixIcon (3100+ SVG icons
+    in outlined/filled styles). Use when creating React applications, implementing
+    server-side rendering, setting up monorepos with multiple packages, optimizing
+    build performance and caching strategies, adding icon libraries, managing shared
+    dependencies, or working with TypeScript full-stack projects.
+- skill_id: fine-tuning-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when fine-tuning LLMs, training custom models, or optimizing model
+    performance for specific tasks. Invoke for parameter-efficient methods, dataset
+    preparation, or model adaptation.
+- skill_id: changelog-generator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Automatically creates user-facing changelogs from git commits by analyzing
+    commit history, categorizing changes, and transforming technical commits into
+    clear, customer-friendly release notes. Turns hours of manual changelog writing
+    into minutes of automated generation.
+- skill_id: swiftui-expert-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Write, review, or improve SwiftUI code following best practices for
+    state management, view composition, performance, modern APIs, Swift concurrency,
+    and iOS 26+ Liquid Glass adoption. Use when building new SwiftUI features, refactoring
+    existing views, reviewing code quality, or adopting modern SwiftUI patterns.
+- skill_id: ui-ux-pro-max
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings,
+    20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter,
+    Tailwind, shadcn/ui). Actions: plan, build, create, design, implement, review,
+    fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website,
+    landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile
+    app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card,
+    table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism,
+    neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics:
+    color palette, accessibility, animation, layout, typography, font pairing, spacing,
+    hover, shadow, gradient. Integrations: shadcn/ui MCP for component search and
+    examples.'
+- skill_id: api-testing-observability-api-mock
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are an API mocking expert specializing in realistic mock services
+    for development, testing, and demos. Design mocks that simulate real API behavior
+    and enable parallel development.
+- skill_id: backend-development-feature-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Orchestrate end-to-end backend feature development from requirements
+    to deployment. Use when coordinating multi-phase feature delivery across teams
+    and services.
+- skill_id: senior-qa
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Comprehensive QA and testing skill for quality assurance, test automation,
+    and testing strategies for ReactJS, NextJS, NodeJS applications. Includes test
+    suite generation, coverage analysis, E2E testing setup, and quality metrics. Use
+    when designing test strategies, writing test cases, implementing test automation,
+    performing manual testing, or analyzing test coverage.
+- skill_id: dotnet-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert .NET backend architect specializing in C#, ASP.NET Core, Entity
+    Framework, Dapper, and enterprise application patterns. Masters async/await, dependency
+    injection, caching strategies, and performance optimization. Use PROACTIVELY for
+    .NET API development, code review, or architecture decisions.
+- skill_id: network-101
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "set up a web server",
+    "configure HTTP or HTTPS", "perform SNMP enumeration", "configure SMB shares",
+    "test network services", or needs guidance on configuring and testing network
+    services for penetration testing labs.
+- skill_id: telegram-mini-app
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in building Telegram Mini Apps (TWA) - web apps that run inside
+    Telegram with native-like experience. Covers the TON ecosystem, Telegram Web App
+    API, payments, user authentication, and building viral mini apps that monetize.
+    Use when: telegram mini app, TWA, telegram web app, TON app, mini app.'
+- skill_id: code-documentation-doc-generate
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a documentation expert specializing in creating comprehensive,
+    maintainable documentation from code. Generate API docs, architecture diagrams,
+    user guides, and technical references using AI-powered analysis and industry best
+    practices.
+- skill_id: twilio-communications
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Build communication features with Twilio: SMS messaging, voice calls,
+    WhatsApp Business API, and user verification (2FA). Covers the full spectrum from
+    simple notifications to complex IVR systems and multi-channel authentication.
+    Critical focus on compliance, rate limits, and error handling. Use when: twilio,
+    send SMS, text message, voice call, phone verification.'
+- skill_id: secrets-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement secure secrets management for CI/CD pipelines using Vault,
+    AWS Secrets Manager, or native platform solutions. Use when handling sensitive
+    credentials, rotating secrets, or securing CI/CD environments.
+- skill_id: vector-database-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert in vector databases, embedding strategies, and semantic search
+    implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG
+    applications, recommendation systems, and similar
+- skill_id: obsidian-clipper-template-creator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Guide for creating templates for the Obsidian Web Clipper. Use when
+    you want to create a new clipping template, understand available variables, or
+    format clipped content.
+- skill_id: java-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Java 21+ with modern features like virtual threads, pattern
+    matching, and Spring Boot 3.x. Expert in the latest Java ecosystem including GraalVM,
+    Project Loom, and cloud-native patterns. Use PROACTIVELY for Java development,
+    microservices architecture, or performance optimization.
+- skill_id: django-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Django web applications or REST APIs with Django
+    REST Framework. Invoke for Django models, ORM optimization, DRF serializers, viewsets,
+    authentication with JWT.
+- skill_id: data-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build scalable data pipelines, modern data warehouses, and real-time
+    streaming architectures. Implements Apache Spark, dbt, Airflow, and cloud-native
+    data platforms. Use PROACTIVELY for data pipeline design, analytics infrastructure,
+    or modern data stack implementation.
+- skill_id: react-native-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building cross-platform mobile applications with React Native
+    or Expo. Invoke for navigation patterns, platform-specific code, native modules,
+    FlatList optimization.
+- skill_id: backend-security-coder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert in secure backend coding practices specializing in input validation,
+    authentication, and API security. Use PROACTIVELY for backend security implementations
+    or security code reviews.
+- skill_id: agent-orchestration-multi-agent-optimize
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize multi-agent systems with coordinated profiling, workload distribution,
+    and cost-aware orchestration. Use when improving agent performance, throughput,
+    or reliability.
+- skill_id: python-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Modern Python development with Python 3.12+, Django, FastAPI, async
+    patterns, and production best practices. Use for Python projects, APIs, data processing,
+    or automation scripts.
+- skill_id: senior-computer-vision
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: World-class computer vision skill for image/video processing, object
+    detection, segmentation, and visual AI systems. Expertise in PyTorch, OpenCV,
+    YOLO, SAM, diffusion models, and vision transformers. Includes 3D vision, video
+    analysis, real-time processing, and production deployment. Use when building vision
+    AI systems, implementing object detection, training custom vision models, or optimizing
+    inference pipelines.
+- skill_id: personal-tool-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in building custom tools that solve your own problems first.
+    The best products often start as personal tools - scratch your own itch, build
+    for yourself, then discover others have the same itch. Covers rapid prototyping,
+    local-first apps, CLI tools, scripts that grow into products, and the art of dogfooding.
+    Use when: build a tool, personal tool, scratch my itch, solve my problem, CLI
+    tool.'
+- skill_id: multi-agent-brainstorming
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use this skill when a design or idea requires higher confidence, risk
+    reduction, or formal review. This skill orchestrates a structured, sequential
+    multi-agent design review where each agent has a strict, non-overlapping role.
+    It prevents blind spots, false confidence, and premature convergence.
+- skill_id: lint-and-validate
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Automatic quality control, linting, and static analysis procedures.
+    Use after every code modification to ensure syntax correctness and project standards.
+    Triggers onKeywords: lint, format, check, validate, types, static analysis.'
+- skill_id: ai-wrapper-product
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in building products that wrap AI APIs (OpenAI, Anthropic,
+    etc.) into focused tools people will pay for. Not just ''ChatGPT but different''
+    - products that solve specific problems with AI. Covers prompt engineering for
+    products, cost management, rate limiting, and building defensible AI businesses.
+    Use when: AI wrapper, GPT product, AI tool, wrap AI, AI SaaS.'
+- skill_id: minecraft-bukkit-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Minecraft server plugin development with Bukkit, Spigot, and
+    Paper APIs. Specializes in event-driven architecture, command systems, world manipulation,
+    player management, and performance optimization. Use PROACTIVELY for plugin architecture,
+    gameplay mechanics, server-side features, or cross-version compatibility.
+- skill_id: production-code-audit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Autonomously deep-scan entire codebase line-by-line, understand architecture
+    and patterns, then systematically transform it to production-grade, corporate-level
+    professional quality with optimizations
+- skill_id: database-admin
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert database administrator specializing in modern cloud databases,
+    automation, and reliability engineering. Masters AWS/Azure/GCP database services,
+    Infrastructure as Code, high availability, disaster recovery, performance optimization,
+    and compliance. Handles multi-cloud strategies, container databases, and cost
+    optimization. Use PROACTIVELY for database architecture, operations, or reliability
+    engineering.
+- skill_id: bazel-build-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize Bazel builds for large-scale monorepos. Use when configuring
+    Bazel, implementing remote execution, or optimizing build performance for enterprise
+    codebases.
+- skill_id: fp-ts-react
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Practical patterns for using fp-ts with React - hooks, state, forms,
+    data fetching. Use when building React apps with functional programming patterns.
+    Works with React 18/19, Next.js 14/15.
+- skill_id: c-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Write efficient C code with proper memory management, pointer arithmetic,
+    and system calls. Handles embedded systems, kernel modules, and performance-critical
+    code. Use PROACTIVELY for C optimization, memory issues, or system programming.
+- skill_id: gcp-cloud-run
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Specialized skill for building production-ready serverless applications
+    on GCP. Covers Cloud Run services (containerized), Cloud Run Functions (event-driven),
+    cold start optimization, and event-driven architecture with Pub/Sub.
+- skill_id: slo-implementation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Define and implement Service Level Indicators (SLIs) and Service Level
+    Objectives (SLOs) with error budgets and alerting. Use when establishing reliability
+    targets, implementing SRE practices, or measuring service performance.
+- skill_id: terraform-module-library
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build reusable Terraform modules for AWS, Azure, and GCP infrastructure
+    following infrastructure-as-code best practices. Use when creating infrastructure
+    modules, standardizing cloud provisioning, or implementing reusable IaC components.
+- skill_id: shodan-reconnaissance
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "search for exposed
+    devices on the internet," "perform Shodan reconnaissance," "find vulnerable services
+    using Shodan," "scan IP ranges with Shodan," or "discover IoT devices and open
+    ports." It provides comprehensive guidance for using Shodan's search engine, CLI,
+    and API for penetration testing reconnaissance.
+- skill_id: nextjs-app-router-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Next.js 14+ App Router with Server Components, streaming, parallel
+    routes, and advanced data fetching. Use when building Next.js applications, implementing
+    SSR/SSG, or optimizing React Server Components.
+- skill_id: issue-creator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Convert raw notes, error logs, voice dictation, or screenshots into
+    crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info,
+    error messages, or informal descriptions and wants a structured GitHub issue.
+    Supports images/GIFs for visual evidence.
+- skill_id: devops-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when setting up CI/CD pipelines, containerizing applications, or
+    managing infrastructure as code. Invoke for pipelines, Docker, Kubernetes, cloud
+    platforms, GitOps.
+- skill_id: framework-migration-code-migrate
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a code migration expert specializing in transitioning codebases
+    between frameworks, languages, versions, and platforms. Generate comprehensive
+    migration plans, automated migration scripts, and
+- skill_id: agent-orchestration-improve-agent
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Systematic improvement of existing agents through performance analysis,
+    prompt engineering, and continuous iteration.
+- skill_id: code-refactoring-context-restore
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when working with code refactoring context restore
+- skill_id: api-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: API design principles and decision-making. REST vs GraphQL vs tRPC
+    selection, response formats, versioning, pagination.
+- skill_id: xlsx-official
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Comprehensive spreadsheet creation, editing, and analysis with support
+    for formulas, formatting, data analysis, and visualization. When Claude needs
+    to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new
+    spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3)
+    Modify existing spreadsheets while preserving formulas, (4) Data analysis and
+    visualization in spreadsheets, or (5) Recalculating formulas'
+- skill_id: plaid-fintech
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert patterns for Plaid API integration including Link token flows,
+    transactions sync, identity verification, Auth for ACH, balance checks, webhook
+    handling, and fintech compliance best practices. Use when: plaid, bank account
+    linking, bank connection, ach, account aggregation.'
+- skill_id: fastapi-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building high-performance async Python APIs with FastAPI and
+    Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAPI
+    documentation.
+- skill_id: api-fuzzing-bug-bounty
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "test API security",
+    "fuzz APIs", "find IDOR vulnerabilities", "test REST API", "test GraphQL", "API
+    penetration testing", "bug bounty API testing", or needs guidance on API security
+    assessment techniques.
+- skill_id: burp-suite-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "intercept HTTP traffic",
+    "modify web requests", "use Burp Suite for testing", "perform web vulnerability
+    scanning", "test with Burp Repeater", "analyze HTTP history", or "configure proxy
+    for web testing". It provides comprehensive guidance for using Burp Suite's core
+    features for web application security testing.
+- skill_id: mcp-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building MCP servers or clients that connect AI systems with
+    external tools and data sources. Invoke for MCP protocol compliance, TypeScript/Python
+    SDKs, resource providers, tool functions.
+- skill_id: internal-comms
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: A set of resources to help me write all kinds of internal communications,
+    using the formats that my company likes to use. Claude should use this skill whenever
+    asked to write some sort of internal communications (status reports, leadership
+    updates, 3P updates, company newsletters, FAQs, incident reports, project updates,
+    etc.).
+- skill_id: similarity-search-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Implement efficient similarity search with vector databases. Use when
+    building semantic search, implementing nearest neighbor queries, or optimizing
+    retrieval performance.
+- skill_id: aws-serverless-eda
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: AWS serverless and event-driven architecture expert based on Well-Architected
+    Framework. Use when building serverless APIs, Lambda functions, REST APIs, microservices,
+    or async workflows. Covers Lambda with TypeScript/Python, API Gateway (REST/HTTP),
+    DynamoDB, Step Functions, EventBridge, SQS, SNS, and serverless patterns. Essential
+    when user mentions serverless, Lambda, API Gateway, event-driven, async processing,
+    queues, pub/sub, or wants to build scalable serverless applications with AWS best
+    practices.
+- skill_id: telegram-bot-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Expert in building Telegram bots that solve real problems - from simple
+    automation to complex AI-powered bots. Covers bot architecture, the Telegram Bot
+    API, user experience, monetization strategies, and scaling bots to thousands of
+    users. Use when: telegram bot, bot api, telegram automation, chat bot telegram,
+    tg bot.'
+- skill_id: frontend-mobile-development-component-scaffold
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a React component architecture expert specializing in scaffolding
+    production-ready, accessible, and performant components. Generate complete component
+    implementations with TypeScript, tests, s
+- skill_id: documentation-templates
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Documentation templates and structure guidelines. README, API docs,
+    code comments, and AI-friendly documentation.
+- skill_id: database-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert database architect specializing in data layer design from scratch,
+    technology selection, schema modeling, and scalable database architectures. Masters
+    SQL/NoSQL/TimeSeries database selection, normalization strategies, migration planning,
+    and performance-first design. Handles both greenfield architectures and re-architecture
+    of existing systems. Use PROACTIVELY for database architecture, technology selection,
+    or data modeling decisions.
+- skill_id: database-optimizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert database optimizer specializing in modern performance tuning,
+    query optimization, and scalable architectures. Masters advanced indexing, N+1
+    resolution, multi-tier caching, partitioning strategies, and cloud database optimization.
+    Handles complex query analysis, migration strategies, and performance monitoring.
+    Use PROACTIVELY for database optimization, performance issues, or scalability
+    challenges.
+- skill_id: api-designer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when designing REST or GraphQL APIs, creating OpenAPI specifications,
+    or planning API architecture. Invoke for resource modeling, versioning strategies,
+    pagination patterns, error handling standards.
+- skill_id: brand-guidelines
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Applies Anthropic's official brand colors and typography to any sort
+    of artifact that may benefit from having Anthropic's look-and-feel. Use it when
+    brand colors or style guidelines, visual formatting, or company design standards
+    apply.
+- skill_id: file-organizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Intelligently organizes files and folders by understanding context,
+    finding duplicates, and suggesting better organizational structures. Use when
+    user wants to clean up directories, organize downloads, remove duplicates, or
+    restructure projects.
+- skill_id: cc-skill-frontend-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Frontend development patterns for React, Next.js, state management,
+    performance optimization, and UI best practices.
+- skill_id: incident-response-smart-fix
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: '[Extended thinking: This workflow implements a sophisticated debugging
+    and resolution pipeline that leverages AI-assisted debugging tools and observability
+    platforms to systematically diagnose and res'
+- skill_id: fullstack-guardian
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when implementing features across frontend and backend, building
+    APIs with UI, or creating end-to-end data flows. Invoke for feature implementation,
+    API development, UI building, cross-stack work.
+- skill_id: python-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master Python 3.12+ with modern features, async programming, performance
+    optimization, and production-ready practices. Expert in the latest Python ecosystem
+    including uv, ruff, pydantic, and FastAPI. Use PROACTIVELY for Python development,
+    optimization, or advanced Python patterns.
+- skill_id: exa-search
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Semantic search, similar content discovery, and structured research
+    using Exa API
+- skill_id: databases
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Work with MongoDB (document database, BSON documents, aggregation pipelines,
+    Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin).
+    Use when designing database schemas, writing queries and aggregations, optimizing
+    indexes for performance, performing database migrations, configuring replication
+    and sharding, implementing backup and restore strategies, managing database users
+    and permissions, analyzing query performance, or administering production databases.
+- skill_id: prisma-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Prisma ORM expert for schema design, migrations, query optimization,
+    relations modeling, and database operations. Use PROACTIVELY for Prisma schema
+    issues, migration problems, query performance, relation design, or database connection
+    issues.
+- skill_id: csharp-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Write modern C# code with advanced features like records, pattern matching,
+    and async/await. Optimizes .NET applications, implements enterprise patterns,
+    and ensures comprehensive testing. Use PROACTIVELY for C# refactoring, performance
+    optimization, or complex .NET solutions.
+- skill_id: terraform-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when implementing infrastructure as code with Terraform across
+    AWS, Azure, or GCP. Invoke for module development, state management, provider
+    configuration, multi-environment workflows, infrastructure testing.
+- skill_id: code-documenter
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when adding docstrings, creating API documentation, or building
+    documentation sites. Invoke for OpenAPI/Swagger specs, JSDoc, doc portals, tutorials,
+    user guides.
+- skill_id: cloud-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Expert cloud architect specializing in AWS/Azure/GCP multi-cloud infrastructure
+    design, advanced IaC (Terraform/OpenTofu/CDK), FinOps cost optimization, and modern
+    architectural patterns. Masters serverless, microservices, security, compliance,
+    and disaster recovery. Use PROACTIVELY for cloud architecture, cost optimization,
+    migration planning, or multi-cloud strategies.
+- skill_id: daily-news-report
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Scrapes content based on a preset URL list, filters high-quality technical
+    information, and generates daily Markdown reports.
+- skill_id: wordpress-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when developing WordPress themes, plugins, customizing Gutenberg
+    blocks, implementing WooCommerce features, or optimizing WordPress performance
+    and security.
+- skill_id: wireshark-analysis
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "analyze network traffic
+    with Wireshark", "capture packets for troubleshooting", "filter PCAP files", "follow
+    TCP/UDP streams", "detect network anomalies", "investigate suspicious traffic",
+    or "perform protocol analysis". It provides comprehensive techniques for network
+    packet capture, filtering, and analysis using Wireshark.
+- skill_id: moodle-external-api-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Create custom external web service APIs for Moodle LMS. Use when implementing
+    web services for course management, user tracking, quiz operations, or custom
+    plugin functionality. Covers parameter validation, database operations, error
+    handling, service registration, and Moodle coding standards.
+- skill_id: paypal-integration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Integrate PayPal payment processing with support for express checkout,
+    subscriptions, and refund management. Use when implementing PayPal payments, processing
+    online transactions, or building e-commerce checkout flows.
+- skill_id: multi-platform-apps-multi-platform
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Build and deploy the same feature consistently across web, mobile,
+    and desktop platforms using API-first architecture and parallel implementation
+    strategies.
+- skill_id: upstash-qstash
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Upstash QStash expert for serverless message queues, scheduled jobs,
+    and reliable HTTP-based task delivery without managing infrastructure. Use when:
+    qstash, upstash queue, serverless cron, scheduled http, message queue serverless.'
+- skill_id: documentation-generation-doc-generate
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: You are a documentation expert specializing in creating comprehensive,
+    maintainable documentation from code. Generate API docs, architecture diagrams,
+    user guides, and technical references using AI-powered analysis and industry best
+    practices.
+- skill_id: graphql-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Master modern GraphQL with federation, performance optimization, and
+    enterprise security. Build scalable schemas, implement advanced caching, and design
+    real-time systems. Use PROACTIVELY for GraphQL architecture or performance optimization.
+- skill_id: firebase
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'Firebase gives you a complete backend in minutes - auth, database,
+    storage, functions, hosting. But the ease of setup hides real complexity. Security
+    rules are your last line of defense, and they''re often wrong. Firestore queries
+    are limited, and you learn this after you''ve designed your data model.  This
+    skill covers Firebase Authentication, Firestore, Realtime Database, Cloud Functions,
+    Cloud Storage, and Firebase Hosting. Key insight: Firebase is optimized for read-heavy,
+    denormalized data. I'
+- skill_id: terraform-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Terraform infrastructure as code best practices
+- skill_id: ai-multimodal
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Analyze images/audio/video with Gemini API (better vision than Claude).
+    Generate images (Imagen 4), videos (Veo 3). Use for vision analysis, transcription,
+    OCR, design extraction, multimodal AI.
+- skill_id: tutorial-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Creates step-by-step tutorials and educational content from code. Transforms
+    complex concepts into progressive learning experiences with hands-on examples.
+    Use PROACTIVELY for onboarding guides, feature tutorials, or concept explanations.
+- skill_id: game-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building game systems, implementing Unity/Unreal features,
+    or optimizing game performance. Invoke for Unity, Unreal, game patterns, ECS,
+    physics, networking, performance optimization.
+- skill_id: spark-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Optimize Apache Spark jobs with partitioning, caching, shuffle optimization,
+    and memory tuning. Use when improving Spark performance, debugging slow jobs,
+    or scaling data processing pipelines.
+- skill_id: dotnet-core-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building .NET 8 applications with minimal APIs, clean architecture,
+    or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR,
+    JWT authentication, AOT compilation.
+- skill_id: scanning-tools
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "perform vulnerability
+    scanning", "scan networks for open ports", "assess web application security",
+    "scan wireless networks", "detect malware", "check cloud security", or "evaluate
+    system compliance". It provides comprehensive guidance on security scanning tools
+    and methodologies.
+- skill_id: php-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Write idiomatic PHP code with generators, iterators, SPL data structures,
+    and modern OOP features. Use PROACTIVELY for high-performance PHP applications.
+- skill_id: kotlin-specialist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Use when building Kotlin applications requiring coroutines, multiplatform
+    development, or Android with Compose. Invoke for Flow API, KMP projects, Ktor
+    servers, DSL design, sealed classes.
+- skill_id: zapier-make-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: 'No-code automation democratizes workflow building. Zapier and Make
+    (formerly Integromat) let non-developers automate business processes without writing
+    code. But no-code doesn''t mean no-complexity - these platforms have their own
+    patterns, pitfalls, and breaking points.  This skill covers when to use which
+    platform, how to build reliable automations, and when to graduate to code-based
+    solutions. Key insight: Zapier optimizes for simplicity and integrations (7000+
+    apps), Make optimizes for power '
+- skill_id: sql-injection-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "test for SQL injection
+    vulnerabilities", "perform SQLi attacks", "bypass authentication using SQL injection",
+    "extract database information through injection", "detect SQL injection flaws",
+    or "exploit database query vulnerabilities". It provides comprehensive techniques
+    for identifying, exploiting, and understanding SQL injection attack vectors across
+    different database systems.
+- skill_id: hr-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: Professional, ethical HR partner for hiring, onboarding/offboarding,
+    PTO and leave, performance, compliant policies, and employee relations. Ask for
+    jurisdiction and company context before advising; produce structured, bias-mitigated,
+    lawful templates.
+- skill_id: smtp-penetration-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - backend:*
+  description: This skill should be used when the user asks to "perform SMTP penetration
+    testing", "enumerate email users", "test for open mail relays", "grab SMTP banners",
+    "brute force email credentials", or "assess mail server security". It provides
+    comprehensive techniques for testing SMTP server security.
