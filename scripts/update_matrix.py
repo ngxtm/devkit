@@ -18,14 +18,14 @@ from datetime import datetime
 
 # Category mappings for auto-categorization
 CATEGORY_KEYWORDS = {
-    'backend': ['api', 'backend', 'server', 'database', 'sql', 'rest', 'graphql',
+    'backend': ['backend', 'server', 'rest', 'graphql',
                 'fastapi', 'nestjs', 'django', 'express', 'prisma', 'orm'],
     'frontend': ['react', 'vue', 'angular', 'frontend', 'css', 'tailwind', 'ui',
                  'nextjs', 'nuxt', 'svelte', 'component', 'styling'],
     'security': ['security', 'pentest', 'xss', 'sql-injection', 'auth', 'csrf',
                  'vulnerability', 'hacking', 'exploit', 'firewall', 'encryption'],
-    'devops': ['docker', 'kubernetes', 'ci-cd', 'deployment', 'aws', 'azure',
-               'gcp', 'terraform', 'ansible', 'monitoring', 'logging'],
+    'devops': ['docker', 'kubernetes', 'ci-cd', 'deployment',
+               'terraform', 'ansible', 'monitoring', 'logging'],
     'ai-ml': ['ai', 'ml', 'machine-learning', 'llm', 'agent', 'rag', 'prompt',
               'embeddings', 'fine-tuning', 'neural', 'deep-learning'],
     'mobile': ['mobile', 'ios', 'android', 'react-native', 'flutter', 'swift',
@@ -44,6 +44,12 @@ CATEGORY_KEYWORDS = {
               'cdn', 's3', 'cloudflare'],
     'architecture': ['architecture', 'microservices', 'monolith', 'design-patterns',
                      'ddd', 'event-driven', 'cqrs', 'clean-code'],
+    'database': ['database', 'sql', 'nosql', 'postgres', 'mysql', 'mongodb',
+                 'redis', 'elasticsearch', 'migration'],
+    'api': ['api', 'openapi', 'swagger', 'grpc', 'websocket', 'webhook',
+            'rate-limit', 'versioning'],
+    'performance': ['performance', 'optimization', 'caching', 'profiling',
+                    'benchmark', 'lazy-load', 'bundle', 'lighthouse'],
 }
 
 
@@ -144,7 +150,7 @@ def generate_matrix_files(categorized_skills: dict, output_dir: str):
 
         with open(file_path, 'w', encoding='utf-8') as f:
             yaml.dump(content, f, default_flow_style=False, sort_keys=False,
-                      allow_unicode=True)
+                      allow_unicode=True, width=1000)
 
         print(f"  Generated: {file_path.name} ({len(skills)} skills)")
 
@@ -202,7 +208,7 @@ def generate_index(categorized_skills: dict, output_path: Path):
     index_file = output_path / '_index.yaml'
     with open(index_file, 'w', encoding='utf-8') as f:
         yaml.dump(index_content, f, default_flow_style=False, sort_keys=False,
-                  allow_unicode=True)
+                  allow_unicode=True, width=1000)
 
     print(f"\n  Generated: _index.yaml (Total: {total_skills} skills)")
 

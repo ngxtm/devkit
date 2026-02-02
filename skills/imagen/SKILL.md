@@ -1,6 +1,6 @@
 ---
 name: imagen
-description: |
+description: Generate images using Google Gemini image generation model. Use when user requests image generation, frontend development needs images, or documentation needs illustrations.
 source: "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen"
 risk: safe
 ---
