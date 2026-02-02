@@ -1,195 +1,227 @@
-# ============================================================================
-# QUALITY DOMAIN SKILLS
-# ============================================================================
-# Testing, debugging, code review, validation
-# Primary agents: tester, debugger, reviewer
-# ============================================================================
-
 domain: quality
-name: "Quality Assurance"
-description: "Testing, code review, validation"
-skill_count: 21
-
+description: Skills related to quality
+skill_count: 23
+updated: '2026-02-02T01:14:08.001386'
 skills:
-  # --------------------------------------------------------------------------
-  # TESTING SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: testing-patterns
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [tester, mobile-engineer]
-      profiles: ["quality:validation"]
-    description: "Unit, integration, mocking strategies, test organization"
-
-  - skill_id: tdd-workflow
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "Test-Driven Development RED-GREEN-REFACTOR cycle"
-
-  - skill_id: webapp-testing
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "E2E testing, Playwright, browser automation, deep audit"
-
-  - skill_id: senior-qa
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "Test strategy, automation frameworks, quality metrics"
-
-  - skill_id: playwright-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "Playwright test automation expertise"
-
-  - skill_id: playwright-skill
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "Playwright testing patterns and utilities"
-
-  - skill_id: qa-regression
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "Regression testing strategies"
-
-  - skill_id: test-master
-    category: expert
-    priority_score: 7
-    relevance_mapping:
-      agents: [tester]
-      profiles: ["quality:validation"]
-    description: "Advanced testing mastery"
-
-  # --------------------------------------------------------------------------
-  # DEBUGGING SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: systematic-debugging
-    category: expert
-    priority_score: 9
-    relevance_mapping:
-      agents: [debugger]
-      profiles: ["quality:debugging"]
-    description: "4-phase debugging methodology, root cause analysis"
-
-  - skill_id: debugging
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [debugger, tester, scouter]
-      profiles: ["quality:debugging"]
-    description: "General debugging techniques, log analysis, tracing"
-
-  - skill_id: debugging-wizard
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [debugger]
-      profiles: ["quality:debugging"]
-    description: "Advanced debugging wizardry"
-
-  # --------------------------------------------------------------------------
-  # CODE REVIEW SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: code-review
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [reviewer, tech-lead]
-      profiles: ["quality:review"]
-    description: "Review methodology, plan compliance, feedback format"
-
-  - skill_id: code-review-checklist
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [reviewer]
-      profiles: ["quality:review"]
-    description: "Systematic review checklist, security, best practices"
-
-  - skill_id: code-reviewer
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [reviewer]
-      profiles: ["quality:review"]
-    description: "Comprehensive code review skills"
-
-  # --------------------------------------------------------------------------
-  # UTILITY SKILLS (Priority 6-7)
-  # --------------------------------------------------------------------------
-  - skill_id: lint-and-validate
-    category: utility
-    priority_score: 7
-    relevance_mapping:
-      agents: [backend-engineer, frontend-engineer, reviewer]
-      profiles: ["quality:*", "backend:*", "frontend:*"]
-    description: "Linting and validation tools"
-
-  - skill_id: receiving-code-review
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer, frontend-engineer]
-      profiles: ["backend:*", "frontend:*"]
-    description: "How to receive and respond to code review feedback"
-
-  - skill_id: requesting-code-review
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [backend-engineer, frontend-engineer]
-      profiles: ["backend:*", "frontend:*"]
-    description: "How to request code reviews effectively"
-
-  # --------------------------------------------------------------------------
-  # NEW SKILLS - TESTING & CODE QUALITY (Added from skills-more)
-  # --------------------------------------------------------------------------
-  - skill_id: test-driven-development
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [tester, backend-engineer, frontend-engineer]
-      profiles: ["quality:validation", "backend:*", "frontend:*"]
-    description: "Rigorous TDD: NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST"
-
-  - skill_id: test-fixing
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [tester, debugger]
-      profiles: ["quality:validation", "quality:debugging"]
-    description: "Systematic test fixing, smart error grouping, prioritizing fixes"
-
-  - skill_id: production-code-audit
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [reviewer, tech-lead]
-      profiles: ["quality:review", "architecture:*"]
-    description: "Autonomous codebase audit, deep-scan, production-grade quality transformation"
-
-  - skill_id: verification-before-completion
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [tester, reviewer, backend-engineer, frontend-engineer]
-      profiles: ["quality:*", "backend:*", "frontend:*"]
-    description: "NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE"
+- skill_id: test-driven-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use when implementing any feature or bugfix, before writing implementation
+    code
+- skill_id: screenshots
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Generate marketing screenshots of your app using Playwright. Use when
+    the user wants to create screenshots for Product Hunt, social media, landing pages,
+    or documentation.
+- skill_id: playwright-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use when writing E2E tests with Playwright, setting up test infrastructure,
+    or debugging flaky browser tests. Invoke for browser automation, E2E tests, Page
+    Object Model, test flakiness, visual testing.
+- skill_id: error-diagnostics-error-analysis
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: You are an expert error analysis specialist with deep expertise in
+    debugging distributed systems, analyzing production incidents, and implementing
+    comprehensive observability solutions.
+- skill_id: bash-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Master of defensive Bash scripting for production automation, CI/CD
+    pipelines, and system utilities. Expert in safe, portable, and testable shell
+    scripts.
+- skill_id: javascript-testing-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Implement comprehensive testing strategies using Jest, Vitest, and
+    Testing Library for unit tests, integration tests, and end-to-end testing with
+    mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript
+    tests, setting up test infrastructure, or implementing TDD/BDD workflows.
+- skill_id: protocol-reverse-engineering
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Master network protocol reverse engineering including packet analysis,
+    protocol dissection, and custom protocol documentation. Use when analyzing network
+    traffic, understanding proprietary protocols, or debugging network communication.
+- skill_id: error-debugging-error-analysis
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: You are an expert error analysis specialist with deep expertise in
+    debugging distributed systems, analyzing production incidents, and implementing
+    comprehensive observability solutions.
+- skill_id: workflow-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use this skill when implementing tasks according to Conductor's TDD
+    workflow, handling phase checkpoints, managing git commits for tasks, or understanding
+    the verification protocol.
+- skill_id: framework-migration-deps-upgrade
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: You are a dependency management expert specializing in safe, incremental
+    upgrades of project dependencies. Plan and execute dependency updates with minimal
+    risk, proper testing, and clear migration pa
+- skill_id: dependency-upgrade
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Manage major dependency version upgrades with compatibility analysis,
+    staged rollout, and comprehensive testing. Use when upgrading framework versions,
+    updating major dependencies, or managing breaking changes in libraries.
+- skill_id: bun-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Modern JavaScript/TypeScript development with Bun runtime. Covers package
+    management, bundling, testing, and migration from Node.js. Use when working with
+    Bun, optimizing JS/TS development speed, or migrating from Node.js to Bun.
+- skill_id: copywriting
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use this skill when writing, rewriting, or improving marketing copy
+    for any page (homepage, landing page, pricing, feature, product, or about page).
+    This skill produces clear, compelling, and testable copy while enforcing alignment,
+    honesty, and conversion best practices.
+- skill_id: distributed-debugging-debug-trace
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: You are a debugging expert specializing in setting up comprehensive
+    debugging environments, distributed tracing, and diagnostic tools. Configure debugging
+    workflows, implement tracing solutions, and establish troubleshooting practices
+    for development and production environments.
+- skill_id: debugging-toolkit-smart-debug
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use when working with debugging toolkit smart debug
+- skill_id: tdd-workflows-tdd-refactor
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use when working with tdd workflows tdd refactor
+- skill_id: tdd-workflow
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle.
+- skill_id: testing-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Jest testing patterns, factory functions, mocking strategies, and TDD
+    workflow. Use when writing unit tests, creating test factories, or following TDD
+    red-green-refactor cycle.
+- skill_id: tdd-workflows-tdd-cycle
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use when working with tdd workflows tdd cycle
+- skill_id: systems-programming-rust-project
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: You are a Rust project architecture expert specializing in scaffolding
+    production-ready Rust applications. Generate complete project structures with
+    cargo tooling, proper module organization, testing
+- skill_id: debugging-wizard
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Use when investigating errors, analyzing stack traces, or finding root
+    causes of unexpected behavior. Invoke for error investigation, troubleshooting,
+    log analysis, root cause analysis.
+- skill_id: error-detective
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Search logs and codebases for error patterns, stack traces, and anomalies.
+    Correlates errors across systems and identifies root causes. Use PROACTIVELY when
+    debugging issues, analyzing logs, or investigating production errors.
+- skill_id: conductor-implement
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Execute tasks from a track's implementation plan following TDD workflow

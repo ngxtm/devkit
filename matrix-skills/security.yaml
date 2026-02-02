@@ -1,293 +1,375 @@
-# ============================================================================
-# SECURITY DOMAIN SKILLS
-# ============================================================================
-# Threat modeling, secure coding, vulnerability assessment, compliance
-# Primary agents: security-engineer, reviewer
-# ============================================================================
-
 domain: security
-name: "Security Engineering"
-description: "Threat modeling, secure coding, compliance"
+description: Skills related to security
 skill_count: 35
-
+updated: '2026-02-02T01:14:07.739861'
 skills:
-  # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 9-10)
-  # --------------------------------------------------------------------------
-  - skill_id: vulnerability-scanner
-    category: core
-    priority_score: 10
-    relevance_mapping:
-      agents: [security-engineer, reviewer]
-      profiles: ["security:*"]
-    description: "OWASP 2025, supply chain security, attack surface mapping"
-
-  - skill_id: senior-security
-    category: expert
-    priority_score: 9
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:*"]
-    description: "Security architecture, threat modeling, crypto implementation"
-
-  # --------------------------------------------------------------------------
-  # EXPERT SKILLS (Priority 8)
-  # --------------------------------------------------------------------------
-  - skill_id: red-team-tactics
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "MITRE ATT&CK, attack simulation, detection evasion"
-
-  - skill_id: senior-secops
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Incident response, vulnerability management, compliance"
-
-  - skill_id: secure-code-guardian
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer, reviewer]
-      profiles: ["security:*"]
-    description: "Secure coding practices and enforcement"
-
-  - skill_id: security-reviewer
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer, reviewer]
-      profiles: ["security:*", "quality:review"]
-    description: "Security-focused code review"
-
-  # --------------------------------------------------------------------------
-  # NEW SKILLS - PENETRATION TESTING (Added from skills-more)
-  # --------------------------------------------------------------------------
-  - skill_id: active-directory-attacks
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "AD attacks, reconnaissance, credential harvesting, Kerberos attacks, lateral movement"
-
-  - skill_id: api-fuzzing-bug-bounty
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "API fuzzing for bug bounty, REST/SOAP/GraphQL testing, vulnerability discovery"
-
-  - skill_id: api-security-best-practices
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer, backend-engineer]
-      profiles: ["security:*", "backend:execution"]
-    description: "Secure API design patterns, authentication, authorization, input validation"
-
-  - skill_id: aws-penetration-testing
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "AWS pentest, IAM enumeration, privilege escalation, S3 exploitation, Lambda extraction"
-
-  - skill_id: broken-authentication
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Authentication vulnerabilities, session management, MFA bypass, credential management"
-
-  - skill_id: burp-suite-testing
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Burp Suite for web security testing, HTTP interception, automated scanning"
-
-  - skill_id: cloud-penetration-testing
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Multi-cloud pentest (Azure, AWS, GCP), reconnaissance, privilege escalation"
-
-  - skill_id: ethical-hacking-methodology
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:*"]
-    description: "Complete penetration testing lifecycle, reconnaissance through reporting"
-
-  - skill_id: file-path-traversal
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "File path traversal vulnerabilities, bypass techniques, LFI to RCE"
-
-  - skill_id: html-injection-testing
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "HTML injection vulnerabilities, phishing pages, credential stealing"
-
-  - skill_id: idor-testing
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "IDOR vulnerability testing, parameter manipulation, automated enumeration"
-
-  - skill_id: linux-privilege-escalation
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Linux privesc, sudo misconfigurations, SUID binaries, cron jobs, capabilities"
-
-  - skill_id: metasploit-framework
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Metasploit for penetration testing, exploitation, payload generation"
-
-  - skill_id: pentest-checklist
-    category: utility
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:*"]
-    description: "Comprehensive penetration testing checklist, planning, execution, follow-up"
-
-  - skill_id: pentest-commands
-    category: utility
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Pentest command reference, Nmap, Metasploit, Hydra, John the Ripper, SQLMap"
-
-  - skill_id: privilege-escalation-methods
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Cross-platform privilege escalation, Linux and Windows, Sudo, Token Impersonation"
-
-  - skill_id: red-team-tools
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Red team tool workflows, subdomain enumeration, live host discovery, XSS hunting"
-
-  - skill_id: scanning-tools
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:*"]
-    description: "Security scanning tools, Nmap, Nessus, OpenVAS, Burp Suite, ZAP, Nikto"
-
-  - skill_id: shodan-reconnaissance
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Shodan reconnaissance, exposed services, vulnerable systems, IoT devices"
-
-  - skill_id: smtp-penetration-testing
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "SMTP security assessment, open relays, user enumeration, weak authentication"
-
-  - skill_id: sql-injection-testing
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "SQL injection assessment, in-band, blind, out-of-band attack vectors"
-
-  - skill_id: sqlmap-database-pentesting
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "SQLMap automated SQL injection, database enumeration, data extraction"
-
-  - skill_id: ssh-penetration-testing
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "SSH security assessment, enumeration, credential attacks, tunneling"
-
-  - skill_id: top-web-vulnerabilities
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [security-engineer, reviewer]
-      profiles: ["security:*"]
-    description: "100 critical web vulnerabilities reference, OWASP categories, zero-day threats"
-
-  - skill_id: wireshark-analysis
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Wireshark network traffic analysis, packet capture, filtering, security investigations"
-
-  - skill_id: windows-privilege-escalation
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "Windows privesc, credential harvesting, service exploitation, token impersonation"
-
-  - skill_id: wordpress-penetration-testing
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "WordPress security assessment, WPScan, plugin vulnerabilities, credential attacks"
-
-  - skill_id: xss-html-injection
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [security-engineer]
-      profiles: ["security:validation"]
-    description: "XSS/HTML injection testing, stored, reflected, DOM-based, filter bypasses"
+- skill_id: sast-configuration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Configure Static Application Security Testing (SAST) tools for automated
+    vulnerability detection in application code. Use when setting up security scanning,
+    implementing DevSecOps practices, or automating code vulnerability detection.
+- skill_id: solidity-security
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Master smart contract security best practices to prevent common vulnerabilities
+    and implement secure Solidity patterns. Use when writing smart contracts, auditing
+    existing contracts, or implementing security measures for blockchain applications.
+- skill_id: firmware-analyst
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Expert firmware analyst specializing in embedded systems, IoT security,
+    and hardware reverse engineering. Masters firmware extraction, analysis, and vulnerability
+    research for routers, IoT devices, automotive systems, and industrial controllers.
+    Use PROACTIVELY for firmware security audits, IoT penetration testing, or embedded
+    systems research.
+- skill_id: file-path-traversal
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: This skill should be used when the user asks to "test for directory
+    traversal", "exploit path traversal vulnerabilities", "read arbitrary files through
+    web applications", "find LFI vulnerabilities", or "access files outside web root".
+    It provides comprehensive file path traversal attack and testing methodologies.
+- skill_id: stride-analysis-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Apply STRIDE methodology to systematically identify threats. Use when
+    analyzing system security, conducting threat modeling sessions, or creating security
+    documentation.
+- skill_id: security-scanning-security-sast
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Static Application Security Testing (SAST) for code vulnerability analysis
+    across multiple languages and frameworks
+- skill_id: k8s-security-policies
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Implement Kubernetes security policies including NetworkPolicy, PodSecurityPolicy,
+    and RBAC for production-grade security. Use when securing Kubernetes clusters,
+    implementing network isolation, or enforcing pod security standards.
+- skill_id: security-reviewer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Use when conducting security audits, reviewing code for vulnerabilities,
+    or analyzing infrastructure security. Invoke for SAST scans, penetration testing,
+    DevSecOps practices, cloud security reviews.
+- skill_id: anti-reversing-techniques
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Understand anti-reversing, obfuscation, and protection techniques encountered
+    during software analysis. Use when analyzing protected binaries, bypassing anti-debugging
+    for authorized analysis, or understanding software protection mechanisms.
+- skill_id: service-mesh-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Expert service mesh architect specializing in Istio, Linkerd, and cloud-native
+    networking patterns. Masters traffic management, security policies, observability
+    integration, and multi-cluster mesh con
+- skill_id: reverse-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Expert reverse engineer specializing in binary analysis, disassembly,
+    decompilation, and software analysis. Masters IDA Pro, Ghidra, radare2, x64dbg,
+    and modern RE toolchains. Handles executable analysis, library inspection, protocol
+    extraction, and vulnerability research. Use PROACTIVELY for binary analysis, CTF
+    challenges, security research, or understanding undocumented software.
+- skill_id: pentest-checklist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: This skill should be used when the user asks to "plan a penetration
+    test", "create a security assessment checklist", "prepare for penetration testing",
+    "define pentest scope", "follow security testing best practices", or needs a structured
+    methodology for penetration testing engagements.
+- skill_id: threat-mitigation-mapping
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Map identified threats to appropriate security controls and mitigations.
+    Use when prioritizing security investments, creating remediation plans, or validating
+    control effectiveness.
+- skill_id: codebase-cleanup-deps-audit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: You are a dependency security expert specializing in vulnerability
+    scanning, license compliance, and supply chain security. Analyze project dependencies
+    for known vulnerabilities, licensing issues, outdated packages, and provide actionable
+    remediation strategies.
+- skill_id: pentest-commands
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: This skill should be used when the user asks to "run pentest commands",
+    "scan with nmap", "use metasploit exploits", "crack passwords with hydra or john",
+    "scan web vulnerabilities with nikto", "enumerate networks", or needs essential
+    penetration testing command references.
+- skill_id: vulnerability-scanner
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Advanced vulnerability analysis principles. OWASP 2025, Supply Chain
+    Security, attack surface mapping, risk prioritization.
+- skill_id: k8s-manifest-generator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Create production-ready Kubernetes manifests for Deployments, Services,
+    ConfigMaps, and Secrets following best practices and security standards. Use when
+    generating Kubernetes YAML manifests, creating K8s resources, or implementing
+    production-grade Kubernetes configurations.
+- skill_id: security-scanning-security-hardening
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Coordinate multi-layer security scanning and hardening across application,
+    infrastructure, and compliance controls.
+- skill_id: security-scanning-security-dependencies
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: You are a security expert specializing in dependency vulnerability
+    analysis, SBOM generation, and supply chain security. Scan project dependencies
+    across ecosystems to identify vulnerabilities, assess risks, and recommend remediation.
+- skill_id: clerk-auth
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: 'Expert patterns for Clerk auth implementation, middleware, organizations,
+    webhooks, and user sync Use when: adding authentication, clerk auth, user authentication,
+    sign in, sign up.'
+- skill_id: hugging-face-jobs
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: This skill should be used when users want to run any workload on Hugging
+    Face Jobs infrastructure. Covers UV scripts, Docker-based jobs, hardware selection,
+    cost estimation, authentication with tokens, secrets management, timeout configuration,
+    and result persistence. Designed for general-purpose compute workloads including
+    data processing, inference, experiments, batch jobs, and any Python-based tasks.
+    Should be invoked for tasks involving cloud compute, GPU workloads, or when users
+    mention running jobs on Hugging Face infrastructure without local setup.
+- skill_id: malware-analyst
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Expert malware analyst specializing in defensive malware research,
+    threat intelligence, and incident response. Masters sandbox analysis, behavioral
+    analysis, and malware family identification. Handles static/dynamic analysis,
+    unpacking, and IOC extraction. Use PROACTIVELY for malware triage, threat hunting,
+    incident response, or security research.
+- skill_id: nodejs-best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Node.js development principles and decision-making. Framework selection,
+    async patterns, security, and architecture. Teaches thinking, not copying.
+- skill_id: security-auditor
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Expert security auditor specializing in DevSecOps, comprehensive cybersecurity,
+    and compliance frameworks. Masters vulnerability assessment, threat modeling,
+    secure authentication (OAuth2/OIDC), OWASP standards, cloud security, and security
+    automation. Handles DevSecOps integration, compliance (GDPR/HIPAA/SOC2), and incident
+    response. Use PROACTIVELY for security audits, DevSecOps, or compliance implementation.
+- skill_id: mobile-security-coder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Expert in secure mobile coding practices specializing in input validation,
+    WebView security, and mobile-specific security patterns. Use PROACTIVELY for mobile
+    security implementations or mobile security code reviews.
+- skill_id: linkerd-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Implement Linkerd service mesh patterns for lightweight, security-focused
+    service mesh deployments. Use when setting up Linkerd, configuring traffic policies,
+    or implementing zero-trust networking with minimal overhead.
+- skill_id: notebooklm-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Use this skill to query your Google NotebookLM notebooks directly from
+    Claude Code for source-grounded, citation-backed answers from Gemini. Browser
+    automation, library management, persistent auth. Drastically reduced hallucinations
+    through document-only responses.
+- skill_id: secure-code-guardian
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Use when implementing authentication/authorization, securing user input,
+    or preventing OWASP Top 10 vulnerabilities. Invoke for authentication, authorization,
+    input validation, encryption, OWASP Top 10 prevention.
+- skill_id: find-bugs
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Find bugs, security vulnerabilities, and code quality issues in local
+    branch changes. Use when asked to review changes, find bugs, security review,
+    or audit code on the current branch.
+- skill_id: wordpress-penetration-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: This skill should be used when the user asks to "pentest WordPress
+    sites", "scan WordPress for vulnerabilities", "enumerate WordPress users, themes,
+    or plugins", "exploit WordPress vulnerabilities", or "use WPScan". It provides
+    comprehensive WordPress security assessment methodologies.
+- skill_id: cicd-automation-workflow-automate
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: You are a workflow automation expert specializing in creating efficient
+    CI/CD pipelines, GitHub Actions workflows, and automated development processes.
+    Design automation that reduces manual work, improves consistency, and accelerates
+    delivery while maintaining quality and security.
+- skill_id: dependency-management-deps-audit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: You are a dependency security expert specializing in vulnerability
+    scanning, license compliance, and supply chain security. Analyze project dependencies
+    for known vulnerabilities, licensing issues, outdated packages, and provide actionable
+    remediation strategies.
+- skill_id: deployment-pipeline-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Design multi-stage CI/CD pipelines with approval gates, security checks,
+    and deployment orchestration. Use when architecting deployment workflows, setting
+    up continuous delivery, or implementing GitOps practices.
+- skill_id: notebooklm
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Use this skill to query your Google NotebookLM notebooks directly from
+    Claude Code for source-grounded, citation-backed answers from Gemini. Browser
+    automation, library management, persistent auth. Drastically reduced hallucinations
+    through document-only responses.
+- skill_id: hugging-face-cli
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - security:*
+  description: Execute Hugging Face Hub operations using the `hf` CLI. Use when the
+    user needs to download models/datasets/spaces, upload files to Hub repositories,
+    create repos, manage local cache, or run compute jobs on HF infrastructure. Covers
+    authentication, file transfers, repository creation, cache operations, and cloud
+    compute.

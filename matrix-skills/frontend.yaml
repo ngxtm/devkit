@@ -1,200 +1,1785 @@
-# ============================================================================
-# FRONTEND DOMAIN SKILLS
-# ============================================================================
-# UI/UX, web applications, client-side frameworks
-# Primary agents: frontend-engineer, designer
-# ============================================================================
-
 domain: frontend
-name: "Frontend Development"
-description: "UI/UX, web applications, client-side"
-skill_count: 22
-
+description: Skills related to frontend
+skill_count: 169
+updated: '2026-02-02T01:14:07.878017'
 skills:
-  # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 8-9)
-  # --------------------------------------------------------------------------
-  - skill_id: react-patterns
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [frontend-engineer, mobile-engineer]
-      profiles: ["frontend:execution"]
-    description: "React hooks, composition, state management, TypeScript"
+- skill_id: agent-tool-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Tools are how AI agents interact with the world. A well-designed tool
+    is the difference between an agent that works and one that hallucinates, fails
+    silently, or costs 10x more tokens than necessary.  This skill covers tool design
+    from schema to error handling. JSON Schema best practices, description writing
+    that actually helps the LLM, validation, and the emerging MCP standard that''s
+    becoming the lingua franca for AI tools.  Key insight: Tool descriptions are more
+    important than tool implementa'
+- skill_id: app-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Main application building orchestrator. Creates full-stack applications
+    from natural language requests. Determines project type, selects tech stack, coordinates
+    agents.
+- skill_id: hybrid-search-implementation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Combine vector and keyword search for improved retrieval. Use when
+    implementing RAG systems, building search engines, or when neither approach alone
+    provides sufficient recall.
+- skill_id: websocket-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building real-time communication systems with WebSockets or
+    Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis,
+    presence tracking, room management.
+- skill_id: langchain-architecture
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Design LLM applications using the LangChain framework with agents,
+    memory, and tool integration patterns. Use when building LangChain applications,
+    implementing AI agents, or creating complex LLM workflows.
+- skill_id: cc-skill-coding-standards
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Universal coding standards, best practices, and patterns for TypeScript,
+    JavaScript, React, and Node.js development.
+- skill_id: tailwind-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Tailwind CSS v4 principles. CSS-first configuration, container queries,
+    modern patterns, design token architecture.
+- skill_id: test-automator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master AI-powered test automation with modern frameworks, self-healing
+    tests, and comprehensive quality engineering. Build scalable testing strategies
+    with advanced CI/CD integration. Use PROACTIVELY for testing automation or quality
+    assurance.
+- skill_id: linux-privilege-escalation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "escalate privileges
+    on Linux", "find privesc vectors on Linux systems", "exploit sudo misconfigurations",
+    "abuse SUID binaries", "exploit cron jobs for root access", "enumerate Linux systems
+    for privilege escalation", or "gain root access from low-privilege shell". It
+    provides comprehensive techniques for identifying and exploiting privilege escalation
+    paths on Linux systems.
+- skill_id: building-ai-agent-on-cloudflare
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Builds AI agents on Cloudflare using the Agents SDK with state management,
 
-  - skill_id: react-best-practices
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "React/Next.js performance optimization from Vercel Engineering"
+    real-time WebSockets, scheduled tasks, tool integration, and chat capabilities.
 
-  - skill_id: frontend-design
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [designer, frontend-engineer]
-      profiles: ["design:*", "frontend:execution"]
-    description: "Web UI patterns, responsive design, typography"
+    Generates production-ready agent code deployed to Workers.
 
-  - skill_id: react-expert
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Advanced React patterns, concurrent features, optimization"
 
-  - skill_id: nextjs-best-practices
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "App Router, RSC, SSR/SSG, data fetching patterns"
+    Use when: user wants to "build an agent", "AI agent", "chat agent", "stateful
 
-  - skill_id: nextjs-developer
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Next.js full-stack development patterns"
+    agent", mentions "Agents SDK", needs "real-time AI", "WebSocket AI", or asks
 
-  - skill_id: tailwind-patterns
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer, designer]
-      profiles: ["frontend:execution", "design:*"]
-    description: "Tailwind CSS v4, utility-first, responsive design tokens"
+    about agent "state management", "scheduled tasks", or "tool calling".'
+- skill_id: active-directory-attacks
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "attack Active Directory",
+    "exploit AD", "Kerberoasting", "DCSync", "pass-the-hash", "BloodHound enumeration",
+    "Golden Ticket", "Silver Ticket", "AS-REP roasting", "NTLM relay", or needs guidance
+    on Windows domain penetration testing.
+- skill_id: seo-authority-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Analyzes content for E-E-A-T signals and suggests improvements to build
+    authority and trust. Identifies missing credibility elements. Use PROACTIVELY
+    for YMYL topics.
+- skill_id: event-store-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Design and implement event stores for event-sourced systems. Use when
+    building event sourcing infrastructure, choosing event store technologies, or
+    implementing event persistence patterns.
+- skill_id: product-manager-toolkit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Comprehensive toolkit for product managers including RICE prioritization,
+    customer interview analysis, PRD templates, discovery frameworks, and go-to-market
+    strategies. Use for feature prioritization, user research synthesis, requirement
+    documentation, and product strategy development.
+- skill_id: threat-modeling-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert in threat modeling methodologies, security architecture review,
+    and risk assessment. Masters STRIDE, PASTA, attack trees, and security requirement
+    extraction. Use for security architecture reviews, threat identification, and
+    secure-by-design planning.
+- skill_id: bats-testing-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master Bash Automated Testing System (Bats) for comprehensive shell
+    script testing. Use when writing tests for shell scripts, CI/CD pipelines, or
+    requiring test-driven development of shell utilities.
+- skill_id: c4-context
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert C4 Context-level documentation specialist. Creates high-level
+    system context diagrams, documents personas, user journeys, system features, and
+    external dependencies. Synthesizes container and component documentation with
+    system documentation to create comprehensive context-level architecture. Use when
+    creating the highest-level C4 system context documentation.
+- skill_id: quant-analyst
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build financial models, backtest trading strategies, and analyze market
+    data. Implements risk metrics, portfolio optimization, and statistical arbitrage.
+    Use PROACTIVELY for quantitative finance, trading algorithms, or risk analysis.
+- skill_id: langgraph
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in LangGraph - the production-grade framework for building
+    stateful, multi-actor AI applications. Covers graph construction, state management,
+    cycles and branches, persistence with checkpointers, human-in-the-loop patterns,
+    and the ReAct agent pattern. Used in production at LinkedIn, Uber, and 400+ companies.
+    This is LangChain''s recommended approach for building agents. Use when: langgraph,
+    langchain agent, stateful agent, agent graph, react agent.'
+- skill_id: e2e-testing-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master end-to-end testing with Playwright and Cypress to build reliable
+    test suites that catch bugs, improve confidence, and enable fast deployment. Use
+    when implementing E2E tests, debugging flaky tests, or establishing testing standards.
+- skill_id: slack-bot-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Build Slack apps using the Bolt framework across Python, JavaScript,
+    and Java. Covers Block Kit for rich UIs, interactive components, slash commands,
+    event handling, OAuth installation flows, and Workflow Builder integration. Focus
+    on best practices for production-ready Slack apps. Use when: slack bot, slack
+    app, bolt framework, block kit, slash command.'
+- skill_id: rails-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building Rails 7+ web applications with Hotwire, real-time
+    features, or background job processing. Invoke for Active Record optimization,
+    Turbo Frames/Streams, Action Cable, Sidekiq.
+- skill_id: java-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building enterprise Java applications with Spring Boot 3.x,
+    microservices, or reactive programming. Invoke for WebFlux, JPA optimization,
+    Spring Security, cloud-native patterns.
+- skill_id: software-architecture
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Guide for quality focused software architecture. This skill should
+    be used when users want to write code, design architecture, analyze code, in any
+    case that relates to software development.
+- skill_id: create-pr
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create pull requests following Sentry conventions. Use when opening
+    PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's
+    code review guidelines.
+- skill_id: docs-seeker
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Search technical documentation using executable scripts to detect
+    query type, fetch from llms.txt sources (context7.com), and analyze results. Use
+    when user needs: (1) Topic-specific documentation (features/components/concepts),
+    (2) Library/framework documentation, (3) GitHub repository analysis, (4) Documentation
+    discovery with automated agent distribution strategy'
+- skill_id: seo-content-auditor
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Analyzes provided content for quality, E-E-A-T signals, and SEO best
+    practices. Scores content and provides improvement recommendations based on established
+    guidelines. Use PROACTIVELY for content review.
+- skill_id: rust-async-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master Rust async programming with Tokio, async traits, error handling,
+    and concurrent patterns. Use when building async Rust applications, implementing
+    concurrent systems, or debugging async code.
+- skill_id: sequential-thinking
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Apply structured, reflective problem-solving for complex tasks requiring
+    multi-step analysis, revision capability, and hypothesis verification. Use for
+    complex problem decomposition, adaptive planning, analysis needing course correction,
+    problems with unclear scope, multi-step solutions, and hypothesis-driven work.
+- skill_id: gdpr-data-handling
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement GDPR-compliant data handling with consent management, data
+    subject rights, and privacy by design. Use when building systems that process
+    EU personal data, implementing privacy controls, or conducting GDPR compliance
+    reviews.
+- skill_id: grafana-dashboards
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create and manage production Grafana dashboards for real-time visualization
+    of system and application metrics. Use when building monitoring dashboards, visualizing
+    metrics, or creating operational observability interfaces.
+- skill_id: ui-ux-designer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create interface designs, wireframes, and design systems. Masters user
+    research, accessibility standards, and modern design tools. Specializes in design
+    tokens, component libraries, and inclusive design. Use PROACTIVELY for design
+    systems, user flows, or interface optimization.
+- skill_id: scroll-experience
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in building immersive scroll-driven experiences - parallax
+    storytelling, scroll animations, interactive narratives, and cinematic web experiences.
+    Like NY Times interactives, Apple product pages, and award-winning web experiences.
+    Makes websites feel like experiences, not just pages. Use when: scroll animation,
+    parallax, scroll storytelling, interactive story, cinematic website.'
+- skill_id: discord-bot-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Specialized skill for building production-ready Discord bots. Covers
+    Discord.js (JavaScript) and Pycord (Python), gateway intents, slash commands,
+    interactive components, rate limiting, and sharding.
+- skill_id: kpi-dashboard-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Design effective KPI dashboards with metrics selection, visualization
+    best practices, and real-time monitoring patterns. Use when building business
+    dashboards, selecting metrics, or designing data visualization layouts.
+- skill_id: aws-agentic-ai
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: AWS Bedrock AgentCore comprehensive expert for deploying and managing
+    all AgentCore services. Use when working with Gateway, Runtime, Memory, Identity,
+    or any AgentCore component. Covers MCP target deployment, credential management,
+    schema optimization, runtime configuration, memory management, and identity services.
+- skill_id: nx-workspace-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Configure and optimize Nx monorepo workspaces. Use when setting up
+    Nx, configuring project boundaries, optimizing build caching, or implementing
+    affected commands.
+- skill_id: architecture
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Architectural decision-making framework. Requirements analysis, trade-off
+    evaluation, ADR documentation. Use when making architecture decisions or analyzing
+    system design.
+- skill_id: haskell-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert Haskell engineer specializing in advanced type systems, pure
+    functional design, and high-reliability software. Use PROACTIVELY for type-level
+    programming, concurrency, and architecture guidance.
+- skill_id: theme-factory
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Toolkit for styling artifacts with a theme. These artifacts can be
+    slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes
+    with colors/fonts that you can apply to any artifact that has been creating, or
+    can generate a new theme on-the-fly.
+- skill_id: threejs
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build immersive 3D web experiences with Three.js - WebGL/WebGPU library
+    for scenes, cameras, geometries, materials, lights, animations, loaders, post-processing,
+    shaders (including node-based TSL), compute, physics, VR/XR, and advanced rendering.
+    Use when creating 3D visualizations, games, interactive graphics, data viz, product
+    configurators, architectural walkthroughs, or WebGL/WebGPU applications. Covers
+    OrbitControls, GLTF/FBX loading, PBR materials, shadow mapping, post-processing
+    effects (bloom, SSAO, SSR), custom shaders, instancing, LOD, animation systems,
+    and WebXR.
+- skill_id: tailwind-design-system
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build scalable design systems with Tailwind CSS, design tokens, component
+    libraries, and responsive patterns. Use when creating component libraries, implementing
+    design systems, or standardizing UI patterns.
+- skill_id: idor-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "test for insecure
+    direct object references," "find IDOR vulnerabilities," "exploit broken access
+    control," "enumerate user IDs or object references," or "bypass authorization
+    to access other users' data." It provides comprehensive guidance for detecting,
+    exploiting, and remediating IDOR vulnerabilities in web applications.
+- skill_id: error-debugging-error-trace
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: You are an error tracking and observability expert specializing in
+    implementing comprehensive error monitoring solutions. Set up error tracking systems,
+    configure alerts, implement structured logging, and ensure teams can quickly identify
+    and resolve production issues.
+- skill_id: parallel-agents
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Multi-agent orchestration patterns. Use when multiple independent tasks
+    can run with different domain expertise or when comprehensive analysis requires
+    multiple perspectives.
+- skill_id: avalonia-viewmodels-zafiro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Optimal ViewModel and Wizard creation patterns for Avalonia using Zafiro
+    and ReactiveUI.
+- skill_id: ui-visual-validator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Rigorous visual validation expert specializing in UI testing, design
+    system compliance, and accessibility verification. Masters screenshot analysis,
+    visual regression testing, and component validation. Use PROACTIVELY to verify
+    UI modifications have achieved their intended goals through comprehensive visual
+    analysis.
+- skill_id: ai-agents-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in designing and building autonomous AI agents. Masters tool
+    use, memory systems, planning strategies, and multi-agent orchestration. Use when:
+    build agent, AI agent, autonomous agent, tool use, function calling.'
+- skill_id: angular-migration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Migrate from AngularJS to Angular using hybrid mode, incremental component
+    rewriting, and dependency injection updates. Use when upgrading AngularJS applications,
+    planning framework migrations, or modernizing legacy Angular code.
+- skill_id: github-actions-templates
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create production-ready GitHub Actions workflows for automated testing,
+    building, and deploying applications. Use when setting up CI/CD with GitHub Actions,
+    automating development workflows, or creating reusable workflow templates.
+- skill_id: prompt-engineering
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert guide on prompt engineering patterns, best practices, and optimization
+    techniques. Use when user wants to improve prompts, learn prompting strategies,
+    or debug agent behavior.
+- skill_id: claude-code-guide
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master guide for using Claude Code effectively. Includes configuration
+    templates, prompting strategies "Thinking" keywords, debugging techniques, and
+    best practices for interacting with the agent.
+- skill_id: ab-test-setup
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Structured guide for setting up A/B tests with mandatory gates for
+    hypothesis, metrics, and execution readiness.
+- skill_id: foundry-sdk-python
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects).
+    Use when working with Foundry project clients, creating versioned agents with
+    PromptAgentDefinition, running evaluations, managing connections/deployments/datasets/indexes,
+    or using OpenAI-compatible clients. This is the high-level Foundry SDK - for low-level
+    agent operations, use azure-ai-agents-python skill.
+- skill_id: nextjs-supabase-auth
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert integration of Supabase Auth with Next.js App Router Use when:
+    supabase auth next, authentication next.js, login supabase, auth middleware, protected
+    route.'
+- skill_id: makepad-skills
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Makepad UI development skills for Rust apps: setup, patterns, shaders,
+    packaging, and troubleshooting.'
+- skill_id: test-fixing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Run tests and systematically fix all failing tests using smart error
+    grouping. Use when user asks to fix failing tests, mentions test failures, runs
+    test suite and failures occur, or requests to make tests pass.
+- skill_id: n8n-node-configuration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Operation-aware node configuration guidance. Use when configuring nodes,
+    understanding property dependencies, determining required fields, choosing between
+    get_node detail levels, or learning common configuration patterns by node type.
+- skill_id: turborepo-caching
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Configure Turborepo for efficient monorepo builds with local and remote
+    caching. Use when setting up Turborepo, optimizing build pipelines, or implementing
+    distributed caching.
+- skill_id: zustand-store
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create Zustand stores with TypeScript, subscribeWithSelector middleware,
+    and proper state/action separation. Use when building React state management,
+    creating global stores, or implementing reactive state patterns with Zustand.
+- skill_id: rust-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building Rust applications requiring memory safety, systems
+    programming, or zero-cost abstractions. Invoke for ownership patterns, lifetimes,
+    traits, async/await with tokio.
+- skill_id: billing-automation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build automated billing systems for recurring payments, invoicing,
+    subscription lifecycle, and dunning management. Use when implementing subscription
+    billing, automating invoicing, or managing recurring payment systems.
+- skill_id: interactive-portfolio
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in building portfolios that actually land jobs and clients
+    - not just showing work, but creating memorable experiences. Covers developer
+    portfolios, designer portfolios, creative portfolios, and portfolios that convert
+    visitors into opportunities. Use when: portfolio, personal website, showcase work,
+    developer portfolio, designer portfolio.'
+- skill_id: stitch-ui-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert guide for creating effective prompts for Google Stitch AI UI
+    design tool. Use when user wants to design UI/UX in Stitch, create app interfaces,
+    generate mobile/web designs, or needs help crafting Stitch prompts. Covers prompt
+    structure, specificity techniques, iteration strategies, and design-to-code workflows
+    for Stitch by Google.
+- skill_id: security-bluebook-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build security Blue Books for sensitive apps
+- skill_id: remotion-best-practices
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Best practices for Remotion - Video creation in React
+- skill_id: browser-extension-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in building browser extensions that solve real problems - Chrome,
+    Firefox, and cross-browser extensions. Covers extension architecture, manifest
+    v3, content scripts, popup UIs, monetization strategies, and Chrome Web Store
+    publishing. Use when: browser extension, chrome extension, firefox addon, extension,
+    manifest v3.'
+- skill_id: accessibility-compliance-accessibility-audit
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: You are an accessibility expert specializing in WCAG compliance, inclusive
+    design, and assistive technology compatibility. Conduct audits, identify barriers,
+    and provide remediation guidance.
+- skill_id: viral-generator-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in building shareable generator tools that go viral - name
+    generators, quiz makers, avatar creators, personality tests, and calculator tools.
+    Covers the psychology of sharing, viral mechanics, and building tools people can''t
+    resist sharing with friends. Use when: generator tool, quiz maker, name generator,
+    avatar creator, viral tool.'
+- skill_id: environment-setup-guide
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Guide developers through setting up development environments with proper
+    tools, dependencies, and configurations
+- skill_id: attack-tree-construction
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build comprehensive attack trees to visualize threat paths. Use when
+    mapping attack scenarios, identifying defense gaps, or communicating security
+    risks to stakeholders.
+- skill_id: react-flow-node
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create React Flow node components with TypeScript types, handles, and
+    Zustand integration. Use when building custom nodes for React Flow canvas, creating
+    visual workflow editors, or implementing node-based UI components.
+- skill_id: backtesting-frameworks
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build robust backtesting systems for trading strategies with proper
+    handling of look-ahead bias, survivorship bias, and transaction costs. Use when
+    developing trading algorithms, validating strategies, or building backtesting
+    infrastructure.
+- skill_id: kaizen
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Guide for continuous improvement, error proofing, and standardization.
+    Use this skill when the user wants to improve code quality, refactor, or discuss
+    process improvements.
+- skill_id: javascript-typescript-typescript-scaffold
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: You are a TypeScript project architecture expert specializing in scaffolding
+    production-ready Node.js and frontend applications. Generate complete project
+    structures with modern tooling (pnpm, Vite, N
+- skill_id: python-testing-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement comprehensive testing strategies with pytest, fixtures, mocking,
+    and test-driven development. Use when writing Python tests, setting up test suites,
+    or implementing testing best practices.
+- skill_id: typescript-advanced-types
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master TypeScript's advanced type system including generics, conditional
+    types, mapped types, template literals, and utility types for building type-safe
+    applications. Use when implementing complex type logic, creating reusable type
+    utilities, or ensuring compile-time type safety in TypeScript projects.
+- skill_id: cli-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building CLI tools, implementing argument parsing, or adding
+    interactive prompts. Invoke for CLI design, argument parsing, interactive prompts,
+    progress indicators, shell completions.
+- skill_id: free-tool-strategy
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: When the user wants to plan, evaluate, or build a free tool for marketing
+    purposes — lead generation, SEO value, or brand awareness. Also use when the user
+    mentions "engineering as marketing," "free tool," "marketing tool," "calculator,"
+    "generator," "interactive tool," "lead gen tool," "build a tool for leads," or
+    "free resource." This skill bridges engineering and marketing — useful for founders
+    and technical marketers.
+- skill_id: react-ui-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Modern React UI patterns for loading states, error handling, and data
+    fetching. Use when building UI components, handling async data, or managing UI
+    states.
+- skill_id: conductor-setup
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Initialize project with Conductor artifacts (product definition, tech
+    stack, workflow, style guides)
+- skill_id: startup-financial-modeling
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "create financial projections",
+    "build a financial model", "forecast revenue", "calculate burn rate", "estimate
+    runway", "model cash flow", or requests 3-5 year financial planning for a startup.
+- skill_id: observability-monitoring-slo-implement
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: You are an SLO (Service Level Objective) expert specializing in implementing
+    reliability standards and error budget-based practices. Design SLO frameworks,
+    define SLIs, and build monitoring that balances reliability with delivery velocity.
+- skill_id: security-requirement-extraction
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Derive security requirements from threat models and business context.
+    Use when translating threats into actionable requirements, creating security user
+    stories, or building security test cases.
+- skill_id: monorepo-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert in monorepo architecture, build systems, and dependency management
+    at scale. Masters Nx, Turborepo, Bazel, and Lerna for efficient multi-project
+    development. Use PROACTIVELY for monorepo setup,
+- skill_id: privilege-escalation-methods
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "escalate privileges",
+    "get root access", "become administrator", "privesc techniques", "abuse sudo",
+    "exploit SUID binaries", "Kerberoasting", "pass-the-ticket", "token impersonation",
+    or needs guidance on post-exploitation privilege escalation for Linux or Windows
+    systems.
+- skill_id: data-quality-frameworks
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement data quality validation with Great Expectations, dbt tests,
+    and data contracts. Use when building data quality pipelines, implementing validation
+    rules, or establishing data contracts.
+- skill_id: risk-metrics-calculation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Calculate portfolio risk metrics including VaR, CVaR, Sharpe, Sortino,
+    and drawdown analysis. Use when measuring portfolio risk, implementing risk limits,
+    or building risk monitoring systems.
+- skill_id: using-superpowers
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when starting any conversation - establishes how to find and use
+    skills, requiring Skill tool invocation before ANY response including clarifying
+    questions
+- skill_id: senior-secops
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Comprehensive SecOps skill for application security, vulnerability
+    management, compliance, and secure development practices. Includes security scanning,
+    vulnerability assessment, compliance checking, and security automation. Use when
+    implementing security controls, conducting security audits, responding to vulnerabilities,
+    or ensuring compliance requirements.
+- skill_id: nft-standards
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement NFT standards (ERC-721, ERC-1155) with proper metadata handling,
+    minting strategies, and marketplace integration. Use when creating NFT contracts,
+    building NFT marketplaces, or implementing digital asset systems.
+- skill_id: team-composition-analysis
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "plan team structure",
+    "determine hiring needs", "design org chart", "calculate compensation", "plan
+    equity allocation", or requests organizational design and headcount planning for
+    a startup.
+- skill_id: web-design-guidelines
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Review UI code for Web Interface Guidelines compliance. Use when asked
+    to "review my UI", "check accessibility", "audit design", "review UX", or "check
+    my site against best practices".
+- skill_id: avalonia-zafiro-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Mandatory skills, conventions, and behavioral rules for Avalonia UI
+    development using the Zafiro toolkit.
+- skill_id: frontend-slides
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create stunning, animation-rich HTML presentations from scratch or
+    by converting PowerPoint files. Use when the user wants to build a presentation,
+    convert a PPT/PPTX to web, or create slides for a talk/pitch. Helps non-designers
+    discover their aesthetic through visual exploration rather than abstract choices.
+- skill_id: ml-pipeline-workflow
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build end-to-end MLOps pipelines from data preparation through model
+    training, validation, and production deployment. Use when creating ML pipelines,
+    implementing MLOps practices, or automating model training and deployment workflows.
+- skill_id: claude-d3js-skill
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Creating interactive data visualisations using d3.js. This skill should
+    be used when creating custom charts, graphs, network diagrams, geographic visualisations,
+    or any complex SVG-based data visualisation that requires fine-grained control
+    over visual elements, transitions, or interactions. Use this for bespoke visualisations
+    beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript,
+    or any other environment.
+- skill_id: llm-application-dev
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Building applications with Large Language Models - prompt engineering,
+    RAG patterns, and LLM integration. Use for AI-powered features, chatbots, or LLM-based
+    automation.
+- skill_id: radix-ui-design-system
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build accessible design systems with Radix UI primitives. Headless
+    component customization, theming strategies, and compound component patterns for
+    production-grade UI libraries.
+- skill_id: godot-gdscript-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master Godot 4 GDScript patterns including signals, scenes, state machines,
+    and optimization. Use when building Godot games, implementing game systems, or
+    learning GDScript best practices.
+- skill_id: voice-ai-engine-development
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build real-time conversational AI voice engines using async worker
+    pipelines, streaming transcription, LLM agents, and TTS synthesis with interrupt
+    handling and multi-provider support
+- skill_id: monorepo-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master monorepo management with Turborepo, Nx, and pnpm workspaces
+    to build efficient, scalable multi-package repositories with optimized builds
+    and dependency management. Use when setting up monorepos, optimizing builds, or
+    managing shared dependencies.
+- skill_id: micro-saas-launcher
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in launching small, focused SaaS products fast - the indie
+    hacker approach to building profitable software. Covers idea validation, MVP development,
+    pricing, launch strategies, and growing to sustainable revenue. Ship in weeks,
+    not months. Use when: micro saas, indie hacker, small saas, side project, saas
+    mvp.'
+- skill_id: verification-before-completion
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when about to claim work is complete, fixed, or passing, before
+    committing or creating PRs - requires running verification commands and confirming
+    output before making any success claims; evidence before assertions always
+- skill_id: event-sourcing-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert in event sourcing, CQRS, and event-driven architecture patterns.
+    Masters event store design, projection building, saga orchestration, and eventual
+    consistency patterns. Use PROACTIVELY for event-sourced systems, audit trails,
+    or temporal queries.
+- skill_id: azure-ai-search-python
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Clean code patterns for Azure AI Search Python SDK (azure-search-documents).
+    Use when building search applications, creating/managing indexes, implementing
+    agentic retrieval with knowledge bases, or working with vector/hybrid search.
+    Covers SearchClient, SearchIndexClient, SearchIndexerClient, and KnowledgeBaseRetrievalClient.
+- skill_id: mermaid-expert
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create Mermaid diagrams for flowcharts, sequences, ERDs, and architectures.
+    Masters syntax for all diagram types and styling. Use PROACTIVELY for visual documentation,
+    system diagrams, or process flows.
+- skill_id: foundry-nextgen-frontend
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build elegant frontend UIs following Microsoft Foundry's NextGen Design
+    System using Vite + React + pnpm + Framer Motion. Use when creating dashboards,
+    agent builders, data grids, entity management interfaces, or any application matching
+    Foundry's refined dark-themed aesthetic.
+- skill_id: fp-ts-pragmatic
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: A practical, jargon-free guide to fp-ts functional programming - the
+    80/20 approach that gets results without the academic overhead. Use when writing
+    TypeScript with fp-ts library.
+- skill_id: artifacts-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Suite of tools for creating elaborate, multi-component claude.ai HTML
+    artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).
+    Use for complex artifacts requiring state management, routing, or shadcn/ui components
+    - not for simple single-file HTML/JSX artifacts.
+- skill_id: bash-defensive-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master defensive Bash programming techniques for production-grade scripts.
+    Use when writing robust shell scripts, CI/CD pipelines, or system utilities requiring
+    fault tolerance and safety.
+- skill_id: busybox-on-windows
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: How to use a Win32 build of BusyBox to run many of the standard UNIX
+    command line tools on Windows.
+- skill_id: sre-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when defining SLIs/SLOs, managing error budgets, or building reliable
+    systems at scale. Invoke for incident management, chaos engineering, toil reduction,
+    capacity planning.
+- skill_id: planning-with-files
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implements Manus-style file-based planning for complex tasks. Creates
+    task_plan.md, findings.md, and progress.md. Use when starting complex multi-step
+    tasks, research projects, or any task requiring >5 tool calls.
+- skill_id: cc-skill-project-guidelines-example
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Project Guidelines Skill (Example)
+- skill_id: aws-penetration-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: This skill should be used when the user asks to "pentest AWS", "test
+    AWS security", "enumerate IAM", "exploit cloud infrastructure", "AWS privilege
+    escalation", "S3 bucket testing", "metadata SSRF", "Lambda exploitation", or needs
+    guidance on Amazon Web Services security assessment.
+- skill_id: crewai
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in CrewAI - the leading role-based multi-agent framework used
+    by 60% of Fortune 500 companies. Covers agent design with roles and goals, task
+    definition, crew orchestration, process types (sequential, hierarchical, parallel),
+    memory systems, and flows for complex workflows. Essential for building collaborative
+    AI agent teams. Use when: crewai, multi-agent team, agent roles, crew of agents,
+    role-based agents.'
+- skill_id: data-engineering-data-driven-feature
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build features guided by data insights, A/B testing, and continuous
+    measurement using specialized agents for analysis, implementation, and experimentation.
+- skill_id: skill-creator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Guide for creating effective skills. This skill should be used when
+    users want to create a new skill (or update an existing skill) that extends Claude's
+    capabilities with specialized knowledge, workflows, or tool integrations.
+- skill_id: ios-developer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Develop native iOS applications with Swift/SwiftUI. Masters iOS 18,
+    SwiftUI, UIKit integration, Core Data, networking, and App Store optimization.
+    Use PROACTIVELY for iOS-specific features, App Store optimization, or native iOS
+    development.
+- skill_id: microservices-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Design microservices architectures with service boundaries, event-driven
+    communication, and resilience patterns. Use when building distributed systems,
+    decomposing monoliths, or implementing microservices.
+- skill_id: writing-plans
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when you have a spec or requirements for a multi-step task, before
+    touching code
+- skill_id: business-analyst
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master modern business analysis with AI-powered analytics, real-time
+    dashboards, and data-driven insights. Build comprehensive KPI frameworks, predictive
+    models, and strategic recommendations. Use PROACTIVELY for business intelligence
+    or strategic analysis.
+- skill_id: ui-skills
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Opinionated, evolving constraints to guide agents when building interfaces
+- skill_id: avalonia-layout-zafiro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Guidelines for modern Avalonia UI layout using Zafiro.Avalonia, emphasizing
+    shared styles, generic components, and avoiding XAML redundancy.
+- skill_id: defi-protocol-templates
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement DeFi protocols with production-ready templates for staking,
+    AMMs, governance, and lending systems. Use when building decentralized finance
+    applications or smart contract protocols.
+- skill_id: autonomous-agents
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Autonomous agents are AI systems that can independently decompose
+    goals, plan actions, execute tools, and self-correct without constant human guidance.
+    The challenge isn''t making them capable - it''s making them reliable. Every extra
+    decision multiplies failure probability.  This skill covers agent loops (ReAct,
+    Plan-Execute), goal decomposition, reflection patterns, and production reliability.
+    Key insight: compounding error rates kill autonomous agents. A 95% success rate
+    per step drops to 60% b'
+- skill_id: istio-traffic-management
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Configure Istio traffic management including routing, load balancing,
+    circuit breakers, and canary deployments. Use when implementing service mesh traffic
+    policies, progressive delivery, or resilience patterns.
+- skill_id: frontend-security-coder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert in secure frontend coding practices specializing in XSS prevention,
+    output sanitization, and client-side security patterns. Use PROACTIVELY for frontend
+    security implementations or client-side security code reviews.
+- skill_id: webapp-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Toolkit for interacting with and testing local web applications using
+    Playwright. Supports verifying frontend functionality, debugging UI behavior,
+    capturing browser screenshots, and viewing browser logs.
+- skill_id: notion-template-business
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in building and selling Notion templates as a business - not
+    just making templates, but building a sustainable digital product business. Covers
+    template design, pricing, marketplaces, marketing, and scaling to real revenue.
+    Use when: notion template, sell templates, digital product, notion business, gumroad.'
+- skill_id: react-modernization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Upgrade React applications to latest versions, migrate from class components
+    to hooks, and adopt concurrent features. Use when modernizing React codebases,
+    migrating to React Hooks, or upgrading to latest React versions.
+- skill_id: 3d-web-experience
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Expert in building 3D experiences for the web - Three.js, React Three
+    Fiber, Spline, WebGL, and interactive 3D scenes. Covers product configurators,
+    3D portfolios, immersive websites, and bringing depth to web experiences. Use
+    when: 3D website, three.js, WebGL, react three fiber, 3D experience.'
+- skill_id: vue-expert-js
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building Vue 3 applications with JavaScript only (no TypeScript).
+    Invoke for JSDoc typing, vanilla JS composables, .mjs modules.
+- skill_id: go-concurrency-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Master Go concurrency with goroutines, channels, sync primitives, and
+    context. Use when building concurrent Go applications, implementing worker pools,
+    or debugging race conditions.
+- skill_id: tool-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build tools that agents can use effectively, including architectural
+    reduction patterns
+- skill_id: ui-design-system
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: UI design system toolkit for Senior UI Designer including design token
+    generation, component documentation, responsive design calculations, and developer
+    handoff tools. Use for creating design systems, maintaining visual consistency,
+    and facilitating design-dev collaboration.
+- skill_id: ml-pipeline
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building ML pipelines, orchestrating training workflows, automating
+    model lifecycle, implementing feature stores, or managing experiment tracking
+    systems.
+- skill_id: doc-coauthoring
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Guide users through a structured workflow for co-authoring documentation.
+    Use when user wants to write documentation, proposals, technical specs, decision
+    docs, or similar structured content. This workflow helps users efficiently transfer
+    context, refine content through iteration, and verify the doc works for readers.
+    Trigger when user mentions writing docs, creating proposals, drafting specs, or
+    similar documentation tasks.
+- skill_id: stripe-integration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement Stripe payment processing for robust, PCI-compliant payment
+    flows including checkout, subscriptions, and webhooks. Use when integrating Stripe
+    payments, building subscription systems, or implementing secure checkout flows.
+- skill_id: workflow-orchestration-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Design durable workflows with Temporal for distributed systems. Covers
+    workflow vs activity separation, saga patterns, state management, and determinism
+    constraints. Use when building long-running processes, distributed transactions,
+    or microservice orchestration.
+- skill_id: incident-runbook-templates
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create structured incident response runbooks with step-by-step procedures,
+    escalation paths, and recovery actions. Use when building runbooks, responding
+    to incidents, or establishing incident response procedures.
+- skill_id: ai-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build production-ready LLM applications, advanced RAG systems, and
+    intelligent agents. Implements vector search, multimodal AI, agent orchestration,
+    and enterprise AI integrations. Use PROACTIVELY for LLM features, chatbots, AI
+    agents, or AI-powered applications.
+- skill_id: multi-cloud-architecture
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Design multi-cloud architectures using a decision framework to select
+    and integrate services across AWS, Azure, and GCP. Use when building multi-cloud
+    systems, avoiding vendor lock-in, or leveraging best-of-breed services from multiple
+    providers.
+- skill_id: pci-compliance
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Implement PCI DSS compliance requirements for secure handling of payment
+    card data and payment systems. Use when securing payment processing, achieving
+    PCI compliance, or implementing payment card security measures.
+- skill_id: c4-component
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Expert C4 Component-level documentation specialist. Synthesizes C4
+    Code-level documentation into Component-level architecture, defining component
+    boundaries, interfaces, and relationships. Creates component diagrams and documentation.
+    Use when synthesizing code-level documentation into logical components.
+- skill_id: loki-mode
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Multi-agent autonomous startup system for Claude Code. Triggers on
+    "Loki Mode". Orchestrates 100+ specialized agents across engineering, QA, DevOps,
+    security, data/ML, business operations, marketing, HR, and customer success. Takes
+    PRD to fully deployed, revenue-generating product with zero human intervention.
+    Features Task tool for subagent dispatch, parallel code review with 3 specialized
+    reviewers, severity-based issue triage, distributed task queue with dead letter
+    handling, automatic deployment to cloud providers, A/B testing, customer feedback
+    loops, incident response, circuit breakers, and self-healing. Handles rate limits
+    via distributed state checkpoints and auto-resume with exponential backoff. Requires
+    --dangerously-skip-permissions flag.
+- skill_id: schema-markup
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Design, validate, and optimize schema.org structured data for eligibility,
+    correctness, and measurable SEO impact. Use when the user wants to add, fix, audit,
+    or scale schema markup (JSON-LD) for rich results. This skill evaluates whether
+    schema should be implemented, what types are valid, and how to deploy safely according
+    to Google guidelines.
 
-  - skill_id: frontend-development
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer, game-engineer, performance-engineer]
-      profiles: ["frontend:*"]
-    description: "React/TypeScript apps, MUI, TanStack Router, performance"
-
-  - skill_id: senior-frontend
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Senior frontend patterns, performance, component architecture"
-
-  # --------------------------------------------------------------------------
-  # FRAMEWORK SPECIALISTS (Priority 7)
-  # --------------------------------------------------------------------------
-  - skill_id: vue-expert
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Vue 3 Composition API, Pinia, Nuxt.js"
-
-  - skill_id: angular-architect
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Angular architecture, RxJS, NgRx state management"
-
-  - skill_id: web-frameworks
-    category: core
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:*"]
-    description: "Next.js, Turborepo, RemixIcon, modern frameworks"
-
-  - skill_id: web-design-guidelines
-    category: core
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer, designer]
-      profiles: ["frontend:*", "design:*"]
-    description: "Web Interface Guidelines compliance, accessibility"
-
-  # --------------------------------------------------------------------------
-  # UTILITY SKILLS (Priority 6)
-  # --------------------------------------------------------------------------
-  - skill_id: react-flow-node
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "React Flow node-based UI development"
-
-  - skill_id: vue-expert-js
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Vue.js JavaScript patterns"
-
-  - skill_id: web-artifacts-builder
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Building web artifacts and bundles"
-
-  - skill_id: zustand-store
-    category: specialized
-    priority_score: 6
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Zustand state management patterns"
-
-  - skill_id: i18n-localization
-    category: utility
-    priority_score: 6
-    relevance_mapping:
-      agents: [frontend-engineer]
-      profiles: ["frontend:*"]
-    description: "Internationalization, translations, RTL support"
-
-  # --------------------------------------------------------------------------
-  # NEW SKILLS (Added from skills-more)
-  # --------------------------------------------------------------------------
-  - skill_id: frontend-dev-guidelines
-    category: core
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer, tech-lead]
-      profiles: ["frontend:*"]
-    description: "Opinionated frontend standards for React + TypeScript, Suspense-first data fetching"
-
-  - skill_id: react-ui-patterns
-    category: expert
-    priority_score: 8
-    relevance_mapping:
-      agents: [frontend-engineer, designer]
-      profiles: ["frontend:execution", "design:*"]
-    description: "React UI patterns: loading states, error handling, button states, empty states"
-
-  - skill_id: javascript-mastery
-    category: core
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer, backend-engineer]
-      profiles: ["frontend:*", "backend:*"]
-    description: "JavaScript reference: 33+ concepts (primitives, closures, event loop, async patterns)"
-
-  - skill_id: nextjs-supabase-auth
-    category: specialized
-    priority_score: 7
-    relevance_mapping:
-      agents: [frontend-engineer, backend-engineer]
-      profiles: ["frontend:execution"]
-    description: "Supabase Auth + Next.js App Router, auth middleware, Server Actions"
+    '
+- skill_id: frontend-design
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create distinctive, production-grade frontend interfaces with intentional
+    aesthetics, high craft, and non-generic visual identity. Use when building or
+    styling web UIs, components, pages, dashboards, or frontend applications.
+- skill_id: framework-migration-legacy-modernize
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Orchestrate a comprehensive legacy system modernization using the strangler
+    fig pattern, enabling gradual replacement of outdated components while maintaining
+    continuous business operations through ex
+- skill_id: requesting-code-review
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when completing tasks, implementing major features, or before merging
+    to verify work meets requirements
+- skill_id: spring-boot-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when building Spring Boot 3.x applications, microservices, or reactive
+    Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, Spring
+    Cloud integration.
+- skill_id: llm-app-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Production-ready patterns for building LLM applications. Covers RAG
+    pipelines, agent architectures, prompt IDEs, and LLMOps monitoring. Use when designing
+    AI applications, implementing RAG, building agents, or setting up LLM observability.
+- skill_id: wcag-audit-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Conduct WCAG 2.2 accessibility audits with automated testing, manual
+    verification, and remediation guidance. Use when auditing websites for accessibility,
+    fixing WCAG violations, or implementing accessible design patterns.
+- skill_id: airflow-dag-patterns
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build production Apache Airflow DAGs with best practices for operators,
+    sensors, testing, and deployment. Use when creating data pipelines, orchestrating
+    workflows, or scheduling batch jobs.
+- skill_id: ml-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build production ML systems with PyTorch 2.x, TensorFlow, and modern
+    ML frameworks. Implements model serving, feature engineering, A/B testing, and
+    monitoring. Use PROACTIVELY for ML model deployment, inference optimization, or
+    production ML infrastructure.
+- skill_id: core-components
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Core component library and design system patterns. Use when building
+    UI, using design tokens, or working with the component library.
+- skill_id: frontend-mobile-security-xss-scan
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: You are a frontend security specialist focusing on Cross-Site Scripting
+    (XSS) vulnerability detection and prevention. Analyze React, Vue, Angular, and
+    vanilla JavaScript code to identify injection poi
+- skill_id: aesthetic
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Create aesthetically beautiful interfaces following proven design principles.
+    Use when building UI/UX, analyzing designs from inspiration sites, generating
+    design images, implementing visual hierarchy and color theory, adding micro-interactions,
+    or creating design documentation. Integrate localized specialized skills (chrome-devtools,
+    ImageMagick) with native vision intelligence to achieve premium aesthetic standards.
+- skill_id: web-artifacts-builder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Suite of tools for creating elaborate, multi-component claude.ai HTML
+    artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui).
+    Use for complex artifacts requiring state management, routing, or shadcn/ui components
+    - not for simple single-file HTML/JSX artifacts.
+- skill_id: ai-product
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Every product will be AI-powered. The question is whether you''ll
+    build it right or ship a demo that falls apart in production.  This skill covers
+    LLM integration patterns, RAG architecture, prompt engineering that scales, AI
+    UX that users trust, and cost optimization that doesn''t bankrupt you. Use when:
+    keywords, file_patterns, code_patterns.'
+- skill_id: fixing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Fix bugs, errors, test failures, CI/CD issues with intelligent routing.
+    Use when reporting bugs, type errors, log errors, UI issues, code problems. Auto-classifies
+    complexity and activates relevant skills.
+- skill_id: legal-advisor
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Draft privacy policies, terms of service, disclaimers, and legal notices.
+    Creates GDPR-compliant texts, cookie policies, and data processing agreements.
+    Use PROACTIVELY for legal documentation, compliance texts, or regulatory requirements.
+- skill_id: ask-questions-if-underspecified
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Clarify requirements before implementing. Do not use automatically,
+    only when invoked explicitly.
+- skill_id: web3-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Test smart contracts comprehensively using Hardhat and Foundry with
+    unit tests, integration tests, and mainnet forking. Use when testing Solidity
+    contracts, setting up blockchain test suites, or validating DeFi protocols.
+- skill_id: finishing-a-development-branch
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Use when implementation is complete, all tests pass, and you need to
+    decide how to integrate the work - guides completion of development work by presenting
+    structured options for merge, PR, or cleanup
+- skill_id: evaluation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build evaluation frameworks for agent systems
+- skill_id: computer-use-agents
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: 'Build AI agents that interact with computers like humans do - viewing
+    screens, moving cursors, clicking buttons, and typing text. Covers Anthropic''s
+    Computer Use, OpenAI''s Operator/CUA, and open-source alternatives. Critical focus
+    on sandboxing, security, and handling the unique challenges of vision-based control.
+    Use when: computer use, desktop automation agent, screen control AI, vision-based
+    agent, GUI automation.'
+- skill_id: google-adk-python
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build AI agents with Google ADK Python (Agent Development Kit). Use
+    for multi-agent systems, workflow agents (sequential/parallel/loop), Vertex AI
+    deployment, tool integration, human-in-the-loop.
