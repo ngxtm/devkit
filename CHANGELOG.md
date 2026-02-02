@@ -1,3 +1,16 @@
+# [3.1.0](https://github.com/ngxtm/devkit/compare/v3.0.3...v3.1.0) (2026-02-02)
+
+
+### Bug Fixes
+
+* **ci:** add validate_skills.py and fix SKILL.md frontmatter errors ([ca0d133](https://github.com/ngxtm/devkit/commit/ca0d133c714501cb1c4926a9fceeaa7d24bb8160))
+
+
+### Features
+
+* **skills:** auto-sync from upstream sources ([45b4155](https://github.com/ngxtm/devkit/commit/45b41556894d4b3e01aa534b6f6d9b70913a9beb))
+* **skills:** auto-sync from upstream sources ([5505ecd](https://github.com/ngxtm/devkit/commit/5505ecd27bd8ba445ec0466a3c92942b70319346))
+
 ## [3.0.3](https://github.com/ngxtm/devkit/compare/v3.0.2...v3.0.3) (2026-01-31)
 
 
