@@ -1,7 +1,7 @@
 domain: devops
 description: Skills related to devops
 skill_count: 20
-updated: '2026-01-31T09:25:46.920064'
+updated: '2026-02-02T01:14:08.013992'
 skills:
 - skill_id: git-pr-workflows-git-workflow
   category: core

@@ -1,7 +1,7 @@
 domain: security
 description: Skills related to security
 skill_count: 35
-updated: '2026-01-31T09:25:46.649625'
+updated: '2026-02-02T01:14:07.739861'
 skills:
 - skill_id: sast-configuration
   category: core

@@ -1,7 +1,7 @@
 domain: languages
 description: Skills related to languages
 skill_count: 7
-updated: '2026-01-31T09:25:46.927188'
+updated: '2026-02-02T01:14:08.021303'
 skills:
 - skill_id: typescript-pro
   category: core

@@ -1,7 +1,7 @@
 domain: cloud
 description: Skills related to cloud
 skill_count: 1
-updated: '2026-01-31T09:25:46.933885'
+updated: '2026-02-02T01:14:08.028259'
 skills:
 - skill_id: cost-optimization
   category: core

@@ -1,7 +1,7 @@
 domain: quality
 description: Skills related to quality
 skill_count: 23
-updated: '2026-01-31T09:25:46.907832'
+updated: '2026-02-02T01:14:08.001386'
 skills:
 - skill_id: test-driven-development
   category: core

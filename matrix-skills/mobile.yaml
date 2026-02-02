@@ -1,7 +1,7 @@
 domain: mobile
 description: Skills related to mobile
 skill_count: 3
-updated: '2026-01-31T09:25:46.929817'
+updated: '2026-02-02T01:14:08.024035'
 skills:
 - skill_id: qa-regression
   category: core

@@ -3,7 +3,10 @@
     "allow": [
       "Bash(powershell -Command:*)",
       "Bash(ls:*)",
-      "Bash(git -C \"D:\\\\Project\\\\devkit\" log --oneline --all -- scripts/validate_skills.py)"
+      "Bash(dir:*)",
+      "Bash(node:*)",
+      "Bash(git log:*)",
+      "Bash(bash:*)"
     ]
   }
 }

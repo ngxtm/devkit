@@ -1,7 +1,7 @@
 domain: frontend
 description: Skills related to frontend
-skill_count: 168
-updated: '2026-01-31T09:25:46.787800'
+skill_count: 169
+updated: '2026-02-02T01:14:07.878017'
 skills:
 - skill_id: agent-tool-builder
   category: core
@@ -1004,7 +1004,10 @@ skills:
     agents: []
     profiles:
     - frontend:*
-  description: 'Skill: frontend-slides'
+  description: Create stunning, animation-rich HTML presentations from scratch or
+    by converting PowerPoint files. Use when the user wants to build a presentation,
+    convert a PPT/PPTX to web, or create slides for a talk/pitch. Helps non-designers
+    discover their aesthetic through visual exploration rather than abstract choices.
 - skill_id: ml-pipeline-workflow
   category: core
   priority_score: 5
@@ -1038,6 +1041,16 @@ skills:
   description: Building applications with Large Language Models - prompt engineering,
     RAG patterns, and LLM integration. Use for AI-powered features, chatbots, or LLM-based
     automation.
+- skill_id: radix-ui-design-system
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - frontend:*
+  description: Build accessible design systems with Radix UI primitives. Headless
+    component customization, theming strategies, and compound component patterns for
+    production-grade UI libraries.
 - skill_id: godot-gdscript-patterns
   category: core
   priority_score: 5

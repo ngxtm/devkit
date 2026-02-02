@@ -1,7 +1,7 @@
 domain: tools
 description: Skills related to tools
-skill_count: 84
-updated: '2026-01-31T09:25:46.849512'
+skill_count: 85
+updated: '2026-02-02T01:14:07.941489'
 skills:
 - skill_id: algorithmic-art
   category: core
@@ -477,6 +477,14 @@ skills:
     work with presentations (.pptx files) for: (1) Creating new presentations, (2)
     Modifying or editing content, (3) Working with layouts, (4) Adding comments or
     speaker notes, or any other presentation tasks'
+- skill_id: SPDD
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: 'Skill: SPDD'
 - skill_id: powershell-windows
   category: core
   priority_score: 5

@@ -1,7 +1,7 @@
 domain: data
 description: Skills related to data
 skill_count: 6
-updated: '2026-01-31T09:25:46.876693'
+updated: '2026-02-02T01:14:07.969391'
 skills:
 - skill_id: blockrun
   category: core

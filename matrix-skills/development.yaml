@@ -1,7 +1,7 @@
 domain: development
 description: Skills related to development
 skill_count: 2
-updated: '2026-01-31T09:25:46.933000'
+updated: '2026-02-02T01:14:08.027332'
 skills:
 - skill_id: vercel-deploy
   category: core
