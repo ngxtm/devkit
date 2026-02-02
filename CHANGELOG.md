@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/ngxtm/devkit/compare/v3.1.0...v3.2.0) (2026-02-02)
+
+
+### Features
+
+* **scripts:** add sync:rules for manual rule sync from skill-rule ([9779967](https://github.com/ngxtm/devkit/commit/97799674ec7a252717beed2d27cb7297d1293f72))
+
 # [3.1.0](https://github.com/ngxtm/devkit/compare/v3.0.3...v3.1.0) (2026-02-02)
 
 
