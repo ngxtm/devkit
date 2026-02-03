@@ -17,6 +17,7 @@ const { initProject, uninstallProject } = require('./init');
 const { updateProject, showStatus } = require('./update');
 const { detectProjectType, getRulesForTypes, printDetectionResults } = require('./detect');
 const { validatePath } = require('./utils');
+const { listRules, addRules, removeRules } = require('./rules');
 
 // Legacy imports for backwards compatibility (will be deprecated)
 let legacyInstall = null;
@@ -38,6 +39,8 @@ function parseArgs(args) {
     update: false,
     clean: false,
     help: false,
+    installed: false,
+    ruleArgs: [],
     // Legacy options (deprecated)
     tool: null,
     minimal: false,
@@ -57,6 +60,8 @@ function parseArgs(args) {
       options.update = true;
     } else if (arg === '--clean' || arg === '-c') {
       options.clean = true;
+    } else if (arg === '--installed' || arg === '-i') {
+      options.installed = true;
     } else if (arg === '--status' || arg === '-s') {
       options.command = 'status';
     } else if (arg.startsWith('--path=')) {
@@ -65,21 +70,15 @@ function parseArgs(args) {
       // Handle legacy options for backwards compatibility
       if (arg === '--minimal' || arg === '-m') options.minimal = true;
       if (arg === '--lite' || arg === '-l') options.lite = true;
-      if (arg === '--interactive' || arg === '-i') options.interactive = true;
-      if (arg === '--full') options.fullSkills = true;
       if (arg.startsWith('--category=')) {
         const cats = arg.split('=')[1].split(',').map(c => c.trim());
         options.categories.push(...cats);
       }
     } else if (!options.command) {
       options.command = arg;
-    } else if (!options.path && !options.tool) {
-      // Could be a path or a tool name (legacy)
-      if (['claude', 'cursor', 'copilot', 'gemini'].includes(arg)) {
-        options.tool = arg;
-      } else {
-        options.path = arg;
-      }
+    } else {
+      // Additional args (for add/remove commands)
+      options.ruleArgs.push(arg);
     }
   }
 
@@ -104,6 +103,15 @@ COMMANDS:
   detect        Show detected technologies for current project
                 Useful to see what devkit will install.
 
+  rules         List all available rules
+                Use --installed to show only installed rules.
+
+  add <rule>    Add rules manually (space-separated)
+                Example: devkit add golang docker
+
+  remove <rule> Remove rules from project
+                Example: devkit remove flutter
+
   status        Show installation status
 
   uninstall     Remove devkit from current project
@@ -115,10 +123,11 @@ COMMANDS:
   version       Show version
 
 OPTIONS:
-  --force, -f   Force overwrite existing installation
-  --clean, -c   Remove rules for technologies no longer detected (with update)
-  --path=DIR    Specify project directory (default: current directory)
-  --help, -h    Show this help
+  --force, -f     Force overwrite existing installation
+  --clean, -c     Remove rules for technologies no longer detected (with update)
+  --installed, -i Show only installed rules (with rules command)
+  --path=DIR      Specify project directory (default: current directory)
+  --help, -h      Show this help
 
 EXAMPLES:
   devkit init                 # Initialize in current project
@@ -126,6 +135,10 @@ EXAMPLES:
   devkit update               # Update and re-detect technologies
   devkit update --clean       # Update and remove old rules
   devkit detect               # Show what would be detected
+  devkit rules                # List all available rules
+  devkit rules --installed    # Show installed rules
+  devkit add golang docker    # Add golang and docker rules
+  devkit remove flutter       # Remove flutter rule
   devkit status               # Show current installation
   devkit uninstall            # Remove from current project
 
@@ -209,6 +222,39 @@ const commands = {
     return uninstallProject({
       path: projectPath
     });
+  },
+
+  // List available rules
+  rules: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    return listRules({
+      path: projectPath,
+      installed: options.installed
+    });
+  },
+
+  // Add rules manually
+  add: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    if (options.ruleArgs.length === 0) {
+      console.log('\n  Usage: devkit add <rule> [rule2 ...]');
+      console.log('  Example: devkit add golang docker\n');
+      console.log('  Run "devkit rules" to see available rules.\n');
+      return { success: false, reason: 'no_rules' };
+    }
+    return addRules(options.ruleArgs, { path: projectPath });
+  },
+
+  // Remove rules
+  remove: (options) => {
+    const projectPath = validatePath(options.path) || process.cwd();
+    if (options.ruleArgs.length === 0) {
+      console.log('\n  Usage: devkit remove <rule> [rule2 ...]');
+      console.log('  Example: devkit remove flutter\n');
+      console.log('  Run "devkit rules --installed" to see installed rules.\n');
+      return { success: false, reason: 'no_rules' };
+    }
+    return removeRules(options.ruleArgs, { path: projectPath });
   },
 
   // List skills (from skills-index.json)
