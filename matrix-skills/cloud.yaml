@@ -1,7 +1,7 @@
 domain: cloud
 description: Skills related to cloud
 skill_count: 1
-updated: '2026-02-02T01:14:08.028259'
+updated: '2026-02-03T01:14:33.247877'
 skills:
 - skill_id: cost-optimization
   category: core
@@ -10,6 +10,4 @@ skills:
     agents: []
     profiles:
     - cloud:*
-  description: Optimize cloud costs through resource rightsizing, tagging strategies,
-    reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing
-    infrastructure costs, or implementing cost governance policies.
+  description: Optimize cloud costs through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing cost governance policies.

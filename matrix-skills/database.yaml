@@ -1,0 +1,13 @@
+domain: database
+description: Skills related to database
+skill_count: 1
+updated: '2026-02-03T01:14:33.247149'
+skills:
+- skill_id: legacy-modernizer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - database:*
+  description: Refactor legacy codebases, migrate outdated frameworks, and implement gradual modernization. Handles technical debt, dependency updates, and backward compatibility. Use PROACTIVELY for legacy system updates, framework migrations, or technical debt reduction.

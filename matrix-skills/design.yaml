@@ -1,7 +1,7 @@
 domain: design
 description: Skills related to design
 skill_count: 12
-updated: '2026-02-02T01:14:08.009488'
+updated: '2026-02-03T01:14:33.224749'
 skills:
 - skill_id: design-md
   category: core
@@ -10,8 +10,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Analyze Stitch projects and synthesize a semantic design system into
-    DESIGN.md files
+  description: Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files
 - skill_id: pricing-strategy
   category: core
   priority_score: 5
@@ -19,8 +18,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Design pricing, packaging, and monetization strategies based on value,
-    customer willingness to pay, and growth objectives.
+  description: Design pricing, packaging, and monetization strategies based on value, customer willingness to pay, and growth objectives.
 - skill_id: microservices-architect
   category: core
   priority_score: 5
@@ -28,9 +26,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Use when designing distributed systems, decomposing monoliths, or implementing
-    microservices patterns. Invoke for service boundaries, DDD, saga patterns, event
-    sourcing, service mesh, distributed tracing.
+  description: Use when designing distributed systems, decomposing monoliths, or implementing microservices patterns. Invoke for service boundaries, DDD, saga patterns, event sourcing, service mesh, distributed tracing.
 - skill_id: referral-program
   category: core
   priority_score: 5
@@ -38,11 +34,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: When the user wants to create, optimize, or analyze a referral program,
-    affiliate program, or word-of-mouth strategy. Also use when the user mentions
-    'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a
-    friend,' or 'partner program.' This skill covers program design, incentive structure,
-    and growth optimization.
+  description: When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization.
 - skill_id: elixir-pro
   category: core
   priority_score: 5
@@ -50,9 +42,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Write idiomatic Elixir code with OTP patterns, supervision trees, and
-    Phoenix LiveView. Masters concurrency, fault tolerance, and distributed systems.
-    Use PROACTIVELY for Elixir refactoring, OTP design, or complex BEAM optimizations.
+  description: Write idiomatic Elixir code with OTP patterns, supervision trees, and Phoenix LiveView. Masters concurrency, fault tolerance, and distributed systems. Use PROACTIVELY for Elixir refactoring, OTP design, or complex BEAM optimizations.
 - skill_id: linux-shell-scripting
   category: core
   priority_score: 5
@@ -60,10 +50,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: This skill should be used when the user asks to "create bash scripts",
-    "automate Linux tasks", "monitor system resources", "backup files", "manage users",
-    or "write production shell scripts". It provides ready-to-use shell script templates
-    for system administration.
+  description: This skill should be used when the user asks to "create bash scripts", "automate Linux tasks", "monitor system resources", "backup files", "manage users", or "write production shell scripts". It provides ready-to-use shell script templates for system administration.
 - skill_id: bash-linux
   category: core
   priority_score: 5
@@ -71,8 +58,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Bash/Linux terminal patterns. Critical commands, piping, error handling,
-    scripting. Use when working on macOS or Linux systems.
+  description: Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems.
 - skill_id: architecture-designer
   category: core
   priority_score: 5
@@ -80,9 +66,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Use when designing new system architecture, reviewing existing designs,
-    or making architectural decisions. Invoke for system design, architecture review,
-    design patterns, ADRs, scalability planning.
+  description: Use when designing new system architecture, reviewing existing designs, or making architectural decisions. Invoke for system design, architecture review, design patterns, ADRs, scalability planning.
 - skill_id: product-strategist
   category: core
   priority_score: 5
@@ -90,10 +74,7 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Strategic product leadership toolkit for Head of Product including
-    OKR cascade generation, market analysis, vision setting, and team scaling. Use
-    for strategic planning, goal alignment, competitive analysis, and organizational
-    design.
+  description: Strategic product leadership toolkit for Head of Product including OKR cascade generation, market analysis, vision setting, and team scaling. Use for strategic planning, goal alignment, competitive analysis, and organizational design.
 - skill_id: context-compression
   category: core
   priority_score: 5
@@ -117,7 +98,4 @@ skills:
     agents: []
     profiles:
     - design:*
-  description: Create beautiful visual art in .png and .pdf documents using design
-    philosophy. You should use this skill when the user asks to create a poster, piece
-    of art, design, or other static piece. Create original visual designs, never copying
-    existing artists' work to avoid copyright violations.
+  description: Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.

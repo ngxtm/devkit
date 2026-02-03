@@ -1,7 +1,7 @@
 domain: architecture
 description: Skills related to architecture
 skill_count: 1
-updated: '2026-02-02T01:14:08.025313'
+updated: '2026-02-03T01:14:33.241609'
 skills:
 - skill_id: c4-architecture-c4-architecture
   category: core
@@ -10,5 +10,4 @@ skills:
     agents: []
     profiles:
     - architecture:*
-  description: Generate comprehensive C4 architecture documentation for an existing
-    repository/codebase using a bottom-up analysis approach.
+  description: Generate comprehensive C4 architecture documentation for an existing repository/codebase using a bottom-up analysis approach.

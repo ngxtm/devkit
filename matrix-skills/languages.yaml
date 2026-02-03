@@ -1,7 +1,7 @@
 domain: languages
 description: Skills related to languages
 skill_count: 7
-updated: '2026-02-02T01:14:08.021303'
+updated: '2026-02-03T01:14:33.235500'
 skills:
 - skill_id: typescript-pro
   category: core
@@ -10,9 +10,7 @@ skills:
     agents: []
     profiles:
     - languages:*
-  description: Master TypeScript with advanced types, generics, and strict type safety.
-    Handles complex type systems, decorators, and enterprise-grade patterns. Use PROACTIVELY
-    for TypeScript architecture, type inference optimization, or advanced typing patterns.
+  description: Master TypeScript with advanced types, generics, and strict type safety. Handles complex type systems, decorators, and enterprise-grade patterns. Use PROACTIVELY for TypeScript architecture, type inference optimization, or advanced typing patterns.
 - skill_id: mtls-configuration
   category: core
   priority_score: 5
@@ -20,9 +18,7 @@ skills:
     agents: []
     profiles:
     - languages:*
-  description: Configure mutual TLS (mTLS) for zero-trust service-to-service communication.
-    Use when implementing zero-trust networking, certificate management, or securing
-    internal service communication.
+  description: Configure mutual TLS (mTLS) for zero-trust service-to-service communication. Use when implementing zero-trust networking, certificate management, or securing internal service communication.
 - skill_id: n8n-code-python
   category: core
   priority_score: 5
@@ -30,9 +26,7 @@ skills:
     agents: []
     profiles:
     - languages:*
-  description: Write Python code in n8n Code nodes. Use when writing Python in n8n,
-    using _input/_json/_node syntax, working with standard library, or need to understand
-    Python limitations in n8n Code nodes.
+  description: Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes.
 - skill_id: python-patterns
   category: core
   priority_score: 5
@@ -40,8 +34,7 @@ skills:
     agents: []
     profiles:
     - languages:*
-  description: Python development principles and decision-making. Framework selection,
-    async patterns, type hints, project structure. Teaches thinking, not copying.
+  description: Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying.
 - skill_id: popup-cro
   category: core
   priority_score: 5
@@ -49,8 +42,7 @@ skills:
     agents: []
     profiles:
     - languages:*
-  description: Create and optimize popups, modals, overlays, slide-ins, and banners
-    to increase conversions without harming user experience or brand trust.
+  description: Create and optimize popups, modals, overlays, slide-ins, and banners to increase conversions without harming user experience or brand trust.
 - skill_id: foundry-iq-python
   category: core
   priority_score: 5
@@ -66,6 +58,4 @@ skills:
     agents: []
     profiles:
     - languages:*
-  description: Handle errors as values using fp-ts Either and TaskEither for cleaner,
-    more predictable TypeScript code. Use when implementing error handling patterns
-    with fp-ts.
+  description: Handle errors as values using fp-ts Either and TaskEither for cleaner, more predictable TypeScript code. Use when implementing error handling patterns with fp-ts.

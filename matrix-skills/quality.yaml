@@ -1,7 +1,7 @@
 domain: quality
 description: Skills related to quality
-skill_count: 23
-updated: '2026-02-02T01:14:08.001386'
+skill_count: 27
+updated: '2026-02-03T01:14:33.215295'
 skills:
 - skill_id: test-driven-development
   category: core
@@ -10,8 +10,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Use when implementing any feature or bugfix, before writing implementation
-    code
+  description: Use when implementing any feature or bugfix, before writing implementation code
 - skill_id: screenshots
   category: core
   priority_score: 5
@@ -19,9 +18,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Generate marketing screenshots of your app using Playwright. Use when
-    the user wants to create screenshots for Product Hunt, social media, landing pages,
-    or documentation.
+  description: Generate marketing screenshots of your app using Playwright. Use when the user wants to create screenshots for Product Hunt, social media, landing pages, or documentation.
 - skill_id: playwright-expert
   category: core
   priority_score: 5
@@ -29,9 +26,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Use when writing E2E tests with Playwright, setting up test infrastructure,
-    or debugging flaky browser tests. Invoke for browser automation, E2E tests, Page
-    Object Model, test flakiness, visual testing.
+  description: Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke for browser automation, E2E tests, Page Object Model, test flakiness, visual testing.
 - skill_id: error-diagnostics-error-analysis
   category: core
   priority_score: 5
@@ -39,9 +34,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: You are an expert error analysis specialist with deep expertise in
-    debugging distributed systems, analyzing production incidents, and implementing
-    comprehensive observability solutions.
+  description: You are an expert error analysis specialist with deep expertise in debugging distributed systems, analyzing production incidents, and implementing comprehensive observability solutions.
 - skill_id: bash-pro
   category: core
   priority_score: 5
@@ -49,9 +42,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Master of defensive Bash scripting for production automation, CI/CD
-    pipelines, and system utilities. Expert in safe, portable, and testable shell
-    scripts.
+  description: Master of defensive Bash scripting for production automation, CI/CD pipelines, and system utilities. Expert in safe, portable, and testable shell scripts.
 - skill_id: javascript-testing-patterns
   category: core
   priority_score: 5
@@ -59,10 +50,15 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Implement comprehensive testing strategies using Jest, Vitest, and
-    Testing Library for unit tests, integration tests, and end-to-end testing with
-    mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript
-    tests, setting up test infrastructure, or implementing TDD/BDD workflows.
+  description: Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript tests, setting up test infrastructure, or implementing TDD/BDD workflows.
+- skill_id: context7-auto-research
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Automatically fetch latest library/framework documentation for Claude Code via Context7 API
 - skill_id: protocol-reverse-engineering
   category: core
   priority_score: 5
@@ -70,9 +66,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Master network protocol reverse engineering including packet analysis,
-    protocol dissection, and custom protocol documentation. Use when analyzing network
-    traffic, understanding proprietary protocols, or debugging network communication.
+  description: Master network protocol reverse engineering including packet analysis, protocol dissection, and custom protocol documentation. Use when analyzing network traffic, understanding proprietary protocols, or debugging network communication.
 - skill_id: error-debugging-error-analysis
   category: core
   priority_score: 5
@@ -80,9 +74,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: You are an expert error analysis specialist with deep expertise in
-    debugging distributed systems, analyzing production incidents, and implementing
-    comprehensive observability solutions.
+  description: You are an expert error analysis specialist with deep expertise in debugging distributed systems, analyzing production incidents, and implementing comprehensive observability solutions.
 - skill_id: workflow-patterns
   category: core
   priority_score: 5
@@ -90,9 +82,15 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Use this skill when implementing tasks according to Conductor's TDD
-    workflow, handling phase checkpoints, managing git commits for tasks, or understanding
-    the verification protocol.
+  description: Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding the verification protocol.
+- skill_id: screen-reader-testing
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Test web applications with screen readers including VoiceOver, NVDA, and JAWS. Use when validating screen reader compatibility, debugging accessibility issues, or ensuring assistive technology support.
 - skill_id: framework-migration-deps-upgrade
   category: core
   priority_score: 5
@@ -100,9 +98,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: You are a dependency management expert specializing in safe, incremental
-    upgrades of project dependencies. Plan and execute dependency updates with minimal
-    risk, proper testing, and clear migration pa
+  description: You are a dependency management expert specializing in safe, incremental upgrades of project dependencies. Plan and execute dependency updates with minimal risk, proper testing, and clear migration pa
 - skill_id: dependency-upgrade
   category: core
   priority_score: 5
@@ -110,9 +106,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Manage major dependency version upgrades with compatibility analysis,
-    staged rollout, and comprehensive testing. Use when upgrading framework versions,
-    updating major dependencies, or managing breaking changes in libraries.
+  description: Manage major dependency version upgrades with compatibility analysis, staged rollout, and comprehensive testing. Use when upgrading framework versions, updating major dependencies, or managing breaking changes in libraries.
 - skill_id: bun-development
   category: core
   priority_score: 5
@@ -120,9 +114,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Modern JavaScript/TypeScript development with Bun runtime. Covers package
-    management, bundling, testing, and migration from Node.js. Use when working with
-    Bun, optimizing JS/TS development speed, or migrating from Node.js to Bun.
+  description: Modern JavaScript/TypeScript development with Bun runtime. Covers package management, bundling, testing, and migration from Node.js. Use when working with Bun, optimizing JS/TS development speed, or migrating from Node.js to Bun.
 - skill_id: copywriting
   category: core
   priority_score: 5
@@ -130,10 +122,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Use this skill when writing, rewriting, or improving marketing copy
-    for any page (homepage, landing page, pricing, feature, product, or about page).
-    This skill produces clear, compelling, and testable copy while enforcing alignment,
-    honesty, and conversion best practices.
+  description: Use this skill when writing, rewriting, or improving marketing copy for any page (homepage, landing page, pricing, feature, product, or about page). This skill produces clear, compelling, and testable copy while enforcing alignment, honesty, and conversion best practices.
 - skill_id: distributed-debugging-debug-trace
   category: core
   priority_score: 5
@@ -141,10 +130,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: You are a debugging expert specializing in setting up comprehensive
-    debugging environments, distributed tracing, and diagnostic tools. Configure debugging
-    workflows, implement tracing solutions, and establish troubleshooting practices
-    for development and production environments.
+  description: You are a debugging expert specializing in setting up comprehensive debugging environments, distributed tracing, and diagnostic tools. Configure debugging workflows, implement tracing solutions, and establish troubleshooting practices for development and production environments.
 - skill_id: debugging-toolkit-smart-debug
   category: core
   priority_score: 5
@@ -153,6 +139,22 @@ skills:
     profiles:
     - quality:*
   description: Use when working with debugging toolkit smart debug
+- skill_id: javascript-pro
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: Master modern JavaScript with ES6+, async patterns, and Node.js APIs. Handles promises, event loops, and browser/Node compatibility. Use PROACTIVELY for JavaScript optimization, async debugging, or complex JS patterns.
+- skill_id: api-testing-observability-api-mock
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - quality:*
+  description: You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavior and enable parallel development.
 - skill_id: tdd-workflows-tdd-refactor
   category: core
   priority_score: 5
@@ -176,9 +178,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Jest testing patterns, factory functions, mocking strategies, and TDD
-    workflow. Use when writing unit tests, creating test factories, or following TDD
-    red-green-refactor cycle.
+  description: Jest testing patterns, factory functions, mocking strategies, and TDD workflow. Use when writing unit tests, creating test factories, or following TDD red-green-refactor cycle.
 - skill_id: tdd-workflows-tdd-cycle
   category: core
   priority_score: 5
@@ -194,9 +194,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: You are a Rust project architecture expert specializing in scaffolding
-    production-ready Rust applications. Generate complete project structures with
-    cargo tooling, proper module organization, testing
+  description: You are a Rust project architecture expert specializing in scaffolding production-ready Rust applications. Generate complete project structures with cargo tooling, proper module organization, testing
 - skill_id: debugging-wizard
   category: core
   priority_score: 5
@@ -204,9 +202,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Use when investigating errors, analyzing stack traces, or finding root
-    causes of unexpected behavior. Invoke for error investigation, troubleshooting,
-    log analysis, root cause analysis.
+  description: Use when investigating errors, analyzing stack traces, or finding root causes of unexpected behavior. Invoke for error investigation, troubleshooting, log analysis, root cause analysis.
 - skill_id: error-detective
   category: core
   priority_score: 5
@@ -214,9 +210,7 @@ skills:
     agents: []
     profiles:
     - quality:*
-  description: Search logs and codebases for error patterns, stack traces, and anomalies.
-    Correlates errors across systems and identifies root causes. Use PROACTIVELY when
-    debugging issues, analyzing logs, or investigating production errors.
+  description: Search logs and codebases for error patterns, stack traces, and anomalies. Correlates errors across systems and identifies root causes. Use PROACTIVELY when debugging issues, analyzing logs, or investigating production errors.
 - skill_id: conductor-implement
   category: core
   priority_score: 5

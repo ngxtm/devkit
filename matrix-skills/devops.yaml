@@ -1,7 +1,7 @@
 domain: devops
 description: Skills related to devops
-skill_count: 20
-updated: '2026-02-02T01:14:08.013992'
+skill_count: 17
+updated: '2026-02-03T01:14:33.229250'
 skills:
 - skill_id: git-pr-workflows-git-workflow
   category: core
@@ -10,9 +10,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Orchestrate a comprehensive git workflow from code review through PR
-    creation, leveraging specialized agents for quality assurance, testing, and deployment
-    readiness. This workflow implements modern g
+  description: Orchestrate a comprehensive git workflow from code review through PR creation, leveraging specialized agents for quality assurance, testing, and deployment readiness. This workflow implements modern g
 - skill_id: service-mesh-observability
   category: core
   priority_score: 5
@@ -20,9 +18,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Implement comprehensive observability for service meshes including
-    distributed tracing, metrics, and visualization. Use when setting up mesh monitoring,
-    debugging latency issues, or implementing SLOs for service communication.
+  description: Implement comprehensive observability for service meshes including distributed tracing, metrics, and visualization. Use when setting up mesh monitoring, debugging latency issues, or implementing SLOs for service communication.
 - skill_id: temporal-python-pro
   category: core
   priority_score: 5
@@ -30,20 +26,15 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Master Temporal workflow orchestration with Python SDK. Implements
-    durable workflows, saga patterns, and distributed transactions. Covers async/await,
-    testing strategies, and production deployment. Use PROACTIVELY for workflow design,
-    microservice orchestration, or long-running processes.
-- skill_id: screen-reader-testing
+  description: Master Temporal workflow orchestration with Python SDK. Implements durable workflows, saga patterns, and distributed transactions. Covers async/await, testing strategies, and production deployment. Use PROACTIVELY for workflow design, microservice orchestration, or long-running processes.
+- skill_id: database-migrations-migration-observability
   category: core
   priority_score: 5
   relevance_mapping:
     agents: []
     profiles:
     - devops:*
-  description: Test web applications with screen readers including VoiceOver, NVDA,
-    and JAWS. Use when validating screen reader compatibility, debugging accessibility
-    issues, or ensuring assistive technology support.
+  description: Migration monitoring, CDC, and observability infrastructure
 - skill_id: prometheus-configuration
   category: core
   priority_score: 5
@@ -51,9 +42,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Set up Prometheus for comprehensive metric collection, storage, and
-    monitoring of infrastructure and applications. Use when implementing metrics collection,
-    setting up monitoring infrastructure, or configuring alerting systems.
+  description: Set up Prometheus for comprehensive metric collection, storage, and monitoring of infrastructure and applications. Use when implementing metrics collection, setting up monitoring infrastructure, or configuring alerting systems.
 - skill_id: expo-deployment
   category: core
   priority_score: 5
@@ -69,9 +58,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: You are a configuration management expert specializing in validating,
-    testing, and ensuring the correctness of application configurations. Create comprehensive
-    validation schemas, implement configurat
+  description: You are a configuration management expert specializing in validating, testing, and ensuring the correctness of application configurations. Create comprehensive validation schemas, implement configurat
 - skill_id: agent-evaluation
   category: core
   priority_score: 5
@@ -79,10 +66,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: 'Testing and benchmarking LLM agents including behavioral testing,
-    capability assessment, reliability metrics, and production monitoring—where even
-    top agents achieve less than 50% on real-world benchmarks Use when: agent testing,
-    agent evaluation, benchmark agents, agent reliability, test agent.'
+  description: 'Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring—where even top agents achieve less than 50% on real-world benchmarks Use when: agent testing, agent evaluation, benchmark agents, agent reliability, test agent.'
 - skill_id: gitops-workflow
   category: core
   priority_score: 5
@@ -90,10 +74,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Implement GitOps workflows with ArgoCD and Flux for automated, declarative
-    Kubernetes deployments with continuous reconciliation. Use when implementing GitOps
-    practices, automating Kubernetes deployments, or setting up declarative infrastructure
-    management.
+  description: Implement GitOps workflows with ArgoCD and Flux for automated, declarative Kubernetes deployments with continuous reconciliation. Use when implementing GitOps practices, automating Kubernetes deployments, or setting up declarative infrastructure management.
 - skill_id: error-diagnostics-error-trace
   category: core
   priority_score: 5
@@ -101,9 +82,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: You are an error tracking and observability expert specializing in
-    implementing comprehensive error monitoring solutions. Set up error tracking systems,
-    configure alerts, implement structured logging,
+  description: You are an error tracking and observability expert specializing in implementing comprehensive error monitoring solutions. Set up error tracking systems, configure alerts, implement structured logging,
 - skill_id: helm-chart-scaffolding
   category: core
   priority_score: 5
@@ -111,31 +90,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Design, organize, and manage Helm charts for templating and packaging
-    Kubernetes applications with reusable configurations. Use when creating Helm charts,
-    packaging Kubernetes applications, or implementing templated deployments.
-- skill_id: hybrid-cloud-architect
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - devops:*
-  description: Expert hybrid cloud architect specializing in complex multi-cloud solutions
-    across AWS/Azure/GCP and private clouds (OpenStack/VMware). Masters hybrid connectivity,
-    workload placement optimization, edge computing, and cross-cloud automation. Handles
-    compliance, cost optimization, disaster recovery, and migration strategies. Use
-    PROACTIVELY for hybrid architecture, multi-cloud strategy, or complex infrastructure
-    integration.
-- skill_id: aws-skills
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - devops:*
-  description: AWS development with infrastructure automation and cloud architecture
-    patterns
+  description: Design, organize, and manage Helm charts for templating and packaging Kubernetes applications with reusable configurations. Use when creating Helm charts, packaging Kubernetes applications, or implementing templated deployments.
 - skill_id: vercel-deployment
   category: core
   priority_score: 5
@@ -143,16 +98,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: 'Expert knowledge for deploying to Vercel with Next.js Use when: vercel,
-    deploy, deployment, hosting, production.'
-- skill_id: agent-framework-azure-hosted-agents
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - devops:*
-  description: 'Skill: agent-framework-azure-hosted-agents'
+  description: 'Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production.'
 - skill_id: azd-deployment
   category: core
   priority_score: 5
@@ -168,8 +114,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Production deployment principles and decision-making. Safe deployment
-    workflows, rollback strategies, and verification. Teaches thinking, not scripts.
+  description: Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts.
 - skill_id: docker-expert
   category: core
   priority_score: 5
@@ -177,10 +122,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Docker containerization expert with deep knowledge of multi-stage builds,
-    image optimization, container security, Docker Compose orchestration, and production
-    deployment patterns. Use PROACTIVELY for Dockerfile optimization, container issues,
-    image size problems, security hardening, networking, and orchestration challenges.
+  description: Docker containerization expert with deep knowledge of multi-stage builds, image optimization, container security, Docker Compose orchestration, and production deployment patterns. Use PROACTIVELY for Dockerfile optimization, container issues, image size problems, security hardening, networking, and orchestration challenges.
 - skill_id: observability-monitoring-monitor-setup
   category: core
   priority_score: 5
@@ -188,9 +130,7 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: You are a monitoring and observability expert specializing in implementing
-    comprehensive monitoring solutions. Set up metrics collection, distributed tracing,
-    log aggregation, and create insightful da
+  description: You are a monitoring and observability expert specializing in implementing comprehensive monitoring solutions. Set up metrics collection, distributed tracing, log aggregation, and create insightful da
 - skill_id: monitoring-expert
   category: core
   priority_score: 5
@@ -198,6 +138,4 @@ skills:
     agents: []
     profiles:
     - devops:*
-  description: Use when setting up monitoring systems, logging, metrics, tracing,
-    or alerting. Invoke for dashboards, Prometheus/Grafana, load testing, profiling,
-    capacity planning.
+  description: Use when setting up monitoring systems, logging, metrics, tracing, or alerting. Invoke for dashboards, Prometheus/Grafana, load testing, profiling, capacity planning.

@@ -325,23 +325,8 @@ app.get(
     (req, res) => {
         // Generate JWT
         const tokens = generateTokens(req.user.id, req.user.email, req.user.role);
-
-        // Set tokens in secure httpOnly cookies (not in URL to prevent token leakage)
-        res.cookie('accessToken', tokens.accessToken, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 15 * 60 * 1000,  // 15 minutes
-        });
-        res.cookie('refreshToken', tokens.refreshToken, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 7 * 24 * 60 * 60 * 1000,  // 7 days
-        });
-
-        // Redirect without token in URL
-        res.redirect(`${process.env.FRONTEND_URL}/auth/callback`);
+        // Redirect to frontend with token
+        res.redirect(`${process.env.FRONTEND_URL}/auth/callback?token=${tokens.accessToken}`);
     }
 );
 ```

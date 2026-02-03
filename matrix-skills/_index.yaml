@@ -1,36 +1,36 @@
 name: Devkit Agent Assistant Matrix Index
 description: Central registry for skill discovery system
 total_skills: 768
-domain_count: 15
-updated: '2026-02-02T01:14:08.028984'
+domain_count: 18
+updated: '2026-02-03T01:14:33.248569'
 domains:
   security:
     file: security.yaml
-    skill_count: 35
+    skill_count: 40
     description: Skills for security development
   backend:
     file: backend.yaml
-    skill_count: 317
+    skill_count: 263
     description: Skills for backend development
   frontend:
     file: frontend.yaml
-    skill_count: 169
+    skill_count: 200
     description: Skills for frontend development
   tools:
     file: tools.yaml
-    skill_count: 85
+    skill_count: 80
     description: Skills for tools development
   data:
     file: data.yaml
-    skill_count: 6
+    skill_count: 7
     description: Skills for data development
   ai-ml:
     file: ai-ml.yaml
-    skill_count: 85
+    skill_count: 93
     description: Skills for ai-ml development
   quality:
     file: quality.yaml
-    skill_count: 23
+    skill_count: 27
     description: Skills for quality development
   design:
     file: design.yaml
@@ -38,12 +38,16 @@ domains:
     description: Skills for design development
   devops:
     file: devops.yaml
-    skill_count: 20
+    skill_count: 17
     description: Skills for devops development
   languages:
     file: languages.yaml
     skill_count: 7
     description: Skills for languages development
+  performance:
+    file: performance.yaml
+    skill_count: 5
+    description: Skills for performance development
   mobile:
     file: mobile.yaml
     skill_count: 3
@@ -52,6 +56,10 @@ domains:
     file: architecture.yaml
     skill_count: 1
     description: Skills for architecture development
+  api:
+    file: api.yaml
+    skill_count: 7
+    description: Skills for api development
   framework:
     file: framework.yaml
     skill_count: 2
@@ -60,6 +68,10 @@ domains:
     file: development.yaml
     skill_count: 2
     description: Skills for development development
+  database:
+    file: database.yaml
+    skill_count: 1
+    description: Skills for database development
   cloud:
     file: cloud.yaml
     skill_count: 1

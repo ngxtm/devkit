@@ -1,7 +1,7 @@
 domain: mobile
 description: Skills related to mobile
 skill_count: 3
-updated: '2026-02-02T01:14:08.024035'
+updated: '2026-02-03T01:14:33.240349'
 skills:
 - skill_id: qa-regression
   category: core
@@ -10,9 +10,7 @@ skills:
     agents: []
     profiles:
     - mobile:*
-  description: Automate QA regression testing with reusable test skills. Create login
-    flows, dashboard checks, user creation, and other common test scenarios that run
-    consistently.
+  description: Automate QA regression testing with reusable test skills. Create login flows, dashboard checks, user creation, and other common test scenarios that run consistently.
 - skill_id: varlock-claude-skill
   category: core
   priority_score: 5
@@ -20,8 +18,7 @@ skills:
     agents: []
     profiles:
     - mobile:*
-  description: Secure environment variable management ensuring secrets are never exposed
-    in Claude sessions, terminals, logs, or git commits
+  description: Secure environment variable management ensuring secrets are never exposed in Claude sessions, terminals, logs, or git commits
 - skill_id: upgrading-expo
   category: core
   priority_score: 5

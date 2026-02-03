@@ -1,0 +1,61 @@
+domain: api
+description: Skills related to api
+skill_count: 7
+updated: '2026-02-03T01:14:33.242292'
+skills:
+- skill_id: api-documentation-generator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Generate comprehensive, developer-friendly API documentation from code, including endpoints, parameters, examples, and best practices
+- skill_id: sharp-edges
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Identify error-prone APIs and dangerous configurations
+- skill_id: firecrawl-scraper
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Deep web scraping, screenshots, PDF parsing, and website crawling using Firecrawl API
+- skill_id: tavily-web
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Web search, content extraction, crawling, and research capabilities using Tavily API
+- skill_id: payment-integration
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Integrate Stripe, PayPal, and payment processors. Handles checkout flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when implementing payments, billing, or subscription features.
+- skill_id: incident-responder
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Expert SRE incident responder specializing in rapid problem resolution, modern observability, and comprehensive incident management. Masters incident command, blameless post-mortems, error budget management, and system reliability patterns. Handles critical outages, communication strategies, and continuous improvement. Use IMMEDIATELY for production incidents or SRE practices.
+- skill_id: exa-search
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - api:*
+  description: Semantic search, similar content discovery, and structured research using Exa API

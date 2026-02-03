@@ -1,23 +1,45 @@
-# ============================================================================
-# PERFORMANCE DOMAIN SKILLS
-# ============================================================================
-# Profiling, optimization, benchmarking
-# Primary agents: performance-engineer, debugger
-# ============================================================================
-
 domain: performance
-name: "Performance Engineering"
-description: "Profiling, optimization, benchmarking"
-skill_count: 1
-
+description: Skills related to performance
+skill_count: 5
+updated: '2026-02-03T01:14:33.238130'
 skills:
-  # --------------------------------------------------------------------------
-  # CORE SKILLS (Priority 9)
-  # --------------------------------------------------------------------------
-  - skill_id: performance-profiling
-    category: core
-    priority_score: 9
-    relevance_mapping:
-      agents: [performance-engineer, debugger, database-architect, game-engineer]
-      profiles: ["performance:*", "quality:debugging"]
-    description: "Measurement, analysis, optimization techniques"
+- skill_id: context-optimization
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - performance:*
+  description: Apply compaction, masking, and caching strategies
+- skill_id: seo-keyword-strategist
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - performance:*
+  description: Analyzes keyword usage in provided content, calculates density, suggests semantic variations and LSI keywords based on the topic. Prevents over-optimization. Use PROACTIVELY for content optimization.
+- skill_id: comprehensive-review-pr-enhance
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - performance:*
+  description: You are a PR optimization expert specializing in creating high-quality pull requests that facilitate efficient code reviews. Generate comprehensive PR descriptions, automate review processes, and ensure PRs follow best practices for clarity, size, and reviewability.
+- skill_id: embedded-systems
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - performance:*
+  description: Use when developing firmware for microcontrollers, implementing RTOS applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS, bare-metal, power optimization, real-time systems.
+- skill_id: content-creator
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - performance:*
+  description: Create SEO-optimized marketing content with consistent brand voice. Includes brand voice analyzer, SEO optimizer, content frameworks, and social media templates. Use when writing blog posts, creating social media content, analyzing brand voice, optimizing SEO, planning content calendars, or when user mentions content creation, brand voice, SEO optimization, social media marketing, or content strategy.

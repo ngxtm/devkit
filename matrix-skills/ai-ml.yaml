@@ -1,7 +1,7 @@
 domain: ai-ml
 description: Skills related to ai-ml
-skill_count: 85
-updated: '2026-02-02T01:14:07.972167'
+skill_count: 93
+updated: '2026-02-03T01:14:33.183211'
 skills:
 - skill_id: seo-fundamentals
   category: core
@@ -10,9 +10,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Core principles of SEO including E-E-A-T, Core Web Vitals, technical
-    foundations, content quality, and how modern search engines evaluate pages. This
-    skill explains *why* SEO works, not how to execute specific optimizations.
+  description: 'Core principles of SEO including E-E-A-T, Core Web Vitals, technical foundations, content quality, and how modern search engines evaluate pages. This skill explains *why* SEO works, not how to execute specific optimizations.
 
     '
 - skill_id: fal-image-edit
@@ -30,9 +28,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Persistent memory systems for LLM conversations including short-term,
-    long-term, and entity-based memory Use when: conversation memory, remember, memory
-    persistence, long-term memory, chat history.'
+  description: 'Persistent memory systems for LLM conversations including short-term, long-term, and entity-based memory Use when: conversation memory, remember, memory persistence, long-term memory, chat history.'
 - skill_id: code-review-excellence
   category: core
   priority_score: 5
@@ -40,10 +36,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Master effective code review practices to provide constructive feedback,
-    catch bugs early, and foster knowledge sharing while maintaining team morale.
-    Use when reviewing pull requests, establishing review standards, or mentoring
-    developers.
+  description: Master effective code review practices to provide constructive feedback, catch bugs early, and foster knowledge sharing while maintaining team morale. Use when reviewing pull requests, establishing review standards, or mentoring developers.
 - skill_id: clean-code
   category: core
   priority_score: 5
@@ -51,8 +44,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Pragmatic coding standards - concise, direct, no over-engineering,
-    no unnecessary comments
+  description: Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments
 - skill_id: data-scientist
   category: core
   priority_score: 5
@@ -60,10 +52,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Expert data scientist for advanced analytics, machine learning, and
-    statistical modeling. Handles complex data analysis, predictive modeling, and
-    business intelligence. Use PROACTIVELY for data analysis tasks, ML modeling, statistical
-    analysis, and data-driven insights.
+  description: Expert data scientist for advanced analytics, machine learning, and statistical modeling. Handles complex data analysis, predictive modeling, and business intelligence. Use PROACTIVELY for data analysis tasks, ML modeling, statistical analysis, and data-driven insights.
 - skill_id: launch-strategy
   category: core
   priority_score: 5
@@ -71,11 +60,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: When the user wants to plan a product launch, feature announcement,
-    or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,'
-    'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,'
-    'waitlist,' or 'product update.' This skill covers phased launches, channel strategy,
-    and ongoing launch momentum.
+  description: When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' or 'product update.' This skill covers phased launches, channel strategy, and ongoing launch momentum.
 - skill_id: subagent-driven-development
   category: core
   priority_score: 5
@@ -83,8 +68,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Use when executing implementation plans with independent tasks in the
-    current session
+  description: Use when executing implementation plans with independent tasks in the current session
 - skill_id: email-systems
   category: core
   priority_score: 5
@@ -92,11 +76,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Email has the highest ROI of any marketing channel. $36 for every
-    $1 spent. Yet most startups treat it as an afterthought - bulk blasts, no personalization,
-    landing in spam folders.  This skill covers transactional email that works, marketing
-    automation that converts, deliverability that reaches inboxes, and the infrastructure
-    decisions that scale. Use when: keywords, file_patterns, code_patterns.'
+  description: 'Email has the highest ROI of any marketing channel. $36 for every $1 spent. Yet most startups treat it as an afterthought - bulk blasts, no personalization, landing in spam folders.  This skill covers transactional email that works, marketing automation that converts, deliverability that reaches inboxes, and the infrastructure decisions that scale. Use when: keywords, file_patterns, code_patterns.'
 - skill_id: agent-manager-skill
   category: core
   priority_score: 5
@@ -104,8 +84,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Manage multiple local CLI agents via tmux sessions (start/stop/monitor/assign)
-    with cron-friendly scheduling.
+  description: Manage multiple local CLI agents via tmux sessions (start/stop/monitor/assign) with cron-friendly scheduling.
 - skill_id: team-collaboration-standup-notes
   category: core
   priority_score: 5
@@ -113,9 +92,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: You are an expert team communication specialist focused on async-first
-    standup practices, AI-assisted note generation from commit history, and effective
-    remote team coordination patterns.
+  description: You are an expert team communication specialist focused on async-first standup practices, AI-assisted note generation from commit history, and effective remote team coordination patterns.
 - skill_id: raffle-winner-picker
   category: core
   priority_score: 5
@@ -123,8 +100,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Picks random winners from lists, spreadsheets, or Google Sheets for
-    giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency.
+  description: Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency.
 - skill_id: job-application
   category: core
   priority_score: 5
@@ -132,8 +108,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Write tailored cover letters and job applications using your CV and
-    preferred style
+  description: Write tailored cover letters and job applications using your CV and preferred style
 - skill_id: sales-automator
   category: core
   priority_score: 5
@@ -141,9 +116,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Draft cold emails, follow-ups, and proposal templates. Creates pricing
-    pages, case studies, and sales scripts. Use PROACTIVELY for sales outreach or
-    lead nurturing.
+  description: Draft cold emails, follow-ups, and proposal templates. Creates pricing pages, case studies, and sales scripts. Use PROACTIVELY for sales outreach or lead nurturing.
 - skill_id: code-refactoring
   category: core
   priority_score: 5
@@ -151,9 +124,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Code refactoring patterns and techniques for improving code quality
-    without changing behavior. Use for cleaning up legacy code, reducing complexity,
-    or improving maintainability.
+  description: Code refactoring patterns and techniques for improving code quality without changing behavior. Use for cleaning up legacy code, reducing complexity, or improving maintainability.
 - skill_id: paywall-upgrade-cro
   category: core
   priority_score: 5
@@ -161,13 +132,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: When the user wants to create or optimize in-app paywalls, upgrade
-    screens, upsell modals, or feature gates. Also use when the user mentions "paywall,"
-    "upgrade screen," "upgrade modal," "upsell," "feature gate," "convert free to
-    paid," "freemium conversion," "trial expiration screen," "limit reached screen,"
-    "plan upgrade prompt," or "in-app pricing." Distinct from public pricing pages
-    (see page-cro) — this skill focuses on in-product upgrade moments where the user
-    has already experienced value.
+  description: When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall," "upgrade screen," "upgrade modal," "upsell," "feature gate," "convert free to paid," "freemium conversion," "trial expiration screen," "limit reached screen," "plan upgrade prompt," or "in-app pricing." Distinct from public pricing pages (see page-cro) — this skill focuses on in-product upgrade moments where the user has already experienced value.
 - skill_id: codex-review
   category: core
   priority_score: 5
@@ -175,8 +140,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Professional code review with auto CHANGELOG generation, integrated
-    with Codex AI
+  description: Professional code review with auto CHANGELOG generation, integrated with Codex AI
 - skill_id: slack-gif-creator
   category: core
   priority_score: 5
@@ -184,9 +148,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Knowledge and utilities for creating animated GIFs optimized for Slack.
-    Provides constraints, validation tools, and animation concepts. Use when users
-    request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
+  description: Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."
 - skill_id: pypict-skill
   category: core
   priority_score: 5
@@ -202,10 +164,23 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Write and maintain Architecture Decision Records (ADRs) following best
-    practices for technical decision documentation. Use when documenting significant
-    technical decisions, reviewing past architectural choices, or establishing decision
-    processes.
+  description: Write and maintain Architecture Decision Records (ADRs) following best practices for technical decision documentation. Use when documenting significant technical decisions, reviewing past architectural choices, or establishing decision processes.
+- skill_id: browser-automation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: 'Browser automation powers web testing, scraping, and AI agent interactions. The difference between a flaky script and a reliable system comes down to understanding selectors, waiting strategies, and anti-detection patterns.  This skill covers Playwright (recommended) and Puppeteer, with patterns for testing, scraping, and agentic browser control. Key insight: Playwright won the framework war. Unless you need Puppeteer''s stealth ecosystem or are Chrome-only, Playwright is the better choice in 202'
+- skill_id: deep-research
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: 'Execute autonomous multi-step research using Google Gemini Deep Research Agent. Use for: market analysis, competitive landscaping, literature reviews, technical research, due diligence. Takes 2-10 minutes but produces detailed, cited reports. Costs $2-5 per task.'
 - skill_id: error-debugging-multi-agent-review
   category: core
   priority_score: 5
@@ -221,8 +196,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Multi-agent research skill for parallel research execution (10 agents,
-    battle-tested with real case studies).
+  description: Multi-agent research skill for parallel research execution (10 agents, battle-tested with real case studies).
 - skill_id: mermaidjs-v11
   category: core
   priority_score: 5
@@ -230,9 +204,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Create diagrams with Mermaid.js v11 syntax. Use for flowcharts, sequence
-    diagrams, class diagrams, ER diagrams, Gantt charts, state diagrams, architecture
-    diagrams, timelines, user journeys.
+  description: Create diagrams with Mermaid.js v11 syntax. Use for flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts, state diagrams, architecture diagrams, timelines, user journeys.
 - skill_id: agent-memory-mcp
   category: core
   priority_score: 5
@@ -240,8 +212,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: A hybrid memory system that provides persistent, searchable knowledge
-    management for AI agents (Architecture, Patterns, Decisions).
+  description: A hybrid memory system that provides persistent, searchable knowledge management for AI agents (Architecture, Patterns, Decisions).
 - skill_id: debugger
   category: core
   priority_score: 5
@@ -249,8 +220,15 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Debugging specialist for errors, test failures, and unexpected behavior.
-    Use proactively when encountering any issues.
+  description: Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
+- skill_id: observe-whatsapp
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: 'Observe and troubleshoot WhatsApp in Kapso: debug message delivery, inspect webhook deliveries/retries, triage API errors, and run health checks. Use when investigating production issues, message failures, or webhook delivery problems.'
 - skill_id: tdd-workflows-tdd-green
   category: core
   priority_score: 5
@@ -258,8 +236,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Implement the minimal code needed to make failing tests pass in the
-    TDD green phase.
+  description: Implement the minimal code needed to make failing tests pass in the TDD green phase.
 - skill_id: github-workflow-automation
   category: core
   priority_score: 5
@@ -267,10 +244,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Automate GitHub workflows with AI assistance. Includes PR reviews,
-    issue triage, CI/CD integration, and Git operations. Use when automating GitHub
-    workflows, setting up PR review automation, creating GitHub Actions, or triaging
-    issues.
+  description: Automate GitHub workflows with AI assistance. Includes PR reviews, issue triage, CI/CD integration, and Git operations. Use when automating GitHub workflows, setting up PR review automation, creating GitHub Actions, or triaging issues.
 - skill_id: python-packaging
   category: core
   priority_score: 5
@@ -278,9 +252,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Create distributable Python packages with proper project structure,
-    setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries,
-    creating CLI tools, or distributing Python code.
+  description: Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries, creating CLI tools, or distributing Python code.
 - skill_id: last30days
   category: core
   priority_score: 5
@@ -288,8 +260,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Research a topic from the last 30 days on Reddit + X + Web, become
-    an expert, and write copy-paste-ready prompts for the user's target tool.
+  description: Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool.
 - skill_id: skill-developer
   category: core
   priority_score: 5
@@ -297,13 +268,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Create and manage Claude Code skills following Anthropic best practices.
-    Use when creating new skills, modifying skill-rules.json, understanding trigger
-    patterns, working with hooks, debugging skill activation, or implementing progressive
-    disclosure. Covers skill structure, YAML frontmatter, trigger types (keywords,
-    intent patterns, file paths, content patterns), enforcement levels (block, suggest,
-    warn), hook mechanisms (UserPromptSubmit, PreToolUse), session tracking, and the
-    500-line rule.
+  description: Create and manage Claude Code skills following Anthropic best practices. Use when creating new skills, modifying skill-rules.json, understanding trigger patterns, working with hooks, debugging skill activation, or implementing progressive disclosure. Covers skill structure, YAML frontmatter, trigger types (keywords, intent patterns, file paths, content patterns), enforcement levels (block, suggest, warn), hook mechanisms (UserPromptSubmit, PreToolUse), session tracking, and the 500-line rule.
 - skill_id: fal-audio
   category: core
   priority_score: 5
@@ -327,8 +292,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Pre-ingestion verification for epistemic quality in RAG systems with
-    9-point verification and Two-Round HITL workflow
+  description: Pre-ingestion verification for epistemic quality in RAG systems with 9-point verification and Two-Round HITL workflow
 - skill_id: agent-memory-systems
   category: core
   priority_score: 5
@@ -336,13 +300,15 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Memory is the cornerstone of intelligent agents. Without it, every
-    interaction starts from zero. This skill covers the architecture of agent memory:
-    short-term (context window), long-term (vector stores), and the cognitive architectures
-    that organize them.  Key insight: Memory isn''t just storage - it''s retrieval.
-    A million stored facts mean nothing if you can''t find the right one. Chunking,
-    embedding, and retrieval strategies determine whether your agent remembers or
-    forgets.  The field is fragm'
+  description: 'Memory is the cornerstone of intelligent agents. Without it, every interaction starts from zero. This skill covers the architecture of agent memory: short-term (context window), long-term (vector stores), and the cognitive architectures that organize them.  Key insight: Memory isn''t just storage - it''s retrieval. A million stored facts mean nothing if you can''t find the right one. Chunking, embedding, and retrieval strategies determine whether your agent remembers or forgets.  The field is fragm'
+- skill_id: voice-agents
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: 'Voice agents represent the frontier of AI interaction - humans speaking naturally with AI systems. The challenge isn''t just speech recognition and synthesis, it''s achieving natural conversation flow with sub-800ms latency while handling interruptions, background noise, and emotional nuance.  This skill covers two architectures: speech-to-speech (OpenAI Realtime API, lowest latency, most natural) and pipeline (STT→LLM→TTS, more control, easier to debug). Key insight: latency is the constraint. Hu'
 - skill_id: prompt-caching
   category: core
   priority_score: 5
@@ -350,9 +316,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Caching strategies for LLM prompts including Anthropic prompt caching,
-    response caching, and CAG (Cache Augmented Generation) Use when: prompt caching,
-    cache prompt, response cache, cag, cache augmented.'
+  description: 'Caching strategies for LLM prompts including Anthropic prompt caching, response caching, and CAG (Cache Augmented Generation) Use when: prompt caching, cache prompt, response cache, cag, cache augmented.'
 - skill_id: modern-javascript-patterns
   category: core
   priority_score: 5
@@ -360,10 +324,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Master ES6+ features including async/await, destructuring, spread operators,
-    arrow functions, promises, modules, iterators, generators, and functional programming
-    patterns for writing clean, efficient JavaScript code. Use when refactoring legacy
-    code, implementing modern patterns, or optimizing JavaScript applications.
+  description: Master ES6+ features including async/await, destructuring, spread operators, arrow functions, promises, modules, iterators, generators, and functional programming patterns for writing clean, efficient JavaScript code. Use when refactoring legacy code, implementing modern patterns, or optimizing JavaScript applications.
 - skill_id: code-review-ai-ai-review
   category: core
   priority_score: 5
@@ -371,9 +332,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: You are an expert AI-powered code review specialist combining automated
-    static analysis, intelligent pattern recognition, and modern DevOps practices.
-    Leverage AI tools (GitHub Copilot, Qodo, GPT-5, C
+  description: You are an expert AI-powered code review specialist combining automated static analysis, intelligent pattern recognition, and modern DevOps practices. Leverage AI tools (GitHub Copilot, Qodo, GPT-5, C
 - skill_id: skill-share
   category: core
   priority_score: 5
@@ -381,8 +340,15 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: A skill that creates new Claude skills and automatically shares them
-    on Slack using Rube for seamless team collaboration and skill discovery.
+  description: A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery.
+- skill_id: openapi-spec-generation
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generating SDKs, or ensuring API contract compliance.
 - skill_id: llm-application-dev-langchain-agent
   category: core
   priority_score: 5
@@ -390,8 +356,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: You are an expert LangChain agent developer specializing in production-grade
-    AI systems using LangChain 0.1+ and LangGraph.
+  description: You are an expert LangChain agent developer specializing in production-grade AI systems using LangChain 0.1+ and LangGraph.
 - skill_id: writing-skills
   category: core
   priority_score: 5
@@ -407,11 +372,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: When the user wants to create or optimize an email sequence, drip campaign,
-    automated email flow, or lifecycle email program. Also use when the user mentions
-    "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome
-    sequence," "re-engagement emails," "email automation," or "lifecycle emails."
-    For in-app onboarding, see onboarding-cro.
+  description: When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "email automation," or "lifecycle emails." For in-app onboarding, see onboarding-cro.
 - skill_id: trigger-dev
   category: core
   priority_score: 5
@@ -419,10 +380,15 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Trigger.dev expert for background jobs, AI workflows, and reliable
-    async execution with excellent developer experience and TypeScript-first design.
-    Use when: trigger.dev, trigger dev, background task, ai background job, long running
-    task.'
+  description: 'Trigger.dev expert for background jobs, AI workflows, and reliable async execution with excellent developer experience and TypeScript-first design. Use when: trigger.dev, trigger dev, background task, ai background job, long running task.'
+- skill_id: context-manager
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: Elite AI context engineering specialist mastering dynamic context management, vector databases, knowledge graphs, and intelligent memory systems. Orchestrates context across multi-agent workflows, enterprise AI systems, and long-running projects with 2024/2025 best practices. Use PROACTIVELY for complex AI orchestration.
 - skill_id: context-engineering
   category: core
   priority_score: 5
@@ -430,10 +396,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Check context usage limits, monitor time remaining, optimize token
-    consumption, debug context failures. Use when asking about context percentage,
-    rate limits, usage warnings, context optimization, agent architectures, memory
-    systems.
+  description: Check context usage limits, monitor time remaining, optimize token consumption, debug context failures. Use when asking about context percentage, rate limits, usage warnings, context optimization, agent architectures, memory systems.
 - skill_id: context-window-management
   category: core
   priority_score: 5
@@ -441,9 +404,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Strategies for managing LLM context windows including summarization,
-    trimming, routing, and avoiding context rot Use when: context window, token limit,
-    context management, context engineering, long context.'
+  description: 'Strategies for managing LLM context windows including summarization, trimming, routing, and avoiding context rot Use when: context window, token limit, context management, context engineering, long context.'
 - skill_id: dispatching-parallel-agents
   category: core
   priority_score: 5
@@ -451,8 +412,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Use when facing 2+ independent tasks that can be worked on without
-    shared state or sequential dependencies
+  description: Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
 - skill_id: javascript-mastery
   category: core
   priority_score: 5
@@ -460,10 +420,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Comprehensive JavaScript reference covering 33+ essential concepts
-    every developer should know. From fundamentals like primitives and closures to
-    advanced patterns like async/await and functional programming. Use when explaining
-    JS concepts, debugging JavaScript issues, or teaching JavaScript fundamentals.
+  description: Comprehensive JavaScript reference covering 33+ essential concepts every developer should know. From fundamentals like primitives and closures to advanced patterns like async/await and functional programming. Use when explaining JS concepts, debugging JavaScript issues, or teaching JavaScript fundamentals.
 - skill_id: chaos-engineer
   category: core
   priority_score: 5
@@ -471,9 +428,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Use when designing chaos experiments, implementing failure injection
-    frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience
-    testing, blast radius control, game days, antifragile systems.
+  description: Use when designing chaos experiments, implementing failure injection frameworks, or conducting game day exercises. Invoke for chaos experiments, resilience testing, blast radius control, game days, antifragile systems.
 - skill_id: problem-solving
   category: core
   priority_score: 5
@@ -481,11 +436,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Apply systematic problem-solving techniques for complexity spirals
-    (simplification cascades), innovation blocks (collision-zone thinking), recurring
-    patterns (meta-pattern recognition), assumption constraints (inversion exercise),
-    scale uncertainty (scale game), and dispatch when stuck. Techniques derived from
-    Microsoft Amplifier project patterns adapted for immediate application.
+  description: Apply systematic problem-solving techniques for complexity spirals (simplification cascades), innovation blocks (collision-zone thinking), recurring patterns (meta-pattern recognition), assumption constraints (inversion exercise), scale uncertainty (scale game), and dispatch when stuck. Techniques derived from Microsoft Amplifier project patterns adapted for immediate application.
 - skill_id: context-degradation
   category: core
   priority_score: 5
@@ -493,8 +444,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Recognize patterns of context failure: lost-in-middle, poisoning,
-    distraction, and clash'
+  description: 'Recognize patterns of context failure: lost-in-middle, poisoning, distraction, and clash'
 - skill_id: systematic-debugging
   category: core
   priority_score: 5
@@ -502,8 +452,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Use when encountering any bug, test failure, or unexpected behavior,
-    before proposing fixes
+  description: Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
 - skill_id: tdd-workflows-tdd-red
   category: core
   priority_score: 5
@@ -511,8 +460,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Generate failing tests for the TDD red phase to define expected behavior
-    and edge cases.
+  description: Generate failing tests for the TDD red phase to define expected behavior and edge cases.
 - skill_id: tdd-orchestrator
   category: core
   priority_score: 5
@@ -520,10 +468,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Master TDD orchestrator specializing in red-green-refactor discipline,
-    multi-agent workflow coordination, and comprehensive test-driven development practices.
-    Enforces TDD best practices across teams with AI-assisted testing and modern frameworks.
-    Use PROACTIVELY for TDD implementation and governance.
+  description: Master TDD orchestrator specializing in red-green-refactor discipline, multi-agent workflow coordination, and comprehensive test-driven development practices. Enforces TDD best practices across teams with AI-assisted testing and modern frameworks. Use PROACTIVELY for TDD implementation and governance.
 - skill_id: unit-testing-test-generate
   category: core
   priority_score: 5
@@ -531,16 +476,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Generate comprehensive, maintainable unit tests across languages with
-    strong coverage and edge case focus.
-- skill_id: foundry-iq-agent
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - ai-ml:*
-  description: 'Skill: foundry-iq-agent'
+  description: Generate comprehensive, maintainable unit tests across languages with strong coverage and edge case focus.
 - skill_id: fal-upscale
   category: core
   priority_score: 5
@@ -556,9 +492,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: You are an expert prompt engineer specializing in crafting effective
-    prompts for LLMs through advanced techniques including constitutional AI, chain-of-thought
-    reasoning, and model-specific optimizati
+  description: You are an expert prompt engineer specializing in crafting effective prompts for LLMs through advanced techniques including constitutional AI, chain-of-thought reasoning, and model-specific optimizati
 - skill_id: seo-content-refresher
   category: core
   priority_score: 5
@@ -566,9 +500,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Identifies outdated elements in provided content and suggests updates
-    to maintain freshness. Finds statistics, dates, and examples that need updating.
-    Use PROACTIVELY for older content.
+  description: Identifies outdated elements in provided content and suggests updates to maintain freshness. Finds statistics, dates, and examples that need updating. Use PROACTIVELY for older content.
 - skill_id: file-uploads
   category: core
   priority_score: 5
@@ -576,9 +508,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Expert at handling file uploads and cloud storage. Covers S3, Cloudflare
-    R2, presigned URLs, multipart uploads, and image optimization. Knows how to handle
-    large files without blocking. Use when: file upload, S3, R2, presigned URL, multipart.'
+  description: 'Expert at handling file uploads and cloud storage. Covers S3, Cloudflare R2, presigned URLs, multipart uploads, and image optimization. Knows how to handle large files without blocking. Use when: file upload, S3, R2, presigned URL, multipart.'
 - skill_id: startup-business-analyst-financial-projections
   category: core
   priority_score: 5
@@ -586,8 +516,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Create detailed 3-5 year financial model with revenue, costs, cash
-    flow, and scenarios
+  description: Create detailed 3-5 year financial model with revenue, costs, cash flow, and scenarios
 - skill_id: skill-seekers
   category: core
   priority_score: 5
@@ -595,8 +524,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: -Automatically convert documentation websites, GitHub repositories,
-    and PDFs into Claude AI skills in minutes.
+  description: -Automatically convert documentation websites, GitHub repositories, and PDFs into Claude AI skills in minutes.
 - skill_id: temporal-python-testing
   category: core
   priority_score: 5
@@ -604,9 +532,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Test Temporal workflows with pytest, time-skipping, and mocking strategies.
-    Covers unit testing, integration testing, replay testing, and local development
-    setup. Use when implementing Temporal workflow tests or debugging test failures.
+  description: Test Temporal workflows with pytest, time-skipping, and mocking strategies. Covers unit testing, integration testing, replay testing, and local development setup. Use when implementing Temporal workflow tests or debugging test failures.
 - skill_id: embedding-strategies
   category: core
   priority_score: 5
@@ -614,9 +540,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Select and optimize embedding models for semantic search and RAG applications.
-    Use when choosing embedding models, implementing chunking strategies, or optimizing
-    embedding quality for specific domains.
+  description: Select and optimize embedding models for semantic search and RAG applications. Use when choosing embedding models, implementing chunking strategies, or optimizing embedding quality for specific domains.
 - skill_id: context-fundamentals
   category: core
   priority_score: 5
@@ -624,8 +548,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Understand what context is, why it matters, and the anatomy of context
-    in agent systems
+  description: Understand what context is, why it matters, and the anatomy of context in agent systems
 - skill_id: skill-rails-upgrade
   category: core
   priority_score: 5
@@ -634,6 +557,14 @@ skills:
     profiles:
     - ai-ml:*
   description: Analyze Rails apps and provide upgrade assessments
+- skill_id: vector-database-engineer
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: Expert in vector databases, embedding strategies, and semantic search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG applications, recommendation systems, and similar
 - skill_id: fal-generate
   category: core
   priority_score: 5
@@ -649,8 +580,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Use when you need to research, analyze, and plan technical solutions
-    that are scalable, secure, and maintainable.
+  description: Use when you need to research, analyze, and plan technical solutions that are scalable, secure, and maintainable.
 - skill_id: competitive-ads-extractor
   category: core
   priority_score: 5
@@ -658,9 +588,15 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Extracts and analyzes competitors' ads from ad libraries (Facebook,
-    LinkedIn, etc.) to understand what messaging, problems, and creative approaches
-    are working. Helps inspire and improve your own ad campaigns.
+  description: Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns.
+- skill_id: agent-framework-azure-hosted-agents
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: 'Skill: agent-framework-azure-hosted-agents'
 - skill_id: geo-fundamentals
   category: core
   priority_score: 5
@@ -668,8 +604,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Generative Engine Optimization for AI search engines (ChatGPT, Claude,
-    Perplexity).
+  description: Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).
 - skill_id: memory-safety-patterns
   category: core
   priority_score: 5
@@ -677,9 +612,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Implement memory-safe programming with RAII, ownership, smart pointers,
-    and resource management across Rust, C++, and C. Use when writing safe systems
-    code, managing resources, or preventing memory bugs.
+  description: Implement memory-safe programming with RAII, ownership, smart pointers, and resource management across Rust, C++, and C. Use when writing safe systems code, managing resources, or preventing memory bugs.
 - skill_id: vercel-deploy-claimable
   category: core
   priority_score: 5
@@ -695,10 +628,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Curated collection of high-quality prompts for various use cases. Includes
-    role-based prompts, task-specific templates, and prompt refinement techniques.
-    Use when user needs prompt templates, role-play prompts, or ready-to-use prompt
-    examples for coding, writing, analysis, or creative tasks.
+  description: Curated collection of high-quality prompts for various use cases. Includes role-based prompts, task-specific templates, and prompt refinement techniques. Use when user needs prompt templates, role-play prompts, or ready-to-use prompt examples for coding, writing, analysis, or creative tasks.
 - skill_id: beautiful-prose
   category: core
   priority_score: 5
@@ -706,8 +636,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Hard-edged writing style contract for timeless, forceful English prose
-    without AI tics
+  description: Hard-edged writing style contract for timeless, forceful English prose without AI tics
 - skill_id: planning
   category: core
   priority_score: 5
@@ -715,8 +644,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Use when you need to plan technical solutions that are scalable, secure,
-    and maintainable.
+  description: Use when you need to plan technical solutions that are scalable, secure, and maintainable.
 - skill_id: arm-cortex-expert
   category: core
   priority_score: 5
@@ -724,11 +652,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'Senior embedded software engineer specializing in firmware and driver
-    development for ARM Cortex-M microcontrollers (Teensy, STM32, nRF52, SAMD). Decades
-    of experience writing reliable, optimized, and maintainable embedded code with
-    deep expertise in memory barriers, DMA/cache coherency, interrupt-driven I/O,
-    and peripheral drivers.
+  description: 'Senior embedded software engineer specializing in firmware and driver development for ARM Cortex-M microcontrollers (Teensy, STM32, nRF52, SAMD). Decades of experience writing reliable, optimized, and maintainable embedded code with deep expertise in memory barriers, DMA/cache coherency, interrupt-driven I/O, and peripheral drivers.
 
     '
 - skill_id: nanobanana-ppt-skills
@@ -746,9 +670,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Craft prompts for AI models (text, image, video). Use for Midjourney,
-    DALL-E, Stable Diffusion, Flux, Veo, prompt engineering, style keywords, negative
-    prompts, iterative refinement.
+  description: Craft prompts for AI models (text, image, video). Use for Midjourney, DALL-E, Stable Diffusion, Flux, Veo, prompt engineering, style keywords, negative prompts, iterative refinement.
 - skill_id: fal-workflow
   category: core
   priority_score: 5
@@ -764,9 +686,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Iterate on a PR until CI passes. Use when you need to fix CI failures,
-    address review feedback, or continuously push fixes until all checks are green.
-    Automates the feedback-fix-push-wait cycle.
+  description: Iterate on a PR until CI passes. Use when you need to fix CI failures, address review feedback, or continuously push fixes until all checks are green. Automates the feedback-fix-push-wait cycle.
 - skill_id: llm-application-dev-ai-assistant
   category: core
   priority_score: 5
@@ -774,9 +694,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: You are an AI assistant development expert specializing in creating
-    intelligent conversational interfaces, chatbots, and AI-powered applications.
-    Design comprehensive AI assistant solutions with natur
+  description: You are an AI assistant development expert specializing in creating intelligent conversational interfaces, chatbots, and AI-powered applications. Design comprehensive AI assistant solutions with natur
 - skill_id: bullmq-specialist
   category: core
   priority_score: 5
@@ -784,9 +702,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: 'BullMQ expert for Redis-backed job queues, background processing,
-    and reliable async execution in Node.js/TypeScript applications. Use when: bullmq,
-    bull queue, redis queue, background job, job queue.'
+  description: 'BullMQ expert for Redis-backed job queues, background processing, and reliable async execution in Node.js/TypeScript applications. Use when: bullmq, bull queue, redis queue, background job, job queue.'
 - skill_id: machine-learning-ops-ml-pipeline
   category: core
   priority_score: 5
@@ -802,10 +718,15 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Master advanced Git workflows including rebasing, cherry-picking, bisect,
-    worktrees, and reflog to maintain clean history and recover from any situation.
-    Use when managing complex Git histories, collaborating on feature branches, or
-    troubleshooting repository issues.
+  description: Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to maintain clean history and recover from any situation. Use when managing complex Git histories, collaborating on feature branches, or troubleshooting repository issues.
+- skill_id: ai-multimodal
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - ai-ml:*
+  description: Analyze images/audio/video with Gemini API (better vision than Claude). Generate images (Imagen 4), videos (Veo 3). Use for vision analysis, transcription, OCR, design extraction, multimodal AI.
 - skill_id: marketing-psychology
   category: core
   priority_score: 5
@@ -813,8 +734,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Apply behavioral science and mental models to marketing decisions,
-    prioritized using a psychological leverage and feasibility scoring system.
+  description: Apply behavioral science and mental models to marketing decisions, prioritized using a psychological leverage and feasibility scoring system.
 - skill_id: architect-review
   category: core
   priority_score: 5
@@ -822,10 +742,7 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: Master software architect specializing in modern architecture patterns,
-    clean architecture, microservices, event-driven systems, and DDD. Reviews system
-    designs and code changes for architectural integrity, scalability, and maintainability.
-    Use PROACTIVELY for architectural decisions.
+  description: Master software architect specializing in modern architecture patterns, clean architecture, microservices, event-driven systems, and DDD. Reviews system designs and code changes for architectural integrity, scalability, and maintainability. Use PROACTIVELY for architectural decisions.
 - skill_id: onboarding-cro
   category: core
   priority_score: 5
@@ -833,8 +750,4 @@ skills:
     agents: []
     profiles:
     - ai-ml:*
-  description: When the user wants to optimize post-signup onboarding, user activation,
-    first-run experience, or time-to-value. Also use when the user mentions "onboarding
-    flow," "activation rate," "user activation," "first-run experience," "empty states,"
-    "onboarding checklist," "aha moment," or "new user experience." For signup/registration
-    optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence.
+  description: When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activation," "first-run experience," "empty states," "onboarding checklist," "aha moment," or "new user experience." For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence.

@@ -1,7 +1,7 @@
 domain: tools
 description: Skills related to tools
-skill_count: 85
-updated: '2026-02-02T01:14:07.941489'
+skill_count: 80
+updated: '2026-02-03T01:14:33.154106'
 skills:
 - skill_id: algorithmic-art
   category: core
@@ -10,10 +10,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Creating algorithmic art using p5.js with seeded randomness and interactive
-    parameter exploration. Use this when users request creating art using code, generative
-    art, algorithmic art, flow fields, or particle systems. Create original algorithmic
-    art rather than copying existing artists' work to avoid copyright violations.
+  description: Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.
 - skill_id: vexor
   category: core
   priority_score: 5
@@ -29,9 +26,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Creates comprehensive content outlines and topic clusters for SEO.
-    Plans content calendars and identifies topic gaps. Use PROACTIVELY for content
-    strategy and planning.
+  description: Creates comprehensive content outlines and topic clusters for SEO. Plans content calendars and identifies topic gaps. Use PROACTIVELY for content strategy and planning.
 - skill_id: startup-business-analyst-market-opportunity
   category: core
   priority_score: 5
@@ -39,8 +34,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Generate comprehensive market opportunity analysis with TAM/SAM/SOM
-    calculations
+  description: Generate comprehensive market opportunity analysis with TAM/SAM/SOM calculations
 - skill_id: git-pr-workflows-pr-enhance
   category: core
   priority_score: 5
@@ -48,9 +42,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: You are a PR optimization expert specializing in creating high-quality
-    pull requests that facilitate efficient code reviews. Generate comprehensive PR
-    descriptions, automate review processes, and ensu
+  description: You are a PR optimization expert specializing in creating high-quality pull requests that facilitate efficient code reviews. Generate comprehensive PR descriptions, automate review processes, and ensu
 - skill_id: claude-speed-reader
   category: core
   priority_score: 5
@@ -58,8 +50,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: -Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style
-    ORP highlighting
+  description: -Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting
 - skill_id: git-pr-workflows-onboard
   category: core
   priority_score: 5
@@ -67,9 +58,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: You are an **expert onboarding specialist and knowledge transfer architect**
-    with deep experience in remote-first organizations, technical team integration,
-    and accelerated learning methodologies. You
+  description: You are an **expert onboarding specialist and knowledge transfer architect** with deep experience in remote-first organizations, technical team integration, and accelerated learning methodologies. You
 - skill_id: red-team-tactics
   category: core
   priority_score: 5
@@ -77,8 +66,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Red team tactics principles based on MITRE ATT&CK. Attack phases, detection
-    evasion, reporting.
+  description: Red team tactics principles based on MITRE ATT&CK. Attack phases, detection evasion, reporting.
 - skill_id: code-refactoring-tech-debt
   category: core
   priority_score: 5
@@ -86,9 +74,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: You are a technical debt expert specializing in identifying, quantifying,
-    and prioritizing technical debt in software projects. Analyze the codebase to
-    uncover debt, assess its impact, and create acti
+  description: You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncover debt, assess its impact, and create acti
 - skill_id: linear-claude-skill
   category: core
   priority_score: 5
@@ -104,8 +90,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use when a user asks for a plan for a coding task, to generate a clear,
-    actionable, and atomic checklist.
+  description: Use when a user asks for a plan for a coding task, to generate a clear, actionable, and atomic checklist.
 - skill_id: saga-orchestration
   category: core
   priority_score: 5
@@ -113,9 +98,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Implement saga patterns for distributed transactions and cross-aggregate
-    workflows. Use when coordinating multi-step business processes, handling compensating
-    transactions, or managing long-running workflows.
+  description: Implement saga patterns for distributed transactions and cross-aggregate workflows. Use when coordinating multi-step business processes, handling compensating transactions, or managing long-running workflows.
 - skill_id: seo-cannibalization-detector
   category: core
   priority_score: 5
@@ -123,9 +106,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Analyzes multiple provided pages to identify keyword overlap and potential
-    cannibalization issues. Suggests differentiation strategies. Use PROACTIVELY when
-    reviewing similar content.
+  description: Analyzes multiple provided pages to identify keyword overlap and potential cannibalization issues. Suggests differentiation strategies. Use PROACTIVELY when reviewing similar content.
 - skill_id: shellcheck-configuration
   category: core
   priority_score: 5
@@ -133,9 +114,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Master ShellCheck static analysis configuration and usage for shell
-    script quality. Use when setting up linting infrastructure, fixing code issues,
-    or ensuring script portability.
+  description: Master ShellCheck static analysis configuration and usage for shell script quality. Use when setting up linting infrastructure, fixing code issues, or ensuring script portability.
 - skill_id: meeting-insights-analyzer
   category: core
   priority_score: 5
@@ -143,10 +122,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Analyzes meeting transcripts and recordings to uncover behavioral patterns,
-    communication insights, and actionable feedback. Identifies when you avoid conflict,
-    use filler words, dominate conversations, or miss opportunities to listen. Perfect
-    for professionals seeking to improve their communication and leadership skills.
+  description: Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversations, or miss opportunities to listen. Perfect for professionals seeking to improve their communication and leadership skills.
 - skill_id: uv-package-manager
   category: core
   priority_score: 5
@@ -154,10 +130,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Master the uv package manager for fast Python dependency management,
-    virtual environments, and modern Python project workflows. Use when setting up
-    Python projects, managing dependencies, or optimizing Python development workflows
-    with uv.
+  description: Master the uv package manager for fast Python dependency management, virtual environments, and modern Python project workflows. Use when setting up Python projects, managing dependencies, or optimizing Python development workflows with uv.
 - skill_id: postmortem-writing
   category: core
   priority_score: 5
@@ -165,9 +138,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Write effective blameless postmortems with root cause analysis, timelines,
-    and action items. Use when conducting incident reviews, writing postmortem documents,
-    or improving incident response processes.
+  description: Write effective blameless postmortems with root cause analysis, timelines, and action items. Use when conducting incident reviews, writing postmortem documents, or improving incident response processes.
 - skill_id: git-pushing
   category: core
   priority_score: 5
@@ -175,10 +146,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Stage, commit, and push git changes with conventional commit messages.
-    Use when user wants to commit and push changes, mentions pushing to remote, or
-    asks to save and push their work. Also activates when user says "push changes",
-    "commit and push", "push this", "push to github", or similar git workflow requests.
+  description: Stage, commit, and push git changes with conventional commit messages. Use when user wants to commit and push changes, mentions pushing to remote, or asks to save and push their work. Also activates when user says "push changes", "commit and push", "push this", "push to github", or similar git workflow requests.
 - skill_id: image-enhancer
   category: core
   priority_score: 5
@@ -186,9 +154,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Improves the quality of images, especially screenshots, by enhancing
-    resolution, sharpness, and clarity. Perfect for preparing images for presentations,
-    documentation, or social media posts.
+  description: Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts.
 - skill_id: document-skills
   category: core
   priority_score: 5
@@ -204,9 +170,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Developer Experience specialist. Improves tooling, setup, and workflows.
-    Use PROACTIVELY when setting up new projects, after team feedback, or when development
-    friction is noticed.
+  description: Developer Experience specialist. Improves tooling, setup, and workflows. Use PROACTIVELY when setting up new projects, after team feedback, or when development friction is noticed.
 - skill_id: imagen
   category: core
   priority_score: 5
@@ -222,9 +186,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Download YouTube video transcripts when user provides a YouTube URL
-    or asks to download/get/fetch a transcript from YouTube. Also use when user wants
-    to transcribe or get captions/subtitles from a YouTube video.
+  description: Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants to transcribe or get captions/subtitles from a YouTube video.
 - skill_id: jira-issues
   category: core
   priority_score: 5
@@ -232,9 +194,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Create, update, and manage Jira issues from natural language. Use when
-    the user wants to log bugs, create tickets, update issue status, or manage their
-    Jira backlog.
+  description: Create, update, and manage Jira issues from natural language. Use when the user wants to log bugs, create tickets, update issue status, or manage their Jira backlog.
 - skill_id: atlassian-mcp
   category: core
   priority_score: 5
@@ -242,8 +202,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use when querying Jira issues, searching Confluence pages, creating
-    tickets, updating documentation, or integrating Atlassian tools via MCP protocol.
+  description: Use when querying Jira issues, searching Confluence pages, creating tickets, updating documentation, or integrating Atlassian tools via MCP protocol.
 - skill_id: seo-structure-architect
   category: core
   priority_score: 5
@@ -251,17 +210,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Analyzes and optimizes content structure including header hierarchy,
-    suggests schema markup, and internal linking opportunities. Creates search-friendly
-    content organization. Use PROACTIVELY for content structuring.
-- skill_id: context-optimization
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: Apply compaction, masking, and caching strategies
+  description: Analyzes and optimizes content structure including header hierarchy, suggests schema markup, and internal linking opportunities. Creates search-friendly content organization. Use PROACTIVELY for content structuring.
 - skill_id: team-collaboration-issue
   category: core
   priority_score: 5
@@ -269,19 +218,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: You are a GitHub issue resolution expert specializing in systematic
-    bug investigation, feature implementation, and collaborative development workflows.
-    Your expertise spans issue triage, root cause an
-- skill_id: seo-keyword-strategist
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: Analyzes keyword usage in provided content, calculates density, suggests
-    semantic variations and LSI keywords based on the topic. Prevents over-optimization.
-    Use PROACTIVELY for content optimization.
+  description: You are a GitHub issue resolution expert specializing in systematic bug investigation, feature implementation, and collaborative development workflows. Your expertise spans issue triage, root cause an
 - skill_id: incident-response-incident-response
   category: core
   priority_score: 5
@@ -305,10 +242,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: 'Presentation creation, editing, and analysis. When Claude needs to
-    work with presentations (.pptx files) for: (1) Creating new presentations, (2)
-    Modifying or editing content, (3) Working with layouts, (4) Adding comments or
-    speaker notes, or any other presentation tasks'
+  description: 'Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks'
 - skill_id: startup-analyst
   category: core
   priority_score: 5
@@ -316,11 +250,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Expert startup business analyst specializing in market sizing, financial
-    modeling, competitive analysis, and strategic planning for early-stage companies.
-    Use PROACTIVELY when the user asks about market opportunity, TAM/SAM/SOM, financial
-    projections, unit economics, competitive landscape, team planning, startup metrics,
-    or business strategy for pre-seed through Series A startups.
+  description: Expert startup business analyst specializing in market sizing, financial modeling, competitive analysis, and strategic planning for early-stage companies. Use PROACTIVELY when the user asks about market opportunity, TAM/SAM/SOM, financial projections, unit economics, competitive landscape, team planning, startup metrics, or business strategy for pre-seed through Series A startups.
 - skill_id: risk-manager
   category: core
   priority_score: 5
@@ -328,9 +258,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Monitor portfolio risk, R-multiples, and position limits. Creates hedging
-    strategies, calculates expectancy, and implements stop-losses. Use PROACTIVELY
-    for risk assessment, trade tracking, or portfolio protection.
+  description: Monitor portfolio risk, R-multiples, and position limits. Creates hedging strategies, calculates expectancy, and implements stop-losses. Use PROACTIVELY for risk assessment, trade tracking, or portfolio protection.
 - skill_id: lead-research-assistant
   category: core
   priority_score: 5
@@ -338,9 +266,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Identifies high-quality leads for your product or service by analyzing
-    your business, searching for target companies, and providing actionable contact
-    strategies. Perfect for sales, business development, and marketing professionals.
+  description: Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business development, and marketing professionals.
 - skill_id: context-driven-development
   category: core
   priority_score: 5
@@ -348,9 +274,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use this skill when working with Conductor's context-driven development
-    methodology, managing project context artifacts, or understanding the relationship
-    between product.md, tech-stack.md, and workflow.md files.
+  description: Use this skill when working with Conductor's context-driven development methodology, managing project context artifacts, or understanding the relationship between product.md, tech-stack.md, and workflow.md files.
 - skill_id: agile-product-owner
   category: core
   priority_score: 5
@@ -358,21 +282,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Agile product ownership toolkit for Senior Product Owner including
-    INVEST-compliant user story generation, sprint planning, backlog management, and
-    velocity tracking. Use for story writing, sprint planning, stakeholder communication,
-    and agile ceremonies.
-- skill_id: comprehensive-review-pr-enhance
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: You are a PR optimization expert specializing in creating high-quality
-    pull requests that facilitate efficient code reviews. Generate comprehensive PR
-    descriptions, automate review processes, and ensure PRs follow best practices
-    for clarity, size, and reviewability.
+  description: Agile product ownership toolkit for Senior Product Owner including INVEST-compliant user story generation, sprint planning, backlog management, and velocity tracking. Use for story writing, sprint planning, stakeholder communication, and agile ceremonies.
 - skill_id: spec-miner
   category: core
   priority_score: 5
@@ -380,9 +290,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use when understanding legacy or undocumented systems, creating documentation
-    for existing code, or extracting specifications from implementations. Invoke for
-    legacy analysis, code archaeology, undocumented features.
+  description: Use when understanding legacy or undocumented systems, creating documentation for existing code, or extracting specifications from implementations. Invoke for legacy analysis, code archaeology, undocumented features.
 - skill_id: context-management-context-save
   category: core
   priority_score: 5
@@ -398,8 +306,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Structured task planning with clear breakdowns, dependencies, and verification
-    criteria. Use when implementing features, refactoring, or any multi-step work.
+  description: Structured task planning with clear breakdowns, dependencies, and verification criteria. Use when implementing features, refactoring, or any multi-step work.
 - skill_id: marketing-ideas
   category: core
   priority_score: 5
@@ -407,18 +314,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Provide proven marketing strategies and growth ideas for SaaS and software
-    products, prioritized using a marketing feasibility scoring system.
-- skill_id: embedded-systems
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: Use when developing firmware for microcontrollers, implementing RTOS
-    applications, or optimizing power consumption. Invoke for STM32, ESP32, FreeRTOS,
-    bare-metal, power optimization, real-time systems.
+  description: Provide proven marketing strategies and growth ideas for SaaS and software products, prioritized using a marketing feasibility scoring system.
 - skill_id: competitive-landscape
   category: core
   priority_score: 5
@@ -426,9 +322,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: This skill should be used when the user asks to "analyze competitors",
-    "assess competitive landscape", "identify differentiation", "evaluate market positioning",
-    "apply Porter's Five Forces", or requests competitive strategy analysis.
+  description: This skill should be used when the user asks to "analyze competitors", "assess competitive landscape", "identify differentiation", "evaluate market positioning", "apply Porter's Five Forces", or requests competitive strategy analysis.
 - skill_id: full-stack-orchestration-full-stack-feature
   category: core
   priority_score: 5
@@ -444,10 +338,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Expert C4 Code-level documentation specialist. Analyzes code directories
-    to create comprehensive C4 code-level documentation including function signatures,
-    arguments, dependencies, and code structure. Use when documenting code at the
-    lowest C4 level for individual directories and code modules.
+  description: Expert C4 Code-level documentation specialist. Analyzes code directories to create comprehensive C4 code-level documentation including function signatures, arguments, dependencies, and code structure. Use when documenting code at the lowest C4 level for individual directories and code modules.
 - skill_id: seo-content-writer
   category: core
   priority_score: 5
@@ -455,9 +346,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Writes SEO-optimized content based on provided keywords and topic briefs.
-    Creates engaging, comprehensive content following best practices. Use PROACTIVELY
-    for content creation tasks.
+  description: Writes SEO-optimized content based on provided keywords and topic briefs. Creates engaging, comprehensive content following best practices. Use PROACTIVELY for content creation tasks.
 - skill_id: conductor-status
   category: core
   priority_score: 5
@@ -473,10 +362,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: 'Presentation creation, editing, and analysis. When Claude needs to
-    work with presentations (.pptx files) for: (1) Creating new presentations, (2)
-    Modifying or editing content, (3) Working with layouts, (4) Adding comments or
-    speaker notes, or any other presentation tasks'
+  description: 'Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks'
 - skill_id: SPDD
   category: core
   priority_score: 5
@@ -492,8 +378,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: PowerShell Windows patterns. Critical pitfalls, operator syntax, error
-    handling.
+  description: PowerShell Windows patterns. Critical pitfalls, operator syntax, error handling.
 - skill_id: template-skill
   category: core
   priority_score: 5
@@ -517,9 +402,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use when starting feature work that needs isolation from current workspace
-    or before executing implementation plans - creates isolated git worktrees with
-    smart directory selection and safety verification
+  description: Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification
 - skill_id: conductor-revert
   category: core
   priority_score: 5
@@ -535,9 +418,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Master on-call shift handoffs with context transfer, escalation procedures,
-    and documentation. Use when transitioning on-call responsibilities, documenting
-    shift summaries, or improving on-call processes.
+  description: Master on-call shift handoffs with context transfer, escalation procedures, and documentation. Use when transitioning on-call responsibilities, documenting shift summaries, or improving on-call processes.
 - skill_id: superpowers-lab
   category: core
   priority_score: 5
@@ -553,9 +434,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: You are a technical debt expert specializing in identifying, quantifying,
-    and prioritizing technical debt in software projects. Analyze the codebase to
-    uncover debt, assess its impact, and create acti
+  description: You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncover debt, assess its impact, and create acti
 - skill_id: employment-contract-templates
   category: core
   priority_score: 5
@@ -563,19 +442,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Create employment contracts, offer letters, and HR policy documents
-    following legal best practices. Use when drafting employment agreements, creating
-    HR policies, or standardizing employment documentation.
-- skill_id: payment-integration
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: Integrate Stripe, PayPal, and payment processors. Handles checkout
-    flows, subscriptions, webhooks, and PCI compliance. Use PROACTIVELY when implementing
-    payments, billing, or subscription features.
+  description: Create employment contracts, offer letters, and HR policy documents following legal best practices. Use when drafting employment agreements, creating HR policies, or standardizing employment documentation.
 - skill_id: claude-win11-speckit-update-skill
   category: core
   priority_score: 5
@@ -599,10 +466,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Analyzes your recent Claude Code chat history to identify coding patterns,
-    development gaps, and areas for improvement, curates relevant learning resources
-    from HackerNews, and automatically sends a personalized growth report to your
-    Slack DMs.
+  description: Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs.
 - skill_id: market-sizing-analysis
   category: core
   priority_score: 5
@@ -610,10 +474,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: This skill should be used when the user asks to "calculate TAM", "determine
-    SAM", "estimate SOM", "size the market", "calculate market opportunity", "what's
-    the total addressable market", or requests market sizing analysis for a startup
-    or business opportunity.
+  description: This skill should be used when the user asks to "calculate TAM", "determine SAM", "estimate SOM", "size the market", "calculate market opportunity", "what's the total addressable market", or requests market sizing analysis for a startup or business opportunity.
 - skill_id: startup-business-analyst-business-case
   category: core
   priority_score: 5
@@ -621,8 +482,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Generate comprehensive investor-ready business case document with market,
-    solution, financials, and strategy
+  description: Generate comprehensive investor-ready business case document with market, solution, financials, and strategy
 - skill_id: threejs-skills
   category: core
   priority_score: 5
@@ -638,9 +498,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Validates Conductor project artifacts for completeness, consistency,
-    and correctness. Use after setup, when diagnosing issues, or before implementation
-    to verify project context.
+  description: Validates Conductor project artifacts for completeness, consistency, and correctness. Use after setup, when diagnosing issues, or before implementation to verify project context.
 - skill_id: conductor-new-track
   category: core
   priority_score: 5
@@ -657,17 +515,6 @@ skills:
     profiles:
     - tools:*
   description: Publish articles to X/Twitter
-- skill_id: legacy-modernizer
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: Refactor legacy codebases, migrate outdated frameworks, and implement
-    gradual modernization. Handles technical debt, dependency updates, and backward
-    compatibility. Use PROACTIVELY for legacy system updates, framework migrations,
-    or technical debt reduction.
 - skill_id: readme
   category: core
   priority_score: 5
@@ -683,8 +530,15 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use when you need to address review or issue comments on an open GitHub
-    Pull Request using the gh CLI.
+  description: Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI.
+- skill_id: hybrid-cloud-architect
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: Expert hybrid cloud architect specializing in complex multi-cloud solutions across AWS/Azure/GCP and private clouds (OpenStack/VMware). Masters hybrid connectivity, workload placement optimization, edge computing, and cross-cloud automation. Handles compliance, cost optimization, disaster recovery, and migration strategies. Use PROACTIVELY for hybrid architecture, multi-cloud strategy, or complex infrastructure integration.
 - skill_id: plans-kanban
   category: core
   priority_score: 5
@@ -692,9 +546,15 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: View plans dashboard with progress tracking and timeline visualization.
-    Use for kanban boards, plan status overview, phase progress, milestone tracking,
-    project visibility.
+  description: View plans dashboard with progress tracking and timeline visualization. Use for kanban boards, plan status overview, phase progress, milestone tracking, project visibility.
+- skill_id: aws-skills
+  category: core
+  priority_score: 5
+  relevance_mapping:
+    agents: []
+    profiles:
+    - tools:*
+  description: AWS development with infrastructure automation and cloud architecture patterns
 - skill_id: executing-plans
   category: core
   priority_score: 5
@@ -702,8 +562,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use when you have a written implementation plan to execute in a separate
-    session with review checkpoints
+  description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
 - skill_id: ffuf-claude-skill
   category: core
   priority_score: 5
@@ -719,22 +578,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Use this skill when creating, managing, or working with Conductor tracks
-    - the logical work units for features, bugs, and refactors. Applies to spec.md,
-    plan.md, and track lifecycle operations.
-- skill_id: content-creator
-  category: core
-  priority_score: 5
-  relevance_mapping:
-    agents: []
-    profiles:
-    - tools:*
-  description: Create SEO-optimized marketing content with consistent brand voice.
-    Includes brand voice analyzer, SEO optimizer, content frameworks, and social media
-    templates. Use when writing blog posts, creating social media content, analyzing
-    brand voice, optimizing SEO, planning content calendars, or when user mentions
-    content creation, brand voice, SEO optimization, social media marketing, or content
-    strategy.
+  description: Use this skill when creating, managing, or working with Conductor tracks - the logical work units for features, bugs, and refactors. Applies to spec.md, plan.md, and track lifecycle operations.
 - skill_id: posix-shell-pro
   category: core
   priority_score: 5
@@ -742,9 +586,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Expert in strict POSIX sh scripting for maximum portability across
-    Unix-like systems. Specializes in shell scripts that run on any POSIX-compliant
-    shell (dash, ash, sh, bash --posix).
+  description: Expert in strict POSIX sh scripting for maximum portability across Unix-like systems. Specializes in shell scripts that run on any POSIX-compliant shell (dash, ash, sh, bash --posix).
 - skill_id: culture-index
   category: core
   priority_score: 5
@@ -760,8 +602,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: Internationalization and localization patterns. Detecting hardcoded
-    strings, managing translations, locale files, RTL support.
+  description: Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support.
 - skill_id: cc-skill-continuous-learning
   category: core
   priority_score: 5
@@ -793,11 +634,7 @@ skills:
     agents: []
     profiles:
     - tools:*
-  description: When the user wants to edit, review, or improve existing marketing
-    copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy
-    feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This
-    skill provides a systematic approach to editing marketing copy through multiple
-    focused passes.
+  description: When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes.
 - skill_id: error-diagnostics-smart-debug
   category: core
   priority_score: 5

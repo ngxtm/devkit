@@ -1,3 +1,4 @@
+````skill
 ---
 name: foundry-iq-python
 description: Build agentic retrieval solutions with Azure AI Search knowledge bases and Foundry Agent Service using the Python SDK. Use when creating knowledge sources/bases, connecting agents via MCP for RAG, implementing hybrid search with semantic reranking, or building conversational apps with citation support. Covers SearchIndexClient, KnowledgeBaseRetrievalClient, and AIProjectClient.
@@ -273,3 +274,5 @@ gpt-4o, gpt-4o-mini, gpt-4.1, gpt-4.1-mini, gpt-4.1-nano, gpt-5, gpt-5-mini, gpt
 - [references/patterns.md](references/patterns.md): Complete SDK patterns for all operations
 - [references/knowledge-sources.md](references/knowledge-sources.md): Knowledge source configurations
 - [scripts/create_agent.py](scripts/create_agent.py): End-to-end script
+
+````
