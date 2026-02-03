@@ -1,3 +1,10 @@
+## [3.4.1](https://github.com/ngxtm/devkit/compare/v3.4.0...v3.4.1) (2026-02-03)
+
+
+### Bug Fixes
+
+* **publish:** include rules directory in npm package                                              The rules/ directory was missing from the files array in package.json, causing `devkit rules` to show 0 available rules when installed globally. ([3f74be6](https://github.com/ngxtm/devkit/commit/3f74be6373d44f64e21a6283138533577efb4ba3))
+
 # [3.4.0](https://github.com/ngxtm/devkit/compare/v3.3.0...v3.4.0) (2026-02-03)
 
 
