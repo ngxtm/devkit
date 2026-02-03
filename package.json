@@ -12,8 +12,7 @@
     "organize-rules": "node scripts/organize-rules.js",
     "generate-index": "node scripts/generate-index.js",
     "test": "node cli/index.js detect",
-    "sync": "python scripts/sync_all.py",
-    "sync:rules": "git clone --depth 1 https://github.com/ngxtm/skill-rule.git /tmp/skill-rule && cp -r /tmp/skill-rule/rules/* ./rules/ && rm -rf /tmp/skill-rule",
+    "sync:upstream": "node scripts/manual-sync.js",
     "validate": "python scripts/validate_skills.py"
   },
   "files": [
