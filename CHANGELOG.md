@@ -1,3 +1,11 @@
+# [3.3.0](https://github.com/ngxtm/devkit/compare/v3.2.0...v3.3.0) (2026-02-03)
+
+
+### Features
+
+* **rules:** add dotnet rules from upstream ([855edfa](https://github.com/ngxtm/devkit/commit/855edfa6506e586b11f54df90ff98a2d12aade46))
+* **sync:** replace auto-sync with manual sync workflow ([5c9d51d](https://github.com/ngxtm/devkit/commit/5c9d51d6300eb6c202c923c285d2ad8fa1c46401))
+
 # [3.2.0](https://github.com/ngxtm/devkit/compare/v3.1.0...v3.2.0) (2026-02-02)
 
 
