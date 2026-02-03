@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/ngxtm/devkit/compare/v3.3.0...v3.4.0) (2026-02-03)
+
+
+### Features
+
+* **cli:** add rules management commands (add/remove/rules) ([9cdcdde](https://github.com/ngxtm/devkit/commit/9cdcddef75c008432f225ba89cafab2e8448cbf3))
+
 # [3.3.0](https://github.com/ngxtm/devkit/compare/v3.2.0...v3.3.0) (2026-02-03)
 
 
