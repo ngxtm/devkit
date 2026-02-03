@@ -20,6 +20,7 @@
     "merged-commands/",
     "templates/",
     "skills/",
+    "rules/",
     "scripts/merge-commands.js",
     "scripts/organize-rules.js",
     "scripts/generate-index.js",
