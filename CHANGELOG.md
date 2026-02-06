@@ -1,3 +1,10 @@
+## [3.6.1](https://github.com/ngxtm/devkit/compare/v3.6.0...v3.6.1) (2026-02-06)
+
+
+### Bug Fixes
+
+* **update:** enable full update by default and fix Windows EPERM error ([1495c08](https://github.com/ngxtm/devkit/commit/1495c083f16985c85d2ec779027cae2b0b26130e))
+
 # [3.6.0](https://github.com/ngxtm/devkit/compare/v3.5.0...v3.6.0) (2026-02-06)
 
 
