@@ -49,3 +49,5 @@ coverage/
 # Optional: uncomment if you don't want to track these
 # hooks/
 # output-styles/
+
+.claude/
