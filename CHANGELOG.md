@@ -1,3 +1,10 @@
+# [3.5.0](https://github.com/ngxtm/devkit/compare/v3.4.1...v3.5.0) (2026-02-06)
+
+
+### Features
+
+* **skill:** add /learn interactive step-by-step learning mode ([d63a64f](https://github.com/ngxtm/devkit/commit/d63a64fc0b78398c19df3af1833c972152d173bc))
+
 ## [3.4.1](https://github.com/ngxtm/devkit/compare/v3.4.0...v3.4.1) (2026-02-03)
 
 
