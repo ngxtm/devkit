@@ -1,3 +1,10 @@
+# [3.8.0](https://github.com/ngxtm/devkit/compare/v3.7.0...v3.8.0) (2026-02-06)
+
+
+### Features
+
+* **merge:** include skills in merged-commands ([e165087](https://github.com/ngxtm/devkit/commit/e16508783a2095bcb4126e570feb88d46938ca9c))
+
 # [3.7.0](https://github.com/ngxtm/devkit/compare/v3.6.1...v3.7.0) (2026-02-06)
 
 
