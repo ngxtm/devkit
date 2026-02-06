@@ -99,8 +99,8 @@ function updateProject(options = {}) {
     console.log('  No changes in detected technologies.');
   }
 
-  // Update rules if needed
-  if (added.length > 0 || options.force) {
+  // Update rules if needed (always update by default)
+  if (added.length > 0 || options.force !== false) {
     const newRules = getRulesForTypes(added);
     const rulesDir = path.join(claudeDir, 'rules');
 
@@ -116,8 +116,8 @@ function updateProject(options = {}) {
     }
   }
 
-  // Remove old rules if needed and user agrees
-  if (removed.length > 0 && options.clean) {
+  // Remove old rules (enabled by default, use --no-clean to skip)
+  if (removed.length > 0 && options.clean !== false) {
     const rulesDir = path.join(claudeDir, 'rules');
 
     console.log('\n  Removing old rules...');
@@ -131,26 +131,17 @@ function updateProject(options = {}) {
     }
   }
 
-  // Update commands if --force
-  if (options.force) {
+  // Update commands (enabled by default)
+  if (options.force !== false) {
     console.log('\n  Updating commands...');
     const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
     const commandsDir = path.join(claudeDir, 'commands');
 
     if (fs.existsSync(mergedCommandsDir)) {
-      // Backup existing
-      const backupDir = path.join(claudeDir, 'commands.backup');
-      if (fs.existsSync(commandsDir)) {
-        fs.renameSync(commandsDir, backupDir);
-      }
-
+      // Copy directly - copyDir will overwrite existing files
+      // No need for backup/rename which fails on Windows when files are open
       const count = copyDir(mergedCommandsDir, commandsDir);
       console.log(`    Commands: ${count} files`);
-
-      // Remove backup
-      if (fs.existsSync(backupDir)) {
-        fs.rmSync(backupDir, { recursive: true, force: true });
-      }
     }
   }
 

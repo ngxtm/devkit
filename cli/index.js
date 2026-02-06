@@ -63,6 +63,8 @@ function parseArgs(args) {
       options.update = true;
     } else if (arg === '--clean' || arg === '-c') {
       options.clean = true;
+    } else if (arg === '--no-clean') {
+      options.clean = false;
     } else if (arg === '--installed' || arg === '-i') {
       options.installed = true;
     } else if (arg === '--all' || arg === '-a') {
@@ -105,7 +107,7 @@ COMMANDS:
                 Auto-detects tech stack and installs relevant rules.
 
   update        Update existing installation
-                Re-detects project type and updates rules accordingly.
+                Re-detects project, updates commands, and cleans old rules.
 
   detect        Show detected technologies for current project
                 Useful to see what devkit will install.
@@ -134,7 +136,7 @@ OPTIONS:
   --all, -a       Install for all supported tools (skip menu)
   --tools=LIST    Install for specific tools (comma-separated)
                   Example: --tools=claude,cursor
-  --clean, -c     Remove rules for technologies no longer detected (with update)
+  --no-clean      Skip removing rules for technologies no longer detected
   --installed, -i Show only installed rules (with rules command)
   --path=DIR      Specify project directory (default: current directory)
   --help, -h      Show this help
@@ -150,8 +152,8 @@ EXAMPLES:
   devkit init --all             # Install for all tools
   devkit init --tools=claude,cursor  # Install for specific tools
   devkit init --force           # Overwrite existing installation
-  devkit update                 # Update and re-detect technologies
-  devkit update --clean         # Update and remove old rules
+  devkit update                 # Full update (commands + clean old rules)
+  devkit update --no-clean      # Update without removing old rules
   devkit detect                 # Show what would be detected
   devkit rules                  # List all available rules
   devkit rules --installed      # Show installed rules
