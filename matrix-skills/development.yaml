@@ -1,8 +1,17 @@
 domain: development
 description: Skills related to development
-skill_count: 2
-updated: '2026-02-02T01:14:08.027332'
+skill_count: 3
+updated: '2026-02-06T12:00:00.000000'
 skills:
+- skill_id: learn
+  category: core
+  priority_score: 10
+  relevance_mapping:
+    agents: []
+    profiles:
+    - development:*
+  description: Interactive step-by-step learning mode. Teaches concepts from basics
+    to advanced while solving real problems. Auto-verifies code at each step.
 - skill_id: vercel-deploy
   category: core
   priority_score: 5

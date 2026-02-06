@@ -1,6 +1,6 @@
 name: Devkit Agent Assistant Matrix Index
 description: Central registry for skill discovery system
-total_skills: 768
+total_skills: 769
 domain_count: 15
 updated: '2026-02-02T01:14:08.028984'
 domains:
@@ -58,7 +58,7 @@ domains:
     description: Skills for framework development
   development:
     file: development.yaml
-    skill_count: 2
+    skill_count: 3
     description: Skills for development development
   cloud:
     file: cloud.yaml
