@@ -1,3 +1,10 @@
+# [3.7.0](https://github.com/ngxtm/devkit/compare/v3.6.1...v3.7.0) (2026-02-06)
+
+
+### Features
+
+* **update:** full update by default with multi-tool support ([b5cb1da](https://github.com/ngxtm/devkit/commit/b5cb1da7f0473e44752cf5d0ea498d18624443fc))
+
 ## [3.6.1](https://github.com/ngxtm/devkit/compare/v3.6.0...v3.6.1) (2026-02-06)
 
 
