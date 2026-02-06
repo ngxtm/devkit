@@ -41,6 +41,9 @@ function parseArgs(args) {
     help: false,
     installed: false,
     ruleArgs: [],
+    // New v3.6 options
+    all: false,
+    tools: [],
     // Legacy options (deprecated)
     tool: null,
     minimal: false,
@@ -62,10 +65,14 @@ function parseArgs(args) {
       options.clean = true;
     } else if (arg === '--installed' || arg === '-i') {
       options.installed = true;
+    } else if (arg === '--all' || arg === '-a') {
+      options.all = true;
     } else if (arg === '--status' || arg === '-s') {
       options.command = 'status';
     } else if (arg.startsWith('--path=')) {
       options.path = arg.split('=')[1];
+    } else if (arg.startsWith('--tools=')) {
+      options.tools = arg.split('=')[1].split(',').map(t => t.trim());
     } else if (arg.startsWith('--')) {
       // Handle legacy options for backwards compatibility
       if (arg === '--minimal' || arg === '-m') options.minimal = true;
@@ -93,9 +100,9 @@ USAGE:
   devkit <command> [options]
 
 COMMANDS:
-  init          Initialize devkit in current project (.claude/ folder)
-                Auto-detects tech stack and installs relevant rules only.
-                This is the PRIMARY command - use this for new projects.
+  init          Initialize devkit in current project
+                Shows interactive tool selection menu.
+                Auto-detects tech stack and installs relevant rules.
 
   update        Update existing installation
                 Re-detects project type and updates rules accordingly.
@@ -124,23 +131,34 @@ COMMANDS:
 
 OPTIONS:
   --force, -f     Force overwrite existing installation
+  --all, -a       Install for all supported tools (skip menu)
+  --tools=LIST    Install for specific tools (comma-separated)
+                  Example: --tools=claude,cursor
   --clean, -c     Remove rules for technologies no longer detected (with update)
   --installed, -i Show only installed rules (with rules command)
   --path=DIR      Specify project directory (default: current directory)
   --help, -h      Show this help
 
+SUPPORTED TOOLS:
+  claude        Claude Code
+  cursor        Cursor
+  copilot       GitHub Copilot
+  gemini        Gemini CLI
+
 EXAMPLES:
-  devkit init                 # Initialize in current project
-  devkit init --force         # Overwrite existing installation
-  devkit update               # Update and re-detect technologies
-  devkit update --clean       # Update and remove old rules
-  devkit detect               # Show what would be detected
-  devkit rules                # List all available rules
-  devkit rules --installed    # Show installed rules
-  devkit add golang docker    # Add golang and docker rules
-  devkit remove flutter       # Remove flutter rule
-  devkit status               # Show current installation
-  devkit uninstall            # Remove from current project
+  devkit init                   # Interactive tool selection
+  devkit init --all             # Install for all tools
+  devkit init --tools=claude,cursor  # Install for specific tools
+  devkit init --force           # Overwrite existing installation
+  devkit update                 # Update and re-detect technologies
+  devkit update --clean         # Update and remove old rules
+  devkit detect                 # Show what would be detected
+  devkit rules                  # List all available rules
+  devkit rules --installed      # Show installed rules
+  devkit add golang docker      # Add golang and docker rules
+  devkit remove flutter         # Remove flutter rule
+  devkit status                 # Show current installation
+  devkit uninstall              # Remove from current project
 
 HOW IT WORKS:
   1. devkit init analyzes your project files:
@@ -181,13 +199,15 @@ This auto-detects your tech stack and installs only relevant rules.
 
 // Command handlers
 const commands = {
-  // Primary command - per-project init
-  init: (options) => {
+  // Primary command - per-project init (now async with tool selection)
+  init: async (options) => {
     const projectPath = validatePath(options.path) || process.cwd();
     return initProject({
       path: projectPath,
       force: options.force,
-      update: options.update
+      update: options.update,
+      all: options.all,
+      tools: options.tools
     });
   },
 

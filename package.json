@@ -47,6 +47,9 @@
     "type": "git",
     "url": "git+https://github.com/ngxtm/devkit.git"
   },
+  "dependencies": {
+    "inquirer": "^9.2.12"
+  },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^11.1.0",

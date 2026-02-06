@@ -3,42 +3,224 @@
 /**
  * Devkit Init - Per-Project Installation
  *
- * Installs devkit to the current project's .claude/ directory with:
- * - Merged commands (from both agent-assistant and claudekit)
+ * Installs devkit to the current project with support for multiple AI tools:
+ * - Claude Code, Cursor, GitHub Copilot, Gemini CLI
+ * - Interactive tool selection with auto-detection
  * - Tech-specific rules (based on project detection)
- * - Skills index (for on-demand loading)
- * - Essential hooks
+ * - Merged commands and essential hooks
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const { detectProjectType, getRulesForTypes, printDetectionResults } = require('./detect');
-const { copyDir, getDirSize, validatePath } = require('./utils');
+const { detectProjectType, getRulesForTypes } = require('./detect');
+const { copyDir, getDirSize, detectInstalledTools, TOOLS } = require('./utils');
 
 const VERSION = require('../package.json').version;
 const PACKAGE_ROOT = path.join(__dirname, '..');
 
 /**
- * Initialize devkit in a project directory
+ * Show interactive tool selection menu
+ * @param {Object} detectedTools - Results from detectInstalledTools()
+ * @returns {Promise<string[]>} - Array of selected tool ids
  */
-function initProject(options = {}) {
+async function showToolSelectionMenu(detectedTools) {
+  // Dynamic import for inquirer (ES module)
+  const inquirer = (await import('inquirer')).default;
+
+  console.log('\n  Detecting installed AI tools...\n');
+
+  const choices = Object.entries(TOOLS).map(([id, tool]) => {
+    const detected = detectedTools[id]?.detected;
+    const status = detected ? '(detected)' : '(not detected)';
+    return {
+      name: `${tool.name} ${status}`,
+      value: id,
+      checked: detected // Pre-select detected tools
+    };
+  });
+
+  const { selectedTools } = await inquirer.prompt([
+    {
+      type: 'checkbox',
+      name: 'selectedTools',
+      message: 'Select AI tools to install devkit for:',
+      choices,
+      validate: (answer) => {
+        if (answer.length === 0) {
+          return 'Please select at least one tool.';
+        }
+        return true;
+      }
+    }
+  ]);
+
+  return selectedTools;
+}
+
+/**
+ * Install devkit for a single tool
+ * @param {string} toolId - Tool identifier
+ * @param {Object} tool - Tool configuration
+ * @param {string} projectDir - Project directory
+ * @param {Object} options - Install options
+ * @returns {Object} - Installation result
+ */
+function installForTool(toolId, tool, projectDir, options = {}) {
+  const targetDir = path.join(projectDir, tool.projectPath);
+  const isUpdate = options.update || false;
+
+  // Check if already exists
+  if (fs.existsSync(targetDir) && !isUpdate && !options.force) {
+    return {
+      success: false,
+      reason: 'exists',
+      message: `${tool.projectPath}/ already exists`
+    };
+  }
+
+  // Create target directory
+  fs.mkdirSync(targetDir, { recursive: true });
+
+  let totalFiles = 0;
+  const stats = {};
+
+  // 1. Install commands (if tool supports it)
+  if (tool.commandsPath) {
+    const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
+    const commandsDir = path.join(targetDir, tool.commandsPath);
+
+    if (fs.existsSync(mergedCommandsDir)) {
+      const count = copyDir(mergedCommandsDir, commandsDir);
+      stats.commands = count;
+      totalFiles += count;
+    }
+  }
+
+  // 2. Install rules
+  if (tool.rulesPath && options.rules && options.rules.length > 0) {
+    const rulesDir = path.join(targetDir, tool.rulesPath);
+    let rulesCount = 0;
+
+    for (const ruleType of options.rules) {
+      const srcRulesDir = path.join(PACKAGE_ROOT, 'templates', ruleType, 'rules');
+      if (fs.existsSync(srcRulesDir)) {
+        const destRulesDir = path.join(rulesDir, ruleType);
+        const count = copyDir(srcRulesDir, destRulesDir);
+        rulesCount += count;
+      }
+    }
+
+    if (rulesCount > 0) {
+      stats.rules = rulesCount;
+      totalFiles += rulesCount;
+    }
+  }
+
+  // 3. Install hooks (if tool supports it)
+  if (tool.supportsHooks && tool.hooksPath) {
+    const srcHooksDir = path.join(PACKAGE_ROOT, 'templates', 'base', 'hooks');
+    const hooksDir = path.join(targetDir, tool.hooksPath);
+
+    if (fs.existsSync(srcHooksDir)) {
+      const count = copyDir(srcHooksDir, hooksDir);
+      stats.hooks = count;
+      totalFiles += count;
+    } else {
+      const fallbackHooks = path.join(PACKAGE_ROOT, 'hooks');
+      if (fs.existsSync(fallbackHooks)) {
+        const count = copyDir(fallbackHooks, hooksDir);
+        stats.hooks = count;
+        totalFiles += count;
+      }
+    }
+  }
+
+  // 4. Install skills index
+  const skillsIndexSrc = path.join(PACKAGE_ROOT, 'skills-index.json');
+  if (fs.existsSync(skillsIndexSrc)) {
+    fs.copyFileSync(skillsIndexSrc, path.join(targetDir, 'skills-index.json'));
+    totalFiles++;
+  }
+
+  // 5. Create devkit.json tracking file
+  const devkitConfig = {
+    version: VERSION,
+    tool: toolId,
+    toolName: tool.name,
+    detectedTypes: options.detectedTypes || [],
+    installedRules: options.rules || [],
+    installedAt: new Date().toISOString(),
+    updatedAt: isUpdate ? new Date().toISOString() : null,
+    stats: {
+      totalFiles: totalFiles,
+      sizeKB: Math.round(getDirSize(targetDir) / 1024)
+    }
+  };
+
+  fs.writeFileSync(
+    path.join(targetDir, 'devkit.json'),
+    JSON.stringify(devkitConfig, null, 2)
+  );
+  totalFiles++;
+
+  // 6. Create settings.json if not exists (for tools that use it)
+  if (toolId === 'claude') {
+    const settingsPath = path.join(targetDir, 'settings.json');
+    if (!fs.existsSync(settingsPath)) {
+      const settings = { includeCoAuthoredBy: false };
+      fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2));
+      totalFiles++;
+    }
+  }
+
+  return {
+    success: true,
+    tool: toolId,
+    toolName: tool.name,
+    path: targetDir,
+    stats: {
+      files: totalFiles,
+      sizeKB: Math.round(getDirSize(targetDir) / 1024),
+      ...stats
+    }
+  };
+}
+
+/**
+ * Initialize devkit in a project directory
+ * @param {Object} options - Installation options
+ */
+async function initProject(options = {}) {
   const projectDir = options.path || process.cwd();
-  const claudeDir = path.join(projectDir, '.claude');
   const isUpdate = options.update || false;
 
   console.log('\n' + '='.repeat(60));
   console.log('  DEVKIT v' + VERSION + (isUpdate ? ' - UPDATE' : ' - INIT'));
   console.log('='.repeat(60));
 
-  // Check if .claude already exists
-  if (fs.existsSync(claudeDir) && !isUpdate && !options.force) {
-    console.log(`\n  .claude/ folder already exists.`);
-    console.log('  Use --force to overwrite or --update to update.\n');
-    return { success: false, reason: 'exists' };
+  // Determine which tools to install
+  let selectedTools = [];
+
+  if (options.all) {
+    // --all flag: install for all tools
+    selectedTools = Object.keys(TOOLS);
+    console.log('\n  Installing for all tools...');
+  } else if (options.tools && options.tools.length > 0) {
+    // Specific tools via --tools flag
+    selectedTools = options.tools;
+  } else {
+    // Interactive mode: show selection menu
+    const detectedTools = detectInstalledTools();
+    selectedTools = await showToolSelectionMenu(detectedTools);
   }
 
-  // 1. Detect project type
+  if (selectedTools.length === 0) {
+    console.log('\n  No tools selected. Exiting.\n');
+    return { success: false, reason: 'no_selection' };
+  }
+
+  // Detect project type
   console.log('\n  Detecting project type...');
   const detectedTypes = detectProjectType(projectDir);
   const rulesToInstall = getRulesForTypes(detectedTypes);
@@ -51,119 +233,50 @@ function initProject(options = {}) {
     console.log('  Installing base commands only.');
   }
 
-  // Create .claude directory
-  fs.mkdirSync(claudeDir, { recursive: true });
-
-  let totalFiles = 0;
-  const stats = {};
-
-  // 2. Install merged commands
+  // Install for each selected tool
   console.log('\n  Installing components...');
-  const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
-  const commandsDir = path.join(claudeDir, 'commands');
+  const results = [];
 
-  if (fs.existsSync(mergedCommandsDir)) {
-    const count = copyDir(mergedCommandsDir, commandsDir);
-    stats.commands = count;
-    totalFiles += count;
-    console.log(`    Commands: ${count} files`);
-  } else {
-    // Fallback to commands-claudekit if merged not available
-    const fallbackDir = path.join(PACKAGE_ROOT, 'commands-claudekit');
-    if (fs.existsSync(fallbackDir)) {
-      const count = copyDir(fallbackDir, commandsDir);
-      stats.commands = count;
-      totalFiles += count;
-      console.log(`    Commands (claudekit): ${count} files`);
+  for (const toolId of selectedTools) {
+    const tool = TOOLS[toolId];
+    if (!tool) {
+      console.log(`    [!] Unknown tool: ${toolId}`);
+      continue;
     }
-  }
 
-  // 3. Install tech-specific rules
-  const rulesDir = path.join(claudeDir, 'rules');
-  let rulesCount = 0;
+    const result = installForTool(toolId, tool, projectDir, {
+      ...options,
+      detectedTypes,
+      rules: rulesToInstall
+    });
 
-  for (const ruleType of rulesToInstall) {
-    const srcRulesDir = path.join(PACKAGE_ROOT, 'templates', ruleType, 'rules');
-    if (fs.existsSync(srcRulesDir)) {
-      const destRulesDir = path.join(rulesDir, ruleType);
-      const count = copyDir(srcRulesDir, destRulesDir);
-      rulesCount += count;
+    if (result.success) {
+      console.log(`    [+] ${tool.name}: ${result.stats.files} files (${result.stats.sizeKB} KB)`);
+    } else {
+      console.log(`    [-] ${tool.name}: ${result.message || result.reason}`);
     }
+
+    results.push(result);
   }
 
-  if (rulesCount > 0) {
-    stats.rules = rulesCount;
-    totalFiles += rulesCount;
-    console.log(`    Rules: ${rulesCount} files (${rulesToInstall.join(', ')})`);
-  }
-
-  // 4. Install essential hooks
-  const srcHooksDir = path.join(PACKAGE_ROOT, 'templates', 'base', 'hooks');
-  const hooksDir = path.join(claudeDir, 'hooks');
-
-  if (fs.existsSync(srcHooksDir)) {
-    const count = copyDir(srcHooksDir, hooksDir);
-    stats.hooks = count;
-    totalFiles += count;
-    console.log(`    Hooks: ${count} files`);
-  } else {
-    // Fallback to main hooks directory (essential only)
-    const fallbackHooks = path.join(PACKAGE_ROOT, 'hooks');
-    if (fs.existsSync(fallbackHooks)) {
-      const count = copyDir(fallbackHooks, hooksDir);
-      stats.hooks = count;
-      totalFiles += count;
-      console.log(`    Hooks: ${count} files`);
-    }
-  }
-
-  // 5. Install skills index
-  const skillsIndexSrc = path.join(PACKAGE_ROOT, 'skills-index.json');
-  const skillsIndexDest = path.join(claudeDir, 'skills-index.json');
-
-  if (fs.existsSync(skillsIndexSrc)) {
-    fs.copyFileSync(skillsIndexSrc, skillsIndexDest);
-    totalFiles++;
-    console.log(`    Skills Index: 1 file`);
-  }
-
-  // 6. Create devkit.json tracking file
-  const devkitConfig = {
-    version: VERSION,
-    detectedTypes: detectedTypes,
-    installedRules: rulesToInstall,
-    installedAt: new Date().toISOString(),
-    updatedAt: isUpdate ? new Date().toISOString() : null,
-    stats: {
-      totalFiles: totalFiles,
-      sizeKB: Math.round(getDirSize(claudeDir) / 1024)
-    }
-  };
-
-  fs.writeFileSync(
-    path.join(claudeDir, 'devkit.json'),
-    JSON.stringify(devkitConfig, null, 2)
-  );
-  totalFiles++;
-
-  // 7. Create settings.json if not exists
-  const settingsPath = path.join(claudeDir, 'settings.json');
-  if (!fs.existsSync(settingsPath)) {
-    const settings = {
-      includeCoAuthoredBy: false
-    };
-    fs.writeFileSync(settingsPath, JSON.stringify(settings, null, 2));
-    totalFiles++;
-  }
-
-  // Calculate total size
-  const totalSizeKB = Math.round(getDirSize(claudeDir) / 1024);
+  // Summary
+  const successCount = results.filter(r => r.success).length;
+  const totalFiles = results.reduce((sum, r) => sum + (r.stats?.files || 0), 0);
+  const totalSize = results.reduce((sum, r) => sum + (r.stats?.sizeKB || 0), 0);
 
   console.log('\n' + '='.repeat(60));
   console.log('  INSTALLATION COMPLETE');
   console.log('='.repeat(60));
-  console.log(`\n  Total: ${totalFiles} files (${totalSizeKB} KB)`);
-  console.log(`  Location: ${claudeDir}`);
+  console.log(`\n  Tools: ${successCount}/${selectedTools.length} installed`);
+  console.log(`  Total: ${totalFiles} files (${totalSize} KB)`);
+
+  // Show installed locations
+  console.log('\n  Installed to:');
+  for (const result of results) {
+    if (result.success) {
+      console.log(`    - ${result.path}`);
+    }
+  }
 
   console.log('\n  Available commands:');
   console.log('    /plan        - Plan implementation');
@@ -176,15 +289,16 @@ function initProject(options = {}) {
     console.log(`\n  Tech-specific rules loaded for: ${detectedTypes.join(', ')}`);
   }
 
-  console.log('\n  Restart Claude Code to use the new skills.\n');
+  console.log('\n  Restart your AI tool to use the new skills.\n');
 
   return {
-    success: true,
+    success: successCount > 0,
+    tools: results,
     detected: detectedTypes,
     rules: rulesToInstall,
     stats: {
       files: totalFiles,
-      sizeKB: totalSizeKB
+      sizeKB: totalSize
     }
   };
 }
@@ -194,52 +308,62 @@ function initProject(options = {}) {
  */
 function uninstallProject(options = {}) {
   const projectDir = options.path || process.cwd();
-  const claudeDir = path.join(projectDir, '.claude');
 
   console.log('\n' + '='.repeat(60));
   console.log('  DEVKIT - UNINSTALL');
   console.log('='.repeat(60));
 
-  if (!fs.existsSync(claudeDir)) {
-    console.log('\n  No .claude/ folder found.\n');
+  let removedCount = 0;
+
+  for (const [toolId, tool] of Object.entries(TOOLS)) {
+    const targetDir = path.join(projectDir, tool.projectPath);
+    const devkitConfig = path.join(targetDir, 'devkit.json');
+
+    if (fs.existsSync(devkitConfig)) {
+      fs.rmSync(targetDir, { recursive: true, force: true });
+      console.log(`  Removed: ${targetDir}`);
+      removedCount++;
+    }
+  }
+
+  if (removedCount === 0) {
+    console.log('\n  No devkit installations found.\n');
     return { success: false, reason: 'not_found' };
   }
 
-  // Check if it's a devkit installation
-  const devkitConfig = path.join(claudeDir, 'devkit.json');
-  if (!fs.existsSync(devkitConfig)) {
-    console.log('\n  .claude/ exists but is not a devkit installation.');
-    console.log('  Remove manually if needed.\n');
-    return { success: false, reason: 'not_devkit' };
-  }
-
-  // Remove the directory
-  fs.rmSync(claudeDir, { recursive: true, force: true });
-  console.log(`\n  Removed: ${claudeDir}`);
-  console.log('  Devkit uninstalled successfully.\n');
-
-  return { success: true };
+  console.log(`\n  Uninstalled ${removedCount} tool(s) successfully.\n`);
+  return { success: true, removed: removedCount };
 }
 
 module.exports = {
   initProject,
   uninstallProject,
-  copyDir,
-  getDirSize
+  installForTool,
+  showToolSelectionMenu
 };
 
 // Run if called directly
 if (require.main === module) {
   const args = process.argv.slice(2);
+
+  // Parse --tools=claude,cursor format
+  const toolsArg = args.find(a => a.startsWith('--tools='));
+  const tools = toolsArg ? toolsArg.split('=')[1].split(',') : [];
+
   const options = {
     force: args.includes('--force') || args.includes('-f'),
     update: args.includes('--update') || args.includes('-u'),
-    path: args.find(a => !a.startsWith('-')) || process.cwd()
+    all: args.includes('--all') || args.includes('-a'),
+    tools: tools,
+    path: args.find(a => !a.startsWith('-') && !a.includes('=')) || process.cwd()
   };
 
   if (args.includes('--uninstall')) {
     uninstallProject(options);
   } else {
-    initProject(options);
+    initProject(options).catch(err => {
+      console.error('Error:', err.message);
+      process.exit(1);
+    });
   }
 }

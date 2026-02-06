@@ -6,6 +6,112 @@
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
+const { execSync } = require('child_process');
+
+const HOME = os.homedir();
+
+/**
+ * Supported AI tools configuration
+ */
+const TOOLS = {
+  'claude': {
+    id: 'claude',
+    name: 'Claude Code',
+    basePath: path.join(HOME, '.claude'),
+    projectPath: '.claude',
+    skillsPath: 'skills',
+    rulesPath: 'rules',
+    hooksPath: 'hooks',
+    commandsPath: 'commands',
+    supportsHooks: true,
+    configFile: 'CLAUDE.md',
+    detectCmd: 'claude --version',
+    detectFolder: path.join(HOME, '.claude')
+  },
+  'cursor': {
+    id: 'cursor',
+    name: 'Cursor',
+    basePath: path.join(HOME, '.cursor'),
+    projectPath: '.cursor',
+    skillsPath: 'skills',
+    rulesPath: 'rules',
+    hooksPath: 'hooks',
+    commandsPath: 'commands',
+    supportsHooks: false,
+    configFile: 'CURSOR.md',
+    detectCmd: null,
+    detectFolder: path.join(HOME, '.cursor')
+  },
+  'copilot': {
+    id: 'copilot',
+    name: 'GitHub Copilot',
+    basePath: path.join(HOME, '.copilot'),
+    projectPath: '.github',
+    skillsPath: 'skills',
+    rulesPath: 'rules',
+    hooksPath: null,
+    commandsPath: null,
+    supportsHooks: false,
+    configFile: null,
+    detectCmd: 'gh copilot --version',
+    detectFolder: path.join(HOME, '.copilot')
+  },
+  'gemini': {
+    id: 'gemini',
+    name: 'Gemini CLI',
+    basePath: path.join(HOME, '.gemini'),
+    projectPath: '.gemini',
+    skillsPath: 'skills',
+    rulesPath: 'rules',
+    hooksPath: null,
+    commandsPath: null,
+    supportsHooks: false,
+    configFile: 'GEMINI.md',
+    detectCmd: 'gemini --version',
+    detectFolder: path.join(HOME, '.gemini')
+  }
+};
+
+/**
+ * Detect which AI tools are installed on the system
+ * @returns {Object} - Object with tool ids as keys and detection status
+ */
+function detectInstalledTools() {
+  const results = {};
+
+  for (const [toolId, tool] of Object.entries(TOOLS)) {
+    let detected = false;
+    let method = null;
+
+    // Try command detection first
+    if (tool.detectCmd) {
+      try {
+        execSync(tool.detectCmd, { stdio: 'pipe' });
+        detected = true;
+        method = 'cli';
+      } catch (e) {
+        // Command not found
+      }
+    }
+
+    // Fallback to folder detection
+    if (!detected && tool.detectFolder) {
+      if (fs.existsSync(tool.detectFolder)) {
+        detected = true;
+        method = 'folder';
+      }
+    }
+
+    results[toolId] = {
+      ...tool,
+      detected,
+      method
+    };
+  }
+
+  return results;
+}
 
 /**
  * Copy directory recursively
@@ -191,5 +297,8 @@ module.exports = {
   getDirSize,
   parseJsonFile,
   validatePath,
-  getAllEntries
+  getAllEntries,
+  detectInstalledTools,
+  TOOLS,
+  HOME
 };
