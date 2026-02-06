@@ -1,3 +1,10 @@
+# [3.9.0](https://github.com/ngxtm/devkit/compare/v3.8.0...v3.9.0) (2026-02-06)
+
+
+### Features
+
+* **auto-skill:** intelligent skill detection and suggestion system ([2f57c3b](https://github.com/ngxtm/devkit/commit/2f57c3bc412bda774d13bcaac90530e48f59af20))
+
 # [3.8.0](https://github.com/ngxtm/devkit/compare/v3.7.0...v3.8.0) (2026-02-06)
 
 
