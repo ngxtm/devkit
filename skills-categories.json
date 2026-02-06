@@ -1,0 +1,3155 @@
+{
+  "frontend": {
+    "count": 315,
+    "skills": [
+      {
+        "n": "3d-web-experience",
+        "d": "Expert in building 3D experiences for the web - Three.js, React Three Fiber, Spl"
+      },
+      {
+        "n": "ab-test-setup",
+        "d": "Structured guide for setting up A/B tests with mandatory gates for hypothesis, m"
+      },
+      {
+        "n": "accessibility-compliance-accessibility-audit",
+        "d": "You are an accessibility expert specializing in WCAG compliance, inclusive desig"
+      },
+      {
+        "n": "active-directory-attacks",
+        "d": "This skill should be used when the user asks to \"attack Active Directory\", \"expl"
+      },
+      {
+        "n": "aesthetic",
+        "d": "Create aesthetically beautiful interfaces following proven design principles. Us"
+      },
+      {
+        "n": "agent-framework-azure-hosted-agents",
+        "d": "Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (ag"
+      },
+      {
+        "n": "agent-manager-skill",
+        "d": "Manage multiple local CLI agents via tmux sessions (start/stop/monitor/assign) w"
+      },
+      {
+        "n": "agent-tool-builder",
+        "d": "Tools are how AI agents interact with the world. A well-designed tool is the dif"
+      },
+      {
+        "n": "ai-agents-architect",
+        "d": "Expert in designing and building autonomous AI agents. Masters tool use, memory "
+      },
+      {
+        "n": "ai-artist",
+        "d": "Craft prompts for AI models (text, image, video). Use for Midjourney, DALL-E, St"
+      },
+      {
+        "n": "ai-engineer",
+        "d": "Build production-ready LLM applications, advanced RAG systems, and"
+      },
+      {
+        "n": "ai-product",
+        "d": "Every product will be AI-powered. The question is whether you'll build it right "
+      },
+      {
+        "n": "ai-wrapper-product",
+        "d": "Expert in building products that wrap AI APIs (OpenAI, Anthropic, etc.) into foc"
+      },
+      {
+        "n": "airflow-dag-patterns",
+        "d": "Build production Apache Airflow DAGs with best practices for operators, sensors,"
+      },
+      {
+        "n": "algolia-search",
+        "d": "Expert patterns for Algolia search implementation, indexing strategies, React In"
+      },
+      {
+        "n": "angular-architect",
+        "d": "Use when building Angular 17+ applications with standalone components or signals"
+      },
+      {
+        "n": "angular-migration",
+        "d": "Migrate from AngularJS to Angular using hybrid mode, incremental component rewri"
+      },
+      {
+        "n": "api-design-principles",
+        "d": "Master REST and GraphQL API design principles to build intuitive, scalable, and "
+      },
+      {
+        "n": "api-fuzzing-bug-bounty",
+        "d": "This skill should be used when the user asks to \"test API security\", \"fuzz APIs\""
+      },
+      {
+        "n": "app-builder",
+        "d": "Main application building orchestrator. Creates full-stack applications from nat"
+      },
+      {
+        "n": "application-performance-performance-optimization",
+        "d": "Optimize end-to-end application performance with profiling, observability, and b"
+      },
+      {
+        "n": "architecture",
+        "d": "Architectural decision-making framework. Requirements analysis, trade-off evalua"
+      },
+      {
+        "n": "artifacts-builder",
+        "d": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts "
+      },
+      {
+        "n": "ask-questions-if-underspecified",
+        "d": "Clarify requirements before implementing. Do not use automatically, only when in"
+      },
+      {
+        "n": "async-python-patterns",
+        "d": "Master Python asyncio, concurrent programming, and async/await patterns for high"
+      },
+      {
+        "n": "attack-tree-construction",
+        "d": "Build comprehensive attack trees to visualize threat paths. Use when mapping att"
+      },
+      {
+        "n": "auth-implementation-patterns",
+        "d": "Master authentication and authorization patterns including JWT, OAuth2, session "
+      },
+      {
+        "n": "automate-whatsapp",
+        "d": "Build WhatsApp automations with Kapso workflows: configure WhatsApp triggers, ed"
+      },
+      {
+        "n": "autonomous-agent-patterns",
+        "d": "Design patterns for building autonomous coding agents. Covers tool integration, "
+      },
+      {
+        "n": "autonomous-agents",
+        "d": "Autonomous agents are AI systems that can independently decompose goals, plan ac"
+      },
+      {
+        "n": "avalonia-layout-zafiro",
+        "d": "Guidelines for modern Avalonia UI layout using Zafiro.Avalonia, emphasizing shar"
+      },
+      {
+        "n": "avalonia-viewmodels-zafiro",
+        "d": "Optimal ViewModel and Wizard creation patterns for Avalonia using Zafiro and Rea"
+      },
+      {
+        "n": "avalonia-zafiro-development",
+        "d": "Mandatory skills, conventions, and behavioral rules for Avalonia UI development "
+      },
+      {
+        "n": "aws-agentic-ai",
+        "d": "AWS Bedrock AgentCore comprehensive expert for deploying and managing all AgentC"
+      },
+      {
+        "n": "aws-cdk-development",
+        "d": "AWS Cloud Development Kit (CDK) expert for building cloud infrastructure with Ty"
+      },
+      {
+        "n": "aws-penetration-testing",
+        "d": "This skill should be used when the user asks to \"pentest AWS\", \"test AWS securit"
+      },
+      {
+        "n": "aws-serverless",
+        "d": "Specialized skill for building production-ready serverless applications on AWS. "
+      },
+      {
+        "n": "aws-serverless-eda",
+        "d": "AWS serverless and event-driven architecture expert based on Well-Architected Fr"
+      },
+      {
+        "n": "azd-deployment",
+        "d": "Deploy containerized applications to Azure Container Apps using Azure Developer "
+      },
+      {
+        "n": "azure-ai-agents-python",
+        "d": "Build AI agents using the Azure AI Agents Python SDK (azure-ai-agents). Use when"
+      },
+      {
+        "n": "azure-ai-search-python",
+        "d": "Clean code patterns for Azure AI Search Python SDK (azure-search-documents). Use"
+      },
+      {
+        "n": "azure-ai-voicelive-skill",
+        "d": "Build real-time voice AI applications using Azure AI Voice Live SDK (azure-ai-vo"
+      },
+      {
+        "n": "backend-dev-guidelines",
+        "d": "Opinionated backend development standards for Node.js + Express + TypeScript mic"
+      },
+      {
+        "n": "backend-development-feature-development",
+        "d": "Orchestrate end-to-end backend feature development from requirements to deployme"
+      },
+      {
+        "n": "backtesting-frameworks",
+        "d": "Build robust backtesting systems for trading strategies with proper handling of "
+      },
+      {
+        "n": "bash-defensive-patterns",
+        "d": "Master defensive Bash programming techniques for production-grade scripts. Use w"
+      },
+      {
+        "n": "bash-linux",
+        "d": "Bash/Linux terminal patterns. Critical commands, piping, error handling, scripti"
+      },
+      {
+        "n": "bats-testing-patterns",
+        "d": "Master Bash Automated Testing System (Bats) for comprehensive shell script testi"
+      },
+      {
+        "n": "bazel-build-optimization",
+        "d": "Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, imp"
+      },
+      {
+        "n": "better-auth",
+        "d": "Implement authentication and authorization with Better Auth - a framework-agnost"
+      },
+      {
+        "n": "billing-automation",
+        "d": "Build automated billing systems for recurring payments, invoicing, subscription "
+      },
+      {
+        "n": "blockchain-developer",
+        "d": "Build production-ready Web3 applications, smart contracts, and"
+      },
+      {
+        "n": "brand-guidelines",
+        "d": "Applies Anthropic's official brand colors and typography to any sort of artifact"
+      },
+      {
+        "n": "brand-guidelines-anthropic",
+        "d": "Applies Anthropic's official brand colors and typography to any sort of artifact"
+      },
+      {
+        "n": "brand-guidelines-community",
+        "d": "Applies Anthropic's official brand colors and typography to any sort of artifact"
+      },
+      {
+        "n": "browser-extension-builder",
+        "d": "Expert in building browser extensions that solve real problems - Chrome, Firefox"
+      },
+      {
+        "n": "building-ai-agent-on-cloudflare",
+        "d": "|"
+      },
+      {
+        "n": "building-mcp-server-on-cloudflare",
+        "d": "|"
+      },
+      {
+        "n": "burp-suite-testing",
+        "d": "This skill should be used when the user asks to \"intercept HTTP traffic\", \"modif"
+      },
+      {
+        "n": "busybox-on-windows",
+        "d": "How to use a Win32 build of BusyBox to run many of the standard UNIX command lin"
+      },
+      {
+        "n": "c4-component",
+        "d": "Expert C4 Component-level documentation specialist. Synthesizes C4"
+      },
+      {
+        "n": "cc-skill-backend-patterns",
+        "d": "Backend architecture patterns, API design, database optimization, and server-sid"
+      },
+      {
+        "n": "cc-skill-coding-standards",
+        "d": "Universal coding standards, best practices, and patterns for TypeScript, JavaScr"
+      },
+      {
+        "n": "cc-skill-frontend-patterns",
+        "d": "Frontend development patterns for React, Next.js, state management, performance "
+      },
+      {
+        "n": "cc-skill-project-guidelines-example",
+        "d": "Project Guidelines Skill (Example)"
+      },
+      {
+        "n": "claude-ally-health",
+        "d": "A health assistant skill for medical information analysis, symptom tracking, and"
+      },
+      {
+        "n": "claude-code-guide",
+        "d": "Master guide for using Claude Code effectively. Includes configuration templates"
+      },
+      {
+        "n": "claude-d3js-skill",
+        "d": "Creating interactive data visualisations using d3.js. This skill should be used "
+      },
+      {
+        "n": "cli-developer",
+        "d": "Use when building CLI tools, implementing argument parsing, or adding interactiv"
+      },
+      {
+        "n": "code-documentation",
+        "d": "Writing effective code documentation - API docs, README files, inline comments, "
+      },
+      {
+        "n": "code-documentation-doc-generate",
+        "d": "You are a documentation expert specializing in creating comprehensive, maintaina"
+      },
+      {
+        "n": "code-documenter",
+        "d": "Use when adding docstrings, creating API documentation, or building documentatio"
+      },
+      {
+        "n": "code-refactoring-refactor-clean",
+        "d": "You are a code refactoring expert specializing in clean code principles, SOLID d"
+      },
+      {
+        "n": "codebase-cleanup-refactor-clean",
+        "d": "You are a code refactoring expert specializing in clean code principles, SOLID d"
+      },
+      {
+        "n": "computer-use-agents",
+        "d": "Build AI agents that interact with computers like humans do - viewing screens, m"
+      },
+      {
+        "n": "conductor-status",
+        "d": "Display project status, active tracks, and next actions"
+      },
+      {
+        "n": "core-components",
+        "d": "Core component library and design system patterns. Use when building UI, using d"
+      },
+      {
+        "n": "cosmos-db-python-skill",
+        "d": "Build Azure Cosmos DB NoSQL services with Python/FastAPI following production-gr"
+      },
+      {
+        "n": "cqrs-implementation",
+        "d": "Implement Command Query Responsibility Segregation for scalable architectures. U"
+      },
+      {
+        "n": "create-pr",
+        "d": "Create pull requests following Sentry conventions. Use when opening PRs, writing"
+      },
+      {
+        "n": "crewai",
+        "d": "Expert in CrewAI - the leading role-based multi-agent framework used by 60% of F"
+      },
+      {
+        "n": "csharp-developer",
+        "d": "Use when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web"
+      },
+      {
+        "n": "data-engineer",
+        "d": "Build scalable data pipelines, modern data warehouses, and"
+      },
+      {
+        "n": "data-engineering-data-driven-feature",
+        "d": "Build features guided by data insights, A/B testing, and continuous measurement "
+      },
+      {
+        "n": "data-quality-frameworks",
+        "d": "Implement data quality validation with Great Expectations, dbt tests, and data c"
+      },
+      {
+        "n": "data-storytelling",
+        "d": "Transform data into compelling narratives using visualization, context, and pers"
+      },
+      {
+        "n": "dbt-transformation-patterns",
+        "d": "Master dbt (data build tool) for analytics engineering with model organization, "
+      },
+      {
+        "n": "defi-protocol-templates",
+        "d": "Implement DeFi protocols with production-ready templates for staking, AMMs, gove"
+      },
+      {
+        "n": "devops",
+        "d": "Deploy and manage cloud infrastructure on Cloudflare (Workers, R2, D1, KV, Pages"
+      },
+      {
+        "n": "discord-bot-architect",
+        "d": "Specialized skill for building production-ready Discord bots. Covers Discord.js "
+      },
+      {
+        "n": "django-expert",
+        "d": "Use when building Django web applications or REST APIs with Django REST Framewor"
+      },
+      {
+        "n": "doc-coauthoring",
+        "d": "Guide users through a structured workflow for co-authoring documentation. Use wh"
+      },
+      {
+        "n": "docker-expert",
+        "d": "Docker containerization expert with deep knowledge of multi-stage builds, image "
+      },
+      {
+        "n": "docs-seeker",
+        "d": "Search technical documentation using executable scripts to detect query type, fe"
+      },
+      {
+        "n": "documentation-generation-doc-generate",
+        "d": "You are a documentation expert specializing in creating comprehensive, maintaina"
+      },
+      {
+        "n": "documentation-templates",
+        "d": "Documentation templates and structure guidelines. README, API docs, code comment"
+      },
+      {
+        "n": "dotnet-backend-patterns",
+        "d": "Master C#/.NET backend development patterns for building robust APIs, MCP server"
+      },
+      {
+        "n": "dotnet-core-expert",
+        "d": "Use when building .NET 8 applications with minimal APIs, clean architecture, or "
+      },
+      {
+        "n": "e2e-testing-patterns",
+        "d": "Master end-to-end testing with Playwright and Cypress to build reliable test sui"
+      },
+      {
+        "n": "environment-setup-guide",
+        "d": "Guide developers through setting up development environments with proper tools, "
+      },
+      {
+        "n": "error-debugging-error-trace",
+        "d": "You are an error tracking and observability expert specializing in implementing "
+      },
+      {
+        "n": "error-handling-patterns",
+        "d": "Master error handling patterns across languages including exceptions, Result typ"
+      },
+      {
+        "n": "evaluation",
+        "d": "Build evaluation frameworks for agent systems"
+      },
+      {
+        "n": "event-sourcing-architect",
+        "d": "Expert in event sourcing, CQRS, and event-driven architecture patterns. Masters "
+      },
+      {
+        "n": "event-store-design",
+        "d": "Design and implement event stores for event-sourced systems. Use when building e"
+      },
+      {
+        "n": "expo-app-design",
+        "d": "Build beautiful cross-platform mobile apps with Expo Router, NativeWind, and Rea"
+      },
+      {
+        "n": "fastapi-expert",
+        "d": "Use when building high-performance async Python APIs with FastAPI and Pydantic V"
+      },
+      {
+        "n": "fastapi-pro",
+        "d": "Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and"
+      },
+      {
+        "n": "fastapi-router",
+        "d": "Create FastAPI routers with CRUD operations, authentication dependencies, and pr"
+      },
+      {
+        "n": "fastapi-templates",
+        "d": "Create production-ready FastAPI projects with async patterns, dependency injecti"
+      },
+      {
+        "n": "feature-forge",
+        "d": "Use when defining new features, gathering requirements, or writing specification"
+      },
+      {
+        "n": "finishing-a-development-branch",
+        "d": "Use when implementation is complete, all tests pass, and you need to decide how "
+      },
+      {
+        "n": "fixing",
+        "d": "Fix bugs, errors, test failures, CI/CD issues with intelligent routing. Use when"
+      },
+      {
+        "n": "foundry-iq-agent",
+        "d": "Build agentic retrieval solutions with Azure AI Search knowledge bases using Fou"
+      },
+      {
+        "n": "foundry-iq-python",
+        "d": "Build agentic retrieval solutions with Azure AI Search knowledge bases and Found"
+      },
+      {
+        "n": "foundry-nextgen-frontend",
+        "d": "Build elegant frontend UIs following Microsoft Foundry's NextGen Design System u"
+      },
+      {
+        "n": "foundry-sdk-python",
+        "d": "Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects)"
+      },
+      {
+        "n": "fp-ts-pragmatic",
+        "d": "A practical, jargon-free guide to fp-ts functional programming - the 80/20 appro"
+      },
+      {
+        "n": "fp-ts-react",
+        "d": "Practical patterns for using fp-ts with React - hooks, state, forms, data fetchi"
+      },
+      {
+        "n": "framework-migration-legacy-modernize",
+        "d": "Orchestrate a comprehensive legacy system modernization using the strangler fig "
+      },
+      {
+        "n": "free-tool-strategy",
+        "d": "When the user wants to plan, evaluate, or build a free tool for marketing purpos"
+      },
+      {
+        "n": "frontend-design",
+        "d": "Create distinctive, production-grade frontend interfaces with intentional aesthe"
+      },
+      {
+        "n": "frontend-dev-guidelines",
+        "d": "Opinionated frontend development standards for modern React + TypeScript applica"
+      },
+      {
+        "n": "frontend-developer",
+        "d": "Build React components, implement responsive layouts, and handle"
+      },
+      {
+        "n": "frontend-development",
+        "d": "Frontend development guidelines for React/TypeScript applications. Modern patter"
+      },
+      {
+        "n": "frontend-mobile-development-component-scaffold",
+        "d": "You are a React component architecture expert specializing in scaffolding produc"
+      },
+      {
+        "n": "frontend-mobile-security-xss-scan",
+        "d": "You are a frontend security specialist focusing on Cross-Site Scripting (XSS) vu"
+      },
+      {
+        "n": "frontend-security-coder",
+        "d": "Expert in secure frontend coding practices specializing in XSS"
+      },
+      {
+        "n": "frontend-slides",
+        "d": "Create stunning, animation-rich HTML presentations from scratch or by converting"
+      },
+      {
+        "n": "fullstack-guardian",
+        "d": "Use when implementing features across frontend and backend, building APIs with U"
+      },
+      {
+        "n": "game-developer",
+        "d": "Use when building game systems, implementing Unity/Unreal features, or optimizin"
+      },
+      {
+        "n": "gcp-cloud-run",
+        "d": "Specialized skill for building production-ready serverless applications on GCP. "
+      },
+      {
+        "n": "gdpr-data-handling",
+        "d": "Implement GDPR-compliant data handling with consent management, data subject rig"
+      },
+      {
+        "n": "github-actions-templates",
+        "d": "Create production-ready GitHub Actions workflows for automated testing, building"
+      },
+      {
+        "n": "gitlab-ci-patterns",
+        "d": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distribute"
+      },
+      {
+        "n": "gitops-workflow",
+        "d": "Implement GitOps workflows with ArgoCD and Flux for automated, declarative Kuber"
+      },
+      {
+        "n": "go-concurrency-patterns",
+        "d": "Master Go concurrency with goroutines, channels, sync primitives, and context. U"
+      },
+      {
+        "n": "godot-gdscript-patterns",
+        "d": "Master Godot 4 GDScript patterns including signals, scenes, state machines, and "
+      },
+      {
+        "n": "google-adk-python",
+        "d": "Build AI agents with Google ADK Python (Agent Development Kit). Use for multi-ag"
+      },
+      {
+        "n": "grafana-dashboards",
+        "d": "Create and manage production Grafana dashboards for real-time visualization of s"
+      },
+      {
+        "n": "hybrid-cloud-networking",
+        "d": "Configure secure, high-performance connectivity between on-premises infrastructu"
+      },
+      {
+        "n": "hybrid-search-implementation",
+        "d": "Combine vector and keyword search for improved retrieval. Use when implementing "
+      },
+      {
+        "n": "idor-testing",
+        "d": "This skill should be used when the user asks to \"test for insecure direct object"
+      },
+      {
+        "n": "imagen",
+        "d": "Generate images using Google Gemini image generation model. Use when user reques"
+      },
+      {
+        "n": "incident-runbook-templates",
+        "d": "Create structured incident response runbooks with step-by-step procedures, escal"
+      },
+      {
+        "n": "interactive-portfolio",
+        "d": "Expert in building portfolios that actually land jobs and clients - not just sho"
+      },
+      {
+        "n": "ios-developer",
+        "d": "Develop native iOS applications with Swift/SwiftUI. Masters iOS 18,"
+      },
+      {
+        "n": "istio-traffic-management",
+        "d": "Configure Istio traffic management including routing, load balancing, circuit br"
+      },
+      {
+        "n": "java-architect",
+        "d": "Use when building enterprise Java applications with Spring Boot 3.x, microservic"
+      },
+      {
+        "n": "javascript-typescript",
+        "d": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web "
+      },
+      {
+        "n": "javascript-typescript-typescript-scaffold",
+        "d": "You are a TypeScript project architecture expert specializing in scaffolding pro"
+      },
+      {
+        "n": "kaizen",
+        "d": "Guide for continuous improvement, error proofing, and standardization. Use this "
+      },
+      {
+        "n": "kotlin-specialist",
+        "d": "Use when building Kotlin applications requiring coroutines, multiplatform develo"
+      },
+      {
+        "n": "kpi-dashboard-design",
+        "d": "Design effective KPI dashboards with metrics selection, visualization best pract"
+      },
+      {
+        "n": "kubernetes-specialist",
+        "d": "Use when deploying or managing Kubernetes workloads requiring cluster configurat"
+      },
+      {
+        "n": "langchain-architecture",
+        "d": "Design LLM applications using the LangChain framework with agents, memory, and t"
+      },
+      {
+        "n": "langgraph",
+        "d": "Expert in LangGraph - the production-grade framework for building stateful, mult"
+      },
+      {
+        "n": "laravel-specialist",
+        "d": "Use when building Laravel 10+ applications requiring Eloquent ORM, API resources"
+      },
+      {
+        "n": "learn",
+        "d": "Interactive step-by-step learning mode. Teaches concepts from basics to advanced"
+      },
+      {
+        "n": "linux-privilege-escalation",
+        "d": "This skill should be used when the user asks to \"escalate privileges on Linux\", "
+      },
+      {
+        "n": "linux-shell-scripting",
+        "d": "This skill should be used when the user asks to \"create bash scripts\", \"automate"
+      },
+      {
+        "n": "llm-app-patterns",
+        "d": "Production-ready patterns for building LLM applications. Covers RAG pipelines, a"
+      },
+      {
+        "n": "llm-application-dev",
+        "d": "Building applications with Large Language Models - prompt engineering, RAG patte"
+      },
+      {
+        "n": "loki-mode",
+        "d": "Multi-agent autonomous startup system for Claude Code. Triggers on \"Loki Mode\". "
+      },
+      {
+        "n": "makepad-skills",
+        "d": "Makepad UI development skills for Rust apps: setup, patterns, shaders, packaging"
+      },
+      {
+        "n": "mcp-builder",
+        "d": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable"
+      },
+      {
+        "n": "mcp-developer",
+        "d": "Use when building MCP servers or clients that connect AI systems with external t"
+      },
+      {
+        "n": "memory-forensics",
+        "d": "Master memory forensics techniques including memory acquisition, process analysi"
+      },
+      {
+        "n": "metasploit-framework",
+        "d": "This skill should be used when the user asks to \"use Metasploit for penetration "
+      },
+      {
+        "n": "micro-saas-launcher",
+        "d": "Expert in launching small, focused SaaS products fast - the indie hacker approac"
+      },
+      {
+        "n": "microservices-patterns",
+        "d": "Design microservices architectures with service boundaries, event-driven communi"
+      },
+      {
+        "n": "ml-engineer",
+        "d": "Build production ML systems with PyTorch 2.x, TensorFlow, and"
+      },
+      {
+        "n": "ml-pipeline",
+        "d": "Use when building ML pipelines, orchestrating training workflows, automating mod"
+      },
+      {
+        "n": "ml-pipeline-workflow",
+        "d": "Build end-to-end MLOps pipelines from data preparation through model training, v"
+      },
+      {
+        "n": "mlops-engineer",
+        "d": "Build comprehensive ML pipelines, experiment tracking, and model"
+      },
+      {
+        "n": "mobile-design",
+        "d": "Mobile-first design and engineering doctrine for iOS and Android apps. Covers to"
+      },
+      {
+        "n": "mobile-developer",
+        "d": "Develop React Native, Flutter, or native mobile apps with modern"
+      },
+      {
+        "n": "mobile-development",
+        "d": "Build modern mobile applications with React Native, Flutter, Swift/SwiftUI, and "
+      },
+      {
+        "n": "monorepo-architect",
+        "d": "Expert in monorepo architecture, build systems, and dependency management at sca"
+      },
+      {
+        "n": "monorepo-management",
+        "d": "Master monorepo management with Turborepo, Nx, and pnpm workspaces to build effi"
+      },
+      {
+        "n": "moodle-external-api-development",
+        "d": "Create custom external web service APIs for Moodle LMS. Use when implementing we"
+      },
+      {
+        "n": "multi-cloud-architecture",
+        "d": "Design multi-cloud architectures using a decision framework to select and integr"
+      },
+      {
+        "n": "multi-platform-apps-multi-platform",
+        "d": "Build and deploy the same feature consistently across web, mobile, and desktop p"
+      },
+      {
+        "n": "n8n-mcp-tools-expert",
+        "d": "Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nod"
+      },
+      {
+        "n": "n8n-node-configuration",
+        "d": "Operation-aware node configuration guidance. Use when configuring nodes, underst"
+      },
+      {
+        "n": "nanobanana-ppt-skills",
+        "d": "AI-powered PPT generation with document analysis and styled images"
+      },
+      {
+        "n": "network-101",
+        "d": "This skill should be used when the user asks to \"set up a web server\", \"configur"
+      },
+      {
+        "n": "nextjs-app-router-patterns",
+        "d": "Master Next.js 14+ App Router with Server Components, streaming, parallel routes"
+      },
+      {
+        "n": "nextjs-best-practices",
+        "d": "Next.js App Router principles. Server Components, data fetching, routing pattern"
+      },
+      {
+        "n": "nextjs-developer",
+        "d": "Use when building Next.js 14+ applications with App Router, server components, o"
+      },
+      {
+        "n": "nextjs-supabase-auth",
+        "d": "Expert integration of Supabase Auth with Next.js App Router Use when: supabase a"
+      },
+      {
+        "n": "nft-standards",
+        "d": "Implement NFT standards (ERC-721, ERC-1155) with proper metadata handling, minti"
+      },
+      {
+        "n": "nodejs-backend-patterns",
+        "d": "Build production-ready Node.js backend services with Express/Fastify, implementi"
+      },
+      {
+        "n": "nosql-expert",
+        "d": "Expert guidance for distributed NoSQL databases (Cassandra, DynamoDB). Focuses o"
+      },
+      {
+        "n": "notion-template-business",
+        "d": "Expert in building and selling Notion templates as a business - not just making "
+      },
+      {
+        "n": "nx-workspace-patterns",
+        "d": "Configure and optimize Nx monorepo workspaces. Use when setting up Nx, configuri"
+      },
+      {
+        "n": "observability-engineer",
+        "d": "Build production-ready monitoring, logging, and tracing systems."
+      },
+      {
+        "n": "observability-monitoring-slo-implement",
+        "d": "You are an SLO (Service Level Objective) expert specializing in implementing rel"
+      },
+      {
+        "n": "obsidian-clipper-template-creator",
+        "d": "Guide for creating templates for the Obsidian Web Clipper. Use when you want to "
+      },
+      {
+        "n": "parallel-agents",
+        "d": "Multi-agent orchestration patterns. Use when multiple independent tasks can run "
+      },
+      {
+        "n": "paypal-integration",
+        "d": "Integrate PayPal payment processing with support for express checkout, subscript"
+      },
+      {
+        "n": "pci-compliance",
+        "d": "Implement PCI DSS compliance requirements for secure handling of payment card da"
+      },
+      {
+        "n": "personal-tool-builder",
+        "d": "Expert in building custom tools that solve your own problems first. The best pro"
+      },
+      {
+        "n": "planning-with-files",
+        "d": "Implements Manus-style file-based planning for complex tasks. Creates task_plan."
+      },
+      {
+        "n": "playwright-skill",
+        "d": "Complete browser automation with Playwright. Auto-detects dev servers, writes cl"
+      },
+      {
+        "n": "podcast-generation",
+        "d": "Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Real"
+      },
+      {
+        "n": "privilege-escalation-methods",
+        "d": "This skill should be used when the user asks to \"escalate privileges\", \"get root"
+      },
+      {
+        "n": "product-manager-toolkit",
+        "d": "Comprehensive toolkit for product managers including RICE prioritization, custom"
+      },
+      {
+        "n": "projection-patterns",
+        "d": "Build read models and projections from event streams. Use when implementing CQRS"
+      },
+      {
+        "n": "prompt-engineering",
+        "d": "Expert guide on prompt engineering patterns, best practices, and optimization te"
+      },
+      {
+        "n": "python-testing-patterns",
+        "d": "Implement comprehensive testing strategies with pytest, fixtures, mocking, and t"
+      },
+      {
+        "n": "quant-analyst",
+        "d": "Build financial models, backtest trading strategies, and analyze"
+      },
+      {
+        "n": "radix-ui-design-system",
+        "d": "Build accessible design systems with Radix UI primitives. Headless component cus"
+      },
+      {
+        "n": "rag-architect",
+        "d": "Use when building RAG systems, vector databases, or knowledge-grounded AI applic"
+      },
+      {
+        "n": "rag-engineer",
+        "d": "Expert in building Retrieval-Augmented Generation systems. Masters embedding mod"
+      },
+      {
+        "n": "rag-implementation",
+        "d": "Build Retrieval-Augmented Generation (RAG) systems for LLM applications with vec"
+      },
+      {
+        "n": "rails-expert",
+        "d": "Use when building Rails 7+ web applications with Hotwire, real-time features, or"
+      },
+      {
+        "n": "react-best-practices",
+        "d": "React and Next.js performance optimization guidelines from Vercel Engineering. T"
+      },
+      {
+        "n": "react-expert",
+        "d": "Use when building React 18+ applications requiring component architecture, hooks"
+      },
+      {
+        "n": "react-flow-node",
+        "d": "Create React Flow node components with TypeScript types, handles, and Zustand in"
+      },
+      {
+        "n": "react-modernization",
+        "d": "Upgrade React applications to latest versions, migrate from class components to "
+      },
+      {
+        "n": "react-native-architecture",
+        "d": "Build production React Native apps with Expo, navigation, native modules, offlin"
+      },
+      {
+        "n": "react-native-expert",
+        "d": "Use when building cross-platform mobile applications with React Native or Expo. "
+      },
+      {
+        "n": "react-patterns",
+        "d": "Modern React patterns and principles. Hooks, composition, performance, TypeScrip"
+      },
+      {
+        "n": "react-state-management",
+        "d": "Master modern React state management with Redux Toolkit, Zustand, Jotai, and Rea"
+      },
+      {
+        "n": "react-ui-patterns",
+        "d": "Modern React UI patterns for loading states, error handling, and data fetching. "
+      },
+      {
+        "n": "receiving-code-review",
+        "d": "Use when receiving code review feedback, before implementing suggestions, especi"
+      },
+      {
+        "n": "reference-builder",
+        "d": "Creates exhaustive technical references and API documentation."
+      },
+      {
+        "n": "remotion-best-practices",
+        "d": "Best practices for Remotion - Video creation in React"
+      },
+      {
+        "n": "requesting-code-review",
+        "d": "Use when completing tasks, implementing major features, or before merging to ver"
+      },
+      {
+        "n": "research-engineer",
+        "d": "An uncompromising Academic Research Engineer. Operates with absolute scientific "
+      },
+      {
+        "n": "risk-metrics-calculation",
+        "d": "Calculate portfolio risk metrics including VaR, CVaR, Sharpe, Sortino, and drawd"
+      },
+      {
+        "n": "rust-async-patterns",
+        "d": "Master Rust async programming with Tokio, async traits, error handling, and conc"
+      },
+      {
+        "n": "rust-engineer",
+        "d": "Use when building Rust applications requiring memory safety, systems programming"
+      },
+      {
+        "n": "salesforce-developer",
+        "d": "Use when developing Salesforce applications, Apex code, Lightning Web Components"
+      },
+      {
+        "n": "salesforce-development",
+        "d": "Expert patterns for Salesforce platform development including Lightning Web Comp"
+      },
+      {
+        "n": "scanning-tools",
+        "d": "This skill should be used when the user asks to \"perform vulnerability scanning\""
+      },
+      {
+        "n": "scroll-experience",
+        "d": "Expert in building immersive scroll-driven experiences - parallax storytelling, "
+      },
+      {
+        "n": "security-bluebook-builder",
+        "d": "Build security Blue Books for sensitive apps"
+      },
+      {
+        "n": "security-compliance-compliance-check",
+        "d": "You are a compliance expert specializing in regulatory requirements for software"
+      },
+      {
+        "n": "security-requirement-extraction",
+        "d": "Derive security requirements from threat models and business context. Use when t"
+      },
+      {
+        "n": "senior-architect",
+        "d": "Comprehensive software architecture skill for designing scalable, maintainable s"
+      },
+      {
+        "n": "senior-backend",
+        "d": "Comprehensive backend development skill for building scalable backend systems us"
+      },
+      {
+        "n": "senior-computer-vision",
+        "d": "World-class computer vision skill for image/video processing, object detection, "
+      },
+      {
+        "n": "senior-data-engineer",
+        "d": "World-class data engineering skill for building scalable data pipelines, ETL/ELT"
+      },
+      {
+        "n": "senior-data-scientist",
+        "d": "World-class data science skill for statistical modeling, experimentation, causal"
+      },
+      {
+        "n": "senior-frontend",
+        "d": "Comprehensive frontend development skill for building modern, performant web app"
+      },
+      {
+        "n": "senior-fullstack",
+        "d": "Comprehensive fullstack development skill for building complete web applications"
+      },
+      {
+        "n": "senior-ml-engineer",
+        "d": "World-class ML engineering skill for productionizing ML models, MLOps, and build"
+      },
+      {
+        "n": "senior-prompt-engineer",
+        "d": "World-class prompt engineering skill for LLM optimization, prompt patterns, stru"
+      },
+      {
+        "n": "senior-qa",
+        "d": "Comprehensive QA and testing skill for quality assurance, test automation, and t"
+      },
+      {
+        "n": "senior-secops",
+        "d": "Comprehensive SecOps skill for application security, vulnerability management, c"
+      },
+      {
+        "n": "seo-authority-builder",
+        "d": "Analyzes content for E-E-A-T signals and suggests improvements to"
+      },
+      {
+        "n": "sequential-thinking",
+        "d": "Apply structured, reflective problem-solving for complex tasks requiring multi-s"
+      },
+      {
+        "n": "shodan-reconnaissance",
+        "d": "This skill should be used when the user asks to \"search for exposed devices on t"
+      },
+      {
+        "n": "shopify-apps",
+        "d": "Expert patterns for Shopify app development including Remix/React Router apps, e"
+      },
+      {
+        "n": "shopify-expert",
+        "d": "Use when building Shopify themes, apps, custom storefronts, or e-commerce soluti"
+      },
+      {
+        "n": "similarity-search-patterns",
+        "d": "Implement efficient similarity search with vector databases. Use when building s"
+      },
+      {
+        "n": "skill-creator",
+        "d": "Guide for creating effective skills. This skill should be used when users want t"
+      },
+      {
+        "n": "slack-bot-builder",
+        "d": "Build Slack apps using the Bolt framework across Python, JavaScript, and Java. C"
+      },
+      {
+        "n": "software-architecture",
+        "d": "Guide for quality focused software architecture. This skill should be used when "
+      },
+      {
+        "n": "solidity-security",
+        "d": "Master smart contract security best practices to prevent common vulnerabilities "
+      },
+      {
+        "n": "spark-engineer",
+        "d": "Use when building Apache Spark applications, distributed data processing pipelin"
+      },
+      {
+        "n": "spring-boot-engineer",
+        "d": "Use when building Spring Boot 3.x applications, microservices, or reactive Java "
+      },
+      {
+        "n": "sqlmap-database-pentesting",
+        "d": "This skill should be used when the user asks to \"automate SQL injection testing,"
+      },
+      {
+        "n": "sre-engineer",
+        "d": "Use when defining SLIs/SLOs, managing error budgets, or building reliable system"
+      },
+      {
+        "n": "stitch-ui-design",
+        "d": "Expert guide for creating effective prompts for Google Stitch AI UI design tool."
+      },
+      {
+        "n": "stripe-integration",
+        "d": "Implement Stripe payment processing for robust, PCI-compliant payment flows incl"
+      },
+      {
+        "n": "swift-expert",
+        "d": "Use when building iOS/macOS applications with Swift 5.9+, SwiftUI, or async/awai"
+      },
+      {
+        "n": "swiftui-expert-skill",
+        "d": "Write, review, or improve SwiftUI code following best practices for state manage"
+      },
+      {
+        "n": "tailwind-design-system",
+        "d": "Build scalable design systems with Tailwind CSS, design tokens, component librar"
+      },
+      {
+        "n": "tailwind-patterns",
+        "d": "Tailwind CSS v4 principles. CSS-first configuration, container queries, modern p"
+      },
+      {
+        "n": "telegram-bot-builder",
+        "d": "Expert in building Telegram bots that solve real problems - from simple automati"
+      },
+      {
+        "n": "telegram-mini-app",
+        "d": "Expert in building Telegram Mini Apps (TWA) - web apps that run inside Telegram "
+      },
+      {
+        "n": "terraform-module-library",
+        "d": "Build reusable Terraform modules for AWS, Azure, and GCP infrastructure followin"
+      },
+      {
+        "n": "test-fixing",
+        "d": "Run tests and systematically fix all failing tests using smart error grouping. U"
+      },
+      {
+        "n": "test-master",
+        "d": "Use when writing tests, creating test strategies, or building automation framewo"
+      },
+      {
+        "n": "threat-modeling-expert",
+        "d": "Expert in threat modeling methodologies, security architecture review, and risk "
+      },
+      {
+        "n": "threejs",
+        "d": "Build immersive 3D web experiences with Three.js - WebGL/WebGPU library for scen"
+      },
+      {
+        "n": "tool-design",
+        "d": "Build tools that agents can use effectively, including architectural reduction p"
+      },
+      {
+        "n": "turborepo-caching",
+        "d": "Configure Turborepo for efficient monorepo builds with local and remote caching."
+      },
+      {
+        "n": "twilio-communications",
+        "d": "Build communication features with Twilio: SMS messaging, voice calls, WhatsApp B"
+      },
+      {
+        "n": "typescript-advanced-types",
+        "d": "Master TypeScript's advanced type system including generics, conditional types, "
+      },
+      {
+        "n": "ui-design-system",
+        "d": "UI design system toolkit for Senior UI Designer including design token generatio"
+      },
+      {
+        "n": "ui-skills",
+        "d": "Opinionated, evolving constraints to guide agents when building interfaces"
+      },
+      {
+        "n": "ui-styling",
+        "d": "Create beautiful, accessible user interfaces with shadcn/ui components (built on"
+      },
+      {
+        "n": "ui-ux-designer",
+        "d": "Create interface designs, wireframes, and design systems. Masters"
+      },
+      {
+        "n": "ui-ux-pro-max",
+        "d": "UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, "
+      },
+      {
+        "n": "ui-visual-validator",
+        "d": "Rigorous visual validation expert specializing in UI testing,"
+      },
+      {
+        "n": "unity-developer",
+        "d": "Build Unity games with optimized C# scripts, efficient rendering,"
+      },
+      {
+        "n": "unity-ecs-patterns",
+        "d": "Master Unity ECS (Entity Component System) with DOTS, Jobs, and Burst for high-p"
+      },
+      {
+        "n": "unreal-engine-cpp-pro",
+        "d": "Expert guide for Unreal Engine 5.x C++ development, covering UObject hygiene, pe"
+      },
+      {
+        "n": "using-neon",
+        "d": "Guides and best practices for working with Neon Serverless Postgres. Covers gett"
+      },
+      {
+        "n": "using-superpowers",
+        "d": "Use when starting any conversation - establishes how to find and use skills, req"
+      },
+      {
+        "n": "ux-researcher-designer",
+        "d": "UX research and design toolkit for Senior UX Designer/Researcher including data-"
+      },
+      {
+        "n": "vercel-deploy-claimable",
+        "d": "Deploy applications and websites to Vercel. Use when user requests deployment ac"
+      },
+      {
+        "n": "vercel-deployment",
+        "d": "Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, "
+      },
+      {
+        "n": "verification-before-completion",
+        "d": "Use when about to claim work is complete, fixed, or passing, before committing o"
+      },
+      {
+        "n": "viral-generator-builder",
+        "d": "Expert in building shareable generator tools that go viral - name generators, qu"
+      },
+      {
+        "n": "voice-ai-development",
+        "d": "Expert in building voice AI applications - from real-time voice agents to voice-"
+      },
+      {
+        "n": "voice-ai-engine-development",
+        "d": "Build real-time conversational AI voice engines using async worker pipelines, st"
+      },
+      {
+        "n": "vue-expert",
+        "d": "Provides Vue 3 expertise including Composition API, reactivity system, component"
+      },
+      {
+        "n": "vue-expert-js",
+        "d": "Use when building Vue 3 applications with JavaScript only (no TypeScript). Invok"
+      },
+      {
+        "n": "wcag-audit-patterns",
+        "d": "Conduct WCAG 2.2 accessibility audits with automated testing, manual verificatio"
+      },
+      {
+        "n": "web-artifacts-builder",
+        "d": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts "
+      },
+      {
+        "n": "web-design-guidelines",
+        "d": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"revie"
+      },
+      {
+        "n": "web-frameworks",
+        "d": "Build modern full-stack web applications with Next.js (App Router, Server Compon"
+      },
+      {
+        "n": "web3-testing",
+        "d": "Test smart contracts comprehensively using Hardhat and Foundry with unit tests, "
+      },
+      {
+        "n": "webapp-testing",
+        "d": "Toolkit for interacting with and testing local web applications using Playwright"
+      },
+      {
+        "n": "websocket-engineer",
+        "d": "Use when building real-time communication systems with WebSockets or Socket.IO. "
+      },
+      {
+        "n": "windows-privilege-escalation",
+        "d": "This skill should be used when the user asks to \"escalate privileges on Windows,"
+      },
+      {
+        "n": "workflow-orchestration-patterns",
+        "d": "Design durable workflows with Temporal for distributed systems. Covers workflow "
+      },
+      {
+        "n": "writing-plans",
+        "d": "Use when you have a spec or requirements for a multi-step task, before touching "
+      },
+      {
+        "n": "zapier-make-patterns",
+        "d": "No-code automation democratizes workflow building. Zapier and Make (formerly Int"
+      },
+      {
+        "n": "zustand-store",
+        "d": "Create Zustand stores with TypeScript, subscribeWithSelector middleware, and pro"
+      }
+    ]
+  },
+  "git-workflow": {
+    "count": 53,
+    "skills": [
+      {
+        "n": "address-github-comments",
+        "d": "Use when you need to address review or issue comments on an open GitHub Pull Req"
+      },
+      {
+        "n": "best-practices",
+        "d": ">-"
+      },
+      {
+        "n": "c4-architecture-c4-architecture",
+        "d": "Generate comprehensive C4 architecture documentation for an existing repository/"
+      },
+      {
+        "n": "changelog-automation",
+        "d": "Automate changelog generation from commits, PRs, and releases following Keep a C"
+      },
+      {
+        "n": "claude-speed-reader",
+        "d": "-Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP high"
+      },
+      {
+        "n": "competitor-alternatives",
+        "d": "When the user wants to create competitor comparison or alternative pages for SEO"
+      },
+      {
+        "n": "comprehensive-review-full-review",
+        "d": "Use when working with comprehensive review full review"
+      },
+      {
+        "n": "conductor-setup",
+        "d": "Initialize project with Conductor artifacts (product definition,"
+      },
+      {
+        "n": "conductor-validator",
+        "d": "Validates Conductor project artifacts for completeness,"
+      },
+      {
+        "n": "context-compression",
+        "d": "Design and evaluate compression strategies for long-running sessions"
+      },
+      {
+        "n": "copy-editing",
+        "d": "When the user wants to edit, review, or improve existing marketing copy. Also us"
+      },
+      {
+        "n": "csharp-pro",
+        "d": "Write modern C# code with advanced features like records, pattern"
+      },
+      {
+        "n": "design-md",
+        "d": "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md f"
+      },
+      {
+        "n": "developer-growth-analysis",
+        "d": "Analyzes your recent Claude Code chat history to identify coding patterns, devel"
+      },
+      {
+        "n": "docs-architect",
+        "d": "Creates comprehensive technical documentation from existing"
+      },
+      {
+        "n": "docx",
+        "d": "Comprehensive document creation, editing, and analysis with support for tracked "
+      },
+      {
+        "n": "docx-official",
+        "d": "Comprehensive document creation, editing, and analysis with support for tracked "
+      },
+      {
+        "n": "elixir-pro",
+        "d": "Write idiomatic Elixir code with OTP patterns, supervision trees,"
+      },
+      {
+        "n": "executing-plans",
+        "d": "Use when you have a written implementation plan to execute in a separate session"
+      },
+      {
+        "n": "fix-review",
+        "d": "Verify fix commits address audit findings without new bugs"
+      },
+      {
+        "n": "fp-ts-errors",
+        "d": "Handle errors as values using fp-ts Either and TaskEither for cleaner, more pred"
+      },
+      {
+        "n": "git-pushing",
+        "d": "Stage, commit, and push git changes with conventional commit messages. Use when "
+      },
+      {
+        "n": "hr-pro",
+        "d": "Professional, ethical HR partner for hiring,"
+      },
+      {
+        "n": "invoice-organizer",
+        "d": "Automatically organizes invoices and receipts for tax preparation by reading mes"
+      },
+      {
+        "n": "issue-creator",
+        "d": "Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub"
+      },
+      {
+        "n": "java-pro",
+        "d": "Master Java 21+ with modern features like virtual threads, pattern"
+      },
+      {
+        "n": "julia-pro",
+        "d": "Master Julia 1.10+ with modern features, performance optimization,"
+      },
+      {
+        "n": "lead-research-assistant",
+        "d": "Identifies high-quality leads for your product or service by analyzing your busi"
+      },
+      {
+        "n": "linear-claude-skill",
+        "d": "Manage Linear issues, projects, and teams"
+      },
+      {
+        "n": "lint-and-validate",
+        "d": "Automatic quality control, linting, and static analysis procedures. Use after ev"
+      },
+      {
+        "n": "marketing-ideas",
+        "d": "Provide proven marketing strategies and growth ideas for SaaS and software produ"
+      },
+      {
+        "n": "on-call-handoff-patterns",
+        "d": "Master on-call shift handoffs with context transfer, escalation procedures, and "
+      },
+      {
+        "n": "plans-kanban",
+        "d": "View plans dashboard with progress tracking and timeline visualization. Use for "
+      },
+      {
+        "n": "posix-shell-pro",
+        "d": "Expert in strict POSIX sh scripting for maximum portability across"
+      },
+      {
+        "n": "pptx",
+        "d": "Presentation creation, editing, and analysis. When Claude needs to work with pre"
+      },
+      {
+        "n": "pptx-official",
+        "d": "Presentation creation, editing, and analysis. When Claude needs to work with pre"
+      },
+      {
+        "n": "product-strategist",
+        "d": "Strategic product leadership toolkit for Head of Product including OKR cascade g"
+      },
+      {
+        "n": "production-code-audit",
+        "d": "Autonomously deep-scan entire codebase line-by-line, understand architecture and"
+      },
+      {
+        "n": "programmatic-seo",
+        "d": ">"
+      },
+      {
+        "n": "referral-program",
+        "d": "When the user wants to create, optimize, or analyze a referral program, affiliat"
+      },
+      {
+        "n": "scala-pro",
+        "d": "Master enterprise-grade Scala development with functional"
+      },
+      {
+        "n": "seo-cannibalization-detector",
+        "d": "Analyzes multiple provided pages to identify keyword overlap and"
+      },
+      {
+        "n": "seo-content-auditor",
+        "d": "Analyzes provided content for quality, E-E-A-T signals, and SEO"
+      },
+      {
+        "n": "seo-content-planner",
+        "d": "Creates comprehensive content outlines and topic clusters for SEO."
+      },
+      {
+        "n": "seo-content-refresher",
+        "d": "Identifies outdated elements in provided content and suggests"
+      },
+      {
+        "n": "seo-content-writer",
+        "d": "Writes SEO-optimized content based on provided keywords and topic"
+      },
+      {
+        "n": "seo-keyword-strategist",
+        "d": "Analyzes keyword usage in provided content, calculates density,"
+      },
+      {
+        "n": "signup-flow-cro",
+        "d": "When the user wants to optimize signup, registration, account creation, or trial"
+      },
+      {
+        "n": "slo-implementation",
+        "d": "Define and implement Service Level Indicators (SLIs) and Service Level Objective"
+      },
+      {
+        "n": "startup-business-analyst-business-case",
+        "d": "Generate comprehensive investor-ready business case document with"
+      },
+      {
+        "n": "typescript-pro",
+        "d": "Master TypeScript with advanced types, generics, and strict type"
+      },
+      {
+        "n": "using-git-worktrees",
+        "d": "Use when starting feature work that needs isolation from current workspace or be"
+      },
+      {
+        "n": "youtube-transcript",
+        "d": "Download YouTube video transcripts when user provides a YouTube URL or asks to d"
+      }
+    ]
+  },
+  "testing": {
+    "count": 34,
+    "skills": [
+      {
+        "n": "agent-evaluation",
+        "d": "Testing and benchmarking LLM agents including behavioral testing, capability ass"
+      },
+      {
+        "n": "conductor-implement",
+        "d": "Execute tasks from a track's implementation plan following TDD workflow"
+      },
+      {
+        "n": "conductor-revert",
+        "d": "Git-aware undo by logical work unit (track, phase, or task)"
+      },
+      {
+        "n": "ethical-hacking-methodology",
+        "d": "This skill should be used when the user asks to \"learn ethical hacking\", \"unders"
+      },
+      {
+        "n": "file-path-traversal",
+        "d": "This skill should be used when the user asks to \"test for directory traversal\", "
+      },
+      {
+        "n": "html-injection-testing",
+        "d": "This skill should be used when the user asks to \"test for HTML injection\", \"inje"
+      },
+      {
+        "n": "infinite-gratitude",
+        "d": "Multi-agent research skill for parallel research execution (10 agents, battle-te"
+      },
+      {
+        "n": "javascript-testing-patterns",
+        "d": "Implement comprehensive testing strategies using Jest, Vitest, and Testing Libra"
+      },
+      {
+        "n": "llm-evaluation",
+        "d": "Implement comprehensive evaluation strategies for LLM applications using automat"
+      },
+      {
+        "n": "meeting-insights-analyzer",
+        "d": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, comm"
+      },
+      {
+        "n": "payment-integration",
+        "d": "Integrate Stripe, PayPal, and payment processors. Handles checkout"
+      },
+      {
+        "n": "pentest-checklist",
+        "d": "This skill should be used when the user asks to \"plan a penetration test\", \"crea"
+      },
+      {
+        "n": "pentest-commands",
+        "d": "This skill should be used when the user asks to \"run pentest commands\", \"scan wi"
+      },
+      {
+        "n": "performance-testing-review-multi-agent-review",
+        "d": "Use when working with performance testing review multi agent review"
+      },
+      {
+        "n": "playwright-expert",
+        "d": "Use when writing E2E tests with Playwright, setting up test infrastructure, or d"
+      },
+      {
+        "n": "pypict-skill",
+        "d": "Pairwise test generation"
+      },
+      {
+        "n": "raffle-winner-picker",
+        "d": "Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, r"
+      },
+      {
+        "n": "sast-configuration",
+        "d": "Configure Static Application Security Testing (SAST) tools for automated vulnera"
+      },
+      {
+        "n": "security-scanning-security-sast",
+        "d": "Static Application Security Testing (SAST) for code vulnerability"
+      },
+      {
+        "n": "senior-security",
+        "d": "Comprehensive security engineering skill for application security, penetration t"
+      },
+      {
+        "n": "ssh-penetration-testing",
+        "d": "This skill should be used when the user asks to \"pentest SSH services\", \"enumera"
+      },
+      {
+        "n": "startup-business-analyst-market-opportunity",
+        "d": "Generate comprehensive market opportunity analysis with TAM/SAM/SOM"
+      },
+      {
+        "n": "systematic-debugging",
+        "d": "Use when encountering any bug, test failure, or unexpected behavior, before prop"
+      },
+      {
+        "n": "tdd-workflows-tdd-cycle",
+        "d": "Use when working with tdd workflows tdd cycle"
+      },
+      {
+        "n": "tdd-workflows-tdd-green",
+        "d": "Implement the minimal code needed to make failing tests pass in the TDD green ph"
+      },
+      {
+        "n": "tdd-workflows-tdd-red",
+        "d": "Generate failing tests for the TDD red phase to define expected behavior and edg"
+      },
+      {
+        "n": "tdd-workflows-tdd-refactor",
+        "d": "Use when working with tdd workflows tdd refactor"
+      },
+      {
+        "n": "temporal-python-testing",
+        "d": "Test Temporal workflows with pytest, time-skipping, and mocking strategies. Cove"
+      },
+      {
+        "n": "test-automator",
+        "d": "Master AI-powered test automation with modern frameworks,"
+      },
+      {
+        "n": "test-driven-development",
+        "d": "Use when implementing any feature or bugfix, before writing implementation code"
+      },
+      {
+        "n": "testing-patterns",
+        "d": "Jest testing patterns, factory functions, mocking strategies, and TDD workflow. "
+      },
+      {
+        "n": "unit-testing-test-generate",
+        "d": "Generate comprehensive, maintainable unit tests across languages with strong cov"
+      },
+      {
+        "n": "wordpress-penetration-testing",
+        "d": "This skill should be used when the user asks to \"pentest WordPress sites\", \"scan"
+      },
+      {
+        "n": "workflow-patterns",
+        "d": "Use this skill when implementing tasks according to Conductor's TDD"
+      }
+    ]
+  },
+  "devops": {
+    "count": 141,
+    "skills": [
+      {
+        "n": "agent-memory-mcp",
+        "d": "A hybrid memory system that provides persistent, searchable knowledge management"
+      },
+      {
+        "n": "agile-product-owner",
+        "d": "Agile product ownership toolkit for Senior Product Owner including INVEST-compli"
+      },
+      {
+        "n": "architect-review",
+        "d": "Master software architect specializing in modern architecture"
+      },
+      {
+        "n": "architecture-decision-records",
+        "d": "Write and maintain Architecture Decision Records (ADRs) following best practices"
+      },
+      {
+        "n": "architecture-designer",
+        "d": "Use when designing new system architecture, reviewing existing designs, or makin"
+      },
+      {
+        "n": "aws-skills",
+        "d": "AWS development with infrastructure automation and cloud architecture patterns"
+      },
+      {
+        "n": "bash-pro",
+        "d": "Master of defensive Bash scripting for production automation, CI/CD"
+      },
+      {
+        "n": "blockrun",
+        "d": "Use when user needs capabilities Claude lacks (image generation, real-time X/Twi"
+      },
+      {
+        "n": "broken-authentication",
+        "d": "This skill should be used when the user asks to \"test for broken authentication "
+      },
+      {
+        "n": "c-pro",
+        "d": "Write efficient C code with proper memory management, pointer"
+      },
+      {
+        "n": "c4-code",
+        "d": "Expert C4 Code-level documentation specialist. Analyzes code"
+      },
+      {
+        "n": "c4-container",
+        "d": "Expert C4 Container-level documentation specialist. Synthesizes"
+      },
+      {
+        "n": "c4-context",
+        "d": "Expert C4 Context-level documentation specialist. Creates"
+      },
+      {
+        "n": "changelog-generator",
+        "d": "Automatically creates user-facing changelogs from git commits by analyzing commi"
+      },
+      {
+        "n": "chaos-engineer",
+        "d": "Use when designing chaos experiments, implementing failure injection frameworks,"
+      },
+      {
+        "n": "cicd-automation-workflow-automate",
+        "d": "You are a workflow automation expert specializing in creating efficient CI/CD pi"
+      },
+      {
+        "n": "claude-scientific-skills",
+        "d": "Scientific research and analysis skills"
+      },
+      {
+        "n": "clean-code",
+        "d": "Pragmatic coding standards - concise, direct, no over-engineering, no unnecessar"
+      },
+      {
+        "n": "cloud-architect",
+        "d": "Expert cloud architect specializing in AWS/Azure/GCP multi-cloud"
+      },
+      {
+        "n": "cloud-penetration-testing",
+        "d": "This skill should be used when the user asks to \"perform cloud penetration testi"
+      },
+      {
+        "n": "cloudflare-expert",
+        "d": "Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1"
+      },
+      {
+        "n": "code-documentation-code-explain",
+        "d": "You are a code education expert specializing in explaining complex code through "
+      },
+      {
+        "n": "code-refactoring",
+        "d": "Code refactoring patterns and techniques for improving code quality without chan"
+      },
+      {
+        "n": "code-refactoring-tech-debt",
+        "d": "You are a technical debt expert specializing in identifying, quantifying, and pr"
+      },
+      {
+        "n": "code-review",
+        "d": "Automated code review for pull requests using specialized review patterns. Analy"
+      },
+      {
+        "n": "code-review-ai-ai-review",
+        "d": "You are an expert AI-powered code review specialist combining automated static a"
+      },
+      {
+        "n": "code-reviewer",
+        "d": "Elite code review expert specializing in modern AI-powered code"
+      },
+      {
+        "n": "codebase-cleanup-deps-audit",
+        "d": "You are a dependency security expert specializing in vulnerability scanning, lic"
+      },
+      {
+        "n": "codebase-cleanup-tech-debt",
+        "d": "You are a technical debt expert specializing in identifying, quantifying, and pr"
+      },
+      {
+        "n": "commit",
+        "d": "Create commit messages following Sentry conventions. Use when committing code ch"
+      },
+      {
+        "n": "comprehensive-review-pr-enhance",
+        "d": "You are a PR optimization expert specializing in creating high-quality pull requ"
+      },
+      {
+        "n": "concise-planning",
+        "d": "Use when a user asks for a plan for a coding task, to generate a clear, actionab"
+      },
+      {
+        "n": "conductor-new-track",
+        "d": "Create a new track with specification and phased implementation plan"
+      },
+      {
+        "n": "content-creator",
+        "d": "Create SEO-optimized marketing content with consistent brand voice. Includes bra"
+      },
+      {
+        "n": "content-marketer",
+        "d": "Elite content marketing strategist specializing in AI-powered"
+      },
+      {
+        "n": "content-research-writer",
+        "d": "Assists in writing high-quality content by conducting research, adding citations"
+      },
+      {
+        "n": "context-manager",
+        "d": "Elite AI context engineering specialist mastering dynamic context"
+      },
+      {
+        "n": "cost-optimization",
+        "d": "Optimize cloud costs through resource rightsizing, tagging strategies, reserved "
+      },
+      {
+        "n": "customer-support",
+        "d": "Elite AI-powered customer support specialist mastering"
+      },
+      {
+        "n": "data-engineering-data-pipeline",
+        "d": "You are a data pipeline architecture expert specializing in scalable, reliable, "
+      },
+      {
+        "n": "data-scientist",
+        "d": "Expert data scientist for advanced analytics, machine learning, and"
+      },
+      {
+        "n": "debugger",
+        "d": "Debugging specialist for errors, test failures, and unexpected"
+      },
+      {
+        "n": "debugging",
+        "d": "Systematic debugging framework ensuring root cause investigation before fixes. I"
+      },
+      {
+        "n": "debugging-strategies",
+        "d": "Master systematic debugging techniques, profiling tools, and root cause analysis"
+      },
+      {
+        "n": "dependency-management-deps-audit",
+        "d": "You are a dependency security expert specializing in vulnerability scanning, lic"
+      },
+      {
+        "n": "dependency-upgrade",
+        "d": "Manage major dependency version upgrades with compatibility analysis, staged rol"
+      },
+      {
+        "n": "deployment-engineer",
+        "d": "Expert deployment engineer specializing in modern CI/CD pipelines,"
+      },
+      {
+        "n": "deployment-pipeline-design",
+        "d": "Design multi-stage CI/CD pipelines with approval gates, security checks, and dep"
+      },
+      {
+        "n": "deployment-procedures",
+        "d": "Production deployment principles and decision-making. Safe deployment workflows,"
+      },
+      {
+        "n": "deployment-validation-config-validate",
+        "d": "You are a configuration management expert specializing in validating, testing, a"
+      },
+      {
+        "n": "devops-engineer",
+        "d": "Use when setting up CI/CD pipelines, containerizing applications, or managing in"
+      },
+      {
+        "n": "dispatching-parallel-agents",
+        "d": "Use when facing 2+ independent tasks that can be worked on without shared state "
+      },
+      {
+        "n": "distributed-debugging-debug-trace",
+        "d": "You are a debugging expert specializing in setting up comprehensive debugging en"
+      },
+      {
+        "n": "dx-optimizer",
+        "d": "Developer Experience specialist. Improves tooling, setup, and"
+      },
+      {
+        "n": "email-systems",
+        "d": "Email has the highest ROI of any marketing channel. $36 for every $1 spent. Yet "
+      },
+      {
+        "n": "embedding-strategies",
+        "d": "Select and optimize embedding models for semantic search and RAG applications. U"
+      },
+      {
+        "n": "employment-contract-templates",
+        "d": "Create employment contracts, offer letters, and HR policy documents following le"
+      },
+      {
+        "n": "error-debugging-error-analysis",
+        "d": "You are an expert error analysis specialist with deep expertise in debugging dis"
+      },
+      {
+        "n": "error-diagnostics-error-analysis",
+        "d": "You are an expert error analysis specialist with deep expertise in debugging dis"
+      },
+      {
+        "n": "error-diagnostics-error-trace",
+        "d": "You are an error tracking and observability expert specializing in implementing "
+      },
+      {
+        "n": "file-uploads",
+        "d": "Expert at handling file uploads and cloud storage. Covers S3, Cloudflare R2, pre"
+      },
+      {
+        "n": "fine-tuning-expert",
+        "d": "Use when fine-tuning LLMs, training custom models, or optimizing model performan"
+      },
+      {
+        "n": "firmware-analyst",
+        "d": "Expert firmware analyst specializing in embedded systems, IoT"
+      },
+      {
+        "n": "framework-migration-code-migrate",
+        "d": "You are a code migration expert specializing in transitioning codebases between "
+      },
+      {
+        "n": "framework-migration-deps-upgrade",
+        "d": "You are a dependency management expert specializing in safe, incremental upgrade"
+      },
+      {
+        "n": "game-development",
+        "d": "Game development orchestrator. Routes to platform-specific skills based on proje"
+      },
+      {
+        "n": "git-pr-workflows-git-workflow",
+        "d": "Orchestrate a comprehensive git workflow from code review through PR creation, l"
+      },
+      {
+        "n": "git-pr-workflows-onboard",
+        "d": "You are an **expert onboarding specialist and knowledge transfer architect** wit"
+      },
+      {
+        "n": "git-pr-workflows-pr-enhance",
+        "d": "You are a PR optimization expert specializing in creating high-quality pull requ"
+      },
+      {
+        "n": "github-workflow-automation",
+        "d": "Automate GitHub workflows with AI assistance. Includes PR reviews, issue triage,"
+      },
+      {
+        "n": "haskell-pro",
+        "d": "Expert Haskell engineer specializing in advanced type systems, pure"
+      },
+      {
+        "n": "helm-chart-scaffolding",
+        "d": "Design, organize, and manage Helm charts for templating and packaging Kubernetes"
+      },
+      {
+        "n": "hugging-face-cli",
+        "d": "Execute Hugging Face Hub operations using the `hf` CLI. Use when the user needs "
+      },
+      {
+        "n": "hugging-face-jobs",
+        "d": "This skill should be used when users want to run any workload on Hugging Face Jo"
+      },
+      {
+        "n": "hybrid-cloud-architect",
+        "d": "Expert hybrid cloud architect specializing in complex multi-cloud"
+      },
+      {
+        "n": "image-enhancer",
+        "d": "Improves the quality of images, especially screenshots, by enhancing resolution,"
+      },
+      {
+        "n": "incident-response-incident-response",
+        "d": "Use when working with incident response incident response"
+      },
+      {
+        "n": "incident-response-smart-fix",
+        "d": "[Extended thinking: This workflow implements a sophisticated debugging and resol"
+      },
+      {
+        "n": "internal-comms",
+        "d": "A set of resources to help me write all kinds of internal communications, using "
+      },
+      {
+        "n": "internal-comms-anthropic",
+        "d": "A set of resources to help me write all kinds of internal communications, using "
+      },
+      {
+        "n": "internal-comms-community",
+        "d": "A set of resources to help me write all kinds of internal communications, using "
+      },
+      {
+        "n": "iterate-pr",
+        "d": "Iterate on a PR until CI passes. Use when you need to fix CI failures, address r"
+      },
+      {
+        "n": "k8s-manifest-generator",
+        "d": "Create production-ready Kubernetes manifests for Deployments, Services, ConfigMa"
+      },
+      {
+        "n": "k8s-security-policies",
+        "d": "Implement Kubernetes security policies including NetworkPolicy, PodSecurityPolic"
+      },
+      {
+        "n": "kubernetes-architect",
+        "d": "Expert Kubernetes architect specializing in cloud-native"
+      },
+      {
+        "n": "langfuse",
+        "d": "Expert in Langfuse - the open-source LLM observability platform. Covers tracing,"
+      },
+      {
+        "n": "legal-advisor",
+        "d": "Draft privacy policies, terms of service, disclaimers, and legal"
+      },
+      {
+        "n": "linkerd-patterns",
+        "d": "Implement Linkerd service mesh patterns for lightweight, security-focused servic"
+      },
+      {
+        "n": "llm-application-dev-ai-assistant",
+        "d": "You are an AI assistant development expert specializing in creating intelligent "
+      },
+      {
+        "n": "llm-application-dev-langchain-agent",
+        "d": "You are an expert LangChain agent developer specializing in production-grade AI "
+      },
+      {
+        "n": "llm-application-dev-prompt-optimize",
+        "d": "You are an expert prompt engineer specializing in crafting effective prompts for"
+      },
+      {
+        "n": "malware-analyst",
+        "d": "Expert malware analyst specializing in defensive malware research,"
+      },
+      {
+        "n": "marketing-psychology",
+        "d": "Apply behavioral science and mental models to marketing decisions, prioritized u"
+      },
+      {
+        "n": "media-processing",
+        "d": "Process multimedia files with FFmpeg (video/audio encoding, conversion, streamin"
+      },
+      {
+        "n": "modern-javascript-patterns",
+        "d": "Master ES6+ features including async/await, destructuring, spread operators, arr"
+      },
+      {
+        "n": "monitoring-expert",
+        "d": "Use when setting up monitoring systems, logging, metrics, tracing, or alerting. "
+      },
+      {
+        "n": "network-engineer",
+        "d": "Expert network engineer specializing in modern cloud networking,"
+      },
+      {
+        "n": "notebooklm",
+        "d": "Use this skill to query your Google NotebookLM notebooks directly from Claude Co"
+      },
+      {
+        "n": "notebooklm-skill",
+        "d": "Use this skill to query your Google NotebookLM notebooks directly from Claude Co"
+      },
+      {
+        "n": "observability-monitoring-monitor-setup",
+        "d": "You are a monitoring and observability expert specializing in implementing compr"
+      },
+      {
+        "n": "paywall-upgrade-cro",
+        "d": "When the user wants to create or optimize in-app paywalls, upgrade screens, upse"
+      },
+      {
+        "n": "performance-engineer",
+        "d": "Expert performance engineer specializing in modern observability,"
+      },
+      {
+        "n": "performance-profiling",
+        "d": "Performance profiling principles. Measurement, analysis, and optimization techni"
+      },
+      {
+        "n": "performance-testing-review-ai-review",
+        "d": "You are an expert AI-powered code review specialist combining automated static a"
+      },
+      {
+        "n": "plan-writing",
+        "d": "Structured task planning with clear breakdowns, dependencies, and verification c"
+      },
+      {
+        "n": "postmortem-writing",
+        "d": "Write effective blameless postmortems with root cause analysis, timelines, and a"
+      },
+      {
+        "n": "pricing-strategy",
+        "d": "Design pricing, packaging, and monetization strategies based on value, customer "
+      },
+      {
+        "n": "problem-solving",
+        "d": "Apply systematic problem-solving techniques for complexity spirals (simplificati"
+      },
+      {
+        "n": "prompt-engineer",
+        "d": "Expert prompt engineer specializing in advanced prompting"
+      },
+      {
+        "n": "prompt-library",
+        "d": "Curated collection of high-quality prompts for various use cases. Includes role-"
+      },
+      {
+        "n": "python-patterns",
+        "d": "Python development principles and decision-making. Framework selection, async pa"
+      },
+      {
+        "n": "readme",
+        "d": "Create or update README.md files for projects. Use when user says write readme, "
+      },
+      {
+        "n": "red-team-tactics",
+        "d": "Red team tactics principles based on MITRE ATT&CK. Attack phases, detection evas"
+      },
+      {
+        "n": "reverse-engineer",
+        "d": "Expert reverse engineer specializing in binary analysis,"
+      },
+      {
+        "n": "screen-reader-testing",
+        "d": "Test web applications with screen readers including VoiceOver, NVDA, and JAWS. U"
+      },
+      {
+        "n": "screenshots",
+        "d": "Generate marketing screenshots of your app using Playwright. Use when the user w"
+      },
+      {
+        "n": "search-specialist",
+        "d": "Expert web researcher using advanced search techniques and"
+      },
+      {
+        "n": "secrets-management",
+        "d": "Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets"
+      },
+      {
+        "n": "security-auditor",
+        "d": "Expert security auditor specializing in DevSecOps, comprehensive"
+      },
+      {
+        "n": "security-reviewer",
+        "d": "Use when conducting security audits, reviewing code for vulnerabilities, or anal"
+      },
+      {
+        "n": "security-scanning-security-dependencies",
+        "d": "You are a security expert specializing in dependency vulnerability analysis, SBO"
+      },
+      {
+        "n": "senior-devops",
+        "d": "Comprehensive DevOps skill for CI/CD, infrastructure automation, containerizatio"
+      },
+      {
+        "n": "service-mesh-expert",
+        "d": "Expert service mesh architect specializing in Istio, Linkerd, and cloud-native n"
+      },
+      {
+        "n": "service-mesh-observability",
+        "d": "Implement comprehensive observability for service meshes including distributed t"
+      },
+      {
+        "n": "social-content",
+        "d": "When the user wants help creating, scheduling, or optimizing social media conten"
+      },
+      {
+        "n": "spec-miner",
+        "d": "Use when understanding legacy or undocumented systems, creating documentation fo"
+      },
+      {
+        "n": "startup-analyst",
+        "d": "Expert startup business analyst specializing in market sizing,"
+      },
+      {
+        "n": "startup-business-analyst-financial-projections",
+        "d": "Create detailed 3-5 year financial model with revenue, costs, cash"
+      },
+      {
+        "n": "startup-financial-modeling",
+        "d": "This skill should be used when the user asks to \"create financial"
+      },
+      {
+        "n": "systems-programming-rust-project",
+        "d": "You are a Rust project architecture expert specializing in scaffolding productio"
+      },
+      {
+        "n": "tdd-orchestrator",
+        "d": "Master TDD orchestrator specializing in red-green-refactor"
+      },
+      {
+        "n": "tdd-workflow",
+        "d": "Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle."
+      },
+      {
+        "n": "team-collaboration-issue",
+        "d": "You are a GitHub issue resolution expert specializing in systematic bug investig"
+      },
+      {
+        "n": "team-collaboration-standup-notes",
+        "d": "You are an expert team communication specialist focused on async-first standup p"
+      },
+      {
+        "n": "terraform-engineer",
+        "d": "Use when implementing infrastructure as code with Terraform across AWS, Azure, o"
+      },
+      {
+        "n": "terraform-skill",
+        "d": "Terraform infrastructure as code best practices"
+      },
+      {
+        "n": "terraform-specialist",
+        "d": "Expert Terraform/OpenTofu specialist mastering advanced IaC"
+      },
+      {
+        "n": "uv-package-manager",
+        "d": "Master the uv package manager for fast Python dependency management, virtual env"
+      },
+      {
+        "n": "vulnerability-scanner",
+        "d": "Advanced vulnerability analysis principles. OWASP 2025, Supply Chain Security, a"
+      },
+      {
+        "n": "wireshark-analysis",
+        "d": "This skill should be used when the user asks to \"analyze network traffic with Wi"
+      },
+      {
+        "n": "xss-html-injection",
+        "d": "This skill should be used when the user asks to \"test for XSS vulnerabilities\", "
+      }
+    ]
+  },
+  "ai-ml": {
+    "count": 60,
+    "skills": [
+      {
+        "n": "agent-memory-systems",
+        "d": "Memory is the cornerstone of intelligent agents. Without it, every interaction s"
+      },
+      {
+        "n": "agent-orchestration-improve-agent",
+        "d": "Systematic improvement of existing agents through performance analysis, prompt e"
+      },
+      {
+        "n": "agent-orchestration-multi-agent-optimize",
+        "d": "Optimize multi-agent systems with coordinated profiling, workload distribution, "
+      },
+      {
+        "n": "atlassian-mcp",
+        "d": "Use when querying Jira issues, searching Confluence pages, creating tickets, upd"
+      },
+      {
+        "n": "beautiful-prose",
+        "d": "Hard-edged writing style contract for timeless, forceful English prose without A"
+      },
+      {
+        "n": "behavioral-modes",
+        "d": "AI operational modes (brainstorm, implement, debug, review, teach, ship, orchest"
+      },
+      {
+        "n": "brainstorming",
+        "d": ">"
+      },
+      {
+        "n": "business-analyst",
+        "d": "Master modern business analysis with AI-powered analytics,"
+      },
+      {
+        "n": "clarity-gate",
+        "d": "Pre-ingestion verification for epistemic quality in RAG systems with 9-point ver"
+      },
+      {
+        "n": "code-review-excellence",
+        "d": "Master effective code review practices to provide constructive feedback, catch b"
+      },
+      {
+        "n": "codex-review",
+        "d": "Professional code review with auto CHANGELOG generation, integrated with Codex A"
+      },
+      {
+        "n": "competitive-ads-extractor",
+        "d": "Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, et"
+      },
+      {
+        "n": "context-degradation",
+        "d": "Recognize patterns of context failure: lost-in-middle, poisoning, distraction, a"
+      },
+      {
+        "n": "context-fundamentals",
+        "d": "Understand what context is, why it matters, and the anatomy of context in agent "
+      },
+      {
+        "n": "context-window-management",
+        "d": "Strategies for managing LLM context windows including summarization, trimming, r"
+      },
+      {
+        "n": "conversation-memory",
+        "d": "Persistent memory systems for LLM conversations including short-term, long-term,"
+      },
+      {
+        "n": "cpp-pro",
+        "d": "Write idiomatic C++ code with modern features, RAII, smart"
+      },
+      {
+        "n": "daily-news-report",
+        "d": "Scrapes content based on a preset URL list, filters high-quality technical infor"
+      },
+      {
+        "n": "domain-name-brainstormer",
+        "d": "Generates creative domain name ideas for your project and checks availability ac"
+      },
+      {
+        "n": "email-sequence",
+        "d": "When the user wants to create or optimize an email sequence, drip campaign, auto"
+      },
+      {
+        "n": "error-debugging-multi-agent-review",
+        "d": "Use when working with error debugging multi agent review"
+      },
+      {
+        "n": "fal-audio",
+        "d": "Text-to-speech and speech-to-text using fal.ai audio models"
+      },
+      {
+        "n": "fal-generate",
+        "d": "Generate images and videos using fal.ai AI models"
+      },
+      {
+        "n": "fal-image-edit",
+        "d": "AI-powered image editing with style transfer and object removal"
+      },
+      {
+        "n": "fal-upscale",
+        "d": "Upscale and enhance image and video resolution using AI"
+      },
+      {
+        "n": "fal-workflow",
+        "d": "Generate workflow JSON files for chaining AI models"
+      },
+      {
+        "n": "geo-fundamentals",
+        "d": "Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexit"
+      },
+      {
+        "n": "git-advanced-workflows",
+        "d": "Master advanced Git workflows including rebasing, cherry-picking, bisect, worktr"
+      },
+      {
+        "n": "javascript-mastery",
+        "d": "Comprehensive JavaScript reference covering 33+ essential concepts every develop"
+      },
+      {
+        "n": "job-application",
+        "d": "Write tailored cover letters and job applications using your CV and preferred st"
+      },
+      {
+        "n": "last30days",
+        "d": "Research a topic from the last 30 days on Reddit + X + Web, become an expert, an"
+      },
+      {
+        "n": "launch-strategy",
+        "d": "When the user wants to plan a product launch, feature announcement, or release s"
+      },
+      {
+        "n": "machine-learning-ops-ml-pipeline",
+        "d": "Design and implement a complete ML pipeline for: $ARGUMENTS"
+      },
+      {
+        "n": "memory-safety-patterns",
+        "d": "Implement memory-safe programming with RAII, ownership, smart pointers, and reso"
+      },
+      {
+        "n": "mermaid-expert",
+        "d": "Create Mermaid diagrams for flowcharts, sequences, ERDs, and"
+      },
+      {
+        "n": "mermaidjs-v11",
+        "d": "Create diagrams with Mermaid.js v11 syntax. Use for flowcharts, sequence diagram"
+      },
+      {
+        "n": "multi-agent-brainstorming",
+        "d": ">"
+      },
+      {
+        "n": "multi-agent-patterns",
+        "d": "Master orchestrator, peer-to-peer, and hierarchical multi-agent architectures"
+      },
+      {
+        "n": "onboarding-cro",
+        "d": "When the user wants to optimize post-signup onboarding, user activation, first-r"
+      },
+      {
+        "n": "paid-ads",
+        "d": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Fa"
+      },
+      {
+        "n": "planning",
+        "d": "Use when you need to plan technical solutions that are scalable, secure, and mai"
+      },
+      {
+        "n": "prometheus-configuration",
+        "d": "Set up Prometheus for comprehensive metric collection, storage, and monitoring o"
+      },
+      {
+        "n": "prompt-caching",
+        "d": "Caching strategies for LLM prompts including Anthropic prompt caching, response "
+      },
+      {
+        "n": "prompt-engineering-patterns",
+        "d": "Master advanced prompt engineering techniques to maximize LLM performance, relia"
+      },
+      {
+        "n": "python-packaging",
+        "d": "Create distributable Python packages with proper project structure, setup.py/pyp"
+      },
+      {
+        "n": "research",
+        "d": "Use when you need to research, analyze, and plan technical solutions that are sc"
+      },
+      {
+        "n": "ruby-pro",
+        "d": "Write idiomatic Ruby code with metaprogramming, Rails patterns, and"
+      },
+      {
+        "n": "sales-automator",
+        "d": "Draft cold emails, follow-ups, and proposal templates. Creates"
+      },
+      {
+        "n": "skill-developer",
+        "d": "Create and manage Claude Code skills following Anthropic best practices. Use whe"
+      },
+      {
+        "n": "skill-rails-upgrade",
+        "d": "Analyze Rails apps and provide upgrade assessments"
+      },
+      {
+        "n": "skill-seekers",
+        "d": "-Automatically convert documentation websites, GitHub repositories, and PDFs int"
+      },
+      {
+        "n": "skill-share",
+        "d": "A skill that creates new Claude skills and automatically shares them on Slack us"
+      },
+      {
+        "n": "slack-gif-creator",
+        "d": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides"
+      },
+      {
+        "n": "subagent-driven-development",
+        "d": "Use when executing implementation plans with independent tasks in the current se"
+      },
+      {
+        "n": "theme-factory",
+        "d": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs,"
+      },
+      {
+        "n": "trigger-dev",
+        "d": "Trigger.dev expert for background jobs, AI workflows, and reliable async executi"
+      },
+      {
+        "n": "vector-index-tuning",
+        "d": "Optimize vector index performance for latency, recall, and memory. Use when tuni"
+      },
+      {
+        "n": "vexor",
+        "d": "Vector-powered CLI for semantic file search with a Claude/Codex skill"
+      },
+      {
+        "n": "workflow-automation",
+        "d": "Workflow automation is the infrastructure that makes AI agents reliable. Without"
+      },
+      {
+        "n": "writing-skills",
+        "d": "Use when creating, updating, or improving agent skills."
+      }
+    ]
+  },
+  "backend": {
+    "count": 62,
+    "skills": [
+      {
+        "n": "ai-multimodal",
+        "d": "Analyze images/audio/video with Gemini API (better vision than Claude). Generate"
+      },
+      {
+        "n": "api-designer",
+        "d": "Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or pla"
+      },
+      {
+        "n": "api-documentation-generator",
+        "d": "Generate comprehensive, developer-friendly API documentation from code, includin"
+      },
+      {
+        "n": "api-documenter",
+        "d": "Master API documentation with OpenAPI 3.1, AI-powered tools, and"
+      },
+      {
+        "n": "api-patterns",
+        "d": "API design principles and decision-making. REST vs GraphQL vs tRPC selection, re"
+      },
+      {
+        "n": "api-security-best-practices",
+        "d": "Implement secure API design patterns including authentication, authorization, in"
+      },
+      {
+        "n": "api-testing-observability-api-mock",
+        "d": "You are an API mocking expert specializing in realistic mock services for develo"
+      },
+      {
+        "n": "architecture-patterns",
+        "d": "Implement proven backend architecture patterns including Clean Architecture, Hex"
+      },
+      {
+        "n": "aws-cost-operations",
+        "d": "This skill provides AWS cost optimization, monitoring, and operational best prac"
+      },
+      {
+        "n": "azure-functions",
+        "d": "Expert patterns for Azure Functions development including isolated worker model,"
+      },
+      {
+        "n": "backend-architect",
+        "d": "Expert backend architect specializing in scalable API design,"
+      },
+      {
+        "n": "backend-development",
+        "d": "Backend API design, database architecture, microservices patterns, and test-driv"
+      },
+      {
+        "n": "backend-security-coder",
+        "d": "Expert in secure backend coding practices specializing in input"
+      },
+      {
+        "n": "browser-automation",
+        "d": "Browser automation powers web testing, scraping, and AI agent interactions. The "
+      },
+      {
+        "n": "bullmq-specialist",
+        "d": "BullMQ expert for Redis-backed job queues, background processing, and reliable a"
+      },
+      {
+        "n": "bun-development",
+        "d": "Modern JavaScript/TypeScript development with Bun runtime. Covers package manage"
+      },
+      {
+        "n": "cc-skill-security-review",
+        "d": "Use this skill when adding authentication, handling user input, working with sec"
+      },
+      {
+        "n": "chrome-devtools",
+        "d": "Browser automation, debugging, and performance analysis using Puppeteer CLI scri"
+      },
+      {
+        "n": "code-refactoring-context-restore",
+        "d": "Use when working with code refactoring context restore"
+      },
+      {
+        "n": "conductor-manage",
+        "d": "Manage track lifecycle: archive, restore, delete, rename, and cleanup"
+      },
+      {
+        "n": "context-management-context-restore",
+        "d": "Use when working with context management context restore"
+      },
+      {
+        "n": "context7-auto-research",
+        "d": "Automatically fetch latest library/framework documentation for Claude Code via C"
+      },
+      {
+        "n": "database-design",
+        "d": "Database design principles and decision-making. Schema design, indexing strategy"
+      },
+      {
+        "n": "databases",
+        "d": "Work with MongoDB (document database, BSON documents, aggregation pipelines, Atl"
+      },
+      {
+        "n": "deep-research",
+        "d": "Execute autonomous multi-step research using Google Gemini Deep Research Agent. "
+      },
+      {
+        "n": "devops-troubleshooter",
+        "d": "Expert DevOps troubleshooter specializing in rapid incident"
+      },
+      {
+        "n": "distributed-tracing",
+        "d": "Implement distributed tracing with Jaeger and Tempo to track requests across mic"
+      },
+      {
+        "n": "dotnet-architect",
+        "d": "Expert .NET backend architect specializing in C#, ASP.NET Core,"
+      },
+      {
+        "n": "exa-search",
+        "d": "Semantic search, similar content discovery, and structured research using Exa AP"
+      },
+      {
+        "n": "fal-platform",
+        "d": "Platform APIs for model management, pricing, and usage tracking"
+      },
+      {
+        "n": "file-organizer",
+        "d": "Intelligently organizes files and folders by understanding context, finding dupl"
+      },
+      {
+        "n": "firebase",
+        "d": "Firebase gives you a complete backend in minutes - auth, database, storage, func"
+      },
+      {
+        "n": "firecrawl-scraper",
+        "d": "Deep web scraping, screenshots, PDF parsing, and website crawling using Firecraw"
+      },
+      {
+        "n": "graphql",
+        "d": "GraphQL gives clients exactly the data they need - no more, no less. One endpoin"
+      },
+      {
+        "n": "graphql-architect",
+        "d": "Master modern GraphQL with federation, performance optimization,"
+      },
+      {
+        "n": "hubspot-integration",
+        "d": "Expert patterns for HubSpot CRM integration including OAuth authentication, CRM "
+      },
+      {
+        "n": "incident-responder",
+        "d": "Expert SRE incident responder specializing in rapid problem"
+      },
+      {
+        "n": "inngest",
+        "d": "Inngest expert for serverless-first background jobs, event-driven workflows, and"
+      },
+      {
+        "n": "javascript-pro",
+        "d": "Master modern JavaScript with ES6+, async patterns, and Node.js"
+      },
+      {
+        "n": "markdown-novel-viewer",
+        "d": "View markdown files with calm, book-like reading experience via HTTP server. Use"
+      },
+      {
+        "n": "mcp-management",
+        "d": "Manage MCP servers - discover, analyze, execute tools/prompts/resources. Use for"
+      },
+      {
+        "n": "microservices-architect",
+        "d": "Use when designing distributed systems, decomposing monoliths, or implementing m"
+      },
+      {
+        "n": "minecraft-bukkit-pro",
+        "d": "Master Minecraft server plugin development with Bukkit, Spigot, and"
+      },
+      {
+        "n": "n8n-code-python",
+        "d": "Write Python code in n8n Code nodes. Use when writing Python in n8n, using _inpu"
+      },
+      {
+        "n": "neon-postgres",
+        "d": "Expert patterns for Neon serverless Postgres, branching, connection pooling, and"
+      },
+      {
+        "n": "nestjs-expert",
+        "d": "Nest.js framework expert specializing in module architecture, dependency injecti"
+      },
+      {
+        "n": "nodejs-best-practices",
+        "d": "Node.js development principles and decision-making. Framework selection, async p"
+      },
+      {
+        "n": "observe-whatsapp",
+        "d": "Observe and troubleshoot WhatsApp in Kapso: debug message delivery, inspect webh"
+      },
+      {
+        "n": "openapi-spec-generation",
+        "d": "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, "
+      },
+      {
+        "n": "plaid-fintech",
+        "d": "Expert patterns for Plaid API integration including Link token flows, transactio"
+      },
+      {
+        "n": "pydantic-models",
+        "d": "Create Pydantic models following the multi-model pattern with Base, Create, Upda"
+      },
+      {
+        "n": "python-development",
+        "d": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, an"
+      },
+      {
+        "n": "python-development-python-scaffold",
+        "d": "You are a Python project architecture expert specializing in scaffolding product"
+      },
+      {
+        "n": "segment-cdp",
+        "d": "Expert patterns for Segment Customer Data Platform including Analytics.js, serve"
+      },
+      {
+        "n": "server-management",
+        "d": "Server management principles and decision-making. Process management, monitoring"
+      },
+      {
+        "n": "sharp-edges",
+        "d": "Identify error-prone APIs and dangerous configurations"
+      },
+      {
+        "n": "smtp-penetration-testing",
+        "d": "This skill should be used when the user asks to \"perform SMTP penetration testin"
+      },
+      {
+        "n": "tavily-web",
+        "d": "Web search, content extraction, crawling, and research capabilities using Tavily"
+      },
+      {
+        "n": "top-web-vulnerabilities",
+        "d": "This skill should be used when the user asks to \"identify web application vulner"
+      },
+      {
+        "n": "upstash-qstash",
+        "d": "Upstash QStash expert for serverless message queues, scheduled jobs, and reliabl"
+      },
+      {
+        "n": "vercel-deploy",
+        "d": "Deploy applications to Vercel with edge functions, serverless, and ISR."
+      },
+      {
+        "n": "voice-agents",
+        "d": "Voice agents represent the frontier of AI interaction - humans speaking naturall"
+      }
+    ]
+  },
+  "golang": {
+    "count": 14,
+    "skills": [
+      {
+        "n": "algorithmic-art",
+        "d": "Creating algorithmic art using p5.js with seeded randomness and interactive para"
+      },
+      {
+        "n": "canvas-design",
+        "d": "Create beautiful visual art in .png and .pdf documents using design philosophy. "
+      },
+      {
+        "n": "context-engineering",
+        "d": ">-"
+      },
+      {
+        "n": "debugging-toolkit-smart-debug",
+        "d": "Use when working with debugging toolkit smart debug"
+      },
+      {
+        "n": "debugging-wizard",
+        "d": "Use when investigating errors, analyzing stack traces, or finding root causes of"
+      },
+      {
+        "n": "golang-pro",
+        "d": "Master Go 1.21+ with modern patterns, advanced concurrency,"
+      },
+      {
+        "n": "i18n-localization",
+        "d": "Internationalization and localization patterns. Detecting hardcoded strings, man"
+      },
+      {
+        "n": "pdf",
+        "d": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating "
+      },
+      {
+        "n": "pdf-official",
+        "d": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating "
+      },
+      {
+        "n": "protocol-reverse-engineering",
+        "d": "Master network protocol reverse engineering including packet analysis, protocol "
+      },
+      {
+        "n": "saga-orchestration",
+        "d": "Implement saga patterns for distributed transactions and cross-aggregate workflo"
+      },
+      {
+        "n": "spark-optimization",
+        "d": "Optimize Apache Spark jobs with partitioning, caching, shuffle optimization, and"
+      },
+      {
+        "n": "track-management",
+        "d": "Use this skill when creating, managing, or working with Conductor"
+      },
+      {
+        "n": "tutorial-engineer",
+        "d": "Creates step-by-step tutorials and educational content from code."
+      }
+    ]
+  },
+  "data": {
+    "count": 4,
+    "skills": [
+      {
+        "n": "analytics-tracking",
+        "d": ">"
+      },
+      {
+        "n": "php-pro",
+        "d": "Write idiomatic PHP code with generators, iterators, SPL data"
+      },
+      {
+        "n": "xlsx",
+        "d": "Comprehensive spreadsheet creation, editing, and analysis with support for formu"
+      },
+      {
+        "n": "xlsx-official",
+        "d": "Comprehensive spreadsheet creation, editing, and analysis with support for formu"
+      }
+    ]
+  },
+  "security": {
+    "count": 11,
+    "skills": [
+      {
+        "n": "anti-reversing-techniques",
+        "d": "Understand anti-reversing, obfuscation, and protection techniques encountered du"
+      },
+      {
+        "n": "clerk-auth",
+        "d": "Expert patterns for Clerk auth implementation, middleware, organizations, webhoo"
+      },
+      {
+        "n": "code-review-checklist",
+        "d": "Comprehensive checklist for conducting thorough code reviews covering functional"
+      },
+      {
+        "n": "find-bugs",
+        "d": "Find bugs, security vulnerabilities, and code quality issues in local branch cha"
+      },
+      {
+        "n": "red-team-tools",
+        "d": "This skill should be used when the user asks to \"follow red team methodology\", \""
+      },
+      {
+        "n": "repomix",
+        "d": "Package entire code repositories into single AI-friendly files using Repomix. Ca"
+      },
+      {
+        "n": "secure-code-guardian",
+        "d": "Use when implementing authentication/authorization, securing user input, or prev"
+      },
+      {
+        "n": "security-scanning-security-hardening",
+        "d": "Coordinate multi-layer security scanning and hardening across application, infra"
+      },
+      {
+        "n": "stride-analysis-patterns",
+        "d": "Apply STRIDE methodology to systematically identify threats. Use when analyzing "
+      },
+      {
+        "n": "threat-mitigation-mapping",
+        "d": "Map identified threats to appropriate security controls and mitigations. Use whe"
+      },
+      {
+        "n": "wordpress-pro",
+        "d": "Use when developing WordPress themes, plugins, customizing Gutenberg blocks, imp"
+      }
+    ]
+  },
+  "mobile": {
+    "count": 7,
+    "skills": [
+      {
+        "n": "app-store-optimization",
+        "d": "Complete App Store Optimization (ASO) toolkit for researching, optimizing, and t"
+      },
+      {
+        "n": "expo-deployment",
+        "d": "Deploy Expo apps to production"
+      },
+      {
+        "n": "flutter-expert",
+        "d": "Master Flutter development with Dart 3, advanced widgets, and"
+      },
+      {
+        "n": "mobile-security-coder",
+        "d": "Expert in secure mobile coding practices specializing in input"
+      },
+      {
+        "n": "qa-regression",
+        "d": "Automate QA regression testing with reusable test skills. Create login flows, da"
+      },
+      {
+        "n": "upgrading-expo",
+        "d": "Upgrade Expo SDK versions"
+      },
+      {
+        "n": "varlock-claude-skill",
+        "d": "Secure environment variable management ensuring secrets are never exposed in Cla"
+      }
+    ]
+  },
+  "other": {
+    "count": 33,
+    "skills": [
+      {
+        "n": "arm-cortex-expert",
+        "d": ">"
+      },
+      {
+        "n": "cc-skill-continuous-learning",
+        "d": "Development skill from everything-claude-code"
+      },
+      {
+        "n": "cc-skill-strategic-compact",
+        "d": "Development skill from everything-claude-code"
+      },
+      {
+        "n": "claude-win11-speckit-update-skill",
+        "d": "Windows 11 system management"
+      },
+      {
+        "n": "competitive-landscape",
+        "d": "This skill should be used when the user asks to \"analyze"
+      },
+      {
+        "n": "context-driven-development",
+        "d": "Use this skill when working with Conductor's context-driven"
+      },
+      {
+        "n": "context-management-context-save",
+        "d": "Use when working with context management context save"
+      },
+      {
+        "n": "copywriting",
+        "d": ">"
+      },
+      {
+        "n": "error-diagnostics-smart-debug",
+        "d": "Use when working with error diagnostics smart debug"
+      },
+      {
+        "n": "ffuf-claude-skill",
+        "d": "Web fuzzing with ffuf"
+      },
+      {
+        "n": "form-cro",
+        "d": ">"
+      },
+      {
+        "n": "full-stack-orchestration-full-stack-feature",
+        "d": "Use when working with full stack orchestration full stack feature"
+      },
+      {
+        "n": "jira-issues",
+        "d": "Create, update, and manage Jira issues from natural language. Use when the user "
+      },
+      {
+        "n": "legacy-modernizer",
+        "d": "Refactor legacy codebases, migrate outdated frameworks, and"
+      },
+      {
+        "n": "market-sizing-analysis",
+        "d": "This skill should be used when the user asks to \"calculate TAM\","
+      },
+      {
+        "n": "page-cro",
+        "d": ">"
+      },
+      {
+        "n": "risk-manager",
+        "d": "Monitor portfolio risk, R-multiples, and position limits. Creates"
+      },
+      {
+        "n": "schema-markup",
+        "d": ">"
+      },
+      {
+        "n": "seo-audit",
+        "d": ">"
+      },
+      {
+        "n": "seo-fundamentals",
+        "d": ">"
+      },
+      {
+        "n": "seo-meta-optimizer",
+        "d": "Creates optimized meta titles, descriptions, and URL suggestions"
+      },
+      {
+        "n": "seo-snippet-hunter",
+        "d": "Formats content to be eligible for featured snippets and SERP"
+      },
+      {
+        "n": "seo-structure-architect",
+        "d": "Analyzes and optimizes content structure including header"
+      },
+      {
+        "n": "shellcheck-configuration",
+        "d": "Master ShellCheck static analysis configuration and usage for shell script quali"
+      },
+      {
+        "n": "shopify-development",
+        "d": "|"
+      },
+      {
+        "n": "startup-metrics-framework",
+        "d": "This skill should be used when the user asks about \"key startup"
+      },
+      {
+        "n": "superpowers-lab",
+        "d": "Lab environment for Claude superpowers"
+      },
+      {
+        "n": "team-composition-analysis",
+        "d": "This skill should be used when the user asks to \"plan team"
+      },
+      {
+        "n": "template-skill",
+        "d": "Replace with description of the skill and when Claude should use it."
+      },
+      {
+        "n": "threejs-skills",
+        "d": "Three.js skills for creating 3D elements and interactive experiences"
+      },
+      {
+        "n": "typescript-expert",
+        "d": ">-"
+      },
+      {
+        "n": "video-downloader",
+        "d": "Downloads videos from YouTube and other platforms for offline viewing, editing, "
+      },
+      {
+        "n": "x-article-publisher-skill",
+        "d": "Publish articles to X/Twitter"
+      }
+    ]
+  },
+  "architecture": {
+    "count": 5,
+    "skills": [
+      {
+        "n": "binary-analysis-patterns",
+        "d": "Master binary analysis patterns including disassembly, decompilation, control fl"
+      },
+      {
+        "n": "design-orchestration",
+        "d": ">"
+      },
+      {
+        "n": "error-detective",
+        "d": "Search logs and codebases for error patterns, stack traces, and"
+      },
+      {
+        "n": "memory-systems",
+        "d": "Design short-term, long-term, and graph-based memory architectures"
+      },
+      {
+        "n": "powershell-windows",
+        "d": "PowerShell Windows patterns. Critical pitfalls, operator syntax, error handling."
+      }
+    ]
+  },
+  "database": {
+    "count": 16,
+    "skills": [
+      {
+        "n": "cc-skill-clickhouse-io",
+        "d": "ClickHouse database patterns, query optimization, analytics, and data engineerin"
+      },
+      {
+        "n": "database-admin",
+        "d": "Expert database administrator specializing in modern cloud"
+      },
+      {
+        "n": "database-architect",
+        "d": "Expert database architect specializing in data layer design from"
+      },
+      {
+        "n": "database-cloud-optimization-cost-optimize",
+        "d": "You are a cloud cost optimization expert specializing in reducing infrastructure"
+      },
+      {
+        "n": "database-migration",
+        "d": "Execute database migrations across ORMs and platforms with zero-downtime strateg"
+      },
+      {
+        "n": "database-migrations-migration-observability",
+        "d": "Migration monitoring, CDC, and observability infrastructure"
+      },
+      {
+        "n": "database-migrations-sql-migrations",
+        "d": "SQL database migrations with zero-downtime strategies for"
+      },
+      {
+        "n": "database-optimizer",
+        "d": "Expert database optimizer specializing in modern performance"
+      },
+      {
+        "n": "postgres-best-practices",
+        "d": "Postgres performance optimization and best practices from Supabase. Use this ski"
+      },
+      {
+        "n": "postgres-pro",
+        "d": "Use when optimizing PostgreSQL queries, configuring replication, or implementing"
+      },
+      {
+        "n": "postgresql",
+        "d": "Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing"
+      },
+      {
+        "n": "prisma-expert",
+        "d": "Prisma ORM expert for schema design, migrations, query optimization, relations m"
+      },
+      {
+        "n": "sql-injection-testing",
+        "d": "This skill should be used when the user asks to \"test for SQL injection vulnerab"
+      },
+      {
+        "n": "sql-optimization-patterns",
+        "d": "Master SQL query optimization, indexing strategies, and EXPLAIN analysis to dram"
+      },
+      {
+        "n": "sql-pro",
+        "d": "Master modern SQL with cloud-native databases, OLTP/OLAP"
+      },
+      {
+        "n": "vector-database-engineer",
+        "d": "Expert in vector databases, embedding strategies, and semantic search implementa"
+      }
+    ]
+  },
+  "performance": {
+    "count": 3,
+    "skills": [
+      {
+        "n": "context-optimization",
+        "d": "Apply compaction, masking, and caching strategies"
+      },
+      {
+        "n": "embedded-systems",
+        "d": "Use when developing firmware for microcontrollers, implementing RTOS application"
+      },
+      {
+        "n": "web-performance-optimization",
+        "d": "Optimize website and web application performance including loading speed, Core W"
+      }
+    ]
+  },
+  "documentation": {
+    "count": 1,
+    "skills": [
+      {
+        "n": "culture-index",
+        "d": "Index and search culture documentation"
+      }
+    ]
+  },
+  "python": {
+    "count": 5,
+    "skills": [
+      {
+        "n": "django-pro",
+        "d": "Master Django 5.x with async views, DRF, Celery, and Django"
+      },
+      {
+        "n": "pandas-pro",
+        "d": "Use when working with pandas DataFrames, data cleaning, aggregation, merging, or"
+      },
+      {
+        "n": "python-performance-optimization",
+        "d": "Profile and optimize Python code using cProfile, memory profilers, and performan"
+      },
+      {
+        "n": "python-pro",
+        "d": "Master Python 3.12+ with modern features, async programming,"
+      },
+      {
+        "n": "temporal-python-pro",
+        "d": "Master Temporal workflow orchestration with Python SDK. Implements"
+      }
+    ]
+  },
+  "rust": {
+    "count": 3,
+    "skills": [
+      {
+        "n": "mtls-configuration",
+        "d": "Configure mutual TLS (mTLS) for zero-trust service-to-service communication. Use"
+      },
+      {
+        "n": "popup-cro",
+        "d": "Create and optimize popups, modals, overlays, slide-ins, and banners to increase"
+      },
+      {
+        "n": "rust-pro",
+        "d": "Master Rust 1.75+ with modern async patterns, advanced type system"
+      }
+    ]
+  }
+}

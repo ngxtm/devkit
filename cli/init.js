@@ -136,14 +136,30 @@ function installForTool(toolId, tool, projectDir, options = {}) {
     }
   }
 
-  // 4. Install skills index
-  const skillsIndexSrc = path.join(PACKAGE_ROOT, 'skills-index.json');
-  if (fs.existsSync(skillsIndexSrc)) {
-    fs.copyFileSync(skillsIndexSrc, path.join(targetDir, 'skills-index.json'));
-    totalFiles++;
+  // 4. Install skills index files (for auto-skill detection)
+  const indexFiles = [
+    'skills-index.json',
+    'skills-keywords.json',
+    'skills-categories.json',
+    'skills-triggers.json'
+  ];
+  for (const indexFile of indexFiles) {
+    const src = path.join(PACKAGE_ROOT, indexFile);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(targetDir, indexFile));
+      totalFiles++;
+    }
   }
 
-  // 5. Create devkit.json tracking file
+  // 5. Install base rules (including auto-skill detection)
+  const baseRulesDir = path.join(PACKAGE_ROOT, 'templates', 'base', 'rules');
+  if (tool.rulesPath && fs.existsSync(baseRulesDir)) {
+    const destRulesDir = path.join(targetDir, tool.rulesPath, 'base');
+    const count = copyDir(baseRulesDir, destRulesDir);
+    totalFiles += count;
+  }
+
+  // 6. Create devkit.json tracking file
   const devkitConfig = {
     version: VERSION,
     tool: toolId,
@@ -164,7 +180,7 @@ function installForTool(toolId, tool, projectDir, options = {}) {
   );
   totalFiles++;
 
-  // 6. Create settings.json if not exists (for tools that use it)
+  // 7. Create settings.json if not exists (for tools that use it)
   if (toolId === 'claude') {
     const settingsPath = path.join(targetDir, 'settings.json');
     if (!fs.existsSync(settingsPath)) {

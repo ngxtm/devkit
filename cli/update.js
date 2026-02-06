@@ -97,14 +97,29 @@ function updateToolInstallation(toolId, tool, projectDir, options = {}) {
     }
   }
 
-  // 5. Update skills index
-  const skillsIndexSrc = path.join(PACKAGE_ROOT, 'skills-index.json');
-  if (fs.existsSync(skillsIndexSrc)) {
-    fs.copyFileSync(skillsIndexSrc, path.join(targetDir, 'skills-index.json'));
-    updatedCount++;
+  // 5. Update skills index files
+  const indexFiles = [
+    'skills-index.json',
+    'skills-keywords.json',
+    'skills-categories.json',
+    'skills-triggers.json'
+  ];
+  for (const indexFile of indexFiles) {
+    const src = path.join(PACKAGE_ROOT, indexFile);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, path.join(targetDir, indexFile));
+      updatedCount++;
+    }
   }
 
-  // 6. Update devkit.json
+  // 6. Update base rules (including auto-skill detection)
+  const baseRulesDir = path.join(PACKAGE_ROOT, 'templates', 'base', 'rules');
+  if (tool.rulesPath && fs.existsSync(baseRulesDir)) {
+    const destRulesDir = path.join(targetDir, tool.rulesPath, 'base');
+    updatedCount += copyDir(baseRulesDir, destRulesDir);
+  }
+
+  // 7. Update devkit.json
   const newConfig = {
     ...config,
     version: VERSION,
