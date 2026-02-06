@@ -13,7 +13,7 @@ const { execSync } = require('child_process');
 
 const { detectProjectType, getRulesForTypes } = require('./detect');
 const { initProject } = require('./init');
-const { copyDir, getDirSize, parseJsonFile } = require('./utils');
+const { copyDir, getDirSize, parseJsonFile, TOOLS } = require('./utils');
 
 const VERSION = require('../package.json').version;
 const PACKAGE_ROOT = path.join(__dirname, '..');
@@ -34,33 +34,134 @@ function checkForUpdates() {
 }
 
 /**
- * Update devkit installation
+ * Update a single tool installation
+ * @param {string} toolId - Tool identifier
+ * @param {Object} tool - Tool configuration
+ * @param {string} projectDir - Project directory
+ * @param {Object} options - Update options
+ * @returns {Object} - Update result
+ */
+function updateToolInstallation(toolId, tool, projectDir, options = {}) {
+  const targetDir = path.join(projectDir, tool.projectPath);
+  const configPath = path.join(targetDir, 'devkit.json');
+
+  if (!fs.existsSync(configPath)) {
+    return { success: false, reason: 'not_installed' };
+  }
+
+  const config = parseJsonFile(configPath);
+  if (!config) {
+    return { success: false, reason: 'corrupted_config' };
+  }
+
+  let updatedCount = 0;
+
+  // 1. Update commands (if tool supports it)
+  if (tool.commandsPath) {
+    const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
+    const commandsDir = path.join(targetDir, tool.commandsPath);
+    if (fs.existsSync(mergedCommandsDir)) {
+      updatedCount += copyDir(mergedCommandsDir, commandsDir);
+    }
+  }
+
+  // 2. Update rules
+  if (tool.rulesPath && options.rules && options.rules.length > 0) {
+    const rulesDir = path.join(targetDir, tool.rulesPath);
+    for (const ruleType of options.rules) {
+      const srcRulesDir = path.join(PACKAGE_ROOT, 'templates', ruleType, 'rules');
+      if (fs.existsSync(srcRulesDir)) {
+        const destRulesDir = path.join(rulesDir, ruleType);
+        updatedCount += copyDir(srcRulesDir, destRulesDir);
+      }
+    }
+  }
+
+  // 3. Remove old rules (if clean enabled)
+  if (tool.rulesPath && options.removedRules && options.removedRules.length > 0 && options.clean !== false) {
+    const rulesDir = path.join(targetDir, tool.rulesPath);
+    for (const ruleType of options.removedRules) {
+      const ruleDir = path.join(rulesDir, ruleType);
+      if (fs.existsSync(ruleDir)) {
+        fs.rmSync(ruleDir, { recursive: true, force: true });
+      }
+    }
+  }
+
+  // 4. Update hooks (if tool supports it)
+  if (tool.supportsHooks && tool.hooksPath) {
+    const srcHooksDir = path.join(PACKAGE_ROOT, 'hooks');
+    const hooksDir = path.join(targetDir, tool.hooksPath);
+    if (fs.existsSync(srcHooksDir)) {
+      updatedCount += copyDir(srcHooksDir, hooksDir);
+    }
+  }
+
+  // 5. Update skills index
+  const skillsIndexSrc = path.join(PACKAGE_ROOT, 'skills-index.json');
+  if (fs.existsSync(skillsIndexSrc)) {
+    fs.copyFileSync(skillsIndexSrc, path.join(targetDir, 'skills-index.json'));
+    updatedCount++;
+  }
+
+  // 6. Update devkit.json
+  const newConfig = {
+    ...config,
+    version: VERSION,
+    detectedTypes: options.detectedTypes || config.detectedTypes,
+    installedRules: options.allRules || config.installedRules,
+    updatedAt: new Date().toISOString(),
+    stats: {
+      totalFiles: config.stats?.totalFiles || 0,
+      sizeKB: Math.round(getDirSize(targetDir) / 1024)
+    }
+  };
+  fs.writeFileSync(configPath, JSON.stringify(newConfig, null, 2));
+
+  return {
+    success: true,
+    tool: toolId,
+    toolName: tool.name,
+    path: targetDir,
+    updatedFiles: updatedCount,
+    sizeKB: newConfig.stats.sizeKB
+  };
+}
+
+/**
+ * Update devkit installation for all installed tools
  */
 function updateProject(options = {}) {
   const projectDir = options.path || process.cwd();
-  const claudeDir = path.join(projectDir, '.claude');
-  const configPath = path.join(claudeDir, 'devkit.json');
 
   console.log('\n' + '='.repeat(60));
   console.log('  DEVKIT - UPDATE');
   console.log('='.repeat(60));
 
-  // Check if devkit is installed
-  if (!fs.existsSync(configPath)) {
+  // Find all installed tools
+  const installedTools = [];
+  let primaryConfig = null;
+
+  for (const [toolId, tool] of Object.entries(TOOLS)) {
+    const targetDir = path.join(projectDir, tool.projectPath);
+    const configPath = path.join(targetDir, 'devkit.json');
+    if (fs.existsSync(configPath)) {
+      const config = parseJsonFile(configPath);
+      if (config) {
+        installedTools.push({ toolId, tool, config });
+        if (!primaryConfig) primaryConfig = config;
+      }
+    }
+  }
+
+  if (installedTools.length === 0) {
     console.log('\n  No devkit installation found.');
     console.log('  Run: devkit init\n');
     return { success: false, reason: 'not_installed' };
   }
 
-  // Read current config with error handling
-  const config = parseJsonFile(configPath);
-  if (!config) {
-    console.log('\n  Error: devkit.json is corrupted.');
-    console.log('  Try reinitializing with: devkit init --force\n');
-    return { success: false, reason: 'corrupted_config' };
-  }
-  console.log(`\n  Current version: ${config.version}`);
-  console.log(`  Installed: ${new Date(config.installedAt).toLocaleDateString()}`);
+  console.log(`\n  Found ${installedTools.length} tool(s): ${installedTools.map(t => t.tool.name).join(', ')}`);
+  console.log(`  Current version: ${primaryConfig.version}`);
 
   // Check for package updates
   console.log('\n  Checking for updates...');
@@ -79,12 +180,11 @@ function updateProject(options = {}) {
   // Re-detect project type
   console.log('\n  Re-detecting project type...');
   const newDetected = detectProjectType(projectDir);
-  const oldDetected = config.detectedTypes || [];
+  const oldDetected = primaryConfig.detectedTypes || [];
 
   // Find differences
   const added = newDetected.filter(t => !oldDetected.includes(t));
   const removed = oldDetected.filter(t => !newDetected.includes(t));
-  const unchanged = newDetected.filter(t => oldDetected.includes(t));
 
   if (added.length > 0) {
     console.log(`  New tech detected: ${added.join(', ')}`);
@@ -92,82 +192,50 @@ function updateProject(options = {}) {
   if (removed.length > 0) {
     console.log(`  Removed: ${removed.join(', ')}`);
   }
-  if (unchanged.length > 0) {
-    console.log(`  Unchanged: ${unchanged.join(', ')}`);
-  }
   if (added.length === 0 && removed.length === 0) {
     console.log('  No changes in detected technologies.');
   }
 
-  // Update rules if needed (always update by default)
-  if (added.length > 0 || options.force !== false) {
-    const newRules = getRulesForTypes(added);
-    const rulesDir = path.join(claudeDir, 'rules');
+  // Get all rules to install
+  const allRules = getRulesForTypes(newDetected);
+  const newRules = getRulesForTypes(added);
 
-    console.log('\n  Installing new rules...');
+  // Update each tool
+  console.log('\n  Updating installations...');
+  const results = [];
 
-    for (const ruleType of newRules) {
-      const srcRulesDir = path.join(PACKAGE_ROOT, 'templates', ruleType, 'rules');
-      if (fs.existsSync(srcRulesDir)) {
-        const destRulesDir = path.join(rulesDir, ruleType);
-        const count = copyDir(srcRulesDir, destRulesDir);
-        console.log(`    ${ruleType}: ${count} files`);
-      }
+  for (const { toolId, tool } of installedTools) {
+    const result = updateToolInstallation(toolId, tool, projectDir, {
+      ...options,
+      rules: newRules,
+      removedRules: removed,
+      allRules,
+      detectedTypes: newDetected
+    });
+
+    if (result.success) {
+      console.log(`    [+] ${tool.name}: ${result.updatedFiles} files (${result.sizeKB} KB)`);
+    } else {
+      console.log(`    [-] ${tool.name}: ${result.reason}`);
     }
+
+    results.push(result);
   }
 
-  // Remove old rules (enabled by default, use --no-clean to skip)
-  if (removed.length > 0 && options.clean !== false) {
-    const rulesDir = path.join(claudeDir, 'rules');
-
-    console.log('\n  Removing old rules...');
-
-    for (const ruleType of removed) {
-      const ruleDir = path.join(rulesDir, ruleType);
-      if (fs.existsSync(ruleDir)) {
-        fs.rmSync(ruleDir, { recursive: true, force: true });
-        console.log(`    Removed: ${ruleType}`);
-      }
-    }
-  }
-
-  // Update commands (enabled by default)
-  if (options.force !== false) {
-    console.log('\n  Updating commands...');
-    const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
-    const commandsDir = path.join(claudeDir, 'commands');
-
-    if (fs.existsSync(mergedCommandsDir)) {
-      // Copy directly - copyDir will overwrite existing files
-      // No need for backup/rename which fails on Windows when files are open
-      const count = copyDir(mergedCommandsDir, commandsDir);
-      console.log(`    Commands: ${count} files`);
-    }
-  }
-
-  // Update config
-  const newConfig = {
-    ...config,
-    version: VERSION,
-    detectedTypes: newDetected,
-    installedRules: getRulesForTypes(newDetected),
-    updatedAt: new Date().toISOString(),
-    stats: {
-      totalFiles: config.stats?.totalFiles || 0,
-      sizeKB: Math.round(getDirSize(claudeDir) / 1024)
-    }
-  };
-
-  fs.writeFileSync(configPath, JSON.stringify(newConfig, null, 2));
+  // Summary
+  const successCount = results.filter(r => r.success).length;
+  const totalSize = results.reduce((sum, r) => sum + (r.sizeKB || 0), 0);
 
   console.log('\n' + '='.repeat(60));
   console.log('  UPDATE COMPLETE');
   console.log('='.repeat(60));
-  console.log(`\n  Size: ${newConfig.stats.sizeKB} KB`);
+  console.log(`\n  Tools updated: ${successCount}/${installedTools.length}`);
+  console.log(`  Total size: ${totalSize} KB`);
   console.log(`  Detected: ${newDetected.join(', ') || 'generic'}\n`);
 
   return {
-    success: true,
+    success: successCount > 0,
+    tools: results,
     added,
     removed,
     detected: newDetected

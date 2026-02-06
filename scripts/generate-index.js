@@ -20,7 +20,9 @@ const OUTPUT_FILE = path.join(__dirname, '..', 'SKILLS_INDEX.md');
  * Parse YAML frontmatter from markdown file
  */
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  // Normalize line endings to LF
+  const normalized = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  const match = normalized.match(/^---\n([\s\S]*?)\n---/);
   if (!match) return {};
 
   const yaml = match[1];
