@@ -19,6 +19,7 @@ const path = require('path');
 const PACKAGE_ROOT = path.join(__dirname, '..');
 const COMMANDS_DIR = path.join(PACKAGE_ROOT, 'commands');
 const COMMANDS_CLAUDEKIT_DIR = path.join(PACKAGE_ROOT, 'commands-claudekit');
+const SKILLS_DIR = path.join(PACKAGE_ROOT, 'skills');
 const MERGED_DIR = path.join(PACKAGE_ROOT, 'merged-commands');
 
 /**
@@ -228,11 +229,31 @@ function mergeCommands() {
     }
   }
 
+  // Merge skills that have SKILL.md as commands
+  let copiedFromSkills = 0;
+  if (fs.existsSync(SKILLS_DIR)) {
+    const skillDirs = fs.readdirSync(SKILLS_DIR, { withFileTypes: true })
+      .filter(d => d.isDirectory() && !d.name.startsWith('.'));
+
+    for (const skillDir of skillDirs) {
+      const skillName = skillDir.name;
+      const skillFile = path.join(SKILLS_DIR, skillName, 'SKILL.md');
+      const mergedCommandFile = path.join(MERGED_DIR, `${skillName}.md`);
+
+      // Only copy if SKILL.md exists and command doesn't already exist
+      if (fs.existsSync(skillFile) && !fs.existsSync(mergedCommandFile)) {
+        fs.copyFileSync(skillFile, mergedCommandFile);
+        copiedFromSkills++;
+      }
+    }
+  }
+
   // Count final files
   const finalEntries = getAllEntries(MERGED_DIR);
 
   console.log(`\n  From agent-assistant: ${copiedFromAgent} files`);
   console.log(`  From claudekit: ${copiedFromClaudekit} files`);
+  console.log(`  From skills: ${copiedFromSkills} files`);
   console.log(`  Merged conflicts: ${merged} files`);
   console.log(`  Total merged: ${finalEntries.files.length} files`);
   console.log('\n' + '='.repeat(60));
