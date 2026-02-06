@@ -1,3 +1,10 @@
+# [3.6.0](https://github.com/ngxtm/devkit/compare/v3.5.0...v3.6.0) (2026-02-06)
+
+
+### Features
+
+* **init:** add interactive tool selection menu ([568ddb1](https://github.com/ngxtm/devkit/commit/568ddb18792c0cb384a4f247444af0a499b59751))
+
 # [3.5.0](https://github.com/ngxtm/devkit/compare/v3.4.1...v3.5.0) (2026-02-06)
 
 
