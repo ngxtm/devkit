@@ -85,17 +85,21 @@ function installForTool(toolId, tool, projectDir, options = {}) {
   let totalFiles = 0;
   const stats = {};
 
-  // 1. Install commands (if tool supports it)
+  // 1. Install core commands (if tool supports it) - optimized size ~400KB
   if (tool.commandsPath) {
-    const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
+    const coreCommandsDir = path.join(PACKAGE_ROOT, 'core-commands');
     const commandsDir = path.join(targetDir, tool.commandsPath);
 
-    if (fs.existsSync(mergedCommandsDir)) {
-      const count = copyDir(mergedCommandsDir, commandsDir);
+    if (fs.existsSync(coreCommandsDir)) {
+      const count = copyDir(coreCommandsDir, commandsDir);
       stats.commands = count;
       totalFiles += count;
     }
   }
+
+  // Note: Skills are loaded on-demand from skills-compact.json
+  // Full skills are NOT copied to reduce installation size
+  // User can run "devkit add-skills" to install specific skill packs
 
   // 2. Install rules
   if (tool.rulesPath && options.rules && options.rules.length > 0) {
@@ -136,19 +140,11 @@ function installForTool(toolId, tool, projectDir, options = {}) {
     }
   }
 
-  // 4. Install skills index files (for auto-skill detection)
-  const indexFiles = [
-    'skills-index.json',
-    'skills-keywords.json',
-    'skills-categories.json',
-    'skills-triggers.json'
-  ];
-  for (const indexFile of indexFiles) {
-    const src = path.join(PACKAGE_ROOT, indexFile);
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(targetDir, indexFile));
-      totalFiles++;
-    }
+  // 4. Install compact skill index (for auto-detection, ~20KB only)
+  const compactIndex = path.join(PACKAGE_ROOT, 'skills-compact.json');
+  if (fs.existsSync(compactIndex)) {
+    fs.copyFileSync(compactIndex, path.join(targetDir, 'skills-compact.json'));
+    totalFiles++;
   }
 
   // 5. Install base rules (including auto-skill detection)

@@ -56,14 +56,16 @@ function updateToolInstallation(toolId, tool, projectDir, options = {}) {
 
   let updatedCount = 0;
 
-  // 1. Update commands (if tool supports it)
+  // 1. Update core commands (if tool supports it) - optimized size ~400KB
   if (tool.commandsPath) {
-    const mergedCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
+    const coreCommandsDir = path.join(PACKAGE_ROOT, 'core-commands');
     const commandsDir = path.join(targetDir, tool.commandsPath);
-    if (fs.existsSync(mergedCommandsDir)) {
-      updatedCount += copyDir(mergedCommandsDir, commandsDir);
+    if (fs.existsSync(coreCommandsDir)) {
+      updatedCount += copyDir(coreCommandsDir, commandsDir);
     }
   }
+
+  // Note: Skills are loaded on-demand, not copied to project
 
   // 2. Update rules
   if (tool.rulesPath && options.rules && options.rules.length > 0) {
@@ -97,19 +99,11 @@ function updateToolInstallation(toolId, tool, projectDir, options = {}) {
     }
   }
 
-  // 5. Update skills index files
-  const indexFiles = [
-    'skills-index.json',
-    'skills-keywords.json',
-    'skills-categories.json',
-    'skills-triggers.json'
-  ];
-  for (const indexFile of indexFiles) {
-    const src = path.join(PACKAGE_ROOT, indexFile);
-    if (fs.existsSync(src)) {
-      fs.copyFileSync(src, path.join(targetDir, indexFile));
-      updatedCount++;
-    }
+  // 5. Update compact skill index (for auto-detection, ~20KB only)
+  const compactIndex = path.join(PACKAGE_ROOT, 'skills-compact.json');
+  if (fs.existsSync(compactIndex)) {
+    fs.copyFileSync(compactIndex, path.join(targetDir, 'skills-compact.json'));
+    updatedCount++;
   }
 
   // 6. Update base rules (including auto-skill detection)

@@ -8,6 +8,7 @@ __pycache__/
 
 # Build outputs
 dist/
+dist-skills/
 build/
 *.egg-info/
 
