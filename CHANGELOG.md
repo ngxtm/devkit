@@ -1,3 +1,10 @@
+# [3.10.0](https://github.com/ngxtm/devkit/compare/v3.9.0...v3.10.0) (2026-02-07)
+
+
+### Features
+
+* **optimize:** reduce installation size from 57MB to 500KB ([aa5a7c1](https://github.com/ngxtm/devkit/commit/aa5a7c1cf5e8f1b6778e4b3e2858b9c238a97be3))
+
 # [3.9.0](https://github.com/ngxtm/devkit/compare/v3.8.0...v3.9.0) (2026-02-06)
 
 
