@@ -1,3 +1,10 @@
+## [3.10.2](https://github.com/ngxtm/devkit/compare/v3.10.1...v3.10.2) (2026-02-09)
+
+
+### Bug Fixes
+
+* **init:** prevent gh copilot interactive prompt from blocking init ([02c5a93](https://github.com/ngxtm/devkit/commit/02c5a93176c694d57a44d3c7ad7f671d8c15b6df))
+
 ## [3.10.1](https://github.com/ngxtm/devkit/compare/v3.10.0...v3.10.1) (2026-02-09)
 
 
