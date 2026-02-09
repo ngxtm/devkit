@@ -54,7 +54,7 @@ const TOOLS = {
     commandsPath: null,
     supportsHooks: false,
     configFile: null,
-    detectCmd: 'gh copilot --version',
+    detectCmd: null,  // Don't use 'gh copilot --version' as it triggers interactive prompt
     detectFolder: path.join(HOME, '.copilot')
   },
   'gemini': {
@@ -87,11 +87,15 @@ function detectInstalledTools() {
     // Try command detection first
     if (tool.detectCmd) {
       try {
-        execSync(tool.detectCmd, { stdio: 'pipe' });
+        execSync(tool.detectCmd, {
+          stdio: 'pipe',
+          timeout: 3000,  // 3 second timeout
+          input: 'n\n'    // Auto-answer 'no' to any prompts
+        });
         detected = true;
         method = 'cli';
       } catch (e) {
-        // Command not found
+        // Command not found or timed out
       }
     }
 
