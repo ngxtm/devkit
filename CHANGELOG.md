@@ -1,3 +1,10 @@
+## [3.10.1](https://github.com/ngxtm/devkit/compare/v3.10.0...v3.10.1) (2026-02-09)
+
+
+### Bug Fixes
+
+* **init:** parse --path=value argument correctly ([c4dcbf3](https://github.com/ngxtm/devkit/commit/c4dcbf34bd35cd3e169bdd4cdd399db7df48ff90))
+
 # [3.10.0](https://github.com/ngxtm/devkit/compare/v3.9.0...v3.10.0) (2026-02-07)
 
 
