@@ -362,12 +362,19 @@ if (require.main === module) {
   const toolsArg = args.find(a => a.startsWith('--tools='));
   const tools = toolsArg ? toolsArg.split('=')[1].split(',') : [];
 
+  // Parse --path=value format
+  const pathArg = args.find(a => a.startsWith('--path='));
+  const pathValue = pathArg ? pathArg.split('=')[1] : null;
+
+  // Fallback to positional argument (first non-flag argument)
+  const positionalPath = args.find(a => !a.startsWith('-') && !a.includes('='));
+
   const options = {
     force: args.includes('--force') || args.includes('-f'),
     update: args.includes('--update') || args.includes('-u'),
     all: args.includes('--all') || args.includes('-a'),
     tools: tools,
-    path: args.find(a => !a.startsWith('-') && !a.includes('=')) || process.cwd()
+    path: pathValue || positionalPath || process.cwd()
   };
 
   if (args.includes('--uninstall')) {
