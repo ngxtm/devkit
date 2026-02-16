@@ -1,476 +1,147 @@
 ---
 name: learn
-description: Interactive step-by-step learning mode. Teaches concepts from basics to advanced while solving real problems. Auto-detects language, verifies code at each step, creates markdown tutorials. Triggers on "/learn [topic]". Features: concept explanation, incremental coding with auto-verify, user checkpoints, optional quiz, saves tutorial to .claude/learn/.
+description: Interactive learning mode. Teaches by doing with verified code, adaptive difficulty, and Socratic questioning.
+argument-hint: [topic]
 ---
 
-# Learn Mode - Interactive Step-by-Step Learning
+# Learn Mode v2.0
 
-> **Version 1.0.0** | Learn by Doing | Verified at Every Step
-
----
-
-## Overview
-
-Learn Mode helps you understand concepts deeply while solving real problems. Instead of just giving you code, it:
-
-1. Explains concepts from basics to advanced
-2. Guides you through implementation step-by-step
-3. Verifies code actually works at each step
-4. Saves everything to a markdown tutorial for future reference
-
----
+> Learn by doing. Verified at every step. Adapted to your level.
 
 ## Activation
 
-User invokes with: `/learn "topic or problem to solve"`
-
-Examples:
-- `/learn "implement debounce function in TypeScript"`
-- `/learn "add JWT authentication to Express API"`
-- `/learn "create custom React hook for form validation"`
+`/learn "topic"` — e.g., `/learn "JWT auth in Express"`, `/learn "React custom hooks"`
 
 ---
 
-## Execution Flow
+## Phase 1: INIT (auto, no user interaction needed)
 
-### Phase 0: INIT - Setup & Context Gathering
+1. **Resume check**: Look in `learn/` for existing file matching topic. If found, read its YAML frontmatter and offer to resume from last checkpoint via `AskUserQuestion`.
 
-**Actions:**
-1. Create output directory if not exists: `.claude/learn/`
-2. Generate filename: `YYYY-MM-DD-{topic-slug}.md`
-3. Scan project for language detection:
-   - Check for config files: `tsconfig.json`, `package.json`, `go.mod`, `Cargo.toml`, `requirements.txt`, `pyproject.toml`, `pom.xml`, `composer.json`, `Gemfile`, etc.
-   - Identify primary language(s)
-4. Set verify strategy based on detected language
-5. Read relevant existing code for context
+2. **Language detection**: Scan project for config files to identify primary language.
 
-**Language Detection & Verify Strategy:**
+| Language | Config Files | Verify: Syntax | Verify: Run/Test |
+|----------|-------------|----------------|------------------|
+| TypeScript | tsconfig.json | `npx tsc --noEmit` | `npx tsx <file>` |
+| JavaScript | package.json, *.mjs | `node --check <file>` | `node <file>` |
+| Python | pyproject.toml, requirements.txt | `python -m py_compile <file>` | `python <file>` |
+| Go | go.mod | `go build ./...` | `go test ./...` |
+| Rust | Cargo.toml | `cargo check` | `cargo test` |
+| Java | pom.xml, build.gradle | `javac <file>` | `./gradlew test` |
+| Kotlin | build.gradle.kts | `kotlinc <file>` | `./gradlew test` |
+| C#/Unity | *.csproj, *.sln | `dotnet build` | `dotnet test` |
+| Dart/Flutter | pubspec.yaml | `dart analyze` | `flutter test` |
+| Swift | Package.swift | `swift build` | `swift test` |
+| PHP | composer.json | `php -l <file>` | `php <file>` |
+| Ruby | Gemfile | `ruby -c <file>` | `ruby <file>` |
+| Elixir | mix.exs | `mix compile` | `mix test` |
+| Zig | build.zig | `zig build` | `zig build test` |
+| Lua | *.lua | `luac -p <file>` | `lua <file>` |
+| Shell | *.sh | `bash -n <file>` | `bash <file>` |
+| C/C++ | Makefile, CMakeLists.txt | `make` | `make test` |
 
-| Language | Config Files | Verify Command |
-|----------|--------------|----------------|
-| TypeScript | `tsconfig.json`, `*.ts`, `*.tsx` | `npx tsc --noEmit` |
-| JavaScript | `package.json`, `*.js`, `*.mjs` | `node --check <file>` |
-| Python | `requirements.txt`, `pyproject.toml`, `*.py` | `python -m py_compile <file>` |
-| Go | `go.mod`, `*.go` | `go build ./...` |
-| Rust | `Cargo.toml`, `*.rs` | `cargo check` |
-| Java | `pom.xml`, `build.gradle`, `*.java` | `javac <file>` or `./gradlew compileJava` |
-| C# | `*.csproj`, `*.cs` | `dotnet build --no-restore` |
-| PHP | `composer.json`, `*.php` | `php -l <file>` |
-| Ruby | `Gemfile`, `*.rb` | `ruby -c <file>` |
-| Shell | `*.sh`, `*.bash` | `bash -n <file>` |
-| C/C++ | `Makefile`, `CMakeLists.txt`, `*.c`, `*.cpp` | `make` or `cmake --build .` |
+If multiple detected → ask user. If none → ask user.
 
-**If multiple languages detected:** Ask user which one to use for this session.
-**If no language detected:** Ask user to specify.
+3. **Codebase scan**: Read key project files (entry points, configs, existing code related to topic) for context. Use project's conventions in all examples.
 
-**Markdown Header (write to file):**
-```markdown
-# Learn: {Topic}
+4. **Mode from codingLevel** (read from `.claude/.ck.json`):
+   - Level 0-1 → **Deep**: full concepts, analogies, Socratic questions at every step
+   - Level 2-3 → **Standard**: concepts + code, balanced explanations
+   - Level 4-5 → **Quick**: minimal explanation, jump straight to code
+   - Not set → ask user with `AskUserQuestion`
 
-> Generated: {YYYY-MM-DD HH:MM}
-> Language: {detected_language}
-> Project: {project_name}
-
+5. **Create output file**: `learn/{YYYY-MM-DD}-{topic-slug}.md` with YAML frontmatter:
+```yaml
 ---
-```
-
----
-
-### Phase 1: CONCEPT - Knowledge Foundation
-
-**Goal:** Explain the underlying concepts before writing any code.
-
-**Actions:**
-1. Break down the topic into fundamental concepts
-2. Explain each concept clearly:
-   - What is it?
-   - Why does it exist? What problem does it solve?
-   - How does it work (high-level)?
-   - Real-world analogies if helpful
-3. Compare with related concepts (if applicable)
-   - e.g., debounce vs throttle
-   - e.g., JWT vs session-based auth
-4. Show simple diagrams using ASCII if helpful
-
-**Write to markdown:**
-```markdown
-## 1. Concepts
-
-### What is {topic}?
-{explanation}
-
-### Why use {topic}?
-{use cases and benefits}
-
-### How it works
-{mechanism explanation}
-
-### Related Concepts
-| Concept A | Concept B |
-|-----------|-----------|
-| ...       | ...       |
-
----
-```
-
-**User Checkpoint:**
-```
-Phase 1/5: CONCEPT complete.
-
-Do you understand these concepts?
-[ ] Yes, continue to planning
-[ ] Need more explanation (specify what)
-```
-
-**STOP and wait for user response before proceeding.**
-
----
-
-### Phase 2: PLAN - Implementation Strategy
-
-**Goal:** Create a clear, step-by-step implementation plan.
-
-**Actions:**
-1. Break implementation into small, verifiable steps (3-7 steps typically)
-2. Each step should:
-   - Have a clear goal
-   - Be independently verifiable
-   - Build on previous steps
-3. Identify files to create/modify
-4. Note any dependencies needed
-
-**Write to markdown:**
-```markdown
-## 2. Implementation Plan
-
-### Files
-- `{path/to/file1}` - {purpose}
-- `{path/to/file2}` - {purpose}
-
-### Steps
-1. **{Step 1 title}** - {brief description}
-2. **{Step 2 title}** - {brief description}
-3. **{Step 3 title}** - {brief description}
-...
-
-### Dependencies
-- {dependency 1} - {why needed}
-- {dependency 2} - {why needed}
-
----
-```
-
-**User Checkpoint:**
-```
-Phase 2/5: PLAN complete.
-
-Ready to start coding?
-[ ] Yes, let's code
-[ ] Modify plan (specify changes)
-```
-
-**STOP and wait for user response before proceeding.**
-
----
-
-### Phase 3: CODE + VERIFY - Incremental Implementation
-
-**Goal:** Implement each step, verify it works, ensure user understands.
-
-**For each step in the plan:**
-
-#### 3.1 Explain Before Coding
-- What we're about to do
-- Why we're doing it this way
-- Key things to understand
-
-#### 3.2 Write the Code
-- Write complete, working code (no placeholders)
-- Include all necessary imports
-- Add inline comments explaining non-obvious parts
-- Use Edit tool to modify existing files, Write for new files
-
-#### 3.3 Auto-Verify
-Run the appropriate verify command:
-```bash
-# Execute verify command based on language
-{verify_command}
-```
-
-**If verify FAILS:**
-1. Analyze the error
-2. Explain what went wrong (teaching moment)
-3. Fix the code
-4. Re-verify
-5. Repeat until pass
-
-**If verify PASSES:** Continue to user checkpoint.
-
-#### 3.4 Write to Markdown
-```markdown
-### Step {N}: {Title}
-
-**Goal:** {what this step accomplishes}
-
-**Why:** {explanation of approach}
-
-**Code:**
-```{language}
-{code with comments}
-```
-
-**Key Points:**
-- {important thing 1}
-- {important thing 2}
-
-**Verify:** {verify_command} - PASSED
-
----
-```
-
-#### 3.5 User Checkpoint
-```
-Step {N}/{total} complete and verified.
-
-[ ] Understood, next step
-[ ] Need more explanation
-[ ] Code doesn't work on my machine (paste error)
-```
-
-**If user reports error:**
-1. Ask for the error message
-2. Debug and fix
-3. Re-verify locally
-4. Update the markdown with the fix
-
-**STOP and wait for user response before next step.**
-
----
-
-### Phase 4: SUMMARY - Knowledge Consolidation
-
-**Goal:** Reinforce learning with summary and best practices.
-
-**Actions:**
-1. Summarize what was built
-2. List key takeaways
-3. Document common mistakes to avoid
-4. Suggest next steps for deeper learning
-
-**Write to markdown:**
-```markdown
-## 4. Summary
-
-### What We Built
-{summary of implementation}
-
-### Key Takeaways
-1. {takeaway 1}
-2. {takeaway 2}
-3. {takeaway 3}
-
-### Common Mistakes to Avoid
-- {mistake 1} - {why it's bad}
-- {mistake 2} - {why it's bad}
-
-### Next Steps
-- {suggestion for further learning 1}
-- {suggestion for further learning 2}
-
----
-```
-
-**User Checkpoint:**
-```
-Phase 4/5: SUMMARY complete.
-
-Would you like to take a quiz to reinforce learning?
-[ ] Yes, quiz me
-[ ] No, finish up
-```
-
----
-
-### Phase 5: QUIZ (Optional)
-
-**Goal:** Test understanding with practical questions.
-
-**Only if user opted in.**
-
-**Question Types:**
-1. **Conceptual:** Test understanding of the "why"
-2. **Code Reading:** Given code, predict behavior
-3. **Code Writing:** Small exercise to implement variation
-4. **Debugging:** Find the bug in given code
-
-**Format:**
-```
-QUIZ MODE
-
-Q1 (Conceptual): {question}
-
-Your answer: [wait for user]
-
----
-
-Correct answer: {answer}
-Explanation: {why}
-
-Score: {X}/4
-```
-
-**Write to markdown:**
-```markdown
-## 5. Quiz
-
-<details>
-<summary>Q1: {question}</summary>
-
-**Answer:** {answer}
-
-**Explanation:** {explanation}
-</details>
-
-<details>
-<summary>Q2: {question}</summary>
-...
-</details>
-
+topic: "{topic}"
+language: {detected}
+phase: INIT
+step: 0
+total_steps: 0
+mode: {deep|standard|quick}
+started: {ISO timestamp}
+updated: {ISO timestamp}
 ---
 ```
 
 ---
 
-### Phase 6: COMPLETE
+## Phase 2: LEARN (skip entirely in Quick mode)
 
-**Actions:**
-1. Finalize markdown file
-2. Display completion message
+1. **WebSearch** official docs: `WebSearch("{topic} {language} official documentation")`, then `WebFetch` the most relevant result. Cite sources in tutorial.
 
-**Add to markdown:**
-```markdown
----
+2. **Socratic opening** (Deep/Standard): Before explaining, ask user via `AskUserQuestion`:
+   > "Before I explain — what do you think {concept} does and why it's useful?"
+   Then build on their answer.
 
-> Tutorial completed: {timestamp}
-> Total steps: {N}
-> All code verified and working
+3. **Explain concepts** using the project's actual code as examples where possible. Cover: what it is, why it exists, how it works.
 
-Happy coding!
-```
+4. **Checkpoint**: `AskUserQuestion` — "Concepts clear? Continue to building?"
 
-**Display to user:**
-```
-LEARN MODE COMPLETE
-
-Tutorial saved: .claude/learn/{filename}.md
-You can review this file anytime to refresh your knowledge.
-
-What you learned:
-- {concept 1}
-- {concept 2}
-- {concept 3}
-
-Great job!
-```
+Update frontmatter: `phase: LEARN`
 
 ---
 
-## Error Handling
+## Phase 3: BUILD (core phase)
 
-### Verify Command Not Available
-If the verify command fails because tool is not installed:
-1. Inform user: "Verify tool not available: {command}"
-2. Ask: "Install it now, or proceed with manual verification?"
-3. If install: run appropriate install command
-4. If manual: ask user to confirm code works after each step
+1. **Plan steps**: Break implementation into 3-7 verifiable steps. Show plan to user.
 
-### User Reports Code Doesn't Work
-1. Ask for exact error message
-2. Ask for their environment (OS, versions)
-3. Debug systematically
-4. Update tutorial with fix
-5. Add to "Common Issues" section in markdown
+2. **For each step**:
 
-### Language Not Detected
-1. List common languages
-2. Ask user to specify
-3. Set verify strategy accordingly
+   a. **Explain** what we're doing and why (skip in Quick mode)
+
+   b. **Write real code** — no placeholders, no pseudocode. Use project conventions. Use `Edit` for existing files, `Write` for new files.
+
+   c. **Tiered verify**:
+      - Always: run syntax check command from table above
+      - When possible: run the code
+      - If test framework detected: write/run a test
+
+   d. **Socratic** (Deep mode only): Ask "Why did we use X instead of Y?" via `AskUserQuestion`
+
+   e. **Checkpoint**: `AskUserQuestion` — "Step {N}/{total} verified. Understood?"
+      - If user reports error → debug, fix, re-verify, update tutorial
+      - If user needs explanation → explain, then continue
+
+   f. **Write to tutorial file**: step title, explanation, code, key points, verify result
+
+   Update frontmatter: `phase: BUILD`, `step: {N}`, `total_steps: {total}`
+
+---
+
+## Phase 4: WRAP-UP
+
+1. **Summary**: What was built, key takeaways (3-5 points)
+
+2. **Quiz** (optional): Ask user via `AskUserQuestion` if they want a quiz.
+   If yes: 3-4 questions (conceptual, code reading, debugging). Use `AskUserQuestion` for each.
+
+3. **Save tutorial**: Finalize the markdown file. Update frontmatter: `phase: COMPLETE`
+
+4. **Next topics**: Suggest 2-3 related topics to learn next.
+
+Display: `Tutorial saved: learn/{filename}.md`
 
 ---
 
 ## Principles
 
-1. **No code without understanding** - Always explain before implementing
-2. **Verify everything** - Never assume code works, always test
-3. **Fix before proceed** - Don't move on until current step works
-4. **User controls pace** - Always checkpoint before next phase
-5. **Document for future** - Create reusable tutorial
-6. **Basics to advanced** - Start simple, build up complexity
-7. **Real working code** - No pseudocode, no placeholders
+1. **Verify everything** — never assume code works
+2. **Real code only** — no placeholders, no pseudocode
+3. **User controls pace** — always checkpoint before proceeding
+4. **Teach with their code** — use project's actual codebase, not generic examples
 
 ---
 
-## Example Session
+## Error Handling
 
-```
-User: /learn "implement debounce in TypeScript"
-
-[INIT]
-Detected: TypeScript (tsconfig.json found)
-Verify command: npx tsc --noEmit
-Creating: .claude/learn/2024-02-06-debounce-typescript.md
-
-[CONCEPT]
-Debounce is a technique that delays executing a function until
-after a specified time has passed since the last call...
-[detailed explanation]
-
-Ready to continue? [Yes/Explain more]
-
-User: Yes
-
-[PLAN]
-Step 1: Create utils/debounce.ts with basic structure
-Step 2: Implement core debounce logic
-Step 3: Add TypeScript generics for type safety
-Step 4: Write unit tests
-
-Ready to code? [Yes/Modify plan]
-
-User: Yes
-
-[CODE Step 1/4]
-Creating utils/debounce.ts...
-[code with explanation]
-
-Verifying: npx tsc --noEmit
-PASSED
-
-Understood? [Yes/Explain more/Error on my machine]
-
-User: Yes
-
-[CODE Step 2/4]
-...
-
-[After all steps]
-
-[SUMMARY]
-Key takeaways:
-1. Debounce delays execution until activity stops
-2. clearTimeout prevents stale callbacks
-3. Generics preserve function type signatures
-
-Quiz? [Yes/No]
-
-User: No
-
-COMPLETE
-Tutorial saved: .claude/learn/2024-02-06-debounce-typescript.md
-```
+- **Verify tool missing**: Ask user to install or switch to manual verification
+- **Code doesn't work on user's machine**: Get error message, debug, fix, re-verify, update tutorial
+- **Language not detected**: Ask user to specify, set verify strategy accordingly
 
 ---
 
 ## Version History
 
-- **1.0.0** - Initial release with full interactive learning flow
+- **2.0.0** - Rewrite: adaptive difficulty via codingLevel, 4 phases, WebSearch, Socratic method, resume support, tiered verify, 17 languages, codebase-aware
+- **1.0.0** - Initial release
