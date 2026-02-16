@@ -1,3 +1,10 @@
+## [3.10.3](https://github.com/ngxtm/devkit/compare/v3.10.2...v3.10.3) (2026-02-16)
+
+
+### Bug Fixes
+
+* **init:** auto-update when project already has devkit installed ([66608b5](https://github.com/ngxtm/devkit/commit/66608b5e5b9474ed5430d8239bc256f6515b878b))
+
 ## [3.10.2](https://github.com/ngxtm/devkit/compare/v3.10.1...v3.10.2) (2026-02-09)
 
 
