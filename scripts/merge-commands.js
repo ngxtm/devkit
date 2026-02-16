@@ -38,7 +38,6 @@ const MERGE_STRATEGY = {
   'journal.md': 'claudekit',
   'kanban.md': 'claudekit',
   'preview.md': 'claudekit',
-  'scout.md': 'claudekit',
   'use-mcp.md': 'claudekit',
   'watzup.md': 'claudekit',
   'worktree.md': 'claudekit',

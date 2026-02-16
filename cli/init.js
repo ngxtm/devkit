@@ -87,7 +87,7 @@ function installForTool(toolId, tool, projectDir, options = {}) {
 
   // 1. Install core commands (if tool supports it) - optimized size ~400KB
   if (tool.commandsPath) {
-    const coreCommandsDir = path.join(PACKAGE_ROOT, 'core-commands');
+    const coreCommandsDir = path.join(PACKAGE_ROOT, 'merged-commands');
     const commandsDir = path.join(targetDir, tool.commandsPath);
 
     if (fs.existsSync(coreCommandsDir)) {
