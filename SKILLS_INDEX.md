@@ -1036,7 +1036,7 @@ Identifies high-quality leads for your product or service by analyzing your busi
 ### learn
 `skills/learn`
 
-Interactive step-by-step learning mode. Teaches concepts from basics to advanced while solving real problems. Auto-detects language, verifies code at ...
+Interactive learning mode. Teaches by doing with verified code, adaptive difficulty, and Socratic questioning.
 
 ### legacy-modernizer
 `skills/legacy-modernizer`

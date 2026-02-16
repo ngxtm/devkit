@@ -1977,7 +1977,7 @@
   {
     "name": "learn",
     "path": "skills/learn",
-    "description": "Interactive step-by-step learning mode. Teaches concepts from basics to advanced while solving real problems. Auto-detects language, verifies code at each step, creates markdown tutorials. Triggers on"
+    "description": "Interactive learning mode. Teaches by doing with verified code, adaptive difficulty, and Socratic questioning."
   },
   {
     "name": "legacy-modernizer",
