@@ -1,3 +1,10 @@
+## [3.11.1](https://github.com/ngxtm/devkit/compare/v3.11.0...v3.11.1) (2026-02-16)
+
+
+### Bug Fixes
+
+* **init:** use merged-commands instead of core-commands for npm installs ([148b895](https://github.com/ngxtm/devkit/commit/148b895ce1aa5153e8ce4d9274ec6e1e52f039d4))
+
 # [3.11.0](https://github.com/ngxtm/devkit/compare/v3.10.3...v3.11.0) (2026-02-16)
 
 
