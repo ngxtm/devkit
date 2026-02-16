@@ -68,15 +68,15 @@ async function showToolSelectionMenu(detectedTools) {
  */
 function installForTool(toolId, tool, projectDir, options = {}) {
   const targetDir = path.join(projectDir, tool.projectPath);
-  const isUpdate = options.update || false;
+  let isUpdate = options.update || false;
 
-  // Check if already exists
+  // Check if already exists - auto-update if so
   if (fs.existsSync(targetDir) && !isUpdate && !options.force) {
-    return {
-      success: false,
-      reason: 'exists',
-      message: `${tool.projectPath}/ already exists`
-    };
+    const configPath = path.join(targetDir, 'devkit.json');
+    if (fs.existsSync(configPath)) {
+      // Already installed, auto-update instead of skipping
+      isUpdate = true;
+    }
   }
 
   // Create target directory
@@ -277,8 +277,14 @@ async function initProject(options = {}) {
   const totalSize = results.reduce((sum, r) => sum + (r.stats?.sizeKB || 0), 0);
 
   console.log('\n' + '='.repeat(60));
-  console.log('  INSTALLATION COMPLETE');
-  console.log('='.repeat(60));
+  if (successCount === 0) {
+    console.log('  NO CHANGES MADE');
+    console.log('='.repeat(60));
+    console.log('\n  Try: devkit init --force');
+  } else {
+    console.log('  INSTALLATION COMPLETE');
+    console.log('='.repeat(60));
+  }
   console.log(`\n  Tools: ${successCount}/${selectedTools.length} installed`);
   console.log(`  Total: ${totalFiles} files (${totalSize} KB)`);
 
