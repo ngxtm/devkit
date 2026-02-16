@@ -1,3 +1,10 @@
+# [3.11.0](https://github.com/ngxtm/devkit/compare/v3.10.3...v3.11.0) (2026-02-16)
+
+
+### Features
+
+* **learn:** rewrite /learn command to v2.0 (477→147 lines) ([c7fe664](https://github.com/ngxtm/devkit/commit/c7fe66491a9995214a017e93714394e990c69f96))
+
 ## [3.10.3](https://github.com/ngxtm/devkit/compare/v3.10.2...v3.10.3) (2026-02-16)
 
 
