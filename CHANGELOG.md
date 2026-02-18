@@ -1,3 +1,10 @@
+# [3.12.0](https://github.com/ngxtm/devkit/compare/v3.11.1...v3.12.0) (2026-02-18)
+
+
+### Features
+
+* **skills:** improve auto-detection, add sync command and routing guide ([450257f](https://github.com/ngxtm/devkit/commit/450257f096e0f770719ba3e3bb8c3c323cffc47b))
+
 ## [3.11.1](https://github.com/ngxtm/devkit/compare/v3.11.0...v3.11.1) (2026-02-16)
 
 
