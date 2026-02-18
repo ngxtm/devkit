@@ -18,44 +18,44 @@ const OUTPUT_FILE = path.join(__dirname, '..', 'skills-compact.json');
 
 // Category short codes
 const CATEGORY_CODES = {
-  'frontend': 'fe',
-  'backend': 'be',
+  'security': 'sec',
+  'devops': 'ops',
+  'ai-ml': 'ai',
+  'testing': 'test',
   'database': 'db',
   'mobile': 'mob',
-  'devops': 'ops',
-  'testing': 'test',
-  'security': 'sec',
-  'ai-ml': 'ai',
-  'python': 'py',
-  'golang': 'go',
   'rust': 'rs',
+  'golang': 'go',
+  'python': 'py',
   'data': 'data',
-  'git-workflow': 'git',
-  'documentation': 'doc',
   'performance': 'perf',
   'architecture': 'arch',
+  'git-workflow': 'git',
+  'documentation': 'doc',
+  'backend': 'be',
+  'frontend': 'fe',
   'other': 'other'
 };
 
-// Category patterns
-const CATEGORY_PATTERNS = {
-  'frontend': /react|vue|angular|svelte|next|nuxt|remix|astro|frontend|ui|ux|css|tailwind|component/i,
-  'backend': /node|express|nest|fastify|hono|backend|server|api|rest|graphql|grpc|microservice/i,
-  'database': /database|sql|postgres|mysql|mongo|redis|prisma|drizzle|supabase|firebase/i,
-  'mobile': /mobile|react-native|flutter|ios|android|swift|kotlin|expo/i,
-  'devops': /docker|kubernetes|k8s|ci|cd|deploy|aws|azure|gcp|cloud|terraform/i,
-  'testing': /test|jest|vitest|playwright|cypress|tdd|bdd|e2e/i,
-  'security': /security|auth|oauth|jwt|owasp|pentest|vulnerability/i,
-  'ai-ml': /ai|ml|llm|agent|openai|anthropic|langchain|prompt|embedding|rag|mcp/i,
-  'python': /python|django|flask|fastapi|pandas|numpy/i,
-  'golang': /golang|go\b|gin|echo|fiber/i,
-  'rust': /rust|cargo|tokio|actix/i,
-  'data': /data|analytics|etl|pipeline|spark|kafka/i,
-  'git-workflow': /git|github|gitlab|review|pr|merge|commit/i,
-  'documentation': /doc|readme|api-doc|swagger|openapi/i,
-  'performance': /performance|optimization|cache|profiling/i,
-  'architecture': /architecture|design|pattern|solid|clean|ddd/i
-};
+// Category patterns — ORDER MATTERS: specific categories first, broad ones last
+const CATEGORY_PATTERNS = [
+  ['security',     /security|auth|oauth|jwt|owasp|pentest|penetration|vulnerability|exploit|xss|injection|privilege.escalation|active.directory|attack|malware|forensic|reverse.engineer|red.team|burp|shodan|metasploit|sqlmap|brute.?force|encryption|crypto(?!currency)|firewall|ids|ips|siem|soc|threat|cve|hardening|compliance|gdpr|pci|sast|dast|ctf/i],
+  ['devops',       /docker|kubernetes|k8s|ci[\/-]?cd|deploy|aws|azure|gcp|cloud|terraform|ansible|helm|istio|linkerd|jenkins|github.actions|gitlab.ci|argocd|pulumi|vagrant|prometheus|grafana|monitoring|observability|sre|incident|on.call|runbook|infrastructure|server.management|nginx|apache|load.balancer|cdn/i],
+  ['ai-ml',        /\bai\b|machine.learning|\bml\b|\bllm\b|agent(?!.assistant)|openai|anthropic|langchain|langgraph|prompt|embedding|rag\b|mcp\b|fine.tuning|hugging.face|transformer|gpt|claude|gemini|diffusion|stable|midjourney|vision|nlp|neural|deep.learning|tensor|torch|crew.?ai|autogen|semantic|vector/i],
+  ['testing',      /\btest|jest|vitest|playwright|cypress|tdd|bdd|e2e|qa\b|regression|unit.test|integration.test|mock|stub|fixture|coverage|assertion/i],
+  ['database',     /database|sql\b|postgres|mysql|mongo|redis|prisma|drizzle|supabase|firebase|dynamo|cassandra|cockroach|sqlite|migration|schema|query.optim|nosql|elasticsearch|clickhouse|neon/i],
+  ['mobile',       /mobile|react.native|flutter|ios\b|android|swift(?!ui)|kotlin(?!.specialist)|expo|dart\b|xcode|app.store|play.store/i],
+  ['rust',         /\brust\b|cargo|tokio|actix|wasm/i],
+  ['golang',       /\bgolang\b|\bgo\b(?!ogle|dot|od)|gin\b|echo\b|fiber\b/i],
+  ['python',       /\bpython\b|django|flask|fastapi|pandas|numpy|scipy|jupyter|pip\b|poetry|uv\b.*package/i],
+  ['data',         /\bdata\b.*(?:engineer|pipeline|quality|warehouse)|analytics|etl\b|spark\b|kafka\b|airflow|dbt\b|streaming/i],
+  ['performance',  /performance|profiling|optimization|cache|benchmark|latency|throughput|memory.leak/i],
+  ['architecture', /architecture|system.design|design.pattern|\bsolid\b|clean.architecture|\bddd\b|event.sourc|cqrs|hexagonal|microservice.pattern|domain.driven/i],
+  ['git-workflow', /\bgit\b|github|gitlab|pull.request|\bpr\b|code.review|branching|merge|commit|changelog|version|release/i],
+  ['documentation',/\bdoc\b|readme|api.doc|swagger|openapi|technical.writing|jsdoc|typedoc/i],
+  ['backend',      /node\.?js|express|nest\.?js|fastify|hono|backend|server|api\b|rest\b|graphql|grpc|webhook|middleware|routing|endpoint|websocket/i],
+  ['frontend',     /react(?!.native)|vue|angular|svelte|next\.?js|nuxt|remix|astro|frontend|ui\b|ux\b|css|tailwind|component|html|dom|browser|responsive|accessibility|wcag|animation|canvas|three\.?js|d3/i],
+];
 
 /**
  * Parse YAML frontmatter
@@ -89,10 +89,17 @@ function parseFrontmatter(content) {
  * Categorize skill
  */
 function categorizeSkill(name, description) {
-  const text = `${name} ${description}`.toLowerCase();
+  const nameText = name.toLowerCase();
+  const fullText = `${name} ${description}`.toLowerCase();
 
-  for (const [category, pattern] of Object.entries(CATEGORY_PATTERNS)) {
-    if (pattern.test(text)) {
+  // Match on name first (more reliable), then fall back to description
+  for (const [category, pattern] of CATEGORY_PATTERNS) {
+    if (pattern.test(nameText)) {
+      return CATEGORY_CODES[category] || category;
+    }
+  }
+  for (const [category, pattern] of CATEGORY_PATTERNS) {
+    if (pattern.test(fullText)) {
       return CATEGORY_CODES[category] || category;
     }
   }
@@ -157,8 +164,9 @@ function buildCompactIndex() {
     const description = frontmatter.description || '';
     const category = categorizeSkill(skillName, description);
 
-    // Ultra-compact: just category code
-    index.skills[skillName] = category;
+    // Include category and short description for semantic matching
+    const shortDesc = shortenDesc(description);
+    index.skills[skillName] = shortDesc ? { c: category, d: shortDesc } : category;
 
     processedCount++;
   }
@@ -175,7 +183,8 @@ function buildCompactIndex() {
 
   // Category distribution
   const catCount = {};
-  for (const cat of Object.values(index.skills)) {
+  for (const val of Object.values(index.skills)) {
+    const cat = typeof val === 'string' ? val : val.c;
     catCount[cat] = (catCount[cat] || 0) + 1;
   }
 

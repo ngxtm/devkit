@@ -48,11 +48,12 @@ User Request → Extract keywords (react, auth, test, etc.)
 ### Step 1: Read Compact Index
 ```
 Read: .claude/skills-compact.json
-Format: { "_categories": {...}, "skills": { "skill-name": "category-code" } }
+Format: { "_categories": {...}, "skills": { "skill-name": { "c": "category", "d": "short description" } } }
+Note: Some skills may be just a category string if no description available.
 ```
 
 ### Step 2: Match by Name/Keyword
-Look for skills whose name contains user's keywords:
+Look for skills whose name OR description contains user's keywords:
 - User says "react" → find skills with "react" in name
 - User says "authentication" → find "auth" skills
 - User says "docker" → find "docker" skills
