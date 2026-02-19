@@ -1,3 +1,10 @@
+# [3.13.0](https://github.com/ngxtm/devkit/compare/v3.12.0...v3.13.0) (2026-02-19)
+
+
+### Features
+
+* **learn:** rewrite to v3.0 with teaching modes ([0f99dca](https://github.com/ngxtm/devkit/commit/0f99dca686e4023fb6c8268ce0908d4a4f017654))
+
 # [3.12.0](https://github.com/ngxtm/devkit/compare/v3.11.1...v3.12.0) (2026-02-18)
 
 
