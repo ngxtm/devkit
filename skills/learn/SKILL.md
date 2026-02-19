@@ -1,16 +1,16 @@
 ---
 name: learn
-description: Interactive learning mode. Teaches by doing with verified code, adaptive difficulty, and Socratic questioning.
+description: Guided project building — you code, AI mentors. Build your own product step-by-step with best practices and deep understanding.
 argument-hint: [topic]
 ---
 
-# Learn Mode v2.0
+# Learn Mode v3.0
 
-> Learn by doing. Verified at every step. Adapted to your level.
+> Build your product. Write every line. Understand every decision.
 
 ## Activation
 
-`/learn "topic"` — e.g., `/learn "JWT auth in Express"`, `/learn "React custom hooks"`
+`/learn "topic"` — e.g., `/learn "JWT auth in Express"`, `/learn "build real-time chat"`
 
 ---
 
@@ -44,13 +44,23 @@ If multiple detected → ask user. If none → ask user.
 
 3. **Codebase scan**: Read key project files (entry points, configs, existing code related to topic) for context. Use project's conventions in all examples.
 
-4. **Mode from codingLevel** (read from `.claude/.ck.json`):
+4. **Difficulty from codingLevel** (read from `.claude/.ck.json`):
    - Level 0-1 → **Deep**: full concepts, analogies, Socratic questions at every step
    - Level 2-3 → **Standard**: concepts + code, balanced explanations
    - Level 4-5 → **Quick**: minimal explanation, jump straight to code
    - Not set → ask user with `AskUserQuestion`
 
-5. **Create output file**: `learn/{YYYY-MM-DD}-{topic-slug}.md` with YAML frontmatter:
+5. **Teaching mode** — ask user via `AskUserQuestion`:
+
+| Mode | Who codes? | AI does what? | Best for |
+|------|-----------|---------------|----------|
+| **Guided** | User writes all code | Describe task + review after | Deep understanding, own the code |
+| **Scaffolded** | User fills in key parts | Provide skeleton + hints | Learning new patterns |
+| **Demonstrated** | AI writes, user reads | Write code + explain | Quick overview, reading comprehension |
+
+   Default suggestion based on difficulty: Deep → Guided, Standard → Scaffolded, Quick → Demonstrated.
+
+6. **Create output file**: `learn/{YYYY-MM-DD}-{topic-slug}.md` with YAML frontmatter:
 ```yaml
 ---
 topic: "{topic}"
@@ -58,7 +68,8 @@ language: {detected}
 phase: INIT
 step: 0
 total_steps: 0
-mode: {deep|standard|quick}
+difficulty: {deep|standard|quick}
+teaching: {guided|scaffolded|demonstrated}
 started: {ISO timestamp}
 updated: {ISO timestamp}
 ---
@@ -66,7 +77,7 @@ updated: {ISO timestamp}
 
 ---
 
-## Phase 2: LEARN (skip entirely in Quick mode)
+## Phase 2: LEARN (skip entirely in Quick difficulty)
 
 1. **WebSearch** official docs: `WebSearch("{topic} {language} official documentation")`, then `WebFetch` the most relevant result. Cite sources in tutorial.
 
@@ -86,24 +97,75 @@ Update frontmatter: `phase: LEARN`
 
 1. **Plan steps**: Break implementation into 3-7 verifiable steps. Show plan to user.
 
-2. **For each step**:
+2. **For each step, follow the teaching mode**:
 
-   a. **Explain** what we're doing and why (skip in Quick mode)
+### Guided Mode (user codes everything)
+
+   a. **Describe the task**: Explain WHAT to implement and WHY. Include:
+      - The goal of this step
+      - Which file(s) to create or modify
+      - Key concepts/APIs to use
+      - Acceptance criteria (what "done" looks like)
+      - **Do NOT show the solution code.**
+
+   b. **User codes**: Tell user to write the code. Wait for them to say "done" or ask for help.
+      - If user asks for a hint → give a small hint, not the full answer
+      - If user is stuck after 2 hints → offer to show one specific part
+
+   c. **AI reviews**: Read the file(s) user modified. Provide:
+      - Does it work? Run verify commands.
+      - Best-practice review: naming, patterns, security, performance
+      - Specific feedback: "Line X: consider Y because Z"
+      - If issues found → explain and let user fix (don't fix for them)
+
+   d. **Socratic**: "Why did you choose this approach?" or "What happens if X fails?" via `AskUserQuestion`
+
+### Scaffolded Mode (AI provides skeleton, user fills in)
+
+   a. **Explain** what we're building and why
+
+   b. **Write skeleton code** with clearly marked `// TODO: implement` sections. Use `Edit`/`Write` tools. The skeleton should include:
+      - File structure and imports
+      - Function signatures with parameter types
+      - Comments describing what each TODO section should do
+      - Keep TODOs focused (each is 3-15 lines of real code)
+
+   c. **User fills in TODOs**: Wait for user to complete them.
+
+   d. **AI reviews**: Read filled-in code. Same review process as Guided mode.
+
+### Demonstrated Mode (AI codes, user reads)
+
+   a. **Explain** what we're doing and why
 
    b. **Write real code** — no placeholders, no pseudocode. Use project conventions. Use `Edit` for existing files, `Write` for new files.
 
-   c. **Tiered verify**:
-      - Always: run syntax check command from table above
+   c. **Explain key decisions**: After writing, highlight WHY specific choices were made.
+
+### All Modes — after coding:
+
+   e. **Tiered verify**:
+      - Always: run syntax check command from language table
       - When possible: run the code
       - If test framework detected: write/run a test
 
-   d. **Socratic** (Deep mode only): Ask "Why did we use X instead of Y?" via `AskUserQuestion`
+   f. **Best-practice review** (all modes): Check the completed code for:
+      - Security issues (injection, XSS, exposed secrets)
+      - Anti-patterns for the language/framework
+      - Naming and convention consistency with project
+      - Performance concerns
+      - Present findings to user with explanations
 
-   e. **Checkpoint**: `AskUserQuestion` — "Step {N}/{total} verified. Understood?"
-      - If user reports error → debug, fix, re-verify, update tutorial
+   g. **Checkpoint**: `AskUserQuestion` — "Step {N}/{total} verified. Ready for next?"
+      - If user reports error → debug together (Guided: guide user to fix; Demonstrated: fix directly)
       - If user needs explanation → explain, then continue
 
-   f. **Write to tutorial file**: step title, explanation, code, key points, verify result
+   h. **Explain-back check** (every 2-3 steps): Ask user via `AskUserQuestion`:
+      > "Quick check — can you explain in your own words what we built in the last {N} steps and how they connect?"
+      - If user explains well → acknowledge and continue
+      - If gaps → re-explain the unclear parts before proceeding
+
+   i. **Write to tutorial file**: step title, explanation, code, key points, verify result
 
    Update frontmatter: `phase: BUILD`, `step: {N}`, `total_steps: {total}`
 
@@ -126,22 +188,27 @@ Display: `Tutorial saved: learn/{filename}.md`
 
 ## Principles
 
-1. **Verify everything** — never assume code works
-2. **Real code only** — no placeholders, no pseudocode
-3. **User controls pace** — always checkpoint before proceeding
-4. **Teach with their code** — use project's actual codebase, not generic examples
+1. **User owns the code** — in Guided/Scaffolded mode, user writes; AI reviews, never writes for them
+2. **Verify everything** — never assume code works
+3. **Real code only** — no placeholders, no pseudocode (except Scaffolded TODOs)
+4. **User controls pace** — always checkpoint before proceeding
+5. **Teach with their code** — use project's actual codebase, not generic examples
+6. **Best practices always** — review every step for security, patterns, conventions
+7. **Understanding > completion** — if user doesn't understand, stop and re-explain
 
 ---
 
 ## Error Handling
 
 - **Verify tool missing**: Ask user to install or switch to manual verification
-- **Code doesn't work on user's machine**: Get error message, debug, fix, re-verify, update tutorial
+- **Code doesn't work on user's machine**: Get error message, debug together, re-verify, update tutorial
 - **Language not detected**: Ask user to specify, set verify strategy accordingly
+- **User stuck in Guided mode**: After 2 hints, offer to show solution for that specific part only
 
 ---
 
 ## Version History
 
+- **3.0.0** - Teaching modes (guided/scaffolded/demonstrated), best-practice review, explain-back checkpoints, user-codes-first philosophy
 - **2.0.0** - Rewrite: adaptive difficulty via codingLevel, 4 phases, WebSearch, Socratic method, resume support, tiered verify, 17 languages, codebase-aware
 - **1.0.0** - Initial release

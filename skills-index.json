@@ -1977,7 +1977,7 @@
   {
     "name": "learn",
     "path": "skills/learn",
-    "description": "Interactive learning mode. Teaches by doing with verified code, adaptive difficulty, and Socratic questioning."
+    "description": "Guided project building — you code, AI mentors. Build your own product step-by-step with best practices and deep understanding."
   },
   {
     "name": "legacy-modernizer",

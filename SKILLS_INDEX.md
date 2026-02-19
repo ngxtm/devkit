@@ -1036,7 +1036,7 @@ Identifies high-quality leads for your product or service by analyzing your busi
 ### learn
 `skills/learn`
 
-Interactive learning mode. Teaches by doing with verified code, adaptive difficulty, and Socratic questioning.
+Guided project building — you code, AI mentors. Build your own product step-by-step with best practices and deep understanding.
 
 ### legacy-modernizer
 `skills/legacy-modernizer`
