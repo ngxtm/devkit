@@ -1,3 +1,11 @@
+# [3.15.0](https://github.com/ngxtm/devkit/compare/v3.14.0...v3.15.0) (2026-02-23)
+
+
+### Features
+
+* **skills:** add react-doctor as devkit-native skill with upstream sync ([b5a3f2d](https://github.com/ngxtm/devkit/commit/b5a3f2d1702e89f9e4ded30115260196e14b99a4))
+* **skills:** rewrite /skill:sync for AI-driven upstream sync ([65479d7](https://github.com/ngxtm/devkit/commit/65479d7535a5db029d7ffa07e957e88b7263b6c5))
+
 # [3.14.0](https://github.com/ngxtm/devkit/compare/v3.13.0...v3.14.0) (2026-02-23)
 
 
