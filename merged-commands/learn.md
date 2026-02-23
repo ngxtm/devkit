@@ -4,9 +4,9 @@ description: Guided project building — you code, AI mentors. Build your own pr
 argument-hint: [topic]
 ---
 
-# Learn Mode v3.0
+# Learn Mode v3.1
 
-> Build your product. Write every line. Understand every decision.
+> Build your product. Design the architecture. Write every line. Understand every decision.
 
 ## Activation
 
@@ -93,11 +93,69 @@ Update frontmatter: `phase: LEARN`
 
 ---
 
-## Phase 3: BUILD (core phase)
+## Phase 3: DESIGN (Socratic architecture thinking)
 
-1. **Plan steps**: Break implementation into 3-7 verifiable steps. Show plan to user.
+> User thinks first, AI guides — not the other way around.
 
-2. **For each step, follow the teaching mode**:
+1. **Frame the problem**: AI presents the high-level problem to solve:
+   > "We need to build {topic}. Before I suggest anything — how would YOU approach this? What components or pieces do you think we need?"
+
+   Ask via `AskUserQuestion`. Let user think and answer.
+
+2. **Build on user's answer**:
+   - If user's approach is solid → acknowledge strengths, refine together
+   - If user's approach has gaps → ask guiding questions: "What about {concern}? How would you handle that?"
+   - If user has no idea → break it down: "Let's start smaller — what's the first thing a user would do with this feature?"
+
+3. **Explore alternatives**: Present 2-3 different approaches with trade-offs:
+   > "Your approach uses X. Another option is Y. Here's how they compare:"
+
+   | Aspect | Approach A (user's) | Approach B | Approach C |
+   |--------|-------------------|-----------|-----------|
+   | Complexity | ... | ... | ... |
+   | Scalability | ... | ... | ... |
+   | Learning value | ... | ... | ... |
+
+   Ask user to choose via `AskUserQuestion`. Explain WHY each trade-off matters.
+
+4. **Architecture decisions**: For the chosen approach, walk through key decisions:
+   - Data flow: how data moves through the system
+   - File/module structure: where code lives and why
+   - Dependencies: what libraries/tools and why those specifically
+   - Patterns: which design patterns and why (not just "use MVC" but why MVC fits here)
+
+   For each decision, ask user: "Does this make sense? Any concerns?"
+
+5. **Write to tutorial file**: Record the design discussion, chosen approach, and rationale.
+
+Update frontmatter: `phase: DESIGN`
+
+---
+
+## Phase 4: PLAN (concrete implementation steps)
+
+1. **Break down the chosen design** into 3-7 concrete, verifiable steps. Each step should:
+   - Have a clear goal (what's done when this step is complete)
+   - Build on previous steps (incremental, testable progress)
+   - Be small enough to verify immediately
+
+2. **Show plan to user** with rationale for the ordering:
+   > "Here's the build order. We start with X because Y depends on it. Step 3 before Step 4 because..."
+
+3. **User validates**: Ask via `AskUserQuestion`:
+   > "Does this plan make sense? Want to reorder anything or add/remove steps?"
+
+   Adjust plan based on user feedback.
+
+4. **Write plan to tutorial file**: Each step with goal, files involved, and acceptance criteria.
+
+Update frontmatter: `phase: PLAN`, `total_steps: {N}`
+
+---
+
+## Phase 5: BUILD (core phase)
+
+1. **For each step from the PLAN phase, follow the teaching mode**:
 
 ### Guided Mode (user codes everything)
 
@@ -171,7 +229,7 @@ Update frontmatter: `phase: LEARN`
 
 ---
 
-## Phase 4: WRAP-UP
+## Phase 6: WRAP-UP
 
 1. **Summary**: What was built, key takeaways (3-5 points)
 
@@ -209,6 +267,7 @@ Display: `Tutorial saved: learn/{filename}.md`
 
 ## Version History
 
+- **3.1.0** - Added DESIGN phase (Socratic architecture) and PLAN phase (concrete steps). Full flow: INIT → LEARN → DESIGN → PLAN → BUILD → WRAP-UP
 - **3.0.0** - Teaching modes (guided/scaffolded/demonstrated), best-practice review, explain-back checkpoints, user-codes-first philosophy
 - **2.0.0** - Rewrite: adaptive difficulty via codingLevel, 4 phases, WebSearch, Socratic method, resume support, tiered verify, 17 languages, codebase-aware
 - **1.0.0** - Initial release
