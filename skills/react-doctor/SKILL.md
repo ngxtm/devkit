@@ -2,7 +2,7 @@
 name: react-doctor
 description: Run react-doctor to scan React codebase for health issues. Diagnose security, performance, correctness, architecture problems with 0-100 score.
 upstream: https://github.com/millionco/react-doctor
-upstream-version: latest
+upstream-version: "0.0.0"
 triggers:
   - react-doctor
   - react health

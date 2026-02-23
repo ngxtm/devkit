@@ -1,108 +1,176 @@
 ---
-description: Sync new skills from upstream repos with AI evaluation
-argument-hint: [options]
+description: Sync skills, rules, and external-skills from upstream repos with AI evaluation
+argument-hint: [--auto] [--dry-run]
 ---
 
-# Sync Skills from Upstream
+# Sync from Upstream
 
-> AI-assisted upstream skill sync: fetch, evaluate, select, build.
+> AI-driven upstream sync: fetch, evaluate new+updated skills/rules/external-skills, apply, build, commit.
+
+## Arguments
+
+Parse `$ARGUMENTS` for flags:
+- `--auto`: Fully autonomous — sync all useful new items, accept all updates, no user questions
+- `--dry-run`: Show report only, don't copy or commit anything
 
 ## Workflow
 
-### Step 1: Pre-flight Check
+### Step 1: Pre-flight
 
-Verify clean working directory:
+Check git status:
 ```bash
 git status --porcelain
 ```
-If not clean → ask user to commit or stash first.
 
-### Step 2: Fetch Upstream
+- If **clean** → proceed
+- If **dirty + `--auto`** → run `git stash push -m "devkit-sync-stash"`
+- If **dirty + interactive** → ask user to commit/stash or continue with stash
 
-Run the sync script to clone upstream repos and get a report:
+Remember if stash was created (for restore later).
+
+### Step 2: Fetch & Report
+
+Run the sync script with JSON output:
 ```bash
-npm run sync:upstream
+node scripts/manual-sync.js --no-branch --json
 ```
 
-This creates a sync branch and clones repos to temp directory.
+Parse the JSON output. It contains:
+```json
+{
+  "tempDir": "/tmp/devkit-sync",
+  "skills": { "new": [...], "updated": [...], "unchanged": N },
+  "rules": { "new": [...], "updated": [...], "unchanged": N },
+  "external-skills": [{ "name": "...", "localExists": bool, "upstreamVersion": "...", "localVersion": "...", "checkFiles": [...], "tempPath": "..." }]
+}
+```
+
+If all categories have 0 new and 0 updated → report "Already up to date" and stop.
 
 ### Step 3: Evaluate New Skills
 
-After the script runs, it shows which skills are new. For each **new** skill:
+For each item in `skills.new`:
+1. Read its `SKILL.md` from the `path` field in the report
+2. Classify:
+   - **Useful**: Covers a distinct domain, well-structured, actionable content
+   - **Duplicate**: Similar skill already exists (check by name/description against skills-compact.json)
+   - **Skip**: Too niche, low quality, or just "be a senior X engineer" with no real content
+3. In `--auto` mode: sync all useful, skip duplicates and low quality
+4. In interactive mode: present summary and ask user using `AskUserQuestion`
 
-1. Read its `SKILL.md` from the temp directory
-2. Evaluate:
-   - **Useful**: Skill covers a distinct domain not already well-covered
-   - **Duplicate**: Similar skill already exists in the local collection
-   - **Irrelevant**: Too niche or low quality
-
-3. Present summary to user:
+Summary format:
 ```
 Upstream sync found N new skills:
 
-✅ Useful (X):
-  - skill-name: short reason
-  - skill-name: short reason
-
-⚠️ Possibly duplicate (Y):
-  - skill-name: overlaps with existing-skill
-
-❌ Skip (Z):
-  - skill-name: reason
-
-Sync options:
-  1. Sync all useful (X skills)
-  2. Sync all useful + duplicates (X+Y skills)
-  3. Let me choose manually
+✅ Useful (X): skill-a, skill-b, ...
+⚠️ Duplicate (Y): skill-c (overlaps existing-skill), ...
+❌ Skip (Z): skill-d (reason), ...
 ```
 
-### Step 4: Copy Selected Skills
+### Step 3.5: Evaluate Updated Skills
 
-Use `AskUserQuestion` to get user's choice. Then for selected skills:
+For each item in `skills.updated`:
+1. Read **both** upstream SKILL.md (from tempDir) and local SKILL.md
+2. Compare and summarize what changed
+3. Classify:
+   - **Accept**: Upstream adds substantial new content (new sections, patterns, commands)
+   - **Skip**: Changes are trivial (formatting only) or local version is superior/customized
+4. In `--auto` mode: accept all non-trivial updates
+5. In interactive mode: present changes summary and ask user
 
-```bash
-cp -r /tmp/devkit-sync/{source}/{skill-name} ./skills/{skill-name}
-```
+### Step 4: Evaluate External Skills
 
-### Step 5: Rebuild Indexes
+For each item in `external-skills`:
+1. Check if local skill exists (`localExists` field)
+2. If exists:
+   a. Read `UPSTREAM.md` from `skills/{name}/UPSTREAM.md` for sync guide
+   b. Read the relevant `checkFiles` from `tempPath` in the report
+   c. Compare with local `SKILL.md`
+   d. Check version: if `upstreamVersion` differs from `localVersion` → needs update
+   e. Follow UPSTREAM.md guide: preserve devkit-specific sections, update upstream-derived content
+   f. Update `upstream-version` in SKILL.md frontmatter to `upstreamVersion` value
+3. If not exists: report it as available but don't auto-create (manual setup needed)
+4. In `--auto` mode: apply all detected changes following UPSTREAM.md rules
+5. In interactive mode: show what changed and ask user
+
+### Step 5: Evaluate Rules
+
+For each item in `rules.new`:
+1. Read the rule content from `path` field
+2. Classify: useful (covers new pattern) or skip (duplicate/too generic)
+3. In `--auto` mode: sync all useful
+4. In interactive mode: ask user
+
+For each item in `rules.updated`:
+1. Compare upstream and local content
+2. Accept meaningful updates, skip trivial ones
+
+### Step 6: Apply Changes
+
+If `--dry-run` → skip this step, just show what would be done.
+
+For selected items:
+- **New skills**: `node scripts/manual-sync.js --copy <name>` for each
+- **Updated skills**: Read upstream SKILL.md, use Write tool to update local SKILL.md (preserve local customizations if any)
+- **New rules**: `node scripts/manual-sync.js --copy <name>` for each
+- **Updated rules**: Use Write tool to update local rule files
+- **External skills**: Use Write tool to edit SKILL.md following UPSTREAM.md guide
+
+### Step 7: Rebuild & Verify
 
 ```bash
 npm run build
 ```
 
-This regenerates all indexes (merged-commands, rules-index, skills-index, skills-compact).
+- If **success** → proceed to commit
+- If **failure** → rollback ALL changes:
+  ```bash
+  git checkout -- .
+  ```
+  If stash was created: `git stash pop`
+  Report the build error and stop.
 
-### Step 6: Review & Commit
+### Step 8: Commit
 
-Show summary of changes:
+Stage and commit the changes:
 ```bash
-git diff --stat
+git add skills/ rules/ merged-commands/ SKILLS_INDEX.md skills-index.json skills-compact.json rules-index.json
 ```
 
-Ask user if they want to commit:
-```bash
-git add skills/ merged-commands/ SKILLS_INDEX.md skills-index.json skills-compact.json rules-index.json
-git commit -m "feat(skills): sync N new skills from upstream"
+Commit message format:
+```
+feat(skills): sync N new, M updated skills from upstream
 ```
 
-## Options
+Adjust the message based on what was actually synced (skills, rules, external-skills).
 
-- `$ARGUMENTS` can specify:
-  - `--auto`: Skip evaluation, sync all new skills automatically
-  - `--dry-run`: Only show report, don't copy anything
-  - A specific upstream name to sync from (e.g., `antigravity` or `agent-assistant`)
+If stash was created earlier: `git stash pop` to restore user's changes.
 
 ## Evaluation Criteria
 
-When evaluating skills, consider:
-- Does it cover a technology the project uses or might use?
-- Is there already a similar skill? (check by name and description)
-- Is the SKILL.md well-structured with actionable content?
-- Is it too generic (just says "be a senior X engineer")?
+### New Skills
+- **Useful**: Covers distinct domain, well-structured SKILL.md, actionable patterns/commands
+- **Duplicate**: Similar name or description to existing skill in skills-compact.json
+- **Skip**: Too niche, low quality, just "be a senior X engineer" boilerplate
+
+### Updated Skills
+- **Accept**: Upstream adds substantial new content (new sections, patterns, examples)
+- **Skip**: Changes are trivial (whitespace, formatting) or local version is customized and superior
+
+### External Skills
+- Follow UPSTREAM.md guide in each skill directory
+- Always update version tracking
+- Never overwrite devkit-specific frontmatter (`triggers`, `role`, `scope`, `output-format`)
+
+### Rules
+- **Accept**: Rule covers useful pattern not in existing rules
+- **Skip**: Duplicate or too generic
 
 ## Important
 
-- **NEVER** auto-sync without user confirmation (unless `--auto` flag)
-- **ALWAYS** run `npm run build` after copying skills
-- Keep the sync branch for PR review if needed
-- The temp directory is at the path shown by the sync script output
+- In interactive mode, **ALWAYS** ask before applying changes
+- In `--auto` mode, proceed fully autonomously
+- **ALWAYS** run `npm run build` after applying changes
+- **ALWAYS** rollback on build failure via `git checkout -- .`
+- Use `node scripts/manual-sync.js --copy` or Write tool for file operations — **NEVER** use `cp -r` (Windows incompatible)
+- The temp directory path is in the JSON report's `tempDir` field
