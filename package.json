@@ -1,6 +1,6 @@
 {
   "name": "@ngxtm/devkit",
-  "version": "3.13.0",
+  "version": "3.14.0",
   "description": "Per-project AI skills with smart tech detection - lightweight and context-optimized",
   "main": "cli/index.js",
   "bin": {

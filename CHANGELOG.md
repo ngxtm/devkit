@@ -1,3 +1,10 @@
+# [3.14.0](https://github.com/ngxtm/devkit/compare/v3.13.0...v3.14.0) (2026-02-23)
+
+
+### Features
+
+* **learn:** add DESIGN and PLAN phases to learn workflow ([6360c3b](https://github.com/ngxtm/devkit/commit/6360c3bd7b8b915b7d3ed4ac57b5489cdbad2834))
+
 # [3.13.0](https://github.com/ngxtm/devkit/compare/v3.12.0...v3.13.0) (2026-02-19)
 
 
