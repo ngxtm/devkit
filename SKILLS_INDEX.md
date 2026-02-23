@@ -1,6 +1,6 @@
 # Skills Index
 
-> Auto-generated index of 769 available skills.
+> Auto-generated index of 1060 available skills.
 > Use this to discover skills without loading all files into context.
 >
 > **To use a skill**: Read the full skill at `~/.claude/skills/<skill-name>/SKILL.md`
@@ -9,19 +9,19 @@
 
 | Category | Count |
 |----------|-------|
-| Other | 414 |
-| AI/Agents | 69 |
-| DevOps/Cloud | 64 |
-| Development Tools | 42 |
-| UI/Styling | 31 |
-| Testing | 27 |
-| Python | 23 |
-| Security | 21 |
-| Frontend Frameworks | 20 |
-| TypeScript/JavaScript | 19 |
-| Databases | 19 |
-| API Design | 10 |
-| Mobile | 6 |
+| Other | 577 |
+| AI/Agents | 112 |
+| DevOps/Cloud | 70 |
+| TypeScript/JavaScript | 52 |
+| Development Tools | 47 |
+| Testing | 34 |
+| UI/Styling | 33 |
+| Security | 28 |
+| Frontend Frameworks | 27 |
+| Databases | 27 |
+| Python | 26 |
+| API Design | 16 |
+| Mobile | 7 |
 | Backend/Node.js | 4 |
 
 ---
@@ -43,10 +43,10 @@ Sua única missão é documentar e explicar a base de código como ela existe ho
 
 You are an accessibility expert specializing in WCAG compliance, inclusive design, and assistive technology compatibility. Conduct audits, identify ba...
 
-### Active Directory Attacks
+### active-directory-attacks
 `skills/active-directory-attacks`
 
-This skill should be used when the user asks to "attack Active Directory", "exploit AD", "Kerberoasting", "DCSync", "pass-the-hash", "BloodHound enume...
+This skill should be used when the user asks to \"attack Active Directory\", \"exploit AD\", \"Kerberoasting\", \"DCSync\", \"pass-the-hash\", \"Blood...
 
 ### aesthetic
 `skills/aesthetic`
@@ -66,7 +66,12 @@ Expert patterns for Algolia search implementation, indexing strategies, React In
 ### algorithmic-art
 `skills/algorithmic-art`
 
-Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code...
+Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use when users request creating art using code, gen...
+
+### amplitude-automation
+`skills/amplitude-automation`
+
+Automate Amplitude tasks via Rube MCP (Composio): events, user activity, cohorts, user identification. Always search tools first for current schemas.
 
 ### analytics-tracking
 `skills/analytics-tracking`
@@ -77,6 +82,11 @@ Creating algorithmic art using p5.js with seeded randomness and interactive para
 `skills/anti-reversing-techniques`
 
 Understand anti-reversing, obfuscation, and protection techniques encountered during software analysis. Use when analyzing protected binaries, bypassi...
+
+### antigravity-workflows
+`skills/antigravity-workflows`
+
+Orchestrate multiple Antigravity skills through guided workflows for SaaS MVP delivery, security audits, AI agent builds, and browser QA.
 
 ### app-store-optimization
 `skills/app-store-optimization`
@@ -108,10 +118,20 @@ Implement proven backend architecture patterns including Clean Architecture, Hex
 
 >
 
+### asana-automation
+`skills/asana-automation`
+
+Automate Asana tasks via Rube MCP (Composio): tasks, projects, sections, teams, workspaces. Always search tools first for current schemas.
+
 ### attack-tree-construction
 `skills/attack-tree-construction`
 
 Build comprehensive attack trees to visualize threat paths. Use when mapping attack scenarios, identifying defense gaps, or communicating security ris...
+
+### audio-transcriber
+`skills/audio-transcriber`
+
+Transform audio recordings into professional Markdown documentation with intelligent summaries using LLM integration
 
 ### avalonia-layout-zafiro
 `skills/avalonia-layout-zafiro`
@@ -128,10 +148,260 @@ Optimal ViewModel and Wizard creation patterns for Avalonia using Zafiro and Rea
 
 Mandatory skills, conventions, and behavioral rules for Avalonia UI development using the Zafiro toolkit.
 
+### azure-appconfiguration-java
+`skills/azure-appconfiguration-java`
+
+|
+
+### azure-appconfiguration-py
+`skills/azure-appconfiguration-py`
+
+|
+
+### azure-communication-callautomation-java
+`skills/azure-communication-callautomation-java`
+
+Build call automation workflows with Azure Communication Services Call Automation Java SDK. Use when implementing IVR systems, call routing, call reco...
+
+### azure-communication-callingserver-java
+`skills/azure-communication-callingserver-java`
+
+Azure Communication Services CallingServer (legacy) Java SDK. Note - This SDK is deprecated. Use azure-communication-callautomation instead for new pr...
+
+### azure-communication-chat-java
+`skills/azure-communication-chat-java`
+
+Build real-time chat applications with Azure Communication Services Chat Java SDK. Use when implementing chat threads, messaging, participants, read r...
+
+### azure-communication-common-java
+`skills/azure-communication-common-java`
+
+Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared...
+
+### azure-communication-sms-java
+`skills/azure-communication-sms-java`
+
+Send SMS messages with Azure Communication Services SMS Java SDK. Use when implementing SMS notifications, alerts, OTP delivery, bulk messaging, or de...
+
+### azure-compute-batch-java
+`skills/azure-compute-batch-java`
+
+|
+
+### azure-cosmos-db-py
+`skills/azure-cosmos-db-py`
+
+Build Azure Cosmos DB NoSQL services with Python/FastAPI following production-grade patterns. Use when implementing database client setup with dual au...
+
+### azure-cosmos-java
+`skills/azure-cosmos-java`
+
+|
+
+### azure-cosmos-py
+`skills/azure-cosmos-py`
+
+|
+
+### azure-cosmos-rust
+`skills/azure-cosmos-rust`
+
+|
+
+### azure-data-tables-java
+`skills/azure-data-tables-java`
+
+Build table storage applications with Azure Tables SDK for Java. Use when working with Azure Table Storage or Cosmos DB Table API for NoSQL key-value ...
+
+### azure-data-tables-py
+`skills/azure-data-tables-py`
+
+|
+
+### azure-eventgrid-dotnet
+`skills/azure-eventgrid-dotnet`
+
+|
+
+### azure-eventgrid-java
+`skills/azure-eventgrid-java`
+
+Build event-driven applications with Azure Event Grid SDK for Java. Use when publishing events, implementing pub/sub patterns, or integrating with Azu...
+
+### azure-eventgrid-py
+`skills/azure-eventgrid-py`
+
+|
+
+### azure-eventhub-dotnet
+`skills/azure-eventhub-dotnet`
+
+|
+
+### azure-eventhub-java
+`skills/azure-eventhub-java`
+
+Build real-time streaming applications with Azure Event Hubs SDK for Java. Use when implementing event streaming, high-throughput data ingestion, or b...
+
+### azure-eventhub-py
+`skills/azure-eventhub-py`
+
+|
+
+### azure-eventhub-rust
+`skills/azure-eventhub-rust`
+
+|
+
 ### azure-functions
 `skills/azure-functions`
 
 Expert patterns for Azure Functions development including isolated worker model, Durable Functions orchestration, cold start optimization, and product...
+
+### azure-identity-dotnet
+`skills/azure-identity-dotnet`
+
+|
+
+### azure-identity-java
+`skills/azure-identity-java`
+
+Azure Identity Java SDK for authentication with Azure services. Use when implementing DefaultAzureCredential, managed identity, service principal, or ...
+
+### azure-identity-py
+`skills/azure-identity-py`
+
+|
+
+### azure-identity-rust
+`skills/azure-identity-rust`
+
+|
+
+### azure-keyvault-certificates-rust
+`skills/azure-keyvault-certificates-rust`
+
+|
+
+### azure-keyvault-keys-rust
+`skills/azure-keyvault-keys-rust`
+
+|
+
+### azure-keyvault-py
+`skills/azure-keyvault-py`
+
+|
+
+### azure-maps-search-dotnet
+`skills/azure-maps-search-dotnet`
+
+|
+
+### azure-messaging-webpubsub-java
+`skills/azure-messaging-webpubsub-java`
+
+Build real-time web applications with Azure Web PubSub SDK for Java. Use when implementing WebSocket-based messaging, live updates, chat applications,...
+
+### azure-messaging-webpubsubservice-py
+`skills/azure-messaging-webpubsubservice-py`
+
+|
+
+### azure-mgmt-fabric-dotnet
+`skills/azure-mgmt-fabric-dotnet`
+
+|
+
+### azure-mgmt-fabric-py
+`skills/azure-mgmt-fabric-py`
+
+|
+
+### azure-monitor-ingestion-java
+`skills/azure-monitor-ingestion-java`
+
+|
+
+### azure-monitor-ingestion-py
+`skills/azure-monitor-ingestion-py`
+
+|
+
+### azure-monitor-opentelemetry-exporter-java
+`skills/azure-monitor-opentelemetry-exporter-java`
+
+|
+
+### azure-monitor-opentelemetry-exporter-py
+`skills/azure-monitor-opentelemetry-exporter-py`
+
+|
+
+### azure-monitor-opentelemetry-py
+`skills/azure-monitor-opentelemetry-py`
+
+|
+
+### azure-monitor-query-java
+`skills/azure-monitor-query-java`
+
+|
+
+### azure-monitor-query-py
+`skills/azure-monitor-query-py`
+
+|
+
+### azure-resource-manager-cosmosdb-dotnet
+`skills/azure-resource-manager-cosmosdb-dotnet`
+
+|
+
+### azure-resource-manager-durabletask-dotnet
+`skills/azure-resource-manager-durabletask-dotnet`
+
+|
+
+### azure-servicebus-dotnet
+`skills/azure-servicebus-dotnet`
+
+|
+
+### azure-servicebus-py
+`skills/azure-servicebus-py`
+
+|
+
+### azure-storage-blob-java
+`skills/azure-storage-blob-java`
+
+Build blob storage applications with Azure Storage Blob SDK for Java. Use when uploading, downloading, or managing files in Azure Blob Storage, workin...
+
+### azure-storage-blob-py
+`skills/azure-storage-blob-py`
+
+|
+
+### azure-storage-blob-rust
+`skills/azure-storage-blob-rust`
+
+|
+
+### azure-storage-file-datalake-py
+`skills/azure-storage-file-datalake-py`
+
+|
+
+### azure-storage-file-share-py
+`skills/azure-storage-file-share-py`
+
+|
+
+### azure-storage-queue-py
+`skills/azure-storage-queue-py`
+
+|
 
 ### backend-architect
 `skills/backend-architect`
@@ -148,6 +418,16 @@ Backend API design, database architecture, microservices patterns, and test-driv
 
 Orchestrate end-to-end backend feature development from requirements to deployment. Use when coordinating multi-phase feature delivery across teams an...
 
+### bamboohr-automation
+`skills/bamboohr-automation`
+
+Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, employee updates. Always search tools first for current sc...
+
+### basecamp-automation
+`skills/basecamp-automation`
+
+Automate Basecamp project management, to-dos, messages, people, and to-do list organization via Rube MCP (Composio). Always search tools first for cur...
+
 ### bash-defensive-patterns
 `skills/bash-defensive-patterns`
 
@@ -157,6 +437,11 @@ Master defensive Bash programming techniques for production-grade scripts. Use w
 `skills/bash-pro`
 
 Master of defensive Bash scripting for production automation, CI/CD
+
+### bash-scripting
+`skills/bash-scripting`
+
+Bash scripting workflow for creating production-ready shell scripts with defensive patterns, error handling, and testing.
 
 ### beautiful-prose
 `skills/beautiful-prose`
@@ -173,6 +458,11 @@ AI operational modes (brainstorm, implement, debug, review, teach, ship, orchest
 
 >-
 
+### bevy-ecs-expert
+`skills/bevy-ecs-expert`
+
+Master Bevy's Entity Component System (ECS) in Rust, covering Systems, Queries, Resources, and parallel scheduling.
+
 ### billing-automation
 `skills/billing-automation`
 
@@ -183,10 +473,25 @@ Build automated billing systems for recurring payments, invoicing, subscription 
 
 Master binary analysis patterns including disassembly, decompilation, control flow analysis, and code pattern recognition. Use when analyzing executab...
 
+### bitbucket-automation
+`skills/bitbucket-automation`
+
+Automate Bitbucket repositories, pull requests, branches, issues, and workspace management via Rube MCP (Composio). Always search tools first for curr...
+
 ### blockrun
 `skills/blockrun`
 
-Use when user needs capabilities Claude lacks (image generation, real-time X/Twitter data) or explicitly requests external models ("blockrun", "use gr...
+Use when user needs capabilities Claude lacks (image generation, real-time X/Twitter data) or explicitly requests external models (\\\"blockrun\\\", \...
+
+### box-automation
+`skills/box-automation`
+
+Automate Box cloud storage operations including file upload/download, search, folder management, sharing, collaborations, and metadata queries via Rub...
+
+### brevo-automation
+`skills/brevo-automation`
+
+Automate Brevo (Sendinblue) tasks via Rube MCP (Composio): manage email campaigns, create/edit templates, track senders, and monitor campaign performa...
 
 ### browser-automation
 `skills/browser-automation`
@@ -233,22 +538,37 @@ Expert C4 Component-level documentation specialist. Synthesizes C4
 
 Expert C4 Context-level documentation specialist. Creates
 
+### cal-com-automation
+`skills/cal-com-automation`
+
+Automate Cal.com tasks via Rube MCP (Composio): manage bookings, check availability, configure webhooks, and handle teams. Always search tools first f...
+
+### calendly-automation
+`skills/calendly-automation`
+
+Automate Calendly scheduling, event management, invitee tracking, availability checks, and organization administration via Rube MCP (Composio). Always...
+
+### canva-automation
+`skills/canva-automation`
+
+Automate Canva tasks via Rube MCP (Composio): designs, exports, folders, brand templates, autofill. Always search tools first for current schemas.
+
 ### canvas-design
 `skills/canvas-design`
 
 Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece...
 
-### backend-patterns
+### cc-skill-backend-patterns
 `skills/cc-skill-backend-patterns`
 
 Backend architecture patterns, API design, database optimization, and server-side best practices for Node.js, Express, and Next.js API routes.
 
-### clickhouse-io
+### cc-skill-clickhouse-io
 `skills/cc-skill-clickhouse-io`
 
 ClickHouse database patterns, query optimization, analytics, and data engineering best practices for high-performance analytical workloads.
 
-### coding-standards
+### cc-skill-coding-standards
 `skills/cc-skill-coding-standards`
 
 Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.
@@ -258,7 +578,7 @@ Universal coding standards, best practices, and patterns for TypeScript, JavaScr
 
 Development skill from everything-claude-code
 
-### frontend-patterns
+### cc-skill-frontend-patterns
 `skills/cc-skill-frontend-patterns`
 
 Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
@@ -318,6 +638,21 @@ Pragmatic coding standards - concise, direct, no over-engineering, no unnecessar
 
 Use when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for CLI design, argument parsing, interactive prompt...
 
+### clickup-automation
+`skills/clickup-automation`
+
+Automate ClickUp project management including tasks, spaces, folders, lists, comments, and team operations via Rube MCP (Composio). Always search tool...
+
+### close-automation
+`skills/close-automation`
+
+Automate Close CRM tasks via Rube MCP (Composio): create leads, manage calls/SMS, handle tasks, and track notes. Always search tools first for current...
+
+### coda-automation
+`skills/coda-automation`
+
+Automate Coda tasks via Rube MCP (Composio): manage docs, pages, tables, rows, formulas, permissions, and publishing. Always search tools first for cu...
+
 ### code-documenter
 `skills/code-documenter`
 
@@ -346,12 +681,17 @@ Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, et
 ### competitive-landscape
 `skills/competitive-landscape`
 
-This skill should be used when the user asks to "analyze
+This skill should be used when the user asks to \\\"analyze
 
 ### competitor-alternatives
 `skills/competitor-alternatives`
 
 When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative pa...
+
+### computer-vision-expert
+`skills/computer-vision-expert`
+
+SOTA Computer Vision Expert (2026). Specialized in YOLO26, Segment Anything 3 (SAM 3), Vision Language Models, and real-time spatial analysis.
 
 ### conductor-implement
 `skills/conductor-implement`
@@ -387,6 +727,11 @@ Display project status, active tracks, and next actions
 `skills/conductor-validator`
 
 Validates Conductor project artifacts for completeness,
+
+### confluence-automation
+`skills/confluence-automation`
+
+Automate Confluence page creation, content search, space management, labels, and hierarchy navigation via Rube MCP (Composio). Always search tools fir...
 
 ### content-creator
 `skills/content-creator`
@@ -458,6 +803,16 @@ Automatically fetch latest library/framework documentation for Claude Code via C
 
 Persistent memory systems for LLM conversations including short-term, long-term, and entity-based memory Use when: conversation memory, remember, memo...
 
+### convertkit-automation
+`skills/convertkit-automation`
+
+Automate ConvertKit (Kit) tasks via Rube MCP (Composio): manage subscribers, tags, broadcasts, and broadcast stats. Always search tools first for curr...
+
+### copilot-sdk
+`skills/copilot-sdk`
+
+Build applications powered by GitHub Copilot using the Copilot SDK. Use when creating programmatic integrations with Copilot across Node.js/TypeScript...
+
 ### copy-editing
 `skills/copy-editing`
 
@@ -476,7 +831,7 @@ Optimize cloud costs through resource rightsizing, tagging strategies, reserved 
 ### cpp-pro
 `skills/cpp-pro`
 
-Write idiomatic C++ code with modern features, RAII, smart
+Use when building C++ applications requiring modern C++20/23 features, template metaprogramming, or high-performance systems. Invoke for concepts, ran...
 
 ### cqrs-implementation
 `skills/cqrs-implementation`
@@ -533,10 +888,40 @@ Implement data quality validation with Great Expectations, dbt tests, and data c
 
 Transform data into compelling narratives using visualization, context, and persuasive structure. Use when presenting analytics to stakeholders, creat...
 
+### data-structure-protocol
+`skills/data-structure-protocol`
+
+Give agents persistent structural memory of a codebase — navigate dependencies, track public APIs, and understand why connections exist without re-rea...
+
+### datadog-automation
+`skills/datadog-automation`
+
+Automate Datadog tasks via Rube MCP (Composio): query metrics, search logs, manage monitors/dashboards, create events and downtimes. Always search too...
+
+### dbos-golang
+`skills/dbos-golang`
+
+DBOS Go SDK for building reliable, fault-tolerant applications with durable workflows. Use this skill when writing Go code with DBOS, creating workflo...
+
 ### dbt-transformation-patterns
 `skills/dbt-transformation-patterns`
 
 Master dbt (data build tool) for analytics engineering with model organization, testing, documentation, and incremental strategies. Use when building ...
+
+### ddd-context-mapping
+`skills/ddd-context-mapping`
+
+Map relationships between bounded contexts and define integration contracts using DDD context mapping patterns.
+
+### ddd-strategic-design
+`skills/ddd-strategic-design`
+
+Design DDD strategic artifacts including subdomains, bounded contexts, and ubiquitous language for complex business domains.
+
+### ddd-tactical-patterns
+`skills/ddd-tactical-patterns`
+
+Apply DDD tactical patterns in code using entities, value objects, aggregates, repositories, and domain events with explicit invariants.
 
 ### deep-research
 `skills/deep-research`
@@ -566,12 +951,17 @@ Analyze Stitch projects and synthesize a semantic design system into DESIGN.md f
 ### design-orchestration
 `skills/design-orchestration`
 
->
+No description
 
 ### developer-growth-analysis
 `skills/developer-growth-analysis`
 
 Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning reso...
+
+### development
+`skills/development`
+
+Comprehensive web, mobile, and backend development workflow bundling frontend, backend, full-stack, and mobile development skills for end-to-end appli...
 
 ### devops
 `skills/devops`
@@ -588,6 +978,11 @@ Use when setting up CI/CD pipelines, containerizing applications, or managing in
 
 Expert DevOps troubleshooter specializing in rapid incident
 
+### discord-automation
+`skills/discord-automation`
+
+Automate Discord tasks via Rube MCP (Composio): messages, channels, roles, webhooks, reactions. Always search tools first for current schemas.
+
 ### discord-bot-architect
 `skills/discord-bot-architect`
 
@@ -603,6 +998,11 @@ Creates comprehensive technical documentation from existing
 
 Search technical documentation using executable scripts to detect query type, fetch from llms.txt sources (context7.com), and analyze results. Use whe...
 
+### docusign-automation
+`skills/docusign-automation`
+
+Automate DocuSign tasks via Rube MCP (Composio): templates, envelopes, signatures, document management. Always search tools first for current schemas.
+
 ### docx
 `skills/docx`
 
@@ -613,6 +1013,11 @@ Comprehensive document creation, editing, and analysis with support for tracked 
 
 Expert .NET backend architect specializing in C#, ASP.NET Core,
 
+### dotnet-backend
+`skills/dotnet-backend`
+
+Build ASP.NET Core 8+ backend services with EF Core, auth, background jobs, and production API patterns.
+
 ### dotnet-backend-patterns
 `skills/dotnet-backend-patterns`
 
@@ -622,6 +1027,11 @@ Master C#/.NET backend development patterns for building robust APIs, MCP server
 `skills/dotnet-core-expert`
 
 Use when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS wit...
+
+### dropbox-automation
+`skills/dropbox-automation`
+
+Automate Dropbox file management, sharing, search, uploads, downloads, and folder operations via Rube MCP (Composio). Always search tools first for cu...
 
 ### dx-optimizer
 `skills/dx-optimizer`
@@ -668,10 +1078,10 @@ You are an error tracking and observability expert specializing in implementing 
 
 Master error handling patterns across languages including exceptions, Result types, error propagation, and graceful degradation to build resilient app...
 
-### Ethical Hacking Methodology
+### ethical-hacking-methodology
 `skills/ethical-hacking-methodology`
 
-This skill should be used when the user asks to "learn ethical hacking", "understand penetration testing lifecycle", "perform reconnaissance", "conduc...
+This skill should be used when the user asks to \"learn ethical hacking\", \"understand penetration testing lifecycle\", \"perform reconnaissance\", \...
 
 ### evaluation
 `skills/evaluation`
@@ -738,15 +1148,20 @@ Use when defining new features, gathering requirements, or writing specification
 
 Web fuzzing with ffuf
 
+### figma-automation
+`skills/figma-automation`
+
+Automate Figma tasks via Rube MCP (Composio): files, components, design tokens, comments, exports. Always search tools first for current schemas.
+
 ### file-organizer
 `skills/file-organizer`
 
-Intelligently organizes files and folders by understanding context, finding duplicates, and suggesting better organizational structures. Use when user...
+Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and au...
 
-### File Path Traversal Testing
+### file-path-traversal
 `skills/file-path-traversal`
 
-This skill should be used when the user asks to "test for directory traversal", "exploit path traversal vulnerabilities", "read arbitrary files throug...
+This skill should be used when the user asks to \"test for directory traversal\", \"exploit path traversal vulnerabilities\", \"read arbitrary files t...
 
 ### file-uploads
 `skills/file-uploads`
@@ -757,6 +1172,11 @@ Expert at handling file uploads and cloud storage. Covers S3, Cloudflare R2, pre
 `skills/find-bugs`
 
 Find bugs, security vulnerabilities, and code quality issues in local branch changes. Use when asked to review changes, find bugs, security review, or...
+
+### find-skills
+`skills/find-skills`
+
+Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or e...
 
 ### fine-tuning-expert
 `skills/fine-tuning-expert`
@@ -811,12 +1231,22 @@ Orchestrate a comprehensive legacy system modernization using the strangler fig 
 ### free-tool-strategy
 `skills/free-tool-strategy`
 
-When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the...
+When the user wants to plan, evaluate, or build a free tool for marketing purposes \u2014 lead generation, SEO value, or brand awareness. Also use whe...
+
+### freshdesk-automation
+`skills/freshdesk-automation`
+
+Automate Freshdesk helpdesk operations including tickets, contacts, companies, notes, and replies via Rube MCP (Composio). Always search tools first f...
+
+### freshservice-automation
+`skills/freshservice-automation`
+
+Automate Freshservice ITSM tasks via Rube MCP (Composio): create/update tickets, bulk operations, service requests, and outbound emails. Always search...
 
 ### frontend-design
 `skills/frontend-design`
 
-Create distinctive, production-grade frontend interfaces with intentional aesthetics, high craft, and non-generic visual identity. Use when building o...
+Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, a...
 
 ### frontend-developer
 `skills/frontend-developer`
@@ -868,6 +1298,16 @@ Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexit
 
 Master Go concurrency with goroutines, channels, sync primitives, and context. Use when building concurrent Go applications, implementing worker pools...
 
+### go-rod-master
+`skills/go-rod-master`
+
+Comprehensive guide for browser automation and web scraping with go-rod (Chrome DevTools Protocol) including stealth anti-bot-detection patterns.
+
+### godot-4-migration
+`skills/godot-4-migration`
+
+Specialized guide for migrating Godot 3.x projects to Godot 4 (GDScript 2.0), covering syntax changes, Tweens, and exports.
+
 ### godot-gdscript-patterns
 `skills/godot-gdscript-patterns`
 
@@ -876,7 +1316,22 @@ Master Godot 4 GDScript patterns including signals, scenes, state machines, and 
 ### golang-pro
 `skills/golang-pro`
 
-Master Go 1.21+ with modern patterns, advanced concurrency,
+Use when building Go applications requiring concurrent programming, microservices architecture, or high-performance systems. Invoke for goroutines, ch...
+
+### google-analytics-automation
+`skills/google-analytics-automation`
+
+Automate Google Analytics tasks via Rube MCP (Composio): run reports, list accounts/properties, funnels, pivots, key events. Always search tools first...
+
+### google-calendar-automation
+`skills/google-calendar-automation`
+
+Automate Google Calendar events, scheduling, availability checks, and attendee management via Rube MCP (Composio). Create events, find free slots, man...
+
+### google-drive-automation
+`skills/google-drive-automation`
+
+Automate Google Drive file operations (upload, download, search, share, organize) via Rube MCP (Composio). Upload/download files, manage folders, shar...
 
 ### grafana-dashboards
 `skills/grafana-dashboards`
@@ -893,10 +1348,45 @@ Expert Haskell engineer specializing in advanced type systems, pure
 
 Design, organize, and manage Helm charts for templating and packaging Kubernetes applications with reusable configurations. Use when creating Helm cha...
 
+### helpdesk-automation
+`skills/helpdesk-automation`
+
+Automate HelpDesk tasks via Rube MCP (Composio): list tickets, manage views, use canned responses, and configure custom fields. Always search tools fi...
+
+### hig-foundations
+`skills/hig-foundations`
+
+>
+
+### hig-patterns
+`skills/hig-patterns`
+
+>
+
+### hig-platforms
+`skills/hig-platforms`
+
+>
+
+### hig-project-context
+`skills/hig-project-context`
+
+>-
+
+### hig-technologies
+`skills/hig-technologies`
+
+>
+
 ### hr-pro
 `skills/hr-pro`
 
 Professional, ethical HR partner for hiring,
+
+### hubspot-automation
+`skills/hubspot-automation`
+
+Automate HubSpot CRM operations (contacts, companies, deals, tickets, properties) via Rube MCP using Composio integration.
 
 ### hubspot-integration
 `skills/hubspot-integration`
@@ -931,9 +1421,9 @@ Improves the quality of images, especially screenshots, by enhancing resolution,
 ### imagen
 `skills/imagen`
 
-Generate images using Google Gemini image generation model. Use when user requests image generation, frontend development needs images, or documentati...
+|
 
-### Infinite Gratitude
+### infinite-gratitude
 `skills/infinite-gratitude`
 
 Multi-agent research skill for parallel research execution (10 agents, battle-tested with real case studies).
@@ -943,17 +1433,27 @@ Multi-agent research skill for parallel research execution (10 agents, battle-te
 
 Inngest expert for serverless-first background jobs, event-driven workflows, and durable execution without managing queues or workers. Use when: innge...
 
+### instagram-automation
+`skills/instagram-automation`
+
+Automate Instagram tasks via Rube MCP (Composio): create posts, carousels, manage media, get insights, and publishing limits. Always search tools firs...
+
 ### interactive-portfolio
 `skills/interactive-portfolio`
 
 Expert in building portfolios that actually land jobs and clients - not just showing work, but creating memorable experiences. Covers developer portfo...
+
+### intercom-automation
+`skills/intercom-automation`
+
+Automate Intercom tasks via Rube MCP (Composio): conversations, contacts, companies, segments, admins. Always search tools first for current schemas.
 
 ### internal-comms
 `skills/internal-comms`
 
 A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill...
 
-### internal-comms
+### internal-comms-community
 `skills/internal-comms-community`
 
 A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill...
@@ -988,6 +1488,11 @@ Use when building enterprise Java applications with Spring Boot 3.x, microservic
 
 Master Java 21+ with modern features like virtual threads, pattern
 
+### jira-automation
+`skills/jira-automation`
+
+Automate Jira tasks via Rube MCP (Composio): issues, projects, sprints, boards, comments, users. Always search tools first for current schemas.
+
 ### jira-issues
 `skills/jira-issues`
 
@@ -1003,6 +1508,16 @@ Write tailored cover letters and job applications using your CV and preferred st
 
 Master Julia 1.10+ with modern features, performance optimization,
 
+### klaviyo-automation
+`skills/klaviyo-automation`
+
+Automate Klaviyo tasks via Rube MCP (Composio): manage email/SMS campaigns, inspect campaign messages, track tags, and monitor send jobs. Always searc...
+
+### kotlin-coroutines-expert
+`skills/kotlin-coroutines-expert`
+
+Expert patterns for Kotlin Coroutines and Flow, covering structured concurrency, error handling, and testing.
+
 ### kpi-dashboard-design
 `skills/kpi-dashboard-design`
 
@@ -1017,6 +1532,11 @@ Expert in Langfuse - the open-source LLM observability platform. Covers tracing,
 `skills/langgraph`
 
 Expert in LangGraph - the production-grade framework for building stateful, multi-actor AI applications. Covers graph construction, state management, ...
+
+### laravel-expert
+`skills/laravel-expert`
+
+Senior Laravel Engineer role for production-grade, maintainable, and idiomatic Laravel solutions. Focuses on clean architecture, security, performance...
 
 ### last30days
 `skills/last30days`
@@ -1041,17 +1561,27 @@ Guided project building — you code, AI mentors. Build your own product step-by
 ### legacy-modernizer
 `skills/legacy-modernizer`
 
-Refactor legacy codebases, migrate outdated frameworks, and
+Use when modernizing legacy systems, implementing incremental migration strategies, or reducing technical debt. Invoke for strangler fig pattern, mono...
 
 ### legal-advisor
 `skills/legal-advisor`
 
 Draft privacy policies, terms of service, disclaimers, and legal
 
+### linear-automation
+`skills/linear-automation`
+
+Automate Linear tasks via Rube MCP (Composio): issues, projects, cycles, teams, labels. Always search tools first for current schemas.
+
 ### linear-claude-skill
 `skills/linear-claude-skill`
 
 Manage Linear issues, projects, and teams
+
+### linkedin-automation
+`skills/linkedin-automation`
+
+Automate LinkedIn tasks via Rube MCP (Composio): create posts, manage profile, company info, comments, and image uploads. Always search tools first fo...
 
 ### linkerd-patterns
 `skills/linkerd-patterns`
@@ -1066,12 +1596,17 @@ Automatic quality control, linting, and static analysis procedures. Use after ev
 ### loki-mode
 `skills/loki-mode`
 
-Multi-agent autonomous startup system for Claude Code. Triggers on "Loki Mode". Orchestrates 100+ specialized agents across engineering, QA, DevOps, s...
+Multi-agent autonomous startup system for Claude Code. Triggers on \"Loki Mode\". Orchestrates 100+ specialized agents across engineering, QA, DevOps,...
 
 ### machine-learning-ops-ml-pipeline
 `skills/machine-learning-ops-ml-pipeline`
 
 Design and implement a complete ML pipeline for: $ARGUMENTS
+
+### make-automation
+`skills/make-automation`
+
+Automate Make (Integromat) tasks via Rube MCP (Composio): operations, enums, language and timezone lookups. Always search tools first for current sche...
 
 ### makepad-skills
 `skills/makepad-skills`
@@ -1083,6 +1618,11 @@ Makepad UI development skills for Rust apps: setup, patterns, shaders, packaging
 
 Expert malware analyst specializing in defensive malware research,
 
+### manifest
+`skills/manifest`
+
+Install and configure the Manifest observability plugin for your agents. Use when setting up telemetry, configuring API keys, or troubleshooting the p...
+
 ### markdown-novel-viewer
 `skills/markdown-novel-viewer`
 
@@ -1091,7 +1631,7 @@ View markdown files with calm, book-like reading experience via HTTP server. Use
 ### market-sizing-analysis
 `skills/market-sizing-analysis`
 
-This skill should be used when the user asks to "calculate TAM",
+This skill should be used when the user asks to \\\"calculate TAM\\\",
 
 ### marketing-ideas
 `skills/marketing-ideas`
@@ -1123,10 +1663,10 @@ Implement memory-safe programming with RAII, ownership, smart pointers, and reso
 
 Design short-term, long-term, and graph-based memory architectures
 
-### Metasploit Framework
+### metasploit-framework
 `skills/metasploit-framework`
 
-This skill should be used when the user asks to "use Metasploit for penetration testing", "exploit vulnerabilities with msfconsole", "create payloads ...
+This skill should be used when the user asks to \"use Metasploit for penetration testing\", \"exploit vulnerabilities with msfconsole\", \"create payl...
 
 ### micro-saas-launcher
 `skills/micro-saas-launcher`
@@ -1143,10 +1683,25 @@ Use when designing distributed systems, decomposing monoliths, or implementing m
 
 Design microservices architectures with service boundaries, event-driven communication, and resilience patterns. Use when building distributed systems...
 
+### microsoft-teams-automation
+`skills/microsoft-teams-automation`
+
+Automate Microsoft Teams tasks via Rube MCP (Composio): send messages, manage channels, create meetings, handle chats, and search messages. Always sea...
+
 ### minecraft-bukkit-pro
 `skills/minecraft-bukkit-pro`
 
 Master Minecraft server plugin development with Bukkit, Spigot, and
+
+### miro-automation
+`skills/miro-automation`
+
+Automate Miro tasks via Rube MCP (Composio): boards, items, sticky notes, frames, sharing, connectors. Always search tools first for current schemas.
+
+### mixpanel-automation
+`skills/mixpanel-automation`
+
+Automate Mixpanel tasks via Rube MCP (Composio): events, segmentation, funnels, cohorts, user profiles, JQL queries. Always search tools first for cur...
 
 ### ml-engineer
 `skills/ml-engineer`
@@ -1167,6 +1722,11 @@ Build end-to-end MLOps pipelines from data preparation through model training, v
 `skills/mlops-engineer`
 
 Build comprehensive ML pipelines, experiment tracking, and model
+
+### monday-automation
+`skills/monday-automation`
+
+Automate Monday.com work management including boards, items, columns, groups, subitems, and updates via Rube MCP (Composio). Always search tools first...
 
 ### monitoring-expert
 `skills/monitoring-expert`
@@ -1198,10 +1758,20 @@ Build and deploy the same feature consistently across web, mobile, and desktop p
 
 AI-powered PPT generation with document analysis and styled images
 
-### Network 101
+### nerdzao-elite
+`skills/nerdzao-elite`
+
+Senior Elite Software Engineer (15+) and Senior Product Designer. Full workflow with planning, architecture, TDD, clean code, and pixel-perfect UX val...
+
+### nerdzao-elite-gemini-high
+`skills/nerdzao-elite-gemini-high`
+
+Modo Elite Coder + UX Pixel-Perfect otimizado especificamente para Gemini 3.1 Pro High. Workflow completo com foco em qualidade máxima e eficiência de...
+
+### network-101
 `skills/network-101`
 
-This skill should be used when the user asks to "set up a web server", "configure HTTP or HTTPS", "perform SNMP enumeration", "configure SMB shares", ...
+This skill should be used when the user asks to \"set up a web server\", \"configure HTTP or HTTPS\", \"perform SNMP enumeration\", \"configure SMB sh...
 
 ### network-engineer
 `skills/network-engineer`
@@ -1222,6 +1792,11 @@ Use this skill to query your Google NotebookLM notebooks directly from Claude Co
 `skills/notebooklm-skill`
 
 Use this skill to query your Google NotebookLM notebooks directly from Claude Code for source-grounded, citation-backed answers from Gemini. Browser a...
+
+### notion-automation
+`skills/notion-automation`
+
+Automate Notion tasks via Rube MCP (Composio): pages, databases, blocks, comments, users. Always search tools first for current schemas.
 
 ### notion-template-business
 `skills/notion-template-business`
@@ -1253,6 +1828,11 @@ You are an SLO (Service Level Objective) expert specializing in implementing rel
 
 Guide for creating templates for the Obsidian Web Clipper. Use when you want to create a new clipping template, understand available variables, or for...
 
+### office-productivity
+`skills/office-productivity`
+
+Office productivity workflow covering document creation, spreadsheet automation, presentation generation, and integration with LibreOffice and Microso...
+
 ### on-call-handoff-patterns
 `skills/on-call-handoff-patterns`
 
@@ -1261,12 +1841,42 @@ Master on-call shift handoffs with context transfer, escalation procedures, and 
 ### onboarding-cro
 `skills/onboarding-cro`
 
-When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onbo...
+When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onb...
+
+### one-drive-automation
+`skills/one-drive-automation`
+
+Automate OneDrive file management, search, uploads, downloads, sharing, permissions, and folder operations via Rube MCP (Composio). Always search tool...
+
+### os-scripting
+`skills/os-scripting`
+
+Operating system and shell scripting troubleshooting workflow for Linux, macOS, and Windows. Covers bash scripting, system administration, debugging, ...
+
+### oss-hunter
+`skills/oss-hunter`
+
+Automatically hunt for high-impact OSS contribution opportunities in trending repositories.
+
+### outlook-automation
+`skills/outlook-automation`
+
+Automate Outlook tasks via Rube MCP (Composio): emails, calendar, contacts, folders, attachments. Always search tools first for current schemas.
+
+### outlook-calendar-automation
+`skills/outlook-calendar-automation`
+
+Automate Outlook Calendar tasks via Rube MCP (Composio): create events, manage attendees, find meeting times, and handle invitations. Always search to...
 
 ### page-cro
 `skills/page-cro`
 
 >
+
+### pagerduty-automation
+`skills/pagerduty-automation`
+
+Automate PagerDuty tasks via Rube MCP (Composio): manage incidents, services, schedules, escalation policies, and on-call rotations. Always search too...
 
 ### pandas-pro
 `skills/pandas-pro`
@@ -1286,7 +1896,7 @@ Integrate PayPal payment processing with support for express checkout, subscript
 ### paywall-upgrade-cro
 `skills/paywall-upgrade-cro`
 
-When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall,...
+When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall...
 
 ### pdf
 `skills/pdf`
@@ -1306,7 +1916,12 @@ Performance profiling principles. Measurement, analysis, and optimization techni
 ### php-pro
 `skills/php-pro`
 
-Write idiomatic PHP code with generators, iterators, SPL data
+Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invoke for strict typing, PHPStan level 9, async pat...
+
+### pipedrive-automation
+`skills/pipedrive-automation`
+
+Automate Pipedrive CRM operations including deals, contacts, organizations, activities, notes, and pipeline management via Rube MCP (Composio). Always...
 
 ### plan-writing
 `skills/plan-writing`
@@ -1331,7 +1946,7 @@ View plans dashboard with progress tracking and timeline visualization. Use for 
 ### podcast-generation
 `skills/podcast-generation`
 
-Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech featur...
+No description
 
 ### popup-cro
 `skills/popup-cro`
@@ -1342,6 +1957,16 @@ Create and optimize popups, modals, overlays, slide-ins, and banners to increase
 `skills/posix-shell-pro`
 
 Expert in strict POSIX sh scripting for maximum portability across
+
+### posthog-automation
+`skills/posthog-automation`
+
+Automate PostHog tasks via Rube MCP (Composio): events, feature flags, projects, user profiles, annotations. Always search tools first for current sch...
+
+### postmark-automation
+`skills/postmark-automation`
+
+Automate Postmark email delivery tasks via Rube MCP (Composio): send templated emails, manage templates, monitor delivery stats and bounces. Always se...
 
 ### postmortem-writing
 `skills/postmortem-writing`
@@ -1356,17 +1981,17 @@ PowerShell Windows patterns. Critical pitfalls, operator syntax, error handling.
 ### pptx
 `skills/pptx`
 
-Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modi...
+Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for creating new presentations, modifying con...
 
 ### prisma-expert
 `skills/prisma-expert`
 
 Prisma ORM expert for schema design, migrations, query optimization, relations modeling, and database operations. Use PROACTIVELY for Prisma schema is...
 
-### Privilege Escalation Methods
+### privilege-escalation-methods
 `skills/privilege-escalation-methods`
 
-This skill should be used when the user asks to "escalate privileges", "get root access", "become administrator", "privesc techniques", "abuse sudo", ...
+This skill should be used when the user asks to \"escalate privileges\", \"get root access\", \"become administrator\", \"privesc techniques\", \"abus...
 
 ### Problem-Solving Techniques
 `skills/problem-solving`
@@ -1413,6 +2038,11 @@ Master network protocol reverse engineering including packet analysis, protocol 
 
 Create Pydantic models following the multi-model pattern with Base, Create, Update, Response, and InDB variants. Use when defining API request/respons...
 
+### pydantic-models-py
+`skills/pydantic-models-py`
+
+Create Pydantic models following the multi-model pattern with Base, Create, Update, Response, and InDB variants. Use when defining API request/respons...
+
 ### pypict-skill
 `skills/pypict-skill`
 
@@ -1446,22 +2076,27 @@ Expert in building Retrieval-Augmented Generation systems. Masters embedding mod
 ### rag-implementation
 `skills/rag-implementation`
 
-Build Retrieval-Augmented Generation (RAG) systems for LLM applications with vector databases and semantic search. Use when implementing knowledge-gro...
+Retrieval-Augmented Generation patterns including chunking, embeddings, vector stores, and retrieval optimization Use when: rag, retrieval augmented, ...
 
 ### readme
 `skills/readme`
 
-Create or update README.md files for projects. Use when user says write readme, create readme, document this project, or asks for help with README.md....
+When the user wants to create or update a README.md file for a project. Also use when the user says 'write readme,' 'create readme,' 'document this pr...
 
 ### red-team-tactics
 `skills/red-team-tactics`
 
 Red team tactics principles based on MITRE ATT&CK. Attack phases, detection evasion, reporting.
 
-### Red Team Tools and Methodology
+### red-team-tools
 `skills/red-team-tools`
 
-This skill should be used when the user asks to "follow red team methodology", "perform bug bounty hunting", "automate reconnaissance", "hunt for XSS ...
+This skill should be used when the user asks to \"follow red team methodology\", \"perform bug bounty hunting\", \"automate reconnaissance\", \"hunt f...
+
+### reddit-automation
+`skills/reddit-automation`
+
+Automate Reddit tasks via Rube MCP (Composio): search subreddits, create posts, manage comments, and browse top content. Always search tools first for...
 
 ### referral-program
 `skills/referral-program`
@@ -1472,6 +2107,11 @@ When the user wants to create, optimize, or analyze a referral program, affiliat
 `skills/remotion-best-practices`
 
 Best practices for Remotion - Video creation in React
+
+### render-automation
+`skills/render-automation`
+
+Automate Render tasks via Rube MCP (Composio): services, deployments, projects. Always search tools first for current schemas.
 
 ### repomix
 `skills/repomix`
@@ -1533,6 +2173,11 @@ Implement saga patterns for distributed transactions and cross-aggregate workflo
 
 Draft cold emails, follow-ups, and proposal templates. Creates
 
+### salesforce-automation
+`skills/salesforce-automation`
+
+Automate Salesforce tasks via Rube MCP (Composio): leads, contacts, accounts, opportunities, SOQL queries. Always search tools first for current schem...
+
 ### salesforce-developer
 `skills/salesforce-developer`
 
@@ -1553,10 +2198,10 @@ Configure Static Application Security Testing (SAST) tools for automated vulnera
 
 Master enterprise-grade Scala development with functional
 
-### Security Scanning Tools
+### scanning-tools
 `skills/scanning-tools`
 
-This skill should be used when the user asks to "perform vulnerability scanning", "scan networks for open ports", "assess web application security", "...
+This skill should be used when the user asks to \"perform vulnerability scanning\", \"scan networks for open ports\", \"assess web application securit...
 
 ### schema-markup
 `skills/schema-markup`
@@ -1572,6 +2217,16 @@ Expert in building immersive scroll-driven experiences - parallax storytelling, 
 `skills/secure-code-guardian`
 
 Use when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities. Invoke for authentication, author...
+
+### segment-automation
+`skills/segment-automation`
+
+Automate Segment tasks via Rube MCP (Composio): track events, identify users, manage groups, page views, aliases, batch operations. Always search tool...
+
+### sendgrid-automation
+`skills/sendgrid-automation`
+
+Automate SendGrid email operations including sending emails, managing contacts/lists, sender identities, templates, and analytics via Rube MCP (Compos...
 
 ### senior-architect
 `skills/senior-architect`
@@ -1623,6 +2278,11 @@ Comprehensive QA and testing skill for quality assurance, test automation, and t
 
 Comprehensive SecOps skill for application security, vulnerability management, compliance, and secure development practices. Includes security scannin...
 
+### sentry-automation
+`skills/sentry-automation`
+
+Automate Sentry tasks via Rube MCP (Composio): manage issues/events, configure alerts, track releases, monitor projects and teams. Always search tools...
+
 ### seo-audit
 `skills/seo-audit`
 
@@ -1656,7 +2316,7 @@ Writes SEO-optimized content based on provided keywords and topic
 ### seo-fundamentals
 `skills/seo-fundamentals`
 
->
+SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.
 
 ### seo-keyword-strategist
 `skills/seo-keyword-strategist`
@@ -1698,6 +2358,11 @@ Expert service mesh architect specializing in Istio, Linkerd, and cloud-native n
 
 Implement comprehensive observability for service meshes including distributed tracing, metrics, and visualization. Use when setting up mesh monitorin...
 
+### shader-programming-glsl
+`skills/shader-programming-glsl`
+
+Expert guide for writing efficient GLSL shaders (Vertex/Fragment) for web and game engines, covering syntax, uniforms, and common effects.
+
 ### sharp-edges
 `skills/sharp-edges`
 
@@ -1713,6 +2378,11 @@ Master ShellCheck static analysis configuration and usage for shell script quali
 
 Expert patterns for Shopify app development including Remix/React Router apps, embedded apps with App Bridge, webhook handling, GraphQL Admin API, Pol...
 
+### shopify-automation
+`skills/shopify-automation`
+
+Automate Shopify tasks via Rube MCP (Composio): products, orders, customers, inventory, collections. Always search tools first for current schemas.
+
 ### shopify-development
 `skills/shopify-development`
 
@@ -1726,7 +2396,7 @@ Use when building Shopify themes, apps, custom storefronts, or e-commerce soluti
 ### signup-flow-cro
 `skills/signup-flow-cro`
 
-When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions "signup conversions...
+When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversion...
 
 ### similarity-search-patterns
 `skills/similarity-search-patterns`
@@ -1737,6 +2407,11 @@ Implement efficient similarity search with vector databases. Use when building s
 `skills/skill-creator`
 
 Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude...
+
+### skill-creator-ms
+`skills/skill-creator-ms`
+
+Guide for creating effective skills for AI coding agents working with Azure SDKs and Microsoft Foundry services. Use when creating new skills or updat...
 
 ### skill-developer
 `skills/skill-developer`
@@ -1753,10 +2428,15 @@ Create and manage Claude Code skills following Anthropic best practices. Use whe
 
 A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery.
 
+### slack-automation
+`skills/slack-automation`
+
+Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage chan...
+
 ### slack-gif-creator
 `skills/slack-gif-creator`
 
-Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users...
+Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies w...
 
 ### slo-implementation
 `skills/slo-implementation`
@@ -1788,6 +2468,11 @@ Use when understanding legacy or undocumented systems, creating documentation fo
 
 Use when building Spring Boot 3.x applications, microservices, or reactive Java applications. Invoke for Spring Data JPA, Spring Security 6, WebFlux, ...
 
+### square-automation
+`skills/square-automation`
+
+Automate Square tasks via Rube MCP (Composio): payments, orders, invoices, locations. Always search tools first for current schemas.
+
 ### sre-engineer
 `skills/sre-engineer`
 
@@ -1811,17 +2496,27 @@ Generate comprehensive market opportunity analysis with TAM/SAM/SOM
 ### startup-metrics-framework
 `skills/startup-metrics-framework`
 
-This skill should be used when the user asks about "key startup
+This skill should be used when the user asks about \\\"key startup
 
 ### stride-analysis-patterns
 `skills/stride-analysis-patterns`
 
 Apply STRIDE methodology to systematically identify threats. Use when analyzing system security, conducting threat modeling sessions, or creating secu...
 
+### stripe-automation
+`skills/stripe-automation`
+
+Automate Stripe tasks via Rube MCP (Composio): customers, charges, subscriptions, invoices, products, refunds. Always search tools first for current s...
+
 ### stripe-integration
 `skills/stripe-integration`
 
-Implement Stripe payment processing for robust, PCI-compliant payment flows including checkout, subscriptions, and webhooks. Use when integrating Stri...
+Get paid from day one. Payments, subscriptions, billing portal, webhooks, metered billing, Stripe Connect. The complete guide to implementing Stripe c...
+
+### supabase-automation
+`skills/supabase-automation`
+
+Automate Supabase database queries, table management, project administration, storage, edge functions, and SQL execution via Rube MCP (Composio). Alwa...
 
 ### superpowers-lab
 `skills/superpowers-lab`
@@ -1881,7 +2576,12 @@ You are an expert team communication specialist focused on async-first standup p
 ### team-composition-analysis
 `skills/team-composition-analysis`
 
-This skill should be used when the user asks to "plan team
+This skill should be used when the user asks to \\\"plan team
+
+### telegram-automation
+`skills/telegram-automation`
+
+Automate Telegram tasks via Rube MCP (Composio): send messages, manage chats, share photos/documents, and handle bot commands. Always search tools fir...
 
 ### telegram-mini-app
 `skills/telegram-mini-app`
@@ -1908,20 +2608,35 @@ Map identified threats to appropriate security controls and mitigations. Use whe
 
 Expert in threat modeling methodologies, security architecture review, and risk assessment. Masters STRIDE, PASTA, attack trees, and security requirem...
 
+### tiktok-automation
+`skills/tiktok-automation`
+
+Automate TikTok tasks via Rube MCP (Composio): upload/publish videos, post photos, manage content, and view user profiles/stats. Always search tools f...
+
+### todoist-automation
+`skills/todoist-automation`
+
+Automate Todoist task management, projects, sections, filtering, and bulk operations via Rube MCP (Composio). Always search tools first for current sc...
+
 ### tool-design
 `skills/tool-design`
 
 Build tools that agents can use effectively, including architectural reduction patterns
 
-### Top 100 Web Vulnerabilities Reference
+### top-web-vulnerabilities
 `skills/top-web-vulnerabilities`
 
-This skill should be used when the user asks to "identify web application vulnerabilities", "explain common security flaws", "understand vulnerability...
+This skill should be used when the user asks to \"identify web application vulnerabilities\", \"explain common security flaws\", \"understand vulnerab...
 
 ### track-management
 `skills/track-management`
 
 Use this skill when creating, managing, or working with Conductor
+
+### trello-automation
+`skills/trello-automation`
+
+Automate Trello boards, cards, and workflows via Rube MCP (Composio). Create cards, manage lists, assign members, and search across boards programmati...
 
 ### trigger-dev
 `skills/trigger-dev`
@@ -1943,6 +2658,11 @@ Creates step-by-step tutorials and educational content from code.
 
 Build communication features with Twilio: SMS messaging, voice calls, WhatsApp Business API, and user verification (2FA). Covers the full spectrum fro...
 
+### twitter-automation
+`skills/twitter-automation`
+
+Automate Twitter/X tasks via Rube MCP (Composio): posts, search, users, bookmarks, lists, media. Always search tools first for current schemas.
+
 ### unity-developer
 `skills/unity-developer`
 
@@ -1961,7 +2681,7 @@ Expert guide for Unreal Engine 5.x C++ development, covering UObject hygiene, pe
 ### upgrading-expo
 `skills/upgrading-expo`
 
-Upgrade Expo SDK versions
+Guidelines for upgrading Expo SDK versions and fixing dependency issues.
 
 ### upstash-qstash
 `skills/upstash-qstash`
@@ -1992,6 +2712,11 @@ Secure environment variable management ensuring secrets are never exposed in Cla
 `skills/vector-index-tuning`
 
 Optimize vector index performance for latency, recall, and memory. Use when tuning HNSW parameters, selecting quantization strategies, or scaling vect...
+
+### vercel-automation
+`skills/vercel-automation`
+
+Automate Vercel tasks via Rube MCP (Composio): manage deployments, domains, DNS, env vars, projects, and teams. Always search tools first for current ...
 
 ### verification-before-completion
 `skills/verification-before-completion`
@@ -2028,25 +2753,85 @@ Build modern full-stack web applications with Next.js (App Router, Server Compon
 
 Optimize website and web application performance including loading speed, Core Web Vitals, bundle size, caching strategies, and runtime performance
 
+### webflow-automation
+`skills/webflow-automation`
+
+Automate Webflow CMS collections, site publishing, page management, asset uploads, and ecommerce orders via Rube MCP (Composio). Always search tools f...
+
 ### websocket-engineer
 `skills/websocket-engineer`
 
 Use when building real-time communication systems with WebSockets or Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis, pre...
 
-### Windows Privilege Escalation
+### wiki-architect
+`skills/wiki-architect`
+
+Analyzes code repositories and generates hierarchical documentation structures with onboarding guides. Use when the user wants to create a wiki, gener...
+
+### wiki-changelog
+`skills/wiki-changelog`
+
+Analyzes git commit history and generates structured changelogs categorized by change type. Use when the user asks about recent changes, wants a chang...
+
+### wiki-onboarding
+`skills/wiki-onboarding`
+
+Generates two complementary onboarding guides \u2014 a Principal-Level architectural deep-dive and a Zero-to-Hero contributor walkthrough. Use when th...
+
+### wiki-page-writer
+`skills/wiki-page-writer`
+
+Generates rich technical documentation pages with dark-mode Mermaid diagrams, source code citations, and first-principles depth. Use when writing docu...
+
+### wiki-qa
+`skills/wiki-qa`
+
+Answers questions about a code repository using source file analysis. Use when the user asks a question about how something works, wants to understand...
+
+### wiki-researcher
+`skills/wiki-researcher`
+
+Conducts multi-turn iterative deep research on specific topics within a codebase with zero tolerance for shallow analysis. Use when the user wants an ...
+
+### wiki-vitepress
+`skills/wiki-vitepress`
+
+Packages generated wiki Markdown into a VitePress static site with dark theme, dark-mode Mermaid diagrams with click-to-zoom, and production build out...
+
+### windows-privilege-escalation
 `skills/windows-privilege-escalation`
 
-This skill should be used when the user asks to "escalate privileges on Windows," "find Windows privesc vectors," "enumerate Windows for privilege esc...
+This skill should be used when the user asks to \"escalate privileges on Windows,\" \"find Windows privesc vectors,\" \"enumerate Windows for privileg...
 
-### Wireshark Network Traffic Analysis
+### wireshark-analysis
 `skills/wireshark-analysis`
 
-This skill should be used when the user asks to "analyze network traffic with Wireshark", "capture packets for troubleshooting", "filter PCAP files", ...
+This skill should be used when the user asks to \"analyze network traffic with Wireshark\", \"capture packets for troubleshooting\", \"filter PCAP fil...
+
+### wordpress
+`skills/wordpress`
+
+Complete WordPress development workflow covering theme development, plugin creation, WooCommerce integration, performance optimization, and security h...
+
+### wordpress-plugin-development
+`skills/wordpress-plugin-development`
+
+WordPress plugin development workflow covering plugin architecture, hooks, admin interfaces, REST API, and security best practices.
 
 ### wordpress-pro
 `skills/wordpress-pro`
 
 Use when developing WordPress themes, plugins, customizing Gutenberg blocks, implementing WooCommerce features, or optimizing WordPress performance an...
+
+### wordpress-theme-development
+`skills/wordpress-theme-development`
+
+WordPress theme development workflow covering theme architecture, template hierarchy, custom post types, block editor support, and responsive design.
+
+### wordpress-woocommerce-development
+`skills/wordpress-woocommerce-development`
+
+WooCommerce store development workflow covering store setup, payment integration, shipping configuration, and customization.
 
 ### workflow-automation
 `skills/workflow-automation`
@@ -2063,6 +2848,11 @@ Design durable workflows with Temporal for distributed systems. Covers workflow 
 
 Use this skill when implementing tasks according to Conductor's TDD
 
+### wrike-automation
+`skills/wrike-automation`
+
+Automate Wrike project management via Rube MCP (Composio): create tasks/folders, manage projects, assign work, and track progress. Always search tools...
+
 ### writing-plans
 `skills/writing-plans`
 
@@ -2071,7 +2861,7 @@ Use when you have a spec or requirements for a multi-step task, before touching 
 ### writing-skills
 `skills/writing-skills`
 
-Use when creating, updating, or improving agent skills.
+Use when creating new skills, editing existing skills, or verifying skills work before deployment
 
 ### x-article-publisher-skill
 `skills/x-article-publisher-skill`
@@ -2083,15 +2873,40 @@ Publish articles to X/Twitter
 
 Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs t...
 
-### Cross-Site Scripting and HTML Injection Testing
+### xss-html-injection
 `skills/xss-html-injection`
 
-This skill should be used when the user asks to "test for XSS vulnerabilities", "perform cross-site scripting attacks", "identify HTML injection flaws...
+This skill should be used when the user asks to \"test for XSS vulnerabilities\", \"perform cross-site scripting attacks\", \"identify HTML injection ...
+
+### youtube-automation
+`skills/youtube-automation`
+
+Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search too...
+
+### youtube-summarizer
+`skills/youtube-summarizer`
+
+Extract transcripts from YouTube videos and generate comprehensive, detailed summaries using intelligent analysis frameworks
 
 ### youtube-transcript
 `skills/youtube-transcript`
 
 Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants ...
+
+### zendesk-automation
+`skills/zendesk-automation`
+
+Automate Zendesk tasks via Rube MCP (Composio): tickets, users, organizations, replies. Always search tools first for current schemas.
+
+### zoho-crm-automation
+`skills/zoho-crm-automation`
+
+Automate Zoho CRM tasks via Rube MCP (Composio): create/update records, search contacts, manage leads, and convert leads. Always search tools first fo...
+
+### zoom-automation
+`skills/zoom-automation`
+
+Automate Zoom meeting creation, management, recordings, webinars, and participant tracking via Rube MCP (Composio). Always search tools first for curr...
 
 ### zustand-store
 `skills/zustand-store`
@@ -2100,15 +2915,25 @@ Create Zustand stores with TypeScript, subscribeWithSelector middleware, and pro
 
 ## AI/Agents
 
+### activecampaign-automation
+`skills/activecampaign-automation`
+
+Automate ActiveCampaign tasks via Rube MCP (Composio): manage contacts, tags, list subscriptions, automation enrollment, and tasks. Always search tool...
+
 ### agent-evaluation
 `skills/agent-evaluation`
 
-Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring—where even top...
+Testing and benchmarking LLM agents including behavioral testing, capability assessment, reliability metrics, and production monitoring\u2014where eve...
+
+### agent-framework-azure-ai-py
+`skills/agent-framework-azure-ai-py`
+
+Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-azure-ai). Use when creating persistent agents with Azur...
 
 ### agent-framework-azure-hosted-agents
 `skills/agent-framework-azure-hosted-agents`
 
-Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-azure-ai). Use when creating persistent agents with Azur...
+No description
 
 ### agent-manager-skill
 `skills/agent-manager-skill`
@@ -2140,6 +2965,16 @@ Optimize multi-agent systems with coordinated profiling, workload distribution, 
 
 Tools are how AI agents interact with the world. A well-designed tool is the difference between an agent that works and one that hallucinates, fails s...
 
+### agents-v2-py
+`skills/agents-v2-py`
+
+Build container-based Foundry Agents with Azure AI Projects SDK (ImageBasedHostedAgentDefinition). Use when creating hosted agents with custom contain...
+
+### ai-agent-development
+`skills/ai-agent-development`
+
+AI agent development workflow for building autonomous agents, multi-agent systems, and agent orchestration with CrewAI, LangGraph, and custom agents.
+
 ### ai-agents-architect
 `skills/ai-agents-architect`
 
@@ -2154,6 +2989,11 @@ Craft prompts for AI models (text, image, video). Use for Midjourney, DALL-E, St
 `skills/ai-engineer`
 
 Build production-ready LLM applications, advanced RAG systems, and
+
+### ai-ml
+`skills/ai-ml`
+
+AI and machine learning workflow covering LLM application development, RAG implementation, agent architecture, ML pipelines, and AI-powered features.
 
 ### ai-multimodal
 `skills/ai-multimodal`
@@ -2175,6 +3015,11 @@ Expert in building products that wrap AI APIs (OpenAI, Anthropic, etc.) into foc
 
 Build production Apache Airflow DAGs with best practices for operators, sensors, testing, and deployment. Use when creating data pipelines, orchestrat...
 
+### airtable-automation
+`skills/airtable-automation`
+
+Automate Airtable tasks via Rube MCP (Composio): records, bases, tables, fields, views. Always search tools first for current schemas.
+
 ### atlassian-mcp
 `skills/atlassian-mcp`
 
@@ -2190,10 +3035,155 @@ Design patterns for building autonomous coding agents. Covers tool integration, 
 
 Autonomous agents are AI systems that can independently decompose goals, plan actions, execute tools, and self-correct without constant human guidance...
 
+### azure-ai-agents-persistent-dotnet
+`skills/azure-ai-agents-persistent-dotnet`
+
+|
+
+### azure-ai-agents-persistent-java
+`skills/azure-ai-agents-persistent-java`
+
+|
+
+### azure-ai-anomalydetector-java
+`skills/azure-ai-anomalydetector-java`
+
+Build anomaly detection applications with Azure AI Anomaly Detector SDK for Java. Use when implementing univariate/multivariate anomaly detection, tim...
+
+### azure-ai-contentsafety-java
+`skills/azure-ai-contentsafety-java`
+
+Build content moderation applications with Azure AI Content Safety SDK for Java. Use when implementing text/image analysis, blocklist management, or h...
+
+### azure-ai-contentsafety-py
+`skills/azure-ai-contentsafety-py`
+
+|
+
+### azure-ai-contentsafety-ts
+`skills/azure-ai-contentsafety-ts`
+
+Analyze text and images for harmful content using Azure AI Content Safety (@azure-rest/ai-content-safety). Use when moderating user-generated content,...
+
+### azure-ai-contentunderstanding-py
+`skills/azure-ai-contentunderstanding-py`
+
+|
+
+### azure-ai-document-intelligence-dotnet
+`skills/azure-ai-document-intelligence-dotnet`
+
+|
+
+### azure-ai-document-intelligence-ts
+`skills/azure-ai-document-intelligence-ts`
+
+Extract text, tables, and structured data from documents using Azure Document Intelligence (@azure-rest/ai-document-intelligence). Use when processing...
+
+### azure-ai-formrecognizer-java
+`skills/azure-ai-formrecognizer-java`
+
+Build document analysis applications with Azure Document Intelligence (Form Recognizer) SDK for Java. Use when extracting text, tables, key-value pair...
+
+### azure-ai-ml-py
+`skills/azure-ai-ml-py`
+
+|
+
+### azure-ai-openai-dotnet
+`skills/azure-ai-openai-dotnet`
+
+|
+
+### azure-ai-projects-dotnet
+`skills/azure-ai-projects-dotnet`
+
+|
+
+### azure-ai-projects-java
+`skills/azure-ai-projects-java`
+
+|
+
+### azure-ai-projects-py
+`skills/azure-ai-projects-py`
+
+Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned ag...
+
+### azure-ai-projects-ts
+`skills/azure-ai-projects-ts`
+
+Build AI applications using Azure AI Projects SDK for JavaScript (@azure/ai-projects). Use when working with Foundry project clients, agents, connecti...
+
+### azure-ai-textanalytics-py
+`skills/azure-ai-textanalytics-py`
+
+|
+
+### azure-ai-transcription-py
+`skills/azure-ai-transcription-py`
+
+|
+
+### azure-ai-translation-document-py
+`skills/azure-ai-translation-document-py`
+
+|
+
+### azure-ai-translation-text-py
+`skills/azure-ai-translation-text-py`
+
+|
+
+### azure-ai-translation-ts
+`skills/azure-ai-translation-ts`
+
+Build translation applications using Azure Translation SDKs for JavaScript (@azure-rest/ai-translation-text, @azure-rest/ai-translation-document). Use...
+
+### azure-ai-vision-imageanalysis-java
+`skills/azure-ai-vision-imageanalysis-java`
+
+Build image analysis applications with Azure AI Vision SDK for Java. Use when implementing image captioning, OCR text extraction, object detection, ta...
+
+### azure-ai-vision-imageanalysis-py
+`skills/azure-ai-vision-imageanalysis-py`
+
+|
+
+### azure-ai-voicelive-dotnet
+`skills/azure-ai-voicelive-dotnet`
+
+|
+
+### azure-ai-voicelive-java
+`skills/azure-ai-voicelive-java`
+
+|
+
+### azure-ai-voicelive-py
+`skills/azure-ai-voicelive-py`
+
+Build real-time voice AI applications using Azure AI Voice Live SDK (azure-ai-voicelive). Use this skill when creating Python applications that need r...
+
 ### azure-ai-voicelive
 `skills/azure-ai-voicelive-skill`
 
 Build real-time voice AI applications using Azure AI Voice Live SDK (azure-ai-voicelive). Use this skill when creating Python applications that need r...
+
+### azure-ai-voicelive-ts
+`skills/azure-ai-voicelive-ts`
+
+|
+
+### azure-containerregistry-py
+`skills/azure-containerregistry-py`
+
+|
+
+### azure-mgmt-arizeaiobservabilityeval-dotnet
+`skills/azure-mgmt-arizeaiobservabilityeval-dotnet`
+
+|
 
 ### blockchain-developer
 `skills/blockchain-developer`
@@ -2203,9 +3193,9 @@ Build production-ready Web3 applications, smart contracts, and
 ### brainstorming
 `skills/brainstorming`
 
->
+You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent...
 
-### brand-guidelines
+### brand-guidelines-anthropic
 `skills/brand-guidelines-anthropic`
 
 Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when b...
@@ -2245,6 +3235,11 @@ Scrapes content based on a preset URL list, filters high-quality technical infor
 
 Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
 
+### domain-driven-design
+`skills/domain-driven-design`
+
+Plan and route Domain-Driven Design work from strategic modeling to tactical implementation and evented architecture patterns.
+
 ### domain-name-brainstormer
 `skills/domain-name-brainstormer`
 
@@ -2270,7 +3265,17 @@ Use when working with error debugging multi agent review
 
 Build agentic retrieval solutions with Azure AI Search knowledge bases using Foundry Agent Service. See foundry-iq-python for the Python SDK implement...
 
-### internal-comms
+### gmail-automation
+`skills/gmail-automation`
+
+Automate Gmail tasks via Rube MCP (Composio): send/reply, search, labels, drafts, attachments. Always search tools first for current schemas.
+
+### hosted-agents-v2-py
+`skills/hosted-agents-v2-py`
+
+Build hosted agents using Azure AI Projects SDK with ImageBasedHostedAgentDefinition. Use when creating container-based agents in Azure AI Foundry.
+
+### internal-comms-anthropic
 `skills/internal-comms-anthropic`
 
 A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill...
@@ -2315,8 +3320,33 @@ You are an expert prompt engineer specializing in crafting effective prompts for
 
 Implement comprehensive evaluation strategies for LLM applications using automated metrics, human feedback, and benchmarking. Use when testing LLM per...
 
+### m365-agents-dotnet
+`skills/m365-agents-dotnet`
+
+|
+
+### m365-agents-py
+`skills/m365-agents-py`
+
+|
+
+### m365-agents-ts
+`skills/m365-agents-ts`
+
+|
+
+### mailchimp-automation
+`skills/mailchimp-automation`
+
+Automate Mailchimp email marketing including campaigns, audiences, subscribers, segments, and analytics via Rube MCP (Composio). Always search tools f...
+
 ### mcp-builder
 `skills/mcp-builder`
+
+Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. ...
+
+### mcp-builder-ms
+`skills/mcp-builder-ms`
 
 Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. ...
 
@@ -2343,7 +3373,7 @@ Create diagrams with Mermaid.js v11 syntax. Use for flowcharts, sequence diagram
 ### multi-agent-brainstorming
 `skills/multi-agent-brainstorming`
 
->
+No description
 
 ### multi-agent-patterns
 `skills/multi-agent-patterns`
@@ -2363,7 +3393,7 @@ When the user wants help with paid advertising campaigns on Google Ads, Meta (Fa
 ### parallel-agents
 `skills/parallel-agents`
 
-Multi-agent orchestration patterns. Use when multiple independent tasks can run with different domain expertise or when comprehensive analysis require...
+Native multi-agent orchestration using Claude Code's Agent Tool. Use when multiple independent tasks can run with different domain expertise or when c...
 
 ### plaid-fintech
 `skills/plaid-fintech`
@@ -2378,7 +3408,7 @@ Caching strategies for LLM prompts including Anthropic prompt caching, response 
 ### prompt-engineer
 `skills/prompt-engineer`
 
-Expert prompt engineer specializing in advanced prompting
+Use when designing prompts for LLMs, optimizing model performance, building evaluation frameworks, or implementing advanced prompting techniques like ...
 
 ### prompt-engineering
 `skills/prompt-engineering`
@@ -2405,10 +3435,10 @@ Use when building Rails 7+ web applications with Hotwire, real-time features, or
 
 World-class prompt engineering skill for LLM optimization, prompt patterns, structured outputs, and AI product development. Expertise in Claude, GPT-4...
 
-### Shodan Reconnaissance and Pentesting
+### shodan-reconnaissance
 `skills/shodan-reconnaissance`
 
-This skill should be used when the user asks to "search for exposed devices on the internet," "perform Shodan reconnaissance," "find vulnerable servic...
+This skill should be used when the user asks to \"search for exposed devices on the internet,\" \"perform Shodan reconnaissance,\" \"find vulnerable s...
 
 ### skill-rails-upgrade
 `skills/skill-rails-upgrade`
@@ -2472,15 +3502,25 @@ AWS Bedrock AgentCore comprehensive expert for deploying and managing all AgentC
 
 AWS Cloud Development Kit (CDK) expert for building cloud infrastructure with TypeScript/Python. Use when creating CDK stacks, defining CDK constructs...
 
+### aws-cost-cleanup
+`skills/aws-cost-cleanup`
+
+Automated cleanup of unused AWS resources to reduce costs
+
 ### aws-cost-operations
 `skills/aws-cost-operations`
 
 This skill provides AWS cost optimization, monitoring, and operational best practices with integrated MCP servers for billing analysis, cost estimatio...
 
-### AWS Penetration Testing
+### aws-cost-optimizer
+`skills/aws-cost-optimizer`
+
+Comprehensive AWS cost analysis and optimization recommendations using AWS CLI and Cost Explorer
+
+### aws-penetration-testing
 `skills/aws-penetration-testing`
 
-This skill should be used when the user asks to "pentest AWS", "test AWS security", "enumerate IAM", "exploit cloud infrastructure", "AWS privilege es...
+This skill should be used when the user asks to \"pentest AWS\", \"test AWS security\", \"enumerate IAM\", \"exploit cloud infrastructure\", \"AWS pri...
 
 ### aws-serverless
 `skills/aws-serverless`
@@ -2500,7 +3540,7 @@ AWS development with infrastructure automation and cloud architecture patterns
 ### azd-deployment
 `skills/azd-deployment`
 
-Deploy containerized applications to Azure Container Apps using Azure Developer CLI (azd). Use when setting up azd projects, writing azure.yaml config...
+No description
 
 ### building-ai-agent-on-cloudflare
 `skills/building-ai-agent-on-cloudflare`
@@ -2522,6 +3562,11 @@ BullMQ expert for Redis-backed job queues, background processing, and reliable a
 
 You are a workflow automation expert specializing in creating efficient CI/CD pipelines, GitHub Actions workflows, and automated development processes...
 
+### circleci-automation
+`skills/circleci-automation`
+
+Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools ...
+
 ### claude-scientific-skills
 `skills/claude-scientific-skills`
 
@@ -2530,12 +3575,17 @@ Scientific research and analysis skills
 ### cloud-architect
 `skills/cloud-architect`
 
-Expert cloud architect specializing in AWS/Azure/GCP multi-cloud
+Use when designing cloud architectures, planning migrations, or optimizing multi-cloud deployments. Invoke for Well-Architected Framework, cost optimi...
 
-### Cloud Penetration Testing
+### cloud-devops
+`skills/cloud-devops`
+
+Cloud infrastructure and DevOps workflow covering AWS, Azure, GCP, Kubernetes, Terraform, CI/CD, monitoring, and cloud-native development.
+
+### cloud-penetration-testing
 `skills/cloud-penetration-testing`
 
-This skill should be used when the user asks to "perform cloud penetration testing", "assess Azure or AWS or GCP security", "enumerate cloud resources...
+This skill should be used when the user asks to \"perform cloud penetration testing\", \"assess Azure or AWS or GCP security\", \"enumerate cloud reso...
 
 ### cloudflare-expert
 `skills/cloudflare-expert`
@@ -2582,7 +3632,7 @@ Implement distributed tracing with Jaeger and Tempo to track requests across mic
 
 Docker containerization expert with deep knowledge of multi-stage builds, image optimization, container security, Docker Compose orchestration, and pr...
 
-### docx
+### docx-official
 `skills/docx-official`
 
 Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When ...
@@ -2595,7 +3645,7 @@ Expert in event sourcing, CQRS, and event-driven architecture patterns. Masters 
 ### expo-deployment
 `skills/expo-deployment`
 
-Deploy Expo apps to production
+Deploy Expo apps to iOS App Store, Android Play Store, and web.
 
 ### gcp-cloud-run
 `skills/gcp-cloud-run`
@@ -2657,6 +3707,11 @@ Use when building Kotlin applications requiring coroutines, multiplatform develo
 
 Expert Kubernetes architect specializing in cloud-native
 
+### kubernetes-deployment
+`skills/kubernetes-deployment`
+
+Kubernetes deployment workflow for container orchestration, Helm charts, service mesh, and production-ready K8s configurations.
+
 ### kubernetes-specialist
 `skills/kubernetes-specialist`
 
@@ -2677,12 +3732,12 @@ Design multi-cloud architectures using a decision framework to select and integr
 
 Implement PCI DSS compliance requirements for secure handling of payment card data and payment systems. Use when securing payment processing, achievin...
 
-### pdf
+### pdf-official
 `skills/pdf-official`
 
 Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude...
 
-### pptx
+### pptx-official
 `skills/pptx-official`
 
 Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modi...
@@ -2725,12 +3780,17 @@ Create detailed 3-5 year financial model with revenue, costs, cash
 ### startup-financial-modeling
 `skills/startup-financial-modeling`
 
-This skill should be used when the user asks to "create financial
+This skill should be used when the user asks to \\\"create financial
 
 ### terraform-engineer
 `skills/terraform-engineer`
 
 Use when implementing infrastructure as code with Terraform across AWS, Azure, or GCP. Invoke for module development, state management, provider confi...
+
+### terraform-infrastructure
+`skills/terraform-infrastructure`
+
+Terraform infrastructure as code workflow for provisioning cloud resources, creating reusable modules, and managing infrastructure at scale.
 
 ### terraform-module-library
 `skills/terraform-module-library`
@@ -2755,17 +3815,279 @@ Deploy applications to Vercel with edge functions, serverless, and ISR.
 ### vercel-deploy-claimable
 `skills/vercel-deploy-claimable`
 
-Deploy applications and websites to Vercel. Use when user requests deployment actions such as Deploy my app, Deploy this to production, Create a previ...
+Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as 'Deploy my app', 'Deploy this to producti...
 
 ### vercel-deployment
 `skills/vercel-deployment`
 
 Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production.
 
-### xlsx
+### xlsx-official
 `skills/xlsx-official`
 
 Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs t...
+
+## TypeScript/JavaScript
+
+### automate-whatsapp
+`skills/automate-whatsapp`
+
+Build WhatsApp automations with Kapso workflows: configure WhatsApp triggers, edit workflow graphs, manage executions, deploy functions, and use datab...
+
+### azure-appconfiguration-ts
+`skills/azure-appconfiguration-ts`
+
+Build applications using Azure App Configuration SDK for JavaScript (@azure/app-configuration). Use when working with configuration settings, feature ...
+
+### azure-cosmos-ts
+`skills/azure-cosmos-ts`
+
+|
+
+### azure-eventhub-ts
+`skills/azure-eventhub-ts`
+
+Build event streaming applications using Azure Event Hubs SDK for JavaScript (@azure/event-hubs). Use when implementing high-throughput event ingestio...
+
+### azure-identity-ts
+`skills/azure-identity-ts`
+
+Authenticate to Azure services using Azure Identity SDK for JavaScript (@azure/identity). Use when configuring authentication with DefaultAzureCredent...
+
+### azure-keyvault-keys-ts
+`skills/azure-keyvault-keys-ts`
+
+Manage cryptographic keys using Azure Key Vault Keys SDK for JavaScript (@azure/keyvault-keys). Use when creating, encrypting/decrypting, signing, or ...
+
+### azure-keyvault-secrets-rust
+`skills/azure-keyvault-secrets-rust`
+
+|
+
+### azure-keyvault-secrets-ts
+`skills/azure-keyvault-secrets-ts`
+
+Manage secrets using Azure Key Vault Secrets SDK for JavaScript (@azure/keyvault-secrets). Use when storing and retrieving application secrets or conf...
+
+### azure-mgmt-applicationinsights-dotnet
+`skills/azure-mgmt-applicationinsights-dotnet`
+
+|
+
+### azure-mgmt-botservice-dotnet
+`skills/azure-mgmt-botservice-dotnet`
+
+|
+
+### azure-mgmt-botservice-py
+`skills/azure-mgmt-botservice-py`
+
+|
+
+### azure-mgmt-weightsandbiases-dotnet
+`skills/azure-mgmt-weightsandbiases-dotnet`
+
+|
+
+### azure-monitor-opentelemetry-ts
+`skills/azure-monitor-opentelemetry-ts`
+
+Instrument applications with Azure Monitor and OpenTelemetry for JavaScript (@azure/monitor-opentelemetry). Use when adding distributed tracing, metri...
+
+### azure-search-documents-dotnet
+`skills/azure-search-documents-dotnet`
+
+|
+
+### azure-search-documents-py
+`skills/azure-search-documents-py`
+
+|
+
+### azure-search-documents-ts
+`skills/azure-search-documents-ts`
+
+Build search applications using Azure AI Search SDK for JavaScript (@azure/search-documents). Use when creating/managing indexes, implementing vector/...
+
+### azure-servicebus-ts
+`skills/azure-servicebus-ts`
+
+Build messaging applications using Azure Service Bus SDK for JavaScript (@azure/service-bus). Use when implementing queues, topics/subscriptions, mess...
+
+### azure-storage-blob-ts
+`skills/azure-storage-blob-ts`
+
+|
+
+### azure-storage-file-share-ts
+`skills/azure-storage-file-share-ts`
+
+|
+
+### azure-storage-queue-ts
+`skills/azure-storage-queue-ts`
+
+|
+
+### azure-web-pubsub-ts
+`skills/azure-web-pubsub-ts`
+
+Build real-time messaging applications using Azure Web PubSub SDKs for JavaScript (@azure/web-pubsub, @azure/web-pubsub-client). Use when implementing...
+
+### claude-d3js-skill
+`skills/claude-d3js-skill`
+
+Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visu...
+
+### core-components
+`skills/core-components`
+
+Core component library and design system patterns. Use when building UI, using design tokens, or working with the component library.
+
+### dbos-typescript
+`skills/dbos-typescript`
+
+DBOS TypeScript SDK for building reliable, fault-tolerant applications with durable workflows. Use this skill when writing TypeScript code with DBOS, ...
+
+### fp-ts-errors
+`skills/fp-ts-errors`
+
+Handle errors as values using fp-ts Either and TaskEither for cleaner, more predictable TypeScript code. Use when implementing error handling patterns...
+
+### fp-ts-pragmatic
+`skills/fp-ts-pragmatic`
+
+A practical, jargon-free guide to fp-ts functional programming - the 80/20 approach that gets results without the academic overhead. Use when writing ...
+
+### googlesheets-automation
+`skills/googlesheets-automation`
+
+Automate Google Sheets operations (read, write, format, filter, manage spreadsheets) via Rube MCP (Composio). Read/write data, manage tabs, apply form...
+
+### hig-components-content
+`skills/hig-components-content`
+
+>
+
+### hig-components-controls
+`skills/hig-components-controls`
+
+>-
+
+### hig-components-dialogs
+`skills/hig-components-dialogs`
+
+>-
+
+### hig-components-layout
+`skills/hig-components-layout`
+
+>
+
+### hig-components-menus
+`skills/hig-components-menus`
+
+>-
+
+### hig-components-search
+`skills/hig-components-search`
+
+>-
+
+### hig-components-status
+`skills/hig-components-status`
+
+>
+
+### hig-components-system
+`skills/hig-components-system`
+
+>
+
+### hig-inputs
+`skills/hig-inputs`
+
+>
+
+### javascript-mastery
+`skills/javascript-mastery`
+
+Comprehensive JavaScript reference covering 33+ essential concepts every developer should know. From fundamentals like primitives and closures to adva...
+
+### javascript-pro
+`skills/javascript-pro`
+
+Use when building JavaScript applications with modern ES2023+ features, async patterns, or Node.js development. Invoke for vanilla JavaScript, browser...
+
+### javascript-typescript
+`skills/javascript-typescript`
+
+JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks. Use for frontend, backend, or full-stack JavaScript/TypeSc...
+
+### javascript-typescript-typescript-scaffold
+`skills/javascript-typescript-typescript-scaffold`
+
+You are a TypeScript project architecture expert specializing in scaffolding production-ready Node.js and frontend applications. Generate complete pro...
+
+### meeting-insights-analyzer
+`skills/meeting-insights-analyzer`
+
+Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid...
+
+### modern-javascript-patterns
+`skills/modern-javascript-patterns`
+
+Master ES6+ features including async/await, destructuring, spread operators, arrow functions, promises, modules, iterators, generators, and functional...
+
+### observe-whatsapp
+`skills/observe-whatsapp`
+
+Observe and troubleshoot WhatsApp in Kapso: debug message delivery, inspect webhook deliveries/retries, triage API errors, and run health checks. Use ...
+
+### screenshots
+`skills/screenshots`
+
+Generate marketing screenshots of your app using Playwright. Use when the user wants to create screenshots for Product Hunt, social media, landing pag...
+
+### secrets-management
+`skills/secrets-management`
+
+Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive cr...
+
+### threejs
+`skills/threejs`
+
+Build immersive 3D web experiences with Three.js - WebGL/WebGPU library for scenes, cameras, geometries, materials, lights, animations, loaders, post-...
+
+### threejs-skills
+`skills/threejs-skills`
+
+Create 3D scenes, interactive experiences, and visual effects using Three.js. Use when user requests 3D graphics, WebGL experiences, 3D visualizations...
+
+### typescript-advanced-types
+`skills/typescript-advanced-types`
+
+Master TypeScript's advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-s...
+
+### typescript-expert
+`skills/typescript-expert`
+
+>-
+
+### typescript-pro
+`skills/typescript-pro`
+
+Use when building TypeScript applications requiring advanced type systems, generics, or full-stack type safety. Invoke for type guards, utility types,...
+
+### whatsapp-automation
+`skills/whatsapp-automation`
+
+Automate WhatsApp Business tasks via Rube MCP (Composio): send messages, manage templates, upload media, and handle contacts. Always search tools firs...
+
+### zustand-store-ts
+`skills/zustand-store-ts`
+
+Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management,...
 
 ## Development Tools
 
@@ -2773,6 +4095,11 @@ Comprehensive spreadsheet creation, editing, and analysis with support for formu
 `skills/address-github-comments`
 
 Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI.
+
+### api-documentation
+`skills/api-documentation`
+
+API documentation workflow for generating OpenAPI specs, creating developer guides, and maintaining comprehensive API documentation.
 
 ### api-documentation-generator
 `skills/api-documentation-generator`
@@ -2822,7 +4149,7 @@ Automated code review for pull requests using specialized review patterns. Analy
 ### code-review-checklist
 `skills/code-review-checklist`
 
-Comprehensive checklist for conducting thorough code reviews covering functionality, security, performance, and maintainability
+Code review guidelines covering code quality, security, and best practices.
 
 ### code-review-excellence
 `skills/code-review-excellence`
@@ -2832,7 +4159,7 @@ Master effective code review practices to provide constructive feedback, catch b
 ### code-reviewer
 `skills/code-reviewer`
 
-Elite code review expert specializing in modern AI-powered code
+Comprehensive code review skill for TypeScript, JavaScript, Python, Swift, Kotlin, Go. Includes automated code analysis, best practice checking, secur...
 
 ### codebase-cleanup-refactor-clean
 `skills/codebase-cleanup-refactor-clean`
@@ -2883,6 +4210,11 @@ Use when investigating errors, analyzing stack traces, or finding root causes of
 `skills/distributed-debugging-debug-trace`
 
 You are a debugging expert specializing in setting up comprehensive debugging environments, distributed tracing, and diagnostic tools. Configure debug...
+
+### documentation
+`skills/documentation`
+
+Documentation generation workflow covering API docs, architecture docs, README files, code comments, and technical writing.
 
 ### documentation-generation-doc-generate
 `skills/documentation-generation-doc-generate`
@@ -2944,10 +4276,25 @@ Stage, commit, and push git changes with conventional commit messages. Use when 
 
 Create production-ready GitHub Actions workflows for automated testing, building, and deploying applications. Use when setting up CI/CD with GitHub Ac...
 
+### github-automation
+`skills/github-automation`
+
+Automate GitHub repositories, issues, pull requests, branches, CI/CD, and permissions via Rube MCP (Composio). Manage code workflows, review PRs, sear...
+
+### github-issue-creator
+`skills/github-issue-creator`
+
+Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info, e...
+
 ### github-workflow-automation
 `skills/github-workflow-automation`
 
 Automate GitHub workflows with AI assistance. Includes PR reviews, issue triage, CI/CD integration, and Git operations. Use when automating GitHub wor...
+
+### gitlab-automation
+`skills/gitlab-automation`
+
+Automate GitLab project management, issues, merge requests, pipelines, branches, and user operations via Rube MCP (Composio). Always search tools firs...
 
 ### gitops-workflow
 `skills/gitops-workflow`
@@ -2967,7 +4314,7 @@ Use when completing tasks, implementing major features, or before merging to ver
 ### systematic-debugging
 `skills/systematic-debugging`
 
-Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+4-phase systematic debugging methodology with root cause analysis and evidence-based verification. Use when debugging complex issues.
 
 ### tdd-workflows-tdd-refactor
 `skills/tdd-workflows-tdd-refactor`
@@ -2978,6 +4325,178 @@ Use when working with tdd workflows tdd refactor
 `skills/using-git-worktrees`
 
 Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees w...
+
+## Testing
+
+### ab-test-setup
+`skills/ab-test-setup`
+
+Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness.
+
+### api-security-testing
+`skills/api-security-testing`
+
+API security testing workflow for REST and GraphQL APIs covering authentication, authorization, rate limiting, input validation, and security best pra...
+
+### api-testing-observability-api-mock
+`skills/api-testing-observability-api-mock`
+
+You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavio...
+
+### azure-microsoft-playwright-testing-ts
+`skills/azure-microsoft-playwright-testing-ts`
+
+Run Playwright tests at scale using Azure Playwright Workspaces (formerly Microsoft Playwright Testing). Use when scaling browser tests across cloud-h...
+
+### azure-resource-manager-playwright-dotnet
+`skills/azure-resource-manager-playwright-dotnet`
+
+|
+
+### backtesting-frameworks
+`skills/backtesting-frameworks`
+
+Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when de...
+
+### bats-testing-patterns
+`skills/bats-testing-patterns`
+
+Master Bash Automated Testing System (Bats) for comprehensive shell script testing. Use when writing tests for shell scripts, CI/CD pipelines, or requ...
+
+### burp-suite-testing
+`skills/burp-suite-testing`
+
+This skill should be used when the user asks to \"intercept HTTP traffic\", \"modify web requests\", \"use Burp Suite for testing\", \"perform web vul...
+
+### e2e-testing
+`skills/e2e-testing`
+
+End-to-end testing workflow with Playwright for browser automation, visual regression, cross-browser testing, and CI/CD integration.
+
+### e2e-testing-patterns
+`skills/e2e-testing-patterns`
+
+Master end-to-end testing with Playwright and Cypress to build reliable test suites that catch bugs, improve confidence, and enable fast deployment. U...
+
+### go-playwright
+`skills/go-playwright`
+
+Expert capability for robust, stealthy, and efficient browser automation using Playwright Go.
+
+### html-injection-testing
+`skills/html-injection-testing`
+
+This skill should be used when the user asks to \"test for HTML injection\", \"inject HTML into web pages\", \"perform HTML injection attacks\", \"def...
+
+### idor-testing
+`skills/idor-testing`
+
+This skill should be used when the user asks to \"test for insecure direct object references,\" \"find IDOR vulnerabilities,\" \"exploit broken access...
+
+### javascript-testing-patterns
+`skills/javascript-testing-patterns`
+
+Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mock...
+
+### pentest-checklist
+`skills/pentest-checklist`
+
+This skill should be used when the user asks to \"plan a penetration test\", \"create a security assessment checklist\", \"prepare for penetration tes...
+
+### pentest-commands
+`skills/pentest-commands`
+
+This skill should be used when the user asks to \"run pentest commands\", \"scan with nmap\", \"use metasploit exploits\", \"crack passwords with hydr...
+
+### performance-testing-review-ai-review
+`skills/performance-testing-review-ai-review`
+
+You are an expert AI-powered code review specialist combining automated static analysis, intelligent pattern recognition, and modern DevOps practices....
+
+### performance-testing-review-multi-agent-review
+`skills/performance-testing-review-multi-agent-review`
+
+Use when working with performance testing review multi agent review
+
+### playwright-expert
+`skills/playwright-expert`
+
+Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke for browser automation, E2E tests...
+
+### playwright-skill
+`skills/playwright-skill`
+
+Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, ch...
+
+### screen-reader-testing
+`skills/screen-reader-testing`
+
+Test web applications with screen readers including VoiceOver, NVDA, and JAWS. Use when validating screen reader compatibility, debugging accessibilit...
+
+### smtp-penetration-testing
+`skills/smtp-penetration-testing`
+
+This skill should be used when the user asks to \"perform SMTP penetration testing\", \"enumerate email users\", \"test for open mail relays\", \"grab...
+
+### ssh-penetration-testing
+`skills/ssh-penetration-testing`
+
+This skill should be used when the user asks to \"pentest SSH services\", \"enumerate SSH configurations\", \"brute force SSH credentials\", \"exploit...
+
+### test-automator
+`skills/test-automator`
+
+Master AI-powered test automation with modern frameworks,
+
+### test-driven-development
+`skills/test-driven-development`
+
+Use when implementing any feature or bugfix, before writing implementation code
+
+### test-fixing
+`skills/test-fixing`
+
+Run tests and systematically fix all failing tests using smart error grouping. Use when user asks to fix failing tests, mentions test failures, runs t...
+
+### test-master
+`skills/test-master`
+
+Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis,...
+
+### testing-patterns
+`skills/testing-patterns`
+
+Testing patterns and principles. Unit, integration, mocking strategies.
+
+### testing-qa
+`skills/testing-qa`
+
+Comprehensive testing and QA workflow covering unit testing, integration testing, E2E testing, browser automation, and quality assurance.
+
+### unit-testing-test-generate
+`skills/unit-testing-test-generate`
+
+Generate comprehensive, maintainable unit tests across languages with strong coverage and edge case focus.
+
+### web-security-testing
+`skills/web-security-testing`
+
+Web application security testing workflow for OWASP Top 10 vulnerabilities including injection, XSS, authentication flaws, and access control issues.
+
+### web3-testing
+`skills/web3-testing`
+
+Test smart contracts comprehensively using Hardhat and Foundry with unit tests, integration tests, and mainnet forking. Use when testing Solidity cont...
+
+### webapp-testing
+`skills/webapp-testing`
+
+Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, ca...
+
+### wordpress-penetration-testing
+`skills/wordpress-penetration-testing`
+
+This skill should be used when the user asks to \"pentest WordPress sites\", \"scan WordPress for vulnerabilities\", \"enumerate WordPress users, them...
 
 ## UI/Styling
 
@@ -3011,7 +4530,7 @@ Optimize Bazel builds for large-scale monorepos. Use when configuring Bazel, imp
 
 Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when b...
 
-### brand-guidelines
+### brand-guidelines-community
 `skills/brand-guidelines-community`
 
 Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when b...
@@ -3026,10 +4545,10 @@ Expert in building browser extensions that solve real problems - Chrome, Firefox
 
 Project Guidelines Skill (Example)
 
-### Claude Code Guide
+### claude-code-guide
 `skills/claude-code-guide`
 
-Master guide for using Claude Code effectively. Includes configuration templates, prompting strategies "Thinking" keywords, debugging techniques, and ...
+Master guide for using Claude Code effectively. Includes configuration templates, prompting strategies \\\"Thinking\\\" keywords, debugging techniques...
 
 ### environment-setup-guide
 `skills/environment-setup-guide`
@@ -3041,15 +4560,25 @@ Guide developers through setting up development environments with proper tools, 
 
 Opinionated frontend development standards for modern React + TypeScript applications. Covers Suspense-first data fetching, lazy loading, feature-base...
 
-### Linux Privilege Escalation
+### frontend-ui-dark-ts
+`skills/frontend-ui-dark-ts`
+
+Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating da...
+
+### linux-privilege-escalation
 `skills/linux-privilege-escalation`
 
-This skill should be used when the user asks to "escalate privileges on Linux", "find privesc vectors on Linux systems", "exploit sudo misconfiguratio...
+This skill should be used when the user asks to \"escalate privileges on Linux\", \"find privesc vectors on Linux systems\", \"exploit sudo misconfigu...
 
-### Linux Production Shell Scripts
+### linux-shell-scripting
 `skills/linux-shell-scripting`
 
-This skill should be used when the user asks to "create bash scripts", "automate Linux tasks", "monitor system resources", "backup files", "manage use...
+This skill should be used when the user asks to \"create bash scripts\", \"automate Linux tasks\", \"monitor system resources\", \"backup files\", \"m...
+
+### linux-troubleshooting
+`skills/linux-troubleshooting`
+
+Linux system troubleshooting workflow for diagnosing and resolving system issues, performance problems, and service failures.
 
 ### personal-tool-builder
 `skills/personal-tool-builder`
@@ -3136,260 +4665,6 @@ Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts 
 
 Review UI code for Web Interface Guidelines compliance. Use when asked to "review my UI", "check accessibility", "audit design", "review UX", or "chec...
 
-## Testing
-
-### ab-test-setup
-`skills/ab-test-setup`
-
-Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness.
-
-### api-testing-observability-api-mock
-`skills/api-testing-observability-api-mock`
-
-You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavio...
-
-### backtesting-frameworks
-`skills/backtesting-frameworks`
-
-Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when de...
-
-### bats-testing-patterns
-`skills/bats-testing-patterns`
-
-Master Bash Automated Testing System (Bats) for comprehensive shell script testing. Use when writing tests for shell scripts, CI/CD pipelines, or requ...
-
-### Burp Suite Web Application Testing
-`skills/burp-suite-testing`
-
-This skill should be used when the user asks to "intercept HTTP traffic", "modify web requests", "use Burp Suite for testing", "perform web vulnerabil...
-
-### e2e-testing-patterns
-`skills/e2e-testing-patterns`
-
-Master end-to-end testing with Playwright and Cypress to build reliable test suites that catch bugs, improve confidence, and enable fast deployment. U...
-
-### HTML Injection Testing
-`skills/html-injection-testing`
-
-This skill should be used when the user asks to "test for HTML injection", "inject HTML into web pages", "perform HTML injection attacks", "deface web...
-
-### IDOR Vulnerability Testing
-`skills/idor-testing`
-
-This skill should be used when the user asks to "test for insecure direct object references," "find IDOR vulnerabilities," "exploit broken access cont...
-
-### javascript-testing-patterns
-`skills/javascript-testing-patterns`
-
-Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mock...
-
-### Pentest Checklist
-`skills/pentest-checklist`
-
-This skill should be used when the user asks to "plan a penetration test", "create a security assessment checklist", "prepare for penetration testing"...
-
-### Pentest Commands
-`skills/pentest-commands`
-
-This skill should be used when the user asks to "run pentest commands", "scan with nmap", "use metasploit exploits", "crack passwords with hydra or jo...
-
-### performance-testing-review-ai-review
-`skills/performance-testing-review-ai-review`
-
-You are an expert AI-powered code review specialist combining automated static analysis, intelligent pattern recognition, and modern DevOps practices....
-
-### performance-testing-review-multi-agent-review
-`skills/performance-testing-review-multi-agent-review`
-
-Use when working with performance testing review multi agent review
-
-### playwright-expert
-`skills/playwright-expert`
-
-Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke for browser automation, E2E tests...
-
-### playwright-skill
-`skills/playwright-skill`
-
-Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, ch...
-
-### screen-reader-testing
-`skills/screen-reader-testing`
-
-Test web applications with screen readers including VoiceOver, NVDA, and JAWS. Use when validating screen reader compatibility, debugging accessibilit...
-
-### SMTP Penetration Testing
-`skills/smtp-penetration-testing`
-
-This skill should be used when the user asks to "perform SMTP penetration testing", "enumerate email users", "test for open mail relays", "grab SMTP b...
-
-### SSH Penetration Testing
-`skills/ssh-penetration-testing`
-
-This skill should be used when the user asks to "pentest SSH services", "enumerate SSH configurations", "brute force SSH credentials", "exploit SSH vu...
-
-### test-automator
-`skills/test-automator`
-
-Master AI-powered test automation with modern frameworks,
-
-### test-driven-development
-`skills/test-driven-development`
-
-Use when implementing any feature or bugfix, before writing implementation code
-
-### test-fixing
-`skills/test-fixing`
-
-Run tests and systematically fix all failing tests using smart error grouping. Use when user asks to fix failing tests, mentions test failures, runs t...
-
-### test-master
-`skills/test-master`
-
-Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis,...
-
-### testing-patterns
-`skills/testing-patterns`
-
-Jest testing patterns, factory functions, mocking strategies, and TDD workflow. Use when writing unit tests, creating test factories, or following TDD...
-
-### unit-testing-test-generate
-`skills/unit-testing-test-generate`
-
-Generate comprehensive, maintainable unit tests across languages with strong coverage and edge case focus.
-
-### web3-testing
-`skills/web3-testing`
-
-Test smart contracts comprehensively using Hardhat and Foundry with unit tests, integration tests, and mainnet forking. Use when testing Solidity cont...
-
-### webapp-testing
-`skills/webapp-testing`
-
-Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, ca...
-
-### WordPress Penetration Testing
-`skills/wordpress-penetration-testing`
-
-This skill should be used when the user asks to "pentest WordPress sites", "scan WordPress for vulnerabilities", "enumerate WordPress users, themes, o...
-
-## Python
-
-### async-python-patterns
-`skills/async-python-patterns`
-
-Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use when building async APIs, concurrent sy...
-
-### azure-ai-agents-python
-`skills/azure-ai-agents-python`
-
-Build AI agents using the Azure AI Agents Python SDK (azure-ai-agents). Use when creating agents hosted on Azure AI Foundry with tools (File Search, C...
-
-### azure-ai-search-python
-`skills/azure-ai-search-python`
-
-Clean code patterns for Azure AI Search Python SDK (azure-search-documents). Use when building search applications, creating/managing indexes, impleme...
-
-### cosmos-db-python-skill
-`skills/cosmos-db-python-skill`
-
-Build Azure Cosmos DB NoSQL services with Python/FastAPI following production-grade patterns. Use when implementing database client setup with dual au...
-
-### django-expert
-`skills/django-expert`
-
-Use when building Django web applications or REST APIs with Django REST Framework. Invoke for Django models, ORM optimization, DRF serializers, viewse...
-
-### django-pro
-`skills/django-pro`
-
-Master Django 5.x with async views, DRF, Celery, and Django
-
-### fastapi-expert
-`skills/fastapi-expert`
-
-Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAP...
-
-### fastapi-pro
-`skills/fastapi-pro`
-
-Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and
-
-### fastapi-router
-`skills/fastapi-router`
-
-Create FastAPI routers with CRUD operations, authentication dependencies, and proper response models. Use when building REST API endpoints, creating n...
-
-### fastapi-templates
-`skills/fastapi-templates`
-
-Create production-ready FastAPI projects with async patterns, dependency injection, and comprehensive error handling. Use when building new FastAPI ap...
-
-### foundry-iq-python
-`skills/foundry-iq-python`
-
-Build agentic retrieval solutions with Azure AI Search knowledge bases and Foundry Agent Service using the Python SDK. Use when creating knowledge sou...
-
-### foundry-sdk-python
-`skills/foundry-sdk-python`
-
-Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned ag...
-
-### google-adk-python
-`skills/google-adk-python`
-
-Build AI agents with Google ADK Python (Agent Development Kit). Use for multi-agent systems, workflow agents (sequential/parallel/loop), Vertex AI dep...
-
-### n8n-code-python
-`skills/n8n-code-python`
-
-Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to unders...
-
-### python-development
-`skills/python-development`
-
-Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices. Use for Python projects, APIs, data proce...
-
-### python-development-python-scaffold
-`skills/python-development-python-scaffold`
-
-You are a Python project architecture expert specializing in scaffolding production-ready Python applications. Generate complete project structures wi...
-
-### python-packaging
-`skills/python-packaging`
-
-Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python librari...
-
-### python-patterns
-`skills/python-patterns`
-
-Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying.
-
-### python-performance-optimization
-`skills/python-performance-optimization`
-
-Profile and optimize Python code using cProfile, memory profilers, and performance best practices. Use when debugging slow Python code, optimizing bot...
-
-### python-pro
-`skills/python-pro`
-
-Master Python 3.12+ with modern features, async programming,
-
-### python-testing-patterns
-`skills/python-testing-patterns`
-
-Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test...
-
-### temporal-python-pro
-`skills/temporal-python-pro`
-
-Master Temporal workflow orchestration with Python SDK. Implements
-
-### temporal-python-testing
-`skills/temporal-python-testing`
-
-Test Temporal workflows with pytest, time-skipping, and mocking strategies. Covers unit testing, integration testing, replay testing, and local develo...
-
 ## Security
 
 ### api-security-best-practices
@@ -3402,6 +4677,21 @@ Implement secure API design patterns including authentication, authorization, in
 
 Master authentication and authorization patterns including JWT, OAuth2, session management, and RBAC to build secure, scalable access control systems....
 
+### azure-security-keyvault-keys-dotnet
+`skills/azure-security-keyvault-keys-dotnet`
+
+|
+
+### azure-security-keyvault-keys-java
+`skills/azure-security-keyvault-keys-java`
+
+Azure Key Vault Keys Java SDK for cryptographic key management. Use when creating, managing, or using RSA/EC keys, performing encrypt/decrypt/sign/ver...
+
+### azure-security-keyvault-secrets-java
+`skills/azure-security-keyvault-secrets-java`
+
+Azure Key Vault Secrets Java SDK for secret management. Use when storing, retrieving, or managing passwords, API keys, connection strings, or other se...
+
 ### backend-security-coder
 `skills/backend-security-coder`
 
@@ -3412,12 +4702,12 @@ Expert in secure backend coding practices specializing in input
 
 Implement authentication and authorization with Better Auth - a framework-agnostic TypeScript authentication framework. Features include email/passwor...
 
-### Broken Authentication Testing
+### broken-authentication
 `skills/broken-authentication`
 
-This skill should be used when the user asks to "test for broken authentication vulnerabilities", "assess session management security", "perform crede...
+This skill should be used when the user asks to \"test for broken authentication vulnerabilities\", \"assess session management security\", \"perform ...
 
-### security-review
+### cc-skill-security-review
 `skills/cc-skill-security-review`
 
 Use this skill when adding authentication, handling user input, working with secrets, creating API endpoints, or implementing payment/sensitive featur...
@@ -3426,6 +4716,11 @@ Use this skill when adding authentication, handling user input, working with sec
 `skills/clerk-auth`
 
 Expert patterns for Clerk auth implementation, middleware, organizations, webhooks, and user sync Use when: adding authentication, clerk auth, user au...
+
+### crypto-bd-agent
+`skills/crypto-bd-agent`
+
+>
 
 ### doc-coauthoring
 `skills/doc-coauthoring`
@@ -3442,10 +4737,25 @@ You are a frontend security specialist focusing on Cross-Site Scripting (XSS) vu
 
 Expert in secure frontend coding practices specializing in XSS
 
+### laravel-security-audit
+`skills/laravel-security-audit`
+
+Security auditor for Laravel applications. Analyzes code for vulnerabilities, misconfigurations, and insecure practices using OWASP standards and Lara...
+
+### microsoft-azure-webjobs-extensions-authentication-events-dotnet
+`skills/microsoft-azure-webjobs-extensions-authentication-events-dotnet`
+
+|
+
 ### mobile-security-coder
 `skills/mobile-security-coder`
 
 Expert in secure mobile coding practices specializing in input
+
+### security-audit
+`skills/security-audit`
+
+Comprehensive security auditing workflow covering web application testing, API security, penetration testing, vulnerability scanning, and security har...
 
 ### security-auditor
 `skills/security-auditor`
@@ -3499,15 +4809,35 @@ Master smart contract security best practices to prevent common vulnerabilities 
 
 ## Frontend Frameworks
 
+### angular
+`skills/angular`
+
+>-
+
 ### angular-architect
 `skills/angular-architect`
 
 Use when building Angular 17+ applications with standalone components or signals. Invoke for enterprise apps, RxJS patterns, NgRx state management, pe...
 
+### angular-best-practices
+`skills/angular-best-practices`
+
+Angular performance optimization and best practices guide. Use when writing, reviewing, or refactoring Angular code for optimal performance, bundle si...
+
 ### angular-migration
 `skills/angular-migration`
 
 Migrate from AngularJS to Angular using hybrid mode, incremental component rewriting, and dependency injection updates. Use when upgrading AngularJS a...
+
+### angular-state-management
+`skills/angular-state-management`
+
+Master modern Angular state management with Signals, NgRx, and RxJS. Use when setting up global state, managing component stores, choosing between sta...
+
+### angular-ui-patterns
+`skills/angular-ui-patterns`
+
+Modern Angular UI patterns for loading states, error handling, and data display. Use when building UI components, handling async data, or managing com...
 
 ### foundry-nextgen-frontend
 `skills/foundry-nextgen-frontend`
@@ -3554,8 +4884,18 @@ Run react-doctor to scan React codebase for health issues. Diagnose security, pe
 
 Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performa...
 
+### react-flow-architect
+`skills/react-flow-architect`
+
+Expert ReactFlow architect for building interactive graph applications with hierarchical node-edge systems, performance optimization, and auto-layout ...
+
 ### react-flow-node
 `skills/react-flow-node`
+
+Create React Flow node components with TypeScript types, handles, and Zustand integration. Use when building custom nodes for React Flow canvas, creat...
+
+### react-flow-node-ts
+`skills/react-flow-node-ts`
 
 Create React Flow node components with TypeScript types, handles, and Zustand integration. Use when building custom nodes for React Flow canvas, creat...
 
@@ -3573,6 +4913,11 @@ Build production React Native apps with Expo, navigation, native modules, offlin
 `skills/react-native-expert`
 
 Use when building cross-platform mobile applications with React Native or Expo. Invoke for navigation patterns, platform-specific code, native modules...
+
+### react-nextjs-development
+`skills/react-nextjs-development`
+
+React and Next.js 14+ application development with App Router, Server Components, TypeScript, Tailwind CSS, and modern frontend patterns.
 
 ### react-patterns
 `skills/react-patterns`
@@ -3599,104 +4944,42 @@ Provides Vue 3 expertise including Composition API, reactivity system, component
 
 Use when building Vue 3 applications with JavaScript only (no TypeScript). Invoke for JSDoc typing, vanilla JS composables, .mjs modules.
 
-## TypeScript/JavaScript
-
-### automate-whatsapp
-`skills/automate-whatsapp`
-
-Build WhatsApp automations with Kapso workflows: configure WhatsApp triggers, edit workflow graphs, manage executions, deploy functions, and use datab...
-
-### d3-viz
-`skills/claude-d3js-skill`
-
-Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visu...
-
-### core-components
-`skills/core-components`
-
-Core component library and design system patterns. Use when building UI, using design tokens, or working with the component library.
-
-### fp-ts-errors
-`skills/fp-ts-errors`
-
-Handle errors as values using fp-ts Either and TaskEither for cleaner, more predictable TypeScript code. Use when implementing error handling patterns...
-
-### fp-ts-pragmatic
-`skills/fp-ts-pragmatic`
-
-A practical, jargon-free guide to fp-ts functional programming - the 80/20 approach that gets results without the academic overhead. Use when writing ...
-
-### javascript-mastery
-`skills/javascript-mastery`
-
-Comprehensive JavaScript reference covering 33+ essential concepts every developer should know. From fundamentals like primitives and closures to adva...
-
-### javascript-pro
-`skills/javascript-pro`
-
-Master modern JavaScript with ES6+, async patterns, and Node.js
-
-### javascript-typescript
-`skills/javascript-typescript`
-
-JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks. Use for frontend, backend, or full-stack JavaScript/TypeSc...
-
-### javascript-typescript-typescript-scaffold
-`skills/javascript-typescript-typescript-scaffold`
-
-You are a TypeScript project architecture expert specializing in scaffolding production-ready Node.js and frontend applications. Generate complete pro...
-
-### meeting-insights-analyzer
-`skills/meeting-insights-analyzer`
-
-Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid...
-
-### modern-javascript-patterns
-`skills/modern-javascript-patterns`
-
-Master ES6+ features including async/await, destructuring, spread operators, arrow functions, promises, modules, iterators, generators, and functional...
-
-### observe-whatsapp
-`skills/observe-whatsapp`
-
-Observe and troubleshoot WhatsApp in Kapso: debug message delivery, inspect webhook deliveries/retries, triage API errors, and run health checks. Use ...
-
-### screenshots
-`skills/screenshots`
-
-Generate marketing screenshots of your app using Playwright. Use when the user wants to create screenshots for Product Hunt, social media, landing pag...
-
-### secrets-management
-`skills/secrets-management`
-
-Implement secure secrets management for CI/CD pipelines using Vault, AWS Secrets Manager, or native platform solutions. Use when handling sensitive cr...
-
-### threejs
-`skills/threejs`
-
-Build immersive 3D web experiences with Three.js - WebGL/WebGPU library for scenes, cameras, geometries, materials, lights, animations, loaders, post-...
-
-### threejs-skills
-`skills/threejs-skills`
-
-Three.js skills for creating 3D elements and interactive experiences
-
-### typescript-advanced-types
-`skills/typescript-advanced-types`
-
-Master TypeScript's advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-s...
-
-### typescript-expert
-`skills/typescript-expert`
-
->-
-
-### typescript-pro
-`skills/typescript-pro`
-
-Master TypeScript with advanced types, generics, and strict type
-
 ## Databases
+
+### azure-mgmt-mongodbatlas-dotnet
+`skills/azure-mgmt-mongodbatlas-dotnet`
+
+Manage MongoDB Atlas Organizations as Azure ARM resources using Azure.ResourceManager.MongoDBAtlas SDK. Use when creating, updating, listing, or delet...
+
+### azure-postgres-ts
+`skills/azure-postgres-ts`
+
+|
+
+### azure-resource-manager-mysql-dotnet
+`skills/azure-resource-manager-mysql-dotnet`
+
+|
+
+### azure-resource-manager-postgresql-dotnet
+`skills/azure-resource-manager-postgresql-dotnet`
+
+|
+
+### azure-resource-manager-redis-dotnet
+`skills/azure-resource-manager-redis-dotnet`
+
+|
+
+### azure-resource-manager-sql-dotnet
+`skills/azure-resource-manager-sql-dotnet`
+
+|
+
+### database
+`skills/database`
+
+Database development and operations workflow covering SQL, NoSQL, database design, migrations, optimization, and data engineering.
 
 ### database-admin
 `skills/database-admin`
@@ -3716,7 +4999,7 @@ You are a cloud cost optimization expert specializing in reducing infrastructure
 ### database-design
 `skills/database-design`
 
-Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases.
+Database schema design, optimization, and migration patterns for PostgreSQL, MySQL, and NoSQL databases. Use for designing schemas, writing migrations...
 
 ### database-migration
 `skills/database-migration`
@@ -3731,12 +5014,12 @@ Migration monitoring, CDC, and observability infrastructure
 ### database-migrations-sql-migrations
 `skills/database-migrations-sql-migrations`
 
-SQL database migrations with zero-downtime strategies for
+SQL database migrations with zero-downtime strategies for PostgreSQL, MySQL, and SQL Server. Focus on data integrity and rollback plans.
 
 ### database-optimizer
 `skills/database-optimizer`
 
-Expert database optimizer specializing in modern performance
+Use when investigating slow queries, analyzing execution plans, or optimizing database performance. Invoke for index design, query rewrites, configura...
 
 ### databases
 `skills/databases`
@@ -3753,7 +5036,7 @@ Expert patterns for Neon serverless Postgres, branching, connection pooling, and
 
 Expert guidance for distributed NoSQL databases (Cassandra, DynamoDB). Focuses on mental models, query-first modeling, single-table design, and avoidi...
 
-### supabase-postgres-best-practices
+### postgres-best-practices
 `skills/postgres-best-practices`
 
 Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema des...
@@ -3768,10 +5051,15 @@ Use when optimizing PostgreSQL queries, configuring replication, or implementing
 
 Design a PostgreSQL-specific schema. Covers best-practices, data types, indexing, constraints, performance patterns, and advanced features
 
-### SQL Injection Testing
+### postgresql-optimization
+`skills/postgresql-optimization`
+
+PostgreSQL database optimization workflow for query tuning, indexing strategies, performance analysis, and production database management.
+
+### sql-injection-testing
 `skills/sql-injection-testing`
 
-This skill should be used when the user asks to "test for SQL injection vulnerabilities", "perform SQLi attacks", "bypass authentication using SQL inj...
+This skill should be used when the user asks to \"test for SQL injection vulnerabilities\", \"perform SQLi attacks\", \"bypass authentication using SQ...
 
 ### sql-optimization-patterns
 `skills/sql-optimization-patterns`
@@ -3781,17 +5069,149 @@ Master SQL query optimization, indexing strategies, and EXPLAIN analysis to dram
 ### sql-pro
 `skills/sql-pro`
 
-Master modern SQL with cloud-native databases, OLTP/OLAP
+Use when optimizing SQL queries, designing database schemas, or tuning database performance. Invoke for complex queries, window functions, CTEs, index...
 
-### SQLMap Database Penetration Testing
+### sqlmap-database-pentesting
 `skills/sqlmap-database-pentesting`
 
-This skill should be used when the user asks to "automate SQL injection testing," "enumerate database structure," "extract database credentials using ...
+This skill should be used when the user asks to \"automate SQL injection testing,\" \"enumerate database structure,\" \"extract database credentials u...
 
 ### vector-database-engineer
 `skills/vector-database-engineer`
 
 Expert in vector databases, embedding strategies, and semantic search implementation. Masters Pinecone, Weaviate, Qdrant, Milvus, and pgvector for RAG...
+
+## Python
+
+### async-python-patterns
+`skills/async-python-patterns`
+
+Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use when building async APIs, concurrent sy...
+
+### azure-ai-agents-python
+`skills/azure-ai-agents-python`
+
+Build AI agents using the Azure AI Agents Python SDK (azure-ai-agents). Use when creating agents hosted on Azure AI Foundry with tools (File Search, C...
+
+### azure-ai-search-python
+`skills/azure-ai-search-python`
+
+Clean code patterns for Azure AI Search Python SDK (azure-search-documents). Use when building search applications, creating/managing indexes, impleme...
+
+### cosmos-db-python-skill
+`skills/cosmos-db-python-skill`
+
+Build Azure Cosmos DB NoSQL services with Python/FastAPI following production-grade patterns. Use when implementing database client setup with dual au...
+
+### dbos-python
+`skills/dbos-python`
+
+DBOS Python SDK for building reliable, fault-tolerant applications with durable workflows. Use this skill when writing Python code with DBOS, creating...
+
+### django-expert
+`skills/django-expert`
+
+Use when building Django web applications or REST APIs with Django REST Framework. Invoke for Django models, ORM optimization, DRF serializers, viewse...
+
+### django-pro
+`skills/django-pro`
+
+Master Django 5.x with async views, DRF, Celery, and Django
+
+### fastapi-expert
+`skills/fastapi-expert`
+
+Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke for async SQLAlchemy, JWT authentication, WebSockets, OpenAP...
+
+### fastapi-pro
+`skills/fastapi-pro`
+
+Build high-performance async APIs with FastAPI, SQLAlchemy 2.0, and
+
+### fastapi-router
+`skills/fastapi-router`
+
+Create FastAPI routers with CRUD operations, authentication dependencies, and proper response models. Use when building REST API endpoints, creating n...
+
+### fastapi-router-py
+`skills/fastapi-router-py`
+
+Create FastAPI routers with CRUD operations, authentication dependencies, and proper response models. Use when building REST API endpoints, creating n...
+
+### fastapi-templates
+`skills/fastapi-templates`
+
+Create production-ready FastAPI projects with async patterns, dependency injection, and comprehensive error handling. Use when building new FastAPI ap...
+
+### foundry-iq-python
+`skills/foundry-iq-python`
+
+No description
+
+### foundry-sdk-python
+`skills/foundry-sdk-python`
+
+Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned ag...
+
+### google-adk-python
+`skills/google-adk-python`
+
+Build AI agents with Google ADK Python (Agent Development Kit). Use for multi-agent systems, workflow agents (sequential/parallel/loop), Vertex AI dep...
+
+### n8n-code-python
+`skills/n8n-code-python`
+
+Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to unders...
+
+### python-development
+`skills/python-development`
+
+Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices. Use for Python projects, APIs, data proce...
+
+### python-development-python-scaffold
+`skills/python-development-python-scaffold`
+
+You are a Python project architecture expert specializing in scaffolding production-ready Python applications. Generate complete project structures wi...
+
+### python-fastapi-development
+`skills/python-fastapi-development`
+
+Python FastAPI backend development with async patterns, SQLAlchemy, Pydantic, authentication, and production API patterns.
+
+### python-packaging
+`skills/python-packaging`
+
+Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python librari...
+
+### python-patterns
+`skills/python-patterns`
+
+Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying.
+
+### python-performance-optimization
+`skills/python-performance-optimization`
+
+Profile and optimize Python code using cProfile, memory profilers, and performance best practices. Use when debugging slow Python code, optimizing bot...
+
+### python-pro
+`skills/python-pro`
+
+Use when building Python 3.11+ applications requiring type safety, async programming, or production-grade patterns. Invoke for type hints, pytest, asy...
+
+### python-testing-patterns
+`skills/python-testing-patterns`
+
+Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test...
+
+### temporal-python-pro
+`skills/temporal-python-pro`
+
+Master Temporal workflow orchestration with Python SDK. Implements
+
+### temporal-python-testing
+`skills/temporal-python-testing`
+
+Test Temporal workflows with pytest, time-skipping, and mocking strategies. Covers unit testing, integration testing, replay testing, and local develo...
 
 ## API Design
 
@@ -3805,20 +5225,50 @@ Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or pla
 
 Master API documentation with OpenAPI 3.1, AI-powered tools, and
 
-### API Fuzzing for Bug Bounty
+### api-fuzzing-bug-bounty
 `skills/api-fuzzing-bug-bounty`
 
-This skill should be used when the user asks to "test API security", "fuzz APIs", "find IDOR vulnerabilities", "test REST API", "test GraphQL", "API p...
+This skill should be used when the user asks to \"test API security\", \"fuzz APIs\", \"find IDOR vulnerabilities\", \"test REST API\", \"test GraphQL...
 
 ### api-patterns
 `skills/api-patterns`
 
 API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination.
 
+### azure-mgmt-apicenter-dotnet
+`skills/azure-mgmt-apicenter-dotnet`
+
+|
+
+### azure-mgmt-apicenter-py
+`skills/azure-mgmt-apicenter-py`
+
+|
+
+### azure-mgmt-apimanagement-dotnet
+`skills/azure-mgmt-apimanagement-dotnet`
+
+|
+
+### azure-mgmt-apimanagement-py
+`skills/azure-mgmt-apimanagement-py`
+
+|
+
+### azure-speech-to-text-rest-py
+`skills/azure-speech-to-text-rest-py`
+
+|
+
 ### context-management-context-restore
 `skills/context-management-context-restore`
 
 Use when working with context management context restore
+
+### gemini-api-dev
+`skills/gemini-api-dev`
+
+Use this skill when building applications with Gemini models, Gemini API, working with multimodal content (text, images, audio, video), implementing f...
 
 ### graphql
 `skills/graphql`
@@ -3828,7 +5278,7 @@ GraphQL gives clients exactly the data they need - no more, no less. One endpoin
 ### graphql-architect
 `skills/graphql-architect`
 
-Master modern GraphQL with federation, performance optimization,
+Use when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with Data...
 
 ### moodle-external-api-development
 `skills/moodle-external-api-development`
@@ -3847,10 +5297,15 @@ No-code automation democratizes workflow building. Zapier and Make (formerly Int
 
 ## Mobile
 
+### android-jetpack-compose-expert
+`skills/android-jetpack-compose-expert`
+
+Expert guidance for building modern Android UIs with Jetpack Compose, covering state management, navigation, performance, and Material Design 3.
+
 ### flutter-expert
 `skills/flutter-expert`
 
-Master Flutter development with Dart 3, advanced widgets, and
+Use when building cross-platform applications with Flutter 3+ and Dart. Invoke for widget development, Riverpod/Bloc state management, GoRouter naviga...
 
 ### frontend-mobile-development-component-scaffold
 `skills/frontend-mobile-development-component-scaffold`
@@ -3865,7 +5320,7 @@ Develop native iOS applications with Swift/SwiftUI. Masters iOS 18,
 ### mobile-design
 `skills/mobile-design`
 
-Mobile-first design and engineering doctrine for iOS and Android apps. Covers touch interaction, performance, platform conventions, offline behavior, ...
+Mobile-first design thinking and decision-making for iOS and Android apps. Touch interaction, performance patterns, platform conventions. Teaches prin...
 
 ### mobile-developer
 `skills/mobile-developer`

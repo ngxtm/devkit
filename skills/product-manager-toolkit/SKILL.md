@@ -11,13 +11,13 @@ Essential tools and frameworks for modern product management, from discovery to 
 
 ### For Feature Prioritization
 ```bash
-python scripts/rice_prioritizer.py sample  # Create sample CSV
-python scripts/rice_prioritizer.py sample_features.csv --capacity 15
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py sample  # Create sample CSV
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py sample_features.csv --capacity 15
 ```
 
 ### For Interview Analysis
 ```bash
-python scripts/customer_interview_analyzer.py interview_transcript.txt
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/customer_interview_analyzer.py interview_transcript.txt
 ```
 
 ### For PRD Creation
@@ -39,7 +39,7 @@ python scripts/customer_interview_analyzer.py interview_transcript.txt
 2. **Score with RICE**
    ```bash
    # Create CSV with: name,reach,impact,confidence,effort
-   python scripts/rice_prioritizer.py features.csv
+   python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py features.csv
    ```
    - **Reach**: Users affected per quarter
    - **Impact**: massive/high/medium/low/minimal
@@ -65,7 +65,7 @@ python scripts/customer_interview_analyzer.py interview_transcript.txt
 
 2. **Analyze Insights**
    ```bash
-   python scripts/customer_interview_analyzer.py transcript.txt
+   python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/customer_interview_analyzer.py transcript.txt
    ```
    Extracts:
    - Pain points with severity
@@ -118,13 +118,13 @@ Advanced RICE framework implementation with portfolio analysis.
 **Usage Examples**:
 ```bash
 # Basic prioritization
-python scripts/rice_prioritizer.py features.csv
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py features.csv
 
 # With custom team capacity (person-months per quarter)
-python scripts/rice_prioritizer.py features.csv --capacity 20
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py features.csv --capacity 20
 
 # Output as JSON for integration
-python scripts/rice_prioritizer.py features.csv --output json
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py features.csv --output json
 ```
 
 ### customer_interview_analyzer.py
@@ -142,10 +142,10 @@ NLP-based interview analysis for extracting actionable insights.
 **Usage Examples**:
 ```bash
 # Analyze single interview
-python scripts/customer_interview_analyzer.py interview.txt
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/customer_interview_analyzer.py interview.txt
 
 # Output as JSON for aggregation
-python scripts/customer_interview_analyzer.py interview.txt json
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/customer_interview_analyzer.py interview.txt json
 ```
 
 ## Reference Documents
@@ -337,15 +337,15 @@ This toolkit integrates with:
 
 ```bash
 # Prioritization
-python scripts/rice_prioritizer.py features.csv --capacity 15
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py features.csv --capacity 15
 
 # Interview Analysis
-python scripts/customer_interview_analyzer.py interview.txt
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/customer_interview_analyzer.py interview.txt
 
 # Create sample data
-python scripts/rice_prioritizer.py sample
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py sample
 
 # JSON outputs for integration
-python scripts/rice_prioritizer.py features.csv --output json
-python scripts/customer_interview_analyzer.py interview.txt json
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/rice_prioritizer.py features.csv --output json
+python3 ~/.{TOOL}/skills/product-manager-toolkit/scripts/customer_interview_analyzer.py interview.txt json
 ```

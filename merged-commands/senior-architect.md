@@ -15,13 +15,13 @@ This skill provides three core capabilities through automated scripts:
 
 ```bash
 # Script 1: Architecture Diagram Generator
-python scripts/architecture_diagram_generator.py [options]
+python3 ~/.{TOOL}/skills/senior-architect/scripts/architecture_diagram_generator.py [options]
 
 # Script 2: Project Architect
-python scripts/project_architect.py [options]
+python3 ~/.{TOOL}/skills/senior-architect/scripts/project_architect.py [options]
 
 # Script 3: Dependency Analyzer
-python scripts/dependency_analyzer.py [options]
+python3 ~/.{TOOL}/skills/senior-architect/scripts/dependency_analyzer.py [options]
 ```
 
 ## Core Capabilities
@@ -38,7 +38,7 @@ Automated tool for architecture diagram generator tasks.
 
 **Usage:**
 ```bash
-python scripts/architecture_diagram_generator.py <project-path> [options]
+python3 ~/.{TOOL}/skills/senior-architect/scripts/architecture_diagram_generator.py <project-path> [options]
 ```
 
 ### 2. Project Architect
@@ -53,7 +53,7 @@ Comprehensive analysis and optimization tool.
 
 **Usage:**
 ```bash
-python scripts/project_architect.py <target-path> [--verbose]
+python3 ~/.{TOOL}/skills/senior-architect/scripts/project_architect.py <target-path> [--verbose]
 ```
 
 ### 3. Dependency Analyzer
@@ -68,7 +68,7 @@ Advanced tooling for specialized tasks.
 
 **Usage:**
 ```bash
-python scripts/dependency_analyzer.py [arguments] [options]
+python3 ~/.{TOOL}/skills/senior-architect/scripts/dependency_analyzer.py [arguments] [options]
 ```
 
 ## Reference Documentation
@@ -130,7 +130,7 @@ cp .env.example .env
 
 ```bash
 # Use the analyzer script
-python scripts/project_architect.py .
+python3 ~/.{TOOL}/skills/senior-architect/scripts/project_architect.py .
 
 # Review recommendations
 # Apply fixes
@@ -179,8 +179,8 @@ npm run test
 npm run lint
 
 # Analysis
-python scripts/project_architect.py .
-python scripts/dependency_analyzer.py --analyze
+python3 ~/.{TOOL}/skills/senior-architect/scripts/project_architect.py .
+python3 ~/.{TOOL}/skills/senior-architect/scripts/dependency_analyzer.py --analyze
 
 # Deployment
 docker build -t app:latest .

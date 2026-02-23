@@ -4,7 +4,7 @@ A structured repository for creating and maintaining React Best Practices optimi
 
 ## Structure
 
-- `rules/` - Individual rule files (one per rule)
+- `~/.{TOOL}/skills/agent-assistant/` - Individual rule files (one per rule)
   - `_sections.md` - Section metadata (titles, impacts, descriptions)
   - `_template.md` - Template for creating new rules
   - `area-description.md` - Individual rule files
@@ -37,7 +37,7 @@ A structured repository for creating and maintaining React Best Practices optimi
 
 ## Creating a New Rule
 
-1. Copy `rules/_template.md` to `rules/area-description.md`
+1. Copy `~/.{TOOL}/skills/agent-assistant/_template.md` to `~/.{TOOL}/skills/agent-assistant/area-description.md`
 2. Choose the appropriate area prefix:
    - `async-` for Eliminating Waterfalls (Section 1)
    - `bundle-` for Bundle Size Optimization (Section 2)
