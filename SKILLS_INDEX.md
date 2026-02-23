@@ -1,6 +1,6 @@
 # Skills Index
 
-> Auto-generated index of 768 available skills.
+> Auto-generated index of 769 available skills.
 > Use this to discover skills without loading all files into context.
 >
 > **To use a skill**: Read the full skill at `~/.claude/skills/<skill-name>/SKILL.md`
@@ -17,7 +17,7 @@
 | Testing | 27 |
 | Python | 23 |
 | Security | 21 |
-| Frontend Frameworks | 19 |
+| Frontend Frameworks | 20 |
 | TypeScript/JavaScript | 19 |
 | Databases | 19 |
 | API Design | 10 |
@@ -3543,6 +3543,11 @@ Expert integration of Supabase Auth with Next.js App Router Use when: supabase a
 `skills/react-best-practices`
 
 React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React...
+
+### react-doctor
+`skills/react-doctor`
+
+Run react-doctor to scan React codebase for health issues. Diagnose security, performance, correctness, architecture problems with 0-100 score.
 
 ### react-expert
 `skills/react-expert`

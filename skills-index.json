@@ -2735,6 +2735,11 @@
     "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patter"
   },
   {
+    "name": "react-doctor",
+    "path": "skills/react-doctor",
+    "description": "Run react-doctor to scan React codebase for health issues. Diagnose security, performance, correctness, architecture problems with 0-100 score."
+  },
+  {
     "name": "react-expert",
     "path": "skills/react-expert",
     "description": "Use when building React 18+ applications requiring component architecture, hooks patterns, or state management. Invoke for Server Components, performance optimization, Suspense boundaries, React 19 fe"

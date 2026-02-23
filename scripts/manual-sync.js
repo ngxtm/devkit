@@ -35,6 +35,15 @@ const UPSTREAMS = {
       repo: 'https://github.com/ngxtm/skill-rule.git',
       path: 'rules'
     }
+  ],
+  // Individual skills from external repos (not skill collections)
+  'external-skills': [
+    {
+      name: 'react-doctor',
+      repo: 'https://github.com/millionco/react-doctor.git',
+      checkFiles: ['install-skill.sh', 'README.md', 'package.json'],
+      localSkill: 'skills/react-doctor/SKILL.md'
+    }
   ]
 };
 
@@ -103,7 +112,7 @@ function cloneUpstreams() {
       run(`git clone --depth 1 ${source.repo} "${targetDir}"`, { silent: true });
       cloned[category].push({
         ...source,
-        localPath: path.join(targetDir, source.path)
+        localPath: source.path ? path.join(targetDir, source.path) : targetDir
       });
     }
   }
@@ -135,8 +144,34 @@ function showReport(cloned) {
   console.log('='.repeat(60));
 
   for (const [category, sources] of Object.entries(cloned)) {
-    const localDir = path.join(ROOT_DIR, category);
     console.log(`\n📁 ${category.toUpperCase()}:`);
+
+    if (category === 'external-skills') {
+      // External skills: show files to review instead of directory diff
+      for (const source of sources) {
+        const localSkillPath = source.localSkill
+          ? path.join(ROOT_DIR, source.localSkill)
+          : null;
+        const localExists = localSkillPath && fs.existsSync(localSkillPath);
+
+        console.log(`\n   ${source.name}:`);
+        console.log(`   Status: ${localExists ? 'Local skill exists' : 'No local skill yet'}`);
+        console.log(`   Upstream files to review:`);
+        if (source.checkFiles) {
+          source.checkFiles.forEach(f => {
+            const exists = fs.existsSync(path.join(source.localPath, f));
+            console.log(`     ${exists ? '✓' : '✗'} ${f}`);
+          });
+        }
+        if (localSkillPath) {
+          console.log(`   Local skill: ${source.localSkill}`);
+        }
+        console.log(`   📖 See UPSTREAM.md in skill dir for sync guide`);
+      }
+      continue;
+    }
+
+    const localDir = path.join(ROOT_DIR, category);
 
     for (const source of sources) {
       const result = listNewItems(source.localPath, localDir, category);
