@@ -1,3 +1,11 @@
+# [3.17.0](https://github.com/ngxtm/devkit/compare/v3.16.0...v3.17.0) (2026-02-27)
+
+
+### Features
+
+* **mesh:** add /skill:mesh-init command for one-time skill evaluation ([98cab83](https://github.com/ngxtm/devkit/commit/98cab83c9b3bee77ee4f1f17fd324187e351aa7a))
+* **mesh:** add skills-graph.json foundation and build pipeline ([cdde933](https://github.com/ngxtm/devkit/commit/cdde933434d1b56cefcb29ecdc79d20439e398e8))
+
 # [3.16.0](https://github.com/ngxtm/devkit/compare/v3.15.0...v3.16.0) (2026-02-23)
 
 
