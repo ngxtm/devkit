@@ -1,5 +1,5 @@
 ---
-description: ⚡⚡⚡ Deep Ideation — Research-backed exploration
+description: Deep Ideation — Research-backed exploration
 version: "1.0"
 category: planning
 execution-mode: execute
@@ -13,36 +13,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
-
----
-
-## ⚠️ CRITICAL: DELIVERABLE FILE RULES
+## CRITICAL: DELIVERABLE FILE RULES
 
 ```yaml
 deliverable_files:
@@ -61,29 +32,22 @@ All files in `./reports/` → English only.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## Execution
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 1: REQUIREMENTS DISCOVERY
+## Phase 1: REQUIREMENTS DISCOVERY
 
 | Attribute | Value                           |
 | --------- | ------------------------------- |
-| **Agent** | `brainstormer`                  |
+| **Role**  | `brainstormer`                  |
 | **Goal**  | Deep requirements clarification |
 
-### ⚡ ADAPTIVE EXECUTION
+### Delegation
 
-**IF platform supports subagents:**
-
-> Delegate to `brainstormer` subagent. Do NOT read agent file directly.
-
-**ELSE (EMBODY fallback):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Apply methodology from agent file.
+> Task(subagent_type="general-purpose", prompt="You are a brainstormer. Perform deep requirements clarification using Socratic questioning and assumption surfacing. Exit when: requirements fully understood, stakeholders identified, constraints documented, success metrics defined.", description="brainstormer: Deep requirements clarification")
 
 **Exit Criteria:**
 
@@ -91,27 +55,19 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 - [ ] Stakeholders identified
 - [ ] Constraints documented
 - [ ] Success metrics defined
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol (Socratic questioning, assumption surfacing)
 
 ---
 
-## 🎭 Phase 2: RESEARCH
+## Phase 2: RESEARCH
 
 | Attribute | Value                                |
 | --------- | ------------------------------------ |
-| **Agent** | `researcher`                         |
+| **Role**  | `researcher`                         |
 | **Goal**  | Research best practices and patterns |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `researcher`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/researcher.md`
-> EMBODY [researcher] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a researcher. Research best practices and patterns. CREATE ./reports/researchers/RESEARCH-{topic}.md with findings. Exit when: research file created, industry patterns researched, best practices documented, sources cited.", description="researcher: Research best practices and patterns")
 
 **MANDATORY**: CREATE `./reports/researchers/RESEARCH-{topic}.md`
 
@@ -121,55 +77,39 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 - [ ] Industry patterns researched
 - [ ] Best practices documented
 - [ ] Sources cited
-- [ ] **METHODOLOGY CHECK**: Output aligns with `researcher` Thinking Protocol (sources cited, cross-referenced, evidence-based)
 
 ---
 
-## 🎭 Phase 3: CODEBASE ANALYSIS
+## Phase 3: CODEBASE ANALYSIS
 
 | Attribute | Value                                  |
 | --------- | -------------------------------------- |
-| **Agent** | `scouter`                              |
+| **Role**  | `scouter`                              |
 | **Goal**  | Map existing architecture and patterns |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Map existing architecture and patterns in the codebase. Exit when: architecture understood, existing patterns documented, integration points identified.", description="scouter: Map existing architecture and patterns")
 
 **Exit Criteria:**
 
 - [ ] Architecture understood
 - [ ] Existing patterns documented
 - [ ] Integration points identified
-- [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol (file locations, patterns as constraints)
 
 ---
 
-## 🎭 Phase 4: SOLUTION SYNTHESIS
+## Phase 4: SOLUTION SYNTHESIS
 
 | Attribute        | Value                                                                                  |
 | ---------------- | -------------------------------------------------------------------------------------- |
-| **Agent**        | `brainstormer`                                                                         |
+| **Role**         | `brainstormer`                                                                         |
 | **Goal**         | Synthesize ideas with trade-off analysis                                               |
 | **Prerequisite** | READ `./reports/researchers/RESEARCH-{topic}.md` + `./reports/scouts/SCOUT-{topic}.md` |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `brainstormer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a brainstormer. READ all prior phase deliverables. Synthesize ideas with trade-off analysis. CREATE ./reports/brainstorms/BRAINSTORM-{topic}.md. Exit when: brainstorm file created, ideas synthesized incorporating research, trade-offs analyzed, recommendations provided.", description="brainstormer: Synthesize ideas with trade-off analysis")
 
 **MANDATORY**:
 
@@ -182,7 +122,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 - [ ] Ideas synthesized incorporating research
 - [ ] Trade-offs analyzed
 - [ ] Recommendations provided
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol (structured analysis, trade-off documentation)
 
 ---
 
@@ -190,6 +129,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present comprehensive analysis with:
 
-1. ✅ **Analysis Complete** — Proceed with recommendation
-2. 📋 **Plan** → `/plan:hard` for detailed planning
-3. 🔄 **Iterate** — Refine based on feedback
+1. **Analysis Complete** — Proceed with recommendation
+2. **Plan** → `/plan:hard` for detailed planning
+3. **Iterate** — Refine based on feedback

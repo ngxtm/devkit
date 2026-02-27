@@ -1,5 +1,5 @@
 ---
-description: ⚡ Quick Implementation — Direct coding without planning phase
+description: Quick Implementation — Direct coding without planning phase
 version: "1.0"
 category: engineering
 execution-mode: execute
@@ -13,36 +13,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
-
----
-
-## ⚠️ CRITICAL: PHASE CONTINUITY RULES
+## CRITICAL: PHASE CONTINUITY RULES
 
 ```yaml
 phase_continuity:
@@ -60,90 +31,66 @@ All files in `./reports/` → English only.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## Execution
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 1: CONTEXT SCAN
+## Phase 1: CONTEXT SCAN
 
 | Attribute | Value                                       |
 | --------- | ------------------------------------------- |
-| **Agent** | `scouter`                                   |
+| **Role**  | `scouter`                                   |
 | **Goal**  | Find relevant code patterns and conventions |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Find relevant code patterns and conventions for the task. Exit when: relevant files identified, patterns understood, conventions noted.", description="scouter: Find relevant code patterns and conventions")
 
 **Exit Criteria:**
 
 - [ ] Relevant files identified
 - [ ] Patterns understood
 - [ ] Conventions noted
-- [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol
 
 ---
 
-## 🎭 Phase 2: IMPLEMENTATION
+## Phase 2: IMPLEMENTATION
 
 | Attribute | Value                                                      |
 | --------- | ---------------------------------------------------------- |
-| **Agent** | Route by domain: `frontend-engineer` \| `backend-engineer` |
+| **Role**  | Route by domain: `frontend-engineer` \| `backend-engineer` |
 | **Goal**  | Implement the feature/fix                                  |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for appropriate domain engineer. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/[domain]-engineer.md`
-> EMBODY [domain-engineer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a domain engineer (frontend or backend as appropriate). Implement the feature/fix following existing patterns. Exit when: code implemented, follows existing patterns, compiles without errors.", description="engineer: Implement the feature/fix")
 
 **Exit Criteria:**
 
 - [ ] Code implemented
 - [ ] Follows existing patterns
 - [ ] Compiles without errors
-- [ ] **METHODOLOGY CHECK**: Output aligns with the engineer agent's Thinking Protocol
 
 ---
 
-## 🎭 Phase 3: QUICK VALIDATION
+## Phase 3: QUICK VALIDATION
 
 | Attribute | Value                              |
 | --------- | ---------------------------------- |
-| **Agent** | `tester`                           |
+| **Role**  | `tester`                           |
 | **Goal**  | Basic validation of implementation |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `tester`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/tester.md`
-> EMBODY [tester] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a tester. Perform basic validation of the implementation. Exit when: basic functionality verified, no obvious errors, ready for review.", description="tester: Basic validation of implementation")
 
 **Exit Criteria:**
 
 - [ ] Basic functionality verified
 - [ ] No obvious errors
 - [ ] Ready for review
-- [ ] **METHODOLOGY CHECK**: Output aligns with `tester` Thinking Protocol
 
 ---
 
@@ -161,6 +108,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present implementation with:
 
-1. ✅ **Done** — Implementation complete
-2. 🧪 **Test** → `/test:fast`
-3. 🔍 **Review** → `/review:fast`
+1. **Done** — Implementation complete
+2. **Test** → `/test:fast`
+3. **Review** → `/review:fast`

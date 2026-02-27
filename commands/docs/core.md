@@ -1,5 +1,5 @@
 ---
-description: 💻 Core Docs — Generate 5 essential technical documentation files
+description: Core Docs — Generate 5 essential technical documentation files
 version: "1.0"
 category: documentation
 execution-mode: execute
@@ -13,42 +13,13 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
-
----
-
-## 📦 DELIVERABLES (REQUIRED — ALL 5 FILES)
+## DELIVERABLES (REQUIRED — ALL 5 FILES)
 
 > [!CAUTION]
 > **MUST CREATE ALL 5 FILES**. Incomplete = FAILED execution.
 
-> **⛔ DOCUMENT LANGUAGE — NON-NEGOTIABLE**  
-> Every file under `./documents/` must be written in **English only**. Headings, body text, tables, and lists must be in English. Do not use the user's language (e.g. Vietnamese) for file content. Chat/UI may follow user language; document files do not. (ORCHESTRATION-LAWS § LAW 6.)
+> **DOCUMENT LANGUAGE — NON-NEGOTIABLE**
+> Every file under `./documents/` must be written in **English only**. Headings, body text, tables, and lists must be in English. Do not use the user's language (e.g. Vietnamese) for file content. Chat/UI may follow user language; document files do not.
 
 | File                                    | Purpose                                                       |
 | --------------------------------------- | ------------------------------------------------------------- |
@@ -58,7 +29,7 @@ tiered_execution:
 | `./documents/knowledge-source-base.md`  | Directory structure, file purposes, entry points, key modules |
 | `./documents/knowledge-standards.md`    | Code style, naming conventions, commit format, guidelines     |
 
-### 📋 File Purpose Details
+### File Purpose Details
 
 | File | AI Uses It For | Key Sections |
 |------|----------------|--------------|
@@ -70,29 +41,21 @@ tiered_execution:
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 1: CODEBASE ANALYSIS
+## Phase 1: CODEBASE ANALYSIS
 
 | Attribute | Value                                     |
 | --------- | ----------------------------------------- |
-| **Agent** | `scouter`                                 |
+| **Role**  | `scouter`                                 |
 | **Goal**  | Scan entire project structure and content |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Scan the entire project structure and content. List all directories and files, identify tech stack from package.json/config files, map dependencies and relationships, and note patterns and conventions used. Exit when project structure is mapped, tech stack is identified, and key files are located.", description="scouter: Scan entire project structure and content")
 
 **Actions**:
 
@@ -109,23 +72,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: GENERATE ALL 5 DOCUMENTS
+## Phase 2: GENERATE ALL 5 DOCUMENTS
 
 | Attribute | Value                                                                                                           |
 | --------- | --------------------------------------------------------------------------------------------------------------- |
-| **Agent** | `docs-manager`                                                                                                  |
+| **Role**  | `docs-manager`                                                                                                  |
 | **Goal**  | Create all 5 documentation files in **English only** (headings, body, tables—no user-language content in files) |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `docs-manager`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/docs-manager.md`
-> EMBODY [docs-manager] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a docs-manager. Create all 5 documentation files in English only: knowledge-overview.md, knowledge-architecture.md, knowledge-domain.md, knowledge-source-base.md, knowledge-standards.md. Exit when all 5 files are created.", description="docs-manager: Create all 5 documentation files")
 
 **Exit Criteria:**
 
@@ -137,17 +93,17 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## ✅ VERIFICATION
+## VERIFICATION
 
 Before completion, verify ALL 5 files exist:
 
 ```
 ./documents/
-├── ✅ knowledge-overview.md
-├── ✅ knowledge-architecture.md
-├── ✅ knowledge-domain.md
-├── ✅ knowledge-source-base.md
-└── ✅ knowledge-standards.md
+├── knowledge-overview.md
+├── knowledge-architecture.md
+├── knowledge-domain.md
+├── knowledge-source-base.md
+└── knowledge-standards.md
 ```
 
 ---
@@ -156,6 +112,6 @@ Before completion, verify ALL 5 files exist:
 
 Report status:
 
-1. ✅ **Complete** — All 5 core docs created
-2. ❌ **Incomplete** — List missing files
-3. 📝 **Continue** → `/docs:business` for business docs
+1. **Complete** — All 5 core docs created
+2. **Incomplete** — List missing files
+3. **Continue** → `/docs:business` for business docs

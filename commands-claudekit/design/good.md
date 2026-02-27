@@ -3,7 +3,7 @@ description: Create an immersive design
 argument-hint: [tasks]
 ---
 
-Think hard to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 
+Think hard to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Task Agents Team and Development Rules: 
 <tasks>$ARGUMENTS</tasks>
 
 ## Required Skills (Priority Order)
@@ -20,8 +20,8 @@ Think hard to plan & start working on these tasks follow the Orchestration Proto
    python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<mood>" --domain typography
    python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<industry>" --domain color
    ```
-2. Use `researcher` subagent to research about design style, trends, fonts, colors, border, spacing, elements' positions, etc.
-3. Use `ui-ux-designer` subagent to implement the design step by step based on the research.
+2. Use a Task agent for research: Task(subagent_type="general-purpose", prompt="You are a researcher. Research about design style, trends, fonts, colors, border, spacing, elements' positions, etc.", description="Research design") to research about design style, trends, fonts, colors, border, spacing, elements' positions, etc.
+3. Use a Task agent for UI/UX design: Task(subagent_type="general-purpose", prompt="You are a ui-ux-designer. Implement the design step by step based on the research.", description="Implement design") to implement the design step by step based on the research.
 4. If user doesn't specify, create the design in pure HTML/CSS/JS.
 5. Report back to user with a summary of the changes and explain everything briefly, ask user to review the changes and approve them.
 6. If user approves the changes, update the `./docs/design-guidelines.md` docs if needed.

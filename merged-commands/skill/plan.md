@@ -4,7 +4,7 @@ argument-hint: [skill-name] [prompt]
 ---
 
 Think harder.
-First: Activate `skill-creator` skill and `claude-code-guide` subagent.
+First: Activate `skill-creator` skill and Task agent for Claude Code guidance: Task(subagent_type="general-purpose", prompt="You are a claude-code-guide...", description="Claude Code guidance").
 Use `docs-seeker` skills to search for documentation if needed.
 Employ `sequential-thinking` or `problem-solving` skills for complex problem-solving that requires structured analysis
 Finally, when creating a plan, activate `planning` skill.

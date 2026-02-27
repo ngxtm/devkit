@@ -1,5 +1,5 @@
 ---
-description: ⚡⚡⚡ Full Debug — Deep investigation for complex issues
+description: Full Debug — Deep investigation for complex issues
 version: "1.0"
 category: debugging
 execution-mode: execute
@@ -13,77 +13,75 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## DELIVERABLE FILES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION
-
-| Tier       | When               | Action                       |
-| ---------- | ------------------ | ---------------------------- |
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
-
----
-
-## 📁 DELIVERABLE FILES
-
-| Agent    | Output                              |
-| -------- | ----------------------------------- |
+| Role | Output |
+|------|--------|
 | debugger | `./reports/debugs/DEBUG-{issue}.md` |
 
 All files in `./reports/` → English only.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: INFORMATION GATHERING
-
-| Agent | `scouter`                                 |
-| ----- | ----------------------------------------- |
-| Goal  | Gather context and reproduction steps     |
-| Exit  | Context gathered, reproduction documented |
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 2: HYPOTHESIS FORMATION
+## Phase 1: INFORMATION GATHERING
 
-| Agent | `debugger`                          |
-| ----- | ----------------------------------- |
-| Goal  | Form and rank hypotheses            |
-| Exit  | Hypotheses documented with evidence |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `scouter` |
+| **Goal** | Gather context and reproduction steps |
+| **Exit** | Context gathered, reproduction documented |
 
----
+### Delegation
 
-## 🎭 Phase 3: ROOT CAUSE ANALYSIS
-
-| Agent  | `debugger`                                      |
-| ------ | ----------------------------------------------- |
-| Goal   | Deep investigation                              |
-| Output | `./reports/debugs/DEBUG-{issue}.md`             |
-| Exit   | Root cause identified, failure chain documented |
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Gather context and reproduction steps for the given issue. Exit when context is gathered and reproduction is documented.", description="scouter: Gather context and reproduction steps")
 
 ---
 
-## 🎭 Phase 4: SOLUTION DESIGN
+## Phase 2: HYPOTHESIS FORMATION
 
-| Agent | `planner`                               |
-| ----- | --------------------------------------- |
-| Goal  | Design fix strategy                     |
-| Exit  | Fix approach defined with rollback plan |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `debugger` |
+| **Goal** | Form and rank hypotheses |
+| **Exit** | Hypotheses documented with evidence |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a debugger. Form and rank hypotheses for the issue. Exit when hypotheses are documented with evidence.", description="debugger: Form and rank hypotheses")
+
+---
+
+## Phase 3: ROOT CAUSE ANALYSIS
+
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `debugger` |
+| **Goal** | Deep investigation |
+| **Output** | `./reports/debugs/DEBUG-{issue}.md` |
+| **Exit** | Root cause identified, failure chain documented |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a debugger. Perform deep investigation to identify root cause. Write findings to ./reports/debugs/DEBUG-{issue}.md. Exit when root cause is identified and failure chain is documented.", description="debugger: Deep root cause investigation")
+
+---
+
+## Phase 4: SOLUTION DESIGN
+
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `planner` |
+| **Goal** | Design fix strategy |
+| **Exit** | Fix approach defined with rollback plan |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a planner. Design a fix strategy based on the root cause analysis. Exit when fix approach is defined with rollback plan.", description="planner: Design fix strategy")
 
 ---
 
@@ -91,6 +89,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present findings with:
 
-1. ✅ **Root Cause** — Identified
-2. 🔧 **Fix** → `/fix:hard`
-3. 📝 **Document** → `/docs:core`
+1. **Root Cause** — Identified
+2. **Fix** → `/fix:hard`
+3. **Document** → `/docs:core`

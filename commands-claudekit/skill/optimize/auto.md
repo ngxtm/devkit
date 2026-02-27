@@ -4,7 +4,7 @@ argument-hint: [skill-name] [prompt]
 ---
 
 Think harder.
-Use `skill-creator` skill and `claude-code-guide` subagent.
+Use `skill-creator` skill and Task agent for Claude Code guidance: Task(subagent_type="general-purpose", prompt="You are a claude-code-guide...", description="Claude Code guidance").
 Use `docs-seeker` skills to search for documentation if needed.
 
 ## Arguments

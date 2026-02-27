@@ -74,7 +74,7 @@ node screenshot.js --url https://example.com/settings --output settings.png --cl
 - All the screenshots should be saved in the same report directory.
 - Browse $URL with the specified $OPTIONS, discover all pages, components, and endpoints.
 - Create a test plan based on the discovered structure
-- Use multiple `tester` subagents or tool calls in parallel to test all pages, forms, navigation, user flows, accessibility, functionalities, usability, responsive layouts, cross-browser compatibility, performance, security, seo, etc.
+- Use multiple Task agents in parallel to test all pages, forms, navigation, user flows, accessibility, functionalities, usability, responsive layouts, cross-browser compatibility, performance, security, seo, etc.: Task(subagent_type="general-purpose", prompt="You are a tester. Test [specific area]...", description="Test [area]")
 - Use `ai-multimodal` to analyze all screenshots and visual elements.
 - Generate a comprehensive report in Markdown format, embedding all screenshots directly in the report.
 - Finally respond to the user with a concise summary of findings and recommendations.

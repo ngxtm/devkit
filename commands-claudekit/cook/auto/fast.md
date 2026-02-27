@@ -3,7 +3,7 @@ description: ⚡ No research. Only scout, plan & implement ["trust me bro"]
 argument-hint: [tasks-or-prompt]
 ---
 
-Think harder to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 
+Think harder to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Task Agents Team and Development Rules: 
 <tasks>$ARGUMENTS</tasks>
 
 ---
@@ -21,6 +21,6 @@ Think harder to plan & start working on these tasks follow the Orchestration Pro
 
 ## Workflow:
 
-- **Scout**: Use `scout` subagent to find related resources, documents, and code snippets in the current codebase.
-- **Plan**: Trigger slash command `/plan:fast <detailed-instruction-prompt>` to create an implementation plan based on the reports from `scout` subagent.
+- **Scout**: Use a Task agent for scouting: Task(subagent_type="general-purpose", prompt="You are a scout. Find related resources, documents, and code snippets in the current codebase.", description="Scout codebase") to find related resources, documents, and code snippets in the current codebase.
+- **Plan**: Trigger slash command `/plan:fast <detailed-instruction-prompt>` to create an implementation plan based on the reports from the Task agent for scouting.
 - **Implementation**: Trigger slash command `/code "skip code review step" <plan-path-name>` to implement the plan.

@@ -19,10 +19,10 @@ Check the `## Plan Context` section in the injected context:
 - If "Plan: none" → Create new plan using naming from `## Naming` section.
 
 ## Workflow
-Use `planner` subagent to:
+Use Task agent for planning: Task(subagent_type="general-purpose", prompt="You are a planner. Create implementation plan...", description="Create plan") to:
 1. If creating new: Create directory using `Plan dir:` from `## Naming` section, then run `node .claude/scripts/set-active-plan.cjs {plan-dir}`
    If reusing: Use the active plan path from Plan Context.
-   Make sure you pass the directory path to every subagent during the process.
+   Make sure you pass the directory path to every Task agent during the process.
 2. Follow strictly to the "Plan Creation & Organization" rules of `planning` skill.
 3. Analyze the codebase by reading `codebase-summary.md`, `code-standards.md`, `system-architecture.md` and `project-overview-pdr.md` file.
 4. Gathers all information and create an implementation plan of this task.

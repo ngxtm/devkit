@@ -10,7 +10,7 @@ FROM_BRANCH: $2 (defaults to current branch)
 
 ## Workflow
 
-Use `git-manager` subagent to execute the merge workflow:
+Use Task agent for git management to execute the merge workflow: Task(subagent_type="general-purpose", prompt="You are a git-manager. Execute merge workflow...", description="Git merge")
 
 ### Step 1: Sync with remote (CRITICAL)
 ```bash

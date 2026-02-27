@@ -10,7 +10,7 @@ FROM_BRANCH: $2 (defaults to current branch)
 
 ## Workflow
 
-Use `git-manager` subagent to execute the PR workflow:
+Use Task agent for git management to execute the PR workflow: Task(subagent_type="general-purpose", prompt="You are a git-manager. Execute PR workflow...", description="Create pull request")
 
 ### Step 1: Ensure remote is synced
 ```bash

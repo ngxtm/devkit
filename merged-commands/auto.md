@@ -13,17 +13,6 @@ execution-mode: router
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS EXECUTION)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. ORCHESTRATION-LAWS.md  
-2. ADAPTIVE-EXECUTION.md  
-3. EXECUTION-PROTOCOL.md  
-
-**⛔ Do not run any workflow phase until all are loaded.** Follow **all** rules in those files. Then run this file's ROUTING LOGIC, LOAD the chosen variant workflow, and execute it.
-
----
-
 ## ROUTING LOGIC
 
 ```
@@ -35,27 +24,16 @@ execution-mode: router
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
 ## 🎭 Phase 1: TASK ANALYSIS
 
 | Attribute | Value |
 |-----------|-------|
-| **Agent** | `tech-lead` |
+| **Role** | `tech-lead` |
 | **Goal** | Classify task and select workflow |
 
-### ⚡ ADAPTIVE EXECUTION
+### Delegation
 
-**IF platform supports subagents:**
-> Delegate to `tech-lead` subagent. Do NOT read agent file directly.
-
-**ELSE (EMBODY fallback):**
-> Load `{AGENTS_PATH}/tech-lead.md`
-> EMBODY [tech-lead] — Apply methodology from agent file.
+> Task(subagent_type="general-purpose", prompt="You are a tech-lead. Classify task and select workflow. [See exit criteria below]", description="tech-lead")
 
 **Exit Criteria:**
 
@@ -83,17 +61,12 @@ Execute selected workflow phases without pause:
 
 | Attribute | Value |
 |-----------|-------|
-| **Agent** | `tech-lead` |
+| **Role** | `tech-lead` |
 | **Goal** | Synthesize results and present summary |
 
-### ⚡ ADAPTIVE EXECUTION
+### Delegation
 
-**IF platform supports subagents:**
-> Delegate to `tech-lead` subagent. Do NOT read agent file directly.
-
-**ELSE (EMBODY fallback):**
-> Load `{AGENTS_PATH}/tech-lead.md`
-> EMBODY [tech-lead] — Apply methodology from agent file.
+> Task(subagent_type="general-purpose", prompt="You are a tech-lead. Synthesize results and present summary. [See exit criteria below]", description="tech-lead")
 
 **Exit Criteria:**
 

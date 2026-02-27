@@ -3,7 +3,7 @@ description: ⚡⚡ Start coding an existing plan (no testing)
 argument-hint: [plan]
 ---
 
-**MUST READ** `CLAUDE.md` then **THINK HARDER** to start working on the following plan follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules:
+**MUST READ** `CLAUDE.md` then **THINK HARDER** to start working on the following plan follow the Orchestration Protocol, Core Responsibilities, Task Agents Team and Development Rules:
 <plan>$ARGUMENTS</plan>
 
 ---
@@ -13,7 +13,7 @@ argument-hint: [plan]
 - Validate the plan's assumptions, surface blockers, and confirm priorities with the user prior to execution.
 - Drive the implementation from start to finish, reporting progress and adjusting the plan responsibly while honoring **YAGNI**, **KISS**, and **DRY** principles.
 
-**IMPORTANT:** Remind these rules with subagents communication:
+**IMPORTANT:** Remind these rules with Task agents communication:
 - Sacrifice grammar for the sake of concision when writing reports.
 - In reports, list any unresolved questions at the end, if any.
 - Ensure token efficiency while maintaining high quality.
@@ -30,9 +30,9 @@ argument-hint: [plan]
 
 **Output:** `✓ Step 0: [Plan Name] - [Phase Name]`
 
-**Subagent Pattern (use throughout):**
+**Task Agent Pattern (use throughout):**
 ```
-Task(subagent_type="[type]", prompt="[task description]", description="[brief]")
+Task(subagent_type="general-purpose", prompt="[task description]", description="[brief]")
 ```
 
 ---
@@ -65,7 +65,7 @@ Mark Step 1 complete in TodoWrite, mark Step 2 in_progress.
 
 ## Step 2: Implementation
 
-Implement selected plan phase step-by-step following extracted tasks (Step 2.1, Step 2.2, etc.). Mark tasks complete as done. For UI work, call `ui-ux-designer` subagent: "Implement [feature] UI per ./docs/design-guidelines.md". Use `ai-multimodal` skill for image assets, `imagemagick` for editing. Run type checking and compile to verify no syntax errors.
+Implement selected plan phase step-by-step following extracted tasks (Step 2.1, Step 2.2, etc.). Mark tasks complete as done. For UI work, use a Task agent for UI/UX design: Task(subagent_type="general-purpose", prompt="You are a ui-ux-designer. Implement [feature] UI per ./docs/design-guidelines.md", description="Implement UI"). Use `ai-multimodal` skill for image assets, `imagemagick` for editing. Run type checking and compile to verify no syntax errors.
 
 **Output:** `✓ Step 2: Implemented [N] files - [X/Y] tasks complete, compilation passed`
 
@@ -75,7 +75,7 @@ Mark Step 2 complete in TodoWrite, mark Step 3 in_progress.
 
 ## Step 3: Code Review & Approval ⏸ BLOCKING GATE
 
-Call `code-reviewer` subagent: "Review changes for plan phase [phase-name]. Check security, performance, architecture, YAGNI/KISS/DRY. Return score (X/10), critical issues list, warnings list, suggestions list."
+Use a Task agent for code review: Task(subagent_type="general-purpose", prompt="You are a code-reviewer. Review changes for plan phase [phase-name]. Check security, performance, architecture, YAGNI/KISS/DRY. Return score (X/10), critical issues list, warnings list, suggestions list.", description="Code review")
 
 **Display + Approve Flow (optimized for speed):**
 
@@ -126,8 +126,8 @@ Mark Step 3 complete in TodoWrite, mark Step 4 in_progress.
 **Prerequisites:** User approved in Step 3 (verified above).
 
 1. **STATUS UPDATE - BOTH MANDATORY - PARALLEL EXECUTION:**
-- **Call** `project-manager` sub-agent: "Update plan status in [plan-path]. Mark plan phase [phase-name] as DONE with timestamp. Update roadmap."
-- **Call** `docs-manager` sub-agent: "Update docs for plan phase [phase-name]. Changed files: [list]."
+- **Use** Task agent for project management: Task(subagent_type="general-purpose", prompt="You are a project-manager. Update plan status in [plan-path]. Mark plan phase [phase-name] as DONE with timestamp. Update roadmap.", description="Update plan status")
+- **Use** Task agent for documentation: Task(subagent_type="general-purpose", prompt="You are a docs-manager. Update docs for plan phase [phase-name]. Changed files: [list].", description="Update docs")
 
 2. **ONBOARDING CHECK:** Detect onboarding requirements (API keys, env vars, config) + generate summary report with next steps.
 
@@ -158,13 +158,13 @@ Mark Step 4 complete in TodoWrite.
 
 **TodoWrite tracking required:** Initialize at Step 0, mark each step complete before next.
 
-**Mandatory subagent calls:**
-- Step 3: `code-reviewer`
-- Step 4: `project-manager` AND `docs-manager` (when user approves)
+**Mandatory Task agent calls:**
+- Step 3: Task agent for code review
+- Step 4: Task agent for project management AND Task agent for documentation (when user approves)
 
 **Blocking gates:**
 - Step 3: User must explicitly approve (via AskUserQuestion)
-- Step 4: Both `project-manager` and `docs-manager` must complete successfully
+- Step 4: Both Task agents for project management and documentation must complete successfully
 
 **REMEMBER:**
 - Do not skip steps. Do not proceed if validation fails. Do not assume approval without user response.

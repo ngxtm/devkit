@@ -1,5 +1,5 @@
 ---
-description: ⚡ Quick Review — Fast PR/file review
+description: Quick Review — Fast PR/file review
 version: "1.0"
 category: validation
 execution-mode: execute
@@ -13,38 +13,22 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. ORCHESTRATION-LAWS.md  
-2. ADAPTIVE-EXECUTION.md  
-3. EXECUTION-PROTOCOL.md  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Phase 1: CODE REVIEW
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `reviewer` |
+| **Goal** | Review code quality |
+| **Exit** | Issues documented, recommendations provided |
 
----
+### Delegation
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: CODE REVIEW
-
-| Agent | `reviewer` |
-|-------|------------|
-| Goal | Review code quality |
-| Exit | Issues documented, recommendations provided |
+> Task(subagent_type="general-purpose", prompt="You are a reviewer. Review code quality. Exit when issues are documented and recommendations are provided.", description="reviewer: Review code quality")
 
 ---
 
@@ -61,5 +45,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present review with:
 
-1. ✅ **Approved** — Code ready
-2. 🔧 **Fix needed** → `/fix:fast`
+1. **Approved** — Code ready
+2. **Fix needed** → `/fix:fast`

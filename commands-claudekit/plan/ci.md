@@ -8,7 +8,7 @@ Activate `planning` skill.
 ## Github Actions URL
  $ARGUMENTS
 
-Use the `planner` subagent to read the github actions logs, analyze and find the root causes of the issues, then provide a detailed plan for implementing the fixes.
+Use a Task agent for planning to read the github actions logs, analyze and find the root causes of the issues, then provide a detailed plan for implementing the fixes: Task(subagent_type="general-purpose", prompt="You are a planner. Read github actions logs, analyze root causes, create fix plan...", description="Analyze CI logs and plan fixes")
 
 **Plan File Specification:**
 - Every `plan.md` MUST start with YAML frontmatter:

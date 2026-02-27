@@ -1,5 +1,5 @@
 ---
-description: ⚡ Quick Fix — Rapid issue resolution
+description: Quick Fix — Rapid issue resolution
 version: "1.0"
 category: debugging
 execution-mode: execute
@@ -13,27 +13,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. ORCHESTRATION-LAWS.md  
-2. ADAPTIVE-EXECUTION.md  
-3. EXECUTION-PROTOCOL.md  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION
-
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
-
----
-
-## ⚠️ ESCALATION
+## ESCALATION
 
 | If | Route To |
 |----|----------|
@@ -42,37 +22,50 @@ execution-mode: execute
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: DIAGNOSIS
-
-| Agent | `debugger` |
-|-------|------------|
-| Goal | Identify root cause |
-| Exit | Root cause identified, complexity assessed |
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 2: FIX IMPLEMENTATION
+## Phase 1: DIAGNOSIS
 
-| Agent | Route by domain |
-|-------|-----------------|
-| Route | UI → `frontend-engineer`, API → `backend-engineer` |
-| Goal | Implement fix |
-| Exit | Fix implemented, minimal changes, code compiles |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `debugger` |
+| **Goal** | Identify root cause |
+| **Exit** | Root cause identified, complexity assessed |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a debugger. Identify the root cause of the issue and assess complexity. Exit when root cause is identified and complexity is assessed.", description="debugger: Identify root cause")
 
 ---
 
-## 🎭 Phase 3: VALIDATION
+## Phase 2: FIX IMPLEMENTATION
 
-| Agent | `tester` |
-|-------|----------|
-| Goal | Verify fix |
-| Exit | Issue resolved, no regression |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | Route by domain: UI → `frontend-engineer`, API → `backend-engineer` |
+| **Goal** | Implement fix |
+| **Exit** | Fix implemented, minimal changes, code compiles |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are an engineer. Implement the fix based on the diagnosis. Route by domain: UI issues use frontend patterns, API issues use backend patterns. Exit when fix is implemented with minimal changes and code compiles.", description="engineer: Implement fix")
+
+---
+
+## Phase 3: VALIDATION
+
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `tester` |
+| **Goal** | Verify fix |
+| **Exit** | Issue resolved, no regression |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a tester. Verify the fix resolves the issue with no regression. Exit when issue is confirmed resolved and no regression is found.", description="tester: Verify fix")
 
 ---
 
@@ -80,5 +73,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present fix with:
 
-1. ✅ **Fixed** — Issue resolved
-2. 🧪 **Test more** → `/test`
+1. **Fixed** — Issue resolved
+2. **Test more** → `/test`

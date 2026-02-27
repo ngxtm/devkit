@@ -16,7 +16,7 @@ Execute plan: <plan>$ARGUMENTS</plan>
 
 ### 2A. Parallel Execution
 1. Parse execution strategy (which phases concurrent/sequential, file ownership)
-2. Launch multiple `fullstack-developer` agents simultaneously for parallel phases
+2. Launch multiple Task agents for fullstack development simultaneously for parallel phases
    - Pass: phase file path, environment info, file ownership boundaries
 3. Wait for parallel group completion, verify no conflicts
 4. Execute sequential phases (one agent per phase after dependencies)
@@ -26,18 +26,18 @@ Execute plan: <plan>$ARGUMENTS</plan>
 Follow `./.claude/rules/primary-workflow.md`:
 1. Use main agent step by step
 2. Read `plan.md`, implement phases one by one
-3. Use `project-manager` for progress updates
-4. Use `ui-ux-designer` for frontend
+3. Use Task agent for project management for progress updates
+4. Use Task agent for UI/UX design for frontend
 5. Run type checking after each phase
 6. Proceed to Step 3
 
 ### 3. Testing
-- Use `tester` for full suite (NO fake data/mocks)
-- If fail: `debugger` → fix → repeat
+- Use Task agent for testing for full suite (NO fake data/mocks)
+- If fail: Task agent for debugging → fix → repeat
 
 ### 4. Code Review (Interactive Cycle)
 
-Call `code-reviewer` subagent: "Review all changes from parallel/sequential execution. Check security, performance, architecture, YAGNI/KISS/DRY. Return score (X/10), critical issues list, warnings list, suggestions list."
+Use a Task agent for code review: Task(subagent_type="general-purpose", prompt="You are a code-reviewer. Review all changes from parallel/sequential execution. Check security, performance, architecture, YAGNI/KISS/DRY. Return score (X/10), critical issues list, warnings list, suggestions list.", description="Code review")
 
 **Interactive Review-Fix Cycle (max 3 cycles):**
 
@@ -85,7 +85,7 @@ LOOP:
 ```
 
 ### 5. Project Management & Docs
-- If approved: `project-manager` + `docs-manager` in parallel (update plans, docs, roadmap)
+- If approved: Task agent for project management + Task agent for documentation in parallel (update plans, docs, roadmap)
 - If rejected: fix → repeat
 
 ### 6. Onboarding
@@ -93,8 +93,8 @@ LOOP:
 
 ### 7. Final Report
 - Summary, guide, next steps
-- Ask to commit (use `git-manager` if yes)
+- Ask to commit (use Task agent for git operations if yes)
 
 **Examples:**
-- Parallel: "Phases 1-3 parallel, then 4" → Launch 3 agents → Wait → Launch 1 agent
+- Parallel: "Phases 1-3 parallel, then 4" → Launch 3 Task agents → Wait → Launch 1 Task agent
 - Sequential: "Phase 1 → 2 → 3" → Main agent implements each phase

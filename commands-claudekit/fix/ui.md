@@ -8,7 +8,7 @@ argument-hint: [issue]
 2. **`aesthetic`** - Design principles
 3. **`frontend-design`** - Implementation patterns
 
-Use `ui-ux-designer` subagent to read and analyze `./docs/design-guidelines.md` then fix the following issues:
+Use a Task agent for UI/UX design: Task(subagent_type="general-purpose", prompt="You are a ui-ux-designer. Read and analyze ./docs/design-guidelines.md then fix the following issues.", description="Fix UI issues") to read and analyze `./docs/design-guidelines.md` then fix the following issues:
 <issue>$ARGUMENTS</issue>
 
 ## Workflow
@@ -22,22 +22,22 @@ python3 .claude/skills/ui-ux-pro-max/scripts/search.py "z-index animation" --dom
 
 If the user provides a screenshots or videos, use `ai-multimodal` skill to describe as detailed as possible the issue, make sure developers can predict the root causes easily based on the description.
 
-1. Use `ui-ux-designer` subagent to implement the fix step by step.
+1. Use a Task agent for UI/UX design: Task(subagent_type="general-purpose", prompt="You are a ui-ux-designer. Implement the fix step by step.", description="Implement UI fix") to implement the fix step by step.
 2. Use screenshot capture tools along with `ai-multimodal` skill to take screenshots of the implemented fix (at the exact parent container, don't take screenshot of the whole page) and use the appropriate Gemini analysis skills (`ai-multimodal`, `video-analysis`, or `document-extraction`) to analyze those outputs so the result matches the design guideline and addresses all issues.
   - If the issues are not addressed, repeat the process until all issues are addressed.
 3. Use `chrome-devtools` skill to analyze the implemented fix and make sure it matches the design guideline.
-4. Use `tester` agent to test the fix and compile the code to make sure it works, then report back to main agent.
+4. Use a Task agent for testing to test the fix and compile the code to make sure it works, then report back to main agent.
   - If there are issues or failed tests, ask main agent to fix all of them and repeat the process until all tests pass.
 5. Project Management & Documentation:
-  **If user approves the changes:** Use `project-manager` and `docs-manager` subagents in parallel to update the project progress and documentation:
-    * Use `project-manager` subagent to update the project progress and task status in the given plan file.
-    * Use `docs-manager` subagent to update the docs in `./docs` directory if needed.
-    * Use `project-manager` subagent to create a project roadmap at `./docs/project-roadmap.md` file.
+  **If user approves the changes:** Use Task agents for project management and documentation in parallel to update the project progress and documentation:
+    * Use a Task agent for project management: Task(subagent_type="general-purpose", prompt="You are a project-manager. Update the project progress and task status in the given plan file.", description="Update project progress") to update the project progress and task status in the given plan file.
+    * Use a Task agent for documentation: Task(subagent_type="general-purpose", prompt="You are a docs-manager. Update the docs in ./docs directory if needed.", description="Update docs") to update the docs in `./docs` directory if needed.
+    * Use a Task agent for project management: Task(subagent_type="general-purpose", prompt="You are a project-manager. Create a project roadmap at ./docs/project-roadmap.md file.", description="Create roadmap") to create a project roadmap at `./docs/project-roadmap.md` file.
     * **IMPORTANT:** Sacrifice grammar for the sake of concision when writing outputs.
   **If user rejects the changes:** Ask user to explain the issues and ask main agent to fix all of them and repeat the process.
 6. Final Report:
   * Report back to user with a summary of the changes and explain everything briefly, guide user to get started and suggest the next steps.
-  * Ask the user if they want to commit and push to git repository, if yes, use `git-manager` subagent to commit and push to git repository.
+  * Ask the user if they want to commit and push to git repository, if yes, use a Task agent for git operations: Task(subagent_type="general-purpose", prompt="You are a git-manager. Commit and push to git repository.", description="Git commit and push") to commit and push to git repository.
   * **IMPORTANT:** Sacrifice grammar for the sake of concision when writing reports.
   * **IMPORTANT:** In reports, list any unresolved questions at the end, if any.
 

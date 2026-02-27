@@ -1,5 +1,5 @@
 ---
-description: ⚡ Quick Test — Fast testing for specific scope
+description: Quick Test — Fast testing for specific scope
 version: "1.0"
 category: validation
 execution-mode: execute
@@ -13,48 +13,37 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. ORCHESTRATION-LAWS.md  
-2. ADAPTIVE-EXECUTION.md  
-3. EXECUTION-PROTOCOL.md  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Phase 1: TEST EXECUTION
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `tester` |
+| **Goal** | Run focused tests |
+| **Exit** | Tests run, results recorded |
 
----
+### Delegation
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: TEST EXECUTION
-
-| Agent | `tester` |
-|-------|----------|
-| Goal | Run focused tests |
-| Exit | Tests run, results recorded |
+> Task(subagent_type="general-purpose", prompt="You are a tester. Run focused tests for the given scope. Exit when tests are run and results are recorded.", description="tester: Run focused tests")
 
 ---
 
-## 🎭 Phase 2: QUICK ANALYSIS (IF FAILURES)
+## Phase 2: QUICK ANALYSIS (IF FAILURES)
 
-| Agent | `debugger` |
-|-------|------------|
-| Trigger | If failures exist |
-| Goal | Quick failure analysis |
-| Exit | Root causes identified |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `debugger` |
+| **Trigger** | If failures exist |
+| **Goal** | Quick failure analysis |
+| **Exit** | Root causes identified |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a debugger. Perform quick failure analysis on test failures. Exit when root causes are identified.", description="debugger: Quick failure analysis")
 
 ---
 
@@ -71,5 +60,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present results with:
 
-1. ✅ **Pass** — Tests green
-2. 🔧 **Fix** → `/fix:fast`
+1. **Pass** — Tests green
+2. **Fix** → `/fix:fast`

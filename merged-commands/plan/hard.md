@@ -21,14 +21,14 @@ Check the `## Plan Context` section in the injected context:
 ## Workflow
 1. If creating new: Create directory using `Plan dir:` from `## Naming` section, then run `node .claude/scripts/set-active-plan.cjs {plan-dir}`
    If reusing: Use the active plan path from Plan Context.
-   Make sure you pass the directory path to every subagent during the process.
+   Make sure you pass the directory path to every Task agent during the process.
 2. Follow strictly to the "Plan Creation & Organization" rules of `planning` skill.
-3. Use multiple `researcher` agents (max 2 agents) in parallel to research for this task:
+3. Use multiple Task agents for research (max 2 agents) in parallel to research for this task: Task(subagent_type="general-purpose", prompt="You are a researcher. Research [aspect]...", description="Research [topic]")
    Each agent research for a different aspect of the task and are allowed to perform max 5 tool calls.
 4. Analyze the codebase by reading `codebase-summary.md`, `code-standards.md`, `system-architecture.md` and `project-overview-pdr.md` file.
    **ONLY PERFORM THIS FOLLOWING STEP IF `codebase-summary.md` is not available or older than 3 days**: Use `/scout <instructions>` slash command to search the codebase for files needed to complete the task.
-5. Main agent gathers all research and scout report filepaths, and pass them to `planner` subagent with the prompt to create an implementation plan of this task.
-6. Main agent receives the implementation plan from `planner` subagent, and ask user to review the plan
+5. Main agent gathers all research and scout report filepaths, and pass them to Task agent for planning with the prompt to create an implementation plan of this task: Task(subagent_type="general-purpose", prompt="You are a planner. Create implementation plan based on research and scout reports...", description="Create implementation plan")
+6. Main agent receives the implementation plan from Task agent, and ask user to review the plan
 
 ## Post-Plan Validation (Optional)
 

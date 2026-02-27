@@ -3,7 +3,7 @@ description: ⚡⚡⚡ [AUTO] Start coding & testing an existing plan ("trust me
 argument-hint: [plan] [all-phases-yes-or-no] (default: yes)
 ---
 
-**MUST READ** `CLAUDE.md` then **THINK HARDER** to start working on the following plan follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules:
+**MUST READ** `CLAUDE.md` then **THINK HARDER** to start working on the following plan follow the Orchestration Protocol, Core Responsibilities, Task Agents Team and Development Rules:
 <plan>$ARGUMENTS</plan>
 
 ## Arguments
@@ -17,7 +17,7 @@ argument-hint: [plan] [all-phases-yes-or-no] (default: yes)
 - Validate the plan's assumptions, surface blockers, and confirm priorities with the user prior to execution.
 - Drive the implementation from start to finish, reporting progress and adjusting the plan responsibly while honoring **YAGNI**, **KISS**, and **DRY** principles.
 
-**IMPORTANT:** Remind these rules with subagents communication:
+**IMPORTANT:** Remind these rules with Task agents communication:
 - Sacrifice grammar for the sake of concision when writing reports.
 - In reports, list any unresolved questions at the end, if any.
 - Ensure token efficiency while maintaining high quality.
@@ -36,9 +36,9 @@ argument-hint: [plan] [all-phases-yes-or-no] (default: yes)
 
 **Output:** `✓ Step 0: [Plan Name] - [Phase Name]`
 
-**Subagent Pattern (use throughout):**
+**Task Agent Pattern (use throughout):**
 ```
-Task(subagent_type="[type]", prompt="[task description]", description="[brief]")
+Task(subagent_type="general-purpose", prompt="[task description]", description="[brief]")
 ```
 
 ---
@@ -50,10 +50,10 @@ Task(subagent_type="[type]", prompt="[task description]", description="[brief]")
 ---
 
 ## Step 1: Analysis & Task Extraction
-Use `project-manager` agent to read plan file completely. Map dependencies between tasks. List ambiguities or blockers. Identify required skills/tools and activate from catalog. Parse phase file and extract actionable tasks.
+Use a Task agent for project management to read plan file completely. Map dependencies between tasks. List ambiguities or blockers. Identify required skills/tools and activate from catalog. Parse phase file and extract actionable tasks.
 
 **TodoWrite Initialization & Task Extraction:**
-`project-manager` agent must respond back with:
+Task agent for project management must respond back with:
 - Initialize `TodoWrite` with `Step 0: [Plan Name] - [Phase Name]` and all command steps (Step 1 through Step 5)
 - Read phase file (e.g., phase-01-preparation.md)
 - Look for tasks/steps/phases/sections/numbered/bulleted lists
@@ -72,7 +72,7 @@ Mark Step 1 complete in `TodoWrite`, mark Step 2 in_progress.
 
 ## Step 2: Implementation
 
-Implement selected plan phase step-by-step following extracted tasks (Step 2.1, Step 2.2, etc.). Mark tasks complete as done. For UI work, call `ui-ux-designer` subagent: "Implement [feature] UI per ./docs/design-guidelines.md". Use `ai-multimodal` skill for image assets, imagemagick in `media-processing` skill for editing. Run type checking and compile to verify no syntax errors.
+Implement selected plan phase step-by-step following extracted tasks (Step 2.1, Step 2.2, etc.). Mark tasks complete as done. For UI work, use a Task agent for UI/UX design: Task(subagent_type="general-purpose", prompt="You are a ui-ux-designer. Implement [feature] UI per ./docs/design-guidelines.md", description="Implement UI"). Use `ai-multimodal` skill for image assets, imagemagick in `media-processing` skill for editing. Run type checking and compile to verify no syntax errors.
 
 **Output:** `✓ Step 2: Implemented [N] files - [X/Y] tasks complete, compilation passed`
 
@@ -82,7 +82,7 @@ Mark Step 2 complete in `TodoWrite`, mark Step 3 in_progress.
 
 ## Step 3: Testing
 
-Write tests covering happy path, edge cases, and error cases. Call `tester` subagent: "Run test suite for plan phase [phase-name]". If ANY tests fail: STOP, call `debugger` subagent: "Analyze failures: [details]", fix all issues, re-run `tester`. Repeat until 100% pass.
+Write tests covering happy path, edge cases, and error cases. Use a Task agent for testing: Task(subagent_type="general-purpose", prompt="You are a tester. Run test suite for plan phase [phase-name]", description="Run tests"). If ANY tests fail: STOP, use a Task agent for debugging: Task(subagent_type="general-purpose", prompt="You are a debugger. Analyze failures: [details]", description="Debug test failures"), fix all issues, re-run tester. Repeat until 100% pass.
 
 **Testing standards:** Unit tests may use mocks for external dependencies (APIs, DB). Integration tests use test environment. E2E tests use real but isolated data. Forbidden: commenting out tests, changing assertions to pass, TODO/FIXME to defer fixes.
 
@@ -96,7 +96,7 @@ Mark Step 3 complete in `TodoWrite`, mark Step 4 in_progress.
 
 ## Step 4: Code Review (Smart Auto-Handling)
 
-Call `code-reviewer` subagent: "Review code changes in **Step 2** of plan phase [phase-name]. Check security, performance, architecture, YAGNI/KISS/DRY. Return score (X/10), critical issues list, warnings list, suggestions list."
+Use a Task agent for code review: Task(subagent_type="general-purpose", prompt="You are a code-reviewer. Review code changes in **Step 2** of plan phase [phase-name]. Check security, performance, architecture, YAGNI/KISS/DRY. Return score (X/10), critical issues list, warnings list, suggestions list.", description="Code review")
 
 **Auto-Handling Logic (max 3 cycles):**
 
@@ -141,14 +141,14 @@ Mark Step 4 complete in TodoWrite, mark Step 5 in_progress.
 ## Step 5: Finalize
 
 1. **STATUS UPDATE - BOTH MANDATORY - PARALLEL EXECUTION:**
-- **Call** `project-manager` sub-agent: "Update plan status in [plan-path]. Mark plan phase [phase-name] as DONE with timestamp. Update roadmap."
-- **Call** `docs-manager` sub-agent: "Update docs for plan phase [phase-name]. Changed files: [list]."
+- **Use** Task agent for project management: Task(subagent_type="general-purpose", prompt="You are a project-manager. Update plan status in [plan-path]. Mark plan phase [phase-name] as DONE with timestamp. Update roadmap.", description="Update plan status")
+- **Use** Task agent for documentation: Task(subagent_type="general-purpose", prompt="You are a docs-manager. Update docs for plan phase [phase-name]. Changed files: [list].", description="Update docs")
 
 2. **ONBOARDING CHECK:** Detect onboarding requirements (API keys, env vars, config) + generate summary report with next steps.
 - If this is the last phase: use `AskUserQuestion` tool to ask if user wants to set up onboarding requirements.
 
 3. **AUTO-COMMIT (after steps 1 and 2 completes):**
-- **Call** `git-manager` subagent to handle git operation.
+- **Use** Task agent for git operations: Task(subagent_type="general-purpose", prompt="You are a git-manager. Handle git operation.", description="Git commit")
 - Run only if: Steps 1 and 2 successful + Tests passed
 - Auto-stage, commit with conventional commit message based on actual changes
 
@@ -185,10 +185,10 @@ Use `AskUserQuestion` tool to ask these questions:
 
 **TodoWrite tracking required:** Initialize at Step 0, mark each step complete before next.
 
-**Mandatory subagent calls:**
-- Step 3: `tester`
-- Step 4: `code-reviewer`
-- Step 5: `project-manager` AND `docs-manager` AND `git-manager`
+**Mandatory Task agent calls:**
+- Step 3: Task agent for testing
+- Step 4: Task agent for code review
+- Step 5: Task agent for project management AND Task agent for documentation AND Task agent for git operations
 
 **Blocking gates:**
 - Step 3: Tests must be 100% passing

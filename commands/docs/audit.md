@@ -1,5 +1,5 @@
 ---
-description: 🔒 Audit Docs — Generate 4 security and compliance documentation files
+description: Audit Docs — Generate 4 security and compliance documentation files
 version: "1.0"
 category: documentation
 execution-mode: execute
@@ -13,42 +13,13 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
-
----
-
-## 📦 DELIVERABLES (REQUIRED — ALL 4 FILES)
+## DELIVERABLES (REQUIRED — ALL 4 FILES)
 
 > [!CAUTION]
 > **MUST CREATE ALL 4 FILES**. Incomplete = FAILED execution.
 
-> **⛔ DOCUMENT LANGUAGE — NON-NEGOTIABLE**  
-> Every file under `./documents/` must be written in **English only**. Do not use the user's language (e.g. Vietnamese) for file content. (ORCHESTRATION-LAWS § LAW 6.)
+> **DOCUMENT LANGUAGE — NON-NEGOTIABLE**
+> Every file under `./documents/` must be written in **English only**. Do not use the user's language (e.g. Vietnamese) for file content.
 
 | File                                         | Purpose                          |
 | -------------------------------------------- | -------------------------------- |
@@ -59,29 +30,21 @@ tiered_execution:
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 1: SECURITY ANALYSIS
+## Phase 1: SECURITY ANALYSIS
 
 | Attribute | Value                        |
 | --------- | ---------------------------- |
-| **Agent** | `security-engineer`          |
+| **Role**  | `security-engineer`          |
 | **Goal**  | Complete security assessment |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `security-engineer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/security-engineer.md`
-> EMBODY [security-engineer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a security-engineer. Perform a complete security assessment. Exit when vulnerabilities are identified, OWASP checklist is complete, and risk assessment is done.", description="security-engineer: Complete security assessment")
 
 **Exit Criteria:**
 
@@ -91,23 +54,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: CODEBASE SCAN
+## Phase 2: CODEBASE SCAN
 
 | Attribute | Value                              |
 | --------- | ---------------------------------- |
-| **Agent** | `scouter`                          |
+| **Role**  | `scouter`                          |
 | **Goal**  | Map data flows and sensitive areas |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Map data flows and sensitive areas in the codebase. Exit when data flows are mapped, sensitive data is identified, and integration points are cataloged.", description="scouter: Map data flows and sensitive areas")
 
 **Exit Criteria:**
 
@@ -117,23 +73,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 3: GENERATE ALL 4 DOCUMENTS
+## Phase 3: GENERATE ALL 4 DOCUMENTS
 
 | Attribute | Value                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------- |
-| **Agent** | `docs-manager`                                                                                 |
+| **Role**  | `docs-manager`                                                                                 |
 | **Goal**  | Create all 4 audit documentation files in **English only** (no user-language content in files) |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `docs-manager`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/docs-manager.md`
-> EMBODY [docs-manager] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a docs-manager. Create all 4 audit documentation files in English only: audit-security.md, audit-compliance.md, audit-dataflow.md, audit-recommendations.md. Exit when all 4 files are created.", description="docs-manager: Create all 4 audit documentation files")
 
 **Exit Criteria:**
 
@@ -144,16 +93,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## ✅ VERIFICATION
+## VERIFICATION
 
 Before completion, verify ALL 4 files exist:
 
 ```
 ./documents/audit/
-├── ✅ audit-security.md
-├── ✅ audit-compliance.md
-├── ✅ audit-dataflow.md
-└── ✅ audit-recommendations.md
+├── audit-security.md
+├── audit-compliance.md
+├── audit-dataflow.md
+└── audit-recommendations.md
 ```
 
 ---
@@ -162,6 +111,6 @@ Before completion, verify ALL 4 files exist:
 
 Report status:
 
-1. ✅ **Complete** — All 4 audit docs created
-2. ❌ **Incomplete** — List missing files
-3. 🔒 **Follow-up** — Address critical findings
+1. **Complete** — All 4 audit docs created
+2. **Incomplete** — List missing files
+3. **Follow-up** — Address critical findings

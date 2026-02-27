@@ -1,5 +1,5 @@
 ---
-description: ⚡⚡⚡ Full Development Cycle — Plan → Implement → Test → Review
+description: Full Development Cycle — Plan, Implement, Test, Review
 version: "1.0"
 category: engineering
 execution-mode: execute
@@ -13,41 +13,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-
-  tool_discovery: "Check runSubagent availability BEFORE first delegation"
-
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-    - ✅ ALWAYS log justification for Tier 2 fallback
-```
-
----
-
-## ⚠️ CRITICAL: PHASE CONTINUITY RULES
+## CRITICAL: PHASE CONTINUITY RULES
 
 ```yaml
 phase_continuity:
@@ -62,12 +28,12 @@ phase_continuity:
     - Phase 3 (Planning) MUST incorporate Scout findings
     - Phase 4 (Implementation) MUST follow the Plan file exactly
     - Phase 5 (Testing) MUST verify all plan checkpoints
-    - If prior phase file missing → Agent MUST create it
+    - If prior phase file missing → MUST create it
 ```
 
 All files in `./reports/` → English only.
 
-## 🔗 INPUT REQUIREMENTS & VERIFICATION MATRIX
+## INPUT REQUIREMENTS & VERIFICATION MATRIX
 
 ```yaml
 phase_dependencies:
@@ -109,13 +75,13 @@ phase_dependencies:
     verification: "Code MUST match plan intent"
 ```
 
-## 🛑 BLOCKING ENFORCEMENT
+## BLOCKING ENFORCEMENT
 
 ```
 BEFORE entering any BLOCKING phase:
   1. CHECK: Does required input file exist?
   2. IF missing:
-     a. OUTPUT: "⛔ BLOCKED: Missing [{file}]"
+     a. OUTPUT: "BLOCKED: Missing [{file}]"
      b. ROUTE to creating agent
      c. WAIT for creation
   3. IF exists:
@@ -125,115 +91,82 @@ BEFORE entering any BLOCKING phase:
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## Execution
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 1: REQUIREMENTS ANALYSIS
+## Phase 1: REQUIREMENTS ANALYSIS
 
 | Attribute   | Value                             |
 | ----------- | --------------------------------- |
-| **Agent**   | `brainstormer`                    |
+| **Role**    | `brainstormer`                    |
 | **Goal**    | Clarify requirements if ambiguous |
 | **Trigger** | If requirements unclear           |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `brainstormer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a brainstormer. Clarify requirements if ambiguous using Socratic questioning and assumption surfacing. Exit when: requirements clear, scope defined, acceptance criteria established.", description="brainstormer: Clarify requirements if ambiguous")
 
 **Exit Criteria:**
 
 - [ ] Requirements clear
 - [ ] Scope defined
 - [ ] Acceptance criteria established
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol (Socratic questioning, assumption surfacing)
 
 ---
 
-## 🎭 Phase 2: CODEBASE ANALYSIS
+## Phase 2: CODEBASE ANALYSIS
 
 | Attribute | Value                         |
 | --------- | ----------------------------- |
-| **Agent** | `scouter`                     |
+| **Role**  | `scouter`                     |
 | **Goal**  | Full codebase context mapping |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Perform full codebase context mapping. Exit when: architecture understood, patterns documented, integration points identified.", description="scouter: Full codebase context mapping")
 
 **Exit Criteria:**
 
 - [ ] Architecture understood
 - [ ] Patterns documented
 - [ ] Integration points identified
-- [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol (file locations, patterns as constraints)
 
 ---
 
-## 🎭 Phase 3: IMPLEMENTATION PLANNING
+## Phase 3: IMPLEMENTATION PLANNING
 
 | Attribute | Value                      |
 | --------- | -------------------------- |
-| **Agent** | `planner`                  |
+| **Role**  | `planner`                  |
 | **Goal**  | Create implementation plan |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `planner`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/planner.md`
-> EMBODY [planner] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a planner. Create an implementation plan incorporating Scout findings. Exit when: plan created, steps defined, risks identified.", description="planner: Create implementation plan")
 
 **Exit Criteria:**
 
 - [ ] Plan created
 - [ ] Steps defined
 - [ ] Risks identified
-- [ ] **METHODOLOGY CHECK**: Output aligns with `planner` Thinking Protocol (constraint consumption, complexity scoring)
 
 ---
 
-## 🎭 Phase 4: IMPLEMENTATION
+## Phase 4: IMPLEMENTATION
 
 | Attribute | Value                               |
 | --------- | ----------------------------------- |
-| **Agent** | `tech-lead` → routes to specialists |
+| **Role**  | `tech-lead` → routes to specialists |
 | **Goal**  | Execute plan with specialist agents |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
+> Task(subagent_type="general-purpose", prompt="You are a tech-lead. Execute the implementation plan, routing to specialist engineers as needed. READ the plan completely BEFORE any implementation. Implement EXACTLY as specified. If deviation needed: STOP, document, request re-planning. Exit when: all plan steps executed, code complete, documentation updated, no unauthorized deviations.", description="tech-lead: Execute implementation plan")
 
-> Invoke runSubagent for `tech-lead`. Context: ISOLATED.
-> Tech-lead will spawn specialist subagents as needed.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/tech-lead.md`
-> EMBODY [tech-lead] — Requires logged system error justification.
-> Then recursively EMBODY specialists as needed.
-
-### 🔗 INPUT REQUIREMENTS (BLOCKING)
+### INPUT REQUIREMENTS (BLOCKING)
 
 ```yaml
 required_inputs:
@@ -243,13 +176,13 @@ required_inputs:
       if_missing: "STOP → Route to planner"
 ```
 
-### ⚡ STRICT ADHERENCE DIRECTIVE
+### STRICT ADHERENCE DIRECTIVE
 
 ```
 1. READ plan completely BEFORE any implementation
 2. FOR EACH plan step:
    a. Implement EXACTLY as specified
-   b. Mark complete: `- [ ]` → `- [x]`
+   b. Mark complete: - [ ] → - [x]
 3. IF deviation needed:
    a. STOP
    b. REQUEST Re-Planning
@@ -263,61 +196,44 @@ required_inputs:
 - [ ] Documentation updated
 - [ ] **Each plan step has corresponding implementation**
 - [ ] **No unauthorized deviations**
-- [ ] **METHODOLOGY CHECK**: Output aligns with `tech-lead` Thinking Protocol (proper delegation, drift detection)
 
 ---
 
-## 🎭 Phase 5: TESTING
+## Phase 5: TESTING
 
 | Attribute | Value                 |
 | --------- | --------------------- |
-| **Agent** | `tester`              |
+| **Role**  | `tester`              |
 | **Goal**  | Comprehensive testing |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `tester`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/tester.md`
-> EMBODY [tester] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a tester. Perform comprehensive testing of the implementation. Verify all plan checkpoints. Exit when: tests written, all tests pass, coverage adequate.", description="tester: Comprehensive testing")
 
 **Exit Criteria:**
 
 - [ ] Tests written
 - [ ] All tests pass
 - [ ] Coverage adequate
-- [ ] **METHODOLOGY CHECK**: Output aligns with `tester` Thinking Protocol (test pyramid, determinism verification)
 
 ---
 
-## 🎭 Phase 6: REVIEW
+## Phase 6: REVIEW
 
 | Attribute | Value               |
 | --------- | ------------------- |
-| **Agent** | `reviewer`          |
+| **Role**  | `reviewer`          |
 | **Goal**  | Code quality review |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `reviewer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/reviewer.md`
-> EMBODY [reviewer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a reviewer. Perform code quality review. Check plan compliance, standards, and blocking issues. Exit when: code reviewed, standards met, no blocking issues.", description="reviewer: Code quality review")
 
 **Exit Criteria:**
 
 - [ ] Code reviewed
 - [ ] Standards met
 - [ ] No blocking issues
-- [ ] **METHODOLOGY CHECK**: Output aligns with `reviewer` Thinking Protocol (plan compliance check, priority matrix)
 
 ---
 
@@ -325,6 +241,6 @@ required_inputs:
 
 Present implementation report with:
 
-1. ✅ **Done** — Feature complete
-2. 🚀 **Deploy** → `/deploy:preview`
-3. 📝 **Docs** → `/docs:core`
+1. **Done** — Feature complete
+2. **Deploy** → `/deploy:preview`
+3. **Docs** → `/docs:core`

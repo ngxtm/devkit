@@ -1,5 +1,5 @@
 ---
-description: ⚡ Quick Debug — Fast diagnosis for simple bugs
+description: Quick Debug — Fast diagnosis for simple bugs
 version: "1.0"
 category: debugging
 execution-mode: execute
@@ -13,38 +13,22 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. ORCHESTRATION-LAWS.md  
-2. ADAPTIVE-EXECUTION.md  
-3. EXECUTION-PROTOCOL.md  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🔀 TIERED EXECUTION
+## Phase 1: QUICK DIAGNOSIS
 
-| Tier | When | Action |
-|------|------|--------|
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING | EMBODY agent file (FALLBACK) |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `debugger` |
+| **Goal** | Fast root cause identification |
+| **Exit** | Root cause identified |
 
----
+### Delegation
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: QUICK DIAGNOSIS
-
-| Agent | `debugger` |
-|-------|------------|
-| Goal | Fast root cause identification |
-| Exit | Root cause identified |
+> Task(subagent_type="general-purpose", prompt="You are a debugger. Perform fast root cause identification for the given issue. Exit when root cause is identified.", description="debugger: Fast root cause identification")
 
 ---
 
@@ -61,5 +45,5 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present findings with:
 
-1. ✅ **Root Cause** — Identified
-2. 🔧 **Fix** → `/fix:fast`
+1. **Root Cause** — Identified
+2. **Fix** → `/fix:fast`

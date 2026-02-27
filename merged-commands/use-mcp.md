@@ -12,12 +12,12 @@ Execute MCP operations via **Gemini CLI** to preserve context budget.
    echo "$ARGUMENTS. Return JSON only per GEMINI.md instructions." | gemini -y -m gemini-2.5-flash
    ```
 
-2. **Fallback to mcp-manager subagent** (if Gemini CLI unavailable):
-   - Use `mcp-manager` subagent to discover and execute tools
-   - If the subagent got issues with the scripts of `mcp-management` skill, use `mcp-builder` skill to fix them
+2. **Fallback to Task agent for MCP management** (if Gemini CLI unavailable):
+   - Use Task agent for MCP management to discover and execute tools: Task(subagent_type="general-purpose", prompt="You are an mcp-manager. Discover and execute MCP tools...", description="MCP tool execution")
+   - If the Task agent got issues with the scripts of `mcp-management` skill, use `mcp-builder` skill to fix them
    - **DO NOT** create ANY new scripts
-   - The subagent can only use MCP tools if any to achieve this task
-   - If the subagent can't find any suitable tools, just report it back to the main agent to move on to the next step
+   - The Task agent can only use MCP tools if any to achieve this task
+   - If the Task agent can't find any suitable tools, just report it back to the main agent to move on to the next step
 
 ## Important Notes
 

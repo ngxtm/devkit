@@ -3,7 +3,7 @@ description: ⚡⚡ Implement a feature automatically ("trust me bro")
 argument-hint: [tasks]
 ---
 
-**Ultrathink** to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 
+**Ultrathink** to plan & start working on these tasks follow the Orchestration Protocol, Core Responsibilities, Task Agents Team and Development Rules: 
 <tasks>$ARGUMENTS</tasks>
 
 **IMPORTANT:** Analyze the list of skills  at `.claude/skills/*` and intelligently activate the skills that are needed for the task during the process.

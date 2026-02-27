@@ -3,7 +3,7 @@ description: ⚡⚡⚡ Ultrathink edge cases, then parallel verify with code-rev
 argument-hint: [scope-or-prompt]
 ---
 
-**Ultrathink** to exhaustively list ALL potential edge cases, then dispatch parallel `code-reviewer` agents to verify: <scope>$ARGUMENTS</scope>
+**Ultrathink** to exhaustively list ALL potential edge cases, then dispatch parallel Task agents for code review to verify: <scope>$ARGUMENTS</scope>
 
 **IMPORTANT:** Activate needed skills. Ensure token efficiency. Sacrifice grammar for concision.
 
@@ -39,13 +39,13 @@ Main agent deeply analyzes the scope to LIST all potential edge cases FIRST:
 ### 2. Categorize & Assign
 
 Group edge cases by similar scope for parallel verification:
-- Each category → one `code-reviewer` agent
+- Each category → one Task agent for code review
 - Max 6 categories (merge small ones)
 - Each reviewer gets specific edge cases to VERIFY, not discover
 
 ### 3. Parallel Verification
 
-Launch N `code-reviewer` subagents simultaneously:
+Launch N Task agents for code review simultaneously: Task(subagent_type="general-purpose", prompt="You are a code-reviewer. Verify these edge cases...", description="Verify edge cases for [category]")
 - Pass: category name, list of edge cases, relevant files
 - Task: **VERIFY** if each edge case is properly handled in code
 - Report: which edge cases are handled vs unhandled
@@ -93,7 +93,7 @@ Collect all verification reports:
 ### 6. Final Report
 
 - Summary of verification
-- Ask: "Commit? [Y/n]" → use `git-manager`
+- Ask: "Commit? [Y/n]" → use Task agent for git management
 
 ## Example
 
@@ -112,7 +112,7 @@ User: /review:codebase:parallel auth module
    - Token handling (5 cases)
    - Session management (3 cases)
 
-3. Parallel → 3 code-reviewers verify simultaneously
+3. Parallel → 3 Task agents for code review verify simultaneously
 
 4. Aggregate → 8 handled, 3 unhandled, 1 partial
 

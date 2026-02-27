@@ -1,5 +1,5 @@
 ---
-description: ⚡ Quick Ideation — Rapid idea generation
+description: Quick Ideation — Rapid idea generation
 version: "1.0"
 category: planning
 execution-mode: execute
@@ -13,36 +13,7 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
-
----
-
-## ⚠️ CRITICAL: DELIVERABLE FILE RULES
+## CRITICAL: DELIVERABLE FILE RULES
 
 ```yaml
 deliverable_files:
@@ -57,56 +28,41 @@ All files in `./reports/` → English only.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
+## Execution
 
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 1: TOPIC CLARIFICATION
+## Phase 1: TOPIC CLARIFICATION
 
 | Attribute | Value                                |
 | --------- | ------------------------------------ |
-| **Agent** | `brainstormer`                       |
+| **Role**  | `brainstormer`                       |
 | **Goal**  | Clarify requirements and constraints |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `brainstormer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a brainstormer. Clarify requirements and constraints for the given topic. Exit when: topic understood, constraints identified, success criteria defined.", description="brainstormer: Clarify requirements and constraints")
 
 **Exit Criteria:**
 
 - [ ] Topic understood
 - [ ] Constraints identified
 - [ ] Success criteria defined
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol
 
 ---
 
-## 🎭 Phase 2: IDEA GENERATION
+## Phase 2: IDEA GENERATION
 
 | Attribute | Value                  |
 | --------- | ---------------------- |
-| **Agent** | `brainstormer`         |
+| **Role**  | `brainstormer`         |
 | **Goal**  | Generate diverse ideas |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `brainstormer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/brainstormer.md`
-> EMBODY [brainstormer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a brainstormer. Generate diverse ideas for the topic. CREATE ./reports/brainstorms/BRAINSTORM-{topic}.md for synthesis. Exit when: brainstorm file created, multiple ideas generated, ideas categorized, trade-offs noted.", description="brainstormer: Generate diverse ideas")
 
 **MANDATORY**: CREATE `./reports/brainstorms/BRAINSTORM-{topic}.md` for synthesis
 
@@ -116,34 +72,25 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 - [ ] Multiple ideas generated
 - [ ] Ideas categorized
 - [ ] Trade-offs noted
-- [ ] **METHODOLOGY CHECK**: Output aligns with `brainstormer` Thinking Protocol
 
 ---
 
-## 🎭 Phase 3: CODEBASE CONTEXT (CONDITIONAL)
+## Phase 3: CODEBASE CONTEXT (CONDITIONAL)
 
 | Attribute   | Value                                |
 | ----------- | ------------------------------------ |
-| **Agent**   | `scouter`                            |
+| **Role**    | `scouter`                            |
 | **Goal**    | Find relevant existing patterns      |
 | **Trigger** | If ideas relate to existing codebase |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-
-> Invoke runSubagent for `scouter`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-
-> Load `{AGENTS_PATH}/scouter.md`
-> EMBODY [scouter] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Find relevant existing patterns in the codebase that relate to the generated ideas. Exit when: existing patterns found, integration points identified.", description="scouter: Find relevant existing patterns")
 
 **Exit Criteria:**
 
 - [ ] Existing patterns found
 - [ ] Integration points identified
-- [ ] **METHODOLOGY CHECK**: Output aligns with `scouter` Thinking Protocol
 
 ---
 
@@ -161,6 +108,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present ideas with:
 
-1. ✅ **Ideas Ready** — Select preferred approach
-2. 🔬 **Research** → `/brainstorm:hard` for deeper analysis
-3. 📋 **Plan** → `/plan:fast` to formalize
+1. **Ideas Ready** — Select preferred approach
+2. **Research** → `/brainstorm:hard` for deeper analysis
+3. **Plan** → `/plan:fast` to formalize

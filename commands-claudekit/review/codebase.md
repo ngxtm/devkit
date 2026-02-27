@@ -3,7 +3,7 @@ description: ⚡⚡⚡ Scan & analyze the codebase.
 argument-hint: [tasks-or-prompt]
 ---
 
-Think harder to scan the codebase and analyze it follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 
+Think harder to scan the codebase and analyze it follow the Orchestration Protocol, Core Responsibilities, and Development Rules:
 <tasks>$ARGUMENTS</tasks>
 
 ---
@@ -22,26 +22,26 @@ Think harder to scan the codebase and analyze it follow the Orchestration Protoc
 
 ### Research
 
-* Use 2 `researcher` subagents in parallel to search up to max 5 sources for the user's request, idea validation, best practices, challenges, and find the best possible solutions.
+* Use 2 Task agents in parallel to search up to max 5 sources for the user's request, idea validation, best practices, challenges, and find the best possible solutions: Task(subagent_type="general-purpose", prompt="You are a researcher. Search for...", description="Research [topic]")
 * Keep every research markdown report concise (≤150 lines) while covering all requested topics and citations.
 * Use `/scout:ext` (preferred) or `/scout` (fallback) slash command to search the codebase for files needed to complete the task
 
 ### Code Review
 
-* After finishing, use multiple `code-reviewer` subagents in parallel to review code. 
+* After finishing, use multiple Task agents in parallel to review code: Task(subagent_type="general-purpose", prompt="You are a code-reviewer. Review...", description="Code review")
 * If there are any issues, duplicate code, or security vulnerabilities, ask main agent to improve the code and repeat the "Testing" process until all tests pass. 
 * When all tests pass, code is reviewed, the tasks are completed, report back to user with a summary of the changes and explain everything briefly, ask user to review the changes and approve them.
 * **IMPORTANT:** Sacrifice grammar for the sake of concision when writing outputs.
 
 ### Plan
-* Use `planner` subagent to analyze reports from `researcher` and `scout` subagents to create an improvement plan following the progressive disclosure structure:
+* Use Task agent to analyze reports from researcher and scout Task agents to create an improvement plan following the progressive disclosure structure: Task(subagent_type="general-purpose", prompt="You are a planner. Analyze reports and create improvement plan...", description="Create improvement plan")
   - Create a directory using naming pattern from `## Naming` section.
   - Save the overview access point at `plan.md`, keep it generic, under 80 lines, and list each phase with status/progress and links.
   - For each phase, add `phase-XX-phase-name.md` files containing sections (Context links, Overview with date/priority/statuses, Key Insights, Requirements, Architecture, Related code files, Implementation Steps, Todo list, Success Criteria, Risk Assessment, Security Considerations, Next steps).
 
 ### Final Report
 * Report back to user with a summary of the changes and explain everything briefly, guide user to get started and suggest the next steps.
-* Ask the user if they want to commit and push to git repository, if yes, use `git-manager` subagent to commit and push to git repository.
+* Ask the user if they want to commit and push to git repository, if yes, use Task agent to commit and push to git repository: Task(subagent_type="general-purpose", prompt="You are a git-manager. Commit and push...", description="Git commit and push")
 
 **REMEMBER**:
 - You can always generate images with `ai-multimodal` skill on the fly for visual assets.

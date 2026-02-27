@@ -1,5 +1,5 @@
 ---
-description: ⏪ Deploy Rollback — Revert to previous deployment
+description: Deploy Rollback — Revert to previous deployment
 version: "1.0"
 category: operations
 execution-mode: execute
@@ -11,55 +11,21 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
-
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-1. ORCHESTRATION-LAWS.md  
-2. ADAPTIVE-EXECUTION.md  
-3. EXECUTION-PROTOCOL.md  
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🔀 TIERED EXECUTION PROTOCOL (MANDATORY)
-
-> **Reference**: `{RULES_PATH}/ADAPTIVE-EXECUTION.md`
-
-```yaml
-tiered_execution:
-  principle: "Sub-agent FIRST (Tier 1). EMBODY ONLY on system failure (Tier 2)."
-  for_each_phase:
-    TIER_1_MANDATORY: "IF tool exists → MUST use SUB_AGENT_DELEGATION"
-    TIER_2_FALLBACK: "ONLY on system error—NOT complexity/preference/speed"
-  anti_lazy_fallback:
-    - ❌ NEVER use Tier 2 when Tier 1 tool is available
-    - ✅ ALWAYS attempt Tier 1 first when tool exists
-```
-
----
-
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing).
-
----
-
-## 🎭 Phase 1: ASSESS SITUATION
+## Phase 1: ASSESS SITUATION
 
 | Attribute | Value |
 |-----------|-------|
-| **Agent** | `devops-engineer` |
+| **Role** | `devops-engineer` |
 | **Goal** | Identify rollback target |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `devops-engineer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/devops-engineer.md`
-> EMBODY [devops-engineer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a devops-engineer. Identify the rollback target. Exit when current state is documented, rollback target is identified, and impact is assessed.", description="devops-engineer: Identify rollback target")
 
 **Exit Criteria:**
 
@@ -69,21 +35,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 2: EXECUTE ROLLBACK
+## Phase 2: EXECUTE ROLLBACK
 
 | Attribute | Value |
 |-----------|-------|
-| **Agent** | `devops-engineer` |
+| **Role** | `devops-engineer` |
 | **Goal** | Execute rollback procedure |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `devops-engineer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/devops-engineer.md`
-> EMBODY [devops-engineer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a devops-engineer. Execute the rollback procedure. Exit when rollback is complete and previous version is deployed.", description="devops-engineer: Execute rollback procedure")
 
 **Exit Criteria:**
 
@@ -92,21 +53,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 3: VERIFICATION
+## Phase 3: VERIFICATION
 
 | Attribute | Value |
 |-----------|-------|
-| **Agent** | `devops-engineer` |
+| **Role** | `devops-engineer` |
 | **Goal** | Verify rollback success |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `devops-engineer`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/devops-engineer.md`
-> EMBODY [devops-engineer] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a devops-engineer. Verify rollback success. Exit when health checks pass, previous functionality is restored, and issue is resolved.", description="devops-engineer: Verify rollback success")
 
 **Exit Criteria:**
 
@@ -116,21 +72,16 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 ---
 
-## 🎭 Phase 4: ROOT CAUSE ANALYSIS
+## Phase 4: ROOT CAUSE ANALYSIS
 
 | Attribute | Value |
 |-----------|-------|
-| **Agent** | `debugger` |
+| **Role** | `debugger` |
 | **Goal** | Document what went wrong |
 
-### ⚡ TIERED EXECUTION
+### Delegation
 
-**TIER 1 (MANDATORY when tool exists):**
-> Invoke runSubagent for `debugger`. Context: ISOLATED.
-
-**TIER 2 (FALLBACK on system error only):**
-> Load `{AGENTS_PATH}/debugger.md`
-> EMBODY [debugger] — Requires logged system error justification.
+> Task(subagent_type="general-purpose", prompt="You are a debugger. Document what went wrong with the deployment. Exit when failure is documented, root cause is identified, and prevention plan is noted.", description="debugger: Document what went wrong")
 
 **Exit Criteria:**
 
@@ -144,6 +95,6 @@ One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in
 
 Present rollback result with:
 
-1. ✅ **Rolled Back** — System stable
-2. 🐛 **Debug** → `/debug:hard` for root cause
-3. 📝 **Document** — Post-mortem documentation
+1. **Rolled Back** — System stable
+2. **Debug** → `/debug:hard` for root cause
+3. **Document** — Post-mortem documentation

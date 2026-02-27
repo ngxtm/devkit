@@ -1,7 +1,7 @@
 ---
 description: Stage all files and create a commit.
 ---
-Use `git-manager` subagent to: 
+Use Task agent for git management: Task(subagent_type="general-purpose", prompt="You are a git-manager. Analyze changes, categorize commits, stage and commit...", description="Git commit") to:
 - Analyze changes with `git status` and `git diff --stat`
 - Categorize changes into multiple commits
 - Stage files and create commits based on the changes made

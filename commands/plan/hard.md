@@ -1,5 +1,5 @@
 ---
-description: ⚡⚡⚡ Full Plan — Research-backed comprehensive planning
+description: Full Plan — Research-backed comprehensive planning
 version: "1.0"
 category: planning
 execution-mode: execute
@@ -13,30 +13,9 @@ execution-mode: execute
 
 ---
 
-## 🛑 PRE-FLIGHT (DO FIRST — BLOCKS PHASE 1)
+## DELIVERABLE FILES
 
-**LOAD now** (in order; path `./rules/` or `~/.{TOOL}/skills/agent-assistant/rules/`):
-
-1. ORCHESTRATION-LAWS.md
-2. ADAPTIVE-EXECUTION.md
-3. EXECUTION-PROTOCOL.md
-
-**⛔ Do not run Phase 1 until all are loaded.** Follow **all** rules in those files; they override any conflicting instructions in this file.
-
----
-
-## 🔀 TIERED EXECUTION
-
-| Tier       | When               | Action                       |
-| ---------- | ------------------ | ---------------------------- |
-| **TIER 1** | runSubagent EXISTS | Invoke sub-agent (MANDATORY) |
-| **TIER 2** | Tool MISSING       | EMBODY agent file (FALLBACK) |
-
----
-
-## 📁 DELIVERABLE FILES
-
-| Agent      | Output                                                                                                                                                                   |
+| Role       | Output                                                                                                                                                                   |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | researcher | `./reports/researchers/RESEARCH-{task}.md`                                                                                                                               |
 | scouter    | `./reports/scouts/SCOUT-{task}.md`                                                                                                                                       |
@@ -46,7 +25,7 @@ execution-mode: execute
 
 ---
 
-## 📐 COMPLEXITY & PLAN SPLITTING (MANDATORY FOR PLANNER)
+## COMPLEXITY & PLAN SPLITTING (MANDATORY FOR PLANNER)
 
 When the logical plan would have **> 3 phases** or **estimated effort > 3 days**, the planner **MUST** produce **multiple plan files** (one per executable phase or per milestone group), **not** one monolithic file.
 
@@ -59,54 +38,73 @@ When the logical plan would have **> 3 phases** or **estimated effort > 3 days**
 
 - Naming: `PLAN-{task}-phase1.md`, `PLAN-{task}-phase2.md`, …
 - Order: Execute in numeric order; phase N starts only after phase N−1 is complete.
-- Each file: scope **only** that phase; Prerequisites state “Phase N−1 complete” (or prior deliverables); clear handoff to next file.
+- Each file: scope **only** that phase; Prerequisites state "Phase N−1 complete" (or prior deliverables); clear handoff to next file.
 - Index (optional): planner may add `PLAN-{task}-INDEX.md` listing phases and file names for navigation.
 
 ---
 
-## ⛔ INCREMENTAL EXECUTION (MANDATORY)
-
-One phase at a time, each phase independent: Phase 1 → then Phase 2 → … in one reply. No batching (load only what each phase needs). **Within each phase:** when doing a part, output it in format so user sees what’s happening (announce before doing). Format: rules/EXECUTION-PROTOCOL.md § Phase output structure.
-
----
-
-## 🎭 Phase 1: RESEARCH
-
-| Agent  | `researcher`                                  |
-| ------ | --------------------------------------------- |
-| Goal   | Research best practices and patterns          |
-| Output | `./reports/researchers/RESEARCH-{task}.md`    |
-| Exit   | Best practices identified, sources documented |
+## Execution
+One phase at a time, sequential. Each phase must complete before next begins.
 
 ---
 
-## 🎭 Phase 2: CODEBASE ANALYSIS
+## Phase 1: RESEARCH
 
-| Agent  | `scouter`                                    |
-| ------ | -------------------------------------------- |
-| Goal   | Full architecture mapping                    |
-| Output | `./reports/scouts/SCOUT-{task}.md`           |
-| Exit   | Architecture understood, dependencies mapped |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `researcher` |
+| **Goal** | Research best practices and patterns |
+| **Output** | `./reports/researchers/RESEARCH-{task}.md` |
+| **Exit** | Best practices identified, sources documented |
 
----
+### Delegation
 
-## 🎭 Phase 3: DESIGN (IF UI NEEDED)
-
-| Agent   | `designer`                                        |
-| ------- | ------------------------------------------------- |
-| Trigger | Task involves UI/UX                               |
-| Goal    | Design approach input                             |
-| Exit    | Design approach defined, accessibility considered |
+> Task(subagent_type="general-purpose", prompt="You are a researcher. Research best practices and patterns for the task. Write to ./reports/researchers/RESEARCH-{task}.md. Exit when best practices are identified and sources are documented.", description="researcher: Research best practices and patterns")
 
 ---
 
-## 🎭 Phase 4: PLAN CREATION
+## Phase 2: CODEBASE ANALYSIS
 
-| Agent        | `planner`                                                                                                                   |
-| ------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| Prerequisite | **READ** RESEARCH + SCOUT files (and DESIGN if Phase 3 ran)                                                                 |
-| Goal         | Create detailed implementation plan as **one file** or **multiple phase files** (see **Complexity & plan splitting** above) |
-| Output       | One `./reports/plans/PLAN-{task}.md` **or** multiple `./reports/plans/PLAN-{task}-phase1.md`, `PLAN-{task}-phase2.md`, …    |
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `scouter` |
+| **Goal** | Full architecture mapping |
+| **Output** | `./reports/scouts/SCOUT-{task}.md` |
+| **Exit** | Architecture understood, dependencies mapped |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a scouter. Perform full architecture mapping of the codebase. Write to ./reports/scouts/SCOUT-{task}.md. Exit when architecture is understood and dependencies are mapped.", description="scouter: Full architecture mapping")
+
+---
+
+## Phase 3: DESIGN (IF UI NEEDED)
+
+| Attribute | Value |
+|-----------|-------|
+| **Role** | `designer` |
+| **Trigger** | Task involves UI/UX |
+| **Goal** | Design approach input |
+| **Exit** | Design approach defined, accessibility considered |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a designer. Provide design approach input for the UI/UX aspects of the task. Exit when design approach is defined and accessibility is considered.", description="designer: Design approach input")
+
+---
+
+## Phase 4: PLAN CREATION
+
+| Attribute    | Value |
+| ------------ | ----- |
+| **Role** | `planner` |
+| **Prerequisite** | **READ** RESEARCH + SCOUT files (and DESIGN if Phase 3 ran) |
+| **Goal** | Create detailed implementation plan as **one file** or **multiple phase files** (see **Complexity & plan splitting** above) |
+| **Output** | One `./reports/plans/PLAN-{task}.md` **or** multiple `./reports/plans/PLAN-{task}-phase1.md`, `PLAN-{task}-phase2.md`, … |
+
+### Delegation
+
+> Task(subagent_type="general-purpose", prompt="You are a planner. Read the RESEARCH and SCOUT files first. Create a detailed implementation plan. If the task has > 3 phases or > 3 days effort, produce multiple plan files (one per phase). Each plan must reference prior phase findings. Exit when plan files are created with scope, prerequisites, tasks, exit criteria, risks, and rollback.", description="planner: Create detailed implementation plan")
 
 **Directive to planner:** If the task decomposes into **> 3 phases** or **> 3 days** effort, produce **multiple plan files** (one per phase/milestone), each executable in sequence. Otherwise produce a single `PLAN-{task}.md`.
 
@@ -127,5 +125,5 @@ Plan(s) MUST reference prior phases:
 
 Present plan with:
 
-1. ✅ **Plan Ready** — `./reports/plans/PLAN-{task}.md` (single) **or** `PLAN-{task}-phase1.md`, `PLAN-{task}-phase2.md`, … (multi-phase, execute in order)
-2. 🍳 **Implement** → `/cook:hard` (run phase-by-phase when multiple plan files exist)
+1. **Plan Ready** — `./reports/plans/PLAN-{task}.md` (single) **or** `PLAN-{task}-phase1.md`, `PLAN-{task}-phase2.md`, … (multi-phase, execute in order)
+2. **Implement** → `/cook:hard` (run phase-by-phase when multiple plan files exist)

@@ -6,25 +6,25 @@ description: ⚡⚡⚡ Analyze the codebase and update documentation
 
 1. Scan the codebase and calculate the number of files with LOC in each directory (skip credentials, cache or external modules directories, such as `.claude`, `.opencode`, `.git`, `tests`, `node_modules`, `__pycache__`, `secrets`, etc.)
 2. Target directories **that actually exist** - adapt to project structure, don't hardcode paths
-3. Main agent spawns multiple `scout` subagents via Task tool:
-   - Write a detailed instructions prompt for each scout subagent with exact directories or files it should read
-   - Each scout subagent has less than 200K tokens of context window
-   - Amount of scouts depends on the current system resources available and project size in step 1
-   - Each scout subagent must return a detailed summary report to a main agent
-5. Main agent merges scout reports into context summary and delegate to `docs-manager` agent to update documentation (next phase)
+3. Main agent spawns multiple Task agents for scouting via Task tool: Task(subagent_type="general-purpose", prompt="You are a scout. Read and analyze these directories...", description="Scout [area]")
+   - Write a detailed instructions prompt for each Task agent with exact directories or files it should read
+   - Each Task agent has less than 200K tokens of context window
+   - Amount of Task agents depends on the current system resources available and project size in step 1
+   - Each Task agent must return a detailed summary report to a main agent
+5. Main agent merges scout reports into context summary and delegate to Task agent for docs management to update documentation (next phase)
 
 ## Phase 1.5: Parallel Documentation Reading
 
-**You (main agent) must spawn readers** - subagents cannot spawn subagents.
+**You (main agent) must spawn readers** - Task agents cannot spawn Task agents.
 
 1. Count docs: `ls docs/*.md 2>/dev/null | wc -l`
 2. Get LOC: `wc -l docs/*.md 2>/dev/null | sort -rn`
 3. Strategy:
    - 1-3 files: Skip parallel reading, docs-manager reads directly
-   - 4-6 files: Spawn 2-3 `Explore` agents
-   - 7+ files: Spawn 4-5 `Explore` agents (max 5)
-4. Distribute files by LOC (larger files get dedicated agent)
-5. Each agent prompt: "Read these docs, extract: purpose, key sections, areas needing update. Files: {list}"
+   - 4-6 files: Spawn 2-3 Task agents for exploration: Task(subagent_type="general-purpose", prompt="You are an explorer. Read these docs...", description="Explore docs")
+   - 7+ files: Spawn 4-5 Task agents for exploration (max 5)
+4. Distribute files by LOC (larger files get dedicated Task agent)
+5. Each Task agent prompt: "Read these docs, extract: purpose, key sections, areas needing update. Files: {list}"
 6. Merge results into context for docs-manager
 
 ### Workload Distribution Example
@@ -35,9 +35,9 @@ description: ⚡⚡⚡ Analyze the codebase and update documentation
 | 2 | system-architecture.md (400), code-standards.md (300) | 700 |
 | 3 | project-overview-pdr.md (500), project-roadmap.md (200) | 700 |
 
-## Phase 2: Documentation Update (docs-manager Agent)
+## Phase 2: Documentation Update (Task Agent for Docs Management)
 
-Pass the gathered file list to `docs-manager` agent to update documentation:
+Pass the gathered file list to Task agent for docs management to update documentation: Task(subagent_type="general-purpose", prompt="You are a docs-manager. Update documentation...", description="Update documentation")
 - `README.md`: Update README (keep it under 300 lines)
 - `docs/project-overview-pdr.md`: Update project overview and PDR (Product Development Requirements)
 - `docs/codebase-summary.md`: Update codebase summary

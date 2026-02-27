@@ -5,7 +5,7 @@ argument-hint: [tasks]
 
 Think harder.
 Activate `payment-integration` skill.
-Plan & start implementing payment integration with [https://developer.sepay.vn/vi](https://developer.sepay.vn/vi) follow the Orchestration Protocol, Core Responsibilities, Subagents Team and Development Rules: 
+Plan & start implementing payment integration with [https://developer.sepay.vn/vi](https://developer.sepay.vn/vi) follow the Orchestration Protocol, Core Responsibilities, and Development Rules:
 <tasks>$ARGUMENTS</tasks>
 
 ---
@@ -23,6 +23,6 @@ Plan & start implementing payment integration with [https://developer.sepay.vn/v
 
 ## Workflow:
 
-- **Scout**: Use `scout` subagent to find related resources, documents, and code snippets in the current codebase.
-- **Plan**: Trigger slash command `/plan:fast <detailed-instruction-prompt>` to create an implementation plan based on the reports from `scout` subagent.
+- **Scout**: Use Task agent for scouting to find related resources, documents, and code snippets in the current codebase: Task(subagent_type="general-purpose", prompt="You are a scout. Find related resources...", description="Scout codebase")
+- **Plan**: Trigger slash command `/plan:fast <detailed-instruction-prompt>` to create an implementation plan based on the reports from Task agent.
 - **Implementation**: Trigger slash command `/code <plan>` to implement the plan.

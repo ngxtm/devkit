@@ -11,9 +11,9 @@ Analyze the skills catalog and activate the skills that are needed for the task 
 
 ## Workflow
 1. If the user provides a screenshots or videos, use `ai-multimodal` skill to describe as detailed as possible the issue, make sure developers can predict the root causes easily based on the description.
-2. Use `debugger` subagent to find the root cause of the issues and report back to main agent.
+2. Use a Task agent for debugging: Task(subagent_type="general-purpose", prompt="You are a debugger. Find the root cause of the issues and report back to main agent.", description="Debug issues") to find the root cause of the issues and report back to main agent.
 3. Activate `debugging` skills and `problem-solving` skills to tackle the issues.
 4. Start implementing the fix based the reports and solutions.
-5. Use `tester` agent to test the fix and make sure it works, then report back to main agent.
+5. Use a Task agent for testing: Task(subagent_type="general-purpose", prompt="You are a tester. Test the fix and make sure it works, then report back to main agent.", description="Test fix") to test the fix and make sure it works, then report back to main agent.
 6. If there are issues or failed tests, repeat from step 2.
 7. After finishing, respond back to user with a summary of the changes and explain everything briefly, guide user to get started and suggest the next steps.
