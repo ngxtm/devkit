@@ -10,7 +10,7 @@
       "moderateConnections": 4458,
       "weakConnections": 740,
       "density": 5.78,
-      "recipes": 0
+      "recipes": 10
     }
   },
   "_tiers": {
@@ -1095,7 +1095,233 @@
       "vexor"
     ]
   },
-  "_recipes": {},
+  "_recipes": {
+    "saas-billing": {
+      "description": "Full SaaS billing implementation",
+      "triggers": [
+        "billing",
+        "subscription",
+        "recurring payment",
+        "invoicing",
+        "saas billing"
+      ],
+      "skills": [
+        "billing-automation",
+        "stripe-integration",
+        "payment-integration",
+        "database-design",
+        "api-design-principles"
+      ],
+      "workflow": [
+        "database-design → schema for subscriptions, invoices, payments",
+        "api-design-principles → billing API endpoints",
+        "billing-automation → business logic patterns",
+        "stripe-integration → payment provider integration",
+        "payment-integration → payment gateway abstraction"
+      ]
+    },
+    "react-app": {
+      "description": "React application with design system",
+      "triggers": [
+        "react app",
+        "react project",
+        "react frontend",
+        "react application"
+      ],
+      "skills": [
+        "react-expert",
+        "react-patterns",
+        "react-state-management",
+        "tailwind-patterns",
+        "ui-ux-pro-max"
+      ],
+      "workflow": [
+        "react-expert → React fundamentals and best practices",
+        "ui-ux-pro-max → design system setup",
+        "react-patterns → component architecture",
+        "react-state-management → state strategy",
+        "tailwind-patterns → styling patterns"
+      ]
+    },
+    "api-backend": {
+      "description": "Backend API development",
+      "triggers": [
+        "api backend",
+        "rest api",
+        "graphql api",
+        "backend api"
+      ],
+      "skills": [
+        "api-design-principles",
+        "api-patterns",
+        "auth-implementation-patterns",
+        "database-design",
+        "api-security-best-practices"
+      ],
+      "workflow": [
+        "api-design-principles → API architecture decisions",
+        "database-design → data layer schema",
+        "api-patterns → implementation patterns",
+        "auth-implementation-patterns → authentication layer",
+        "api-security-best-practices → security hardening"
+      ]
+    },
+    "nextjs-fullstack": {
+      "description": "Next.js full-stack application",
+      "triggers": [
+        "nextjs app",
+        "next.js project",
+        "nextjs fullstack",
+        "nextjs full-stack"
+      ],
+      "skills": [
+        "nextjs-best-practices",
+        "react-patterns",
+        "tailwind-patterns",
+        "database-design",
+        "auth-implementation-patterns"
+      ],
+      "workflow": [
+        "nextjs-best-practices → app router, server components",
+        "react-patterns → component architecture",
+        "tailwind-patterns → styling",
+        "database-design → data layer",
+        "auth-implementation-patterns → authentication"
+      ]
+    },
+    "docker-deploy": {
+      "description": "Docker containerization and deployment",
+      "triggers": [
+        "docker deploy",
+        "containerize",
+        "docker compose",
+        "container deployment"
+      ],
+      "skills": [
+        "docker-expert",
+        "deployment-procedures",
+        "deployment-pipeline-design",
+        "deployment-validation-config-validate"
+      ],
+      "workflow": [
+        "docker-expert → Dockerfile, multi-stage builds, compose",
+        "deployment-pipeline-design → CI/CD pipeline",
+        "deployment-procedures → deployment strategy",
+        "deployment-validation-config-validate → validation checks"
+      ]
+    },
+    "security-audit": {
+      "description": "Security audit and hardening",
+      "triggers": [
+        "security audit",
+        "security review",
+        "security hardening",
+        "pentest"
+      ],
+      "skills": [
+        "security-auditor",
+        "api-security-best-practices",
+        "auth-implementation-patterns",
+        "secure-code-guardian",
+        "top-web-vulnerabilities"
+      ],
+      "workflow": [
+        "security-auditor → comprehensive audit framework",
+        "top-web-vulnerabilities → OWASP top 10 check",
+        "api-security-best-practices → API security review",
+        "auth-implementation-patterns → auth system review",
+        "secure-code-guardian → code-level security patterns"
+      ]
+    },
+    "testing-suite": {
+      "description": "Comprehensive testing setup",
+      "triggers": [
+        "testing suite",
+        "test setup",
+        "add testing",
+        "testing strategy"
+      ],
+      "skills": [
+        "test-master",
+        "testing-patterns",
+        "playwright-expert",
+        "tdd-orchestrator"
+      ],
+      "workflow": [
+        "test-master → testing strategy and structure",
+        "testing-patterns → unit/integration test patterns",
+        "playwright-expert → E2E testing setup",
+        "tdd-orchestrator → TDD workflow"
+      ]
+    },
+    "ai-agent": {
+      "description": "AI agent development",
+      "triggers": [
+        "ai agent",
+        "build agent",
+        "llm agent",
+        "agent system"
+      ],
+      "skills": [
+        "ai-agents-architect",
+        "agent-tool-builder",
+        "prompt-engineering",
+        "rag-architect",
+        "agent-memory-systems"
+      ],
+      "workflow": [
+        "ai-agents-architect → agent architecture design",
+        "prompt-engineering → prompt design",
+        "agent-tool-builder → tool/function calling",
+        "rag-architect → knowledge retrieval",
+        "agent-memory-systems → memory and state"
+      ]
+    },
+    "database-setup": {
+      "description": "Database design and optimization",
+      "triggers": [
+        "database setup",
+        "database design",
+        "db architecture",
+        "schema design"
+      ],
+      "skills": [
+        "database-design",
+        "database-architect",
+        "database-optimizer",
+        "database-migration"
+      ],
+      "workflow": [
+        "database-design → schema design",
+        "database-architect → architecture decisions",
+        "database-migration → migration strategy",
+        "database-optimizer → query optimization"
+      ]
+    },
+    "devops-infra": {
+      "description": "DevOps infrastructure setup",
+      "triggers": [
+        "devops setup",
+        "infrastructure",
+        "ci/cd pipeline",
+        "devops infra"
+      ],
+      "skills": [
+        "devops",
+        "docker-expert",
+        "github-actions-templates",
+        "terraform-specialist",
+        "monitoring-expert"
+      ],
+      "workflow": [
+        "devops → overall strategy",
+        "docker-expert → containerization",
+        "github-actions-templates → CI/CD workflows",
+        "terraform-specialist → infrastructure as code",
+        "monitoring-expert → observability setup"
+      ]
+    }
+  },
   "graph": {
     "cook": {
       "tier": 1,

@@ -56,7 +56,7 @@ User Request → Extract keywords
 Read: skills-compact.json
 Format: {
   "_categories": {...},
-  "_recipes": { "recipe-name": { "triggers": [...], "skills": [...] } },
+  "_recipes": { "recipe-name": { "d": "description", "triggers": [...], "skills": [...], "workflow": [...] } },
   "skills": {
     "skill-name": {
       "c": "category",

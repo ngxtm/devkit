@@ -238,6 +238,7 @@ function buildCompactIndex() {
         const cleanSkills = (recipe.skills || []).filter(s => !quarantined.has(s));
         if (cleanSkills.length < 2) continue;
         index._recipes[name] = {
+          d: recipe.description || '',
           triggers: recipe.triggers || [],
           skills: cleanSkills,
           workflow: recipe.workflow || []

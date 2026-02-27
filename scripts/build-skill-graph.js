@@ -122,6 +122,12 @@ function buildSkillGraph() {
     if (recipe.skills) {
       recipe.skills = recipe.skills.filter(s => currentSkills.has(s));
     }
+    if (recipe.workflow) {
+      recipe.workflow = recipe.workflow.filter(w => {
+        const skillRef = w.split(' ')[0];
+        return recipe.skills && recipe.skills.includes(skillRef);
+      });
+    }
     if (!recipe.skills || recipe.skills.length < 2) {
       delete graph._recipes[name];
       recipesRemoved++;
