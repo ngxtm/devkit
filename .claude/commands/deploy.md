@@ -24,18 +24,6 @@ execution-mode: router
 
 ---
 
-## Graph-Aware Skill Loading
-
-After routing to deploy variant, load relevant skills from `skills-compact.json`:
-
-1. Read `skills-compact.json` → find deployment/infrastructure domain skills (by `k` field)
-2. Check `_recipes` — if task triggers a recipe, load recipe skills in workflow order
-3. Use cascade connections (`e`/`p` fields) to find related deployment skills
-4. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-5. Max 3 additional skills, max 5 total loaded
-
----
-
 ## ROUTING LOGIC
 
 ```

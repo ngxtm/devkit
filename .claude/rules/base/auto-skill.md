@@ -1,14 +1,14 @@
 # Auto-Skill Detection
 
-> Automatically detect and suggest relevant skills with cascade loading
+> Automatically detect and suggest relevant skills based on user's task
 
 ## When to Activate
 
 Before starting ANY coding task, you SHOULD check if a relevant skill exists:
 
 1. **Analyze the user's request** - Extract key technologies, patterns, or domains
-2. **Check compact index** - Read `skills-compact.json` for skill names, categories, and cascade data
-3. **Cascade-load** - Auto-load strongly connected skills, suggest moderate ones
+2. **Check compact index** - Read `skills-compact.json` (~20KB) for skill names and categories
+3. **Suggest to user** - Present top 1-3 matching skills
 4. **Load on-demand** - When user confirms, read full skill from `skills/{name}/SKILL.md`
 
 ## Quick Reference: Skill Categories
@@ -27,48 +27,29 @@ Before starting ANY coding task, you SHOULD check if a relevant skill exists:
 | `py` | Python | django, flask, fastapi, pandas |
 | `go` | Golang | gin, echo, fiber, concurrency |
 
-## Detection Flow (Cascade-Enhanced)
+## Detection Flow
 
 ```
-User Request → Extract keywords
+User Request → Extract keywords (react, auth, test, etc.)
                     ↓
-          Read skills-compact.json (has cascade fields + recipes)
+            Read skills-compact.json
                     ↓
-          Match skill names/descriptions
+            Match skill names containing keywords
                     ↓
-          Found? → Check _recipes triggers first (priority)
+            Found? → Suggest: "I found /skill-name. Use it?"
+              ↓ No
+            Check category (fe, be, ai, etc.)
                     ↓
-          Recipe matched? → Load recipe skills in workflow order
-                    ↓ No
-          Get cascade fields for matched skills (e/p/w already in compact)
-                    ↓
-          Classify by weight: strong (auto-load) / moderate (suggest) / weak (skip)
-                    ↓
-          Present: "Loading: [primary + strong]. Also available: [moderate]"
-                    ↓
-          User confirms → Read full SKILL.md for each loaded skill
+            Suggest skills in that category
 ```
 
 ## How to Search
 
 ### Step 1: Read Compact Index
 ```
-Read: skills-compact.json
-Format: {
-  "_categories": {...},
-  "_recipes": { "recipe-name": { "d": "description", "triggers": [...], "skills": [...], "workflow": [...] } },
-  "skills": {
-    "skill-name": {
-      "c": "category",
-      "d": "short description",
-      "e": ["enhances-skill"],
-      "p": ["pairs-with-skill"],
-      "w": { "skill-name": "strong|moderate|weak" },
-      "k": ["domain", "keywords"]
-    }
-  }
-}
-Note: Cascade fields (e/p/w/k) are present for graphed skills. Some skills may lack them.
+Read: .claude/skills-compact.json
+Format: { "_categories": {...}, "skills": { "skill-name": { "c": "category", "d": "short description" } } }
+Note: Some skills may be just a category string if no description available.
 ```
 
 ### Step 2: Match by Name/Keyword
@@ -77,121 +58,83 @@ Look for skills whose name OR description contains user's keywords:
 - User says "authentication" → find "auth" skills
 - User says "docker" → find "docker" skills
 
-### Step 3: Cascade + Load
-After matching, run the Cascade Loading Protocol (see below), then read full SKILL.md for each loaded skill:
+### Step 3: Load Full Skill
+When user confirms, read the full skill:
 ```
-Read: skills/{skill-name}/SKILL.md
-```
-
-## Cascade Loading Protocol
-
-When a skill is matched, use cascade data from `skills-compact.json` (already loaded during keyword detection — no additional file read needed):
-
-### Step 0: Recipe Check (Priority)
-Check `_recipes` in `skills-compact.json` (if present). Check if user's keywords match any recipe triggers.
-If recipe matched → load ALL recipe skills in workflow order. Skip Steps 1-3.
-
-Present recipe:
-```
-I found a recipe for your task:
-
-📋 Recipe: [name] — [description]
-   1. /skill-a → [role]
-   2. /skill-b → [role]
-   3. /skill-c → [role]
-
-Load this recipe? (or pick individual skills)
+Read: .claude/skills/{skill-name}/SKILL.md
 ```
 
-### Step 1: Get Cascade Data
-Cascade fields are embedded in `skills-compact.json` entries (merged from graph at build time).
-If matched skill has no cascade fields (`e`/`p`/`w`), skip cascade (load only primary skill).
+## Suggestion Format
 
-### Step 2: Find Connections + Resolve Weights
-For each matched skill, get:
-- `"e"` (enhances) → check `"w"` map, default `"strong"`
-- `"p"` (pairs-with) → check `"w"` map, default `"moderate"`
-
-### Step 3: Determine Cascade
-- **Auto-load** (no user confirmation needed):
-  - Skills with resolved weight `"strong"`
-  - Max 2 auto-loaded skills per primary skill
-- **Suggest** (present to user):
-  - Skills with resolved weight `"moderate"`
-  - Max 3 suggestions total
-- **Ignore** (not shown):
-  - Skills with resolved weight `"weak"`
-- **Total cap**: max 5 skills loaded (primary + cascade combined)
-
-### Step 4: Present
+**Single match:**
 ```
-I found skills for your task:
+I found a skill that might help:
 
-📌 Loading: /primary-skill, /connected-skill-1, /connected-skill-2
-📎 Also available: /related-skill-1, /related-skill-2
+📌 /skill-name - [category]
 
-Proceed with loaded skills? (or pick specific ones)
+Load this skill? It has specialized patterns for your task.
 ```
 
-### Step 5: Load
-When confirmed, read full SKILL.md for each loaded skill.
-Order: primary skill first, then strong connections, then moderate if selected.
+**Multiple matches (max 3):**
+```
+I found skills that might help:
 
-## Auto-Activate Triggers (Enhanced)
+1. /skill-1 - [category]
+2. /skill-2 - [category]
+3. /skill-3 - [category]
+
+Which one should I use? (or "none" to proceed without)
+```
+
+## Auto-Activate Triggers
 
 Some patterns should auto-suggest specific skills:
 
-| User says... | Primary Skill | Auto-cascade |
-|--------------|---------------|--------------|
-| "create PR", "pull request" | /git-advanced-workflows | — |
-| "code review" | /code-review | /code-review-checklist |
-| "write tests", "add tests" | /test-master | /testing-patterns |
-| "fix bug", "debug" | /systematic-debugging | /error-detective |
-| "learn", "teach me" | /learn | — |
-| "react component" | /react-expert | /react-patterns, /react-state-management |
-| "nextjs", "next.js" | /nextjs-best-practices | /react-best-practices |
-| "docker", "container" | /docker-expert | — |
-| "api design" | /api-design-principles | /api-patterns |
-| "database schema" | /database-design | /database-architect |
-| "auth" | /auth-implementation-patterns | — |
-| "mcp server" | /mcp-developer | /mcp-builder |
-| "stripe", "billing" | /stripe-integration | /billing-automation, /payment-integration |
+| User says... | Suggest skill |
+|--------------|---------------|
+| "create PR", "pull request" | /git-advanced-workflows |
+| "code review" | /code-review |
+| "write tests", "add tests" | /test-master |
+| "fix bug", "debug" | /systematic-debugging |
+| "learn", "teach me" | /learn |
+| "react component" | /react-expert |
+| "nextjs", "next.js" | /nextjs-best-practices |
+| "docker", "container" | /docker-expert |
+| "api design" | /api-design-principles |
+| "database schema" | /database-design |
+| "authentication", "auth" | /auth-implementation-patterns |
+| "mcp server" | /mcp-developer |
 
 ## Important Rules
 
-1. **Strong connections auto-load** — unlike basic mode where all skills require confirmation, cascade auto-loads strong-weight skills alongside the primary. Users can still override or deselect.
-2. **Recipe match takes priority** over individual cascade
-3. **Max cascade depth: 1 level** — only direct connections, no friend-of-friend
-4. **Max total skills per cascade: 5** — recipes can exceed this if needed
-5. **Remember context** - If user said "none", don't suggest again for same task
-6. **On-demand loading** - Only read full SKILL.md when confirmed (strong auto-loads still wait for the initial "proceed?" confirmation)
-7. **No T1 orchestrator cascade** - T1 skills (cook, bootstrap, conductor) have their own loading logic
-8. **Quarantined skills excluded** - Already stripped from cascade fields at build time
-9. **Weight resolution**: explicit `"w"` map > type-based default (`"e"` → strong, `"p"` → moderate)
-10. **Context budget**: cascade reads ZERO additional files (data is in skills-compact.json, already loaded)
+1. **Don't auto-load** - Always ask before loading a skill
+2. **Max 3 suggestions** - Don't overwhelm user
+3. **Be concise** - One-line per skill
+4. **Remember context** - If user said "none", don't suggest again for same task
+5. **On-demand loading** - Only read full SKILL.md when user confirms
+6. **Core commands available** - /learn, /react-expert, /docker-expert, etc. are pre-loaded
 
 ## File Locations
 
 | File | Purpose | Size |
 |------|---------|------|
-| `skills-compact.json` | Quick lookup + cascade data | ~340KB |
+| `skills-compact.json` | Quick lookup index | ~20KB |
 | `skills/{name}/SKILL.md` | Full skill content | varies |
 | `commands/*.md` | Core commands (pre-loaded) | ~400KB |
 
 ## Example Interaction
 
-**User:** "Help me add Stripe billing to my SaaS app"
+**User:** "Help me add JWT authentication to my Express API"
 
-**Claude:** (reads skills-compact.json, finds "stripe-integration" + cascade data)
+**Claude:** (reads skills-compact.json, finds "auth-implementation-patterns")
 ```
-I found skills for your task:
+I found a skill that matches your task:
 
-📌 Loading: /stripe-integration, /payment-integration
-📎 Also available: /billing-automation, /api-design-principles
+📌 /auth-implementation-patterns - security
 
-Proceed with loaded skills? (or pick specific ones)
+This skill has JWT, OAuth2, and session patterns. Load it?
 ```
 
 **User:** "yes"
 
-**Claude:** (reads SKILL.md for stripe-integration, payment-integration, and applies them)
+**Claude:** (reads skills/auth-implementation-patterns/SKILL.md and applies it)

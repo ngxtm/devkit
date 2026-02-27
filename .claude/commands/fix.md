@@ -37,21 +37,6 @@ argument-hint: [issues]
 **H) Simple/Quick Fixes** (default: small bug, single file, straightforward)
 → `/fix:fast <detailed-description>`
 
-## Graph-Aware Skill Loading
-
-After routing to fix variant, load diagnostic skills from `skills-compact.json`:
-
-1. Read `skills-compact.json`, extract error domain from issue description
-2. Find utility skills matching error domain by `k` (domain) field:
-   - Reasoning/analysis skills for root cause analysis
-   - Frontend debugging skills if UI-related error
-   - Backend debugging skills if server-side error
-3. Find domain-specific skills by keyword lookup (framework, library, service)
-4. Use cascade connections (`e`/`p` fields) to find related diagnostic skills
-5. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-6. Pass loaded skills context to fix variant command
-7. Max 3 additional skills, max 5 total loaded
-
 ## Notes
 - `detailed-description` = enhanced prompt describing issue in detail
 - If unclear, ask user for clarification before routing

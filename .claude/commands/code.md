@@ -49,21 +49,6 @@ Task(subagent_type="[type]", prompt="[task description]", description="[brief]")
 
 ---
 
-## Graph-Aware Skill Loading
-
-When implementing a plan, load relevant skills from `skills-compact.json`:
-
-1. Read plan file for mentioned technologies/frameworks
-2. Read `skills-compact.json` → load domain skills matching plan's tech stack (by `k` domain field)
-3. Check `_recipes` — if plan domain triggers a recipe, use recipe skills as implementation reference
-4. Use cascade connections (`e`/`p` fields) to find related implementation skills
-5. At each implementation step, check if a loaded skill has relevant patterns
-6. Load visual/media skills if plan requires visual assets or image editing
-7. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-8. Max 3 additional skills, max 5 total loaded
-
----
-
 ## Step 1: Analysis & Task Extraction
 
 Read plan file completely. Map dependencies between tasks. List ambiguities or blockers. Identify required skills/tools and activate from catalog. Parse phase file and extract actionable tasks.

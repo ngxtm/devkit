@@ -24,19 +24,6 @@ execution-mode: router
 
 ---
 
-## Graph-Aware Skill Loading
-
-After routing to review variant, load relevant skills from `skills-compact.json`:
-
-1. Read `skills-compact.json` → find review/quality skills by `k` (domain) field
-2. Use cascade connections (`e`/`p` fields) to find related review skills
-3. If code involves security-sensitive areas → find skills with `k` containing "security", "auth"
-4. If code involves performance-sensitive areas → find skills with `k` containing "performance", "optimization"
-5. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-6. Max 3 additional skills, max 5 total loaded
-
----
-
 ## ROUTING LOGIC
 
 ```

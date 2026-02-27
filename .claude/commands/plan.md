@@ -22,20 +22,8 @@ Check the `## Plan Context` section in the injected context:
 - Activate `planning` skill.
 - Note: `detailed-instructions-prompt` is **an enhanced prompt** that describes the task in detail based on the provided task description.
 
-## Graph-Aware Skill Loading
-
-When creating a plan, load relevant skills from `skills-compact.json`:
-
-1. Extract technology stack from task description
-2. Read `skills-compact.json` → find all skills matching stack keywords (by `k` domain field)
-3. Check `_recipes` — if task triggers a recipe, use recipe's skill list as reference
-4. Load top 3 most relevant domain skills (prefer those with cascade connections via `e`/`p` fields)
-5. Use loaded skills' patterns as reference for plan architecture
-6. Reference loaded skills in plan steps: "Step 3: Implement auth (see auth-implementation-patterns skill)"
-7. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-8. Max 3 additional skills, max 5 total loaded
-
 ## Important Notes
+**IMPORTANT:** Analyze the skills catalog and activate the skills that are needed for the task during the process.
 **IMPORTANT:** Sacrifice grammar for the sake of concision when writing reports.
 **IMPORTANT:** Ensure token efficiency while maintaining high quality.
 **IMPORTANT:** In reports, list any unresolved questions at the end, if any.

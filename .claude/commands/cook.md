@@ -37,29 +37,7 @@ Think harder to plan & start working on these tasks follow the Orchestration Pro
 * Ask 1 question at a time, wait for the user to answer before moving to the next question.
 * If you don't have any questions, start the next step.
 
-**IMPORTANT:** Use graph-aware skill loading (see Skill Orchestration Protocol below).
-
-### Graph-Aware Skill Loading
-
-Before and during each workflow phase, load relevant skills from `skills-compact.json`:
-
-1. Read `skills-compact.json` (has cascade fields `e`/`p`/`w`/`k` + `_recipes`)
-2. Check `_recipes` first — if task triggers a recipe, load all recipe skills in workflow order
-3. Extract domain keywords from the task description
-4. Match skills by `k` (domain) field and skill name/description
-5. Use cascade weights for connected skills: `e` (enhances) defaults strong, `p` (pairs-with) defaults moderate
-6. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-
-**Per-phase guidance:**
-| Phase | Lookup Strategy |
-|-------|----------------|
-| Research | Find research/documentation utility skills + domain skills by `k` field |
-| Planning | Find architecture/design skills matching domain |
-| Implementation | Find framework-specific skills by `k` field + cascade connections via `e`/`p` |
-| Testing | Find testing skills matching project framework by `k` field |
-| Review | Find review/security skills if domain involves auth/data |
-
-- Max 3 additional skills, max 5 total loaded (primary + cascade combined)
+**IMPORTANT:** Analyze the list of skills  at `.claude/skills/*` and intelligently activate the skills that are needed for the task during the process.
 
 ### Research
 
