@@ -174,7 +174,7 @@ function buildSkillGraph() {
   };
   graph._meta.lastUpdated = new Date().toISOString().split('T')[0];
 
-  // 6. Recompute _tiers
+  // 6. Recompute _tiers (excluding quarantined skills)
   graph._tiers = {
     't1-orchestrator': [],
     't2-hub': [],
@@ -184,6 +184,7 @@ function buildSkillGraph() {
   };
 
   for (const [name, data] of Object.entries(graph.graph)) {
+    if (data._security === 'quarantined') continue;
     const hasConnections = (data.connections?.enhances?.length || 0) +
                            (data.connections?.['pairs-with']?.length || 0) > 0;
     const tierKey = {

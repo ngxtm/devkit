@@ -60,7 +60,7 @@ When implementing a plan, load relevant skills from `skills-compact.json`:
 5. At each implementation step, check if a loaded skill has relevant patterns
 6. Load visual/media skills if plan requires visual assets or image editing
 7. Follow cascade protocol from `auto-skill.md` for weight-aware loading
-8. Max 3 additional skills per implementation phase, max 5 total loaded
+8. Max 3 additional skills, max 5 total loaded
 
 ---
 

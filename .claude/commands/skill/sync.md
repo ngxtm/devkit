@@ -227,6 +227,7 @@ npm run build
 - If **failure** → rollback ALL changes:
   ```bash
   git checkout -- .
+  git clean -fd skills/ rules/
   ```
   If stash was created: `git stash pop`
   Report the build error and stop.

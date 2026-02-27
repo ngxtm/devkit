@@ -59,7 +59,7 @@ Before and during each workflow phase, load relevant skills from `skills-compact
 | Testing | Find testing skills matching project framework by `k` field |
 | Review | Find review/security skills if domain involves auth/data |
 
-- Max 3 additional skills per phase, max 5 total skills loaded (primary + cascade combined)
+- Max 3 additional skills, max 5 total loaded (primary + cascade combined)
 
 ### Research
 
