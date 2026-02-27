@@ -1,3 +1,10 @@
+# [3.20.0](https://github.com/ngxtm/devkit/compare/v3.19.0...v3.20.0) (2026-02-27)
+
+
+### Features
+
+* **commands:** trigger release for Task agent migration ([aaf4897](https://github.com/ngxtm/devkit/commit/aaf4897b9765251c55752bf03387de6436425d02))
+
 # [3.19.0](https://github.com/ngxtm/devkit/compare/v3.18.0...v3.19.0) (2026-02-27)
 
 
