@@ -1,3 +1,12 @@
+# [3.19.0](https://github.com/ngxtm/devkit/compare/v3.18.0...v3.19.0) (2026-02-27)
+
+
+### Features
+
+* **commands:** Replace sub-agent delegation with Task agents ([5a59775](https://github.com/ngxtm/devkit/commit/5a59775c598adc26ca521020f485076fd8e5a890))
+* **learn:** add --plan flag for plan-driven learning ([33213f3](https://github.com/ngxtm/devkit/commit/33213f34f76d7ef9c7bf556158ccfbec31e4ac2e))
+* **skills:** Replace sub-agent references with Task agent terminology ([7ef2b64](https://github.com/ngxtm/devkit/commit/7ef2b64041535a063b36289de9b754324a94b852))
+
 # [3.18.0](https://github.com/ngxtm/devkit/compare/v3.17.0...v3.18.0) (2026-02-27)
 
 
