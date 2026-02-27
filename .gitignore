@@ -52,3 +52,5 @@ coverage/
 # output-styles/
 
 .claude/
+.plans/
+plans/

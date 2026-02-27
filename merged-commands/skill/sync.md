@@ -134,7 +134,7 @@ npm run build
 
 Stage and commit the changes:
 ```bash
-git add skills/ rules/ merged-commands/ SKILLS_INDEX.md skills-index.json skills-compact.json rules-index.json
+git add skills/ rules/ merged-commands/ SKILLS_INDEX.md skills-index.json skills-compact.json skills-graph.json rules-index.json
 ```
 
 Commit message format:

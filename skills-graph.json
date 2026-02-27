@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "version": 2,
+    "lastUpdated": "2026-02-27",
+    "stats": {
+      "totalSkills": 1124,
+      "graphedSkills": 0,
+      "connections": 0,
+      "strongConnections": 0,
+      "moderateConnections": 0,
+      "weakConnections": 0,
+      "density": 0,
+      "recipes": 0
+    }
+  },
+  "_tiers": {
+    "t1-orchestrator": [],
+    "t2-hub": [],
+    "t3-utility": [],
+    "t4-connected": [],
+    "t4-standalone": []
+  },
+  "_recipes": {},
+  "graph": {}
+}

@@ -7,7 +7,8 @@
     "devkit": "cli/index.js"
   },
   "scripts": {
-    "build": "npm run merge-commands && npm run organize-rules && npm run generate-index && npm run build-compact-index",
+    "build": "npm run merge-commands && npm run organize-rules && npm run generate-index && npm run build-skill-graph && npm run build-compact-index",
+    "build-skill-graph": "node scripts/build-skill-graph.js",
     "build-compact-index": "node scripts/build-compact-index.js",
     "merge-commands": "node scripts/merge-commands.js",
     "organize-rules": "node scripts/organize-rules.js",
@@ -25,8 +26,12 @@
     "scripts/merge-commands.js",
     "scripts/organize-rules.js",
     "scripts/generate-index.js",
+    "scripts/build-skill-graph.js",
+    "scripts/build-compact-index.js",
     "hooks/",
     "skills-index.json",
+    "skills-compact.json",
+    "skills-graph.json",
     "rules-index.json",
     "SKILLS_INDEX.md"
   ],

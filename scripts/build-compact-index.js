@@ -14,7 +14,11 @@ const fs = require('fs');
 const path = require('path');
 
 const SKILLS_DIR = path.join(__dirname, '..', 'skills');
+const GRAPH_FILE = path.join(__dirname, '..', 'skills-graph.json');
 const OUTPUT_FILE = path.join(__dirname, '..', 'skills-compact.json');
+
+// Weight defaults — keep in sync with build-skill-graph.js
+const WEIGHT_DEFAULTS = { enhances: 'strong', 'pairs-with': 'moderate' };
 
 // Category short codes
 const CATEGORY_CODES = {
@@ -172,6 +176,79 @@ function buildCompactIndex() {
   }
 
   console.log(`Processed ${processedCount} skills`);
+
+  // Merge cascade fields from skills-graph.json
+  if (fs.existsSync(GRAPH_FILE)) {
+    let graph;
+    try {
+      graph = JSON.parse(fs.readFileSync(GRAPH_FILE, 'utf-8'));
+    } catch (e) {
+      console.error(`Warning: skills-graph.json is malformed, skipping cascade merge: ${e.message}`);
+      graph = null;
+    }
+
+    if (graph) {
+
+    // Build set of quarantined skills
+    const quarantined = new Set();
+    for (const [name, data] of Object.entries(graph.graph || {})) {
+      if (data._security === 'quarantined') quarantined.add(name);
+    }
+
+    // Merge cascade fields into compact skills
+    let cascadeCount = 0;
+    for (const [name, data] of Object.entries(graph.graph || {})) {
+      if (quarantined.has(name)) continue;
+      if (!index.skills[name]) continue;
+      if (!data.connections) continue;
+
+      // Ensure skill entry is an object (not just a category string)
+      if (typeof index.skills[name] === 'string') {
+        index.skills[name] = { c: index.skills[name] };
+      }
+
+      const enhances = (data.connections.enhances || []).filter(s => !quarantined.has(s));
+      const pairsWith = (data.connections['pairs-with'] || []).filter(s => !quarantined.has(s));
+      const weights = data.connections.weights || {};
+      const domain = data.connections.domain || [];
+
+      if (enhances.length) index.skills[name].e = enhances;
+      if (pairsWith.length) index.skills[name].p = pairsWith;
+
+      // Only include non-default weights
+      const nonDefaultWeights = {};
+      for (const [target, weight] of Object.entries(weights)) {
+        if (quarantined.has(target)) continue;
+        const isEnhance = enhances.includes(target);
+        const isPair = pairsWith.includes(target);
+        if (isEnhance && weight !== WEIGHT_DEFAULTS.enhances) nonDefaultWeights[target] = weight;
+        else if (isPair && weight !== WEIGHT_DEFAULTS['pairs-with']) nonDefaultWeights[target] = weight;
+      }
+      if (Object.keys(nonDefaultWeights).length) index.skills[name].w = nonDefaultWeights;
+
+      if (domain.length) index.skills[name].k = domain;
+
+      cascadeCount++;
+    }
+
+    // Copy _recipes (removing quarantined skill refs)
+    if (graph._recipes && Object.keys(graph._recipes).length) {
+      index._recipes = {};
+      for (const [name, recipe] of Object.entries(graph._recipes)) {
+        const cleanSkills = (recipe.skills || []).filter(s => !quarantined.has(s));
+        if (cleanSkills.length < 2) continue;
+        index._recipes[name] = {
+          triggers: recipe.triggers || [],
+          skills: cleanSkills,
+          workflow: recipe.workflow || []
+        };
+      }
+    }
+
+    console.log(`Merged cascade fields for ${cascadeCount} skills from graph`);
+    if (quarantined.size) console.log(`Quarantined: ${quarantined.size} skills excluded`);
+    } // if (graph)
+  }
 
   // Write output (no pretty print for smaller size)
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(index));
