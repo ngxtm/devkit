@@ -197,15 +197,15 @@ jobs:
 ### Workflow Per Task:
 
 ```
-1. Dispatch implementation subagent (Task tool, model: sonnet)
-2. Subagent implements with TDD, commits, reports back
+1. Dispatch implementation Task agent (Task tool, model: sonnet)
+2. Task agent implements with TDD, commits, reports back
 3. Dispatch 3 reviewers IN PARALLEL (single message, 3 Task calls):
    - code-reviewer (opus)
    - business-logic-reviewer (opus)
    - security-reviewer (opus)
 4. Aggregate findings by severity
 5. IF Critical/High/Medium found:
-   - Dispatch fix subagent
+   - Dispatch fix Task agent
    - Re-run ALL 3 reviewers
    - Loop until all PASS
 6. Add TODO comments for Low issues

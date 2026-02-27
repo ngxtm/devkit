@@ -283,20 +283,20 @@ skills_architecture:
     - Skills can be updated independently
 ```
 
-### Sub-Agents for Context Isolation
+### Task Agents for Context Isolation
 
 **Key Insight:** Prevent massive token waste by isolating context-noisy subtasks.
 
 ```python
 async def context_isolated_search(query, codebase_path):
     """
-    Use sub-agent for grep/search to prevent context pollution.
+    Use Task agent for grep/search to prevent context pollution.
     Based on Simon Willison's patterns.
     """
     # Main agent stays focused
-    # Sub-agent handles noisy file searching
+    # Task agent handles noisy file searching
 
-    search_agent = spawn_subagent(
+    search_agent = spawn_task_agent(
         role="codebase-searcher",
         context_limit="10k tokens",
         permissions=["read-only"]
@@ -538,11 +538,11 @@ cost_patterns:
     max_tier: "$200/month often needs 2-3 subscriptions"
 
   token_economics:
-    sub_agents_multiply_cost: "Each duplicates context"
+    task_agents_multiply_cost: "Each duplicates context"
     example: "5-task parallel job = 50,000+ tokens per subtask"
 
   optimization:
-    context_isolation: "Use sub-agents for noisy tasks"
+    context_isolation: "Use Task agents for noisy tasks"
     information_abstraction: "Summarize, don't dump"
     fresh_conversations: "Reset after major tasks"
     skill_on_demand: "Load only when needed"

@@ -528,9 +528,9 @@ read all the files in src/ and then tell me about the architecture
 ```
 read the main entry point and top-level directories to understand the architecture. don't read every file - just enough to explain the main patterns.
 ```
-Or use subagents:
+Or use Task agents:
 ```
-use a subagent to investigate the codebase architecture and report a summary.
+use a Task agent to investigate the codebase architecture and report a summary.
 ```
 
 ---

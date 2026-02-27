@@ -1,10 +1,10 @@
 # Parallel Exploration
 
-Patterns for launching multiple subagents in parallel to scout codebase and verify implementation.
+Patterns for launching multiple Task agents in parallel to scout codebase and verify implementation.
 
 ## Parallel Exploration (Scouting)
 
-Launch multiple `Explore` subagents simultaneously when needing to find:
+Launch multiple `Explore` Task agents simultaneously when needing to find:
 - Related files across different areas
 - Similar implementations/patterns
 - Dependencies and usage
@@ -26,7 +26,7 @@ Task("Explore", "Find test files for auth module", "Scout tests")
 
 ## Parallel Verification (Bash)
 
-Launch multiple `Bash` subagents to verify implementation from different angles.
+Launch multiple `Bash` Task agents to verify implementation from different angles.
 
 **Pattern:**
 ```
@@ -73,5 +73,5 @@ Task("Bash", "Run build", "Verify build")
 ## Resource Limits
 
 - Max 3 parallel agents recommended (system resources)
-- Each subagent has 200K token context limit
+- Each Task agent has 200K token context limit
 - Keep prompts concise to avoid context bloat

@@ -158,7 +158,7 @@ Battle-tested patterns from practitioners:
 - **Confidence-Based Routing**: Auto-approve high confidence, escalate low
 - **Deterministic Outer Loops**: Rule-based validation, not LLM-judged
 - **Context Curation**: Manual selection beats automatic RAG
-- **Sub-Agents for Context Isolation**: Prevent token waste
+- **Task Agents for Context Isolation**: Prevent token waste
 - **Event-Driven Orchestration**: Async, decoupled coordination
 - **Policy-First Enforcement**: Runtime governance
 
@@ -172,7 +172,7 @@ Battle-tested patterns from practitioners:
 - Confidence-Based Routing thresholds
 - Deterministic Outer Loops workflow
 - Context Engineering principles
-- Sub-Agents for Context Isolation
+- Task Agents for Context Isolation
 
 ### Key Practitioner Insights
 
@@ -347,7 +347,7 @@ Comprehensive guide covering:
 - **Haiku**: Unit tests, monitoring, and simple tasks
 
 ### Changed
-- SKILL.md: Added Single-Responsibility Principle to subagent guidance
+- SKILL.md: Added Single-Responsibility Principle to Task agent guidance
 - SKILL.md: Clarified model selection (Opus=planning, Sonnet=dev, Haiku=tests)
 - SKILL.md: Dynamic Agent Selection table now shows Planning/Development/Testing columns
 - tool-orchestration.md: Added correlation_id, tool_reliability_rate to schema
@@ -939,7 +939,7 @@ The previous "37 agents" messaging was misleading because:
   - **Sonnet 4.5** is now clearly marked as **DEFAULT** for all standard implementation work
   - **Haiku 4.5** changed to **OPTIMIZATION ONLY** for simple/parallelizable tasks
   - **Opus 4.5** changed to **COMPLEX ONLY** for architecture & security
-  - Previous documentation incorrectly suggested Haiku as default for most subagents
+  - Previous documentation incorrectly suggested Haiku as default for most Task agents
   - Aligns with best practices: Sonnet for quality, Haiku for speed optimization only
 
 - **run.sh Implementation Gap** - RARV cycle now implemented in runner script (run.sh:870-871, 908-916):
@@ -1150,7 +1150,7 @@ For existing `.loki/` projects:
 
 ### Fixed
 - Removed duplicate CONTINUITY.md template from bootstrap script (was lines 2436-2470)
-- Removed duplicate Task Completion Report from subagent dispatch section (was lines 1731-1764)
+- Removed duplicate Task Completion Report from Task agent dispatch section (was lines 1731-1764)
 - Consolidated severity matrices (removed duplicates, kept one authoritative version)
 
 ## [2.14.0] - 2026-01-02
@@ -1353,8 +1353,8 @@ Loki Mode now combines the best practices from GitHub's ecosystem:
   - Secret scanning to prevent credential leaks
   - 5 quality gate categories with blocking rules
 
-  **Principle 2: Structured Prompting for Subagents**
-  - All subagent dispatches must include: GOAL, CONSTRAINTS, CONTEXT, OUTPUT FORMAT
+  **Principle 2: Structured Prompting for Task Agents**
+  - All Task agent dispatches must include: GOAL, CONSTRAINTS, CONTEXT, OUTPUT FORMAT
   - Goals explain "what success looks like" (not just actions)
   - Constraints define boundaries (dependencies, compatibility, performance)
   - Context includes CONTINUITY.md, ledgers, learnings, architecture decisions
@@ -1390,10 +1390,10 @@ Loki Mode now combines the best practices from GitHub's ecosystem:
 
 ### Changed
 - CODE_REVIEW phase now requires static analysis before AI reviewers
-- Subagent dispatch template updated with GOAL/CONSTRAINTS/CONTEXT/OUTPUT
+- Task agent dispatch template updated with GOAL/CONSTRAINTS/CONTEXT/OUTPUT
 - Task completion requires decision documentation (not just code output)
 - Quality gates now include static analysis tools (CodeQL, linters, security scanners)
-- Context-Aware Subagent Dispatch section rewritten for structured prompting
+- Context-Aware Task Agent Dispatch section rewritten for structured prompting
 
 ### Philosophy
 "Speed and control aren't trade-offs. They reinforce each other." - GitHub

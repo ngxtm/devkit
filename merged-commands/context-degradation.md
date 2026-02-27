@@ -157,11 +157,11 @@ Four strategies address different aspects of context degradation:
 
 **Compress**: Reduce tokens while preserving information through summarization, abstraction, and observation masking. This extends effective context capacity.
 
-**Isolate**: Split context across sub-agents or sessions to prevent any single context from growing large enough to degrade. This is the most aggressive strategy but often the most effective.
+**Isolate**: Split context across Task agents or sessions to prevent any single context from growing large enough to degrade. This is the most aggressive strategy but often the most effective.
 
 ### Architectural Patterns
 
-Implement these strategies through specific architectural patterns. Use just-in-time context loading to retrieve information only when needed. Use observation masking to replace verbose tool outputs with compact references. Use sub-agent architectures to isolate context for different tasks. Use compaction to summarize growing context before it exceeds limits.
+Implement these strategies through specific architectural patterns. Use just-in-time context loading to retrieve information only when needed. Use observation masking to replace verbose tool outputs with compact references. Use Task agent architectures to isolate context for different tasks. Use compaction to summarize growing context before it exceeds limits.
 
 ## Examples
 

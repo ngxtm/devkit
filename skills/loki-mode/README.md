@@ -522,12 +522,12 @@ Loki Mode incorporates research and patterns from leading AI labs and practition
 ### Practitioner Insights
 
 - **Boris Cherny** (Claude Code creator) - Self-verification loop, extended thinking
-- **Simon Willison** - Sub-agents for context isolation, skills system
+- **Simon Willison** - Task agents for context isolation, skills system
 - **Hacker News Community** - [Production patterns](https://news.ycombinator.com/item?id=44623207) from real deployments
 
 ### Inspirations
 
-- [LerianStudio/ring](https://github.com/LerianStudio/ring) - Subagent-driven-development pattern
+- [LerianStudio/ring](https://github.com/LerianStudio/ring) - Task-agent-driven-development pattern
 - [Awesome Agentic Patterns](https://github.com/nibzard/awesome-agentic-patterns) - 105+ production patterns
 
 **[Full Acknowledgements](ACKNOWLEDGEMENTS.md)** - Complete list of 50+ research papers, articles, and resources

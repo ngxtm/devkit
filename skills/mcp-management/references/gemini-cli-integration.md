@@ -206,7 +206,7 @@ Shows detailed MCP communication logs.
 | Direct Scripts | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐ | Specific tools |
 | mcp-manager | ⭐ | ⭐⭐ | ⭐⭐⭐ | Fallback |
 
-**Recommendation**: Use Gemini CLI as primary method, fallback to scripts/subagent when unavailable.
+**Recommendation**: Use Gemini CLI as primary method, fallback to scripts/Task agent when unavailable.
 
 ## Resources
 

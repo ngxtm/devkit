@@ -11,7 +11,7 @@ description: Use when creating new skills, editing existing skills, or verifying
 
 **Personal skills live in agent-specific directories (`~/.claude/skills` for Claude Code, `~/.codex/skills` for Codex)** 
 
-You write test cases (pressure scenarios with subagents), watch them fail (baseline behavior), write the skill (documentation), watch tests pass (agents comply), and refactor (close loopholes).
+You write test cases (pressure scenarios with Task agents), watch them fail (baseline behavior), write the skill (documentation), watch tests pass (agents comply), and refactor (close loopholes).
 
 **Core principle:** If you didn't watch an agent fail without the skill, you don't know if the skill teaches the right thing.
 
@@ -31,7 +31,7 @@ A **skill** is a reference guide for proven techniques, patterns, or tools. Skil
 
 | TDD Concept | Skill Creation |
 |-------------|----------------|
-| **Test case** | Pressure scenario with subagent |
+| **Test case** | Pressure scenario with Task agent |
 | **Production code** | Skill document (SKILL.md) |
 | **Test fails (RED)** | Agent violates rule without skill (baseline) |
 | **Test passes (GREEN)** | Agent complies with skill present |
@@ -159,7 +159,7 @@ When the description was changed to just "Use when executing implementation plan
 
 ```yaml
 # ❌ BAD: Summarizes workflow - Claude may follow this instead of reading skill
-description: Use when executing plans - dispatches subagent per task with code review between tasks
+description: Use when executing plans - dispatches Task agent per task with code review between tasks
 
 # ❌ BAD: Too much process detail
 description: Use for TDD - write test first, watch it fail, write minimal code, refactor
@@ -233,11 +233,11 @@ search-conversations supports multiple modes and filters. Run --help for details
 **Use cross-references:**
 ```markdown
 # ❌ BAD: Repeat workflow details
-When searching, dispatch subagent with template...
+When searching, dispatch Task agent with template...
 [20 lines of repeated instructions]
 
 # ✅ GOOD: Reference other skill
-Always use subagents (50-100x context savings). REQUIRED: Use [other-skill-name] for workflow.
+Always use Task agents (50-100x context savings). REQUIRED: Use [other-skill-name] for workflow.
 ```
 
 **Compress examples:**
@@ -245,12 +245,12 @@ Always use subagents (50-100x context savings). REQUIRED: Use [other-skill-name]
 # ❌ BAD: Verbose example (42 words)
 your human partner: "How did we handle authentication errors in React Router before?"
 You: I'll search past conversations for React Router authentication patterns.
-[Dispatch subagent with search query: "React Router authentication error handling 401"]
+[Dispatch Task agent with search query: "React Router authentication error handling 401"]
 
 # ✅ GOOD: Minimal example (20 words)
 Partner: "How did we handle auth errors in React Router?"
 You: Searching...
-[Dispatch subagent → synthesis]
+[Dispatch Task agent → synthesis]
 ```
 
 **Eliminate redundancy:**
@@ -536,7 +536,7 @@ Follow the TDD cycle:
 
 ### RED: Write Failing Test (Baseline)
 
-Run pressure scenario with subagent WITHOUT the skill. Document exact behavior:
+Run pressure scenario with Task agent WITHOUT the skill. Document exact behavior:
 - What choices did they make?
 - What rationalizations did they use (verbatim)?
 - Which pressures triggered violations?

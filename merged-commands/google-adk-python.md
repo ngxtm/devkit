@@ -25,7 +25,7 @@ Use this skill when users need to:
 
 **LlmAgent**: LLM-powered agents capable of dynamic routing and adaptive behavior
 - Define with name, model, instruction, description, and tools
-- Supports sub-agents for delegation and coordination
+- Supports Task agents for delegation and coordination
 - Intelligent decision-making based on context
 
 **Workflow Agents**: Structured, predictable orchestration patterns

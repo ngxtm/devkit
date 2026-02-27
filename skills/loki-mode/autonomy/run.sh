@@ -1473,7 +1473,7 @@ build_prompt() {
     local analysis_instruction="CODEBASE_ANALYSIS_MODE: No PRD. FIRST: Analyze codebase - scan structure, read package.json/requirements.txt, examine README. THEN: Generate PRD at .loki/generated-prd.md. FINALLY: Execute SDLC phases."
 
     # Context Memory Instructions
-    local memory_instruction="CONTEXT MEMORY: Save state to .loki/memory/ledgers/LEDGER-orchestrator.md before complex operations. Create handoffs at .loki/memory/handoffs/ when passing work to subagents. Extract learnings to .loki/memory/learnings/ after completing tasks. Check .loki/rules/ for established patterns. If context feels heavy, create .loki/signals/CONTEXT_CLEAR_REQUESTED and the wrapper will reset context with your ledger preserved."
+    local memory_instruction="CONTEXT MEMORY: Save state to .loki/memory/ledgers/LEDGER-orchestrator.md before complex operations. Create handoffs at .loki/memory/handoffs/ when passing work to Task agents. Extract learnings to .loki/memory/learnings/ after completing tasks. Check .loki/rules/ for established patterns. If context feels heavy, create .loki/signals/CONTEXT_CLEAR_REQUESTED and the wrapper will reset context with your ledger preserved."
 
     # Load existing context if resuming
     local context_injection=""

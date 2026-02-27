@@ -11,7 +11,7 @@ source: community
 
 # Daily News Report v3.0
 
-> **Architecture Upgrade**: Main Agent Orchestration + SubAgent Execution + Browser Scraping + Smart Caching
+> **Architecture Upgrade**: Main Agent Orchestration + Task Agent Execution + Browser Scraping + Smart Caching
 
 ## Core Architecture
 
@@ -35,7 +35,7 @@ source: community
 └──────────────────────────────────────────────────────────────────────┘
          ↓ Dispatch                          ↑ Return Results
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        SubAgent Execution Layer                      │
+│                        Task Agent Execution Layer                      │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │   ┌─────────────┐   ┌─────────────┐   ┌─────────────┐              │
@@ -74,7 +74,7 @@ Steps:
   5. Check if a partial report exists for today (append mode)
 ```
 
-### Phase 2: Dispatch SubAgents
+### Phase 2: Dispatch Task Agents
 
 **Strategy**: Parallel dispatch, batch execution, early stopping mechanism
 
@@ -95,9 +95,9 @@ If still < 20 items:
     - Browser Worker: ProductHunt, Latent Space (Require JS rendering)
 ```
 
-### Phase 3: SubAgent Task Format
+### Phase 3: Task Agent Task Format
 
-Task format received by each SubAgent:
+Task format received by each Task Agent:
 
 ```yaml
 task: fetch_and_extract
@@ -134,12 +134,12 @@ Main Agent Responsibilities:
 
 ```yaml
 Monitoring:
-  - Check SubAgent return status (success/partial/failed)
+  - Check Task Agent return status (success/partial/failed)
   - Count collected items
   - Record success rate per source
 
 Feedback Loop:
-  - If a SubAgent fails, decide whether to retry or skip
+  - If a Task Agent fails, decide whether to retry or skip
   - If a source fails persistently, mark as disabled
   - Dynamically adjust source selection for subsequent batches
 
@@ -158,7 +158,7 @@ Deduplication:
   - Check cache.json to avoid history duplicates
 
 Score Calibration:
-  - Unify scoring standards across SubAgents
+  - Unify scoring standards across Task Agents
   - Adjust weights based on source credibility
   - Bonus points for manually curated high-quality sources
 
@@ -212,7 +212,7 @@ Update cache.json:
   - article_history: Record included articles
 ```
 
-## SubAgent Call Examples
+## Task Agent Call Examples
 
 ### Using general-purpose Agent
 
@@ -260,7 +260,7 @@ Task Call:
 
 ```
 Task Call:
-  subagent_type: worker
+  subagent_type: general-purpose
   prompt: |
     task: fetch_and_extract
     input:
@@ -288,7 +288,7 @@ Task Call:
 > Curated from N sources today, containing 20 high-quality items
 > Generation Time: X min | Version: v3.0
 >
-> **Warning**: Sub-agent 'worker' not detected. Running in generic mode (Serial Execution). Performance might be degraded.
+> **Warning**: Task agent 'worker' not detected. Running in generic mode (Serial Execution). Performance might be degraded.
 
 ---
 
@@ -318,11 +318,11 @@ Task Call:
 
 1.  **Quality over Quantity**: Low-quality content does not enter the report.
 2.  **Early Stop**: Stop scraping once 20 high-quality items are reached.
-3.  **Parallel First**: SubAgents in the same batch execute in parallel.
+3.  **Parallel First**: Task Agents in the same batch execute in parallel.
 4.  **Fault Tolerance**: Failure of a single source does not affect the whole process.
 5.  **Cache Reuse**: Avoid re-scraping the same content.
 6.  **Main Agent Control**: All decisions are made by the Main Agent.
-7.  **Fallback Awareness**: Detect sub-agent availability, gracefully degrade if unavailable.
+7.  **Fallback Awareness**: Detect Task agent availability, gracefully degrade if unavailable.
 
 ## Expected Performance
 
@@ -336,7 +336,7 @@ Task Call:
 
 | Error Type | Handling |
 |---|---|
-| SubAgent Timeout | Log error, continue to next |
+| Task Agent Timeout | Log error, continue to next |
 | Source 403/404 | Mark disabled, update sources.json |
 | Extraction Failed | Return raw content, Main Agent decides |
 | Browser Crash | Skip source, log entry |
@@ -346,7 +346,7 @@ Task Call:
 To ensure usability across different Agent environments, the following checks must be performed:
 
 1.  **Environment Check**:
-    -   In Phase 1 initialization, attempt to detect if `worker` sub-agent exists.
+    -   In Phase 1 initialization, attempt to detect if `worker` Task agent exists.
     -   If not exists (or plugin not installed), automatically switch to **Serial Execution Mode**.
 
 2.  **Serial Execution Mode**:

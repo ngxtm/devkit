@@ -59,7 +59,7 @@ The Multi-Agent Review Tool leverages a distributed, specialized agent network t
 - **Dynamic Agent Matching**:
   - Analyze input characteristics
   - Select most appropriate agent types
-  - Configure specialized sub-agents dynamically
+  - Configure specialized Task agents dynamically
 - **Expertise Routing**:
   ```python
   def route_agents(code_context):

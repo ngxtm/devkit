@@ -102,16 +102,16 @@ After saving the plan, offer execution choice:
 
 **"Plan complete and saved to `docs/plans/<filename>.md`. Two execution options:**
 
-**1. Subagent-Driven (this session)** - I dispatch fresh subagent per task, review between tasks, fast iteration
+**1. Task Agent-Driven (this session)** - I dispatch fresh Task agent per task, review between tasks, fast iteration
 
 **2. Parallel Session (separate)** - Open new session with executing-plans, batch execution with checkpoints
 
 **Which approach?"**
 
-**If Subagent-Driven chosen:**
+**If Task Agent-Driven chosen:**
 - **REQUIRED SUB-SKILL:** Use superpowers:subagent-driven-development
 - Stay in this session
-- Fresh subagent per task + code review
+- Fresh Task agent per task + code review
 
 **If Parallel Session chosen:**
 - Guide them to open new session in worktree

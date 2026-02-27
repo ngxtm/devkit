@@ -8,7 +8,7 @@ This file contains detailed patterns, checklists, and code samples referenced by
 
 ## Phase 1: Issue Analysis - Error Detection and Context Gathering
 
-Use Task tool with subagent_type="error-debugging::error-detective" followed by subagent_type="error-debugging::debugger":
+Use Task tool with subagent_type="general-purpose" followed by subagent_type="general-purpose":
 
 **First: Error-Detective Analysis**
 
@@ -93,7 +93,7 @@ TESTING_REQUIREMENTS: [scenarios that must be covered]
 
 ## Phase 2: Root Cause Investigation - Deep Code Analysis
 
-Use Task tool with subagent_type="error-debugging::debugger" and subagent_type="comprehensive-review::code-reviewer" for systematic investigation:
+Use Task tool with subagent_type="general-purpose" and subagent_type="general-purpose" for systematic investigation:
 
 **First: Debugger Code Analysis**
 
@@ -185,13 +185,13 @@ ARCHITECTURAL_CONCERNS: {if systemic issues exist}
 Based on Phase 2 output, route to appropriate domain agent using Task tool:
 
 **Routing Logic:**
-- Python issues → subagent_type="python-development::python-pro"
-- TypeScript/JavaScript → subagent_type="javascript-typescript::typescript-pro"
-- Go → subagent_type="systems-programming::golang-pro"
-- Rust → subagent_type="systems-programming::rust-pro"
-- SQL/Database → subagent_type="database-cloud-optimization::database-optimizer"
-- Performance → subagent_type="application-performance::performance-engineer"
-- Security → subagent_type="security-scanning::security-auditor"
+- Python issues → subagent_type="general-purpose"
+- TypeScript/JavaScript → subagent_type="general-purpose"
+- Go → subagent_type="general-purpose"
+- Rust → subagent_type="general-purpose"
+- SQL/Database → subagent_type="general-purpose"
+- Performance → subagent_type="general-purpose"
+- Security → subagent_type="general-purpose"
 
 **Prompt Template (adapt for language):**
 ```
@@ -269,7 +269,7 @@ BACKWARD_COMPATIBILITY: {maintained | breaking with mitigation}
 
 ## Phase 4: Verification - Automated Testing and Performance Validation
 
-Use Task tool with subagent_type="unit-testing::test-automator" and subagent_type="application-performance::performance-engineer":
+Use Task tool with subagent_type="general-purpose" and subagent_type="general-purpose":
 
 **First: Test-Automator Regression Suite**
 
@@ -497,7 +497,7 @@ FINAL_VERDICT: {
 
 ## Phase 5: Documentation and Prevention - Long-term Resilience
 
-Use Task tool with subagent_type="comprehensive-review::code-reviewer" for prevention strategies:
+Use Task tool with subagent_type="general-purpose" for prevention strategies:
 
 **Prompt:**
 ```
@@ -613,13 +613,13 @@ For issues spanning multiple domains, orchestrate specialized agents sequentiall
 
 **Sequence:**
 1. **Phase 1-2**: error-detective + debugger identify slow database queries
-2. **Phase 3a**: Task(subagent_type="database-cloud-optimization::database-optimizer")
+2. **Phase 3a**: Task(subagent_type="general-purpose")
    - Optimize query with proper indexes
    - Context: "Query execution taking 5s, missing index on user_id column, N+1 query pattern detected"
-3. **Phase 3b**: Task(subagent_type="application-performance::performance-engineer")
+3. **Phase 3b**: Task(subagent_type="general-purpose")
    - Add caching layer for frequently accessed data
    - Context: "Database query optimized from 5s to 50ms by adding index on user_id column. Application still experiencing 2s response times due to N+1 query pattern loading 100+ user records per request. Add Redis caching with 5-minute TTL for user profiles."
-4. **Phase 3c**: Task(subagent_type="incident-response::devops-troubleshooter")
+4. **Phase 3c**: Task(subagent_type="general-purpose")
    - Configure monitoring for query performance and cache hit rates
    - Context: "Cache layer added with Redis. Need monitoring for: query p95 latency (threshold: 100ms), cache hit rate (threshold: >80%), cache memory usage (alert at 80%)."
 
@@ -630,11 +630,11 @@ For issues spanning multiple domains, orchestrate specialized agents sequentiall
    - Context: "TypeError: Cannot read property 'map' of undefined, 500+ occurrences in last hour, affects Safari users on iOS 14"
 2. **Phase 2**: debugger + code-reviewer investigate
    - Context: "API response sometimes returns null instead of empty array when no results. Frontend assumes array."
-3. **Phase 3a**: Task(subagent_type="javascript-typescript::typescript-pro")
+3. **Phase 3a**: Task(subagent_type="general-purpose")
    - Fix frontend with proper null checks
    - Add type guards
    - Context: "Backend API /api/users endpoint returning null instead of [] when no results. Fix frontend to handle both. Add TypeScript strict null checks."
-4. **Phase 3b**: Task(subagent_type="backend-development::backend-architect")
+4. **Phase 3b**: Task(subagent_type="general-purpose")
    - Fix backend to always return array
    - Update API contract
    - Context: "Frontend now handles null, but API should follow contract and return [] not null. Update OpenAPI spec to document this."
@@ -648,7 +648,7 @@ For issues spanning multiple domains, orchestrate specialized agents sequentiall
    - Context: "SQL injection vulnerability in login endpoint, Snyk severity: HIGH"
 2. **Phase 2**: debugger + security-auditor investigate
    - Context: "User input not sanitized in SQL WHERE clause, allows authentication bypass"
-3. **Phase 3**: Task(subagent_type="security-scanning::security-auditor")
+3. **Phase 3**: Task(subagent_type="general-purpose")
    - Implement parameterized queries
    - Add input validation
    - Add rate limiting

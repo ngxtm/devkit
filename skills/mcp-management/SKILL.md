@@ -15,7 +15,7 @@ MCP is an open protocol enabling AI agents to connect to external tools and data
 - Progressive disclosure of MCP capabilities (load only what's needed)
 - Intelligent tool/prompt/resource selection based on task requirements
 - Multi-server management from single config file
-- Context-efficient: subagents handle MCP discovery and execution
+- Context-efficient: Task agents handle MCP discovery and execution
 - Persistent tool catalog: automatically saves discovered tools to JSON for fast reference
 
 ## When to Use This Skill
@@ -25,7 +25,7 @@ Use this skill when:
 2. **Task-Based Tool Selection**: Analyzing which MCP tools are relevant for a specific task
 3. **Executing MCP Tools**: Calling MCP tools programmatically with proper parameter handling
 4. **MCP Integration**: Building or debugging MCP client implementations
-5. **Context Management**: Avoiding context pollution by delegating MCP operations to subagents
+5. **Context Management**: Avoiding context pollution by delegating MCP operations to Task agents
 
 ## Core Capabilities
 
@@ -80,7 +80,7 @@ echo "Take a screenshot of https://example.com" | gemini -y -m gemini-2.5-flash
 npx tsx scripts/cli.ts call-tool memory create_entities '{"entities":[...]}'
 ```
 
-**Fallback: mcp-manager Subagent**
+**Fallback: mcp-manager Task agent**
 
 See [references/gemini-cli-integration.md](references/gemini-cli-integration.md) for complete examples.
 
@@ -106,14 +106,14 @@ echo "Take a screenshot of https://example.com. Return JSON only per GEMINI.md i
 - Automatic tool discovery
 - Structured JSON responses (parseable by Claude)
 - GEMINI.md auto-loaded for consistent formatting
-- Faster than subagent orchestration
+- Faster than Task agent orchestration
 - No natural language ambiguity
 
 See [references/gemini-cli-integration.md](references/gemini-cli-integration.md) for complete guide.
 
-### Pattern 2: Subagent-Based Execution (Fallback)
+### Pattern 2: Task Agent-Based Execution (Fallback)
 
-Use `mcp-manager` agent when Gemini CLI unavailable. Subagent discovers tools, selects relevant ones, executes tasks, reports back.
+Use `mcp-manager` agent when Gemini CLI unavailable. Task agent discovers tools, selects relevant ones, executes tasks, reports back.
 
 **Benefit**: Main context stays clean, only relevant tool definitions loaded when needed.
 
@@ -166,7 +166,7 @@ npx tsx cli.ts list-tools  # Saves to assets/tools.json
 npx tsx cli.ts call-tool memory create_entities '{"entities":[...]}'
 ```
 
-**Method 3: mcp-manager Subagent**
+**Method 3: mcp-manager Task agent**
 
 See [references/gemini-cli-integration.md](references/gemini-cli-integration.md) for complete guide.
 
@@ -193,7 +193,7 @@ See [references/mcp-protocol.md](references/mcp-protocol.md) for:
    - Use when: Need specific tool/server control
    - Execute: `npx tsx scripts/cli.ts call-tool <server> <tool> <args>`
 
-3. **mcp-manager Subagent** (Fallback): Context-efficient delegation
+3. **mcp-manager Task agent** (Fallback): Context-efficient delegation
    - Use when: Gemini unavailable or failed
    - Keeps main context clean
 

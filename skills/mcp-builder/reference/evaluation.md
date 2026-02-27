@@ -179,7 +179,7 @@ Read the documentation of the target API to understand:
 - Available endpoints and functionality
 - If ambiguity exists, fetch additional information from the web
 - Parallelize this step AS MUCH AS POSSIBLE
-- Ensure each subagent is ONLY examining documentation from the file system or on the web
+- Ensure each Task agent is ONLY examining documentation from the file system or on the web
 
 ### Step 2: Tool Inspection
 
@@ -204,8 +204,8 @@ After understanding the API and tools, USE the MCP server tools:
 - Goal: identify specific content (e.g., users, channels, messages, projects, tasks) for creating realistic questions
 - Should NOT call any tools that modify state
 - Will NOT read the code of the MCP server implementation itself
-- Parallelize this step with individual sub-agents pursuing independent explorations
-- Ensure each subagent is only performing READ-ONLY, NON-DESTRUCTIVE, and IDEMPOTENT operations
+- Parallelize this step with individual Task agents pursuing independent explorations
+- Ensure each Task agent is only performing READ-ONLY, NON-DESTRUCTIVE, and IDEMPOTENT operations
 - BE CAREFUL: SOME TOOLS may return LOTS OF DATA which would cause you to run out of CONTEXT
 - Make INCREMENTAL, SMALL, AND TARGETED tool calls for exploration
 - In all tool call requests, use the `limit` parameter to limit results (<10)

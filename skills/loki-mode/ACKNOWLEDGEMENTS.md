@@ -21,7 +21,7 @@ Loki Mode is built for Claude and incorporates Anthropic's cutting-edge research
 | [Computer Use Safety](https://www.anthropic.com/news/3-5-models-and-computer-use) | Safe autonomous operation patterns |
 | [Sabotage Evaluations](https://www.anthropic.com/research/sabotage-evaluations-for-frontier-models) | Safety evaluation methodology |
 | [Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) | One-feature-at-a-time pattern, Playwright MCP for E2E |
-| [Claude Agent SDK Overview](https://platform.claude.com/docs/en/agent-sdk/overview) | Task tool, subagents, resume parameter, hooks |
+| [Claude Agent SDK Overview](https://platform.claude.com/docs/en/agent-sdk/overview) | Task tool, Task agents, resume parameter, hooks |
 
 ### Google DeepMind
 
@@ -101,7 +101,7 @@ AWS Bedrock's multi-agent collaboration patterns inform Loki Mode's routing and 
 | Resource | Contribution |
 |----------|--------------|
 | [NVIDIA ToolOrchestra](https://github.com/NVlabs/ToolOrchestra) | Efficiency metrics, three-reward signal framework, dynamic agent selection |
-| [LerianStudio/ring](https://github.com/LerianStudio/ring) | Subagent-driven-development pattern |
+| [LerianStudio/ring](https://github.com/LerianStudio/ring) | Task-agent-driven-development pattern |
 | [Awesome Agentic Patterns](https://github.com/nibzard/awesome-agentic-patterns) | 105+ production patterns catalog |
 
 ### Best Practices Guides
@@ -124,7 +124,7 @@ Battle-tested insights from practitioners deploying agents in production.
 |--------|-------------|
 | [What Actually Works in Production for Autonomous Agents](https://news.ycombinator.com/item?id=44623207) | "Zero companies without human in the loop" |
 | [Coding with LLMs in Summer 2025](https://news.ycombinator.com/item?id=44623953) | Context curation beats automatic RAG |
-| [Superpowers: How I'm Using Coding Agents](https://news.ycombinator.com/item?id=45547344) | Sub-agents for context isolation (Simon Willison) |
+| [Superpowers: How I'm Using Coding Agents](https://news.ycombinator.com/item?id=45547344) | Task agents for context isolation (Simon Willison) |
 | [Claude Code Experience After Two Weeks](https://news.ycombinator.com/item?id=44596472) | Fresh contexts yield better results |
 | [AI Agent Benchmarks Are Broken](https://news.ycombinator.com/item?id=44531697) | LLM-as-judge has shared blind spots |
 | [How to Orchestrate Multi-Agent Workflows](https://news.ycombinator.com/item?id=45955997) | Event-driven, decoupled coordination |
@@ -150,7 +150,7 @@ Special thanks to thought leaders whose patterns and insights shaped Loki Mode:
 | **Boris Cherny** (Creator of Claude Code) | Self-verification loop (2-3x quality improvement), extended thinking mode, "Less prompting, more systems" philosophy |
 | **Ivan Steshov** | Centralized constitution, agent lineage tracking, structured artifacts as contracts |
 | **Addy Osmani** | Git checkpoint system, specification-first approach, visual aids (Mermaid diagrams) |
-| **Simon Willison** | Sub-agents for context isolation, skills system, context curation patterns |
+| **Simon Willison** | Task agents for context isolation, skills system, context curation patterns |
 
 ---
 

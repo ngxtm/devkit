@@ -61,7 +61,7 @@ Predictable degradation as context grows. Not binary - a continuum.
 1. **Write**: Save externally (scratchpads, files)
 2. **Select**: Pull only relevant (retrieval, filtering)
 3. **Compress**: Reduce tokens (summarization)
-4. **Isolate**: Split across sub-agents (partitioning)
+4. **Isolate**: Split across Task agents (partitioning)
 
 ## Detection Heuristics
 

@@ -51,7 +51,7 @@ context += [unique_content]                   # Variable last
 
 ## Context Partitioning
 
-Split work across sub-agents with isolated contexts.
+Split work across Task agents with isolated contexts.
 
 ```python
 result = await sub_agent.process(subtask, clean_context=True)

@@ -18,9 +18,9 @@ When to activate each skill during fixing workflows.
 | `context-engineering` | Fixing AI/LLM/agent code, context window issues |
 | `ai-multimodal` | UI issues, screenshots provided, visual bugs |
 
-## Subagent Usage
+## Task Agent Usage
 
-| Subagent | Activate When |
+| Task Agent | Activate When |
 |----------|---------------|
 | `debugger` | Root cause unclear, need deep investigation |
 | `Explore` (parallel) | Scout multiple areas simultaneously |
@@ -61,5 +61,5 @@ See `references/parallel-exploration.md` for detailed patterns.
 | "stuck", "tried everything" | `problem-solving` |
 | "complex", "multi-step" | `sequential-thinking` |
 | "which approach", "options" | `brainstorming` |
-| "latest docs", "best practice" | `researcher` subagent |
+| "latest docs", "best practice" | `researcher` Task agent |
 | Screenshot attached | `ai-multimodal` |

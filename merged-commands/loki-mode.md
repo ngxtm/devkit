@@ -137,7 +137,7 @@ If bugs are found in these files, document them in `.loki/CONTINUITY.md` under "
 | - Identify highest priority unblocked task                        |
 +-------------------------------------------------------------------+
 | ACT: Execute the task                                             |
-| - Dispatch subagent via Task tool OR execute directly             |
+| - Dispatch Task agent via Task tool OR execute directly             |
 | - Write code, run tests, fix issues                               |
 | - Commit changes atomically (git checkpoint)                      |
 +-------------------------------------------------------------------+
@@ -175,7 +175,7 @@ If bugs are found in these files, document them in `.loki/CONTINUITY.md` under "
 ### Task Tool Model Parameter
 ```python
 # Opus for planning/architecture ONLY
-Task(subagent_type="Plan", model="opus", description="Design system architecture", prompt="...")
+Task(subagent_type="general-purpose", model="opus", description="Design system architecture", prompt="...")
 
 # Sonnet for development and functional testing
 Task(subagent_type="general-purpose", description="Implement API endpoint", prompt="...")
@@ -286,7 +286,7 @@ Task(description="Refactor database layer for performance", prompt="...")     # 
 - **Direct Routing:** Minimal context - just the task and relevant file(s)
 - **Supervisor Mode:** Full context - CONTINUITY.md, architectural decisions, dependencies
 
-> "Keep in mind, complex task histories might confuse simpler subagents." - AWS Best Practices
+> "Keep in mind, complex task histories might confuse simpler Task agents." - AWS Best Practices
 
 ### E2E Testing with Playwright MCP (Anthropic Harness Pattern)
 
@@ -325,7 +325,7 @@ mcp_servers = {
 | Metric | What to Track | Store In |
 |--------|---------------|----------|
 | Wall time | Seconds from start to completion | `.loki/metrics/efficiency/` |
-| Agent count | Number of subagents spawned | `.loki/metrics/efficiency/` |
+| Agent count | Number of Task agents spawned | `.loki/metrics/efficiency/` |
 | Retry count | Attempts before success | `.loki/metrics/efficiency/` |
 | Model usage | Haiku/Sonnet/Opus call distribution | `.loki/metrics/efficiency/` |
 
@@ -351,12 +351,12 @@ See `references/tool-orchestration.md` for full implementation details.
 
 ---
 
-## Structured Prompting for Subagents
+## Structured Prompting for Task Agents
 
 **Single-Responsibility Principle:** Each agent should have ONE clear goal and narrow scope.
 ([UiPath Best Practices](https://www.uipath.com/blog/ai/agent-builder-best-practices))
 
-**Every subagent dispatch MUST include:**
+**Every Task agent dispatch MUST include:**
 
 ```markdown
 ## GOAL (What success looks like)
@@ -446,7 +446,7 @@ See `references/agent-types.md` for complete definitions and capabilities.
 - **NEVER** skip code review between tasks
 - **NEVER** proceed with unfixed Critical/High/Medium issues
 - **NEVER** dispatch reviewers sequentially (always parallel - 3x faster)
-- **NEVER** dispatch multiple implementation subagents in parallel (conflicts)
+- **NEVER** dispatch multiple implementation Task agents in parallel (conflicts)
 - **NEVER** implement without reading task requirements first
 
 ### Review Anti-Patterns
@@ -466,7 +466,7 @@ See `references/agent-types.md` for complete definitions and capabilities.
 - **ALWAYS** wait for all reviewers before aggregating
 - **ALWAYS** fix Critical/High/Medium immediately
 - **ALWAYS** re-run ALL 3 reviewers after fixes
-- **ALWAYS** checkpoint state before spawning subagents
+- **ALWAYS** checkpoint state before spawning Task agents
 
 ---
 
@@ -618,14 +618,14 @@ context_budget:
   reserve: "90% for model reasoning"
 ```
 
-### Sub-Agents for Context Isolation
+### Task Agents for Context Isolation
 
-**Use sub-agents to prevent token waste on noisy subtasks:**
+**Use Task agents to prevent token waste on noisy subtasks:**
 
 ```
-Main agent (focused) --> Sub-agent (file search)
-                     --> Sub-agent (test running)
-                     --> Sub-agent (linting)
+Main agent (focused) --> Task agent (file search)
+                     --> Task agent (test running)
+                     --> Task agent (linting)
 ```
 
 See `references/production-patterns.md` for full practitioner patterns.
@@ -690,7 +690,7 @@ Loki Mode with PRD at path/to/prd   # Start with PRD
 |-------|-------|
 | Trigger | "Loki Mode" or "Loki Mode with PRD at [path]" |
 | Skip When | Need human approval, want to review plan first, single small task |
-| Related Skills | subagent-driven-development, executing-plans |
+| Related Skills | task-agent-driven-development, executing-plans |
 
 ---
 

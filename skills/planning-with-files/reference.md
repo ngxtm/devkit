@@ -103,7 +103,7 @@ RULES:
 ```
 ┌─────────────────────────────────┐
 │         PLANNER AGENT           │
-│  └─ Assigns tasks to sub-agents │
+│  └─ Assigns tasks to Task agents │
 ├─────────────────────────────────┤
 │       KNOWLEDGE MANAGER         │
 │  └─ Reviews conversations       │
@@ -115,7 +115,7 @@ RULES:
 └─────────────────────────────────┘
 ```
 
-**Key Insight:** Manus originally used `todo.md` for task planning but found ~33% of actions were spent updating it. Shifted to dedicated planner agent calling executor sub-agents.
+**Key Insight:** Manus originally used `todo.md` for task planning but found ~33% of actions were spent updating it. Shifted to dedicated planner agent calling executor Task agents.
 
 ### Strategy 3: Context Offloading
 

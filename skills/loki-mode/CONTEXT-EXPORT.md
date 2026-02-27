@@ -13,7 +13,7 @@
 ### Key Features
 - 37 specialized agent types across 6 swarms (Engineering, Operations, Business, Data, Product, Growth)
 - Dynamic agent scaling based on project complexity
-- Task tool for subagent dispatch with fresh context
+- Task tool for Task agent dispatch with fresh context
 - Distributed task queue (pending, in-progress, completed, failed, dead-letter)
 - Circuit breakers for per-agent failure handling
 - Timeout/stuck agent detection with heartbeat monitoring

@@ -1,4 +1,4 @@
-# Testing Skills With Subagents
+# Testing Skills With Task Agents
 
 **Load this reference when:** creating or editing skills, before deployment, to verify they work under pressure and resist rationalization.
 

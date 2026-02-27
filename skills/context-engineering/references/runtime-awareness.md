@@ -157,7 +157,7 @@ Context: 91% [CRITICAL - compaction needed]
 | 5-Hour | Action |
 |--------|--------|
 | < 70% | Normal usage |
-| 70-90% | Reduce parallelization, delegate to subagents |
+| 70-90% | Reduce parallelization, delegate to Task agents |
 | > 90% | Wait for reset or use lower-tier models |
 
 | 7-Day | Action |

@@ -12,7 +12,7 @@ Master orchestrator, peer-to-peer, and hierarchical multi-agent architectures
 Use this skill when working with master orchestrator, peer-to-peer, and hierarchical multi-agent architectures.
 # Multi-Agent Architecture Patterns
 
-Multi-agent architectures distribute work across multiple language model instances, each with its own context window. When designed well, this distribution enables capabilities beyond single-agent limits. When designed poorly, it introduces coordination overhead that negates benefits. The critical insight is that sub-agents exist primarily to isolate context, not to anthropomorphize role division.
+Multi-agent architectures distribute work across multiple language model instances, each with its own context window. When designed well, this distribution enables capabilities beyond single-agent limits. When designed poorly, it introduces coordination overhead that negates benefits. The critical insight is that Task agents exist primarily to isolate context, not to anthropomorphize role division.
 
 ## When to Activate
 
@@ -26,7 +26,7 @@ Activate this skill when:
 
 ## Core Concepts
 
-Multi-agent systems address single-agent context limitations through distribution. Three dominant patterns exist: supervisor/orchestrator for centralized control, peer-to-peer/swarm for flexible handoffs, and hierarchical for layered abstraction. The critical design principle is context isolation—sub-agents exist primarily to partition context rather than to simulate organizational roles.
+Multi-agent systems address single-agent context limitations through distribution. Three dominant patterns exist: supervisor/orchestrator for centralized control, peer-to-peer/swarm for flexible handoffs, and hierarchical for layered abstraction. The critical design principle is context isolation—Task agents exist primarily to partition context rather than to simulate organizational roles.
 
 Effective multi-agent systems require explicit coordination protocols, consensus mechanisms that avoid sycophancy, and careful attention to failure modes including bottlenecks, divergence, and error propagation.
 
@@ -75,20 +75,20 @@ When to use: Complex tasks with clear decomposition, tasks requiring coordinatio
 
 Advantages: Strict control over workflow, easier to implement human-in-the-loop interventions, ensures adherence to predefined plans.
 
-Disadvantages: Supervisor context becomes bottleneck, supervisor failures cascade to all workers, "telephone game" problem where supervisors paraphrase sub-agent responses incorrectly.
+Disadvantages: Supervisor context becomes bottleneck, supervisor failures cascade to all workers, "telephone game" problem where supervisors paraphrase Task agent responses incorrectly.
 
 **The Telephone Game Problem and Solution**
-LangGraph benchmarks found supervisor architectures initially performed 50% worse than optimized versions due to the "telephone game" problem where supervisors paraphrase sub-agent responses incorrectly, losing fidelity.
+LangGraph benchmarks found supervisor architectures initially performed 50% worse than optimized versions due to the "telephone game" problem where supervisors paraphrase Task agent responses incorrectly, losing fidelity.
 
-The fix: implement a `forward_message` tool allowing sub-agents to pass responses directly to users:
+The fix: implement a `forward_message` tool allowing Task agents to pass responses directly to users:
 
 ```python
 def forward_message(message: str, to_user: bool = True):
     """
-    Forward sub-agent response directly to user without supervisor synthesis.
-    
+    Forward Task agent response directly to user without supervisor synthesis.
+
     Use when:
-    - Sub-agent response is final and complete
+    - Task agent response is final and complete
     - Supervisor synthesis would lose important details
     - Response format must be preserved exactly
     """
@@ -97,9 +97,9 @@ def forward_message(message: str, to_user: bool = True):
     return {"type": "supervisor_input", "content": message}
 ```
 
-With this pattern, swarm architectures slightly outperform supervisors because sub-agents respond directly to users, eliminating translation errors.
+With this pattern, swarm architectures slightly outperform supervisors because Task agents respond directly to users, eliminating translation errors.
 
-Implementation note: Implement direct pass-through mechanisms allowing sub-agents to pass responses directly to users rather than through supervisor synthesis when appropriate.
+Implementation note: Implement direct pass-through mechanisms allowing Task agents to pass responses directly to users rather than through supervisor synthesis when appropriate.
 
 **Pattern 2: Peer-to-Peer/Swarm**
 The peer-to-peer pattern removes central control, allowing agents to communicate directly based on predefined protocols. Any agent can transfer control to any other through explicit handoff mechanisms.
@@ -137,17 +137,17 @@ Disadvantages: Coordination overhead between layers, potential for misalignment 
 
 ### Context Isolation as Design Principle
 
-The primary purpose of multi-agent architectures is context isolation. Each sub-agent operates in a clean context window focused on its subtask without carrying accumulated context from other subtasks.
+The primary purpose of multi-agent architectures is context isolation. Each Task agent operates in a clean context window focused on its subtask without carrying accumulated context from other subtasks.
 
 **Isolation Mechanisms**
-Full context delegation: For complex tasks where the sub-agent needs complete understanding, the planner shares its entire context. The sub-agent has its own tools and instructions but receives full context for its decisions.
+Full context delegation: For complex tasks where the Task agent needs complete understanding, the planner shares its entire context. The Task agent has its own tools and instructions but receives full context for its decisions.
 
-Instruction passing: For simple, well-defined subtasks, the planner creates instructions via function call. The sub-agent receives only the instructions needed for its specific task.
+Instruction passing: For simple, well-defined subtasks, the planner creates instructions via function call. The Task agent receives only the instructions needed for its specific task.
 
 File system memory: For complex tasks requiring shared state, agents read and write to persistent storage. The file system serves as the coordination mechanism, avoiding context bloat from shared state passing.
 
 **Isolation Trade-offs**
-Full context delegation provides maximum capability but defeats the purpose of sub-agents. Instruction passing maintains isolation but limits sub-agent flexibility. File system memory enables shared state without context passing but introduces latency and consistency challenges.
+Full context delegation provides maximum capability but defeats the purpose of Task agents. Instruction passing maintains isolation but limits Task agent flexibility. File system memory enables shared state without context passing but introduces latency and consistency challenges.
 
 The right choice depends on task complexity, coordination needs, and acceptable latency.
 

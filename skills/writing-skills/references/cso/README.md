@@ -75,7 +75,7 @@ When searching, dispatch agent with template...
 
 # ✅ GOOD: Reference other skill
 
-Use subagents for searches. See [delegating-to-subagents] for workflow.
+Use Task agents for searches. See [delegating-to-subagents] for workflow.
 ```
 
 **3. Compress examples**:
@@ -85,13 +85,13 @@ Use subagents for searches. See [delegating-to-subagents] for workflow.
 
 Partner: "How did we handle auth errors in React Router?"
 You: I'll search past conversations for patterns.
-[Dispatch subagent with query: "React Router authentication error handling 401"]
+[Dispatch Task agent with query: "React Router authentication error handling 401"]
 
 # ✅ GOOD: Minimal (20 words)
 
 Partner: "Auth errors in React Router?"
 You: Searching...
-[Dispatch subagent → synthesis]
+[Dispatch Task agent → synthesis]
 ```
 
 ## Keyword Strategy

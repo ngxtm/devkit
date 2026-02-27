@@ -4,7 +4,7 @@ Intelligent management and execution of Model Context Protocol (MCP) servers.
 
 ## Overview
 
-This skill enables Claude to discover, analyze, and execute MCP server capabilities without polluting the main context window. Perfect for context-efficient MCP integration using subagent-based architecture.
+This skill enables Claude to discover, analyze, and execute MCP server capabilities without polluting the main context window. Perfect for context-efficient MCP integration using Task agent-based architecture.
 
 ## Features
 
@@ -12,7 +12,7 @@ This skill enables Claude to discover, analyze, and execute MCP server capabilit
 - **Intelligent Tool Discovery**: Analyze which tools are relevant for specific tasks
 - **Progressive Disclosure**: Load only necessary tool definitions
 - **Execution Engine**: Call MCP tools with proper parameter handling
-- **Context Efficiency**: Delegate MCP operations to `mcp-manager` subagent
+- **Context Efficiency**: Delegate MCP operations to `mcp-manager` Task agent
 
 ## Quick Start
 
@@ -71,13 +71,13 @@ The LLM reads `assets/tools.json` and intelligently selects tools. No separate a
 npx ts-node scripts/cli.ts call-tool memory add '{"key":"name","value":"Alice"}'
 ```
 
-### Pattern 4: Use with Subagent
+### Pattern 4: Use with Task agent
 
 In main Claude conversation:
 
 ```
 User: "I need to search the web and save results"
-Main Agent: [Spawns mcp-manager subagent]
+Main Agent: [Spawns mcp-manager Task agent]
 mcp-manager: Discovers brave-search + memory tools, reports back
 Main Agent: Uses recommended tools for implementation
 ```
@@ -87,7 +87,7 @@ Main Agent: Uses recommended tools for implementation
 ```
 Main Agent (Claude)
     ↓ (delegates MCP tasks)
-mcp-manager Subagent
+mcp-manager Task agent
     ↓ (uses skill)
 mcp-management Skill
     ↓ (connects via)
@@ -96,7 +96,7 @@ MCP Servers (memory, filesystem, etc.)
 
 **Benefits**:
 - Main agent context stays clean
-- MCP discovery happens in isolated subagent context
+- MCP discovery happens in isolated Task agent context
 - Only relevant tool definitions loaded when needed
 - Reduced token usage
 

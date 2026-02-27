@@ -402,7 +402,7 @@ Chain multiple agents together.
 ```python
 from azure.ai.agents import ConnectedAgentTool
 
-# Create sub-agent
+# Create Task agent
 research_agent = client.create_agent(
     model=os.environ["MODEL_DEPLOYMENT_NAME"],
     name="researcher",

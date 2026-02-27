@@ -273,9 +273,9 @@ Task(subagent_type="general-purpose", model="opus",
 
 ---
 
-## Structured Prompting for Subagents
+## Structured Prompting for Task Agents
 
-**Every subagent dispatch MUST include:**
+**Every Task agent dispatch MUST include:**
 
 ```markdown
 ## GOAL (What success looks like)

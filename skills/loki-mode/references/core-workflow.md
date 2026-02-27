@@ -34,7 +34,7 @@ Every iteration follows this cycle:
 | - Determine exact steps to complete it                            |
 +-------------------------------------------------------------------+
 | ACT: Execute the task                                             |
-| - Dispatch subagent via Task tool OR execute directly             |
+| - Dispatch Task agent via Task tool OR execute directly             |
 | - Write code, run tests, fix issues                               |
 | - Commit changes atomically (git checkpoint)                      |
 | - Update queue files (.loki/queue/*.json)                         |
@@ -266,10 +266,10 @@ move_tasks_to_pending after_task=$last_good_task_id
 
 ---
 
-## If Subagent Fails
+## If Task Agent Fails
 
 1. Do NOT try to fix manually (context pollution)
-2. Dispatch fix subagent with specific error context
-3. If fix subagent fails 3x, move to dead letter queue
+2. Dispatch fix Task agent with specific error context
+3. If fix Task agent fails 3x, move to dead letter queue
 4. Open circuit breaker for that agent type
 5. Alert orchestrator for human review

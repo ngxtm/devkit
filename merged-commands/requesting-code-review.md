@@ -7,14 +7,14 @@ source: community
 
 # Requesting Code Review
 
-Dispatch superpowers:code-reviewer subagent to catch issues before they cascade.
+Dispatch superpowers:code-reviewer Task agent to catch issues before they cascade.
 
 **Core principle:** Review early, review often.
 
 ## When to Request Review
 
 **Mandatory:**
-- After each task in subagent-driven development
+- After each task in Task agent-driven development
 - After completing major feature
 - Before merge to main
 
@@ -31,7 +31,7 @@ BASE_SHA=$(git rev-parse HEAD~1)  # or origin/main
 HEAD_SHA=$(git rev-parse HEAD)
 ```
 
-**2. Dispatch code-reviewer subagent:**
+**2. Dispatch code-reviewer Task agent:**
 
 Use Task tool with superpowers:code-reviewer type, fill template at `code-reviewer.md`
 
@@ -58,14 +58,14 @@ You: Let me request code review before proceeding.
 BASE_SHA=$(git log --oneline | grep "Task 1" | head -1 | awk '{print $1}')
 HEAD_SHA=$(git rev-parse HEAD)
 
-[Dispatch superpowers:code-reviewer subagent]
+[Dispatch superpowers:code-reviewer Task agent]
   WHAT_WAS_IMPLEMENTED: Verification and repair functions for conversation index
   PLAN_OR_REQUIREMENTS: Task 2 from docs/plans/deployment-plan.md
   BASE_SHA: a7981ec
   HEAD_SHA: 3df7661
   DESCRIPTION: Added verifyIndex() and repairIndex() with 4 issue types
 
-[Subagent returns]:
+[Task agent returns]:
   Strengths: Clean architecture, real tests
   Issues:
     Important: Missing progress indicators
@@ -78,7 +78,7 @@ You: [Fix progress indicators]
 
 ## Integration with Workflows
 
-**Subagent-Driven Development:**
+**Task Agent-Driven Development:**
 - Review after EACH task
 - Catch issues before they compound
 - Fix before moving to next task

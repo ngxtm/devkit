@@ -5,7 +5,7 @@ Full pipeline for moderate complexity issues.
 ## Steps
 
 ### Step 1: Debug & Investigate
-Activate `debugging` skill. Use `debugger` subagent if needed.
+Activate `debugging` skill. Use `debugger` Task agent if needed.
 
 - Read error messages, logs, stack traces
 - Reproduce the issue
@@ -15,7 +15,7 @@ Activate `debugging` skill. Use `debugger` subagent if needed.
 **Output:** `✓ Step 1: Root cause - [summary], [N] files affected`
 
 ### Step 2: Parallel Scout (if needed)
-Launch multiple `Explore` subagents in parallel to scout codebase.
+Launch multiple `Explore` Task agents in parallel to scout codebase.
 
 **Pattern:** In SINGLE message, launch 2-3 Explore agents:
 ```
@@ -48,7 +48,7 @@ Task("Bash", "Run build", "Verify build")
 **Output:** `✓ Step 3: Implemented - [N] files, verified (types/lint/build passed)`
 
 ### Step 4: Test
-Use `tester` subagent to run tests.
+Use `tester` Task agent to run tests.
 
 - Write new tests if needed
 - Run existing test suite
@@ -57,7 +57,7 @@ Use `tester` subagent to run tests.
 **Output:** `✓ Step 4: Tests [X/X passed]`
 
 ### Step 5: Review
-Use `code-reviewer` subagent.
+Use `code-reviewer` Task agent.
 
 See `references/review-cycle.md` for mode-specific handling.
 
@@ -65,21 +65,21 @@ See `references/review-cycle.md` for mode-specific handling.
 
 ### Step 6: Finalize
 - Report summary to user
-- Ask to commit via `git-manager` subagent
+- Ask to commit via `git-manager` Task agent
 - Update docs if needed via `docs-manager`
 
 **Output:** `✓ Step 6: Complete - [action]`
 
-## Skills/Subagents Activated
+## Skills/Task agents Activated
 
-| Step | Skills/Subagents |
+| Step | Skills/Task agents |
 |------|------------------|
-| 1 | `debugging`, `debugger` subagent |
-| 2 | Multiple `Explore` subagents in parallel (optional) |
+| 1 | `debugging`, `debugger` Task agent |
+| 2 | Multiple `Explore` Task agents in parallel (optional) |
 | 3 | `problem-solving`, `sequential-thinking`, parallel `Bash` for verification |
-| 4 | `tester` subagent |
-| 5 | `code-reviewer` subagent |
-| 6 | `git-manager`, `docs-manager` subagents |
+| 4 | `tester` Task agent |
+| 5 | `code-reviewer` Task agent |
+| 6 | `git-manager`, `docs-manager` Task agents |
 
 **Rules:** Don't skip steps. Validate before proceeding. One phase at a time.
 **Frontend:** Use `chrome`, `chrome-devtools` or any relevant skills/tools to verify. 

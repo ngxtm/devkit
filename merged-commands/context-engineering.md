@@ -25,13 +25,13 @@ Context engineering curates the smallest high-signal token set for LLM tasks. Th
 1. **Context quality > quantity** - High-signal tokens beat exhaustive content
 2. **Attention is finite** - U-shaped curve favors beginning/end positions
 3. **Progressive disclosure** - Load information just-in-time
-4. **Isolation prevents degradation** - Partition work across sub-agents
+4. **Isolation prevents degradation** - Partition work across Task agents
 5. **Measure before optimizing** - Know your baseline
 
 **IMPORTANT:**
 - Sacrifice grammar for the sake of concision.
 - Ensure token efficiency while maintaining high quality.
-- Pass these rules to subagents.
+- Pass these rules to Task agents.
 
 ## Quick Reference
 
@@ -61,7 +61,7 @@ Context engineering curates the smallest high-signal token set for LLM tasks. Th
 1. **Write**: Save context externally (scratchpads, files)
 2. **Select**: Pull only relevant context (retrieval, filtering)
 3. **Compress**: Reduce tokens while preserving info (summarization)
-4. **Isolate**: Split across sub-agents (partitioning)
+4. **Isolate**: Split across Task agents (partitioning)
 
 ## Anti-Patterns
 
@@ -75,7 +75,7 @@ Context engineering curates the smallest high-signal token set for LLM tasks. Th
 
 1. Place critical info at beginning/end of context
 2. Implement compaction at 70-80% utilization
-3. Use sub-agents for context isolation, not role-play
+3. Use Task agents for context isolation, not role-play
 4. Design tools with 4-question framework (what, when, inputs, returns)
 5. Optimize for tokens-per-task, not tokens-per-request
 6. Validate with probe-based evaluation

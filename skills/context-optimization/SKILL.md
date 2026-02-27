@@ -81,10 +81,10 @@ Design prompts to maximize cache stability: avoid dynamic content like timestamp
 
 ### Context Partitioning
 
-**Sub-Agent Partitioning**
-The most aggressive form of context optimization is partitioning work across sub-agents with isolated contexts. Each sub-agent operates in a clean context focused on its subtask without carrying accumulated context from other subtasks.
+**Task Agent Partitioning**
+The most aggressive form of context optimization is partitioning work across Task agents with isolated contexts. Each Task agent operates in a clean context focused on its subtask without carrying accumulated context from other subtasks.
 
-This approach achieves separation of concerns—the detailed search context remains isolated within sub-agents while the coordinator focuses on synthesis and analysis.
+This approach achieves separation of concerns—the detailed search context remains isolated within Task agents while the coordinator focuses on synthesis and analysis.
 
 **Result Aggregation**
 Aggregate results from partitioned subtasks by validating all partitions completed, merging compatible results, and summarizing if still too large.

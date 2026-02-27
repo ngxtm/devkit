@@ -250,11 +250,11 @@ Analyze and fix the GitHub issue: $ARGUMENTS.
 
 Run `/fix-issue 1234` to invoke it. Use `disable-model-invocation: true` for workflows with side effects that you want to trigger manually.
 
-### Create custom subagents
+### Create custom Task agents
 
 > **Tip:** Define specialized assistants in `.claude/agents/` that Claude can delegate to for isolated tasks.
 
-Subagents run in their own context with their own set of allowed tools. They're useful for tasks that read many files or need specialized focus without cluttering your main conversation.
+Task agents run in their own context with their own set of allowed tools. They're useful for tasks that read many files or need specialized focus without cluttering your main conversation.
 
 ```markdown
 ---
@@ -272,15 +272,15 @@ You are a senior security engineer. Review code for:
 Provide specific line references and suggested fixes.
 ```
 
-Tell Claude to use subagents explicitly: *"Use a subagent to review this code for security issues."*
+Tell Claude to use Task agents explicitly: *"Use a Task agent to review this code for security issues."*
 
 ### Install plugins
 
 > **Tip:** Run `/plugin` to browse the marketplace. Plugins add skills, tools, and integrations without configuration.
 
-Plugins bundle skills, hooks, subagents, and MCP servers into a single installable unit from the community and Anthropic.
+Plugins bundle skills, hooks, Task agents, and MCP servers into a single installable unit from the community and Anthropic.
 
-For guidance on choosing between skills, subagents, hooks, and MCP, see Extend Claude Code.
+For guidance on choosing between skills, Task agents, hooks, and MCP, see Extend Claude Code.
 
 ***
 
@@ -350,23 +350,23 @@ During long sessions, Claude's context window can fill with irrelevant conversat
 * For more control, run `/compact <instructions>`, like `/compact Focus on the API changes`
 * Customize compaction behavior in CLAUDE.md with instructions like `"When compacting, always preserve the full list of modified files and any test commands"` to ensure critical context survives summarization
 
-### Use subagents for investigation
+### Use Task agents for investigation
 
-> **Tip:** Delegate research with `"use subagents to investigate X"`. They explore in a separate context, keeping your main conversation clean for implementation.
+> **Tip:** Delegate research with `"use Task agents to investigate X"`. They explore in a separate context, keeping your main conversation clean for implementation.
 
-Since context is your fundamental constraint, subagents are one of the most powerful tools available. When Claude researches a codebase it reads lots of files, all of which consume your context. Subagents run in separate context windows and report back summaries:
+Since context is your fundamental constraint, Task agents are one of the most powerful tools available. When Claude researches a codebase it reads lots of files, all of which consume your context. Task agents run in separate context windows and report back summaries:
 
 ```
-Use subagents to investigate how our authentication system handles token
+Use Task agents to investigate how our authentication system handles token
 refresh, and whether we have any existing OAuth utilities I should reuse.
 ```
 
-The subagent explores the codebase, reads relevant files, and reports back with findings, all without cluttering your main conversation.
+The Task agent explores the codebase, reads relevant files, and reports back with findings, all without cluttering your main conversation.
 
-You can also use subagents for verification after Claude implements something:
+You can also use Task agents for verification after Claude implements something:
 
 ```
-use a subagent to review this code for edge cases
+use a Task agent to review this code for edge cases
 ```
 
 ### Rewind with checkpoints
@@ -487,7 +487,7 @@ These are common mistakes. Recognizing them early saves time:
 * **The trust-then-verify gap.** Claude produces a plausible-looking implementation that doesn't handle edge cases.
   > **Fix**: Always provide verification (tests, scripts, screenshots). If you can't verify it, don't ship it.
 * **The infinite exploration.** You ask Claude to "investigate" something without scoping it. Claude reads hundreds of files, filling the context.
-  > **Fix**: Scope investigations narrowly or use subagents so the exploration doesn't consume your main context.
+  > **Fix**: Scope investigations narrowly or use Task agents so the exploration doesn't consume your main context.
 
 ***
 
@@ -504,7 +504,7 @@ Over time, you'll develop intuition that no guide can capture. You'll know when 
 ## Related resources
 
 * **How Claude Code works** - Understand the agentic loop, tools, and context management
-* **Extend Claude Code** - Choose between skills, hooks, MCP, subagents, and plugins
+* **Extend Claude Code** - Choose between skills, hooks, MCP, Task agents, and plugins
 * **Common workflows** - Step-by-step recipes for debugging, testing, PRs, and more
 * **CLAUDE.md** - Store project conventions and persistent context
 

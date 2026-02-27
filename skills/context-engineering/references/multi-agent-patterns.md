@@ -4,7 +4,7 @@ Distribute work across multiple context windows for isolation and scale.
 
 ## Core Insight
 
-Sub-agents exist to **isolate context**, not anthropomorphize roles.
+Task agents exist to **isolate context**, not anthropomorphize roles.
 
 ## Token Economics
 

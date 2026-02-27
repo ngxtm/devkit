@@ -250,7 +250,7 @@ Explain that testing will now occur to see if the document actually works for re
 
 ### Testing Approach
 
-**If access to sub-agents is available (e.g., in Claude Code):**
+**If access to Task agents is available (e.g., in Claude Code):**
 
 Perform the testing directly without user involvement.
 
@@ -260,11 +260,11 @@ Announce intention to predict what questions readers might ask when trying to di
 
 Generate 5-10 questions that readers would realistically ask.
 
-### Step 2: Test with Sub-Agent
+### Step 2: Test with Task Agent
 
 Announce that these questions will be tested with a fresh Claude instance (no context from this conversation).
 
-For each question, invoke a sub-agent with just the document content and the question.
+For each question, invoke a Task agent with just the document content and the question.
 
 Summarize what Reader Claude got right/wrong for each question.
 
@@ -272,7 +272,7 @@ Summarize what Reader Claude got right/wrong for each question.
 
 Announce additional checks will be performed.
 
-Invoke sub-agent to check for ambiguity, false assumptions, contradictions.
+Invoke Task agent to check for ambiguity, false assumptions, contradictions.
 
 Summarize any issues found.
 
@@ -289,7 +289,7 @@ Loop back to refinement for problematic sections.
 
 ---
 
-**If no access to sub-agents (e.g., claude.ai web interface):**
+**If no access to Task agents (e.g., claude.ai web interface):**
 
 The user will need to do the testing manually.
 

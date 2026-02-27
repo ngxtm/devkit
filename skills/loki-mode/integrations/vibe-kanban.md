@@ -10,7 +10,7 @@ Loki Mode can optionally integrate with [Vibe Kanban](https://github.com/BloopAI
 | Progress monitoring | Log files | Real-time dashboard |
 | Manual intervention | Edit queue files | Drag-and-drop tasks |
 | Code review | Automated 3-reviewer | + Visual diff review |
-| Parallel agents | Background subagents | Isolated git worktrees |
+| Parallel agents | Background Task agents | Isolated git worktrees |
 
 ## Setup
 

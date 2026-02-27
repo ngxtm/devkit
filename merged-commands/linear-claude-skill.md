@@ -387,13 +387,13 @@ For detailed helper script usage, see **troubleshooting.md**.
 
 ### Parallel Agent Execution
 
-For bulk operations or background execution, use the `Linear-specialist` subagent:
+For bulk operations or background execution, use the `Linear-specialist` Task agent:
 
 ```javascript
 Task({
   description: "Update Linear issues",
   prompt: "Mark ENG-101, ENG-102, ENG-103 as Done",
-  subagent_type: "Linear-specialist"
+  subagent_type: "general-purpose"
 })
 ```
 
