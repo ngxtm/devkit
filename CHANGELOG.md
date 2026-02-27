@@ -1,3 +1,15 @@
+# [3.18.0](https://github.com/ngxtm/devkit/compare/v3.17.0...v3.18.0) (2026-02-27)
+
+
+### Features
+
+* **mesh:** add 10 skill composition recipes and fix build validation ([bc80c5e](https://github.com/ngxtm/devkit/commit/bc80c5edb5a163919eca186950745b12be184558))
+* **mesh:** add cascade loading to auto-skill detection (Phase 4) ([6a74814](https://github.com/ngxtm/devkit/commit/6a74814565c685b04873ebfcca289f8cddaa4356))
+* **mesh:** add dashboard/curation commands and fix review findings ([b44e383](https://github.com/ngxtm/devkit/commit/b44e3831320f9c498cab900ec03c835a3bbdf215))
+* **mesh:** add graph-aware skill loading to 10 hub commands ([3c0c399](https://github.com/ngxtm/devkit/commit/3c0c3996fcbaf23a80b99092a2f12071ee9dcdeb))
+* **mesh:** enhance /skill:sync with mesh integration (Phase 3) ([61c2d4d](https://github.com/ngxtm/devkit/commit/61c2d4d60bdb167e49443769ac4d6b16b1ea384f))
+* **mesh:** populate skills-graph.json with 1070 skill evaluations ([df911ac](https://github.com/ngxtm/devkit/commit/df911ac117ac2afcbece253db4101b09ff74e1cb))
+
 # [3.17.0](https://github.com/ngxtm/devkit/compare/v3.16.0...v3.17.0) (2026-02-27)
 
 
