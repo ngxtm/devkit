@@ -1,16 +1,21 @@
 ---
 name: learn
 description: Guided project building — you code, AI mentors. Build your own product step-by-step with best practices and deep understanding.
-argument-hint: [topic]
+argument-hint: [topic] [--plan <path>]
 ---
 
-# Learn Mode v3.1
+# Learn Mode v3.2
 
 > Build your product. Design the architecture. Write every line. Understand every decision.
 
 ## Activation
 
 `/learn "topic"` — e.g., `/learn "JWT auth in Express"`, `/learn "build real-time chat"`
+`/learn --plan <path>` — Learn by following an existing plan (topic auto-extracted from plan title)
+`/learn "topic" --plan <path>` — Learn with custom topic + existing plan
+
+e.g., `/learn --plan plans/skill-sync-rewrite/plan.md`
+e.g., `/learn "upstream sync" --plan plans/skill-sync-rewrite/plan.md`
 
 ---
 
@@ -18,7 +23,17 @@ argument-hint: [topic]
 
 1. **Resume check**: Look in `learn/` for existing file matching topic. If found, read its YAML frontmatter and offer to resume from last checkpoint via `AskUserQuestion`.
 
-2. **Language detection**: Scan project for config files to identify primary language.
+2. **Plan import check**: If arguments contain `--plan <path>`:
+   a. Read the plan file at `<path>`. Validate it exists and has content.
+   b. **Topic resolution**: If no topic provided in arguments, extract from plan's YAML frontmatter `title` field.
+   c. Detect plan structure:
+      - **Single-file plan**: no `phase-XX` files referenced → tasks = plan's task list
+      - **Multi-phase plan**: has `## Phases` table with phase-XX links → each phase = potential learn module
+   d. If multi-phase: ask user via `AskUserQuestion` which phase(s) to learn.
+   e. Read selected phase file(s) for detailed tasks.
+   f. Store parsed steps for REVIEW phase.
+
+3. **Language detection** (skip if `--plan` already implies language from plan context): Scan project for config files to identify primary language.
 
 | Language | Config Files | Verify: Syntax | Verify: Run/Test |
 |----------|-------------|----------------|------------------|
@@ -70,6 +85,8 @@ step: 0
 total_steps: 0
 difficulty: {deep|standard|quick}
 teaching: {guided|scaffolded|demonstrated}
+plan_source: "{path or none}"
+plan_type: {single|multi-phase|none}
 started: {ISO timestamp}
 updated: {ISO timestamp}
 ---
@@ -93,9 +110,32 @@ Update frontmatter: `phase: LEARN`
 
 ---
 
+## Phase 3-ALT: REVIEW (only when --plan provided, replaces Phase 3 + 4)
+
+> Understand the plan before building. Light touch — not redesign.
+
+1. **Summarize**: Present plan overview to user:
+   > "This plan proposes: {overview}. It has {N} steps targeting {files}."
+   > Key decisions: {list key decisions from plan}
+
+2. **Socratic check** (skip in Quick difficulty): Ask 1-2 questions via `AskUserQuestion`:
+   > "Before we start — why do you think {first step} comes before {later step}?"
+   > OR "What problem does {key decision} solve?"
+   Build on user's answer. Correct misconceptions if any.
+
+3. **Adapt**: Ask via `AskUserQuestion`:
+   > "Want to reorder, skip, or add any steps? Or proceed as-is?"
+   Adjust step list based on user feedback.
+
+4. **Write to tutorial file**: Record plan source, overview, and adapted steps.
+
+Update frontmatter: `phase: REVIEW`, `total_steps: {N}`
+
+---
+
 ## Phase 3: DESIGN (Socratic architecture thinking)
 
-> User thinks first, AI guides — not the other way around.
+> **Skip this phase entirely if `--plan` was provided.** Go to Phase 3-ALT: REVIEW instead.
 
 1. **Frame the problem**: AI presents the high-level problem to solve:
    > "We need to build {topic}. Before I suggest anything — how would YOU approach this? What components or pieces do you think we need?"
@@ -134,6 +174,8 @@ Update frontmatter: `phase: DESIGN`
 
 ## Phase 4: PLAN (concrete implementation steps)
 
+> **Skip this phase entirely if `--plan` was provided.** Steps come from REVIEW phase instead.
+
 1. **Break down the chosen design** into 3-7 concrete, verifiable steps. Each step should:
    - Have a clear goal (what's done when this step is complete)
    - Build on previous steps (incremental, testable progress)
@@ -154,6 +196,10 @@ Update frontmatter: `phase: PLAN`, `total_steps: {N}`
 ---
 
 ## Phase 5: BUILD (core phase)
+
+> If `--plan` was provided, steps come from REVIEW phase (imported plan).
+> If no `--plan`, steps come from Phase 4 (PLAN) as usual.
+> Everything else in BUILD works identically for both paths.
 
 1. **For each step from the PLAN phase, follow the teaching mode**:
 
@@ -267,6 +313,7 @@ Display: `Tutorial saved: learn/{filename}.md`
 
 ## Version History
 
+- **3.2.0** - Added --plan flag: import existing plan files, REVIEW phase replaces DESIGN+PLAN for plan-driven learning. Flow with plan: INIT → LEARN → REVIEW → BUILD → WRAP-UP
 - **3.1.0** - Added DESIGN phase (Socratic architecture) and PLAN phase (concrete steps). Full flow: INIT → LEARN → DESIGN → PLAN → BUILD → WRAP-UP
 - **3.0.0** - Teaching modes (guided/scaffolded/demonstrated), best-practice review, explain-back checkpoints, user-codes-first philosophy
 - **2.0.0** - Rewrite: adaptive difficulty via codingLevel, 4 phases, WebSearch, Socratic method, resume support, tiered verify, 17 languages, codebase-aware
