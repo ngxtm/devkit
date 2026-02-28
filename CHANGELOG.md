@@ -1,3 +1,10 @@
+# [3.21.0](https://github.com/ngxtm/devkit/compare/v3.20.0...v3.21.0) (2026-02-28)
+
+
+### Features
+
+* **rules:** add context checkpoint system with /recover command ([53edcba](https://github.com/ngxtm/devkit/commit/53edcba28ccf00ea47d731f9e9fc564415379013))
+
 # [3.20.0](https://github.com/ngxtm/devkit/compare/v3.19.0...v3.20.0) (2026-02-27)
 
 
