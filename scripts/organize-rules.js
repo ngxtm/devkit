@@ -109,6 +109,7 @@ function organizeRules() {
   const stats = {};
 
   for (const ruleDir of rulesDirs) {
+    if (ruleDir === 'base') continue; // base rules handled by createBaseTemplate
     const srcDir = path.join(RULES_DIR, ruleDir);
     const tech = RULES_MAPPING[ruleDir] || ruleDir;
     const destDir = path.join(TEMPLATES_DIR, tech, 'rules', ruleDir);
@@ -171,6 +172,14 @@ function createBaseTemplate() {
   }
 
   console.log('  Created base template with essential hooks');
+
+  // Copy base rules from rules/base/ to templates/base/rules/
+  const baseRulesSource = path.join(RULES_DIR, 'base');
+  const baseRulesDest = path.join(baseDir, 'rules');
+  if (fs.existsSync(baseRulesSource)) {
+    const count = copyDir(baseRulesSource, baseRulesDest);
+    console.log(`  Copied ${count} base rules`);
+  }
 }
 
 /**

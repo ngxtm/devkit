@@ -95,15 +95,31 @@ For each item in `external-skills`:
 
 ### Step 5: Evaluate Rules
 
+**IMPORTANT:** Never overwrite or sync rules in `rules/base/`. Base rules are devkit-native and managed manually. Only evaluate rules in tech-specific directories.
+
 For each item in `rules.new`:
 1. Read the rule content from `path` field
 2. Classify: useful (covers new pattern) or skip (duplicate/too generic)
-3. In `--auto` mode: sync all useful
-4. In interactive mode: ask user
+3. Count lines — if > 50 lines, flag as "verbose, needs compaction"
+4. In `--auto` mode: sync all useful (compact verbose ones automatically)
+5. In interactive mode: ask user
 
 For each item in `rules.updated`:
 1. Compare upstream and local content
 2. Accept meaningful updates, skip trivial ones
+3. Count lines — if > 50 lines, flag as "verbose, needs compaction"
+
+**Note:** Size-based compaction applies to RULES only. Skills are loaded on-demand and do not need compaction.
+
+### Step 5.5: Compact Verbose Rules
+
+For each rule flagged as verbose (> 50 lines):
+1. Read full content
+2. Compact while preserving: core patterns, conventions, do's/don'ts, lookup tables, key code examples (max 1-2)
+3. Remove: redundant explanations, excessive examples, sections repeating what Claude already knows, full example interactions/dialogs
+4. Target: ≤ 50 lines for tech rules
+5. In `--auto` mode: compact automatically
+6. In interactive mode: show line count before/after, ask user
 
 ### Step 6: Apply Changes
 
@@ -134,7 +150,7 @@ npm run build
 
 Stage and commit the changes:
 ```bash
-git add skills/ rules/ merged-commands/ SKILLS_INDEX.md skills-index.json skills-compact.json skills-graph.json rules-index.json
+git add skills/ rules/ merged-commands/ templates/ SKILLS_INDEX.md skills-index.json skills-compact.json skills-graph.json rules-index.json
 ```
 
 Commit message format:
@@ -162,9 +178,17 @@ If stash was created earlier: `git stash pop` to restore user's changes.
 - Always update version tracking
 - Never overwrite devkit-specific frontmatter (`triggers`, `role`, `scope`, `output-format`)
 
-### Rules
-- **Accept**: Rule covers useful pattern not in existing rules
+### Rules (loaded every turn — context cost matters)
+- **Accept**: Useful pattern, ≤ 50 lines
+- **Compact**: Useful but > 50 lines → reduce while preserving core content
 - **Skip**: Duplicate or too generic
+- **Protect**: Never touch rules/base/ (devkit-native)
+
+### Skills (loaded on-demand — no compaction needed)
+- **Useful**: Covers distinct domain, well-structured SKILL.md, actionable patterns/commands
+- **Duplicate**: Similar name or description to existing skill in skills-compact.json
+- **Skip**: Too niche, low quality, just "be a senior X engineer" boilerplate
+- No size-based compaction — verbose skills are acceptable
 
 ## Important
 
